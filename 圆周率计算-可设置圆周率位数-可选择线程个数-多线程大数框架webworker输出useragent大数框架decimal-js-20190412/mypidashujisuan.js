@@ -101,5 +101,10 @@ function threadfinish() {
             arr[index].terminate()
         })
         x = 0
+		//alert("ok")
+		setTimeout(function() {
+            myptext.style.height = myptext.scrollHeight + 'px';
+        }, 0);
+		 
     }
 }
