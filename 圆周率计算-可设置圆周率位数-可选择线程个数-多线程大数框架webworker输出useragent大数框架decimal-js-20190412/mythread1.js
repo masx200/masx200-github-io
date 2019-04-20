@@ -7,7 +7,7 @@ addEventListener('message', function(event) {
     threadid = event.data[2];
     console.log("副线程" + (threadid + 1) + "接收" + "event.data\n" + event.data);
 
-    Decimal.precision = piwei;
+    Decimal.precision = piwei+1;
     var p = new Decimal(0);
     var a = new Decimal(1);
     var h = 1;
