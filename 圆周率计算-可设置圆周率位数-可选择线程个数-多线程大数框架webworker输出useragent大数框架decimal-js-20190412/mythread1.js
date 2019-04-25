@@ -1,5 +1,5 @@
-
-importScripts("./decimal.min.js");
+importScripts("https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js");
+// importScripts("./decimal.min.js");
 var piwei;
 addEventListener('message', function(event) {
     piwei = event.data[0];
