@@ -186,7 +186,7 @@ header {
 }
 
 #index-report-pagination li.active {
-    background: url(img/report-bg.gif) top center no-repeat;
+    /* background: url(img/report-bg.gif) top center no-repeat; */
 }
 
 #index-button {
@@ -234,39 +234,39 @@ header {
     display: block;
     margin-bottom: 1px;
     font-size: 22px;
-    background: url(img/content-nav.png) no-repeat 0 -160px #E5ECDC;
+    /* background: url(img/content-nav.png) no-repeat 0 -160px #E5ECDC; */
 }
 
 #content-nav #nav-web {
-    background: url(img/content-nav.png) no-repeat 0 0 #E5ECDC;
+    /* background: url(img/content-nav.png) no-repeat 0 0 #E5ECDC; */
 }
 
 #content-nav #nav-chrome {
-    background: url(img/content-nav.png) no-repeat 0 -40px #E5ECDC;
+    /* background: url(img/content-nav.png) no-repeat 0 -40px #E5ECDC; */
 }
 
 #content-nav #nav-other {
-    background: url(img/content-nav.png) no-repeat 0 -80px #E5ECDC;
+    /* background: url(img/content-nav.png) no-repeat 0 -80px #E5ECDC; */
 }
 
 #content-nav #nav-android {
-    background: url(img/content-nav.png) no-repeat 0 -200px #E5ECDC;
+    /* background: url(img/content-nav.png) no-repeat 0 -200px #E5ECDC; */
 }
 
 #content-nav #nav-mobile {
-    background: url(img/content-nav.png) no-repeat 0 -240px #E5ECDC;
+    /* background: url(img/content-nav.png) no-repeat 0 -240px #E5ECDC; */
 }
 
 #content-nav #nav-windows {
-    background: url(img/content-nav.png) no-repeat 0 -280px #E5ECDC;
+    /* background: url(img/content-nav.png) no-repeat 0 -280px #E5ECDC; */
 }
 
 #content-nav #nav-mac {
-    background: url(img/content-nav.png) no-repeat 0 -320px #E5ECDC;
+    /* background: url(img/content-nav.png) no-repeat 0 -320px #E5ECDC; */
 }
 
 #content-nav li a:hover , #content-nav li a.active {
-    background: url(img/content-nav.png) no-repeat 0 -120px!important;
+    /* background: url(img/content-nav.png) no-repeat 0 -120px!important; */
 }
 
 #content-nav li a.active , #content-nav li a:hover {
