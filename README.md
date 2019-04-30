@@ -4,11 +4,17 @@ masx200的github
 https://masx200.github.io/
 # 使用babel-standalone代替本地node模块
 
+使用babel在线解析jsx语法和es6以上的语法
+
+不使用本地node模块,大大减小了生成的文件大小
+
 Babel · The compiler for next generation JavaScript
 
 https://babeljs.io/
 
 ## 使用parcel bundler代替webpcak成功
+
+避免webpack繁琐的配置,快速解决打包问题
 
 📦 Parcel 中文文档 | Parcel 中文网
 
@@ -39,6 +45,8 @@ parcel build index.html
 parcel build entry.js
 
 # 网站结构介绍
+使用cdn加载依赖包,加快速度
+
 首页
 
 圆周率计算多线程
