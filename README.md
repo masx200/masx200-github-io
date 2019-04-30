@@ -53,7 +53,7 @@ parcel build entry.js
 
 花密网页版
 
-包含 vue-router和react-router测试
+包含 vue-router和react-router的单页面应用测试
 
 https://masx200.github.io/my-vue-router-project/
 
