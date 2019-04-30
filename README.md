@@ -33,6 +33,7 @@ parcel index.html
 现在在浏览器中打开 http://localhost:1234/ 地址。
 
 当需要打包应用程序用于生产环境时，你可以让 Parcel 在生产模式下打包。
+parcel build index.html
 
 parcel build entry.js
 
