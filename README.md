@@ -59,4 +59,10 @@ https://masx200.github.io/my-vue-router-project/
 
 https://masx200.github.io/my-react-router-test/
 
+# vue-router的单页面应用
 
+不使用.vue格式的文件,把vue相关的所有vue组件都合并放在一个index.js文件中,把template组件放在template.html文件中通过ajax加载,除了css文件
+
+# react-router的单页面应用
+
+把react相关所有代码都合并放在index.js文件中,除了css文件
