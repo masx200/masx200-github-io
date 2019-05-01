@@ -44,9 +44,31 @@ parcel build index.html
 
 parcel build entry.js
 
-# 网站结构介绍
-使用cdn加载依赖包,加快速度
 
+# 使用cdn加载依赖包,加快速度
+
+https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js
+
+https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css
+
+https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js
+
+https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js
+
+https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js
+
+https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js
+
+https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js
+
+https://cdn.staticfile.org/babel-standalone/7.0.0-beta.3/babel.min.js
+
+https://cdn.staticfile.org/vue/2.6.10/vue.min.js
+
+https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js
+
+https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
+# 网站结构介绍
 首页
 
 圆周率计算多线程
