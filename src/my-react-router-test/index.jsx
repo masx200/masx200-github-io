@@ -250,14 +250,21 @@ myonloadfunc = () => {
 
                             onetitle = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
                             // onedescription=x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
-                            onedescription = x[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
+                            onelink = x[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
 
 
+// description=x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue
+description="";
 
+for(value of x[i].getElementsByTagName("description")[0].childNodes){
+    description+=value.nodeValue
+}
 
+// console.log('length',x[i].getElementsByTagName("description")[0].childNodes.length)
                             window.myrsscontent.push({
                                 title: onetitle,
-                                link: onedescription
+                                link: onelink,
+                                description
 
                             })
 
@@ -316,6 +323,9 @@ myonloadfunc = () => {
                                                 <p class='mui-ellipsis'>
                                                     {e.link}
                                                 </p></a>
+                                                <p class='mui-ellipsis'>
+                                                    {e.description}
+                                                </p>
                                         </div>
 
                                     </li>
