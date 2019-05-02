@@ -47,6 +47,10 @@ parcel build entry.js
 
 # 使用cdn加载依赖包,加快速度
 
+https://img.cdn.aliyun.dcloud.net.cn/mui/dist/css/mui.min.css
+
+https://img.cdn.aliyun.dcloud.net.cn/mui/dist/js/mui.min.js
+
 https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js
 
 https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css
@@ -87,4 +91,4 @@ https://masx200.github.io/my-react-router-test/
 
 # react-router的单页面应用
 
-把react相关所有代码都合并放在index.js文件中,除了css文件
+把react相关所有代码都合并放在index.jsx文件中,除了css文件
