@@ -26,11 +26,11 @@ Parcel 是一个 web 应用打包工具, 与其他工具的区别在于开发者
 
 Yarn:
 
-yarn global add parcel-bundler
+yarn global add parcel-bundler cssnano
 
 npm:
 
-npm install -g parcel-bundler
+npm install -g parcel-bundler cssnano
 
 Parcel 内置了一个开发服务器，当文件改变时能够自动重新构建，而且为了实现快速开发，该开发服务器支持模块热替换。只需要在入口文件指出：
 
