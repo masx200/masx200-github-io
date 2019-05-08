@@ -77,9 +77,13 @@ https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
 
 # 圆周率计算多线程
 
+https://masx200.github.io/%E5%9C%86%E5%91%A8%E7%8E%87%E8%AE%A1%E7%AE%97-%E5%8F%AF%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%91%A8%E7%8E%87%E4%BD%8D%E6%95%B0-%E5%8F%AF%E9%80%89%E6%8B%A9%E7%BA%BF%E7%A8%8B%E4%B8%AA%E6%95%B0-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A4%A7%E6%95%B0%E6%A1%86%E6%9E%B6webworker%E8%BE%93%E5%87%BAuseragent%E5%A4%A7%E6%95%B0%E6%A1%86%E6%9E%B6/index.html
+
 # 花密网页版
 
-包含 vue-router和react-router的单页面应用测试
+https://masx200.github.io/%E8%8A%B1%E5%AF%86%E7%BD%91%E9%A1%B5%E7%89%88-%E5%AE%8C%E5%96%84%E4%BF%AE%E6%94%B9%E7%89%88-%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E5%AF%BC%E8%88%AA%E6%A0%8F/index.html
+
+# 包含 vue-router和react-router的单页面应用测试
 
 https://masx200.github.io/my-vue-router-project/
 
@@ -109,3 +113,9 @@ hieroglyphy是一个工具和javascript库，用于将字符串，数字和脚�
 <code>
 ()[]{}+!
 </code>
+
+https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck%20Decoder%20%20and%20hieroglyphy%20%20decoder.html
+
+https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/hieroglyphy%20encoder.html
+
+https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSFuck%20-%20Write%20any%20JavaScript%20with%206%20Characters_%20[]()!+.html
