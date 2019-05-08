@@ -75,9 +75,9 @@ https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
 # 网站结构介绍
 首页
 
-圆周率计算多线程
+# 圆周率计算多线程
 
-花密网页版
+# 花密网页版
 
 包含 vue-router和react-router的单页面应用测试
 
@@ -94,3 +94,18 @@ https://masx200.github.io/my-react-router-test/
 # react-router的单页面应用
 
 把react相关所有代码都合并放在index.jsx文件中,除了css文件
+
+# JSfuck-and-hieroglyphy-Decoder-and-ENCODER
+JSfuck and hieroglyphy Decoder and  ENCODER
+
+JSFuck是一种基于JavaScript原子部分的深奥教育编程风格。它只使用六个不同的字符来编写和执行代码
+
+hieroglyphy是一个工具和javascript库，用于将字符串，数字和脚本转换为 的等效序列！在浏览器中运行的字符
+
+<code>
+    ()+[]!
+</code>
+    和
+<code>
+()[]{}+!
+</code>
