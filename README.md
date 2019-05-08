@@ -47,11 +47,19 @@ parcel build entry.js
 
 # 使用cdn加载依赖包,加快速度
 
+https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css
+
+https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js
+
+https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js
+
 https://img.cdn.aliyun.dcloud.net.cn/mui/dist/css/mui.min.css
 
 https://img.cdn.aliyun.dcloud.net.cn/mui/dist/js/mui.min.js
 
 https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js
+
+https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap-theme.css
 
 https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css
 
