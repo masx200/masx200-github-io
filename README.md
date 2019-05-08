@@ -47,11 +47,19 @@ parcel build entry.js
 
 # 使用cdn加载依赖包,加快速度
 
+https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css
+
+https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js
+
+https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js
+
 https://img.cdn.aliyun.dcloud.net.cn/mui/dist/css/mui.min.css
 
 https://img.cdn.aliyun.dcloud.net.cn/mui/dist/js/mui.min.js
 
 https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js
+
+https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap-theme.css
 
 https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css
 
@@ -75,11 +83,15 @@ https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
 # 网站结构介绍
 首页
 
-圆周率计算多线程
+# 圆周率计算多线程
 
-花密网页版
+https://masx200.github.io/%E5%9C%86%E5%91%A8%E7%8E%87%E8%AE%A1%E7%AE%97-%E5%8F%AF%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%91%A8%E7%8E%87%E4%BD%8D%E6%95%B0-%E5%8F%AF%E9%80%89%E6%8B%A9%E7%BA%BF%E7%A8%8B%E4%B8%AA%E6%95%B0-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A4%A7%E6%95%B0%E6%A1%86%E6%9E%B6webworker%E8%BE%93%E5%87%BAuseragent%E5%A4%A7%E6%95%B0%E6%A1%86%E6%9E%B6/index.html
 
-包含 vue-router和react-router的单页面应用测试
+# 花密网页版
+
+https://masx200.github.io/%E8%8A%B1%E5%AF%86%E7%BD%91%E9%A1%B5%E7%89%88-%E5%AE%8C%E5%96%84%E4%BF%AE%E6%94%B9%E7%89%88-%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E5%AF%BC%E8%88%AA%E6%A0%8F/index.html
+
+# 包含 vue-router和react-router的单页面应用测试
 
 https://masx200.github.io/my-vue-router-project/
 
@@ -94,3 +106,24 @@ https://masx200.github.io/my-react-router-test/
 # react-router的单页面应用
 
 把react相关所有代码都合并放在index.jsx文件中,除了css文件
+
+# JSfuck-and-hieroglyphy-Decoder-and-ENCODER
+JSfuck and hieroglyphy Decoder and  ENCODER
+
+JSFuck是一种基于JavaScript原子部分的深奥教育编程风格。它只使用六个不同的字符来编写和执行代码
+
+hieroglyphy是一个工具和javascript库，用于将字符串，数字和脚本转换为 的等效序列！在浏览器中运行的字符
+
+<code>
+    ()+[]!
+</code>
+    和
+<code>
+()[]{}+!
+</code>
+
+https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck%20Decoder%20%20and%20hieroglyphy%20%20decoder.html
+
+https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/hieroglyphy%20encoder.html
+
+https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSFuck%20-%20Write%20any%20JavaScript%20with%206%20Characters_%20[]()!+.html
