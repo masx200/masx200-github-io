@@ -44,7 +44,7 @@ myonloadfunc = () => {
             window.location.hash = "#/"
             refreshall()
 
-
+            document.title="React router App-"+"home"
 
 
         }
@@ -122,7 +122,7 @@ myonloadfunc = () => {
         componentDidMount() {
 
             refreshall()
-
+            document.title="React router App-"+"about"
         }
         componentWillReceiveProps(newProps) {
 
@@ -232,7 +232,7 @@ myonloadfunc = () => {
         }
 
         componentDidMount() {
-
+            document.title="React router App-"+"rssreader"
             refreshall()
 
             jiazaiload = function (myid) {
@@ -372,10 +372,16 @@ myonloadfunc = () => {
                         <nav class="navbar navbar-default" role="navigation"  >
                             <div class="container-fluid">
                                 <div class="navbar-header">
-
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                                     <a class="navbar-brand ">masx200的github</a>
                                 </div>
-                                <div>
+                                <div class="collapse navbar-collapse" id="example-navbar-collapse">
                                     <ul class="nav navbar-nav">
                                         <li id="mynav1" class=
                                             {window.location.hash == "#/" ? "active" : ""}>
@@ -389,7 +395,7 @@ myonloadfunc = () => {
 
 
 
-                                            <Link to="/rssreader">rssreader</Link>
+                                            <Link to="/rssreader">rss阅读</Link>
                                         </li>
                                         <li id="mynav2" class=
                                             {window.location.hash == "#/about" ? "active" : ""}>
@@ -410,7 +416,7 @@ myonloadfunc = () => {
                             </div>
                         </nav>
 
-
+                        <div class="container">
                         <Switch>
 
                             <Route exact path="/" component={App}
@@ -420,7 +426,7 @@ myonloadfunc = () => {
                             <Route path="/about" component={about} />
 
                             <Redirect from='*' to='/' />
-                        </Switch>
+                        </Switch> </div>
                     </div>
                 </BrowserRouter>
             )

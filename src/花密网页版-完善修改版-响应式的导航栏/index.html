@@ -4,7 +4,7 @@
 
 
 <head>
-
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap-theme.css" rel="stylesheet">
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js">
@@ -24,9 +24,9 @@
             text-align: center
         }
 
-        #nav {
+        /* #nav {
             float: center;
-        }
+        } */
     </style>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -63,45 +63,57 @@
 
                 <a class="navbar-brand " href="#">masx200的github
                 </a>
-
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
 
             <div>
+                <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                    <ul class="nav navbar-nav">
 
-                <ul class="nav navbar-nav">
+                        <li>
+                            <a href="../index.html">首页
+                            </a>
+                        </li>
 
-                    <li>
-                        <a href="../index.html">首页
-                        </a>
-                    </li>
+                        <li class="">
+                            <a href="../圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/index.html">圆周率计算多线程
+                            </a>
 
-                    <li class="">
-                        <a href="../圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/index.html">圆周率计算多线程
-                        </a>
+                        </li>
 
-                    </li>
+                        <li class="active">
+                            <a>花密网页版
+                            </a>
+                        </li>
 
-                    <li class="active">
-                        <a>花密网页版
-                        </a>
-                    </li>
+                        <li>
 
-                    <li>
+                            <a href="../my-vue-router-project/index.html">基于VUE的主页
+                            </a>
 
-                        <a href="../my-vue-router-project/index.html">基于VUE的主页
-                        </a>
+                        </li>
 
-                    </li>
+                        <li>
 
-                    <li>
+                            <a href="../my-react-router-test/index.html">基于REACT的主页
+                            </a>
 
-                        <a href="../my-react-router-test/index.html">基于REACT的主页
-                        </a>
+                        </li>
+                        <li>
 
-                    </li>
+                            <a
+                                href="../JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck Decoder  and hieroglyphy  decoder.html">JSfuck-and-hieroglyphy-Decoder-and-ENCODER
+                            </a>
 
-                </ul>
-
+                        </li>
+                    </ul>
+                </div>
             </div>
 
         </div>
@@ -273,8 +285,8 @@ width: 100%;
 
         </div> -->
 
+        </div>
     </div>
-
 
     <script src="huami+clipboard.js" defer type="text/javascript">
 

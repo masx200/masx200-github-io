@@ -106,8 +106,15 @@ function myonload2  ()  {
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand">masx200的github</a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                     </div>
-                    <div>
+                    <div class="collapse navbar-collapse" id="example-navbar-collapse">
                         <ul class="nav navbar-nav" @click="mychangemenu()">
                             <li id="mynav1" v-bind:class="{ active: isActive1 }">
                                 <!--     <a href="">首页</a> -->
@@ -131,8 +138,8 @@ function myonload2  ()  {
                     </div>
                 </div>
             </nav>
-        
-            <router-view />
+            <div class="container">
+            <router-view /> </div>
         </div>
         `,
             name: "App",
@@ -258,7 +265,7 @@ function myonload2  ()  {
         //     mychangemenu();
         // },
         mounted() {
-
+            document.title="vue-router-project-"+"huami"
 
             // window.handleClick2()
             window.mychangemenu();
@@ -726,7 +733,7 @@ function myonload2  ()  {
             // }
         },
         mounted() {
-
+            document.title="vue-router-project-"+"home"
             // window.handleClick1()
             window.mychangemenu();
         }
@@ -857,6 +864,7 @@ function myonload2  ()  {
             // }
         },
         mounted() {
+            document.title="vue-router-project-"+"about"
             // console.log(
             // render(<div>JSX</div>))
             // window.handleClick3()

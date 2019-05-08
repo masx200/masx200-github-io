@@ -18,7 +18,9 @@ function getConstpinewhighefficiency105() {
 	myshurukuangneirong = myshurukuangneirong + "开始圆周率多线程测试\n";
 	myptext.value = myshurukuangneirong;
 	document.getElementById("start").onclick = mystart;
-
+    setTimeout(function() {
+        myptext.style.height = myptext.scrollHeight + 'px';
+    }, 0);
 }
 
 function mystart() {
@@ -31,7 +33,7 @@ function mystart() {
 		document.getElementById("pichangwei").value = Math.floor(document.getElementById("pichangwei").value)
 		threadgeshu = Math.floor(document.getElementById("thread").value)
 		document.getElementById("thread").value = threadgeshu
-		document.title = document.title + "-" + "线程数为" + threadgeshu
+		document.title ='圆周率计算多线程' + "-" + "线程数为" + threadgeshu
 		myshurukuangneirong = myshurukuangneirong + "线程数为" + threadgeshu + "\n";
 		myptext.value = myshurukuangneirong;
 		eventdata = "圆周率计算" + piwei + "位" + "  \n" + "计算圆周率中......" + "  \n";
