@@ -31,7 +31,7 @@ myonloadfunc = () => {
 
     const { Link, Switch, BrowserRouter, Route, Redirect } = ReactRouterDOM
 
-
+    hcreate=React.createElement
 
 
 
@@ -71,9 +71,9 @@ myonloadfunc = () => {
                         <div class="container">
                             <div class="jumbotron">
                                 <h1>欢迎登陆页面！</h1>
-                                <p><a target="_blank" href="https://weibo.com/2174458781?/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1">一生忽而得一夏当司掌好年华的微博_微博
+                                <p><a target="_blank" href="https://weibo.com/2174458781?">一生忽而得一夏当司掌好年华的微博
                         </a></p>
-                                <p><a target="_blank" href="https://github.com/masx200">masx200的github主页
+                                <p><a target="_blank" href="https://github.com/masx200">masx200的github仓库
                             </a></p>
                             </div>
                         </div>
@@ -207,6 +207,13 @@ myonloadfunc = () => {
 
 
         jiazairss1() {
+//             const Bundler = require('parcel-bundler');
+
+// let bundler = new Bundler('');
+// bundler.addAssetType('.xml', require.resolve('./www.tmtpost.com.rss'));
+// console.log(bundler )
+        //    xml1data= require("www.tmtpost.com.rss.xml")
+        //    console.log(xml1data)
             var myselectorid = "#xml1"
 
             jiazaiload(myselectorid)
@@ -379,7 +386,7 @@ myonloadfunc = () => {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                                    <a class="navbar-brand ">masx200的github</a>
+                                    <a class="navbar-brand " href="../index.html">masx200的github主页</a>
                                 </div>
                                 <div class="collapse navbar-collapse" id="example-navbar-collapse">
                                     <ul class="nav navbar-nav">
@@ -402,15 +409,30 @@ myonloadfunc = () => {
 
 
 
-                                            <Link to="/about">关于</Link>
+                                            <Link to="/about">关于REACT</Link>
                                         </li>
 
-                                        <li>
+                                        {/* <li>
                                             <a href="../index.html">传统网页</a>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <a href="../my-vue-router-project/index.html">基于vue的主页</a>
                                         </li>
+                                        <li class="">
+                            <a href="../圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/index.html">圆周率计算多线程
+                            </a>
+
+                        </li>
+                             <li>
+                        <a href="../花密网页版-完善修改版-响应式的导航栏/index.html">花密网页版
+                        </a>
+                    </li> 
+                    <li>
+                    <a
+                    href="../JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck Decoder  and hieroglyphy  decoder.html">JSfuck-and-hieroglyphy-Decoder-and-ENCODER
+                </a>
+
+            </li>
                                     </ul>
                                 </div>
                             </div>
