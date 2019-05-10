@@ -46,7 +46,7 @@ parcel build entry.js
 
 
 # 使用cdn加载依赖包,加快速度
-
+```
 https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css
 
 https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js
@@ -80,6 +80,7 @@ https://cdn.staticfile.org/vue/2.6.10/vue.min.js
 https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js
 
 https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
+```
 # 网站结构介绍
 首页
 
