@@ -156,7 +156,7 @@ function myonload2  ()  {
             <div class="container">
             <router-view /> </div>
         </div>
-        `,
+        `.replace(/\n/g,""),
             name: "App",
             data() {
                 return {
@@ -253,7 +253,7 @@ function myonload2  ()  {
                 </div>
             </div>
         </div>
-    </div>`,
+    </div>`.replace(/\n/g,""),
         name: "huami",
         data() {
             return {
@@ -724,7 +724,7 @@ function myonload2  ()  {
         <h2>现在是 {{new Date().toLocaleTimeString()}}.</h2>
         <h1>{{ msg }}</h1>
     </div>
-    `,
+    `.replace(/\n/g,""),
         name: "home",
         data() {
             return {
@@ -811,7 +811,7 @@ function myonload2  ()  {
             </li>
         </ul>
     </div>
-    `,
+    `.replace(/\n/g,""),
         //         render(h) {
         // //             class Apphome extends React.Component {
 
