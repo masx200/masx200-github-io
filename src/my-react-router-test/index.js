@@ -2,7 +2,10 @@
 /* eslint-disable */
 // import React from 'react';
 //在react的jsx文件中这句话能删除!
-haverun = 0
+(()=>{
+
+
+let haverun = 0
 setTimeout(() => {
     window.onload()
 }, 1000)
@@ -15,8 +18,9 @@ window.onload = function () {
         console.log("不要重复运行此onload函数")
     }
 }
-myonloadfunc = () => {
-    window.myrsscontent = []
+let myonloadfunc = () => {
+    // window.myrsscontent = []
+    let myrsscontent = []
     const {
         render
     } = ReactDOM
@@ -27,8 +31,41 @@ myonloadfunc = () => {
         Route,
         Redirect
     } = ReactRouterDOM
-    hcreate = React.createElement
-    class App extends React.Component {
+//   let  hcreate = React.createElement
+var   jiazaiload=(myid)=> {
+    var myselectorid = myid
+    // window.myrsscontent = []
+    myrsscontent = []
+    console.log("开始加载外部内容", $(myselectorid).attr("src"))
+    if (typeof $(myselectorid).attr("src") == "undefined") {
+        console.log("加载失败")
+    } else {
+        $.get($(myselectorid).attr("src"), function (data, status) {
+            console.log(status, typeof data, data)
+            xmlDoc = data
+            x = xmlDoc.getElementsByTagName("item");
+            for (i = 0; i < x.length; i++) {
+                onetitle = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                onelink = x[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
+                description = "";
+                for (value of x[i].getElementsByTagName("description")[0].childNodes) {
+                    description += value.nodeValue
+                }
+                // window.myrsscontent.push
+                myrsscontent.push
+                ({
+                    title: onetitle,
+                    link: onelink,
+                    description
+                })
+            }
+            console.log(myrsscontent)
+            // console.log(window.myrsscontent)
+            refreshall()
+        })
+    }
+}
+ class App extends React.Component {
         componentWillMount() {}
         componentDidMount() {
             window.location.hash = "#/"
@@ -144,6 +181,7 @@ Learn React
         }
     }
     class rssreader extends React.Component {
+     
         componentWillMount() {}
         jiazairss1() {
             var myselectorid = "#xml1"
@@ -164,35 +202,7 @@ Learn React
         componentDidMount() {
             document.title = "React router App-" + "rssreader"
             refreshall()
-            jiazaiload = function (myid) {
-                var myselectorid = myid
-                window.myrsscontent = []
-                console.log("开始加载外部内容", $(myselectorid).attr("src"))
-                if (typeof $(myselectorid).attr("src") == "undefined") {
-                    console.log("加载失败")
-                } else {
-                    $.get($(myselectorid).attr("src"), function (data, status) {
-                        console.log(status, typeof data, data)
-                        xmlDoc = data
-                        x = xmlDoc.getElementsByTagName("item");
-                        for (i = 0; i < x.length; i++) {
-                            onetitle = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-                            onelink = x[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
-                            description = "";
-                            for (value of x[i].getElementsByTagName("description")[0].childNodes) {
-                                description += value.nodeValue
-                            }
-                            window.myrsscontent.push({
-                                title: onetitle,
-                                link: onelink,
-                                description
-                            })
-                        }
-                        console.log(window.myrsscontent)
-                        refreshall()
-                    })
-                }
-            }
+          
         }
         componentWillReceiveProps(newProps) {}
         shouldComponentUpdate(newProps, newState) {
@@ -215,7 +225,10 @@ Learn React
 <header className="App-header">
 <div>
 <ul class="mui-table-view">
-{window.myrsscontent.map(e => (
+{
+    // window.myrsscontent.map
+    myrsscontent.map
+(e => (
 <li class="mui-table-view-cell mui-media">
 <div class="mui-media-body">
 {e.title}
@@ -282,9 +295,7 @@ data-target="#example-navbar-collapse">
 </li> 
 <li>
 <a
-href="../JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck Decoder
-and hieroglyphy
-decoder.html">JSfuck-and-hieroglyphy-Decoder-and-ENCODER
+href="../JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck-Decoder--and-hieroglyphy--decoder.html">JSfuck-and-hieroglyphy-Decoder-and-ENCODER
 </a>
 </li>
 </ul>
@@ -318,6 +329,9 @@ decoder.html">JSfuck-and-hieroglyphy-Decoder-and-ENCODER
         render(( < Apphome / > ), document.getElementById('root'))
     }
     render(( < Apphome / > ), document.getElementById('root'));
-    window.refreshall = refreshall
+    {/* window.refreshall = refreshall */}
+    {/* let refreshall =()=> myrefreshall */}
 }
 window.onload()
+
+})()

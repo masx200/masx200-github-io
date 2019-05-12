@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" 
+    xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns:atom="http://www.w3.org/2005/Atom" 
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+    <channel>
+        <title>蓝点网</title>
+        <atom:link href="https://www.landiannews.com/feed" rel="self" type="application/rss+xml" />
+        <link>https://www.landiannews.com</link>
+        <description>给你感兴趣的内容！</description>
+        <lastBuildDate>Thu, 02 May 2019 05:24:56 +0000</lastBuildDate>
+        <language>zh-CN</language>
+        <sy:updatePeriod>hourly</sy:updatePeriod>
+        <sy:updateFrequency>1</sy:updateFrequency>
+        <item>
+            <title>[下载] 微软向Windows 10 V1809推出新累积更新解决日文版令和问题</title>
+            <link>https://www.landiannews.com/archives/58166.html</link>
+            <comments>https://www.landiannews.com/archives/58166.html#comments</comments>
+            <pubDate>Thu, 02 May 2019 05:24:56 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[补丁下载]]></category>
+            <category><![CDATA[软件工具]]></category>
+            <category><![CDATA[KB4501835]]></category>
+            <category><![CDATA[windows 10]]></category>
+            <category><![CDATA[Windows 10 Version 1809]]></category>
+            <category><![CDATA[令和]]></category>
+            <category><![CDATA[微软]]></category>
+            <category><![CDATA[日本]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58166</guid>
+            <description><![CDATA[微软目前已经面向 Windows 10 Version 1809 版推出新的累积更新补丁 KB4501835 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58166.html/feed</wfw:commentRss>
+            <slash:comments>1</slash:comments>
+        </item>
+        <item>
+            <title>设计师根据当前已有消息发布的 iPhone 11 XS/Max 高清渲染图</title>
+            <link>https://www.landiannews.com/archives/58162.html</link>
+            <comments>https://www.landiannews.com/archives/58162.html#comments</comments>
+            <pubDate>Thu, 02 May 2019 02:17:44 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[Apple]]></category>
+            <category><![CDATA[科技资讯]]></category>
+            <category><![CDATA[iPhone]]></category>
+            <category><![CDATA[iPhone 11]]></category>
+            <category><![CDATA[概念图]]></category>
+            <category><![CDATA[渲染]]></category>
+            <category><![CDATA[苹果]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58162</guid>
+            <description><![CDATA[目前关于iPhone 11 XS/Max的消息已经有不少，新款iPhone到现在为止最显著特点应该就是三摄像头 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58162.html/feed</wfw:commentRss>
+            <slash:comments>2</slash:comments>
+        </item>
+        <item>
+            <title>外媒确认2020年发布的WCOS操作系统不会支持Win32桌面软件</title>
+            <link>https://www.landiannews.com/archives/58159.html</link>
+            <comments>https://www.landiannews.com/archives/58159.html#comments</comments>
+            <pubDate>Thu, 02 May 2019 01:58:31 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[Windows]]></category>
+            <category><![CDATA[科技资讯]]></category>
+            <category><![CDATA[WCOS]]></category>
+            <category><![CDATA[windows 10]]></category>
+            <category><![CDATA[Windows 10 Lite]]></category>
+            <category><![CDATA[Windows Core OS]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58159</guid>
+            <description><![CDATA[在此前的关于WCOS操作系统的消息里蓝点网已经提到，该操作系统可能不准备再支持传统的Win32类软件。 这意味 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58159.html/feed</wfw:commentRss>
+            <slash:comments>1</slash:comments>
+        </item>
+        <item>
+            <title>[下载]谷歌浏览器v74.0.3729.131稳定版(正式版)离线安装包</title>
+            <link>https://www.landiannews.com/archives/58157.html</link>
+            <comments>https://www.landiannews.com/archives/58157.html#comments</comments>
+            <pubDate>Thu, 02 May 2019 01:38:42 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[科技资讯]]></category>
+            <category><![CDATA[软件资讯]]></category>
+            <category><![CDATA[Chrome]]></category>
+            <category><![CDATA[chromium]]></category>
+            <category><![CDATA[Google Chrome]]></category>
+            <category><![CDATA[浏览器]]></category>
+            <category><![CDATA[谷歌]]></category>
+            <category><![CDATA[谷歌浏览器]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58157</guid>
+            <description><![CDATA[谷歌浏览器开发团队目前已经推出v74.0.3729.131版，这也是v74稳定版通道在发布后迎来的首个修复版本 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58157.html/feed</wfw:commentRss>
+            <slash:comments>1</slash:comments>
+        </item>
+        <item>
+            <title>Windows 10内置的安全功能使得Chromium系列浏览器速度放慢三倍</title>
+            <link>https://www.landiannews.com/archives/58154.html</link>
+            <comments>https://www.landiannews.com/archives/58154.html#comments</comments>
+            <pubDate>Wed, 01 May 2019 13:28:39 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[科技资讯]]></category>
+            <category><![CDATA[软件资讯]]></category>
+            <category><![CDATA[chromium]]></category>
+            <category><![CDATA[windows 10]]></category>
+            <category><![CDATA[浏览器]]></category>
+            <category><![CDATA[漏洞]]></category>
+            <category><![CDATA[维瓦尔第]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58154</guid>
+            <description><![CDATA[维瓦尔第浏览器的开发团队发布报告称Windows 10内置的安全功能严重拖慢Chromium系列浏览器的性能。 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58154.html/feed</wfw:commentRss>
+            <slash:comments>2</slash:comments>
+        </item>
+        <item>
+            <title>王欣马桶MT更名为「好记」转型内容电商 然后也学聊天宝做奖赏系统</title>
+            <link>https://www.landiannews.com/archives/58149.html</link>
+            <comments>https://www.landiannews.com/archives/58149.html#comments</comments>
+            <pubDate>Wed, 01 May 2019 10:02:19 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[科技资讯]]></category>
+            <category><![CDATA[软件资讯]]></category>
+            <category><![CDATA[MT]]></category>
+            <category><![CDATA[云歌智能]]></category>
+            <category><![CDATA[内容电商]]></category>
+            <category><![CDATA[好记]]></category>
+            <category><![CDATA[王欣]]></category>
+            <category><![CDATA[马桶MT]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58149</guid>
+            <description><![CDATA[年初原快播王欣新创立的公司云歌智能推出匿名社交软件马桶 MT，声称要打造人脉暗网提供微信看不到的。 不过马桶 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58149.html/feed</wfw:commentRss>
+            <slash:comments>1</slash:comments>
+        </item>
+        <item>
+            <title>爱奇艺突然全面下架漫威系列电影 官方解释称版权到期不会补偿会员</title>
+            <link>https://www.landiannews.com/archives/58145.html</link>
+            <comments>https://www.landiannews.com/archives/58145.html#comments</comments>
+            <pubDate>Wed, 01 May 2019 09:22:47 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[科技资讯]]></category>
+            <category><![CDATA[网站应用]]></category>
+            <category><![CDATA[漫威]]></category>
+            <category><![CDATA[爱奇艺]]></category>
+            <category><![CDATA[版权]]></category>
+            <category><![CDATA[电影]]></category>
+            <category><![CDATA[腾讯视频]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58145</guid>
+            <description><![CDATA[日前复仇者联盟终局之战正在热映时爱奇艺突然下架漫威电影，包括美国队长、钢铁侠、雷神等全系列电影。 趁着终局之战 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58145.html/feed</wfw:commentRss>
+            <slash:comments>3</slash:comments>
+        </item>
+        <item>
+            <title>受害者指出上月Outlook攻击事件导致用户虚拟货币被窃取损失1BTC</title>
+            <link>https://www.landiannews.com/archives/58143.html</link>
+            <comments>https://www.landiannews.com/archives/58143.html#comments</comments>
+            <pubDate>Wed, 01 May 2019 06:48:41 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[安全资讯]]></category>
+            <category><![CDATA[科技资讯]]></category>
+            <category><![CDATA[outlook]]></category>
+            <category><![CDATA[安全事件]]></category>
+            <category><![CDATA[微软]]></category>
+            <category><![CDATA[攻击]]></category>
+            <category><![CDATA[比特币]]></category>
+            <category><![CDATA[黑客]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58143</guid>
+            <description><![CDATA[上个月攻击者设法获得微软技术支持的登录凭证，该登录凭证可被用来直接访问Outlook邮箱查询邮箱内容。 期初微 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58143.html/feed</wfw:commentRss>
+            <slash:comments>1</slash:comments>
+        </item>
+        <item>
+            <title>中国移动开始为老用户提供免费流量 发送2019到10086即可领取</title>
+            <link>https://www.landiannews.com/archives/58140.html</link>
+            <comments>https://www.landiannews.com/archives/58140.html#comments</comments>
+            <pubDate>Wed, 01 May 2019 06:37:39 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[生活周边]]></category>
+            <category><![CDATA[中国移动]]></category>
+            <category><![CDATA[流量]]></category>
+            <category><![CDATA[流量包]]></category>
+            <category><![CDATA[网龄]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58140</guid>
+            <description><![CDATA[日前中国移动开始按网龄时长为用户提供免费流量 ,  只需要发送 2019 到10086即可查询网龄和领取流量等 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58140.html/feed</wfw:commentRss>
+            <slash:comments>7</slash:comments>
+        </item>
+        <item>
+            <title>微软会阻止以下几类设备主动升级到 Windows 10 Version 1903 版</title>
+            <link>https://www.landiannews.com/archives/58137.html</link>
+            <comments>https://www.landiannews.com/archives/58137.html#comments</comments>
+            <pubDate>Wed, 01 May 2019 05:32:16 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[Windows]]></category>
+            <category><![CDATA[科技资讯]]></category>
+            <category><![CDATA[2019年5月更新]]></category>
+            <category><![CDATA[windows 10]]></category>
+            <category><![CDATA[Windows 10 Version 1903]]></category>
+            <category><![CDATA[已知问题]]></category>
+            <category><![CDATA[漏洞]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58137</guid>
+            <description><![CDATA[按计划微软将在本月底开始向全球用户分批推送 Windows 10 Version 1903 正式版本但还有些是 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58137.html/feed</wfw:commentRss>
+            <slash:comments>2</slash:comments>
+        </item>
+        <item>
+            <title>谷歌在线文档服务屏蔽Microsoft Edge 这次依然还是微软的锅</title>
+            <link>https://www.landiannews.com/archives/58133.html</link>
+            <comments>https://www.landiannews.com/archives/58133.html#comments</comments>
+            <pubDate>Tue, 30 Apr 2019 16:43:32 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[科技资讯]]></category>
+            <category><![CDATA[软件资讯]]></category>
+            <category><![CDATA[Microsoft Edge]]></category>
+            <category><![CDATA[UA]]></category>
+            <category><![CDATA[微软]]></category>
+            <category><![CDATA[浏览器]]></category>
+            <category><![CDATA[谷歌]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58133</guid>
+            <description><![CDATA[日前部分用户发现使用微软 Microsoft Edge 浏览器访问谷歌在线文档服务时会弹出提示称浏览器不被支持 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58133.html/feed</wfw:commentRss>
+            <slash:comments>6</slash:comments>
+        </item>
+        <item>
+            <title>三星计划明年开始发布基于5纳米制程的智能手机和其他设备芯片</title>
+            <link>https://www.landiannews.com/archives/58130.html</link>
+            <comments>https://www.landiannews.com/archives/58130.html#comments</comments>
+            <pubDate>Tue, 30 Apr 2019 15:13:26 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[科技资讯]]></category>
+            <category><![CDATA[行业资讯]]></category>
+            <category><![CDATA[5纳米]]></category>
+            <category><![CDATA[SoC]]></category>
+            <category><![CDATA[三星]]></category>
+            <category><![CDATA[制程]]></category>
+            <category><![CDATA[处理器]]></category>
+            <category><![CDATA[极紫外]]></category>
+            <category><![CDATA[芯片]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58130</guid>
+            <description><![CDATA[三星目前已经开始批量生产基于7纳米制程的芯片产品，不过该公司目前也已经决定明年开始使用5纳米制程。 三星表示当 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58130.html/feed</wfw:commentRss>
+            <slash:comments>1</slash:comments>
+        </item>
+        <item>
+            <title>微软Microsoft Edge浏览器开放微软翻译服务 暂时国内用户无法使用</title>
+            <link>https://www.landiannews.com/archives/58127.html</link>
+            <comments>https://www.landiannews.com/archives/58127.html#comments</comments>
+            <pubDate>Tue, 30 Apr 2019 15:03:52 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[科技资讯]]></category>
+            <category><![CDATA[软件资讯]]></category>
+            <category><![CDATA[Microsoft Edge]]></category>
+            <category><![CDATA[微软]]></category>
+            <category><![CDATA[微软翻译]]></category>
+            <category><![CDATA[浏览器]]></category>
+            <category><![CDATA[翻译]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58127</guid>
+            <description><![CDATA[此前我们提到微软新版 Microsoft Edge 浏览器正在测试翻译服务，当时微软仅面向部分用户开启翻译测试 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58127.html/feed</wfw:commentRss>
+            <slash:comments>1</slash:comments>
+        </item>
+        <item>
+            <title>移动/联通/电信/腾讯云等被工信部纳入电信业务经营不良名单</title>
+            <link>https://www.landiannews.com/archives/58123.html</link>
+            <comments>https://www.landiannews.com/archives/58123.html#comments</comments>
+            <pubDate>Tue, 30 Apr 2019 14:44:59 +0000</pubDate>
+            <dc:creator><![CDATA[山外的鸭子哥]]></dc:creator>
+            <category><![CDATA[科技资讯]]></category>
+            <category><![CDATA[行业资讯]]></category>
+            <category><![CDATA[IDC]]></category>
+            <category><![CDATA[工信部]]></category>
+            <category><![CDATA[服务器]]></category>
+            <category><![CDATA[电信业务]]></category>
+            <category><![CDATA[运营商]]></category>
+            <guid isPermaLink="false">https://www.landiannews.com/?p=58123</guid>
+            <description><![CDATA[工信部日前公布消息称全国多家公司被纳入电信业务经营不良名单，不良名单里不乏移动联通电信等运营商。 这次公布的不 [&#8230;]]]></description>
+            <wfw:commentRss>https://www.landiannews.com/archives/58123.html/feed</wfw:commentRss>
+            <slash:comments>3</slash:comments>
+        </item>
+    </channel>
+</rss>
