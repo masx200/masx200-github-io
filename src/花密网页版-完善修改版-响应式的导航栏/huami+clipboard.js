@@ -69,8 +69,14 @@ function countCode() {
   	var clipboard = new ClipboardJS('.btn');
 
   	clipboard.on('success', function(e) {
-  		console.info('Action:', e.action);
-  		console.info('Text:', e.text);
+        if (!e.text) {
+            console.log("复制内容空")
+        } else {
+            console.info("Action:", e.action);
+            console.info("Text:", e.text);
+        }
+  		// console.info('Action:', e.action);
+  		// console.info('Text:', e.text);
 
   		e.clearSelection();
   	});

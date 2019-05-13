@@ -1,6 +1,6 @@
 (() => {
     window.onload = mytestpi;
-    var myptext, myshurukuangneirong, jisuanfinishflag, threadgeshu, x, piwei,myworker;
+    var myptext, myshurukuangneirong,p, threadgeshu, x, piwei,myworker,eventdata,strt,finishflag,durt,endt;
 
     function mytestpi() {
 
@@ -10,7 +10,7 @@
     function getConstpinewhighefficiency105() {
         document.getElementById("thread").value = 8
         document.getElementById("pichangwei").value = 3
-        jisuanfinishflag = 1;
+        // jisuanfinishflag = 1;
         threadgeshu = 8
         x = 0;
         // piwei = 3000;
@@ -27,7 +27,7 @@
 
     function mystart() {
 
-        jisuanfinishflag = 0;
+        // jisuanfinishflag = 0;
 
         if (document.getElementById("thread").value >= 1 && document.getElementById("thread").value <= 12 && document.getElementById(
                 "pichangwei").value >= 1 && document.getElementById("pichangwei").value <= 100) {
@@ -99,7 +99,7 @@
             myptext = document.getElementById("tp");
             myshurukuangneirong += String(eventdata);
             myptext.value = myshurukuangneirong;
-            jisuanfinishflag = 1;
+            // jisuanfinishflag = 1;
             myworker.forEach(function (currentValue, index, arr) {
                 arr[index].terminate()
             })

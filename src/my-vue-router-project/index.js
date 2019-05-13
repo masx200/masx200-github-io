@@ -1,14 +1,16 @@
 // eslint-disable-next-line
 /* eslint-disable */
 // import React from 'react';
-(() => {
+(()=>{
+    var Router
     // var myvueobj;
     let haverun = 0
-    setTimeout(() => {
+    setTimeout(()=>{
         window.onload()
-    }, 1000)
+    }
+    , 1000)
     let myonloadfunc = myonload2
-    window.onload = () => {
+    window.onload = ()=>{
         if (haverun == 0) {
             haverun = 1
             console.log("开始运行此onload函数")
@@ -20,7 +22,6 @@
     }
     // window.mychangemenu = function () {
 
-
     function myonload2() {
         Vue.config.productionTip = false
         Vue.config.silent = true
@@ -28,10 +29,11 @@
         Router = VueRouter
         Vue.use(VueRouter)
         window.keysave = ""
-        $(window).on("hashchange", () => {
+        $(window).on("hashchange", ()=>{
             console.log("hashchange")
             $("#mynavul").click()
-        })
+        }
+        )
         let App = {
             template: `<div id="root">
 <nav class="navbar navbar-default" role="navigation">
@@ -89,16 +91,14 @@ data-target="#example-navbar-collapse">
                     // console.log("myfreshdata")
                     // console.log(this.isActive1,this.isActive2,this.isActive3)
                     this.isActive1 = window.location.hash == "#/" ? true : false,
-                        this.isActive2 = window.location.hash == "#/huami" ? true : false,
-                        this.isActive3 = window.location.hash == "#/about" ? true : false;
+                    this.isActive2 = window.location.hash == "#/huami" ? true : false,
+                    this.isActive3 = window.location.hash == "#/about" ? true : false;
                     // Vue.set(this.isActive1)
                     console.log("myfreshdata", this.isActive1, this.isActive2, this.isActive3)
-                }
-                // mychangemenu=()=>mychangemenu
+                }// mychangemenu=()=>mychangemenu
             },
-            mounted() {
-                // window.mychangemenu();
-                // mychangemenu();
+            mounted() {// window.mychangemenu();
+            // mychangemenu();
             }
         }
         let huami = {
@@ -121,29 +121,23 @@ data-target="#example-navbar-collapse">
                 // console.log(window.keysave)
             },
             //beforeDestroy
-            activated() {
-                // console.log("huami, activated")
+            activated() {// console.log("huami, activated")
 
             },
             //activated
-            updated() {
-                // console.log("huami, updated")
+            updated() {// console.log("huami, updated")
 
             },
             beforeUpdate() {
-
-                // console.log("huami,beforeUpdate")
+            // console.log("huami,beforeUpdate")
             },
 
-            beforeCreate() {
-                // console.log("huami,beforeCreate")
+            beforeCreate() {// console.log("huami,beforeCreate")
             },
-            beforeMount() {
-                // console.log("huami,beforeMount")
+            beforeMount() {// console.log("huami,beforeMount")
 
             },
-            destroyed() {
-                // console.log("huami,destroyed")
+            destroyed() {// console.log("huami,destroyed")
             },
             template: `<div class="hello">
 <div class="container" id="rong1" style="
@@ -224,12 +218,12 @@ width: 100%;
                  * Distributed under the BSD License
                  * See http://pajhome.org.uk/crypt/md5 for more info.
                  */
-                (function ($) {
+                (function($) {
                     "use strict";
 
                     function safe_add(x, y) {
-                        var lsw = (x & 0xffff) + (y & 0xffff),
-                            msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+                        var lsw = (x & 0xffff) + (y & 0xffff)
+                          , msw = (x >> 16) + (y >> 16) + (lsw >> 16);
                         return (msw << 16) | (lsw & 0xffff);
                     }
 
@@ -260,10 +254,7 @@ width: 100%;
                     function binl_md5(x, len) {
                         x[len >> 5] |= 0x80 << len % 32;
                         x[(((len + 64) >>> 9) << 4) + 14] = len;
-                        var i, olda, oldb, oldc, oldd, a = 1732584193,
-                            b = -271733879,
-                            c = -1732584194,
-                            d = 271733878;
+                        var i, olda, oldb, oldc, oldd, a = 1732584193, b = -271733879, c = -1732584194, d = 271733878;
                         for (i = 0; i < x.length; i += 16) {
                             olda = a;
                             oldb = b;
@@ -366,10 +357,7 @@ width: 100%;
                     }
 
                     function rstr_hmac_md5(key, data) {
-                        var i, bkey = rstr2binl(key),
-                            ipad = [],
-                            opad = [],
-                            hash;
+                        var i, bkey = rstr2binl(key), ipad = [], opad = [], hash;
                         ipad[15] = opad[15] = undefined;
                         if (bkey.length > 16) {
                             bkey = binl_md5(bkey, key.length * 8);
@@ -383,9 +371,7 @@ width: 100%;
                     }
 
                     function rstr2hex(input) {
-                        var hex_tab = "0123456789abcdef",
-                            output = "",
-                            x, i;
+                        var hex_tab = "0123456789abcdef", output = "", x, i;
                         for (i = 0; i < input.length; i += 1) {
                             x = input.charCodeAt(i);
                             output += hex_tab.charAt((x >>> 4) & 0x0f) + hex_tab.charAt(x & 0x0f);
@@ -412,7 +398,7 @@ width: 100%;
                     function hex_hmac_md5(k, d) {
                         return rstr2hex(raw_hmac_md5(k, d));
                     }
-                    $.md5 = function (string, key, raw) {
+                    $.md5 = function(string, key, raw) {
                         if (!key) {
                             if (!raw) {
                                 return hex_md5(string);
@@ -425,8 +411,10 @@ width: 100%;
                         } else {
                             return raw_hmac_md5(key, string);
                         }
-                    };
-                })(typeof jQuery === "function" ? jQuery : this)
+                    }
+                    ;
+                }
+                )(typeof jQuery === "function" ? jQuery : this)
 
                 function countCode() {
                     var password = $("#password").val();
@@ -458,40 +446,40 @@ width: 100%;
                     window.keysave = $("#key").val();
                     // console.log(window.keysave)
                 }
-                $(function () {
+                $(function() {
                     $("#password").change(countCode);
                     $("#key").change(countCode);
                     $("#password").keyup(countCode);
                     $("#key").keyup(countCode);
-                    $("#code16").mouseover(function () {
+                    $("#code16").mouseover(function() {
                         $("#copycode16").addClass("copycode16h");
                         $("#code16").addClass("code16h");
                     });
-                    $("#code16").mouseout(function () {
+                    $("#code16").mouseout(function() {
                         $("#copycode16").removeClass("copycode16h");
                         $("#code16").removeClass("code16h");
                     });
-                    $("#copycode16").mouseover(function () {
+                    $("#copycode16").mouseover(function() {
                         $("#copycode16").addClass("copycode16h");
                         $("#code16").addClass("code16h");
                     });
-                    $("#copycode16").mouseout(function () {
+                    $("#copycode16").mouseout(function() {
                         $("#copycode16").removeClass("copycode16h");
                         $("#code16").removeClass("code16h");
                     });
-                    $("#copycode16").click(function () {
+                    $("#copycode16").click(function() {
                         if ($("#code16").val()) {
                             $("#copyOK").show();
-                            $("#copyOK").fadeTo(0, 0).css("border-color", "#22B614").css("background-color", "#22B614").fadeTo("normal", 1).fadeTo(2000, 1).fadeTo(3000, 0, function () {
+                            $("#copyOK").fadeTo(0, 0).css("border-color", "#22B614").css("background-color", "#22B614").fadeTo("normal", 1).fadeTo(2000, 1).fadeTo(3000, 0, function() {
                                 $("#copyOK").hide();
                             });
                         }
                     });
                 });
                 // jQuery=window. jQuery
-                jQuery(function () {
+                jQuery(function() {
                     var clipboard = new ClipboardJS(".btn");
-                    clipboard.on("success", function (e) {
+                    clipboard.on("success", function(e) {
                         if (!e.text) {
                             console.log("复制内容空")
                         } else {
@@ -501,22 +489,20 @@ width: 100%;
 
                         e.clearSelection();
                     });
-                    clipboard.on("error", function (e) {
+                    clipboard.on("error", function(e) {
                         console.error("Action:", e.action);
                         console.error("Trigger:", e.trigger);
                     });
                     $("#copyOK").hide();
                 });
 
-
             },
             data() {
                 return {};
             },
-            methods: {
-                // jQuery(){
-                //     return window. jQuery
-                // }
+            methods: {// jQuery(){
+            //     return window. jQuery
+            // }
 
             }
 
@@ -624,8 +610,7 @@ Vue.js 自身不是一个全能框架--它只聚焦于视图层。因此它非�
                 // window.mychangemenu();
                 // mychangemenu();
             },
-            created() {
-                // window.mychangemenu();
+            created() {// window.mychangemenu();
             }
         };
 
@@ -686,4 +671,5 @@ Vue.js 自身不是一个全能框架--它只聚焦于视图层。因此它非�
     }
     window.onload()
 
-})()
+}
+)()

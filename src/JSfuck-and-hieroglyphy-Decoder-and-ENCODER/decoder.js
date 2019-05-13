@@ -1,3 +1,5 @@
+(()=>{
+    var replacedPrefix,replacedPostfix,result,prefix,postfix,mytext;
 $("run").onclick = function () {
     eval($("code2").value);
 };
@@ -29,7 +31,7 @@ function setDecoded(decodedCode) {
     code2.value = eval(decodedCode);
     console.log(eval(decodedCode))
 }
-window.decode=decode
+// window.decode=decode
 function decode() {
     var code = document.querySelector('#code');
     if (code.value.length === 0) {
@@ -170,3 +172,5 @@ function decode() {
 
     // setDecoded(code.value);
 }
+}
+)()
