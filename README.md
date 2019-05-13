@@ -2,6 +2,11 @@
 masx200的github
 
 https://masx200.github.io/
+
+# 查看源代码
+
+https://github.com/masx200/masx200.github.io/tree/master/src
+
 # 使用babel-standalone代替本地node模块
 
 使用babel在线解析jsx语法和es6以上的语法
