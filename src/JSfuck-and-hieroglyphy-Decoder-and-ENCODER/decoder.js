@@ -39,7 +39,7 @@
         jQuery('#my导航栏').append(jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>成功!</strong> 匹配成功提示信息。
-  </div>`).fadeOut(5000, () => {
+  </div>`).fadeTo(5000,0.5, () => {
             console.log(jQuery('#' + id))
             jQuery('#' + id).remove()
         }))

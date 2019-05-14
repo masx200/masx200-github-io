@@ -56,7 +56,7 @@
             jQuery(`<div id="${id}" class="alert alert-${infotype} alert-dismissible fade show">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>${textinfo}!</strong> ${textinfo}操作提示信息。
-    </div>`).fadeOut(5000, () => {
+    </div>`).fadeTo(5000,0.5, () => {
                 console.log(jQuery("#" + id));
                 jQuery("#" + id).remove();
             })
