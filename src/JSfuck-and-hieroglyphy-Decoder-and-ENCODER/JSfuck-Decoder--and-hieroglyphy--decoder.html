@@ -3,19 +3,6 @@
     <head>
         <link href="../myfontandtextalign.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSfuck Decoder and hieroglyphy decoder</title>
-        <meta name="description" content="JSFuck decoder, de-obfuscator">
-        <meta property="og:title" content="JSFuck de-obfuscator">
-        <meta property="og:type" content="article">
-        <!-- <meta property="og:url" content="https://enkhee-osiris.github.io/Decoder-JSFuck/"> -->
-        <meta property="og:description" content="JSFuck decoder, de-obfuscator">
-        <script src="./jsfuck.js"></script>
-        <script src="hieroglyphy.js"></script>
         <style type="text/css">
             /* @import 'https://fonts.googleapis.com/css?family=Open+Sans:300'; */
             button {
@@ -145,6 +132,20 @@
                 text-decoration: none;
             }
         </style>
+        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSfuck Decoder and hieroglyphy decoder</title>
+        <meta name="description" content="JSFuck decoder, de-obfuscator">
+        <meta property="og:title" content="JSFuck de-obfuscator">
+        <meta property="og:type" content="article">
+        <!-- <meta property="og:url" content="https://enkhee-osiris.github.io/Decoder-JSFuck/"> -->
+        <meta property="og:description" content="JSFuck decoder, de-obfuscator">
+        <script defer src="./jsfuck.js"></script>
+        <script defer src="hieroglyphy.js"></script>
+       
     </head>
     <body>
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
@@ -208,9 +209,9 @@
         </p>
             <br>
             <textarea placeholder="Paste your code here!" id="code" style="width:100%;min-height:250px"></textarea>
-            <input type="button" id="decode" value="Decode">
+            <input type="button" id="decode" value="Decode" class="btn btn-primary">
             <textarea id="code2" style="width:100%;min-height:250px"></textarea>
-            <button id="run">Run This</button>
+            <button class="btn btn-outline-primary" id="run">Run This</button>
             <br/>
             <br/>
             <!-- <h3>Basics</h3>
@@ -257,6 +258,6 @@
             </p>
             <a href="https://github.com/alcuadrado/hieroglyphy/blob/master/hieroglyphy.js">https://github.com/alcuadrado/hieroglyphy/blob/master/hieroglyphy.js</a>
         </div>
-        <script defer type="text/javascript" src="decoder.js"></script>
+        <script defer  type="text/javascript" src="decoder.js"></script>
     </body>
 </html>

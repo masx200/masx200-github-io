@@ -12,7 +12,7 @@
         <meta name="description" content="JSFuck is an esoteric and educational programming style based on the atomic parts of JavaScript. It uses only six different characters to execute code.">
         <!-- <meta property="og:image" content="http://www.jsfuck.com/preview.png"> -->
         <meta name="viewport" content="width=device-width">
-        <script src="./jsfuck.js"></script>
+        <script defer src="./jsfuck.js"></script>
         <style>
             body {
                 /* padding: 20px; */
@@ -154,7 +154,7 @@
             <br/>
             <textarea id="input" type="text"></textarea>
             <br/>
-            <button id="encode" type="text">Encode</button>
+            <button class="btn btn-outline-primary" id="encode" type="text">Encode</button>
             <div class="checkbox">
                 <input id="eval" type="checkbox" checked="">
                 <label for="eval">Eval Source</label>
@@ -162,7 +162,7 @@
             <textarea id="output"></textarea>
             <div class="actions">
                 <span id="stats">44306 chars</span>
-                <button id="run">Run This</button>
+                <button  class="btn btn-outline-success" id="run">Run This</button>
                 <!-- href="http://www.jsfuck.com/#" -->
             </div>
             <!-- <h3>Links</h3>
@@ -234,7 +234,7 @@
         src="./JSFuck - Write any JavaScript with 6 Characters_ []()!+_files/ga.js"></script> -->
         </div>
         <script defer>
-            (()=>{
+            (onload=()=>{
             $("input").value = "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')"
 
             function $(id) {

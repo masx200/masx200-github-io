@@ -1,6 +1,8 @@
 /*! JSFuck 0.4.0 - http://jsfuck.com */
 
-(function(self) {
+(function() {
+    
+    self=  typeof (exports) === "undefined" ? window : exports
     self.JSFuck = {
         encode: encode
     };
@@ -291,8 +293,17 @@
             }
         }
     }
-
+var haveinit=0
     function encode(input, wrapWithEval) {
+
+if(haveinit===0){
+    fillMissingDigits();
+    fillMissingChars();
+    replaceMap();
+    replaceStrings();
+    haveinit=1
+}
+      
         // console.log("encode", input, wrapWithEval)
         var output = [];
 
@@ -396,10 +407,10 @@
 
     }
 
-    fillMissingDigits();
-    fillMissingChars();
-    replaceMap();
-    replaceStrings();
+    // fillMissingDigits();
+    // fillMissingChars();
+    // replaceMap();
+    // replaceStrings();
 
     // for (var key in MAPPING) console.log(key,MAPPING[key].length)
     // fillMissingChars2();
@@ -410,4 +421,4 @@
     //   encode: encode
     // };
 }
-)(typeof (exports) === "undefined" ? window : exports);
+)();
