@@ -1,0 +1,1 @@
+{"version":3,"sources":["拉伸导航栏与主体部分的顶部距离.js"],"names":["$","css","height"],"mappings":";AACAA,EAAE,OAAOC,IAAI,cAAeD,EAAE,UAAUE,UACxCF,EAAE,SAASC,IAAI,cAAeD,EAAE,UAAUE","file":"拉伸导航栏与主体部分的顶部距离.58ea952c.js","sourceRoot":"..","sourcesContent":["(()=>{\r\n$('#主体').css('padding-top', $('#my导航栏').height())\r\n$('#my主体').css('padding-top', $('#my导航栏').height())\r\n})()"]}

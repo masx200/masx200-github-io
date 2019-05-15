@@ -1,3 +1,4 @@
+(()=>{
 function countCode() {
   	var password = $("#password").val();
   	var key = $("#key").val();
@@ -87,3 +88,4 @@ function countCode() {
   	});
   	$('#copyOK').hide();
   })
+})()

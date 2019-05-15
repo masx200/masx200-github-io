@@ -11,6 +11,13 @@
     <meta charset="utf-8">
     <title>hieroglyphy encoder</title>
     <style type="text/css">
+        #my导航栏 {
+            overflow: auto;
+            max-height: 100%;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
         /* @import 'https://fonts.googleapis.com/css?family=Open+Sans:300'; */
         button {
             border-color: black;
@@ -146,21 +153,23 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-    <nav class="navbar navbar-expand-sm bg-light navbar-light">
-        <!-- Brand/logo -->
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">masx200的github主页</a>
-            <!-- Toggler/collapsibe Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Links -->
+    <div class="container-fluid fixed-top" id="my导航栏">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
+            <!-- Brand/logo -->
+            <div class="">
+                <a class="navbar-brand" href="../index.html">masx200的github主页</a>
+                <!-- Toggler/collapsibe Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Links -->
+
+            </div>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <!-- <li class="nav-item">
-                        <a class="nav-link" href="../index.html">传统主页</a>
-                    </li> -->
+                    <a class="nav-link" href="../index.html">传统主页</a>
+                </li> -->
                     <li class="nav-item">
                         <a class="nav-link"
                             href="../圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/index.html">圆周率计算多线程
@@ -191,10 +200,9 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-</div>
-    <div class="container">
+        </nav>
+    </div>
+    <div id="主体" class="container">
         <h1 style="
         font-size: 30px;
     ">
@@ -310,6 +318,7 @@
         }
         )()
     </script>
+    <script src="../拉伸导航栏与主体部分的顶部距离.js"></script>
 </body>
 
 </html>
