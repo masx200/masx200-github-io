@@ -1,3 +1,31 @@
+
+
+# 动态加载javascript,使用fetch加载xml转换成json.js
+
+```javascript
+function loadscript(fileurl,callback) {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = fileurl;
+    script.onload=callback
+    document.firstElementChild.firstElementChild.appendChild(script);
+    
+    console.log({script})
+}
+loadscript("https://cdn.staticfile.org/fast-xml-parser/3.12.16/parser.min.js");
+
+fetch("https://www.pingwest.com/feed")
+  .then(r => (console.log(r.statusText, r), r.text()))
+  .then(str => new DOMParser().parseFromString(str, "text/xml"))
+  .then(data => console.log(data));
+
+fetch("https://www.pingwest.com/feed")
+  .then(r => (console.log(r.statusText, r), r.text()))
+  .then(str => parser.parse(str))
+  .then(data => console.log(data));
+
+```
+
 在vscode中安装npm-scripts插件即可轻松调试
 
 # 推荐的vscode插件
