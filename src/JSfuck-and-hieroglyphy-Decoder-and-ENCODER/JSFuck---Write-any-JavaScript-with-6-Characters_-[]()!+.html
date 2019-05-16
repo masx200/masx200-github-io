@@ -136,7 +136,7 @@
             </div>
         </nav>
     </div>
-    <div class="container" id="主体">
+    <div class="container" id="my主体">
         <h1 style="
         font-size: 30px;
     ">
@@ -253,34 +253,44 @@
         src="./JSFuck - Write any JavaScript with 6 Characters_ []()!+_files/ga.js"></script> -->
     </div>
     <script defer>
-        (onload = () => {
-            $("input").value = "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')"
+        (
+            // onload =
+            () => {
+                $(document).ready(
+                    () => {
+                        $2("input").value =
+                            "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')"
 
-            function $(id) {
-                return document.getElementById(id);
+                        function $2(id) {
+                            return document.getElementById(id);
+                        }
+
+                        function encode() {
+                            var output = JSFuck.encode($2("input").value, $2("eval").checked);
+                            $2("output").value = output;
+                            $2("stats").innerHTML = output.length + " chars";
+                        }
+                        $("#encode").click(encode);
+                        // $2("encode").onclick = encode;
+                        // $2("eval").onchange = encode;
+                        $("#eval").change(encode);
+
+                        // window.onload = () => { encode() };
+
+                        // $2("run").onclick =
+                        $("#run").click(
+                            function () {
+                                value = eval($2("output").value);
+
+                                if (!$2("eval").checked) {
+                                    alert('"' + value + '"');
+                                }
+                                return false;
+                            }
+                        )
+
+                    })
             }
-
-            function encode() {
-                var output = JSFuck.encode($("input").value, $("eval").checked);
-                $("output").value = output;
-                $("stats").innerHTML = output.length + " chars";
-            }
-
-            $("encode").onclick = encode;
-            $("eval").onchange = encode;
-
-            // window.onload = () => { encode() };
-
-            $("run").onclick = function () {
-                value = eval($("output").value);
-
-                if (!$("eval").checked) {
-                    alert('"' + value + '"');
-                }
-                return false;
-            }
-                ;
-        }
         )()
     </script>
     <!-- <script type="text/javascript">

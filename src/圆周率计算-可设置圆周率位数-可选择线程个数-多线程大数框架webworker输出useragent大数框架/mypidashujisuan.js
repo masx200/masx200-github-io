@@ -1,5 +1,10 @@
 (() => {
-    window.onload = mytestpi;
+    //   window.onload = () => {
+    //     mytestpi();
+    //   };
+    // $('window').load(mytestpi)
+    $(document).ready(mytestpi)
+    // mytestpi;
     var myptext,
         myshurukuangneirong,
         p,
@@ -13,6 +18,7 @@
         durt,
         endt,
         testname;
+
     function lashentextarea(...ids) {
         setTimeout(function () {
             for (value of ids) {
@@ -21,11 +27,14 @@
                 // textarea.scrollHeight = 60
                 // textarea.style.height = "60px"
                 // makeExpandingArea(textarea);
-                myptext.style.height = myptext.scrollHeight +2+ "px";
+                myptext.style.height = myptext.scrollHeight + 2 + "px";
             }
-        }, 0)
+        }, 0);
     }
+
     function mytestpi() {
+        // document.getElementById("start").onclick = mystart;
+        $("#start").click(mystart)
         getConstpinewhighefficiency105();
     }
 
@@ -43,8 +52,8 @@
             myshurukuangneirong + "UserAgent: " + navigator.userAgent + "\n";
         myshurukuangneirong = myshurukuangneirong + "开始圆周率多线程测试\n";
         myptext.value = myshurukuangneirong;
-        document.getElementById("start").onclick = mystart;
-        lashentextarea("tp", "tp2")
+        // document.getElementById("start").onclick = mystart;
+        lashentextarea("tp", "tp2");
         // setTimeout(function() {
         //   myptext.style.height = myptext.scrollHeight + "px";
         // }, 0);
@@ -68,10 +77,9 @@
             testname = document.title =
                 "圆周率计算多线程" + "-" + "线程数为" + threadgeshu + "-位数为" + piwei;
             myshurukuangneirong =
-                myshurukuangneirong + "线程数为" + threadgeshu+" " ;
+                myshurukuangneirong + "线程数为" + threadgeshu + " ";
             myptext.value = myshurukuangneirong;
-            eventdata =
-                "圆周率计算" + piwei + "位 "  + "计算圆周率中......" + "  \n";
+            eventdata = "圆周率计算" + piwei + "位 " + "计算圆周率中......" + "  \n";
 
             myshurukuangneirong += String(eventdata);
             myptext.value = myshurukuangneirong;
@@ -134,21 +142,13 @@
             durt = (endt - strt) / 1000;
 
             eventdata =
-                "计算完成,用时" +
-                durt +
-                "秒第" +
-                x +
-                "次 " +
-                "圆周率" +
-                piwei +
-                "位\n";
+                "计算完成,用时" + durt + "秒第" + x + "次 " + "圆周率" + piwei + "位\n";
             // +
             // "  \n" +
             // p +
             // "  \n"
-            document.getElementById("tp2").value =   "圆周率" +
-            piwei +
-            "位"+p.toString()
+            document.getElementById("tp2").value =
+                "圆周率" + piwei + "位" + p.toString();
             myptext = document.getElementById("tp");
             myshurukuangneirong += String(eventdata);
             myptext.value = myshurukuangneirong;
@@ -160,9 +160,9 @@
             //alert("ok")
             setTimeout(function () {
                 // myptext.style.height = myptext.scrollHeight + "px";
-                lashentextarea("tp", "tp2")
+                lashentextarea("tp", "tp2");
             }, 0);
-            document.body.onmousemove=document.body.onmouseover=document.body.onmousewheel=	document.body.onscroll=document.body.onmousedown =null
+            document.body.onmousemove = document.body.onmouseover = document.body.onmousewheel = document.body.onscroll = document.body.onmousedown = null;
         }
     }
 })();

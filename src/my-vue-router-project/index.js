@@ -1,16 +1,9 @@
 // eslint-disable-next-line
 /* eslint-disable */
+// import Vue from 'vue';
 // import React from 'react';
 (()=>{
-    var Router
-    // var myvueobj;
-    let haverun = 0
-    setTimeout(()=>{
-        window.onload()
-    }
-    , 1000)
-    let myonloadfunc = myonload2
-    window.onload = ()=>{
+  var  herewindowonload = ()=>{
         if (haverun == 0) {
             haverun = 1
             console.log("开始运行此onload函数")
@@ -20,6 +13,16 @@
         }
 
     }
+    $(document).ready(herewindowonload);
+    var Router
+    // var myvueobj;
+    let haverun = 0
+    setTimeout(()=>{
+        herewindowonload()
+    }
+    , 1000)
+    let myonloadfunc = myonload2
+   
     // window.mychangemenu = function () {
 
     function myonload2() {
@@ -669,7 +672,7 @@ Vue.js 自身不是一个全能框架--它只聚焦于视图层。因此它非�
         //     }
         // }
     }
-    window.onload()
+    // herewindowonload()
 
 }
 )()

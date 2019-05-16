@@ -1,1 +1,0 @@
-{"version":3,"sources":["myfontandtextalign.css"],"names":[],"mappings":"AAAA,EACI,2EAA4E,CAC5E,iBACJ","file":"myfontandtextalign.6aba2f82.css","sourceRoot":"..","sourcesContent":["* {\r\n    font-family: \"Microsoft Yahei,PingFangSC-Regular,arial, verdana, sans-serif\";\r\n    text-align: center\r\n}"]}

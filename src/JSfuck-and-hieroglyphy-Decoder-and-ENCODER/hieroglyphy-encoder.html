@@ -202,7 +202,7 @@
             </div>
         </nav>
     </div>
-    <div id="主体" class="container">
+    <div id="my主体" class="container">
         <h1 style="
         font-size: 30px;
     ">
@@ -282,40 +282,56 @@
         </p>
     </div>
     <script defer>
-        (onload = () => {
-            var lastclick
+        (
+            // onload =
+            () => {
 
-            $("run").onclick = function () {
-                var value = eval($("output").value);
+                $(document).ready(
+                    () => {
+                        var lastclick
 
-                if (lastclick === 'encodestring') {
-                    alert('"' + value + '"');
-                } else { }
-                // return false;
-            }
-                ;
-            $("encodescript").onclick = encodescript;
-            $("encodestring").onclick = encodestring;
-            // window.onload = () => { encodescript() };
-            $("input").value = "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')"
+                        // $("run").onclick =
+                        $("#run").click(
+                            function () {
+                                var value = eval($2("output").value);
 
-            function $(id) {
-                return document.getElementById(id);
-            }
-            function encodescript() {
-                lastclick = 'encodescript'
-                var output = hieroglyphy.hieroglyphyScript(($("input").value))
-                $("output").value = output;
-                $("stats").innerHTML = output.length + " chars";
-            }
-            function encodestring() {
-                lastclick = 'encodestring'
-                var output = hieroglyphy.hieroglyphyString(($("input").value))
-                $("output").value = output;
-                $("stats").innerHTML = output.length + " chars";
-            }
+                                if (lastclick === 'encodestring') {
+                                    alert('"' + value + '"');
+                                } else {}
+                                // return false;
+                            }
+                        );
+                        $("#encodescript").click(encodescript) 
+                        $("#encodestring").click(encodestring) 
+                        // $("encodescript").onclick = encodescript;
+                        // $("encodestring").onclick = encodestring;
+                        // window.onload = () => { encodescript() };
+                        $2("input").value =
+                            "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')"
 
-        }
+                        function $2(id) {
+                            return document.getElementById(id);
+                        }
+
+                        function encodescript() {
+                            lastclick = 'encodescript'
+                            var output = hieroglyphy.hieroglyphyScript(($2("input").value))
+                            $2("output").value = output;
+                            $2("stats").innerHTML = output.length + " chars";
+                        }
+
+                        function encodestring() {
+                            lastclick = 'encodestring'
+                            var output = hieroglyphy.hieroglyphyString(($2("input").value))
+                            $2("output").value = output;
+                            $2("stats").innerHTML = output.length + " chars";
+                        }
+                    }
+                )
+
+
+
+            }
         )()
     </script>
     <script src="../拉伸导航栏与主体部分的顶部距离.js"></script>

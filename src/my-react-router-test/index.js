@@ -3,21 +3,23 @@
 // import React from 'react';
 //在react的jsx文件中这句话能删除!
 (() => {
+    function herewindowonload() {
+        if (haverun == 0) {
+          haverun = 1;
+          console.log("开始运行此onload函数");
+          myonloadfunc();
+        } else {
+          console.log("不要重复运行此onload函数");
+        }
+      }
+    $(document).ready(herewindowonload);
   var xmlDoc, x, onetitle, onelink, description;
 
   let haverun = 0;
   setTimeout(() => {
-    window.onload();
+    herewindowonload();
   }, 1000);
-  window.onload = function() {
-    if (haverun == 0) {
-      haverun = 1;
-      console.log("开始运行此onload函数");
-      myonloadfunc();
-    } else {
-      console.log("不要重复运行此onload函数");
-    }
-  };
+  
   let myonloadfunc = () => {
     // window.myrsscontent = []
     let myrsscontent = [];
@@ -411,5 +413,5 @@
       /* let refreshall =()=> myrefreshall */
     }
   };
-  window.onload();
+  
 })();
