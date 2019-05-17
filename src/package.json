@@ -1,7 +1,7 @@
 {
     "scripts": {
         "build": "parcel build index.html --no-source-maps  ",
-        "start": "parcel index.html --open --https"
+        "start": "parcel index.html --open "
     },
     "devDependencies": {
         "cssnano": "^4.1.10"
