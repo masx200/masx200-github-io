@@ -27,7 +27,7 @@ https://github.com/masx200/masx200.github.io/tree/master/src
         <br />1.原生BigInt最快,<br />2.BigInteger.js中速,<br />3.Decimal.js最慢。
         <hr>
         <br />
-        <h4> 线程数为4 圆周率计算6000位测试结果</h4>
+<h4> 线程数为4 圆周率计算6000位测试结果</h4>
         <br />
         firefox 66 测试 decimal.js 达到1倍速度
         <br />
@@ -38,7 +38,7 @@ https://github.com/masx200/masx200.github.io/tree/master/src
         chrome 75 测试 原生BigInt 达到74.038倍速度
         <p></p>
         <hr>
-        <h4> 线程数为4 圆周率计算10000位测试结果</h4>
+<h4> 线程数为4 圆周率计算10000位测试结果</h4>
         <br />
         firefox 66 测试 decimal.js 达到1倍速度
         <br />
@@ -60,7 +60,7 @@ https://github.com/masx200/masx200.github.io/tree/master/src
         <p></p>
         <hr>
         
-        <h4> 线程数为8 圆周率计算15000位测试结果</h4>
+<h4> 线程数为8 圆周率计算15000位测试结果</h4>
         
         <br />
         
