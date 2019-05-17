@@ -14,10 +14,10 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 
  <h3>BigInteger.js</h3>
         <p>
-          BigInteger.js是Javascript的任意长度整数库，允许对无限大小的整数进行算术运算，尽管存在内存和时间限制。
-          更新（2018年12月2日）：BigInt被添加为JavaScript的本机功能。
-          此库现在可用作polyfill：如果环境支持本机BigInt，则此库充当本机实现的瘦包装器。
-          建议升级浏览器到chrome68以上,才可支持原生BigInt.
+          BigInteger.js是Javascript的任意长度整数库，允许对无限大小的整数进行算术运算，尽管存在内存和时间限制。<br />
+          更新（2018年12月2日）：BigInt被添加为JavaScript的本机功能。<br />
+          此库现在可用作polyfill：如果环境支持本机BigInt，则此库充当本机实现的瘦包装器。<br />
+          建议升级浏览器到chrome68以上,才可支持原生BigInt.<br />
           <b>如果浏览器原生支持BigInt,则运行速度有巨大提升!</b>
         </p>
 
