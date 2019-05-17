@@ -50,7 +50,26 @@ https://github.com/masx200/masx200.github.io/tree/master/src
         chrome 75 测试 原生BigInt 达到100.773倍速度
         <p></p>
         <hr>
-
+<h4> 线程数为8 圆周率计算10000位测试结果</h4>
+        
+        <br />
+        firefox 66 测试 BigInteger.js 达到1倍速度
+        <br />
+        chrome 62 测试 BigInteger.js  达到6.688倍速度
+        <br />
+        chrome 74 测试 原生BigInt 达到49.710倍速度
+        <p></p>
+        <hr>
+        
+        <h4> 线程数为8 圆周率计算15000位测试结果</h4>
+        
+        <br />
+        
+        chrome 62 测试 BigInteger.js  达到1倍速度
+        <br />
+        chrome 74 测试 原生BigInt 达到11.16倍速度
+        <p></p>
+        <hr>
 # 使用babel-standalone代替本地node模块
 
 使用babel在线解析jsx语法和es6以上的语法
