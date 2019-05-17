@@ -11,8 +11,8 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 # 圆周率计算多线程,使用 BigInteger.js和浏览器原生的BigInt之后速度得到巨大提升!
 
 需要浏览器chrome68以上,才原生支持BigInt
-
- <h3>BigInteger.js</h3>
+<div>
+<h3>BigInteger.js</h3>
         <p>
           BigInteger.js是Javascript的任意长度整数库，允许对无限大小的整数进行算术运算，尽管存在内存和时间限制。<br />
           更新（2018年12月2日）：BigInt被添加为JavaScript的本机功能。<br />
@@ -23,8 +23,7 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 
 <a href="https://masx200.github.io/%E5%9C%86%E5%91%A8%E7%8E%87%E8%AE%A1%E7%AE%97-%E5%8F%AF%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%91%A8%E7%8E%87%E4%BD%8D%E6%95%B0-%E5%8F%AF%E9%80%89%E6%8B%A9%E7%BA%BF%E7%A8%8B%E4%B8%AA%E6%95%B0-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A4%A7%E6%95%B0%E6%A1%86%E6%9E%B6webworker%E8%BE%93%E5%87%BAuseragent%E5%A4%A7%E6%95%B0%E6%A1%86%E6%9E%B6/index.html" target="_blank">圆周率计算多线程</a>
 
-
- <h3>计算运行速度排行:</h3>
+<h3>计算运行速度排行:</h3>
         <br />1.原生BigInt最快,<br />2.BigInteger.js中速,<br />3.Decimal.js最慢。
         <hr>
         <br />
@@ -52,7 +51,7 @@ https://github.com/masx200/masx200.github.io/tree/master/src
         <hr>
 <h4> 线程数为8 圆周率计算10000位测试结果</h4>
         
-        <br />
+<br />
         firefox 66 测试 BigInteger.js 达到1倍速度
         <br />
         chrome 62 测试 BigInteger.js  达到6.688倍速度
@@ -70,6 +69,7 @@ https://github.com/masx200/masx200.github.io/tree/master/src
         chrome 74 测试 原生BigInt 达到11.16倍速度
         <p></p>
         <hr>
+</div>
 # 使用babel-standalone代替本地node模块
 
 使用babel在线解析jsx语法和es6以上的语法
