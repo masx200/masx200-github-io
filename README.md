@@ -73,6 +73,7 @@ chrome 74 测试 原生BigInt 达到11.16倍速度
 <p></p>
 <hr>
 </div>
+
 # 使用babel-standalone代替本地node模块
 
 使用babel在线解析jsx语法和es6以上的语法
