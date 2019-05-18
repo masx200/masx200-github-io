@@ -10,9 +10,12 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 
 # 圆周率计算多线程,使用 BigInteger.js和浏览器原生的BigInt之后速度得到巨大提升!
 
-优化了圆周率计算的多线程方式,开启一次webworker后,不再关闭它,也不重复创建过多webweorker,并给按钮添加mui的loading效果,全局加上mui的支持
+优化了圆周率计算的多线程方式,开启一次webworker后,不再关闭它,每一个线程一个webworker,也不重复创建过多webweorker,并给按钮添加mui的loading效果,全局加上mui的支持
+
+优化了圆周率的界面显示效果,使用bootstrap4的折叠按钮效果,可以收起或展开某些特别占空间的组件
 
 需要浏览器chrome68以上,才原生支持BigInt
+
 <div>
 <h3>BigInteger.js</h3>
         <p>
