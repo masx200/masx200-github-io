@@ -2,10 +2,9 @@
   //使用bigint测试
   importScripts(
     "https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js"
-
-    // ()=>{
-    // console.log("加载完成")}
   );
+  // ()=>{
+  // console.log("加载完成")}
   //   console.log(bigInt)
   // importScripts("./decimal.min.js");
   // nabs.cmp=(m)=> nabs.compareAbs(m);
@@ -58,11 +57,9 @@ BigInteger.js是Javascript的任意长度整数库，允许对无限大小的整
     //   "副线程" + (threadid + 1) + "从主线程接收" + "event.data\n",
     //   ...event.data
     // );
-    console.log(
-        "副线程" + (threadid + 1) + "从主线程接收" + "event.data\n")
-        console.log( ...event.data
-      );
-  
+    console.log("副线程" + (threadid + 1) + "从主线程接收" + "event.data\n");
+    console.log(...event.data);
+
     // Decimal.precision = piwei + 1;
     var p = new bigInt(0);
     var a = new bigInt(1);

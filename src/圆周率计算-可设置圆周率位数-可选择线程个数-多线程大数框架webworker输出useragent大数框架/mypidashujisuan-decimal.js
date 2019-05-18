@@ -11,13 +11,15 @@
     threadgeshu,
     x,
     piwei,
-    myworker,
+    myworker = Array(16),
     eventdata,
     strt,
     finishflag,
     durt,
     testname;
-
+  for (var key = 0; key < myworker.length; key++) {
+    myworker[key] = undefined;
+  }
   function lashentextarea(...ids) {
     setTimeout(function() {
       for (value of ids) {
@@ -51,7 +53,7 @@
 
   function getConstpinewhighefficiency105() {
     document.getElementById("thread").value = 6;
-    document.getElementById("pichangwei").value = 3;
+    document.getElementById("pichangwei").value = 4;
     // jisuanfinishflag = 1;
     threadgeshu = 8;
     x = 0;
@@ -71,11 +73,12 @@
   }
 
   function mystart() {
+    mui(document.getElementById("start")).button("loading");
     // jisuanfinishflag = 0;
 
     if (
       document.getElementById("thread").value >= 1 &&
-      document.getElementById("thread").value <= 12 &&
+      document.getElementById("thread").value <= 16 &&
       document.getElementById("pichangwei").value >= 1 &&
       document.getElementById("pichangwei").value <= 100
     ) {
@@ -100,24 +103,34 @@
       strt = new Date().getTime();
       p = new Decimal(0);
 
-      myworker = [];
-      myworker.length = threadgeshu;
+      //   myworker = [];
+      //   myworker.length = threadgeshu;
 
       finishflag = [];
       finishflag.length = threadgeshu;
-      var worker1;
-      if (typeof worker1 == "undefined") {
-        worker1 = new Worker("mythread1.js");
-      }
+      //   var worker1;
+      //   if (typeof worker1 == "undefined") {
+      //     worker1 = ("mythread1-decimal.js");
+      //   }
 
-      for (var i = 0, len = threadgeshu; i < len; i++) {
-        myworker[i] = worker1;
-      }
+      //   for (var i = 0, len = threadgeshu; i < len; i++) {
+      //     myworker[i] = worker1;
+      //   }
 
       myworker.forEach(function(currentValue, index, arr) {
-        arr[index] = undefined;
-
-        arr[index] = new Worker("mythread1.js");
+        // arr[index] = undefined;
+        if (index >= threadgeshu) {
+          return;
+        }
+        if (!arr[index]) {
+          arr[index] = new Worker("mythread1-decimal.js");
+          console.log(
+            "创建了新webworker线程",
+            "mythread1-decimal.js" + "-" + index
+          );
+        }
+        //   ,{name:"mythread1-bigint.js"+"-"+index}
+        // arr[index] = new Worker("mythread1-decimal.js");
         arr[index].postMessage([piwei, threadgeshu, index]);
         arr[index].onmessage = function(event) {
           console.log("主线程从副线程" + (index + 1) + "接收" + "event.data\n");
@@ -127,13 +140,14 @@
             "\n第二个参数",
             event.data[1]
           );
-        //   console.log(...event.data);
+          //   console.log(...event.data);
 
           var p1 = new Decimal(event.data[0]);
           p = Decimal.add(p, p1);
           x = Math.max(x, parseInt(event.data[1]));
           finishflag[index] = 1;
           threadfinish();
+          //   arr[index].terminate()
         };
         arr[index].onerror = e => {
           console.error("Error", e.message);
@@ -141,7 +155,7 @@
           //     console.error(key, e[key])
           // }
           // console.error(e)
-          arr[index].terminate();
+          //   arr[index].terminate();
           // throw e;
         };
       });
@@ -159,6 +173,7 @@
         return currentValue == 1;
       }).length
     ) {
+      mui(document.getElementById("start")).button("reset");
       console.timeEnd(testname);
       var endt = new Date().getTime();
       durt = (endt - strt) / 1000;
@@ -176,7 +191,7 @@
       myptext.value = myshurukuangneirong;
       // jisuanfinishflag = 1;
       myworker.forEach(function(currentValue, index, arr) {
-        arr[index].terminate();
+        // arr[index].terminate();
       });
       x = 0;
       //alert("ok")

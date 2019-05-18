@@ -1,5 +1,5 @@
 (() => {
-    $('#my主体').css('padding-top', $('#my导航栏').height())
+  $("#my主体").css("padding-top", $("#my导航栏").height());
   function makeExpandingArea(el) {
     var timer = null;
     //由于ie8有溢出堆栈问题，故调整了这里

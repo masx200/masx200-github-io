@@ -12,13 +12,16 @@
     threadgeshu,
     x,
     piwei,
-    myworker,
+    myworker = Array(16),
     eventdata,
     strt,
     finishflag,
     durt,
     testname;
-
+  for (var key = 0; key < myworker.length; key++) {
+    myworker[key] = undefined;
+  }
+  //   console.log(myworker);
   function lashentextarea(...ids) {
     setTimeout(function() {
       for (value of ids) {
@@ -57,7 +60,7 @@
     var myinput2 = document.getElementById("pichangwei-big");
     var mytextarea1 = document.getElementById(myeleid3);
     myinput1.value = 6;
-    myinput2.value = 3;
+    myinput2.value = 4;
     // jisuanfinishflag = 1;
     threadgeshu = 8;
     x = 0;
@@ -67,9 +70,13 @@
     myshurukuangneirong = " ";
     myshurukuangneirong =
       myshurukuangneirong + "UserAgent: " + navigator.userAgent + "\n";
-      var isbigint=typeof BigInt==="function"?'你的浏览器能够支持原生BigInt!':'你的浏览器无法支持原生BigInt!'
-      console.log(isbigint)
-    myshurukuangneirong = myshurukuangneirong+isbigint + "\n开始圆周率多线程测试\n";
+    var isbigint =
+      typeof BigInt === "function"
+        ? "你的浏览器能够支持原生BigInt!"
+        : "你的浏览器无法支持原生BigInt!";
+    console.log(isbigint);
+    myshurukuangneirong =
+      myshurukuangneirong + isbigint + "\n开始圆周率多线程测试\n";
     myptext.value = myshurukuangneirong;
     // document.getElementById("start").onclick = mystart;
     lashentextarea(myeleid3, "tp2-big");
@@ -79,6 +86,7 @@
   }
 
   function mystart() {
+    mui(document.getElementById("start-big")).button("loading");
     bigInt.abs = n => bigInt(n).abs();
 
     bigInt.mul = (n, m) => bigInt(n).multiply(m);
@@ -101,7 +109,7 @@
     var myinput2 = document.getElementById("pichangwei-big");
     if (
       myinput1.value >= 1 &&
-      myinput1.value <= 12 &&
+      myinput1.value <= 16 &&
       myinput2.value >= 1 &&
       myinput2.value <= 100
     ) {
@@ -123,24 +131,41 @@
       strt = new Date().getTime();
       p = new bigInt(0);
 
-      myworker = [];
-      myworker.length = threadgeshu;
+      //   myworker = [];
+      //   myworker.length = threadgeshu;
 
       finishflag = [];
       finishflag.length = threadgeshu;
-      var worker1;
-      if (typeof worker1 == "undefined") {
-        worker1 = new Worker("mythread1-bigint.js");
-      }
+      //   if (typeof worker1 == "undefined") {
+      //     worker1 = new Worker("mythread1-bigint.js");
+      //   }
+      // worker1=Array( threadgeshu)
+      //   for (var i = 0, len = threadgeshu; i < len; i++) {
+      //     myworker[i] = worker1;
+      //   }
+      //   var worker1 = Array(threadgeshu);
 
-      for (var i = 0, len = threadgeshu; i < len; i++) {
-        myworker[i] = worker1;
-      }
-
+      //   myworker =Array(threadgeshu);
+      //   for(var key=0;key< threadgeshu; key++){
+      //       myworker[key]=undefined
+      //   }
+      //   myworker.length = threadgeshu;
       myworker.forEach(function(currentValue, index, arr) {
-        arr[index] = undefined;
+        // console.log(arr[index]);
+        // console.log(arr);
+        if (index >= threadgeshu) {
+          return;
+        }
+        if (!arr[index]) {
+          arr[index] = new Worker("mythread1-bigint.js");
+          //   ,{name:"mythread1-bigint.js"+"-"+index}
+          console.log(
+            "创建了新webworker线程",
+            "mythread1-bigint.js" + "-" + index
+          );
+        }
 
-        arr[index] = new Worker("mythread1-bigint.js");
+        // arr[index] = new Worker("mythread1-bigint.js");
         arr[index].postMessage([piwei, threadgeshu, index]);
         arr[index].onmessage = function(event) {
           console.log("主线程从副线程" + (index + 1) + "接收" + "event.data\n");
@@ -156,6 +181,7 @@
           x = Math.max(x, parseInt(event.data[1]));
           finishflag[index] = 1;
           threadfinish();
+          //   currentValue.terminate()
         };
         arr[index].onerror = e => {
           // for (var key in e) {
@@ -163,7 +189,7 @@
           // }
           // console.error(e.message)
           console.error("Error:", e.message);
-          arr[index].terminate();
+          //   arr[index].terminate();
           $("#tp2-big").val("Error:" + e.message);
           //   throw e;
         };
@@ -187,6 +213,7 @@
       }).length
     ) {
       console.timeEnd(testname);
+      mui(document.getElementById("start-big")).button("reset");
       var endt = new Date().getTime();
       durt = (endt - strt) / 1000;
 
@@ -204,7 +231,7 @@
       myptext.value = myshurukuangneirong;
       // jisuanfinishflag = 1;
       myworker.forEach(function(currentValue, index, arr) {
-        arr[index].terminate();
+        // arr[index].terminate();
       });
       x = 0;
       //alert("ok")

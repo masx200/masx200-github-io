@@ -1,4 +1,4 @@
-(function(global, undefined) {
+hieroglyphy = (function(global, undefined) {
   /*jshint sub:true, evil:true */
   "use strict";
   var numbers,
@@ -20,7 +20,8 @@
     hieroglyphyNumber: hieroglyphyNumber,
     hieroglyphyScript: hieroglyphyScript
   };
-  window.hieroglyphy = API;
+  //   window.hieroglyphy = API;
+  global.hieroglyphy = API;
   if (global.define && global.define.amd) {
     global.define([], API);
   } else if (typeof exports !== "undefined") {
@@ -322,4 +323,5 @@
   function hieroglyphyScript(src) {
     return functionConstructor + "(" + hieroglyphyString(src) + ")()";
   }
+  return global.hieroglyphy;
 })(this);

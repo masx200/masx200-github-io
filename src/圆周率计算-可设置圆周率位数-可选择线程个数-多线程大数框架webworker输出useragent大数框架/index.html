@@ -31,11 +31,16 @@
       type="text/javascript"
       charset="utf-8"
     ></script>
-    <script defer charset="utf-8" src="./mypidashujisuan.js"></script>
+    <script defer charset="utf-8" src="./mypidashujisuan-decimal.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta charset="utf-8" />
     <script src="https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js"></script>
+    <script src="https://cdn.staticfile.org/mui/3.7.1/js/mui.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css"
+    />
   </head>
 
   <body>
@@ -103,51 +108,85 @@
       <div>
         <p></p>
         <h3>计算运行速度排行:</h3>
-        <br />1.原生BigInt最快,<br />2.BigInteger.js中速,<br />3.Decimal.js最慢。
-        <hr>
         <br />
-        <h4> 线程数为4 圆周率计算6000位测试结果</h4>
+        <p>1.原生BigInt最快,</p>
         <br />
-        firefox 66 测试 decimal.js 达到1倍速度
+        <p>2.BigInteger.js中速,</p>
         <br />
-        firefox 66 测试 BigInteger.js 达到2.163倍速度
-        <br />
-        chrome 75 测试 decimal.js 达到3.4375倍速度
-        <br />
-        chrome 75 测试 原生BigInt 达到74.038倍速度
-        <p></p>
-        <hr>
-        <h4> 线程数为4 圆周率计算10000位测试结果</h4>
-        <br />
-        firefox 66 测试 decimal.js 达到1倍速度
-        <br />
-        firefox 66 测试 BigInteger.js 达到2.066倍速度
-        <br />
-        chrome 75 测试 decimal.js 达到3.688倍速度
-        <br />
-        chrome 75 测试 原生BigInt 达到100.773倍速度
-        <p></p>
-        <hr>
-<h4> 线程数为8 圆周率计算10000位测试结果</h4>
-        
-<br />
-        firefox 66 测试 BigInteger.js 达到1倍速度
-        <br />
-        chrome 62 测试 BigInteger.js  达到6.688倍速度
-        <br />
-        chrome 74 测试 原生BigInt 达到49.710倍速度
-        <p></p>
-<hr>
-        
-<h4> 线程数为8 圆周率计算15000位测试结果</h4>
-<br />
-chrome 62 测试 BigInteger.js  达到1倍速度
-<br />
-chrome 74 测试 原生BigInt 达到11.16倍速度
-<p></p>
-<hr>
-      </div>
+        <p>3.Decimal.js最慢。</p>
+        <hr />
 
+        <button
+          class=" btn btn-outline-primary"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsiblecontainer1"
+        >
+          展开收起测试结果对比
+        </button>
+        <br />
+        <div id="collapsiblecontainer1" class="collapse row">
+          <div class="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-12">
+            <h4>线程数为8 圆周率计算15000位测试结果</h4>
+            <br />
+            <p>chrome 62 测试 BigInteger.js 达到1倍速度</p>
+
+            <br />
+            <p>chrome 74 测试 原生BigInt 达到11.16倍速度</p>
+          </div>
+          <hr />
+          <div class="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-12">
+            <h4>线程数为4 圆周率计算6000位测试结果</h4>
+            <br />
+            <p>
+              firefox 66 测试 decimal.js 达到1倍速度
+            </p>
+
+            <br />
+            <p>firefox 66 测试 BigInteger.js 达到2.163倍速度</p>
+
+            <br />
+            <p>chrome 75 测试 decimal.js 达到3.4375倍速度</p>
+            <br />
+
+            <p>chrome 75 测试 原生BigInt 达到74.038倍速度</p>
+          </div>
+          <hr />
+          <div class="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-12">
+            <h4>线程数为4 圆周率计算10000位测试结果</h4>
+            <br />
+            <p>firefox 66 测试 decimal.js 达到1倍速度</p>
+            <br />
+            <p>firefox 66 测试 BigInteger.js 达到2.066倍速度</p>
+            <br />
+            <p>chrome 75 测试 decimal.js 达到3.688倍速度</p>
+            <br />
+
+            <p>chrome 75 测试 原生BigInt 达到100.773倍速度</p>
+          </div>
+          <hr />
+          <div class="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-12">
+            <h4>线程数为8 圆周率计算10000位测试结果</h4>
+
+            <br />
+            <p>
+              firefox 66 测试 BigInteger.js 达到1倍速度
+            </p>
+            <br />
+            <p>
+              chrome 62 测试 BigInteger.js 达到6.688倍速度
+            </p>
+            <br />
+
+            <p>chrome 74 测试 原生BigInt 达到49.710倍速度</p>
+          </div>
+          <hr />
+
+          <p></p>
+          <br />
+        </div>
+      </div>
+      <hr />
       <div class="container">
         <h3>BigInteger.js</h3>
         <p>
@@ -155,13 +194,14 @@ chrome 74 测试 原生BigInt 达到11.16倍速度
           更新（2018年12月2日）：BigInt被添加为JavaScript的本机功能。
           此库现在可用作polyfill：如果环境支持本机BigInt，则此库充当本机实现的瘦包装器。
           建议升级浏览器到chrome68以上,才可支持原生BigInt.
-          <b>如果浏览器原生支持BigInt,则运行速度有巨大提升!</b>
         </p>
+        <h5><b>如果浏览器原生支持BigInt,则运行速度有巨大提升!</b></h5>
+
         <hr />
         <div>
           <p>
             <span>
-              选择线程个数:数量 ( 1 到 12 之间):
+              选择线程个数:数量 ( 1 到 16 之间):
               <input
                 class="form-control"
                 id="thread-big"
@@ -186,7 +226,8 @@ chrome 74 测试 原生BigInt 达到11.16倍速度
             </span>
           </p>
           <button
-            class="btn btn-info"
+            data-loading-icon="mui-spinner mui-spinner-custom"
+            class="mui-btn mui-btn-primary btn btn-info"
             id="start-big"
             type="button"
             style="
@@ -207,7 +248,17 @@ chrome 74 测试 原生BigInt 达到11.16倍速度
             id="tp-big"
           ></textarea>
           <br />
-          <div>
+          <button
+            class=" btn btn-outline-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapsiblecontainer2"
+          >
+            展开收起圆周率结果
+          </button>
+          <br />
+          <br />
+          <div id="collapsiblecontainer2" class="collapse show">
             <textarea
               class="form-control"
               cols="100"
@@ -235,7 +286,7 @@ chrome 74 测试 原生BigInt 达到11.16倍速度
         <div>
           <p>
             <span>
-              选择线程个数:数量 ( 1 到 12 之间):
+              选择线程个数:数量 ( 1 到 16 之间):
               <input
                 class="form-control"
                 id="thread"
@@ -260,7 +311,8 @@ chrome 74 测试 原生BigInt 达到11.16倍速度
             </span>
           </p>
           <button
-            class="btn btn-info"
+            data-loading-icon="mui-spinner mui-spinner-custom"
+            class="mui-btn mui-btn-primary btn btn-info"
             id="start"
             type="button"
             style="
@@ -281,7 +333,18 @@ width: 100%;
             id="tp"
           ></textarea>
           <br />
-          <div>
+          <br />
+          <button
+            class=" btn btn-outline-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapsiblecontainer3"
+          >
+            展开收起圆周率结果
+          </button>
+          <br />
+          <br />
+          <div id="collapsiblecontainer3" class="collapse show">
             <textarea
               class="form-control"
               cols="100"
