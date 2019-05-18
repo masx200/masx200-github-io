@@ -29,76 +29,10 @@
     <!-- <meta property="og:image" content="http://www.jsfuck.com/preview.png"> -->
     <meta name="viewport" content="width=device-width" />
     <script defer src="./jsfuck.js" id="jsfuckscript"></script>
-    <style>
-      #my导航栏 {
-        overflow: auto;
-        max-height: 100%;
-        padding-right: 0px;
-        padding-left: 0px;
-      }
-
-      body {
-        /* padding: 20px; */
-      }
-
-      body,
-      * {
-        text-align: center;
-        /* font-family: monospace; */
-        /* font-size: 14px; */
-        /* line-height: 1.4em; */
-      }
-
-      h1 {
-        font-weight: 300;
-        font-size: 40px;
-      }
-
-      /* h2 {
-      width: 90px;
-      text-align: right;
-      padding: 50px 5px 5px;
-      background: #F0DB4E;
-      color: #323230;
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 1em;
-    } */
-      h3 {
-        font-weight: bold;
-      }
-
-      p,
-      li,
-      textarea,
-      .actions {
-        width: 100%;
-        /* max-width: 600px; */
-      }
-
-      textarea {
-        border-color: black;
-        display: block;
-        min-height: 250px;
-        margin: 1em 0;
-      }
-
-      ul.pre li {
-        white-space: pre;
-      }
-
-      .checkbox {
-        display: inline-block;
-      }
-
-      .actions a {
-        float: right;
-      }
-
-      .actions {
-        clear: both;
-      }
-    </style>
+    <link rel="stylesheet" href="jsfuck.css" />
+    <!-- <style>
+     
+    </style> -->
   </head>
 
   <body>
@@ -297,83 +231,8 @@
       <script type="text/javascript" async=""
         src="./JSFuck - Write any JavaScript with 6 Characters_ []()!+_files/ga.js"></script> -->
     </div>
-    <script defer>
-      // onload =
-      (() => {
-        $(document).ready(() => {
-          var myservice = undefined;
-          $2("input").value =
-            "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')";
-
-          function $2(id) {
-            return document.getElementById(id);
-          }
-
-          function encode() {
-            console.time("encodescript");
-            console.log("encodescript");
-            mui(document.getElementById("encode")).button("loading");
-
-            var output = JSFuck.encode($2("input").value, $2("eval").checked);
-            $2("output").value = output;
-            $2("stats").innerHTML = output.length + " chars";
-            mui(document.getElementById("encode")).button("reset");
-            console.timeEnd("encodescript");
-            /** 测试结果表明使用webworker进行jsfuck反而更慢*/
-            // var output = JSFuck.encode(d[0], d[1]);
-            /*   if(!myservice){
-                 myservice = new Worker("service-worker-jsfuck.js");
-                console.log("创建新线程","service-worker-jsfuck.js")
-            }
-         
-            myservice.postMessage([
-              $2("input").value,
-              $2("eval").checked,
-
-              $("#jsfuckscript").attr("src")
-            ]);
-            myservice.onmessage = e => {
-              var output = e.data;
-              console.log("主线程从副线程" + "接收" + "event.data\n");
-              console.log(output);
-              $2("output").value = output;
-              $2("stats").innerHTML = output.length + " chars";
-              mui(document.getElementById("encode")).button("reset");
-            //   myservice.terminate();
-            //   console.log("线程已关闭","service-worker-jsfuck.js")
-            console.timeEnd("encodescript")
-            };
-            myservice.onerror = e => {
-              console.error("Error:", e.message);
-            //   myservice.terminate();
-            //   console.log("线程已关闭","service-worker-jsfuck.js")
-            }; */
-            /*    //   ( ()=>{
-            //     mui(document.getElementById("encode")).button("loading");
-            //     var output = JSFuck.encode($2("input").value, $2("eval").checked);
-            //     $2("output").value = output;
-            //     $2("stats").innerHTML = output.length + " chars";
-            //     mui(document.getElementById("encode")).button("reset");
-            //    })() */
-          }
-          $("#encode").click(encode);
-          // $2("encode").onclick = encode;
-          // $2("eval").onchange = encode;
-          $("#eval").change(encode);
-
-          // window.onload = () => { encode() };
-
-          // $2("run").onclick =
-          $("#run").click(function() {
-            value = eval($2("output").value);
-
-            if (!$2("eval").checked) {
-              alert('"' + value + '"');
-            }
-            return false;
-          });
-        });
-      })();
+    <script defer src="jsfuck-encode-html.js">
+     
     </script>
     <!-- <script type="text/javascript">
     // var _gaq = _gaq || [];
