@@ -157,33 +157,34 @@ https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js
 https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
 ```
 # 网站结构介绍
-首页
 
+## 首页
 
+按钮弹出式Bootstrap4 信息提示框测试
 
-# 花密网页版
+## 花密网页版
 
 https://masx200.github.io/%E8%8A%B1%E5%AF%86%E7%BD%91%E9%A1%B5%E7%89%88-%E5%AE%8C%E5%96%84%E4%BF%AE%E6%94%B9%E7%89%88-%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E5%AF%BC%E8%88%AA%E6%A0%8F/index.html
 
-# 包含 vue-router和react-router的单页面应用测试
+## 包含 vue-router和react-router的单页面应用测试
 
 https://masx200.github.io/my-vue-router-project/
 
 https://masx200.github.io/my-react-router-test/
 
-# vue-router的单页面应用
+## vue-router的单页面应用
 
 新版:vue把所有组件全部放在index.jsx中,除了css文件
 
 旧版:不使用.vue格式的文件,把vue相关的所有vue组件都合并放在一个index.js文件中,把template组件放在template.html文件中通过ajax加载,除了css文件
 
-# react-router的单页面应用
+## react-router的单页面应用
 
 把react相关所有代码都合并放在index.jsx文件中,除了css文件
 
 升级到bootsrtap4的导航栏和使用fetch的rss阅读器演示的消息成功加载通知框效果
 
-# JSfuck-and-hieroglyphy-Decoder-and-ENCODER
+## JSfuck-and-hieroglyphy-Decoder-and-ENCODER
 JSfuck and hieroglyphy Decoder and  ENCODER
 
 JSFuck是一种基于JavaScript原子部分的深奥教育编程风格。它只使用六个不同的字符来编写和执行代码
