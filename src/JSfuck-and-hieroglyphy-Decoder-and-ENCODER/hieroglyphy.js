@@ -1,4 +1,4 @@
-hieroglyphy = (function(global, undefined) {
+ (function(global, undefined) {
   /*jshint sub:true, evil:true */
   "use strict";
   var numbers,
@@ -324,4 +324,4 @@ hieroglyphy = (function(global, undefined) {
     return functionConstructor + "(" + hieroglyphyString(src) + ")()";
   }
   return global.hieroglyphy;
-})(this);
+})(window||WorkerGlobalScope||this);
