@@ -1,5 +1,5 @@
 /*! JSFuck 0.4.0 - http://jsfuck.com */
-JSFuck = (function(global) {
+ (function(global) {
 //   "use strict";
   self = typeof exports === "undefined" ? window : exports;
   self.JSFuck = {
@@ -446,4 +446,4 @@ JSFuck = (function(global) {
   //   encode: encode
   // };
   return global.JSFuck;
-})(this);
+})(window||WorkerGlobalScope||this);
