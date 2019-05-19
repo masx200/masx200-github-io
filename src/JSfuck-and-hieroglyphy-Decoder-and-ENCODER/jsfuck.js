@@ -1,6 +1,7 @@
 /*! JSFuck 0.4.0 - http://jsfuck.com */
- (function(global) {
-//   "use strict";
+(function(global) {
+  // console.log(global)
+  //   "use strict";
   self = typeof exports === "undefined" ? window : exports;
   self.JSFuck = {
     encode: encode
@@ -9,6 +10,7 @@
   global.JSFuck = {
     encode: encode
   };
+  module.exports = global.JSFuck;
   var USE_CHAR_CODE = "USE_CHAR_CODE";
 
   var MIN = 32,
@@ -446,4 +448,8 @@
   //   encode: encode
   // };
   return global.JSFuck;
-})(window||WorkerGlobalScope||this);
+})(
+  (typeof window !== "undefined" ? window : false) ||
+    (typeof WorkerGlobalScope !== "undefined" ? WorkerGlobalScope : false) ||
+    this
+);

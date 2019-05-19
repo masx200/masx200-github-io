@@ -1,4 +1,25 @@
 (() => {
+  function guid() {
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+      var r = (Math.random() * 16) | 0,
+        v = c == "x" ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+  }
+  function tanchu弹出消息提示() {
+    // var id=Math.random()*100000000|0
+    var id = guid();
+    jQuery("#my导航栏").append(
+      jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>成功!</strong> 计算成功提示信息。
+              </div>`).fadeTo(5000, 0.5, () => {
+        console.log(jQuery("#" + id));
+        jQuery("#" + id).remove();
+      })
+    );
+    // console.timeEnd('解码JSFUCK 和hieroglyphy')
+  }
   //使用bigint测试
   //   window.onload = () => {
   //     mytestpi();
@@ -164,7 +185,8 @@
             "mythread1-bigint.js" + "-" + index
           );
         }
-arr[index].name+="-"+index
+        // arr[index].name ="mythread1-bigint.js"+ "-" + index;
+        // console.log(arr[index].name )
         // arr[index] = new Worker("mythread1-bigint.js");
         arr[index].postMessage([piwei, threadgeshu, index]);
         arr[index].onmessage = function(event) {
@@ -188,9 +210,9 @@ arr[index].name+="-"+index
           //     console.error(key, e[key])
           // }
           // console.error(e.message)
-          console.error("Error:", e.message);
+          console.error("Error:", e.message, e.filename);
           //   arr[index].terminate();
-          $("#tp2-big").val("Error:" + e.message);
+          //   $("#tp2-big").val("Error:" + e.message+" "+e.filename);
           //   throw e;
         };
       });
@@ -229,6 +251,7 @@ arr[index].name+="-"+index
       var myptext = mytextarea1;
       myshurukuangneirong += String(eventdata);
       myptext.value = myshurukuangneirong;
+      tanchu弹出消息提示();
       // jisuanfinishflag = 1;
       myworker.forEach(function(currentValue, index, arr) {
         // arr[index].terminate();

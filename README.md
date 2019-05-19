@@ -193,6 +193,10 @@ hieroglyphy是一个工具和javascript库，用于将字符串，数字和脚�
 ()[]{}+!
 </code>
 
+
+在JSfuck and hieroglyphy ENCODER中使用service-worker,避免编码时的网页卡顿,也解决了web-worker中加载依赖包的问题,速度提升
+
+
 https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck%20Decoder%20%20and%20hieroglyphy%20%20decoder.html
 
 https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/hieroglyphy%20encoder.html
