@@ -17,7 +17,7 @@
         jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong>成功!</strong> 编码成功提示信息。
-            </div>`).fadeTo(5000, 0.5, () => {
+            </div>`).fadeTo(10000, 0.5, () => {
           console.log(jQuery("#" + id));
           jQuery("#" + id).remove();
         })
@@ -37,8 +37,15 @@
       }
       // return false;
     });
-    $("#encodescript").click(encodescript);
-    $("#encodestring").click(encodestring);
+    // $("#encodescript").click(encodescript);
+    // $("#encodestring").click(encodestring);
+    $("#encodescript").click(()=>{
+        encodeall('encodescript')
+    });
+    $("#encodestring").click(()=>{
+        encodeall('encodestring')
+    });
+    // $("#encodestring").click(encodestring);
     // $("encodescript").onclick = encodescript;
     // $("encodestring").onclick = encodestring;
     // window.onload = () => { encodescript() };
@@ -49,7 +56,7 @@
       return document.getElementById(id);
     }
 
-    function encodescript() {
+  /*   function encodescript() {
       console.time("encodescript");
       console.log("encodescript");
       mui(document.getElementById("encodescript")).button("loading");
@@ -71,7 +78,10 @@
         console.log("主线程从副线程" + "接收" + "event.data\n");
         console.log(output);
 
-        $2("output").value = output;
+        // $2("output").value = output;
+        console.timeEnd("encodescript");
+        console.time("requestAnimationFrame");
+        jQuery("#output").val(output);
         $2("stats").innerHTML = output.length + " chars";
 
         //   $2("output").value = output;
@@ -79,8 +89,13 @@
         mui(document.getElementById("encodescript")).button("reset");
         //   myservice.terminate();
         //   console.log("线程已关闭","service-worker-jsfuck.js")
-        console.timeEnd("encodescript");
-        tanchu弹出消息提示();
+
+        requestAnimationFrame(() => {
+          console.log("弹出消息提示");
+          tanchu弹出消息提示();
+          console.timeEnd("requestAnimationFrame");
+        });
+        // tanchu弹出消息提示();
       };
       myservice.onerror = e => {
         console.error("Error:", e.message, e.filename);
@@ -114,16 +129,25 @@
         console.log("主线程从副线程" + "接收" + "event.data\n");
         console.log(output);
 
-        $2("output").value = output;
+        // $2("output").value = output;
+        console.timeEnd("encodestring");
+        console.time("requestAnimationFrame");
+        jQuery("#output").val(output);
         $2("stats").innerHTML = output.length + " chars";
 
         //   $2("output").value = output;
         //   $2("stats").innerHTML = output.length + " chars";
-        mui(document.getElementById("encodestring")).button("reset");
+
         //   myservice.terminate();
         //   console.log("线程已关闭","service-worker-jsfuck.js")
-        console.timeEnd("encodestring");
-        tanchu弹出消息提示();
+        // console.timeEnd("encodestring");
+        requestAnimationFrame(() => {
+          console.log("弹出消息提示");
+          tanchu弹出消息提示();
+          console.timeEnd("requestAnimationFrame");
+        });
+        mui(document.getElementById("encodestring")).button("reset");
+        // tanchu弹出消息提示();
       };
       myservice.onerror = e => {
         console.error("Error:", e.message);
@@ -131,5 +155,57 @@
         //   console.log("线程已关闭","service-worker-jsfuck.js")
       };
     }
+ */
+
+    function encodeall(typename) {
+
+        console.time(typename);
+        console.log(typename);
+        if (!myservice) {
+          myservice = new Worker("service-worker-hieroglyphy.js");
+          console.log("创建新线程", "service-worker-hieroglyphy.js");
+        }
+        mui(document.getElementById(typename)).button("loading");
+        lastclick = typename;
+  
+        // var output = hieroglyphy.hieroglyphyString(($2("input").value))
+        myservice.postMessage([
+          $2("input").value,
+          lastclick,
+  
+          $("#hieroglyphy").attr("src")
+        ]);
+        myservice.onmessage = e => {
+          var output = e.data;
+          console.log("主线程从副线程" + "接收" + "event.data\n");
+          console.log(output);
+  
+          // $2("output").value = output;
+          console.timeEnd(typename);
+          console.time("requestAnimationFrame");
+          jQuery("#output").val(output);
+          $2("stats").innerHTML = output.length + " chars";
+  
+          //   $2("output").value = output;
+          //   $2("stats").innerHTML = output.length + " chars";
+  
+          //   myservice.terminate();
+          //   console.log("线程已关闭","service-worker-jsfuck.js")
+          // console.timeEnd("encodestring");
+          requestAnimationFrame(() => {
+            console.log("弹出消息提示");
+            tanchu弹出消息提示();
+            console.timeEnd("requestAnimationFrame");
+          });
+          mui(document.getElementById(typename)).button("reset");
+          // tanchu弹出消息提示();
+        };
+        myservice.onerror = e => {
+          console.error("Error:", e.message);
+          //   myservice.terminate();
+          //   console.log("线程已关闭","service-worker-jsfuck.js")
+        };
+      }
+
   });
 })();

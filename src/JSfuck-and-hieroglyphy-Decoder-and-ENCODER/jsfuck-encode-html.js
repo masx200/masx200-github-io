@@ -17,7 +17,7 @@
         jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
                   <button type="button" class="close" data-dismiss="alert">&times;</button>
                   <strong>成功!</strong> 编码成功提示信息。
-                  </div>`).fadeTo(5000, 0.5, () => {
+                  </div>`).fadeTo(10000, 0.5, () => {
           console.log(jQuery("#" + id));
           jQuery("#" + id).remove();
         })
@@ -69,13 +69,21 @@
         var output = e.data;
         console.log("主线程从副线程" + "接收" + "event.data\n");
         console.log(output);
-        $2("output").value = output;
+        // $2("output").value = output;
+        console.timeEnd("encodescript");
+        console.time("requestAnimationFrame");
+        jQuery("#output").val(output);
         $2("stats").innerHTML = output.length + " chars";
         mui(document.getElementById("encode")).button("reset");
         //   myservice.terminate();
         //   console.log("线程已关闭","service-worker-jsfuck.js")
-        console.timeEnd("encodescript");
-        tanchu弹出消息提示();
+
+        requestAnimationFrame(() => {
+          console.log("弹出消息提示");
+          tanchu弹出消息提示();
+          console.timeEnd("requestAnimationFrame");
+        });
+        // tanchu弹出消息提示();
       };
       myservice.onerror = e => {
         console.error("Error:", e.message, e.filename);

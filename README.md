@@ -178,6 +178,8 @@ https://masx200.github.io/my-react-router-test/
 
 把react相关所有代码都合并放在index.jsx文件中,除了css文件
 
+升级到bootsrtap4的导航栏和使用fetch的rss阅读器演示的消息成功加载通知框效果
+
 # JSfuck-and-hieroglyphy-Decoder-and-ENCODER
 JSfuck and hieroglyphy Decoder and  ENCODER
 
@@ -195,6 +197,8 @@ hieroglyphy是一个工具和javascript库，用于将字符串，数字和脚�
 
 
 在JSfuck and hieroglyphy ENCODER中使用service-worker,避免编码时的网页卡顿,也解决了web-worker中加载依赖包的问题,速度提升
+
+在编码完成后,输出到文本框里面的内容过长,消耗的时间比较长,这段时间网页处于卡顿状态,使用requestAnimationFrame的方法,在网页卡顿结束后,弹出成功消息通知框
 
 
 https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck%20Decoder%20%20and%20hieroglyphy%20%20decoder.html
