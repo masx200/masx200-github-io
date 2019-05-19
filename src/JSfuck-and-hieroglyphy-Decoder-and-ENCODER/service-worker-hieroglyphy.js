@@ -6,15 +6,16 @@ for (var i = 0; i < 128; i++) {
     console.log(i, c, out.length)
 }
 console.log(sum, sum / 128) */
-
+(() => {
+var hieroglyphy=import("hieroglyphy.js")
 addEventListener("message", e => {
     var d = e.data;
   
     console.log("副线程" + "从主线程接收" + "event.data\n");
     console.log(...d);
   
-    importScripts(d[2]);
-    (() => {
+   // importScripts(d[2]);
+    
       // mui(document.getElementById("encode")).button("loading");
       if( "encodescript"===d[1]){
         var output = hieroglyphy.hieroglyphyScript((d[0]))
@@ -26,6 +27,6 @@ addEventListener("message", e => {
       // $2("stats").innerHTML = output.length + " chars";
       // mui(document.getElementById("encode")).button("reset");
       postMessage(output);
-    })();
+    
   });
-  
+  }();
