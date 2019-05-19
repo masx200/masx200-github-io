@@ -131,7 +131,8 @@
         }
         //   ,{name:"mythread1-bigint.js"+"-"+index}
         // arr[index] = new Worker("mythread1-decimal.js");
-        arr[index].postMessage([piwei, threadgeshu, index]);
+arr[index].name+="-"+index        
+arr[index].postMessage([piwei, threadgeshu, index]);
         arr[index].onmessage = function(event) {
           console.log("主线程从副线程" + (index + 1) + "接收" + "event.data\n");
           console.log(
