@@ -205,8 +205,8 @@ hieroglyphy是一个工具和javascript库，用于将字符串，数字和脚�
 在编码完成后,输出到文本框里面的内容过长,消耗的时间比较长,这段时间网页处于卡顿状态,使用requestAnimationFrame的方法,在网页卡顿结束后,弹出成功消息通知框
 
 
-https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck%20Decoder%20%20and%20hieroglyphy%20%20decoder.html
+https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck-Decoder--and-hieroglyphy--decoder.html
 
-https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/hieroglyphy%20encoder.html
+https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/hieroglyphy-encoder.html
 
-https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSFuck%20-%20Write%20any%20JavaScript%20with%206%20Characters_%20[]()!+.html
+https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSFuck---Write-any-JavaScript-with-6-Characters_-[]()!+.html
