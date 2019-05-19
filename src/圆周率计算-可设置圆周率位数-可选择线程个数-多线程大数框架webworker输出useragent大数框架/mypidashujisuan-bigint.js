@@ -164,7 +164,7 @@
             "mythread1-bigint.js" + "-" + index
           );
         }
-
+arr[index].name+="-"+index
         // arr[index] = new Worker("mythread1-bigint.js");
         arr[index].postMessage([piwei, threadgeshu, index]);
         arr[index].onmessage = function(event) {
