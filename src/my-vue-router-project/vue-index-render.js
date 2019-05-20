@@ -78,6 +78,7 @@
     var lasthash;
     $(window).on("hashchange", hashchangehandler);
     function hashchangehandler() {
+        jQuery("#example-navbar-collapse").removeClass("show")
       if (lasthash === window.location.hash) {
         console.log("hash不改变");
         return;
@@ -217,7 +218,51 @@
     // window.App2=App2
     // console.log(App2.toString())
     let App = Vue.extend({
-      template: `<div id="root"><nav class="navbar navbar-default" role="navigation"><div class="container-fluid"><div class="navbar-header"><a class="navbar-brand" href="../index.html">masx200的github主页</a><button type="button" class="navbar-toggle" data-toggle="collapse"data-target="#example-navbar-collapse"><span class="sr-only">切换导航</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div><div class="collapse navbar-collapse" id="example-navbar-collapse"><ul class="nav navbar-nav" id="mynavul" @click="myfreshdata()" ><li id="mynav1" v-bind:class="{ active: isActive1 }"><router-link to="/">基于VUE的首页</router-link></li><li id="mynav2" v-bind:class="{ active: isActive2 }"><router-link to="/huami">花密网页版</router-link></li><li id="mynav3" v-bind:class="{ active: isActive3 }"><router-link to="/about">关于VUE</router-link></li><li><a href="../my-react-router-test/index.html">基于react的首页</a></li><li class=""><a href="../圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/index.html">圆周率计算多线程</a></li><li><a href="../JSfuck-and-hieroglyphy-Decoder-and-ENCODER/index.html">JSfuck-and-hieroglyphy-Decoder-and-ENCODER</a></li></ul></div></div></nav><div class="container"><router-view /> </div></div>`,
+      template: `<div id="root">
+      <div id="my导航栏" class="fixed-top container-fluid">
+      <nav class="navbar navbar-default navbar navbar-expand-sm bg-light navbar-light" role="navigation">
+      
+      <div class="container-fluid">
+      <div class="navbar-header">
+      <a class="navbar-brand" href="../index.html">masx200的github主页</a>
+      <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#example-navbar-collapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+      
+      </div>
+      <div class="collapse navbar-collapse" id="example-navbar-collapse">
+      <ul class="nav navbar-nav" id="mynavul" @click="myfreshdata()" >
+      <li id="mynav1" v-bind:class="{ active: isActive1 }">
+      <router-link to="/"  class="nav-link">基于VUE的首页</router-link>
+      </li>
+      <li id="mynav2" v-bind:class="{ active: isActive2 }">
+      <router-link to="/huami"  class="nav-link">花密网页版</router-link>
+      </li>
+      <li id="mynav3" v-bind:class="{ active: isActive3 }">
+      <router-link to="/about"  class="nav-link">关于VUE</router-link>
+      </li>
+      <li>
+      <a href="../my-react-router-test/index.html"  class="nav-link">基于react的首页</a>
+      </li>
+      <li class="">
+      <a href="../圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/index.html"  class="nav-link">圆周率计算多线程</a></li>
+      <li><a href="../JSfuck-and-hieroglyphy-Decoder-and-ENCODER/index.html"  class="nav-link">JSfuck-and-hieroglyphy-Decoder-and-ENCODER</a>
+      </li>
+      </ul>
+      </div>
+      </div>
+      </nav>
+      </div>
+      
+      <div class="container" id="my主体" ><router-view /> </div>
+      
+      </div>`,
       name: "App",
       data() {
         return {
@@ -246,6 +291,7 @@
         this.myfreshdata();
         hashchangehandler();
         $("#mynavul").click(hashchangehandler);
+        $("#my主体").css("padding-top", $("#my导航栏").height());
         // window.mychangemenu();
         // mychangemenu();
       }
