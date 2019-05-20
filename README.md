@@ -161,6 +161,10 @@ https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
 
 ## 首页
 
+css中使用@import实现全部模块化
+
+js中使用import实现全部模块化
+
 按钮弹出式 Bootstrap4 信息提示框测试
 
 ## 花密网页版
