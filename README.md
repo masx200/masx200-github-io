@@ -1,5 +1,6 @@
 # masx200.github.io
-masx200的github
+
+masx200 的 github
 
 https://masx200.github.io/
 
@@ -7,14 +8,13 @@ https://masx200.github.io/
 
 https://github.com/masx200/masx200.github.io/tree/master/src
 
+# 圆周率计算多线程,使用 BigInteger.js 和浏览器原生的 BigInt 之后速度得到巨大提升!
 
-# 圆周率计算多线程,使用 BigInteger.js和浏览器原生的BigInt之后速度得到巨大提升!
+优化了圆周率计算的多线程方式,开启一次 webworker 后,不再关闭它,每一个线程一个 webworker,也不重复创建过多 webweorker,并给按钮添加 mui 的 loading 效果,全局加上 mui 的支持
 
-优化了圆周率计算的多线程方式,开启一次webworker后,不再关闭它,每一个线程一个webworker,也不重复创建过多webweorker,并给按钮添加mui的loading效果,全局加上mui的支持
+优化了圆周率的界面显示效果,使用 bootstrap4 的折叠按钮效果,可以收起或展开某些特别占空间的组件
 
-优化了圆周率的界面显示效果,使用bootstrap4的折叠按钮效果,可以收起或展开某些特别占空间的组件
-
-需要浏览器chrome68以上,才原生支持BigInt
+需要浏览器 chrome68 以上,才原生支持 BigInt
 
 <div>
 <h3>BigInteger.js</h3>
@@ -77,19 +77,19 @@ chrome 74 测试 原生BigInt 达到11.16倍速度
 <hr>
 </div>
 
-### 使用babel-standalone代替本地node模块
+### 使用 babel-standalone 代替本地 node 模块
 
-使用babel在线解析jsx语法和es6以上的语法
+使用 babel 在线解析 jsx 语法和 es6 以上的语法
 
-不使用本地node模块,大大减小了生成的文件大小
+不使用本地 node 模块,大大减小了生成的文件大小
 
 Babel · The compiler for next generation JavaScript
 
 https://babeljs.io/
 
-## 使用parcel bundler代替webpcak成功
+## 使用 parcel bundler 代替 webpcak 成功
 
-避免webpack繁琐的配置,快速解决打包问题
+避免 webpack 繁琐的配置,快速解决打包问题
 
 📦 Parcel 中文文档 | Parcel 中文网
 
@@ -119,8 +119,8 @@ parcel build index.html
 
 parcel build entry.js
 
+# 使用 cdn 加载依赖包,加快速度
 
-# 使用cdn加载依赖包,加快速度
 ```
 https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css
 
@@ -156,40 +156,103 @@ https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js
 
 https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
 ```
+
 # 网站结构介绍
 
 ## 首页
 
-按钮弹出式Bootstrap4 信息提示框测试
+按钮弹出式 Bootstrap4 信息提示框测试
 
 ## 花密网页版
 
 https://masx200.github.io/%E8%8A%B1%E5%AF%86%E7%BD%91%E9%A1%B5%E7%89%88-%E5%AE%8C%E5%96%84%E4%BF%AE%E6%94%B9%E7%89%88-%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E5%AF%BC%E8%88%AA%E6%A0%8F/index.html
 
-## 包含 vue-router和react-router的单页面应用测试
+## 包含 vue-router 和 react-router 的单页面应用测试
 
 https://masx200.github.io/my-vue-router-project/
 
 https://masx200.github.io/my-react-router-test/
 
-## vue-router的单页面应用
+## react-router 的单页面应用
 
-新版:vue把所有组件全部放在index.jsx中,除了css文件
+按需异步动态加载组件方法
 
-旧版:不使用.vue格式的文件,把vue相关的所有vue组件都合并放在一个index.js文件中,把template组件放在template.html文件中通过ajax加载,除了css文件
+```javascript
+const { Link, Switch, BrowserRouter, Route, Redirect } = ReactRouterDOM;
+const { Suspense, lazy } = React;
+const home = lazy(() => import("./module-home"));
+const rssreader = lazy(() => import("./module-rssreader"));
+const about = lazy(() => import("./module-about"));
 
-## react-router的单页面应用
+<BrowserRouter
+  basename={window.location.pathname + "#/"}
+  forceRefresh={false}
+  keyLength={12}
+>
+  <Suspense fallback={<div>loading</div>}>
+    <Switch>
+      <Route exact path="/" component={home} />
+      <Route path="/rssreader" component={rssreader} />
+      <Route path="/about" component={about} />
+      <Redirect from="*" to="/" />
+    </Switch>
+  </Suspense>
+</BrowserRouter>;
+```
+新版:按照路由组件分包加载,不使用本地 node 模块,大大减小了生成的文件大小,依赖包从cdn加载
 
-把react相关所有代码都合并放在index.jsx文件中,除了css文件
+新版:升级到 bootsrtap4 的导航栏和使用 fetch 的 rss 阅读器演示的消息成功加载通知框效果
 
-升级到bootsrtap4的导航栏和使用fetch的rss阅读器演示的消息成功加载通知框效果
+旧版:把 react 相关所有代码都合并放在 index.jsx 文件中,除了 css 文件
+
+
+
+## vue-router 的单页面应用
+
+按需异步动态加载组件方法
+
+```javascript
+const about = () => import("./vue-component-about");
+const home = () => import("./vue-component-home");
+const huami = () => import("./vue-component-huami");
+const router = new VueRouter({
+  routes: [
+    {
+      path: "/about",
+      name: "about",
+
+      component: about
+    },
+    {
+      path: "/",
+      name: "home",
+      component: home
+    },
+    {
+      path: "/huami",
+      name: "huami",
+      component: huami
+    },
+    {
+      path: "*",
+      redirect: "/"
+    }
+  ]
+});
+```
+新版:按照路由组件分包加载,不使用本地 node 模块,大大减小了生成的文件大小,依赖包从cdn加载
+
+旧版:vue 把所有组件全部放在 index.jsx 中,除了 css 文件
+
+旧版:不使用.vue 格式的文件,把 vue 相关的所有 vue 组件都合并放在一个 index.js 文件中,把 template 组件放在 template.html 文件中通过 ajax 加载,除了 css 文件
 
 ## JSfuck-and-hieroglyphy-Decoder-and-ENCODER
-JSfuck and hieroglyphy Decoder and  ENCODER
 
-JSFuck是一种基于JavaScript原子部分的深奥教育编程风格。它只使用六个不同的字符来编写和执行代码
+JSfuck and hieroglyphy Decoder and ENCODER
 
-hieroglyphy是一个工具和javascript库，用于将字符串，数字和脚本转换为 的等效序列！在浏览器中运行的字符
+JSFuck 是一种基于 JavaScript 原子部分的深奥教育编程风格。它只使用六个不同的字符来编写和执行代码
+
+hieroglyphy 是一个工具和 javascript 库，用于将字符串，数字和脚本转换为 的等效序列！在浏览器中运行的字符
 
 <code>
     ()+[]!
@@ -199,11 +262,9 @@ hieroglyphy是一个工具和javascript库，用于将字符串，数字和脚�
 ()[]{}+!
 </code>
 
+在 JSfuck and hieroglyphy ENCODER 中使用 service-worker,避免编码时的网页卡顿,也解决了 web-worker 中加载依赖包的问题,速度提升
 
-在JSfuck and hieroglyphy ENCODER中使用service-worker,避免编码时的网页卡顿,也解决了web-worker中加载依赖包的问题,速度提升
-
-在编码完成后,输出到文本框里面的内容过长,消耗的时间比较长,这段时间网页处于卡顿状态,使用requestAnimationFrame的方法,在网页卡顿结束后,弹出成功消息通知框
-
+在编码完成后,输出到文本框里面的内容过长,消耗的时间比较长,这段时间网页处于卡顿状态,使用 requestAnimationFrame 的方法,在网页卡顿结束后,弹出成功消息通知框
 
 https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/index.html
 

@@ -20,12 +20,152 @@
   // var xmlDoc, x, onetitle, onelink, description;
 
   let haverun = 0;
-  setTimeout(() => {
-    herewindowonload();
-  }, 1000);
+  //   setTimeout(() => {
+  //     herewindowonload();
+  //   }, 1000);
 
-  let myonloadfunc = () => {
-    function jiazaiload(myid, eid) {
+  function myonloadfunc() {
+    const { Link, Switch, BrowserRouter, Route, Redirect } = ReactRouterDOM;
+    const { Suspense, lazy } = React;
+    const home = lazy(() => import("./module-home"));
+    const rssreader = lazy(() => import("./module-rssreader"));
+    const about = lazy(() => import("./module-about"));
+    // hashchangehandler();
+    var lasthash;
+    /* var about = (app = rssreader = "undefined");
+    var allcomponent = {
+      about,
+      app,
+      rssreader
+    }; */
+    // var about, App, rssreader;
+    $(window).on("hashchange", hashchangehandler);
+    function hashchangehandler() {
+      if (lasthash === window.location.hash) {
+        console.log("hash不改变");
+        return;
+      }
+      lasthash = window.location.hash;
+      console.log("hash", window.location.hash);
+      if ("" == window.location.hash) {
+        window.location.hash = "#/";
+        return;
+      }
+
+      /*  try {
+        异步按需加载外部组件("#/", import("./module-app.js"), "app");
+        异步按需加载外部组件("#/about", import("./module-about.js"), "about");
+        异步按需加载外部组件(
+            "#/rssreader",
+            import("./module-rssreader.js"),
+            "rssreader"
+          );
+      } catch (e) {
+        console.error(e);
+      } */
+      /* 
+      try {
+        异步按需加载外部组件("#/about", import("./module-about.js"), "about");
+      } catch (e) {
+        console.error(e);
+      }
+      try {
+        异步按需加载外部组件(
+          "#/rssreader",
+          import("./module-rssreader.js"),
+          "rssreader"
+        );
+      } catch (e) {
+        console.error(e);
+      } */
+      //   } catch (e) {
+      //     console.warn(e);
+      //     try {
+      //         $("#allnavbar").click();
+      //     } catch (e) {
+      //       console.warn(e);
+      //     }
+      //   }
+
+      //   refreshall();
+      //   console.log("about", about);
+      //   console.log("app", App);
+      //   console.log("rssreader", rssreader);
+      /*   if ("#/about" == window.location.hash) {
+        if (undefined === about) {
+          console.log("加载外部组件about");
+          //   console.log(require("./module-about.js"))
+          //   about =require("./module-about.js").default
+          //   console.log("about", about);
+
+          import("./module-about").then(m => {
+            about = m.default;
+            console.log("about", about);
+            refreshall();
+          });
+        }
+      } */
+
+      /*  function 异步按需加载外部组件(hash, lazypromise, name) {
+        // console.log(hash, lazypromise, name);
+        if (hash == window.location.hash) {
+          if ("undefined" === allcomponent[name]) {
+            console.log("加载外部组件" + name);
+            //   console.log(require("./module-about.js"))
+            //   about =require("./module-about.js").default
+            //   console.log("about", about);
+
+            lazypromise.then(m => {
+              var componentname = (allcomponent[name] = m.default);
+              console.log(name, componentname);
+              refreshall();
+            });
+          } else {
+            lazypromise = null;
+            // console.log(hash, lazypromise, name);
+          }
+        } else {
+          lazypromise = null;
+          //   console.log(hash, lazypromise, name);
+        }
+        // console.log(hash, lazypromise, name);
+      } */
+    }
+    //   refreshall();
+    /* import("./module-about").then(m => {
+            about = m.default;
+            console.log("about", about);
+
+            refreshall();
+          });
+        }
+      }
+
+      if ("#/" == window.location.hash) {
+        if (undefined === App) {
+          console.log("加载外部组件App");
+          import("./module-app").then(m => {
+            App = m.default;
+            console.log("app", App);
+
+            refreshall();
+          });
+        }
+      }
+
+    //   if ("#/rssreader" == window.location.hash) {
+    //     if (undefined === rssreader) {
+    //       console.log("加载外部组件rssreader");
+    //       import("./module-rssreader").then(m => {
+    //         rssreader = m.default;
+    //         console.log("rssreader", rssreader);
+
+    //         refreshall();
+    //       });
+    //     }
+    //   } */
+    // }
+    /*  function jiazaiload(myid, eid) {
       var myselectorid = myid;
       // window.myrsscontent = []
       myrsscontent = [];
@@ -53,7 +193,7 @@
             console.log(myrsscontent);
             refreshall();
             mui(document.getElementById(eid)).button("reset");
-            tanchu弹出消息通用('success')
+            tanchu弹出消息通用("success");
           });
 
         //   var str = await r.text();
@@ -73,48 +213,48 @@
           console.log(myrsscontent);
           refreshall();
         }); */
-        //   .then(str => {
-        //     myxmlstrcontent.push(str);
-        //     console.log(myxmlstrcontent);
-        //     return parser.parse(str);
-        //   })
-        //   .then(data => {
-        //     console.log(data);
-        //     myrsscontent.title = data.rss.channel.title;
-        //     myrsscontent.description = data.rss.channel.description;
-        //     myrsscontent.push(...data.rss.channel.item);
-        //     console.log(myrsscontent);
-        //     refreshall();
-        //   });
+    //   .then(str => {
+    //     myxmlstrcontent.push(str);
+    //     console.log(myxmlstrcontent);
+    //     return parser.parse(str);
+    //   })
+    //   .then(data => {
+    //     console.log(data);
+    //     myrsscontent.title = data.rss.channel.title;
+    //     myrsscontent.description = data.rss.channel.description;
+    //     myrsscontent.push(...data.rss.channel.item);
+    //     console.log(myrsscontent);
+    //     refreshall();
+    //   });
 
-        // $.get($(myselectorid).attr("src"), function (data, status) {
-        //     console.log(status, typeof data, data);
-        //     xmlDoc = data;
-        //     x = xmlDoc.getElementsByTagName("item");
-        //     for (i = 0; i < x.length; i++) {
-        //         onetitle = x[i].getElementsByTagName("title")[0].childNodes[0]
-        //             .nodeValue;
-        //         onelink = x[i].getElementsByTagName("link")[0].childNodes[0]
-        //             .nodeValue;
-        //         description = "";
-        //         for (value of x[i].getElementsByTagName("description")[0]
-        //             .childNodes) {
-        //             description += value.nodeValue;
-        //         }
-        //         // window.myrsscontent.push
-        //         myrsscontent.push({
-        //             title: onetitle,
-        //             link: onelink,
-        //             description
-        //         });
-        //     }
-        //     console.log(myrsscontent);
-        //     // console.log(window.myrsscontent)
-        //     refreshall();
-        // });
-      }
-    }
-    var mybuttonids = {};
+    // $.get($(myselectorid).attr("src"), function (data, status) {
+    //     console.log(status, typeof data, data);
+    //     xmlDoc = data;
+    //     x = xmlDoc.getElementsByTagName("item");
+    //     for (i = 0; i < x.length; i++) {
+    //         onetitle = x[i].getElementsByTagName("title")[0].childNodes[0]
+    //             .nodeValue;
+    //         onelink = x[i].getElementsByTagName("link")[0].childNodes[0]
+    //             .nodeValue;
+    //         description = "";
+    //         for (value of x[i].getElementsByTagName("description")[0]
+    //             .childNodes) {
+    //             description += value.nodeValue;
+    //         }
+    //         // window.myrsscontent.push
+    //         myrsscontent.push({
+    //             title: onetitle,
+    //             link: onelink,
+    //             description
+    //         });
+    //     }
+    //     console.log(myrsscontent);
+    //     // console.log(window.myrsscontent)
+    //     refreshall();
+    // });
+    //   }
+    // } */
+    // var mybuttonids = {};
     function guid() {
       return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(
         c
@@ -124,45 +264,45 @@
         return v.toString(16);
       });
     }
-    function tanchu弹出消息通用(infotype) {
-        // var id=Math.random()*100000000|0
-        var textinfo;
-        switch (infotype) {
-            case 'success':
-                textinfo = '成功'
-                break;
-            case 'primary':
-                textinfo = '首选'
-                break;
-            case 'danger':
-                textinfo = '失败'
-                break;
-            case 'warning':
-                textinfo = '警告'
-                break;
-            default:
-                return;
-                break;
-        }
-        var id = guid();
-        jQuery("#my导航栏").append(
-            jQuery(`<div id="${id}" class="alert alert-${infotype} alert-dismissible fade show">
+    /* function tanchu弹出消息通用(infotype) {
+      // var id=Math.random()*100000000|0
+      var textinfo;
+      switch (infotype) {
+        case "success":
+          textinfo = "成功";
+          break;
+        case "primary":
+          textinfo = "首选";
+          break;
+        case "danger":
+          textinfo = "失败";
+          break;
+        case "warning":
+          textinfo = "警告";
+          break;
+        default:
+          return;
+          break;
+      }
+      var id = guid();
+      jQuery("#my导航栏").append(
+        jQuery(`<div id="${id}" class="alert alert-${infotype} alert-dismissible fade show">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>${textinfo}!</strong> 操作${textinfo}提示信息。
-    </div>`).fadeTo(5000,0.5, () => {
-                console.log(jQuery("#" + id));
-                jQuery("#" + id).remove();
-            })
-        );
-    }
+    </div>`).fadeTo(5000, 0.5, () => {
+          console.log(jQuery("#" + id));
+          jQuery("#" + id).remove();
+        })
+      );
+    } */
     // window.myrsscontent = []
-    let myrsscontent = [];
-    var myxmlstrcontent = [];
-    const { render } = ReactDOM;
-    const { Link, Switch, BrowserRouter, Route, Redirect } = ReactRouterDOM;
+    // let myrsscontent = [];
+    // var myxmlstrcontent = [];
+    // const { render } = ReactDOM;
+
     //   let  hcreate = React.createElement
 
-    class App extends React.Component {
+    /* class App extends React.Component {
       componentWillMount() {}
       componentDidMount() {
         window.location.hash = "#/";
@@ -234,8 +374,11 @@
           </div>
         );
       }
-    }
-    class about extends React.Component {
+    } */
+    //    var about = function() {
+    //       return import("./module-about");
+    //     // };
+    /*   class about extends React.Component {
       componentWillMount() {}
       componentDidMount() {
         refreshall();
@@ -320,150 +463,153 @@
           </div>
         );
       }
-    }
-    class rssreader extends React.Component {
-      /*  constructor() {
-        super()
-        this.buttonid1 = this.buttonid2 =this. buttonid3 =this. buttonid4 = this.buttonid5 =this. buttonid6 = 'undefined';
-      } */
-      // buttonid1=buttonid2=buttonid3=buttonid4=buttonid5=buttonid6=undefined
-      componentWillMount() {
-        mybuttonids.buttonid1 = guid();
-        mybuttonids.buttonid2 = guid();
-        mybuttonids.buttonid3 = guid();
-        mybuttonids.buttonid4 = guid();
-        mybuttonids.buttonid5 = guid();
-        mybuttonids.buttonid6 = guid();
-      }
-      jiazairss1() {
-        // console.log(this.buttonid1);
-        mui(document.getElementById(mybuttonids.buttonid1)).button("loading");
-        var myselectorid = "#xml1";
-        jiazaiload(myselectorid, mybuttonids.buttonid1);
-      }
-      jiazairss2() {
-        mui(document.getElementById(mybuttonids.buttonid2)).button("loading");
-        var myselectorid = "#xml2";
-        jiazaiload(myselectorid, mybuttonids.buttonid2);
-      }
-      jiazairss3() {
-        mui(document.getElementById(mybuttonids.buttonid3)).button("loading");
-        var myselectorid = "#xml3";
-        jiazaiload(myselectorid, mybuttonids.buttonid3);
-      }
-      jiazairss4() {
-        mui(document.getElementById(mybuttonids.buttonid4)).button("loading");
-        var myselectorid = "#xml4";
-        jiazaiload(myselectorid, mybuttonids.buttonid4);
-      }
-      jiazairss5() {
-        mui(document.getElementById(mybuttonids.buttonid5)).button("loading");
-        var myselectorid = "#xml5";
-        jiazaiload(myselectorid, mybuttonids.buttonid5);
-      }
-      jiazairss6() {
-        mui(document.getElementById(mybuttonids.buttonid6)).button("loading");
-        var myselectorid = "#xml6";
-        jiazaiload(myselectorid, mybuttonids.buttonid6);
-      }
-      componentDidMount() {
-        document.title = "React router App-" + "rssreader";
-        refreshall();
-      }
-      componentWillReceiveProps(newProps) {}
-      shouldComponentUpdate(newProps, newState) {
-        return true;
-      }
-      componentWillUpdate(nextProps, nextState) {}
-      componentDidUpdate(prevProps, prevState) {}
-      componentWillUnmount() {}
-      render() {
-        return (
-          <div className="App">
-          <h1>异步fetch加载rss阅读器演示</h1>
-            <nav class="navbar navbar-expand-sm bg-light navbar-light ">
-            
-              <ul class="demo">
-                <button
-                  id={mybuttonids.buttonid1}
-                  data-loading-icon="mui-spinner mui-spinner-custom"
-                  class="mui-btn mui-btn-royal mui-btn-outlined"
-                  onClick={this.jiazairss1}
-                >
-                  加载tmtpost
-                </button>
-                <button
-                  id={mybuttonids.buttonid2}
-                  data-loading-icon="mui-spinner mui-spinner-custom"
-                  class="mui-btn mui-btn-primary mui-btn-outlined"
-                  onClick={this.jiazairss2}
-                >
-                  加载iplaysoft
-                </button>
-                <button
-                  id={mybuttonids.buttonid3}
-                  data-loading-icon="mui-spinner mui-spinner-custom"
-                  class="mui-btn mui-btn-warning mui-btn-outlined"
-                  onClick={this.jiazairss3}
-                >
-                  加载landiannews
-                </button>
-                <button
-                  id={mybuttonids.buttonid4}
-                  data-loading-icon="mui-spinner mui-spinner-custom"
-                  class="mui-btn mui-btn-danger mui-btn-outlined"
-                  onClick={this.jiazairss4}
-                >
-                  加载ithome
-                </button>
-                <button
-                  id={mybuttonids.buttonid5}
-                  data-loading-icon="mui-spinner mui-spinner-custom"
-                  class="mui-btn mui-btn-success mui-btn-outlined"
-                  onClick={this.jiazairss5}
-                >
-                  加载ifanr
-                </button>
-                <button
-                  id={mybuttonids.buttonid6}
-                  data-loading-icon="mui-spinner mui-spinner-custom"
-                  class="mui-btn mui-btn-primary mui-btn-outlined"
-                  onClick={this.jiazairss6}
-                >
-                  加载pingwest
-                </button>
-              </ul>
-            </nav>
-            <header className="App-header">
-              <div>
-                <h3>
-                  <b>{myrsscontent.title}</b>
-                </h3>
-                <p>{myrsscontent.description}</p>
+    } */
+    // class rssreader extends React.Component {
+    // //   /*  constructor() {
+    // //     super()
+    // //     this.buttonid1 = this.buttonid2 =this. buttonid3 =this. buttonid4 = this.buttonid5 =this. buttonid6 = 'undefined';
+    // //   } */
+    // //   // buttonid1=buttonid2=buttonid3=buttonid4=buttonid5=buttonid6=undefined
+    //   componentWillMount() {
+    //     mybuttonids.buttonid1 = guid();
+    //     mybuttonids.buttonid2 = guid();
+    //     mybuttonids.buttonid3 = guid();
+    //     mybuttonids.buttonid4 = guid();
+    //     mybuttonids.buttonid5 = guid();
+    //     mybuttonids.buttonid6 = guid();
+    //   }
+    //   jiazairss1() {
+    //     // console.log(this.buttonid1);
+    //     mui(document.getElementById(mybuttonids.buttonid1)).button("loading");
+    //     var myselectorid = "#xml1";
+    //     jiazaiload(myselectorid, mybuttonids.buttonid1);
+    //   }
+    //   jiazairss2() {
+    //     mui(document.getElementById(mybuttonids.buttonid2)).button("loading");
+    //     var myselectorid = "#xml2";
+    //     jiazaiload(myselectorid, mybuttonids.buttonid2);
+    //   }
+    //   jiazairss3() {
+    //     mui(document.getElementById(mybuttonids.buttonid3)).button("loading");
+    //     var myselectorid = "#xml3";
+    //     jiazaiload(myselectorid, mybuttonids.buttonid3);
+    //   }
+    //   jiazairss4() {
+    //     mui(document.getElementById(mybuttonids.buttonid4)).button("loading");
+    //     var myselectorid = "#xml4";
+    //     jiazaiload(myselectorid, mybuttonids.buttonid4);
+    //   }
+    //   jiazairss5() {
+    //     mui(document.getElementById(mybuttonids.buttonid5)).button("loading");
+    //     var myselectorid = "#xml5";
+    //     jiazaiload(myselectorid, mybuttonids.buttonid5);
+    //   }
+    //   jiazairss6() {
+    //     mui(document.getElementById(mybuttonids.buttonid6)).button("loading");
+    //     var myselectorid = "#xml6";
+    //     jiazaiload(myselectorid, mybuttonids.buttonid6);
+    //   }
+    //   componentDidMount() {
+    //     document.title = "React router App-" + "rssreader";
+    //     refreshall();
+    //   }
+    //   componentWillReceiveProps(newProps) {}
+    //   shouldComponentUpdate(newProps, newState) {
+    //     return true;
+    //   }
+    //   componentWillUpdate(nextProps, nextState) {}
+    //   componentDidUpdate(prevProps, prevState) {}
+    //   componentWillUnmount() {}
+    //   render() {
+    //     return (
+    //       <div className="App">
+    //         <h1>异步fetch加载rss阅读器演示</h1>
+    //         <nav class="navbar navbar-expand-sm bg-light navbar-light ">
+    //           <ul class="demo">
+    //             <button
+    //               id={mybuttonids.buttonid1}
+    //               data-loading-icon="mui-spinner mui-spinner-custom"
+    //               class="mui-btn mui-btn-royal mui-btn-outlined"
+    //               onClick={this.jiazairss1}
+    //             >
+    //               加载tmtpost
+    //             </button>
+    //             <button
+    //               id={mybuttonids.buttonid2}
+    //               data-loading-icon="mui-spinner mui-spinner-custom"
+    //               class="mui-btn mui-btn-primary mui-btn-outlined"
+    //               onClick={this.jiazairss2}
+    //             >
+    //               加载iplaysoft
+    //             </button>
+    //             <button
+    //               id={mybuttonids.buttonid3}
+    //               data-loading-icon="mui-spinner mui-spinner-custom"
+    //               class="mui-btn mui-btn-warning mui-btn-outlined"
+    //               onClick={this.jiazairss3}
+    //             >
+    //               加载landiannews
+    //             </button>
+    //             <button
+    //               id={mybuttonids.buttonid4}
+    //               data-loading-icon="mui-spinner mui-spinner-custom"
+    //               class="mui-btn mui-btn-danger mui-btn-outlined"
+    //               onClick={this.jiazairss4}
+    //             >
+    //               加载ithome
+    //             </button>
+    //             <button
+    //               id={mybuttonids.buttonid5}
+    //               data-loading-icon="mui-spinner mui-spinner-custom"
+    //               class="mui-btn mui-btn-success mui-btn-outlined"
+    //               onClick={this.jiazairss5}
+    //             >
+    //               加载ifanr
+    //             </button>
+    //             <button
+    //               id={mybuttonids.buttonid6}
+    //               data-loading-icon="mui-spinner mui-spinner-custom"
+    //               class="mui-btn mui-btn-primary mui-btn-outlined"
+    //               onClick={this.jiazairss6}
+    //             >
+    //               加载pingwest
+    //             </button>
+    //           </ul>
+    //         </nav>
+    //         <header className="App-header">
+    //           <div>
+    //             <h3>
+    //               <b>{myrsscontent.title}</b>
+    //             </h3>
+    //             <p>{myrsscontent.description}</p>
 
-                <ul class="mui-table-view">
-                  {// window.myrsscontent.map
-                  myrsscontent.map(e => (
-                    <li class="mui-table-view-cell mui-media">
-                      <div class="mui-media-body">
-                        <b> {e.title}</b>
-                        <a href={e.link} target="_blank">
-                          <p class="mui-ellipsis">{e.link}</p>
-                        </a>
-                        <p class="mui-ellipsis">{e.description}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </header>
-          </div>
-        );
-      }
-    }
+    //             <ul class="mui-table-view">
+    //               {// window.myrsscontent.map
+    //               myrsscontent.map(e => (
+    //                 <li class="mui-table-view-cell mui-media">
+    //                   <div class="mui-media-body">
+    //                     <b> {e.title}</b>
+    //                     <a href={e.link} target="_blank">
+    //                       <p class="mui-ellipsis">{e.link}</p>
+    //                     </a>
+    //                     <p class="mui-ellipsis">{e.description}</p>
+    //                   </div>
+    //                 </li>
+    //               ))}
+    //             </ul>
+    //           </div>
+    //         </header>
+    //       </div>
+    //     );
+    //   }
+    // }
+
     class Apphome extends React.Component {
       shouqi收起折叠的导航栏菜单() {
+        $("#my主体").css("padding-top", $("#my导航栏").height());
         $("#example-navbar-collapse").removeClass("show");
+        hashchangehandler();
+        refreshall();
       }
       render() {
         return (
@@ -475,6 +621,7 @@
             <div>
               <div class="container-fluid fixed-top" id="my导航栏">
                 <nav
+                  id="allnavbar"
                   onClick={this.shouqi收起折叠的导航栏菜单}
                   class="navbar navbar-default navbar navbar-expand-sm bg-light navbar-light"
                   role="navigation"
@@ -572,21 +719,48 @@
                   </div>
                 </nav>
               </div>
+
               <div class="container" id="my主体">
-                <Switch>
-                  <Route exact path="/" component={App} />
-                  <Route path="/rssreader" component={rssreader} />
-                  <Route path="/about" component={about} />
-                  <Redirect from="*" to="/" />
-                </Switch>{" "}
+                {/* <Suspense fallback={<div>Loading...</div>}> */}
+                <Suspense fallback={<div>loading</div>}>
+                  <Switch>
+                    <Route
+                      exact
+                      path="/"
+                      // component={allcomponent.app}
+                      component={home}
+                      //    component={require("./module-app.js").default}
+                    />
+                    <Route
+                      path="/rssreader"
+                      // component={allcomponent.rssreader}
+                      component={rssreader}
+                      // component={require("./module-rssreader.js").default}
+                    />
+                    <Route
+                      path="/about"
+                      // component={allcomponent.about}
+                      component={about}
+                      // component={require("./module-about.js").default}
+                      // component={()=>i}
+                    />
+                    <Redirect from="*" to="/" />
+                  </Switch>
+                </Suspense>
+                {/* </Suspense> */}
               </div>
             </div>
+
+            {/* </Suspense> */}
           </BrowserRouter>
         );
       }
       componentWillMount() {}
       componentDidMount() {
         $("#my主体").css("padding-top", $("#my导航栏").height());
+
+        hashchangehandler();
+        refreshall();
       }
       componentWillReceiveProps(newProps) {}
       shouldComponentUpdate(newProps, newState) {
@@ -598,14 +772,15 @@
     }
 
     function refreshall() {
-      render(<Apphome />, document.getElementById("root"));
+      ReactDOM.render(<Apphome />, document.getElementById("root"));
     }
-    render(<Apphome />, document.getElementById("root"));
-    {
-      /* window.refreshall = refreshall */
-    }
-    {
-      /* let refreshall =()=> myrefreshall */
-    }
-  };
+    refreshall();
+    // ReactDOM.render(<Apphome />, document.getElementById("root"));
+    //    /*  {
+    //       /* window.refreshall = refreshall */
+    //     }
+    //     {
+    //       /* let refreshall =()=> myrefreshall */
+    //     } */
+  }
 })();

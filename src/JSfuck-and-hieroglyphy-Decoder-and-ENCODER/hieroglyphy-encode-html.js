@@ -202,7 +202,7 @@ import '../拉伸导航栏与主体部分的顶部距离'
           // tanchu弹出消息提示();
         };
         myservice.onerror = e => {
-          console.error("Error:", e.message);
+          console.error("Error:", e.message,e.filename);
           //   myservice.terminate();
           //   console.log("线程已关闭","service-worker-jsfuck.js")
         };
