@@ -82,7 +82,6 @@ addEventListener("message", function(event) {
     /**除法小于零的结果直接变成0,所以分母要特别大才能精确除法 */
     t = bigInt
       .mul(1, fu)
-
       .mul(
         bigInt
           .div(h.mul(-(2 ** 5)), bigInt.mul(4, x).plus(1))

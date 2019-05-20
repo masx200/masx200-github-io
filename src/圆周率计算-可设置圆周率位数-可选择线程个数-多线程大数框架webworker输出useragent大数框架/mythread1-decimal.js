@@ -78,7 +78,6 @@ addEventListener("message", function(event) {
   }
   while (Decimal.abs(t).cmp(new Decimal("1e-" + (1 + piwei))) != -1) {
     t = Decimal.mul(h, fu)
-
       .mul(
         Decimal.div(-(2 ** 5), Decimal.mul(4, x).plus(1))
           .plus(Decimal.div(-1, Decimal.mul(4, x).plus(3)))

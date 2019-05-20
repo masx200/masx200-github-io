@@ -1,0 +1,18 @@
+* {
+    /* font-family: "Microsoft Yahei"; */
+    text-align: center
+}
+
+input {
+    text-align: center
+}
+
+/* #nav {
+    float: center;
+} */
+
+/* <link href="../myfontandtextalign.css" rel="stylesheet"> */
+
+@import "../myfontandtextalign.css";
+/* <link href="./fp.css" rel="stylesheet"> */
+@import "./fp.css";

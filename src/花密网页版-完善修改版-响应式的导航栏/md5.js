@@ -1,3 +1,5 @@
+window.addEventListener("load",()=>{
+
 /*
  * jQuery MD5 Plugin 1.2.1
  * https://github.com/blueimp/jQuery-MD5
@@ -268,3 +270,5 @@
 	};
 
 }(typeof jQuery === 'function' ? jQuery : this));
+
+})

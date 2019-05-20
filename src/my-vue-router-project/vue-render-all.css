@@ -1,0 +1,18 @@
+/* <link href="huami.css" rel="stylesheet" /> */
+@import "./huami.css";
+
+
+/* <link href="../myfontandtextalign.css" rel="stylesheet" /> */
+@import "../myfontandtextalign.css";
+
+/* <link href="about.css" rel="stylesheet" /> */
+@import "./about.css";
+
+/* <link href="about-rotate.css" rel="stylesheet" /> */
+@import "./about-rotate.css";
+/* <link href="app.css" rel="stylesheet" /> */
+@import "./app.css";
+
+
+/* <link href="huami-fp.css" rel="stylesheet" /> */
+@import "./huami-fp.css" ;

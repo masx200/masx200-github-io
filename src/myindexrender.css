@@ -1,3 +1,5 @@
+/* <link href="myfontandtextalign.css" rel="stylesheet" /> */
+@import "./myfontandtextalign.css";
 #图片列表200 img{
     min-height:150px;
 min-width:150px;
@@ -9,3 +11,5 @@ width: auto;
        
         max-height: 200px;
 }
+
+
