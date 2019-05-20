@@ -161,6 +161,8 @@ https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
 
 ## 首页
 
+在图片中添加 loading="lazy"实现图片懒加载
+
 css中使用@import实现全部模块化
 
 js中使用import实现全部模块化
