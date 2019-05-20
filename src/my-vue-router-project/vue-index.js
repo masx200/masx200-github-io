@@ -70,7 +70,7 @@ data-target="#example-navbar-collapse">
 </a>
 </li>
 <li>
-<a href="../JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck-Decoder--and-hieroglyphy--decoder.html">JSfuck-and-hieroglyphy-Decoder-and-ENCODER
+<a href="../JSfuck-and-hieroglyphy-Decoder-and-ENCODER/index.html">JSfuck-and-hieroglyphy-Decoder-and-ENCODER
 </a>
 </li>
 </ul>

@@ -562,7 +562,7 @@
                       </li>
                       <li>
                         <a
-                          href="../JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSfuck-Decoder--and-hieroglyphy--decoder.html"
+                          href="../JSfuck-and-hieroglyphy-Decoder-and-ENCODER/index.html"
                           class="nav-link"
                         >
                           JSfuck-and-hieroglyphy-Decoder-and-ENCODER
