@@ -296,7 +296,7 @@ console.log(myhtmldata);
           }, 300); */
     }
 
-    function 动态加载网页内容不刷新(url) {
+    function 动态加载网页内容不刷新(url=undefined) {
       if (typeof url === "undefined") {
         url = location.href;
       } else url = new URL(url);
