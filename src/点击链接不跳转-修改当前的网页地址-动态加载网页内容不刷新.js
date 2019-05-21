@@ -245,13 +245,13 @@ console.log(myhtmldata);
         e.parentNode.removeChild(e);
       }); */
 
-      Array.from(document.querySelectorAll("link")).forEach(e => {
-        if (!e.dataset.loadid) {
+      Array(...document.querySelectorAll("link"),...document.querySelectorAll("style"),...document.querySelectorAll("meta"),...document.querySelectorAll("script")).forEach(e => {
+        if (loadid!=e.dataset.loadid) {
           e.parentNode.removeChild(e);
           console.log("删除旧元素", e);
         }
       });
-      Array.from(document.querySelectorAll("style")).forEach(e => {
+     /* Array.from(document.querySelectorAll("style")).forEach(e => {
         if (!e.dataset.loadid) {
           e.parentNode.removeChild(e);
           console.log("删除旧元素", e);
@@ -268,7 +268,7 @@ console.log(myhtmldata);
           e.parentNode.removeChild(e);
           console.log("删除旧元素", e);
         }
-      });
+      });*/
 
       // document.charset="UTF-8"
       /*  Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
