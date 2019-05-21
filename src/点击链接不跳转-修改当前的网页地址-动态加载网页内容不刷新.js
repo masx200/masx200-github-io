@@ -1,5 +1,6 @@
 (() => {
   var windowloadhandler = () => {
+window.removeEventListener("load", windowloadhandler);
     // var lasthref;
     window.lasthref = location.href;
     替换a链接();
@@ -131,11 +132,13 @@
     }
     function fetchhandler(t) {
       var loadid = guid();
-      console.log(document.charset);
+document.charset="UTF-8"
+      
       var sr = t;
       console.log(sr);
       var myhtmldata = new DOMParser().parseFromString(sr, "text/html");
-      console.log(myhtmldata);
+console.log(myhtmldata.charset);      
+console.log(myhtmldata);
       document.title = myhtmldata.title;
       // window.myhtmldata = myhtmldata;
       document.getElementsByTagName(
