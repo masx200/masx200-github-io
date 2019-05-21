@@ -79,15 +79,15 @@ window.removeEventListener("load", windowloadhandler);
               }, 300);
             };  */
     }
-    function loadscript(fileurl, callback = undefined) {
+    function loadscript(fileurl, loadguid=guid(),callback = undefined) {
       var script = document.createElement("script");
-      script.dataset.loadid = guid();
+      script.dataset.loadid = loadguid;
       script.type = "text/javascript";
       script.src = fileurl;
       script.onload = () => {
         callback(fileurl);
       };
-      // script.async = true;
+       script.async = true;
       script.onerror = () => {
         console.log("加载失败" + fileurl);
       };
@@ -95,7 +95,7 @@ window.removeEventListener("load", windowloadhandler);
 
       console.log("添加script到head", script);
     }
-    function loadscripttext(text) {
+    function loadscripttext(text,loadguid=guid()) {
       var script = document.createElement("script");
       script.onerror = () => {
         console.log("加载失败" + fileurl);
@@ -106,7 +106,8 @@ window.removeEventListener("load", windowloadhandler);
       /* 用文本创建的script不会执行onload事件 */
       script.innerHTML = text;
       script.type = "text/javascript";
-      script.dataset.loadid = guid();
+      script.dataset.loadid = loadguid;
+script.async = true;
       console.log("添加script到head", script);
       document.getElementsByTagName("head")[0].appendChild(script);
     }
@@ -200,7 +201,7 @@ console.log(myhtmldata);
         if (e.src) {
           e.src = e.src;
           if (e.type == "text/javascript" || "" == e.type) {
-            loadscript(e.src, script加载完成);
+            loadscript(e.src, loadid,script加载完成);
           } else {
             console.log("添加元素到head",e);
             //   script加载完成();
@@ -220,7 +221,7 @@ console.log(myhtmldata);
           // e.async = true;
           if (e.type == "text/javascript" || "" == e.type) {
             e.type = "text/javascript";
-            loadscripttext(e.innerHTML);
+            loadscripttext(e.innerHTML,loadid);
             //   script加载完成();
             script完成数量++;
             /*  var script = document.createElement("script");
