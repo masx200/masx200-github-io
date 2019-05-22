@@ -28,9 +28,11 @@
     function 替换a链接() {
       document.firstElementChild.dataset.href = location.href;
       document.firstElementChild.dataset.pathname = location.pathname;
+
+      /* 把网页中的所有iframe中的a链接也进行替换 */
       var alinkarr = Array.from(document.getElementsByTagName("a"));
       //   console.log(alinkarr);
-      alinkarr.forEach(e => {
+      function 替换所有a链接的arrayhandler(e) {
         /* 尝试把http和https都替换,因为协议不同导致origin不同 */
         // e.protocol = location.protocol;
         /* 使用hostname代替origin判断 */
@@ -55,8 +57,19 @@
             };
           }
         }
+      }
+      alinkarr.forEach(替换所有a链接的arrayhandler);
 
-        /*  e.onclick = () => {
+      var docuiframes = Array(...document.getElementsByTagName("iframe"));
+      docuiframes.forEach(e => {
+        if (e.contentDocument) {
+          var iframealinkarr = Array(
+            ...e.contentDocument.getElementsByTagName("a")
+          );
+          iframealinkarr.forEach(替换所有a链接的arrayhandler);
+        }
+      });
+      /*  e.onclick = () => {
               // lasthref=location.href
               console.log(e.href);
       
@@ -79,7 +92,6 @@
                 return true;
               }
             }; */
-      });
     }
     //   document.onclick();
     function onpopstatehandler() {
@@ -157,7 +169,7 @@
       console.log("添加script到head", script.outerHTML);
       document.getElementsByTagName("head")[0].appendChild(script);
     }
-    function loadstyle(fileurl, callback = undefined) {
+    /* function loadstyle(fileurl, callback = undefined) {
       var script = document.createElement("link");
       script.dataset.loadid = guid();
       script.rel = "stylesheet";
@@ -168,7 +180,7 @@
       document.getElementsByTagName("head")[0].appendChild(script);
 
       console.log(script);
-    }
+    } */
     function guid() {
       return "xxxxxxxx-xxxx-yxxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(
         t
@@ -177,219 +189,219 @@
         return ("x" == t ? e : (3 & e) | 8).toString(16);
       });
     }
-    function fetchhandler(arraybuffer) {
-      console.log(arraybuffer);
-      var sr, myhtmldata;
-      var loadid = guid();
-      //   document.charset = "UTF-8";
-      /* 把源代码的编码转成unicode */
-      //   var sr = text;
-      //   console.log(sr);
-      sr = new TextDecoder().decode(arraybuffer);
-      myhtmldata = new DOMParser().parseFromString(sr, "text/html");
-      //   var myhtmldata = new DOMParser().parseFromString(sr, "text/html");
-      /*myhtmldata.charset得出的结果不正确 
-      使用response.headers.get("Content-Type")
-      得出"text/html; charset=gbk" */
-      //   console.log(myhtmldata.charset);
-      var myhtmlcharset;
-      if (myhtmlcharset != "UTF-8") {
-        console.log("编码不是utf-8,转码成" + myhtmldata.charset);
-        sr = new TextDecoder(myhtmldata.charset).decode(arraybuffer);
-        myhtmldata = new DOMParser().parseFromString(sr, "text/html");
-        myhtmldata.charset = "UTF-8";
-      }
-      htmldataboject[decodeURI(new URL(myhtmldata.URL).pathname)] = {
-        url: myhtmldata.URL,
-        text: sr
-      };
-      console.log("加载过的网页的源代码合集", htmldataboject);
-      console.log(myhtmldata);
-      document.title = myhtmldata.title;
-      // window.myhtmldata = myhtmldata;
-      document.getElementsByTagName(
-        "body"
-      )[0].innerHTML = myhtmldata.getElementsByTagName("body")[0].innerHTML;
-      /*  Array.from(document.querySelectorAll("link")).forEach(e => {
-        e.parentNode.removeChild(e);
-      });
-      Array.from(document.querySelectorAll("style")).forEach(e => {
-        e.parentNode.removeChild(e);
-      });
-      Array.from(document.querySelectorAll("meta")).forEach(e => {
-        e.parentNode.removeChild(e);
-      });
-      Array.from(document.querySelectorAll("script")).forEach(e => {
-        e.parentNode.removeChild(e);
-      }); */
-      Array.from(myhtmldata.querySelectorAll("link[rel='stylesheet']")).forEach(
-        e => {
-          e.dataset.loadid = loadid;
-          e.onerror = () => {
-            console.log("加载失败" + e.href);
-          };
-          e.type = "text/css";
-          e.href = e.href;
-          console.log("添加css元素到head", e.outerHTML);
-          document.getElementsByTagName("head")[0].appendChild(e);
-        }
-      );
+    /*  // function fetchhandler(arraybuffer) {
+    //   console.log(arraybuffer);
+    //   var sr, myhtmldata;
+    //   var loadid = guid();
+    //   //   document.charset = "UTF-8";
+    //   /* 把源代码的编码转成unicode */
+    //   //   var sr = text;
+    //   //   console.log(sr);
+    //   sr = new TextDecoder().decode(arraybuffer);
+    //   myhtmldata = new DOMParser().parseFromString(sr, "text/html");
+    //   //   var myhtmldata = new DOMParser().parseFromString(sr, "text/html");
+    //   /*myhtmldata.charset得出的结果不正确
+    //   使用response.headers.get("Content-Type")
+    //   得出"text/html; charset=gbk" */
+    //   //   console.log(myhtmldata.charset);
+    //   var myhtmlcharset;
+    //   if (myhtmlcharset != "UTF-8") {
+    //     console.log("编码不是utf-8,转码成" + myhtmldata.charset);
+    //     sr = new TextDecoder(myhtmldata.charset).decode(arraybuffer);
+    //     myhtmldata = new DOMParser().parseFromString(sr, "text/html");
+    //     myhtmldata.charset = "UTF-8";
+    //   }
+    //   htmldataboject[decodeURI(new URL(myhtmldata.URL).pathname)] = {
+    //     url: myhtmldata.URL,
+    //     text: sr
+    //   };
+    //   console.log("加载过的网页的源代码合集", htmldataboject);
+    //   console.log(myhtmldata);
+    //   document.title = myhtmldata.title;
+    //   // window.myhtmldata = myhtmldata;
+    //   document.getElementsByTagName(
+    //     "body"
+    //   )[0].innerHTML = myhtmldata.getElementsByTagName("body")[0].innerHTML;
+    //   /*  Array.from(document.querySelectorAll("link")).forEach(e => {
+    //     e.parentNode.removeChild(e);
+    //   });
+    //   Array.from(document.querySelectorAll("style")).forEach(e => {
+    //     e.parentNode.removeChild(e);
+    //   });
+    //   Array.from(document.querySelectorAll("meta")).forEach(e => {
+    //     e.parentNode.removeChild(e);
+    //   });
+    //   Array.from(document.querySelectorAll("script")).forEach(e => {
+    //     e.parentNode.removeChild(e);
+    //   }); */
+    //   Array.from(myhtmldata.querySelectorAll("link[rel='stylesheet']")).forEach(
+    //     e => {
+    //       e.dataset.loadid = loadid;
+    //       e.onerror = () => {
+    //         console.log("加载失败" + e.href);
+    //       };
+    //       e.type = "text/css";
+    //       e.href = e.href;
+    //       console.log("添加css元素到head", e.outerHTML);
+    //       document.getElementsByTagName("head")[0].appendChild(e);
+    //     }
+    //   );
 
-      Array.from(myhtmldata.querySelectorAll("link")).forEach(e => {
-        e.dataset.loadid = loadid;
+    //   Array.from(myhtmldata.querySelectorAll("link")).forEach(e => {
+    //     e.dataset.loadid = loadid;
 
-        e.href = e.href;
-        console.log("添加元素到head", e.outerHTML);
-        document.getElementsByTagName("head")[0].appendChild(e);
-      });
+    //     e.href = e.href;
+    //     console.log("添加元素到head", e.outerHTML);
+    //     document.getElementsByTagName("head")[0].appendChild(e);
+    //   });
 
-      Array.from(myhtmldata.querySelectorAll("style")).forEach(e => {
-        e.type = "text/css";
-        e.dataset.loadid = loadid;
-        console.log("添加css元素到head", e.outerHTML);
-        document.getElementsByTagName("head")[0].appendChild(e);
-      });
+    //   Array.from(myhtmldata.querySelectorAll("style")).forEach(e => {
+    //     e.type = "text/css";
+    //     e.dataset.loadid = loadid;
+    //     console.log("添加css元素到head", e.outerHTML);
+    //     document.getElementsByTagName("head")[0].appendChild(e);
+    //   });
 
-      Array.from(myhtmldata.querySelectorAll("meta")).forEach(e => {
-        e.dataset.loadid = loadid;
-        console.log("添加元素到head", e.outerHTML);
-        document.getElementsByTagName("head")[0].appendChild(e);
-      });
+    //   Array.from(myhtmldata.querySelectorAll("meta")).forEach(e => {
+    //     e.dataset.loadid = loadid;
+    //     console.log("添加元素到head", e.outerHTML);
+    //     document.getElementsByTagName("head")[0].appendChild(e);
+    //   });
 
-      /*    document.getElementsByTagName(
-        "body"
-      )[0].innerHTML = myhtmldata.getElementsByTagName("body")[0].innerHTML; */
-      script完成数量 = 0;
-      script总数量 = Array.from(myhtmldata.querySelectorAll("script")).length;
-      Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
-        e.type = e.type.toLowerCase();
-        if (e.type == "text/javascript" || "" == e.type) {
-          e.type = "text/javascript";
-          if (e.src != "") {
-            e.src = e.src;
-            /* 但是如果有些脚本不重复加载,可能网页出错 */
-            /* 不要重复加载javascipt文件,否则可能出问题 */
-            loadscript(e.src, loadid, script加载完成);
-          } else {
-            loadscripttext(e.innerHTML, loadid);
-            script完成数量++;
-          }
-        } else {
-          /* 不是javascript文件 */
-          if (e.src != "") {
-            e.src = e.src;
-          }
-          console.log("添加元素到head", e.outerHTML);
-          e.dataset.loadid = loadid;
-          script完成数量++;
-          document.getElementsByTagName("head")[0].appendChild(e);
-        }
+    //   /*    document.getElementsByTagName(
+    //     "body"
+    //   )[0].innerHTML = myhtmldata.getElementsByTagName("body")[0].innerHTML; */
+    //   script完成数量 = 0;
+    //   script总数量 = Array.from(myhtmldata.querySelectorAll("script")).length;
+    //   Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
+    //     e.type = e.type.toLowerCase();
+    //     if (e.type == "text/javascript" || "" == e.type) {
+    //       e.type = "text/javascript";
+    //       if (e.src != "") {
+    //         e.src = e.src;
+    //         /* 但是如果有些脚本不重复加载,可能网页出错 */
+    //         /* 不要重复加载javascipt文件,否则可能出问题 */
+    //         loadscript(e.src, loadid, script加载完成);
+    //       } else {
+    //         loadscripttext(e.innerHTML, loadid);
+    //         script完成数量++;
+    //       }
+    //     } else {
+    //       /* 不是javascript文件 */
+    //       if (e.src != "") {
+    //         e.src = e.src;
+    //       }
+    //       console.log("添加元素到head", e.outerHTML);
+    //       e.dataset.loadid = loadid;
+    //       script完成数量++;
+    //       document.getElementsByTagName("head")[0].appendChild(e);
+    //     }
 
-        //////////////////////////////
-        //   console.log("e.type",e.type)
-        // /* if (e.src) {
-        //   e.src = e.src;
-        //   if (e.type == "text/javascript" || "" == e.type) {
-        //     loadscript(e.src, loadid, script加载完成);
-        //   } else {
-        //     console.log("添加元素到head", e);
-        //     //   script加载完成();
-        //     script完成数量++;
-        //     document.getElementsByTagName("head")[0].appendChild(e);
-        //   }
-        // } else {
-        //   // console.log("script-innertext", e.innerText.replace(/\n/g,";"));
-        //   /* if (""==e.type) {
+    //     //////////////////////////////
+    //     //   console.log("e.type",e.type)
+    //     // /* if (e.src) {
+    //     //   e.src = e.src;
+    //     //   if (e.type == "text/javascript" || "" == e.type) {
+    //     //     loadscript(e.src, loadid, script加载完成);
+    //     //   } else {
+    //     //     console.log("添加元素到head", e);
+    //     //     //   script加载完成();
+    //     //     script完成数量++;
+    //     //     document.getElementsByTagName("head")[0].appendChild(e);
+    //     //   }
+    //     // } else {
+    //     //   // console.log("script-innertext", e.innerText.replace(/\n/g,";"));
+    //     //   /* if (""==e.type) {
 
-        //     e.type = "text/javascript";
-        //   } */
-        //   e.onerror = () => {
-        //     console.log("加载失败" + e.src);
-        //   };
-        //   e.dataset.loadid = loadid;
-        //   // e.async = true;
-        //   if (e.type == "text/javascript" || "" == e.type) {
-        //     e.type = "text/javascript";
-        //     loadscripttext(e.innerHTML, loadid);
-        //     //   script加载完成();
-        //     script完成数量++;
-        //     /*  var script = document.createElement("script");
-        //         script.onload = script加载完成;
-        //         script.innerHTML = e.innerHTML;
-        //         script.type = e.type;
-        //         script.dataset.loadid = e.dataset.loadid;
-        //         console.log(script);
-        //         document.getElementsByTagName("head")[0].appendChild(script); */
-        //   } else {
-        //     console.log("添加元素到head", e);
-        //     //   script加载完成();
-        //     script完成数量++;
-        //     document.getElementsByTagName("head")[0].appendChild(e);
-        //   }
-        // } */
-      });
-      /*  Array.from(
-        document.getElementsByTagName("body")[0].querySelectorAll("script")
-      ).forEach(e => {
-        e.parentNode.removeChild(e);
-      }); */
+    //     //     e.type = "text/javascript";
+    //     //   } */
+    //     //   e.onerror = () => {
+    //     //     console.log("加载失败" + e.src);
+    //     //   };
+    //     //   e.dataset.loadid = loadid;
+    //     //   // e.async = true;
+    //     //   if (e.type == "text/javascript" || "" == e.type) {
+    //     //     e.type = "text/javascript";
+    //     //     loadscripttext(e.innerHTML, loadid);
+    //     //     //   script加载完成();
+    //     //     script完成数量++;
+    //     //     /*  var script = document.createElement("script");
+    //     //         script.onload = script加载完成;
+    //     //         script.innerHTML = e.innerHTML;
+    //     //         script.type = e.type;
+    //     //         script.dataset.loadid = e.dataset.loadid;
+    //     //         console.log(script);
+    //     //         document.getElementsByTagName("head")[0].appendChild(script); */
+    //     //   } else {
+    //     //     console.log("添加元素到head", e);
+    //     //     //   script加载完成();
+    //     //     script完成数量++;
+    //     //     document.getElementsByTagName("head")[0].appendChild(e);
+    //     //   }
+    //     // } */
+    //   });
+    //   /*  Array.from(
+    //     document.getElementsByTagName("body")[0].querySelectorAll("script")
+    //   ).forEach(e => {
+    //     e.parentNode.removeChild(e);
+    //   }); */
 
-      Array(
-        ...document.querySelectorAll("link"),
-        ...document.querySelectorAll("style"),
-        ...document.querySelectorAll("meta"),
-        ...document.querySelectorAll("script")
-      ).forEach(e => {
-        if (loadid != e.dataset.loadid) {
-          e.parentNode.removeChild(e);
-          console.log("删除旧元素", e.outerHTML);
-        }
-      });
-      /* Array.from(document.querySelectorAll("style")).forEach(e => {
-        if (!e.dataset.loadid) {
-          e.parentNode.removeChild(e);
-          console.log("删除旧元素", e);
-        }
-      });
-      Array.from(document.querySelectorAll("meta")).forEach(e => {
-        if (!e.dataset.loadid) {
-          e.parentNode.removeChild(e);
-          console.log("删除旧元素", e);
-        }
-      });
-      Array.from(document.querySelectorAll("script")).forEach(e => {
-        if (!e.dataset.loadid) {
-          e.parentNode.removeChild(e);
-          console.log("删除旧元素", e);
-        }
-      });*/
+    //   Array(
+    //     ...document.querySelectorAll("link"),
+    //     ...document.querySelectorAll("style"),
+    //     ...document.querySelectorAll("meta"),
+    //     ...document.querySelectorAll("script")
+    //   ).forEach(e => {
+    //     if (loadid != e.dataset.loadid) {
+    //       e.parentNode.removeChild(e);
+    //       console.log("删除旧元素", e.outerHTML);
+    //     }
+    //   });
+    //   /* Array.from(document.querySelectorAll("style")).forEach(e => {
+    //     if (!e.dataset.loadid) {
+    //       e.parentNode.removeChild(e);
+    //       console.log("删除旧元素", e);
+    //     }
+    //   });
+    //   Array.from(document.querySelectorAll("meta")).forEach(e => {
+    //     if (!e.dataset.loadid) {
+    //       e.parentNode.removeChild(e);
+    //       console.log("删除旧元素", e);
+    //     }
+    //   });
+    //   Array.from(document.querySelectorAll("script")).forEach(e => {
+    //     if (!e.dataset.loadid) {
+    //       e.parentNode.removeChild(e);
+    //       console.log("删除旧元素", e);
+    //     }
+    //   });*/
 
-      // document.charset="UTF-8"
-      /*  Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
-            if (e.src) {
-              e.src = e.src;
-              loadscript(e.src);
-            } else {
-              if (!e.type) {
-                e.type = "text/javascript";
-              }
-              e.onerror = () => {
-                console.log("加载失败" + e.src);
-              };
-              e.dataset.loadid = loadid;
-              e.async = true;
-              //   console.log(e.src)
-              document.getElementsByTagName("head")[0].appendChild(e);
-            }
-          }); */
-      /* setTimeout(() => {
-            try {
-              window.dispatchEvent(new Event("load"));
-            } catch (error) {
-              console.log(error);
-            }
-          }, 300); */
-    }
+    //   // document.charset="UTF-8"
+    //   /*  Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
+    //         if (e.src) {
+    //           e.src = e.src;
+    //           loadscript(e.src);
+    //         } else {
+    //           if (!e.type) {
+    //             e.type = "text/javascript";
+    //           }
+    //           e.onerror = () => {
+    //             console.log("加载失败" + e.src);
+    //           };
+    //           e.dataset.loadid = loadid;
+    //           e.async = true;
+    //           //   console.log(e.src)
+    //           document.getElementsByTagName("head")[0].appendChild(e);
+    //         }
+    //       }); */
+    //   /* setTimeout(() => {
+    //         try {
+    //           window.dispatchEvent(new Event("load"));
+    //         } catch (error) {
+    //           console.log(error);
+    //         }
+    //       }, 300); */
+    // } */
 
     async function 动态加载网页内容不刷新(url = location.href) {
       //   document.charset = "UTF-8";
@@ -420,7 +432,18 @@
         /* 返回文本和二进制数组,用来转换编码 */
         try {
           var myhtmlcharset;
-          var dataresponse = await fetch(url);
+          try {
+            var dataresponse = await fetch(url);
+          } catch (error) {
+            console.error(error); /* 有些网站的不同页面是用不同的http协议 */
+            if (url.protocal === "https:") {
+              url.protocal = "http:";
+            } else {
+              url.protocal = "https:";
+            }
+            var dataresponse = await fetch(url);
+          }
+
           console.log(dataresponse);
           var arraybuffer = await dataresponse.arrayBuffer();
           console.log(arraybuffer);
@@ -451,6 +474,7 @@
             text: sr
           };
           console.log("加载过的网页的源代码合集", htmldataboject);
+
           console.log(myhtmldata);
           document.title = myhtmldata.title;
           document.getElementsByTagName(
