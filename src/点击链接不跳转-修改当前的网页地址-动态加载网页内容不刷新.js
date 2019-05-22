@@ -451,7 +451,12 @@
             } else {
               url.protocal = "https:";
             }
-            var dataresponse = await fetch(url);
+            try {
+                var dataresponse = await fetch(url);
+            }catch (e){
+                history.pushState(undefined, undefined, document.firstElementChild.dataset.href);
+            }
+            
           }
 
           console.log(dataresponse);
