@@ -118,9 +118,15 @@
       console.log("script加载完成", urlortext);
       if (script完成数量 === script总数量) {
         console.log("触发window的load事件");
+        scrollTo(0, 0);
         setTimeout(() => {
           window.dispatchEvent(new Event("load"));
+        }, 100);
+
+        setTimeout(() => {
+          替换a链接();
         }, 200);
+
         document.firstElementChild.dataset.href = location.href;
         document.firstElementChild.dataset.pathname = location.pathname;
         console.log(
@@ -462,7 +468,27 @@
             }
           } else {
             myhtmlcharset = "utf-8";
-            console.log("文档的编码是utf-8");
+            try {
+              myhtmlcharset = Array(
+                ...new DOMParser()
+                  .parseFromString(
+                    new TextDecoder().decode(arraybuffer),
+                    "text/html"
+                  )
+                  .querySelectorAll("meta[charset]")
+              )[0].getAttribute("charset");
+            } catch (error) {
+              console.error(error);
+            }
+
+            /* 有的网站不在response中返回charset,又不是utf-8,在document中的meta的charset属性获取 */
+
+            // console.log("文档的编码是utf-8");
+            if ("utf-8" === myhtmlcharset) {
+              console.log("文档的编码是utf-8");
+            } else {
+              console.log("编码不是utf-8,当前的编码是" + myhtmlcharset);
+            }
           }
 
           var loadid = guid();
@@ -541,18 +567,20 @@
               document.getElementsByTagName("head")[0].appendChild(e);
             }
           });
+          setTimeout(() => {
+            Array(
+              ...document.querySelectorAll("link"),
+              ...document.querySelectorAll("style"),
+              ...document.querySelectorAll("meta"),
+              ...document.querySelectorAll("script")
+            ).forEach(e => {
+              if (loadid != e.dataset.loadid) {
+                e.parentNode.removeChild(e);
+                console.log("删除旧元素", e.outerHTML);
+              }
+            });
+          }, 200);
 
-          Array(
-            ...document.querySelectorAll("link"),
-            ...document.querySelectorAll("style"),
-            ...document.querySelectorAll("meta"),
-            ...document.querySelectorAll("script")
-          ).forEach(e => {
-            if (loadid != e.dataset.loadid) {
-              e.parentNode.removeChild(e);
-              console.log("删除旧元素", e.outerHTML);
-            }
-          });
           //使用async函数
 
           /*   fetch(url)
