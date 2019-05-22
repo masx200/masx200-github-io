@@ -482,6 +482,8 @@
             .get("Content-Type")
             .toLowerCase();
           console.log("Content-Type", datacontenttype);
+
+if (!datacontenttype.includes("text/html")){console.log("此链接不是网页，刷新页面");history.reload()}
           if (datacontenttype.includes("charset")) {
             myhtmlcharset = datacontenttype.slice(
               datacontenttype.indexOf("charset") + "charset".length + 1
