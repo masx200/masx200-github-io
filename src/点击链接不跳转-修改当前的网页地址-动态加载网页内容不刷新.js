@@ -83,13 +83,14 @@
     }
     //   document.onclick();
     function onpopstatehandler() {
-      console.log("onpopstate,执行,动态加载网页内容不刷新");
+      console.log("事件onpopstate,执行,");
       //    document.firstElementChild.dataset.href = document.firstElementChild.dataset.href;
       console.log(
         "当前的地址栏路径为" + location.pathname,
         "当前的网页document路径为" + document.firstElementChild.dataset.pathname
       );
       if (document.firstElementChild.dataset.pathname !== location.pathname) {
+        console.log("动态加载网页内容不刷新开始执行");
         动态加载网页内容不刷新();
       }
 
