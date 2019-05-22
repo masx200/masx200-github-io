@@ -1,7 +1,9 @@
 (global => {
-    /* 注意不能跨域 */
+  /* 注意不能跨域 */
   /* 注意:对于使用了document.write的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖*/
-  document.write=(t)=>{console.log("document.write已被禁用，要写入的内容为："+t)}
+  document.write = t => {
+    console.warn("document.write已被禁用，要写入的内容为：" + t);
+  };
   /* 禁用 document.write*/
   global.点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 = windowloadhandler;
   window.addEventListener("load", windowloadhandler);
@@ -128,7 +130,7 @@
         scrollTo(0, 0);
         setTimeout(() => {
           window.dispatchEvent(new Event("load"));
-        }, 100);
+        }, 50);
 
         setTimeout(() => {
           替换a链接();
@@ -460,7 +462,7 @@
               var dataresponse = await fetch(url);
             } catch (e) {
               console.error(error);
-              history.back()
+              history.back();
             }
           }
 
@@ -470,7 +472,7 @@
             console.log(arraybuffer);
           } catch (error) {
             console.error(error);
-            history.back()
+            history.back();
             // history.pushState(
             //   undefined,
             //   undefined,
@@ -483,7 +485,10 @@
             .toLowerCase();
           console.log("Content-Type", datacontenttype);
 
-if (!datacontenttype.includes("text/html")){console.log("此链接不是网页，刷新页面");history.reload()}
+          if (!datacontenttype.includes("text/html")) {
+            console.log("此链接不是网页，刷新页面");
+            history.reload();
+          }
           if (datacontenttype.includes("charset")) {
             myhtmlcharset = datacontenttype.slice(
               datacontenttype.indexOf("charset") + "charset".length + 1
@@ -635,7 +640,7 @@ if (!datacontenttype.includes("text/html")){console.log("此链接不是网页�
                 console.log("删除旧元素", e.outerHTML);
               }
             });
-          }, 150);
+          }, 50);
 
           //使用async函数
 
