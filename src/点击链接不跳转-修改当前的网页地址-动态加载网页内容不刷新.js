@@ -49,8 +49,8 @@
             e.href = "javascript:;";
             console.log("替换a链接", e.outerHTML);
             e.onclick = () => {
-              document.firstElementChild.dataset.href = location.href;
-              document.firstElementChild.dataset.pathname = location.pathname;
+              /*   document.firstElementChild.dataset.href = location.href;
+              document.firstElementChild.dataset.pathname = location.pathname; */
               var url = new URL(e.dataset.href);
               /* 替换协议与当前网页相同的协议 */
               url.protocol = location.protocol;
@@ -438,7 +438,8 @@
           "改成",
           nowurl
         );
-
+        /* 竟然有的网页甚至还要给html标签加style! */
+        document.firstElementChild.style = "";
         /* 返回文本和二进制数组,用来转换编码 */
         try {
           var myhtmlcharset;
