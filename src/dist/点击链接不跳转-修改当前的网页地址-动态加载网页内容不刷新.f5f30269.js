@@ -160,13 +160,17 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         /* 使用hostname代替origin判断 */
         if (e.href != "javascript:;" && location.hostname === e.hostname && e.pathname !== location.pathname) {
           e.dataset.href = e.href;
-          console.log("替换a链接", e);
           e.href = "javascript:;";
+          console.log("替换a链接", e.outerHTML);
 
           e.onclick = function () {
             document.firstElementChild.dataset.href = location.href;
             document.firstElementChild.dataset.pathname = location.pathname;
-            动态加载网页内容不刷新(e.dataset.href);
+            var url = new URL(e.dataset.href);
+            /* 替换协议与当前网页相同的协议 */
+
+            url.protocol = location.protocol;
+            动态加载网页内容不刷新(url);
           };
         }
         /*  e.onclick = () => {
@@ -342,24 +346,24 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
         e.type = "text/css";
         e.href = e.href;
-        console.log("添加css元素到head", e);
+        console.log("添加css元素到head", e.outerHTML);
         document.getElementsByTagName("head")[0].appendChild(e);
       });
       Array.from(myhtmldata.querySelectorAll("link")).forEach(function (e) {
         e.dataset.loadid = loadid;
         e.href = e.href;
-        console.log("添加元素到head", e);
+        console.log("添加元素到head", e.outerHTML);
         document.getElementsByTagName("head")[0].appendChild(e);
       });
       Array.from(myhtmldata.querySelectorAll("style")).forEach(function (e) {
         e.type = "text/css";
         e.dataset.loadid = loadid;
-        console.log("添加css元素到head", e);
+        console.log("添加css元素到head", e.outerHTML);
         document.getElementsByTagName("head")[0].appendChild(e);
       });
       Array.from(myhtmldata.querySelectorAll("meta")).forEach(function (e) {
         e.dataset.loadid = loadid;
-        console.log("添加元素到head", e);
+        console.log("添加元素到head", e.outerHTML);
         document.getElementsByTagName("head")[0].appendChild(e);
       });
       /*    document.getElementsByTagName(
@@ -389,7 +393,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
             e.src = e.src;
           }
 
-          console.log("添加元素到head", e);
+          console.log("添加元素到head", e.outerHTML);
           e.dataset.loadid = loadid;
           script完成数量++;
           document.getElementsByTagName("head")[0].appendChild(e);
@@ -445,7 +449,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       Array.apply(void 0, _toConsumableArray(document.querySelectorAll("link")).concat(_toConsumableArray(document.querySelectorAll("style")), _toConsumableArray(document.querySelectorAll("meta")), _toConsumableArray(document.querySelectorAll("script")))).forEach(function (e) {
         if (loadid != e.dataset.loadid) {
           e.parentNode.removeChild(e);
-          console.log("删除旧元素", e);
+          console.log("删除旧元素", e.outerHTML);
         }
       });
       /* Array.from(document.querySelectorAll("style")).forEach(e => {

@@ -40,12 +40,16 @@
           e.pathname !== location.pathname
         ) {
           e.dataset.href = e.href;
-          console.log("替换a链接", e);
+         
           e.href = "javascript:;";
+          console.log("替换a链接", e.outerHTML);
           e.onclick = () => {
             document.firstElementChild.dataset.href = location.href;
             document.firstElementChild.dataset.pathname = location.pathname;
-            动态加载网页内容不刷新(e.dataset.href);
+            var url=new URL(e.dataset.href)
+            /* 替换协议与当前网页相同的协议 */
+            url.protocol=location.protocol
+            动态加载网页内容不刷新(url);
           };
         }
 
@@ -209,7 +213,7 @@
           };
           e.type = "text/css";
           e.href = e.href;
-          console.log("添加css元素到head", e);
+          console.log("添加css元素到head", e.outerHTML);
           document.getElementsByTagName("head")[0].appendChild(e);
         }
       );
@@ -218,20 +222,20 @@
         e.dataset.loadid = loadid;
 
         e.href = e.href;
-        console.log("添加元素到head", e);
+        console.log("添加元素到head", e.outerHTML);
         document.getElementsByTagName("head")[0].appendChild(e);
       });
 
       Array.from(myhtmldata.querySelectorAll("style")).forEach(e => {
         e.type = "text/css";
         e.dataset.loadid = loadid;
-        console.log("添加css元素到head", e);
+        console.log("添加css元素到head", e.outerHTML);
         document.getElementsByTagName("head")[0].appendChild(e);
       });
 
       Array.from(myhtmldata.querySelectorAll("meta")).forEach(e => {
         e.dataset.loadid = loadid;
-        console.log("添加元素到head", e);
+        console.log("添加元素到head", e.outerHTML);
         document.getElementsByTagName("head")[0].appendChild(e);
       });
 
@@ -257,7 +261,7 @@
           if (e.src != "") {
             e.src = e.src;
           }
-          console.log("添加元素到head", e);
+          console.log("添加元素到head", e.outerHTML);
           e.dataset.loadid = loadid;
           script完成数量++;
           document.getElementsByTagName("head")[0].appendChild(e);
@@ -320,7 +324,7 @@
       ).forEach(e => {
         if (loadid != e.dataset.loadid) {
           e.parentNode.removeChild(e);
-          console.log("删除旧元素", e);
+          console.log("删除旧元素", e.outerHTML);
         }
       });
       /* Array.from(document.querySelectorAll("style")).forEach(e => {
