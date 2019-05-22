@@ -1,5 +1,6 @@
-(() => {
+(global => {
   /* 注意:对于使用了document.write的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖*/
+  global.点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 = windowloadhandler;
   window.addEventListener("load", windowloadhandler);
   function windowloadhandler() {
     // document.charset = "UTF-8";/* 只读属性 */
@@ -114,7 +115,10 @@
     function script加载完成(urlortext) {
       替换a链接();
       script完成数量++;
-      console.log(script完成数量, script总数量);
+      console.log(
+        "script完成数量" + script完成数量,
+        "script总数量" + script总数量
+      );
       console.log("script加载完成", urlortext);
       if (script完成数量 === script总数量) {
         console.log("触发window的load事件");
@@ -125,7 +129,7 @@
 
         setTimeout(() => {
           替换a链接();
-        }, 200);
+        }, 150);
 
         document.firstElementChild.dataset.href = location.href;
         document.firstElementChild.dataset.pathname = location.pathname;
@@ -469,6 +473,8 @@
           } else {
             myhtmlcharset = "utf-8";
             try {
+              /* 有的网站不在response中返回charset,又不是utf-8,在document中的meta的charset属性获取 
+            <meta charset="gbk" >*/
               myhtmlcharset = Array(
                 ...new DOMParser()
                   .parseFromString(
@@ -476,12 +482,36 @@
                     "text/html"
                   )
                   .querySelectorAll("meta[charset]")
-              )[0].getAttribute("charset");
+              )[0]
+                .getAttribute("charset")
+                .toLowerCase();
             } catch (error) {
-              console.error(error);
+              console.warn(error);
             }
 
-            /* 有的网站不在response中返回charset,又不是utf-8,在document中的meta的charset属性获取 */
+            /*
+            有的网页没有document中的meta的charset属性
+            
+            只有meta http-equiv="Content-Type"
+            <meta http-equiv="Content-Type" content="text/html; charset=gb2312" data-loadid="2575ce3d-b866-8a23-b936-8515d8f43ef2">
+            */
+            try {
+              var dataContentType = Array(
+                ...new DOMParser()
+                  .parseFromString(
+                    new TextDecoder().decode(arraybuffer),
+                    "text/html"
+                  )
+                  .querySelectorAll(`meta[http-equiv="Content-Type"]`)
+              )[0]
+                .getAttribute("content")
+                .toLowerCase();
+              myhtmlcharset = dataContentType.slice(
+                dataContentType.indexOf("charset") + "charset".length + 1
+              );
+            } catch (error) {
+              console.warn(error);
+            }
 
             // console.log("文档的编码是utf-8");
             if ("utf-8" === myhtmlcharset) {
@@ -579,7 +609,7 @@
                 console.log("删除旧元素", e.outerHTML);
               }
             });
-          }, 200);
+          }, 150);
 
           //使用async函数
 
@@ -617,4 +647,4 @@
       }
     }
   }
-})();
+})((typeof window != "undefined" && window) || this);
