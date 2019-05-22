@@ -1,5 +1,8 @@
 (global => {
+    /* 注意不能跨域 */
   /* 注意:对于使用了document.write的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖*/
+  document.write=null
+  /* 禁用 document.write*/
   global.点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 = windowloadhandler;
   window.addEventListener("load", windowloadhandler);
   function windowloadhandler() {
@@ -457,11 +460,7 @@
               var dataresponse = await fetch(url);
             } catch (e) {
               console.error(error);
-              history.pushState(
-                undefined,
-                undefined,
-                document.firstElementChild.dataset.href
-              );
+              history.back()
             }
           }
 
@@ -471,11 +470,12 @@
             console.log(arraybuffer);
           } catch (error) {
             console.error(error);
-            history.pushState(
-              undefined,
-              undefined,
-              document.firstElementChild.dataset.href
-            );
+            history.back()
+            // history.pushState(
+            //   undefined,
+            //   undefined,
+            //   document.firstElementChild.dataset.href
+            // );
           }
 
           var datacontenttype = dataresponse.headers
