@@ -2,7 +2,7 @@
   /* 注意:对于使用了document.write的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖*/
   window.addEventListener("load", windowloadhandler);
   function windowloadhandler() {
-    document.charset = "UTF-8";
+    // document.charset = "UTF-8";/* 只读属性 */
     window.removeEventListener("load", windowloadhandler);
 
     var htmldataboject = new Object();
@@ -34,23 +34,26 @@
         /* 尝试把http和https都替换,因为协议不同导致origin不同 */
         // e.protocol = location.protocol;
         /* 使用hostname代替origin判断 */
-        if (
-          e.href != "javascript:;" &&
-          location.hostname === e.hostname &&
-          e.pathname !== location.pathname
-        ) {
-          e.dataset.href = e.href;
-         
-          e.href = "javascript:;";
-          console.log("替换a链接", e.outerHTML);
-          e.onclick = () => {
-            document.firstElementChild.dataset.href = location.href;
-            document.firstElementChild.dataset.pathname = location.pathname;
-            var url=new URL(e.dataset.href)
-            /* 替换协议与当前网页相同的协议 */
-            url.protocol=location.protocol
-            动态加载网页内容不刷新(url);
-          };
+        e.href = e.href;
+        if (e.protocol === "http:" || e.protocol === "https:") {
+          if (
+            e.href != "javascript:;" &&
+            location.hostname === e.hostname &&
+            e.pathname !== location.pathname
+          ) {
+            e.dataset.href = e.href;
+
+            e.href = "javascript:;";
+            console.log("替换a链接", e.outerHTML);
+            e.onclick = () => {
+              document.firstElementChild.dataset.href = location.href;
+              document.firstElementChild.dataset.pathname = location.pathname;
+              var url = new URL(e.dataset.href);
+              /* 替换协议与当前网页相同的协议 */
+              url.protocol = location.protocol;
+              动态加载网页内容不刷新(url);
+            };
+          }
         }
 
         /*  e.onclick = () => {
@@ -79,7 +82,7 @@
       });
     }
     //   document.onclick();
-    var onpopstatehandler = () => {
+    function onpopstatehandler() {
       console.log("onpopstate,执行,动态加载网页内容不刷新");
       //    document.firstElementChild.dataset.href = document.firstElementChild.dataset.href;
       console.log(
@@ -91,7 +94,7 @@
       }
 
       替换a链接();
-    };
+    }
     window.addEventListener("popstate", onpopstatehandler);
     var script总数量 = 0;
     var script完成数量 = 0;
@@ -135,7 +138,7 @@
       };
       document.getElementsByTagName("head")[0].appendChild(script);
 
-      console.log("添加script到head", script);
+      console.log("添加script到head", script.outerHTML);
     }
     function loadscripttext(text, loadguid = guid()) {
       var script = document.createElement("script");
@@ -150,7 +153,7 @@
       script.type = "text/javascript";
       script.dataset.loadid = loadguid;
       script.async = true;
-      console.log("添加script到head", script);
+      console.log("添加script到head", script.outerHTML);
       document.getElementsByTagName("head")[0].appendChild(script);
     }
     function loadstyle(fileurl, callback = undefined) {
@@ -173,16 +176,29 @@
         return ("x" == t ? e : (3 & e) | 8).toString(16);
       });
     }
-    function fetchhandler(t) {
+    function fetchhandler(arraybuffer) {
+      console.log(arraybuffer);
+      var sr, myhtmldata;
       var loadid = guid();
-      document.charset = "UTF-8";
+      //   document.charset = "UTF-8";
       /* 把源代码的编码转成unicode */
-      var sr = t;
+      //   var sr = text;
       //   console.log(sr);
-      var myhtmldata = new DOMParser().parseFromString(sr, "text/html");
-      console.log(myhtmldata.charset);
-      myhtmldata.charset = "UTF-8";
-      htmldataboject[new URL(myhtmldata.URL).pathname] = {
+      sr = new TextDecoder().decode(arraybuffer);
+      myhtmldata = new DOMParser().parseFromString(sr, "text/html");
+      //   var myhtmldata = new DOMParser().parseFromString(sr, "text/html");
+      /*myhtmldata.charset得出的结果不正确 
+      使用response.headers.get("Content-Type")
+      得出"text/html; charset=gbk" */
+      //   console.log(myhtmldata.charset);
+      var myhtmlcharset;
+      if (myhtmlcharset != "UTF-8") {
+        console.log("编码不是utf-8,转码成" + myhtmldata.charset);
+        sr = new TextDecoder(myhtmldata.charset).decode(arraybuffer);
+        myhtmldata = new DOMParser().parseFromString(sr, "text/html");
+        myhtmldata.charset = "UTF-8";
+      }
+      htmldataboject[decodeURI(new URL(myhtmldata.URL).pathname)] = {
         url: myhtmldata.URL,
         text: sr
       };
@@ -245,6 +261,7 @@
       script完成数量 = 0;
       script总数量 = Array.from(myhtmldata.querySelectorAll("script")).length;
       Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
+        e.type = e.type.toLowerCase();
         if (e.type == "text/javascript" || "" == e.type) {
           e.type = "text/javascript";
           if (e.src != "") {
@@ -373,8 +390,8 @@
           }, 300); */
     }
 
-    function 动态加载网页内容不刷新(url = location.href) {
-      document.charset = "UTF-8";
+    async function 动态加载网页内容不刷新(url = location.href) {
+      //   document.charset = "UTF-8";
       /*  if (typeof url === "undefined") {
         url = location.href;
       } else  */
@@ -398,27 +415,145 @@
           "改成",
           nowurl
         );
+
+        /* 返回文本和二进制数组,用来转换编码 */
         try {
-          fetch(url)
+          var myhtmlcharset;
+          var dataresponse = await fetch(url);
+          console.log(dataresponse);
+          var arraybuffer = await dataresponse.arrayBuffer();
+          console.log(arraybuffer);
+          var datacontenttype = dataresponse.headers
+            .get("Content-Type")
+            .toLowerCase();
+          console.log("Content-Type", datacontenttype);
+          if (datacontenttype.includes("charset")) {
+            myhtmlcharset = datacontenttype.slice(
+              datacontenttype.indexOf("charset") + "charset".length + 1
+            );
+            if ("utf-8" === myhtmlcharset) {
+              console.log("文档的编码是utf-8");
+            } else {
+              console.log("编码不是utf-8,当前的编码是" + myhtmlcharset);
+            }
+          } else {
+            myhtmlcharset = "utf-8";
+            console.log("文档的编码是utf-8");
+          }
+
+          var loadid = guid();
+          var sr = new TextDecoder(myhtmlcharset).decode(arraybuffer);
+          var myhtmldata = new DOMParser().parseFromString(sr, "text/html");
+
+          htmldataboject[decodeURI(new URL(myhtmldata.URL).pathname)] = {
+            url: myhtmldata.URL,
+            text: sr
+          };
+          console.log("加载过的网页的源代码合集", htmldataboject);
+          console.log(myhtmldata);
+          document.title = myhtmldata.title;
+          document.getElementsByTagName(
+            "body"
+          )[0].innerHTML = myhtmldata.getElementsByTagName("body")[0].innerHTML;
+          Array.from(
+            myhtmldata.querySelectorAll("link[rel='stylesheet']")
+          ).forEach(e => {
+            e.dataset.loadid = loadid;
+            e.onerror = () => {
+              console.log("加载失败" + e.href);
+            };
+            e.type = "text/css";
+            e.href = e.href;
+            console.log("添加css元素到head", e.outerHTML);
+            document.getElementsByTagName("head")[0].appendChild(e);
+          });
+
+          Array.from(myhtmldata.querySelectorAll("link")).forEach(e => {
+            e.dataset.loadid = loadid;
+
+            e.href = e.href;
+            console.log("添加元素到head", e.outerHTML);
+            document.getElementsByTagName("head")[0].appendChild(e);
+          });
+
+          Array.from(myhtmldata.querySelectorAll("style")).forEach(e => {
+            e.type = "text/css";
+            e.dataset.loadid = loadid;
+            console.log("添加css元素到head", e.outerHTML);
+            document.getElementsByTagName("head")[0].appendChild(e);
+          });
+
+          Array.from(myhtmldata.querySelectorAll("meta")).forEach(e => {
+            e.dataset.loadid = loadid;
+            console.log("添加元素到head", e.outerHTML);
+            document.getElementsByTagName("head")[0].appendChild(e);
+          });
+
+          script完成数量 = 0;
+          script总数量 = Array.from(myhtmldata.querySelectorAll("script"))
+            .length;
+          Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
+            e.type = e.type.toLowerCase();
+            if (e.type == "text/javascript" || "" == e.type) {
+              e.type = "text/javascript";
+              if (e.src != "") {
+                e.src = e.src;
+                /* 但是如果有些脚本不重复加载,可能网页出错 */
+                /* 不要重复加载javascipt文件,否则可能出问题 */
+                loadscript(e.src, loadid, script加载完成);
+              } else {
+                loadscripttext(e.innerHTML, loadid);
+                script完成数量++;
+              }
+            } else {
+              /* 不是javascript文件 */
+              if (e.src != "") {
+                e.src = e.src;
+              }
+              console.log("添加元素到head", e.outerHTML);
+              e.dataset.loadid = loadid;
+              script完成数量++;
+              document.getElementsByTagName("head")[0].appendChild(e);
+            }
+          });
+
+          Array(
+            ...document.querySelectorAll("link"),
+            ...document.querySelectorAll("style"),
+            ...document.querySelectorAll("meta"),
+            ...document.querySelectorAll("script")
+          ).forEach(e => {
+            if (loadid != e.dataset.loadid) {
+              e.parentNode.removeChild(e);
+              console.log("删除旧元素", e.outerHTML);
+            }
+          });
+          //使用async函数
+
+          /*   fetch(url)
             .then(r => {
               console.log(r);
-              return r.text();
+              //   console.log(r,r.text(),r.arrayBuffer());
+              return r.arrayBuffer();
             })
-            .then(fetchhandler);
+            .then(fetchhandler); */
         } catch (error) {
           console.error(error);
-          if (url.protocal === "https:") {
+          /* if (url.protocal === "https:") {
             url.protocal = "http:";
           } else {
             url.protocal = "https:";
           }
-
+//不需要了,因为已经在a链接的onclick函数中设置过了
           fetch(url)
             .then(r => {
               console.log(r);
-              return r.text();
+              // console.log(r,r.text(),r.arrayBuffer());
+              return r.arrayBuffer();
+              //   return r.text();
+              //   return { text: r.text(), arraybuffer: r.arrayBuffer() };
             })
-            .then(fetchhandler);
+            .then(fetchhandler); */
         }
       } else {
         console.log(

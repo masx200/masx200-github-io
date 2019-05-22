@@ -1,1 +1,156 @@
-<!DOCTYPE html><html><head><script src="https://cdn.staticfile.org/mui/3.7.1/js/mui.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta charset="utf-8"><title>hieroglyphy encoder</title><script async src="/hieroglyphy.a4e5ded5.js" id="hieroglyphy"></script><script async src="/hieroglyphy-encode-html.1a6d4430.js"></script><link rel="stylesheet" href="/hieroglyphy.index.1a6f357b.css"></head><body> <div class="container-fluid fixed-top" id="my导航栏"> <nav class="navbar navbar-expand-sm bg-light navbar-light">  <div> <a class="navbar-brand" href="/index.html">masx200的github主页</a>  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>  </div> <div class="collapse navbar-collapse" id="collapsibleNavbar"> <ul class="navbar-nav">  <li class="nav-item"> <a class="nav-link" href="/圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架\index.html">圆周率计算多线程 </a> </li> <li class="nav-item"> <a class="nav-link" href="/花密网页版-完善修改版-响应式的导航栏\index.html">花密网页版 </a> </li> <li class="nav-item"> <a class="nav-link" href="/my-vue-router-project\index.html">基于VUE的主页 </a> </li> <li class="nav-item"> <a class="nav-link" href="/my-react-router-test\index.html">基于REACT的主页 </a> </li> <li class="nav-item"> <a class="nav-link" href="/JSfuck-and-hieroglyphy-Decoder-and-ENCODER\index.html">JSFUCK and hieroglyphy decoder</a> </li> <li class="nav-item active"> <a class="nav-link">hieroglyphy encoder</a> </li> <li class="nav-item"> <a class="nav-link" href="/JSfuck-and-hieroglyphy-Decoder-and-ENCODER\JSFuck---Write-any-JavaScript-with-6-Characters_-[]()!+.html">JSFUCK encoder</a> </li> </ul> </div> </nav> </div> <div id="my主体" class="container"> <h1 style="font-size:30px;"> 编码hieroglyphy <br>encode hieroglyphy </h1> <p> hieroglyphy是一个工具和javascript库，用于将字符串，数字和脚本转换为（）[] {} +的等效序列！在浏览器中运行的字符。 </p> <p>()+[]!{}</p> <p> 浏览器兼容性: 建议在最新超高版本chrome或者Firefox或者safari浏览器中运行！ </p> <br> <textarea id="input" type="text"></textarea> <br> <p> <button class="btn btn-outline-success" id="encodescript" data-loading-icon="mui-spinner mui-spinner-custom" type="text"> Encode script </button> </p> <br> <p> <button id="encodestring" type="text" data-loading-icon="mui-spinner mui-spinner-custom" class="btn btn-outline-info"> Encode string </button> </p> <br> <br> <textarea id="output"></textarea> <div class="actions"> <span id="stats">0 chars</span> <button class="btn btn-outline-primary" id="run">Run This</button>  </div> <br>  <p> <a href="https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER">https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER</a> </p> <p> <a href="https://github.com/alcuadrado/hieroglyphy/blob/master/hieroglyphy.js">https://github.com/alcuadrado/hieroglyphy/blob/master/hieroglyphy.js</a> </p> </div>  </body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.staticfile.org/mui/3.7.1/js/mui.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <title>hieroglyphy encoder</title>
+    <!-- <style type="text/css">
+     
+    </style> -->
+    <script async="" src="/hieroglyphy.64a82391.js" id="hieroglyphy"></script>
+    <script async="" src="/hieroglyphy-encode-html.74ddf2ed.js"></script>
+    <!-- <link href="../myfontandtextalign.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="/hieroglyphy.index.aba11b17.css">
+    
+  <script src="/hieroglyphy.index.aba11b17.js"></script></head>
+
+  <body>
+    <div class="container-fluid fixed-top" id="my导航栏">
+      <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <!-- Brand/logo -->
+        <div class="">
+          <a class="navbar-brand" href="/index.html">masx200的github主页</a>
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Links -->
+        </div>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <!-- <li class="nav-item">
+                    <a class="nav-link" href="../index.html">传统主页</a>
+                </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="/圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架\index.html">圆周率计算多线程
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/花密网页版-完善修改版-响应式的导航栏\index.html">花密网页版
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/my-vue-router-project\index.html">基于VUE的主页
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/my-react-router-test\index.html">基于REACT的主页
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/JSfuck-and-hieroglyphy-Decoder-and-ENCODER\index.html">JSFUCK and hieroglyphy decoder</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link">hieroglyphy encoder</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/JSfuck-and-hieroglyphy-Decoder-and-ENCODER\JSFuck---Write-any-JavaScript-with-6-Characters_-[]()!+.html">JSFUCK encoder</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div id="my主体" class="container">
+      <h1 style="
+        font-size: 30px;
+    ">
+        编码hieroglyphy <br>encode hieroglyphy
+      </h1>
+      <p>
+        hieroglyphy是一个工具和javascript库，用于将字符串，数字和脚本转换为（）[]
+        {} +的等效序列！在浏览器中运行的字符。
+      </p>
+      <p>()+[]!{}</p>
+      <p>
+        浏览器兼容性:
+        建议在最新超高版本chrome或者Firefox或者safari浏览器中运行！
+      </p>
+      <br>
+      <textarea id="input" type="text"></textarea>
+      <br>
+      <p>
+        <button class="btn btn-outline-success" id="encodescript" data-loading-icon="mui-spinner mui-spinner-custom" type="text">
+          Encode script
+        </button>
+      </p>
+      <br>
+      <p>
+        <button id="encodestring" type="text" data-loading-icon="mui-spinner mui-spinner-custom" class="btn btn-outline-info">
+          Encode string
+        </button>
+      </p>
+      <br>
+      <br>
+      <textarea id="output"></textarea>
+      <div class="actions">
+        <span id="stats">0 chars</span>
+        <button class="btn btn-outline-primary" id="run">Run This</button>
+        <!-- href="http://www.jsfuck.com/#" -->
+      </div>
+      <br>
+      <!-- <script>
+        var i,
+            c,
+            encoded,
+            evaled,
+            script;
+
+        // for (i = 0; i < 127; i += 1) {
+        //     c = String.fromCharCode(i);
+        //     encoded = hieroglyphy.hieroglyphyString(c);
+        //     evaled = eval(encoded);
+
+        //     if (c !== evaled) {
+        //         throw new Error("Error at char %s", c);
+        //     }
+        // }
+
+        // for (i = 0; i < 1000; i += 1) {
+        //     encoded = hieroglyphy.hieroglyphyNumber(i);
+        //     evaled = eval(encoded);
+
+        //     if (i !== evaled) {
+        //         throw new Error("Error at number %d", i);
+        //     }
+        // }
+
+        //a script doing something (with some unicode)
+        // script = `console.log("你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM")`;
+
+        // eval(hieroglyphy.hieroglyphyScript(script));
+
+        // if (document.body.innerHTML !== "<h1>Testing λ</h1>") {
+        //     throw new Error("Error with the script");
+        // }
+
+            //document.body.innerHTML = "<h1>It Works ☺!</h1>";
+
+    </script> -->
+      <p>
+        <a href="https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER">https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER</a>
+      </p>
+      <p>
+        <a href="https://github.com/alcuadrado/hieroglyphy/blob/master/hieroglyphy.js">https://github.com/alcuadrado/hieroglyphy/blob/master/hieroglyphy.js</a>
+      </p>
+    </div>
+ 
+    <!-- <script src="../拉伸导航栏与主体部分的顶部距离.js"></script> -->
+  </body>
+</html>
