@@ -1,26 +1,50 @@
 (() => {
-  var windowloadhandler = () => {
-window.removeEventListener("load", windowloadhandler);
+  /* 注意:对于使用了document.write的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖*/
+  window.addEventListener("load", windowloadhandler);
+  function windowloadhandler() {
+    document.charset = "UTF-8";
+    window.removeEventListener("load", windowloadhandler);
+
+    var htmldataboject = new Object();
+    Array(...document.querySelectorAll("script")).forEach(e => {
+      if (e.src !== "") {
+        e.src = e.src;
+      }
+    });
+    document.firstElementChild.dataset.href = location.href;
+    document.firstElementChild.dataset.pathname = location.pathname;
+    console.log(
+      "当前页面的document的href为" + document.firstElementChild.dataset.href
+    );
+    console.log(
+      "当前页面的document的pathname为" +
+        document.firstElementChild.dataset.pathname
+    );
     // var lasthref;
-    window.lasthref = location.href;
+    //  document.firstElementChild.dataset.href = location.href;
     替换a链接();
     document.addEventListener("click", 替换a链接);
     //   document.addEventListener("scroll", 替换a链接);
     function 替换a链接() {
-      window.lasthref = location.href;
+      document.firstElementChild.dataset.href = location.href;
+      document.firstElementChild.dataset.pathname = location.pathname;
       var alinkarr = Array.from(document.getElementsByTagName("a"));
       //   console.log(alinkarr);
       alinkarr.forEach(e => {
+        /* 尝试把http和https都替换,因为协议不同导致origin不同 */
+        // e.protocol = location.protocol;
+        /* 使用hostname代替origin判断 */
         if (
           e.href != "javascript:;" &&
-          location.origin === e.origin &&
+          location.hostname === e.hostname &&
           e.pathname !== location.pathname
         ) {
           e.dataset.href = e.href;
           console.log("替换a链接", e);
           e.href = "javascript:;";
           e.onclick = () => {
-            window.lasthref = location.href;
+            document.firstElementChild.dataset.href = location.href;
+            document.firstElementChild.dataset.pathname = location.pathname;
             动态加载网页内容不刷新(e.dataset.href);
           };
         }
@@ -53,8 +77,15 @@ window.removeEventListener("load", windowloadhandler);
     //   document.onclick();
     var onpopstatehandler = () => {
       console.log("onpopstate,执行,动态加载网页内容不刷新");
+      //    document.firstElementChild.dataset.href = document.firstElementChild.dataset.href;
+      console.log(
+        "当前的地址栏路径为" + location.pathname,
+        "当前的网页document路径为" + document.firstElementChild.dataset.pathname
+      );
+      if (document.firstElementChild.dataset.pathname !== location.pathname) {
+        动态加载网页内容不刷新();
+      }
 
-      动态加载网页内容不刷新();
       替换a链接();
     };
     window.addEventListener("popstate", onpopstatehandler);
@@ -67,7 +98,14 @@ window.removeEventListener("load", windowloadhandler);
       console.log("script加载完成", urlortext);
       if (script完成数量 === script总数量) {
         console.log("触发window的load事件");
-        window.dispatchEvent(new Event("load"));
+        setTimeout(() => {
+          window.dispatchEvent(new Event("load"));
+        }, 200);
+        document.firstElementChild.dataset.href = location.href;
+        document.firstElementChild.dataset.pathname = location.pathname;
+        console.log(
+          "当前页面的document的href为" + document.firstElementChild.dataset.href
+        );
       }
       /*  () => {
               setTimeout(() => {
@@ -79,7 +117,7 @@ window.removeEventListener("load", windowloadhandler);
               }, 300);
             };  */
     }
-    function loadscript(fileurl, loadguid=guid(),callback = undefined) {
+    function loadscript(fileurl, loadguid = guid(), callback = undefined) {
       var script = document.createElement("script");
       script.dataset.loadid = loadguid;
       script.type = "text/javascript";
@@ -87,7 +125,7 @@ window.removeEventListener("load", windowloadhandler);
       script.onload = () => {
         callback(fileurl);
       };
-       script.async = true;
+      script.async = true;
       script.onerror = () => {
         console.log("加载失败" + fileurl);
       };
@@ -95,7 +133,7 @@ window.removeEventListener("load", windowloadhandler);
 
       console.log("添加script到head", script);
     }
-    function loadscripttext(text,loadguid=guid()) {
+    function loadscripttext(text, loadguid = guid()) {
       var script = document.createElement("script");
       script.onerror = () => {
         console.log("加载失败" + fileurl);
@@ -107,7 +145,7 @@ window.removeEventListener("load", windowloadhandler);
       script.innerHTML = text;
       script.type = "text/javascript";
       script.dataset.loadid = loadguid;
-script.async = true;
+      script.async = true;
       console.log("添加script到head", script);
       document.getElementsByTagName("head")[0].appendChild(script);
     }
@@ -133,13 +171,19 @@ script.async = true;
     }
     function fetchhandler(t) {
       var loadid = guid();
-document.charset="UTF-8"
-      
+      document.charset = "UTF-8";
+      /* 把源代码的编码转成unicode */
       var sr = t;
-      console.log(sr);
+      //   console.log(sr);
       var myhtmldata = new DOMParser().parseFromString(sr, "text/html");
-console.log(myhtmldata.charset);      
-console.log(myhtmldata);
+      console.log(myhtmldata.charset);
+      myhtmldata.charset = "UTF-8";
+      htmldataboject[new URL(myhtmldata.URL).pathname] = {
+        url: myhtmldata.URL,
+        text: sr
+      };
+      console.log("加载过的网页的源代码合集", htmldataboject);
+      console.log(myhtmldata);
       document.title = myhtmldata.title;
       // window.myhtmldata = myhtmldata;
       document.getElementsByTagName(
@@ -197,47 +241,70 @@ console.log(myhtmldata);
       script完成数量 = 0;
       script总数量 = Array.from(myhtmldata.querySelectorAll("script")).length;
       Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
-        //   console.log("e.type",e.type)
-        if (e.src) {
-          e.src = e.src;
-          if (e.type == "text/javascript" || "" == e.type) {
-            loadscript(e.src, loadid,script加载完成);
+        if (e.type == "text/javascript" || "" == e.type) {
+          e.type = "text/javascript";
+          if (e.src != "") {
+            e.src = e.src;
+            /* 但是如果有些脚本不重复加载,可能网页出错 */
+            /* 不要重复加载javascipt文件,否则可能出问题 */
+            loadscript(e.src, loadid, script加载完成);
           } else {
-            console.log("添加元素到head",e);
-            //   script加载完成();
+            loadscripttext(e.innerHTML, loadid);
             script完成数量++;
-            document.getElementsByTagName("head")[0].appendChild(e);
           }
         } else {
-          // console.log("script-innertext", e.innerText.replace(/\n/g,";"));
-          /* if (""==e.type) {
-
-            e.type = "text/javascript";
-          } */
-          e.onerror = () => {
-            console.log("加载失败" + e.src);
-          };
-          e.dataset.loadid = loadid;
-          // e.async = true;
-          if (e.type == "text/javascript" || "" == e.type) {
-            e.type = "text/javascript";
-            loadscripttext(e.innerHTML,loadid);
-            //   script加载完成();
-            script完成数量++;
-            /*  var script = document.createElement("script");
-                script.onload = script加载完成;
-                script.innerHTML = e.innerHTML;
-                script.type = e.type;
-                script.dataset.loadid = e.dataset.loadid;
-                console.log(script);
-                document.getElementsByTagName("head")[0].appendChild(script); */
-          } else {
-            console.log("添加元素到head",e);
-            //   script加载完成();
-            script完成数量++;
-            document.getElementsByTagName("head")[0].appendChild(e);
+          /* 不是javascript文件 */
+          if (e.src != "") {
+            e.src = e.src;
           }
+          console.log("添加元素到head", e);
+          e.dataset.loadid = loadid;
+          script完成数量++;
+          document.getElementsByTagName("head")[0].appendChild(e);
         }
+
+        //////////////////////////////
+        //   console.log("e.type",e.type)
+        // /* if (e.src) {
+        //   e.src = e.src;
+        //   if (e.type == "text/javascript" || "" == e.type) {
+        //     loadscript(e.src, loadid, script加载完成);
+        //   } else {
+        //     console.log("添加元素到head", e);
+        //     //   script加载完成();
+        //     script完成数量++;
+        //     document.getElementsByTagName("head")[0].appendChild(e);
+        //   }
+        // } else {
+        //   // console.log("script-innertext", e.innerText.replace(/\n/g,";"));
+        //   /* if (""==e.type) {
+
+        //     e.type = "text/javascript";
+        //   } */
+        //   e.onerror = () => {
+        //     console.log("加载失败" + e.src);
+        //   };
+        //   e.dataset.loadid = loadid;
+        //   // e.async = true;
+        //   if (e.type == "text/javascript" || "" == e.type) {
+        //     e.type = "text/javascript";
+        //     loadscripttext(e.innerHTML, loadid);
+        //     //   script加载完成();
+        //     script完成数量++;
+        //     /*  var script = document.createElement("script");
+        //         script.onload = script加载完成;
+        //         script.innerHTML = e.innerHTML;
+        //         script.type = e.type;
+        //         script.dataset.loadid = e.dataset.loadid;
+        //         console.log(script);
+        //         document.getElementsByTagName("head")[0].appendChild(script); */
+        //   } else {
+        //     console.log("添加元素到head", e);
+        //     //   script加载完成();
+        //     script完成数量++;
+        //     document.getElementsByTagName("head")[0].appendChild(e);
+        //   }
+        // } */
       });
       /*  Array.from(
         document.getElementsByTagName("body")[0].querySelectorAll("script")
@@ -245,13 +312,18 @@ console.log(myhtmldata);
         e.parentNode.removeChild(e);
       }); */
 
-      Array(...document.querySelectorAll("link"),...document.querySelectorAll("style"),...document.querySelectorAll("meta"),...document.querySelectorAll("script")).forEach(e => {
-        if (loadid!=e.dataset.loadid) {
+      Array(
+        ...document.querySelectorAll("link"),
+        ...document.querySelectorAll("style"),
+        ...document.querySelectorAll("meta"),
+        ...document.querySelectorAll("script")
+      ).forEach(e => {
+        if (loadid != e.dataset.loadid) {
           e.parentNode.removeChild(e);
           console.log("删除旧元素", e);
         }
       });
-     /* Array.from(document.querySelectorAll("style")).forEach(e => {
+      /* Array.from(document.querySelectorAll("style")).forEach(e => {
         if (!e.dataset.loadid) {
           e.parentNode.removeChild(e);
           console.log("删除旧元素", e);
@@ -297,21 +369,31 @@ console.log(myhtmldata);
           }, 300); */
     }
 
-    function 动态加载网页内容不刷新(url=undefined) {
-      if (typeof url === "undefined") {
+    function 动态加载网页内容不刷新(url = location.href) {
+      document.charset = "UTF-8";
+      /*  if (typeof url === "undefined") {
         url = location.href;
-      } else url = new URL(url);
-
+      } else  */
+      url = new URL(url);
+      url.protocal = location.protocol;
       if (
-        location.origin === url.origin &&
-        url.pathname !== location.pathname
+        (location.hostname === url.hostname &&
+          url.pathname !== location.pathname) ||
+        url.pathname !== document.firstElementChild.dataset.pathname
       ) {
-        console.log("动态加载网页内容不刷新执行" + url);
+        console.log("动态加载网页内容不刷新,执行" + url);
         // var urlorighin = new URL(url).origin;
-        //   window.lasthref = location.href;
-        history.pushState(undefined, undefined, url);
+        //    document.firstElementChild.dataset.href = location.href;
+        if (url.pathname !== location.pathname) {
+          history.pushState(undefined, undefined, url);
+        }
+
         var nowurl = location.href;
-        console.log("替换当前的网址" + window.lasthref, "改成", nowurl);
+        console.log(
+          "替换当前的网址" + document.firstElementChild.dataset.href,
+          "改成",
+          nowurl
+        );
         try {
           fetch(url)
             .then(r => {
@@ -336,11 +418,11 @@ console.log(myhtmldata);
         }
       } else {
         console.log(
-          "动态加载网页内容不刷新" + "原网页与现在的网址相同不刷新",
-          window.lasthref
+          "动态加载网页内容不刷新,不执行" + "原网页与现在的网址相同不刷新",
+          document.firstElementChild.dataset.href,
+          location.href
         );
       }
     }
-  };
-  window.addEventListener("load", windowloadhandler);
+  }
 })();

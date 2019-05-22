@@ -7,7 +7,9 @@
 //在react的jsx文件中这句话能删除!
 (() => {
   // console.log(regeneratorRuntime)
-  window.addEventListener("load", () => {
+  $(window).one("load", () => {
+    let haverun = 0;
+    herewindowonload();
     function herewindowonload() {
       if (haverun == 0) {
         haverun = 1;
@@ -17,10 +19,11 @@
         console.log("不要重复运行此onload函数");
       }
     }
-    $(document).ready(herewindowonload);
+    // $(window).one(herewindowonload);
+    /* 不要写两次window onload */
     // var xmlDoc, x, onetitle, onelink, description;
 
-    let haverun = 0;
+    
     //   setTimeout(() => {
     //     herewindowonload();
     //   }, 1000);

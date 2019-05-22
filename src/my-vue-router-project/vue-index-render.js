@@ -3,9 +3,12 @@
 // import Vue from 'vue';
 // import React from 'react';
 (() => {
-  window.addEventListener("load", () => {
+  $(window).one("load", () => {
+    let haverun = 0;
     let myonloadfunc = myonload2;
-    var herewindowonload = () => {
+    herewindowonload();
+
+    function herewindowonload() {
       if (haverun == 0) {
         haverun = 1;
         console.log("开始运行此onload函数");
@@ -13,11 +16,12 @@
       } else {
         console.log("不要重复运行此onload函数");
       }
-    };
-    $(document).ready(herewindowonload);
+    }
+    // $(window).one(herewindowonload);
+    /* 不要写两次window onload */
     //   var Router;
     // var myvueobj;
-    let haverun = 0;
+
     // setTimeout(()=>{
     //     herewindowonload()
     // }
@@ -29,7 +33,7 @@
       Vue.config.productionTip = false;
       Vue.config.silent = true;
       Vue.config.devtools = true;
-    //   Router = VueRouter;
+      //   Router = VueRouter;
       Vue.use(VueRouter);
       window.keysave = "";
       $(window).on("hashchange", () => {

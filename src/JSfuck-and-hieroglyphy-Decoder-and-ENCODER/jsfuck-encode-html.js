@@ -1,7 +1,7 @@
-import "../拉伸导航栏与主体部分的顶部距离.js"
+import "../拉伸导航栏与主体部分的顶部距离.js";
 // onload =
 (() => {
-  $(document).ready(() => {
+  $(window).one("load",() => {
     function guid() {
       return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(
         c

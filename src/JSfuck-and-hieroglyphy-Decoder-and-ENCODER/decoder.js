@@ -8,7 +8,21 @@
 // })();
 
 (() => {
-  window.addEventListener("load", () => {
+  $(window).one("load", () => {
+    // $(window).one("load",() => {
+        /* 不要写两次window onload */
+      $("#run").click(function() {
+        eval($2("code2").value);
+      });
+      // var replacedPrefix, replacedPostfix, result, prefix, postfix, mytext;
+
+      // document.getElementById("decode").onclick = decode;
+      $("#decode").click(decode);
+
+      mystart();
+      //    var  匹配纯字符串= 匹配纯字符串2
+      //     var pipeizifu=pipeizifu2
+    // });
     var preandpost = undefined;
 
     function mystart() {
@@ -313,19 +327,6 @@
 
       // setDecoded(code.value);
     }
-    $(document).ready(() => {
-      $("#run").click(function() {
-        eval($2("code2").value);
-      });
-      // var replacedPrefix, replacedPostfix, result, prefix, postfix, mytext;
-
-      // document.getElementById("decode").onclick = decode;
-      $("#decode").click(decode);
-
-      mystart();
-      //    var  匹配纯字符串= 匹配纯字符串2
-      //     var pipeizifu=pipeizifu2
-    });
   });
   // import moduleName from 'module'
   //   console.log(

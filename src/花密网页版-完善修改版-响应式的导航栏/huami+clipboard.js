@@ -1,5 +1,5 @@
 (() => {
-  window.addEventListener("load", () => {
+  $(window).one("load", () => {
     function countCode() {
       var password = $("#password").val();
       var key = $("#key").val();
