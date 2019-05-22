@@ -445,23 +445,38 @@
           try {
             var dataresponse = await fetch(url);
           } catch (error) {
-            console.error(error); /* 有些网站的不同页面是用不同的http协议 */
+            console.error(error);
+            /* 有些网站的不同页面是用不同的http协议 */
             if (url.protocal === "https:") {
               url.protocal = "http:";
             } else {
               url.protocal = "https:";
             }
             try {
-                var dataresponse = await fetch(url);
-            }catch (e){
-                history.pushState(undefined, undefined, document.firstElementChild.dataset.href);
+              var dataresponse = await fetch(url);
+            } catch (e) {
+              console.error(error);
+              history.pushState(
+                undefined,
+                undefined,
+                document.firstElementChild.dataset.href
+              );
             }
-            
           }
 
           console.log(dataresponse);
-          var arraybuffer = await dataresponse.arrayBuffer();
-          console.log(arraybuffer);
+          try {
+            var arraybuffer = await dataresponse.arrayBuffer();
+            console.log(arraybuffer);
+          } catch (error) {
+            console.error(error);
+            history.pushState(
+              undefined,
+              undefined,
+              document.firstElementChild.dataset.href
+            );
+          }
+
           var datacontenttype = dataresponse.headers
             .get("Content-Type")
             .toLowerCase();
@@ -588,10 +603,10 @@
                 /* 不要重复加载javascipt文件,否则可能出问题 */
                 loadscript(e.src, loadid, script加载完成);
               } else {
-                  setTimeout(()=>{
-                    loadscripttext(e.innerHTML, loadid);
-                  },50)
-               
+                setTimeout(() => {
+                  loadscripttext(e.innerHTML, loadid);
+                }, 50);
+
                 script完成数量++;
               }
             } else {
