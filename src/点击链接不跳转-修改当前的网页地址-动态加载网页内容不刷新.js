@@ -583,7 +583,10 @@
                 /* 不要重复加载javascipt文件,否则可能出问题 */
                 loadscript(e.src, loadid, script加载完成);
               } else {
-                loadscripttext(e.innerHTML, loadid);
+                  setTimeout(()=>{
+                    loadscripttext(e.innerHTML, loadid);
+                  },50)
+               
                 script完成数量++;
               }
             } else {
