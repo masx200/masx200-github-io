@@ -56,10 +56,10 @@
         }
         lasthash = window.location.hash;
         console.log("hash", window.location.hash);
-        if ("" == window.location.hash) {
-          window.location.hash = "#/";
-          return;
-        }
+        // if ("" == window.location.hash) {
+        //   window.location.hash = "#/";
+        //   return;
+        // }
 
         /*  try {
         异步按需加载外部组件("#/", import("./module-app.js"), "app");
