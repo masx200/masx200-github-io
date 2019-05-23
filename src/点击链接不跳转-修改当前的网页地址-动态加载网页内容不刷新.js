@@ -16,6 +16,15 @@
   global.点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 = windowloadhandler;
 
   function windowloadhandler() {
+    if (this.alreadyrun != 1) {
+      this.alreadyrun = 1;
+      console.log(
+        "第一次运行此函数启动,点击链接不跳转修改当前的网页地址动态加载网页内容不刷新"
+      );
+    } else {
+      console.log("已经运行过此函数,不能再次运行");
+      return;
+    }
     var loadid;
     if (!importScripts) {
       var importScripts = (function(globalEval) {
