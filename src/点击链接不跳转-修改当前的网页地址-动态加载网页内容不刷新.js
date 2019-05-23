@@ -88,6 +88,7 @@
         e.src = e.src;
       }
     });
+    document.firstElementChild.dataset.search = location.search;
     document.firstElementChild.dataset.href = location.href;
     document.firstElementChild.dataset.pathname = location.pathname;
     console.log(
@@ -104,6 +105,7 @@
     document.addEventListener("scroll", 替换a链接);
     //   document.addEventListener("scroll", 替换a链接);
     function 替换a链接() {
+      document.firstElementChild.dataset.search = location.search;
       document.firstElementChild.dataset.href = location.href;
       document.firstElementChild.dataset.pathname = location.pathname;
 
@@ -214,6 +216,7 @@
         }, 150);
 
         document.firstElementChild.dataset.href = location.href;
+        document.firstElementChild.dataset.search = location.search;
         document.firstElementChild.dataset.pathname = location.pathname;
         console.log(
           "当前页面的document的href为" + document.firstElementChild.dataset.href
