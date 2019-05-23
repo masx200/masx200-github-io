@@ -40,7 +40,7 @@
     }
 
     function importjquery() {
-      if (jQuery.fn.jquery) {
+      if ("function" == typeof jQuery) {
         console.log("当前的jquery版本号为" + jQuery.fn.jquery);
       }
       importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
