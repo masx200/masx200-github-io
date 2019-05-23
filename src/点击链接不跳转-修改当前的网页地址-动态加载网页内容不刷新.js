@@ -201,6 +201,7 @@
       console.log("script加载完成", urlortext);
       if (script完成数量 === script总数量) {
         console.log("触发window的load事件");
+        console.log("触发window的allscriptload事件");
         scrollTo(0, 0);
         setTimeout(() => {
           window.dispatchEvent(new Event("load"));
