@@ -59,6 +59,17 @@
         };
       })(eval);
     }
+    if ("function" == typeof jQuery) {
+      console.log("当前的jquery版本号为" + jQuery.fn.jquery);
+    }
+    if ("function" !== typeof jQuery) {
+      importjquery();
+    } else {
+      /* 判断jquery版本号 */
+      if (jQuery.fn.jquery[0] < 3) {
+        importjquery();
+      }
+    }
     document.write = t => {
       if (jQuery.fn.jquery[0] < 3) {
         importjquery();
@@ -66,8 +77,8 @@
       console.warn(
         "document.write已被禁用，" +
           "把document.write中的内容生成dom元素放入body之中" +
-          "要写入的内容为：" +
-          t
+          "要写入的内容为：",
+        t
       );
       // var writeelement = document.createElement("div");
       // writeelement.innerHTML = t;
@@ -81,9 +92,10 @@
 
       jQuery("body").append(newelemnet);
       console.log("添加元素到body ");
-      for (var i of newelemnet) {
+      /*  for (var i of newelemnet) {
         console.log(i.outerHTML);
-      }
+      } */
+      console.log(Array(...newelemnet).map(i => i.outerHTML));
       // console.log("把document.write中的内容生成dom元素放入head之中");
     };
 
@@ -94,14 +106,7 @@
       importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
       console.log("加载jquery版本号3.4.1");
     }
-    if ("function" !== typeof jQuery) {
-      importjquery();
-    } else {
-      /* 判断jquery版本号 */
-      if (jQuery.fn.jquery[0] < 3) {
-        importjquery();
-      }
-    }
+
     // Object.freeze(jQuery);
     /* jQuery可能被覆盖,所以改名 */
     //改名失败
