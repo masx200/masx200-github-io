@@ -519,11 +519,11 @@
           /* 等到加载成功再pushstate */
         }
 
-        var nowurl = location.href;
+        // var nowurl = location.href;
         console.log(
           "替换当前的网址" + document.firstElementChild.dataset.href,
           "改成",
-          nowurl
+          url
         );
         /* 竟然有的网页甚至还要给html标签加style! */
         document.firstElementChild.style = "";
