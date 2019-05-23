@@ -730,8 +730,9 @@
               if (e.src != "") {
                 e.src = e.src;
               }
-              console.log("添加元素到head", e.outerHTML);
               e.dataset.loadid = loadid;
+              console.log("添加元素到head", e.outerHTML);
+
               script完成数量++;
               document.getElementsByTagName("head")[0].appendChild(e);
             }
