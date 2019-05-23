@@ -554,7 +554,7 @@
         /* 竟然有的网页甚至还要给html标签加style! */
         document.firstElementChild.style = "";
         document.firstElementChild.className = "";
-        document.getElementsByTagName("body").style = "";
+        document.getElementsByTagName("body")[0].style = "";
         /* 返回文本和二进制数组,用来转换编码 */
         try {
           var myhtmlcharset;
@@ -691,6 +691,11 @@
           document.getElementsByTagName(
             "body"
           )[0].innerHTML = myhtmldata.getElementsByTagName("body")[0].innerHTML;
+
+          document.getElementsByTagName(
+            "body"
+          )[0].style = myhtmldata.getElementsByTagName("body")[0].style;
+          /* 把源代码中的body的style也加载到document的body中 */
           Array.from(
             myhtmldata.querySelectorAll("link[rel='stylesheet']")
           ).forEach(e => {
