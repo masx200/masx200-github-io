@@ -217,7 +217,7 @@
     var script总数量 = 0;
     var script完成数量 = 0;
     function script加载完成(urlortext) {
-        scrollTo(0, 0);
+      scrollTo(0, 0);
       替换a链接();
       script完成数量++;
       console.log(
@@ -227,11 +227,11 @@
       console.log("script加载完成", urlortext);
       if (script完成数量 === script总数量) {
         console.log("触发window的allscriptload事件");
-        
-        setTimeout(() => {
+
+        requestAnimationFrame(() => {
           console.log("触发window的load事件");
           window.dispatchEvent(new Event("load"));
-        }, 50);
+        });
         /* 等到所有用src加载的script全部加载完成,再加载文本内容的script */
         window.dispatchEvent(new Event("allscriptload"));
         /* 创建新的事件 */
@@ -768,7 +768,7 @@
               document.getElementsByTagName("head")[0].appendChild(e);
             }
           });
-          setTimeout(() => {
+          requestAnimationFrame(() => {
             Array(
               ...document.querySelectorAll("link"),
               ...document.querySelectorAll("style"),
@@ -780,7 +780,7 @@
                 console.log("删除旧元素", e.outerHTML);
               }
             });
-          }, 50);
+          });
 
           //使用async函数
 
