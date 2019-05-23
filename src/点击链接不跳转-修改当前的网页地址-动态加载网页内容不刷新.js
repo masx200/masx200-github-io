@@ -719,16 +719,20 @@
             try {
               /* 有的网站不在response中返回charset,又不是utf-8,在document中的meta的charset属性获取 
             <meta charset="gbk" >*/
-              myhtmlcharset = Array(
+
+              var charsetelement = Array(
                 ...new DOMParser()
                   .parseFromString(
                     new TextDecoder().decode(arraybuffer),
                     "text/html"
                   )
                   .querySelectorAll("meta[charset]")
-              )[0]
-                .getAttribute("charset")
-                .toLowerCase();
+              )[0];
+              if (typeof charsetelement != "undefined") {
+                myhtmlcharset = charsetelement
+                  .getAttribute("charset")
+                  .toLowerCase();
+              }
             } catch (error) {
               console.warn(error);
             }
@@ -830,6 +834,7 @@
               if (e.href != "") {
                 e.href = e.href;
                 添加stylesheet元素到head数组.push({
+                  type: e.type,
                   name: "添加css元素",
                   text: loadstylesheet(
                     e.href,
@@ -920,6 +925,7 @@
                   /* 但是如果有些脚本不重复加载,可能网页出错 */
                   /* 不要重复加载javascipt文件,否则可能出问题 */
                   添加script元素数组.push({
+                    type: e.type,
                     name: "添加script元素",
                     text: loadscript(
                       e.src,
@@ -973,6 +979,7 @@
                 e.dataset.loadid = loadid;
                 // console.log("添加元素到head", e.outerHTML);
                 添加script元素数组.push({
+                  type: e.type,
                   name: "添加script元素",
                   text: e.outerHTML
                 });
@@ -1007,6 +1014,7 @@
                 // var 添加script元素数组 = [];
                 /* 函数返回outerhtml */
                 添加文本script元素数组.push({
+                  type: "text/javascript",
                   name: "添加script元素",
                   text: loadscripttext(text, loadid)
                 });
