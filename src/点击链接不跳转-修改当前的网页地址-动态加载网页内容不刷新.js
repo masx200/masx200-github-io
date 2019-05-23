@@ -1,13 +1,61 @@
 (global => {
   /* 注意不能跨域 */
   /* 注意:对于使用了document.write的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖*/
-  document.write = t => {
-    console.warn("document.write已被禁用，要写入的内容为：" + t);
-  };
-  /* 禁用 document.write*/
+
   global.点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 = windowloadhandler;
   window.addEventListener("load", windowloadhandler);
   function windowloadhandler() {
+    var loadid;
+    if ("function" !== typeof jQuery) {
+      if (!importScripts) {
+        var importScripts = (function(globalEval) {
+          var xhr = new XMLHttpRequest();
+          return function importScripts() {
+            var args = Array.prototype.slice.call(arguments),
+              len = args.length,
+              i = 0,
+              meta,
+              data,
+              content;
+            for (; i < len; i++) {
+              if (args[i].substr(0, 5).toLowerCase() === "data:") {
+                data = args[i];
+                content = data.indexOf(",");
+                meta = data.substr(5, content).toLowerCase();
+                data = decodeURIComponent(data.substr(content + 1));
+                if (/;\s*base64\s*[;,]/.test(meta)) {
+                  data = atob(data);
+                }
+                if (/;\s*charset=[uU][tT][fF]-?8\s*[;,]/.test(meta)) {
+                  data = decodeURIComponent(escape(data));
+                }
+              } else {
+                xhr.open("GET", args[i], false);
+                xhr.send(null);
+                data = xhr.responseText;
+              }
+              globalEval(data);
+            }
+          };
+        })(eval);
+      }
+      importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
+    }
+    document.write = t => {
+      console.warn(
+        "document.write已被禁用，" +
+          "把document.write中的内容生成dom元素放入body之中" +
+          "要写入的内容为：" +
+          t
+      );
+      // var writeelement = document.createElement("div");
+      // writeelement.innerHTML = t;
+      // document.getElementsByTagName("head")[0].appendChild(writeelement);
+      jQuery("body").append(jQuery(t).attr("data-loadid", loadid));
+      // console.log("把document.write中的内容生成dom元素放入head之中");
+    };
+    /* 禁用 document.write*/
+
     // document.charset = "UTF-8";/* 只读属性 */
     window.removeEventListener("load", windowloadhandler);
 
@@ -521,7 +569,7 @@
             有的网页没有document中的meta的charset属性
             
             只有meta http-equiv="Content-Type"
-            <meta http-equiv="Content-Type" content="text/html; charset=gb2312" data-loadid="2575ce3d-b866-8a23-b936-8515d8f43ef2">
+            <meta http-equiv="Content-Type" content="text/html; charset=gb2312" >
             */
             try {
               var dataContentType = Array(
@@ -549,7 +597,7 @@
             }
           }
 
-          var loadid = guid();
+          loadid = guid();
           var sr = new TextDecoder(myhtmlcharset).decode(arraybuffer);
           var myhtmldata = new DOMParser().parseFromString(sr, "text/html");
 
