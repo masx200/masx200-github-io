@@ -321,9 +321,10 @@
     }
     function loadscripttext(text, loadguid = guid()) {
       var script = document.createElement("script");
-      script.onerror = () => {
+      /* script.onerror = () => {
         console.log("加载失败" + fileurl);
-      };
+      }; */
+      //文本内容的脚本不会onerror
       /*   script.onload = () => {
             callback(text);
           }; */
@@ -804,8 +805,8 @@
 
           /* 有href的link 的stylesheet 也要设置onload之后,全部加载完成之后,再删除旧元素*/
           function 失败StyleSheet(fileurl) {
-              /* 如果加载失败也要触发事件 */
-            console.log("加载失败" + fileurl);
+            /* 如果加载失败也要触发事件 */
+            console.warn("加载失败" + fileurl);
             单个stylesheet加载完成.完成linkstylesheet++;
             if (
               单个stylesheet加载完成.完成linkstylesheet >=
@@ -821,9 +822,9 @@
               myhtmldata.querySelectorAll("link[rel='stylesheet']")
             ).forEach(e => {
               e.dataset.loadid = loadid;
-              e.onerror = () => {
+              /* e.onerror = () => {
                 console.log("加载失败" + e.href);
-              };
+              }; */
               e.type = "text/css";
               e.href = e.href;
 
@@ -889,12 +890,10 @@
             myhtmldata.querySelectorAll("script")
           ).length;
           function 失败scriptsrc(fileurl) {
-               /* 如果加载失败也要触发事件 */
-            console.log("加载失败" + fileurl);
+            /* 如果加载失败也要触发事件 */
+            console.warn("加载失败" + fileurl);
             script加载完成.script完成数量++;
-            if (
-              script加载完成.script完成数量 >= script加载完成.script总数量
-            ) {
+            if (script加载完成.script完成数量 >= script加载完成.script总数量) {
               window.dispatchEvent(new Event("allscriptload"));
               console.log("触发window的allscriptload事件");
               requestAnimationFrame(() => {
@@ -905,7 +904,7 @@
           }
           requestAnimationFrame(() => {
             var 添加script元素数组 = [];
-           
+            var script文本内容数组 = [];
             Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
               e.type = e.type.toLowerCase();
               if (e.type == "text/javascript" || "" == e.type) {
@@ -928,30 +927,37 @@
                   /* 函数返回outerhtml */
                 } else {
                   // /* /* 使用文本内容加载的javascript */
+                  /* 把这些文本放到一个数组当中去,然后再一起加载,只添加一个eventlistener */
                   /*  setTimeout(() => {
                     loadscripttext(e.innerHTML, loadid);
                   }, 50); */
                   /* 等到使用了src加载的javascipt全部加载完成之后,在执行文本内容加载的javascript */
-                  window.addEventListener("allscriptload", onallscriptload);
-                  function onallscriptload() {
-                    window.removeEventListener(
-                      "allscriptload",
-                      onallscriptload
-                    );
-                    var 添加script元素数组 = [];
-                    /* 函数返回outerhtml */
-                    添加script元素数组.push({
-                      name: "添加script元素",
-                      text: loadscripttext(e.innerHTML, loadid)
-                    });
-                    // loadscripttext(e.innerHTML, loadid);
-                    /*  script加载完成 */
-                    console.log(
-                      "添加文本内容加载的script元素",
-                      添加script元素数组
-                    );
-                  }
-                  script加载完成.script总数量--;
+
+                  script文本内容数组.push(e.innerHTML);
+
+                  // /*
+
+                  //                   window.addEventListener("allscriptload", onallscriptload);
+                  //                   function onallscriptload() {
+                  //                     window.removeEventListener(
+                  //                       "allscriptload",
+                  //                       onallscriptload
+                  //                     );
+                  //                     var 添加script元素数组 = [];
+                  //                     /* 函数返回outerhtml */
+                  //                     添加script元素数组.push({
+                  //                       name: "添加script元素",
+                  //                       text: loadscripttext(e.innerHTML, loadid)
+                  //                     });
+                  //                     // loadscripttext(e.innerHTML, loadid);
+                  //                     /*  script加载完成 */
+                  //                     console.log(
+                  //                       "添加文本内容加载的script元素",
+                  //                       添加script元素数组
+                  //                     );
+                  //                   }
+                  //                   script加载完成.script总数量--; */
+
                   /* script加载完成.script完成数量++; */
                 }
               } else {
@@ -984,6 +990,31 @@
             });
             /* 当没有通过src加载的script时,script总数量,等于, script完成数量, */
             console.log("添加通过src加载的script元素", 添加script元素数组);
+
+            script文本内容数组.forEach(e => {
+              script加载完成.script总数量--;
+            });
+            var 添加文本script元素数组 = [];
+            window.addEventListener("allscriptload", onallscriptload);
+            function onallscriptload() {
+              window.removeEventListener("allscriptload", onallscriptload);
+              script文本内容数组.forEach(text => {
+                // var 添加script元素数组 = [];
+                /* 函数返回outerhtml */
+                添加文本script元素数组.push({
+                  name: "添加script元素",
+                  text: loadscripttext(text, loadid)
+                });
+                // loadscripttext(e.innerHTML, loadid);
+                /*  script加载完成 */
+
+                // script加载完成.script总数量--;
+              });
+              console.log(
+                "添加文本内容加载的script元素",
+                添加文本script元素数组
+              );
+            }
           });
           //   setTimeout(() => {
           requestAnimationFrame(() => {
