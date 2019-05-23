@@ -680,7 +680,9 @@
             decodeURI(mynewhtmldataurl.pathname + mynewhtmldataurl.search)
           ] = {
             url: myhtmldata.URL,
-            text: sr
+            text: sr,
+            title: myhtmldata.title,
+            charset: myhtmlcharset
           };
           console.log("加载过的网页的源代码合集", htmldataboject);
 
