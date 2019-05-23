@@ -511,7 +511,7 @@
         // var urlorighin = new URL(url).origin;
         //    document.firstElementChild.dataset.href = location.href;
         if (
-          url.pathname == location.pathname ||
+          url.pathname == location.pathname &&
           url.search == location.search
         ) {
           return;
