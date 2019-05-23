@@ -25,6 +25,7 @@
       console.log("已经运行过此函数,不能再次运行");
       return;
     }
+
     var loadid;
     if (!importScripts) {
       var importScripts = (function(globalEval) {
@@ -58,26 +59,6 @@
         };
       })(eval);
     }
-
-    function importjquery() {
-      if ("function" == typeof jQuery) {
-        console.log("当前的jquery版本号为" + jQuery.fn.jquery);
-      }
-      importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
-      console.log("加载jquery版本号3.4.1");
-    }
-    if ("function" !== typeof jQuery) {
-      importjquery();
-    } else {
-      /* 判断jquery版本号 */
-      if (jQuery.fn.jquery[0] < 3) {
-        importjquery();
-      }
-    }
-    // Object.freeze(jQuery);
-    /* jQuery可能被覆盖,所以改名 */
-    //改名失败
-    // window.jQuery341 = jQuery;
     document.write = t => {
       if (jQuery.fn.jquery[0] < 3) {
         importjquery();
@@ -105,6 +86,27 @@
       }
       // console.log("把document.write中的内容生成dom元素放入head之中");
     };
+
+    function importjquery() {
+      if ("function" == typeof jQuery) {
+        console.log("当前的jquery版本号为" + jQuery.fn.jquery);
+      }
+      importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
+      console.log("加载jquery版本号3.4.1");
+    }
+    if ("function" !== typeof jQuery) {
+      importjquery();
+    } else {
+      /* 判断jquery版本号 */
+      if (jQuery.fn.jquery[0] < 3) {
+        importjquery();
+      }
+    }
+    // Object.freeze(jQuery);
+    /* jQuery可能被覆盖,所以改名 */
+    //改名失败
+    // window.jQuery341 = jQuery;
+
     /* 禁用 document.write*/
 
     // document.charset = "UTF-8";/* 只读属性 */
@@ -277,6 +279,7 @@
               }, 300);
             };  */
     }
+    /* 如果没有调用过 loadscript函数则不会触发allscriptload事件,不会加载文本内容的script */
     function loadscript(fileurl, loadguid = guid(), callback = undefined) {
       var script = document.createElement("script");
       script.dataset.loadid = loadguid;
@@ -814,7 +817,7 @@
                       text: loadscripttext(e.innerHTML, loadid)
                     });
                     // loadscripttext(e.innerHTML, loadid);
-
+                    /*  script加载完成 */
                     console.log("添加script元素", 添加script元素数组);
                   }
 
@@ -834,8 +837,18 @@
                 script完成数量++;
                 document.getElementsByTagName("head")[0].appendChild(e);
               }
+              console.log(
+                "script总数量",
+                script总数量,
+                "script完成数量",
+                script完成数量
+              );
+              /* 居然有的网站都没有通过src加载的script元素!,全都用文本的script而且还全都是document.write! */
+              if (script总数量 === script完成数量) {
+                script加载完成();
+              }
             });
-
+            /* 当没有通过src加载的script时,script总数量,等于, script完成数量, */
             console.log("添加script元素", 添加script元素数组);
           });
           requestAnimationFrame(() => {
