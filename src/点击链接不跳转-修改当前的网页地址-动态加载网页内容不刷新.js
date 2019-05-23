@@ -252,6 +252,7 @@
     function script加载完成(urlortext) {
       script加载完成.script完成数量, script加载完成.script总数量;
       scrollTo(0, 0);
+    //   console.log("滚动到顶部")
       替换a链接();
       script加载完成.script完成数量++;
       console.log(
@@ -641,6 +642,8 @@
         );
         /* 竟然有的网页甚至还要给html标签加style! */
         document.firstElementChild.style = "";
+        /* 添加顺滑的滚动效果在scrollto的时候用到 */
+        $("html").css("scroll-behavior",'smooth')
         document.firstElementChild.className = "";
         document.getElementsByTagName("body")[0].style = "";
         document.getElementsByTagName("body")[0].className = "";
