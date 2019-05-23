@@ -296,7 +296,12 @@
             };  */
     }
     /* 如果没有调用过 loadscript函数则不会触发allscriptload事件,不会加载文本内容的script */
-    function loadscript(fileurl, loadguid = guid(), callback = undefined) {
+    function loadscript(
+      fileurl,
+      loadguid = guid(),
+      callback = undefined,
+      errorcallback = undefined
+    ) {
       var script = document.createElement("script");
       script.dataset.loadid = loadguid;
       script.type = "text/javascript";
@@ -306,7 +311,8 @@
       };
       script.async = true;
       script.onerror = () => {
-        console.log("加载失败" + fileurl);
+        errorcallback(fileurl);
+        // console.log("加载失败" + fileurl);
       };
       document.getElementsByTagName("head")[0].appendChild(script);
 
@@ -330,7 +336,12 @@
       document.getElementsByTagName("head")[0].appendChild(script);
       return script.outerHTML;
     }
-    function loadstylesheet(fileurl, loadguid = guid(), callback = undefined) {
+    function loadstylesheet(
+      fileurl,
+      loadguid = guid(),
+      callback = undefined,
+      errorcallback = undefined
+    ) {
       var script = document.createElement("link");
       script.dataset.loadid = loadguid;
       script.rel = "stylesheet";
@@ -340,7 +351,8 @@
       };
       script.type = "text/css";
       script.onerror = () => {
-        console.log("加载失败" + fileurl);
+        errorcallback(fileurl);
+        // console.log("加载失败" + fileurl);
       };
       document.getElementsByTagName("head")[0].appendChild(script);
 
@@ -791,6 +803,18 @@
           ).length;
 
           /* 有href的link 的stylesheet 也要设置onload之后,全部加载完成之后,再删除旧元素*/
+          function 失败StyleSheet(fileurl) {
+              /* 如果加载失败也要触发事件 */
+            console.log("加载失败" + fileurl);
+            单个stylesheet加载完成.完成linkstylesheet++;
+            if (
+              单个stylesheet加载完成.完成linkstylesheet >=
+              单个stylesheet加载完成.数量linkstylesheet
+            ) {
+              console.log("触发window的allstylesheetload事件");
+              window.dispatchEvent(new Event("allstylesheetload"));
+            }
+          }
           requestAnimationFrame(() => {
             var 添加stylesheet元素到head数组 = [];
             Array.from(
@@ -805,7 +829,12 @@
 
               添加stylesheet元素到head数组.push({
                 name: "添加css元素",
-                text: loadstylesheet(e.href, loadid, 单个stylesheet加载完成)
+                text: loadstylesheet(
+                  e.href,
+                  loadid,
+                  单个stylesheet加载完成,
+                  失败StyleSheet
+                )
               });
               //   console.log("添加css元素到head", e.outerHTML);
               //   document.getElementsByTagName("head")[0].appendChild(e);
@@ -859,9 +888,24 @@
           script加载完成.script总数量 = Array.from(
             myhtmldata.querySelectorAll("script")
           ).length;
+          function 失败scriptsrc(fileurl) {
+               /* 如果加载失败也要触发事件 */
+            console.log("加载失败" + fileurl);
+            script加载完成.script完成数量++;
+            if (
+              script加载完成.script完成数量 >= script加载完成.script总数量
+            ) {
+              window.dispatchEvent(new Event("allscriptload"));
+              console.log("触发window的allscriptload事件");
+              requestAnimationFrame(() => {
+                console.log("触发window的load事件");
+                window.dispatchEvent(new Event("load"));
+              });
+            }
+          }
           requestAnimationFrame(() => {
             var 添加script元素数组 = [];
-
+           
             Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
               e.type = e.type.toLowerCase();
               if (e.type == "text/javascript" || "" == e.type) {
@@ -873,7 +917,12 @@
                   /* 不要重复加载javascipt文件,否则可能出问题 */
                   添加script元素数组.push({
                     name: "添加script元素",
-                    text: loadscript(e.src, loadid, script加载完成)
+                    text: loadscript(
+                      e.src,
+                      loadid,
+                      script加载完成,
+                      失败scriptsrc
+                    )
                   });
                   //   loadscript(e.src, loadid, script加载完成);
                   /* 函数返回outerhtml */
