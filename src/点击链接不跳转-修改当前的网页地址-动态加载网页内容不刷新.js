@@ -217,6 +217,7 @@
     var script总数量 = 0;
     var script完成数量 = 0;
     function script加载完成(urlortext) {
+        scrollTo(0, 0);
       替换a链接();
       script完成数量++;
       console.log(
@@ -226,7 +227,7 @@
       console.log("script加载完成", urlortext);
       if (script完成数量 === script总数量) {
         console.log("触发window的allscriptload事件");
-        scrollTo(0, 0);
+        
         setTimeout(() => {
           console.log("触发window的load事件");
           window.dispatchEvent(new Event("load"));
