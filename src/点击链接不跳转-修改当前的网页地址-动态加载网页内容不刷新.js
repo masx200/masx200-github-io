@@ -526,7 +526,7 @@
         console.log(
           "替换当前的网址" + document.firstElementChild.dataset.href,
           "改成",
-          url
+          url.href
         );
         /* 竟然有的网页甚至还要给html标签加style! */
         document.firstElementChild.style = "";
