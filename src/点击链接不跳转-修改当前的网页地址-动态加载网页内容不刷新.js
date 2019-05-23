@@ -826,17 +826,22 @@
                 console.log("加载失败" + e.href);
               }; */
               e.type = "text/css";
-              e.href = e.href;
+              /* 居然有的stylesheet没有href的值 */
+              if (e.href != "") {
+                e.href = e.href;
+                添加stylesheet元素到head数组.push({
+                  name: "添加css元素",
+                  text: loadstylesheet(
+                    e.href,
+                    loadid,
+                    单个stylesheet加载完成,
+                    失败StyleSheet
+                  )
+                });
+              } else {
+                单个stylesheet加载完成.数量linkstylesheet--;
+              }
 
-              添加stylesheet元素到head数组.push({
-                name: "添加css元素",
-                text: loadstylesheet(
-                  e.href,
-                  loadid,
-                  单个stylesheet加载完成,
-                  失败StyleSheet
-                )
-              });
               //   console.log("添加css元素到head", e.outerHTML);
               //   document.getElementsByTagName("head")[0].appendChild(e);
             });
