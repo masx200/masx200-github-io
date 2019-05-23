@@ -527,6 +527,7 @@
         );
         /* 竟然有的网页甚至还要给html标签加style! */
         document.firstElementChild.style = "";
+        document.firstElementChild.className = "";
         document.getElementsByTagName("body").style = "";
         /* 返回文本和二进制数组,用来转换编码 */
         try {
