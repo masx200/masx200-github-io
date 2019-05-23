@@ -38,14 +38,18 @@
         };
       })(eval);
     }
-    if ("function" !== typeof jQuery) {
+
+    function importjquery() {
+      console.log("当前的jquery版本号为" + jQuery.fn.jquery);
       importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
       console.log("加载jquery版本号3.4.1");
+    }
+    if ("function" !== typeof jQuery) {
+      importjquery();
     } else {
       /* 判断jquery版本号 */
       if (jQuery.fn.jquery[0] < 3) {
-        importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
-        console.log("加载jquery版本号3.4.1");
+        importjquery();
       }
     }
     // Object.freeze(jQuery);
@@ -54,8 +58,7 @@
     // window.jQuery341 = jQuery;
     document.write = t => {
       if (jQuery.fn.jquery[0] < 3) {
-        importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
-        console.log("加载jquery版本号3.4.1");
+        importjquery();
       }
       console.warn(
         "document.write已被禁用，" +
@@ -98,6 +101,7 @@
     //  document.firstElementChild.dataset.href = location.href;
     替换a链接();
     document.addEventListener("click", 替换a链接);
+    document.addEventListener("scroll", 替换a链接);
     //   document.addEventListener("scroll", 替换a链接);
     function 替换a链接() {
       document.firstElementChild.dataset.href = location.href;
@@ -112,10 +116,12 @@
         /* 使用hostname代替origin判断 */
         e.href = e.href;
         if (e.protocol === "http:" || e.protocol === "https:") {
+          /* 如果search不同也是不同的页面,比如说论坛 */
           if (
-            e.href != "javascript:;" &&
-            location.hostname === e.hostname &&
-            e.pathname !== location.pathname
+            (e.href != "javascript:;" &&
+              location.hostname === e.hostname &&
+              e.pathname !== location.pathname) ||
+            e.search !== location.search
           ) {
             e.dataset.href = e.href;
 
@@ -541,14 +547,15 @@
             var arraybuffer = await dataresponse.arrayBuffer();
             console.log(arraybuffer);
             /* 等到加载成功再pushstate */
-            history.pushState(undefined, undefined, url);
+            /* 如果网页的类型正确再pushstate */
           } catch (error) {
             console.warn(error);
-            console.log("此链接加载失败，刷新页面");
+            console.log("此链接加载失败，打开新页面");
             //     history.pushState(undefined, undefined, url);
 
             //    location.reload();
-            window.open("url", "_blank");
+            window.open(url, "_blank");
+            return;
             // history.back();
             // history.pushState(
             //   undefined,
@@ -563,11 +570,14 @@
           console.log("Content-Type", datacontenttype);
 
           if (!datacontenttype.includes("text/html")) {
-            console.log("此链接不是网页，刷新页面");
+            console.log("此链接不是网页，打开新页面");
             //     history.pushState(undefined, undefined, url);
-            window.open("url", "_blank");
+            window.open(url, "_blank");
+            return;
             //    location.reload();
           }
+          /* fetch加载成功,而且网页类型正确 */
+          history.pushState(undefined, undefined, url);
           if (datacontenttype.includes("charset")) {
             myhtmlcharset = datacontenttype.slice(
               datacontenttype.indexOf("charset") + "charset".length + 1
@@ -690,10 +700,11 @@
                 /* 不要重复加载javascipt文件,否则可能出问题 */
                 loadscript(e.src, loadid, script加载完成);
               } else {
-                setTimeout(() => {
+               /*  setTimeout(() => {
                   loadscripttext(e.innerHTML, loadid);
-                }, 50);
-
+                }, 50); */
+                /* 等到使用了src加载的javascipt全部加载完成之后,在执行文本内容加载的javascript */
+                loadscripttext(e.innerHTML, loadid);
                 script完成数量++;
               }
             } else {
