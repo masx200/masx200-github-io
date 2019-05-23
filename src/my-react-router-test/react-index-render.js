@@ -8,6 +8,12 @@
 (() => {
   // console.log(regeneratorRuntime)
   $(window).one("load", () => {
+    function onhashchange() {
+      scrollTo(0, 0);
+      $("#collapsibleNavbar").removeClass("show");
+      $("#my主体").css("padding-top", $("#my导航栏").height());
+    }
+    $(window).on("hashchange", onhashchange);
     let haverun = 0;
     herewindowonload();
     function herewindowonload() {
@@ -755,7 +761,6 @@
                         // component={require("./module-about.js").default}
                         // component={()=>i}
                       />
-
                       {/* 如果当前路径变化则不启用路由 */}
                       if( this.locationpath===window.location.pathname)
                       {<Redirect from="*" to="/" />}

@@ -4,6 +4,12 @@
 // import React from 'react';
 (() => {
   $(window).one("load", () => {
+    function onhashchange() {
+      scrollTo(0, 0);
+      $("#collapsibleNavbar").removeClass("show");
+      $("#my主体").css("padding-top", $("#my导航栏").height());
+    }
+    $(window).on("hashchange", onhashchange);
     let haverun = 0;
     let myonloadfunc = myonload2;
     herewindowonload();
