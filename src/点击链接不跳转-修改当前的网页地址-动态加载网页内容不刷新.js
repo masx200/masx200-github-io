@@ -98,8 +98,8 @@
       } catch (error) {
         console.warn(error);
       }
- 
-    //   newelemnet = jQuery(Array(...newelemnet).reverse());
+
+      //   newelemnet = jQuery(Array(...newelemnet).reverse());
       jQuery("body").append(newelemnet);
       console.log("添加元素到body ");
       /*  for (var i of newelemnet) {
@@ -630,6 +630,7 @@
         document.firstElementChild.style = "";
         document.firstElementChild.className = "";
         document.getElementsByTagName("body")[0].style = "";
+        document.getElementsByTagName("body")[0].className = "";
         /* 返回文本和二进制数组,用来转换编码 */
         console.log("开始发起fetch请求", url);
         var dataresponse;
@@ -778,6 +779,9 @@
               "body"
             )[0].style = myhtmldata.getElementsByTagName("body")[0].style;
           });
+          document.getElementsByTagName(
+            "body"
+          )[0].className = myhtmldata.getElementsByTagName("body")[0].className;
 
           /* 把源代码中的body的style也加载到document的body中 */
 
