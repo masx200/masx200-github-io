@@ -91,7 +91,13 @@
       // var writeelement = document.createElement("div");
       // writeelement.innerHTML = t;
       // document.getElementsByTagName("head")[0].appendChild(writeelement);
-      var newelemnet = jQuery(t).attr("data-loadid", loadid);
+      var newelemnet = jQuery(t);
+      try {
+        newelemnet.attr("data-loadid", loadid);
+      } catch (error) {
+        console.warn(error);
+      }
+
       jQuery("body").append(newelemnet);
       console.log("添加元素到body ");
       for (var i of newelemnet) {
@@ -126,8 +132,11 @@
     document.addEventListener("click", 替换a链接);
     window.addEventListener("hashchange", 替换a链接);
     document.addEventListener("scroll", 替换a链接);
+    document.addEventListener("mouseover", 替换a链接);
+
     //   document.addEventListener("scroll", 替换a链接);
     function 替换a链接() {
+      var 替换a链接数组 = [];
       document.firstElementChild.dataset.search = location.search;
       document.firstElementChild.dataset.href = location.href;
       document.firstElementChild.dataset.pathname = location.pathname;
@@ -135,6 +144,7 @@
       /* 把网页中的所有iframe中的a链接也进行替换 */
       var alinkarr = Array.from(document.getElementsByTagName("a"));
       //   console.log(alinkarr);
+      alinkarr.forEach(替换所有a链接的arrayhandler);
       function 替换所有a链接的arrayhandler(e) {
         /* 尝试把http和https都替换,因为协议不同导致origin不同 */
         // e.protocol = location.protocol;
@@ -150,7 +160,11 @@
               e.dataset.href = e.href;
 
               e.href = "javascript:;";
-              console.log("替换a链接", e.outerHTML);
+
+              替换a链接数组.push({ name: "替换a链接", text: e.outerHTML });
+              /*  */
+              //   console.log("替换a链接", e.outerHTML);
+              //
               e.onclick = () => {
                 /*   document.firstElementChild.dataset.href = location.href;
                       document.firstElementChild.dataset.pathname = location.pathname; */
@@ -163,7 +177,6 @@
           }
         }
       }
-      alinkarr.forEach(替换所有a链接的arrayhandler);
 
       var docuiframes = Array(...document.getElementsByTagName("iframe"));
       docuiframes.forEach(e => {
@@ -197,6 +210,10 @@
                 return true;
               }
             }; */
+      // return true
+      if (替换a链接数组.length > 0) {
+        console.log("替换a链接", 替换a链接数组);
+      }
     }
     //   document.onclick();
     function onpopstatehandler() {
@@ -221,10 +238,14 @@
       替换a链接();
       script完成数量++;
       console.log(
-        "script完成数量" + script完成数量,
-        "script总数量" + script总数量
+        "script完成数量",
+        script完成数量,
+        "script总数量",
+        script总数量,
+        "script加载完成",
+        urlortext
       );
-      console.log("script加载完成", urlortext);
+      //   console.log("script加载完成", urlortext);
       if (script完成数量 === script总数量) {
         console.log("触发window的allscriptload事件");
 
@@ -270,7 +291,8 @@
       };
       document.getElementsByTagName("head")[0].appendChild(script);
 
-      console.log("添加script到head", script.outerHTML);
+      //   console.log("添加script到head", script.outerHTML);
+      return script.outerHTML;
     }
     function loadscripttext(text, loadguid = guid()) {
       var script = document.createElement("script");
@@ -285,8 +307,9 @@
       script.type = "text/javascript";
       script.dataset.loadid = loadguid;
       script.async = true;
-      console.log("添加script到head", script.outerHTML);
+      //   console.log("添加script到head", script.outerHTML);
       document.getElementsByTagName("head")[0].appendChild(script);
+      return script.outerHTML;
     }
     /* function loadstyle(fileurl, callback = undefined) {
       var script = document.createElement("link");
@@ -557,10 +580,11 @@
         document.firstElementChild.className = "";
         document.getElementsByTagName("body")[0].style = "";
         /* 返回文本和二进制数组,用来转换编码 */
+        var dataresponse;
         try {
           var myhtmlcharset;
           try {
-            var dataresponse = await fetch(url);
+            dataresponse = await fetch(url);
           } catch (error) {
             console.warn(error);
             /* 有些网站的不同页面是用不同的http协议 */
@@ -570,14 +594,14 @@
               url.protocal = "https:";
             }
             try {
-              var dataresponse = await fetch(url);
+              dataresponse = await fetch(url);
             } catch (error) {
               console.warn(error);
               //   history.back();
             }
           }
           /* 如果链接的protocol与当前的网页的protocol不同,则fetch加载失败 */
-          console.log(dataresponse);
+          console.log("response", dataresponse);
           try {
             var arraybuffer = await dataresponse.arrayBuffer();
             console.log(arraybuffer);
@@ -697,78 +721,126 @@
             "body"
           )[0].style = myhtmldata.getElementsByTagName("body")[0].style;
           /* 把源代码中的body的style也加载到document的body中 */
-          Array.from(
-            myhtmldata.querySelectorAll("link[rel='stylesheet']")
-          ).forEach(e => {
-            e.dataset.loadid = loadid;
-            e.onerror = () => {
-              console.log("加载失败" + e.href);
-            };
-            e.type = "text/css";
-            e.href = e.href;
-            console.log("添加css元素到head", e.outerHTML);
-            document.getElementsByTagName("head")[0].appendChild(e);
-          });
 
-          Array.from(myhtmldata.querySelectorAll("link")).forEach(e => {
-            e.dataset.loadid = loadid;
-
-            e.href = e.href;
-            console.log("添加元素到head", e.outerHTML);
-            document.getElementsByTagName("head")[0].appendChild(e);
-          });
-
-          Array.from(myhtmldata.querySelectorAll("style")).forEach(e => {
-            e.type = "text/css";
-            e.dataset.loadid = loadid;
-            console.log("添加css元素到head", e.outerHTML);
-            document.getElementsByTagName("head")[0].appendChild(e);
-          });
-
-          Array.from(myhtmldata.querySelectorAll("meta")).forEach(e => {
-            e.dataset.loadid = loadid;
-            console.log("添加元素到head", e.outerHTML);
-            document.getElementsByTagName("head")[0].appendChild(e);
-          });
-
-          script完成数量 = 0;
-          script总数量 = Array.from(myhtmldata.querySelectorAll("script"))
-            .length;
-          Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
-            e.type = e.type.toLowerCase();
-            if (e.type == "text/javascript" || "" == e.type) {
-              e.type = "text/javascript";
-              if (e.src != "") {
-                e.src = e.src;
-                /* 但是如果有些脚本不重复加载,可能网页出错 */
-                /* 不要重复加载javascipt文件,否则可能出问题 */
-                loadscript(e.src, loadid, script加载完成);
-              } else {
-                /*  setTimeout(() => {
-                  loadscripttext(e.innerHTML, loadid);
-                }, 50); */
-                /* 等到使用了src加载的javascipt全部加载完成之后,在执行文本内容加载的javascript */
-                window.addEventListener("allscriptload", onallscriptload);
-                function onallscriptload() {
-                  window.removeEventListener("allscriptload", onallscriptload);
-                  loadscripttext(e.innerHTML, loadid);
-                }
-
-                script完成数量++;
-              }
-            } else {
-              /* 不是javascript文件 */
-              if (e.src != "") {
-                e.src = e.src;
-              }
+          requestAnimationFrame(() => {
+            var 添加元素到head数组 = [];
+            Array.from(
+              myhtmldata.querySelectorAll("link[rel='stylesheet']")
+            ).forEach(e => {
               e.dataset.loadid = loadid;
-              console.log("添加元素到head", e.outerHTML);
-
-              script完成数量++;
+              e.onerror = () => {
+                console.log("加载失败" + e.href);
+              };
+              e.type = "text/css";
+              e.href = e.href;
+              添加元素到head数组.push({
+                name: "添加css元素",
+                text: e.outerHTML
+              });
+              //   console.log("添加css元素到head", e.outerHTML);
               document.getElementsByTagName("head")[0].appendChild(e);
-            }
+            });
+
+            Array.from(myhtmldata.querySelectorAll("link")).forEach(e => {
+              e.dataset.loadid = loadid;
+
+              e.href = e.href;
+              添加元素到head数组.push({
+                name: "添加link元素",
+                text: e.outerHTML
+              });
+              //   console.log("添加link元素到head", e.outerHTML);
+              document.getElementsByTagName("head")[0].appendChild(e);
+            });
+
+            Array.from(myhtmldata.querySelectorAll("style")).forEach(e => {
+              e.type = "text/css";
+              e.dataset.loadid = loadid;
+              添加元素到head数组.push({
+                name: "添加css元素",
+                text: e.outerHTML
+              });
+              //   console.log("添加css元素到head", e.outerHTML);
+              document.getElementsByTagName("head")[0].appendChild(e);
+            });
+
+            Array.from(myhtmldata.querySelectorAll("meta")).forEach(e => {
+              e.dataset.loadid = loadid;
+              //   console.log("添加meta元素到head", e.outerHTML);
+              添加元素到head数组.push({
+                name: "添加meta元素",
+                text: e.outerHTML
+              });
+              document.getElementsByTagName("head")[0].appendChild(e);
+            });
+
+            console.log("添加元素到head", 添加元素到head数组);
+          });
+
+          requestAnimationFrame(() => {
+            var 添加script元素数组 = [];
+            script完成数量 = 0;
+            script总数量 = Array.from(myhtmldata.querySelectorAll("script"))
+              .length;
+            Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
+              e.type = e.type.toLowerCase();
+              if (e.type == "text/javascript" || "" == e.type) {
+                e.type = "text/javascript";
+                if (e.src != "") {
+                  e.src = e.src;
+                  /* 但是如果有些脚本不重复加载,可能网页出错 */
+                  /* 不要重复加载javascipt文件,否则可能出问题 */
+                  添加script元素数组.push({
+                    name: "添加script元素",
+                    text: loadscript(e.src, loadid, script加载完成)
+                  });
+                  //   loadscript(e.src, loadid, script加载完成);
+                  /* 函数返回outerhtml */
+                } else {
+                  /*  setTimeout(() => {
+                    loadscripttext(e.innerHTML, loadid);
+                  }, 50); */
+                  /* 等到使用了src加载的javascipt全部加载完成之后,在执行文本内容加载的javascript */
+                  window.addEventListener("allscriptload", onallscriptload);
+                  function onallscriptload() {
+                    window.removeEventListener(
+                      "allscriptload",
+                      onallscriptload
+                    );
+                    var 添加script元素数组 = [];
+                    /* 函数返回outerhtml */
+                    添加script元素数组.push({
+                      name: "添加script元素",
+                      text: loadscripttext(e.src, loadid, script加载完成)
+                    });
+                    // loadscripttext(e.innerHTML, loadid);
+
+                    console.log("添加script元素", 添加script元素数组);
+                  }
+
+                  script完成数量++;
+                }
+              } else {
+                /* 不是javascript文件 */
+                if (e.src != "") {
+                  e.src = e.src;
+                }
+                e.dataset.loadid = loadid;
+                // console.log("添加元素到head", e.outerHTML);
+                添加script元素数组.push({
+                  name: "添加script元素",
+                  text: e.outerHTML
+                });
+                script完成数量++;
+                document.getElementsByTagName("head")[0].appendChild(e);
+              }
+            });
+
+            console.log("添加script元素", 添加script元素数组);
           });
           requestAnimationFrame(() => {
+            var 删除旧元素数组 = [];
+
             Array(
               ...document.querySelectorAll("link"),
               ...document.querySelectorAll("style"),
@@ -777,9 +849,12 @@
             ).forEach(e => {
               if (loadid != e.dataset.loadid) {
                 e.parentNode.removeChild(e);
-                console.log("删除旧元素", e.outerHTML);
+                删除旧元素数组.push({ name: "删除元素", text: e.outerHTML });
+                // console.log("删除旧元素", e.outerHTML);
               }
             });
+
+            console.log("删除旧元素", 删除旧元素数组);
           });
 
           //使用async函数
