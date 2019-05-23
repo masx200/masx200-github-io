@@ -811,7 +811,7 @@
                     /* 函数返回outerhtml */
                     添加script元素数组.push({
                       name: "添加script元素",
-                      text: loadscripttext(e.src, loadid, script加载完成)
+                      text: loadscripttext(e.innerHTML, loadid)
                     });
                     // loadscripttext(e.innerHTML, loadid);
 
