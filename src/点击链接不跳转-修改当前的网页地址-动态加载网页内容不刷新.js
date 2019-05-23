@@ -6,42 +6,57 @@
   window.addEventListener("load", windowloadhandler);
   function windowloadhandler() {
     var loadid;
-    if ("function" !== typeof jQuery) {
-      if (!importScripts) {
-        var importScripts = (function(globalEval) {
-          var xhr = new XMLHttpRequest();
-          return function importScripts() {
-            var args = Array.prototype.slice.call(arguments),
-              len = args.length,
-              i = 0,
-              meta,
-              data,
-              content;
-            for (; i < len; i++) {
-              if (args[i].substr(0, 5).toLowerCase() === "data:") {
-                data = args[i];
-                content = data.indexOf(",");
-                meta = data.substr(5, content).toLowerCase();
-                data = decodeURIComponent(data.substr(content + 1));
-                if (/;\s*base64\s*[;,]/.test(meta)) {
-                  data = atob(data);
-                }
-                if (/;\s*charset=[uU][tT][fF]-?8\s*[;,]/.test(meta)) {
-                  data = decodeURIComponent(escape(data));
-                }
-              } else {
-                xhr.open("GET", args[i], false);
-                xhr.send(null);
-                data = xhr.responseText;
+    if (!importScripts) {
+      var importScripts = (function(globalEval) {
+        var xhr = new XMLHttpRequest();
+        return function importScripts() {
+          var args = Array.prototype.slice.call(arguments),
+            len = args.length,
+            i = 0,
+            meta,
+            data,
+            content;
+          for (; i < len; i++) {
+            if (args[i].substr(0, 5).toLowerCase() === "data:") {
+              data = args[i];
+              content = data.indexOf(",");
+              meta = data.substr(5, content).toLowerCase();
+              data = decodeURIComponent(data.substr(content + 1));
+              if (/;\s*base64\s*[;,]/.test(meta)) {
+                data = atob(data);
               }
-              globalEval(data);
+              if (/;\s*charset=[uU][tT][fF]-?8\s*[;,]/.test(meta)) {
+                data = decodeURIComponent(escape(data));
+              }
+            } else {
+              xhr.open("GET", args[i], false);
+              xhr.send(null);
+              data = xhr.responseText;
             }
-          };
-        })(eval);
-      }
-      importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
+            globalEval(data);
+          }
+        };
+      })(eval);
     }
+    if ("function" !== typeof jQuery) {
+      importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
+      console.log("加载jquery版本号3.4.1");
+    } else {
+      /* 判断jquery版本号 */
+      if (jQuery.fn.jquery[0] < 3) {
+        importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
+        console.log("加载jquery版本号3.4.1");
+      }
+    }
+    // Object.freeze(jQuery);
+    /* jQuery可能被覆盖,所以改名 */
+    //改名失败
+    // window.jQuery341 = jQuery;
     document.write = t => {
+      if (jQuery.fn.jquery[0] < 3) {
+        importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
+        console.log("加载jquery版本号3.4.1");
+      }
       console.warn(
         "document.write已被禁用，" +
           "把document.write中的内容生成dom元素放入body之中" +
@@ -51,7 +66,12 @@
       // var writeelement = document.createElement("div");
       // writeelement.innerHTML = t;
       // document.getElementsByTagName("head")[0].appendChild(writeelement);
-      jQuery("body").append(jQuery(t).attr("data-loadid", loadid));
+      var newelemnet = jQuery(t).attr("data-loadid", loadid);
+      jQuery("body").append(newelemnet);
+      console.log("添加元素到body ");
+      for (var i of newelemnet) {
+        console.log(i.outerHTML);
+      }
       // console.log("把document.write中的内容生成dom元素放入head之中");
     };
     /* 禁用 document.write*/
@@ -482,7 +502,8 @@
         // var urlorighin = new URL(url).origin;
         //    document.firstElementChild.dataset.href = location.href;
         if (url.pathname !== location.pathname) {
-          history.pushState(undefined, undefined, url);
+          //   history.pushState(undefined, undefined, url);
+          /* 等到加载成功再pushstate */
         }
 
         var nowurl = location.href;
@@ -499,7 +520,7 @@
           try {
             var dataresponse = await fetch(url);
           } catch (error) {
-            console.error(error);
+            console.warn(error);
             /* 有些网站的不同页面是用不同的http协议 */
             if (url.protocal === "https:") {
               url.protocal = "http:";
@@ -509,18 +530,20 @@
             try {
               var dataresponse = await fetch(url);
             } catch (e) {
-              console.error(error);
-              history.back();
+              console.warn(error);
+              //   history.back();
             }
           }
-
+          /* 如果链接的protocol与当前的网页的protocol不同,则fetch加载失败 */
           console.log(dataresponse);
           try {
             var arraybuffer = await dataresponse.arrayBuffer();
             console.log(arraybuffer);
+            /* 等到加载成功再pushstate */
+            history.pushState(undefined, undefined, url);
           } catch (error) {
-            console.error(error);
-            history.back();
+            console.warn(error);
+            // history.back();
             // history.pushState(
             //   undefined,
             //   undefined,
@@ -700,7 +723,7 @@
             })
             .then(fetchhandler); */
         } catch (error) {
-          console.error(error);
+          console.warn(error);
           /* if (url.protocal === "https:") {
             url.protocal = "http:";
           } else {
