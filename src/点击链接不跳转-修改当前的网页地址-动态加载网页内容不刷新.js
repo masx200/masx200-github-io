@@ -545,9 +545,10 @@
           } catch (error) {
             console.warn(error);
             console.log("此链接加载失败，刷新页面");
-            history.pushState(undefined, undefined, url);
-            
-           location.reload();
+            //     history.pushState(undefined, undefined, url);
+
+            //    location.reload();
+            window.open("url", "_blank");
             // history.back();
             // history.pushState(
             //   undefined,
@@ -563,9 +564,9 @@
 
           if (!datacontenttype.includes("text/html")) {
             console.log("此链接不是网页，刷新页面");
-            history.pushState(undefined, undefined, url);
-
-           location.reload();
+            //     history.pushState(undefined, undefined, url);
+            window.open("url", "_blank");
+            //    location.reload();
           }
           if (datacontenttype.includes("charset")) {
             myhtmlcharset = datacontenttype.slice(
