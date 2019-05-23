@@ -40,7 +40,9 @@
     }
 
     function importjquery() {
-      console.log("当前的jquery版本号为" + jQuery.fn.jquery);
+      if (jQuery.fn.jquery) {
+        console.log("当前的jquery版本号为" + jQuery.fn.jquery);
+      }
       importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
       console.log("加载jquery版本号3.4.1");
     }
