@@ -117,24 +117,24 @@
         e.href = e.href;
         if (e.protocol === "http:" || e.protocol === "https:") {
           /* 如果search不同也是不同的页面,比如说论坛 */
-          if (
-            (e.href != "javascript:;" &&
-              location.hostname === e.hostname &&
-              e.pathname !== location.pathname) ||
-            e.search !== location.search
-          ) {
-            e.dataset.href = e.href;
+          if (e.href != "javascript:;" && location.hostname === e.hostname) {
+            if (
+              e.pathname !== location.pathname ||
+              e.search !== location.search
+            ) {
+              e.dataset.href = e.href;
 
-            e.href = "javascript:;";
-            console.log("替换a链接", e.outerHTML);
-            e.onclick = () => {
-              /*   document.firstElementChild.dataset.href = location.href;
-              document.firstElementChild.dataset.pathname = location.pathname; */
-              var url = new URL(e.dataset.href);
-              /* 替换协议与当前网页相同的协议 */
-              url.protocol = location.protocol;
-              动态加载网页内容不刷新(url);
-            };
+              e.href = "javascript:;";
+              console.log("替换a链接", e.outerHTML);
+              e.onclick = () => {
+                /*   document.firstElementChild.dataset.href = location.href;
+                      document.firstElementChild.dataset.pathname = location.pathname; */
+                var url = new URL(e.dataset.href);
+                /* 替换协议与当前网页相同的协议 */
+                url.protocol = location.protocol;
+                动态加载网页内容不刷新(url);
+              };
+            }
           }
         }
       }
@@ -200,10 +200,10 @@
       );
       console.log("script加载完成", urlortext);
       if (script完成数量 === script总数量) {
-        console.log("触发window的load事件");
         console.log("触发window的allscriptload事件");
         scrollTo(0, 0);
         setTimeout(() => {
+          console.log("触发window的load事件");
           window.dispatchEvent(new Event("load"));
         }, 50);
         /* 等到所有用src加载的script全部加载完成,再加载文本内容的script */
@@ -510,7 +510,11 @@
         console.log("动态加载网页内容不刷新,执行" + url);
         // var urlorighin = new URL(url).origin;
         //    document.firstElementChild.dataset.href = location.href;
-        if (url.pathname !== location.pathname) {
+        if (
+          url.pathname == location.pathname ||
+          url.search == location.search
+        ) {
+          return;
           //   history.pushState(undefined, undefined, url);
           /* 等到加载成功再pushstate */
         }
@@ -644,8 +648,10 @@
           loadid = guid();
           var sr = new TextDecoder(myhtmlcharset).decode(arraybuffer);
           var myhtmldata = new DOMParser().parseFromString(sr, "text/html");
-
-          htmldataboject[decodeURI(new URL(myhtmldata.URL).pathname)] = {
+          var mynewhtmldataurl = new URL(myhtmldata.URL);
+          htmldataboject[
+            decodeURI(mynewhtmldataurl.pathname + mynewhtmldataurl.search)
+          ] = {
             url: myhtmldata.URL,
             text: sr
           };
