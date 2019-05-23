@@ -205,7 +205,9 @@
         setTimeout(() => {
           window.dispatchEvent(new Event("load"));
         }, 50);
-
+        /* 等到所有用src加载的script全部加载完成,再加载文本内容的script */
+        window.dispatchEvent(new Event("allscriptload"));
+        /* 创建新的事件 */
         setTimeout(() => {
           替换a链接();
         }, 150);
@@ -700,11 +702,16 @@
                 /* 不要重复加载javascipt文件,否则可能出问题 */
                 loadscript(e.src, loadid, script加载完成);
               } else {
-               /*  setTimeout(() => {
+                /*  setTimeout(() => {
                   loadscripttext(e.innerHTML, loadid);
                 }, 50); */
                 /* 等到使用了src加载的javascipt全部加载完成之后,在执行文本内容加载的javascript */
-                loadscripttext(e.innerHTML, loadid);
+                window.addEventListener("allscriptload", onallscriptload);
+                function onallscriptload() {
+                  window.removeEventListener("allscriptload", onallscriptload);
+                  loadscripttext(e.innerHTML, loadid);
+                }
+
                 script完成数量++;
               }
             } else {
