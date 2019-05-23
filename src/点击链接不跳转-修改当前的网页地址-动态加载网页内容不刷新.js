@@ -104,6 +104,7 @@
     //  document.firstElementChild.dataset.href = location.href;
     替换a链接();
     document.addEventListener("click", 替换a链接);
+    window.addEventListener("hashchange", 替换a链接);
     document.addEventListener("scroll", 替换a链接);
     //   document.addEventListener("scroll", 替换a链接);
     function 替换a链接() {
