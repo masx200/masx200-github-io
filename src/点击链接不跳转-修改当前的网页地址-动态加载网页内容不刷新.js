@@ -570,8 +570,8 @@
         // var urlorighin = new URL(url).origin;
         //    document.firstElementChild.dataset.href = location.href;
         if (
-          url.pathname == location.pathname &&
-          url.search == location.search
+          url.pathname == document.firstElementChild.dataset.pathname &&
+          url.search == document.firstElementChild.dataset.search
         ) {
           return;
           //   history.pushState(undefined, undefined, url);
@@ -857,24 +857,26 @@
             /* 当没有通过src加载的script时,script总数量,等于, script完成数量, */
             console.log("添加script元素", 添加script元素数组);
           });
-          requestAnimationFrame(() => {
-            var 删除旧元素数组 = [];
+          setTimeout(() => {
+            requestAnimationFrame(() => {
+              var 删除旧元素数组 = [];
 
-            Array(
-              ...document.querySelectorAll("link"),
-              ...document.querySelectorAll("style"),
-              ...document.querySelectorAll("meta"),
-              ...document.querySelectorAll("script")
-            ).forEach(e => {
-              if (loadid != e.dataset.loadid) {
-                e.parentNode.removeChild(e);
-                删除旧元素数组.push({ name: "删除元素", text: e.outerHTML });
-                // console.log("删除旧元素", e.outerHTML);
-              }
+              Array(
+                ...document.querySelectorAll("link"),
+                ...document.querySelectorAll("style"),
+                ...document.querySelectorAll("meta"),
+                ...document.querySelectorAll("script")
+              ).forEach(e => {
+                if (loadid != e.dataset.loadid) {
+                  e.parentNode.removeChild(e);
+                  删除旧元素数组.push({ name: "删除元素", text: e.outerHTML });
+                  // console.log("删除旧元素", e.outerHTML);
+                }
+              });
+
+              console.log("删除旧元素", 删除旧元素数组);
             });
-
-            console.log("删除旧元素", 删除旧元素数组);
-          });
+          }, 50);
 
           //使用async函数
 
