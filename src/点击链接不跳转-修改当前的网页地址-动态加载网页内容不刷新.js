@@ -248,7 +248,8 @@
         urlortext
       );
       //   console.log("script加载完成", urlortext);
-      if (script完成数量 === script总数量) {
+      /* script完成数量 可能大于 script总数量 */
+      if (script完成数量 >= script总数量) {
         console.log("触发window的allscriptload事件");
 
         requestAnimationFrame(() => {
