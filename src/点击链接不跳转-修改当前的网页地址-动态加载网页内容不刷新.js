@@ -514,6 +514,7 @@
         );
         /* 竟然有的网页甚至还要给html标签加style! */
         document.firstElementChild.style = "";
+        document.getElementsByTagName("body").style = "";
         /* 返回文本和二进制数组,用来转换编码 */
         try {
           var myhtmlcharset;
@@ -529,7 +530,7 @@
             }
             try {
               var dataresponse = await fetch(url);
-            } catch (e) {
+            } catch (error) {
               console.warn(error);
               //   history.back();
             }
@@ -543,6 +544,10 @@
             history.pushState(undefined, undefined, url);
           } catch (error) {
             console.warn(error);
+            console.log("此链接加载失败，刷新页面");
+            history.pushState(undefined, undefined, url);
+            
+           location.reload();
             // history.back();
             // history.pushState(
             //   undefined,
@@ -558,7 +563,9 @@
 
           if (!datacontenttype.includes("text/html")) {
             console.log("此链接不是网页，刷新页面");
-            history.reload();
+            history.pushState(undefined, undefined, url);
+
+           location.reload();
           }
           if (datacontenttype.includes("charset")) {
             myhtmlcharset = datacontenttype.slice(
