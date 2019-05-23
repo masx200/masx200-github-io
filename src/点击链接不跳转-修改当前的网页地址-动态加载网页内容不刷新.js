@@ -98,7 +98,8 @@
       } catch (error) {
         console.warn(error);
       }
-
+ 
+    //   newelemnet = jQuery(Array(...newelemnet).reverse());
       jQuery("body").append(newelemnet);
       console.log("添加元素到body ");
       /*  for (var i of newelemnet) {
