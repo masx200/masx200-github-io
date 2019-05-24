@@ -1,4 +1,6 @@
+/**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
 (global => {
+  /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
   /* 注意不能跨域 */
   /* 注意:对于使用了document.write的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖
   修改了document.write方法
@@ -115,6 +117,7 @@
         newelemnet.attr("data-loadid", loadid);
       } catch (error) {
         console.warn(error);
+        return;
       }
 
       //   newelemnet = jQuery(Array(...newelemnet).reverse());
@@ -148,7 +151,7 @@
     window.removeEventListener("load", windowloadhandler);
 
     var htmldataboject = new Object();
-    Array(...document.querySelectorAll("script")).forEach(e => {
+    /*  Array(...document.querySelectorAll("script")).forEach(e => {
       if (e.src !== "") {
         e.src = e.src;
       }
@@ -157,7 +160,7 @@
       if (e.href !== "") {
         e.href = e.href;
       }
-    });
+    }); */
     document.firstElementChild.dataset.search = location.search;
     document.firstElementChild.dataset.href = location.href;
     document.firstElementChild.dataset.pathname = location.pathname;
@@ -185,27 +188,27 @@
     var 替换a链接数组 = [];
     function 替换a链接() {
       替换a链接数组 = [];
-      if (
-        document.firstElementChild.dataset.search !== location.search ||
-        document.firstElementChild.dataset.href !== location.href ||
-        document.firstElementChild.dataset.pathname !== location.pathname
-      ) {
-        console.log(
-          "当前页面的document的href为",
-          document.firstElementChild.dataset.href
-        );
-        console.log(
-          "当前页面的document的pathname为",
-          document.firstElementChild.dataset.pathname
-        );
-        console.log(
-          "当前页面的document的search为",
-          document.firstElementChild.dataset.search
-        );
-      }
-      document.firstElementChild.dataset.search = location.search;
-      document.firstElementChild.dataset.href = location.href;
-      document.firstElementChild.dataset.pathname = location.pathname;
+      //   if (
+      //     document.firstElementChild.dataset.search !== location.search ||
+      //     document.firstElementChild.dataset.href !== location.href ||
+      //     document.firstElementChild.dataset.pathname !== location.pathname
+      //   ) {
+      //     console.log(
+      //       "当前页面的document的href为",
+      //       document.firstElementChild.dataset.href
+      //     );
+      //     console.log(
+      //       "当前页面的document的pathname为",
+      //       document.firstElementChild.dataset.pathname
+      //     );
+      //     console.log(
+      //       "当前页面的document的search为",
+      //       document.firstElementChild.dataset.search
+      //     );
+      //   }
+      //   document.firstElementChild.dataset.search = location.search;
+      //   document.firstElementChild.dataset.href = location.href;
+      //   document.firstElementChild.dataset.pathname = location.pathname;
 
       /* 把网页中的所有iframe中的a链接也进行替换 */
       var alinkarr = Array.from(document.getElementsByTagName("a"));
@@ -277,7 +280,12 @@
               var url = new URL(e.dataset.href);
               /* 替换协议与当前网页相同的协议 */
               url.protocol = location.protocol;
-              动态加载网页内容不刷新(url);
+              if (url.origin === location.origin) {
+                history.pushState(undefined, undefined, url);
+                window.dispatchEvent(new PopStateEvent("popstate"));
+              }
+
+              //   动态加载网页内容不刷新(url);
             });
             /*    // e.onclick = () => {
             //   /*   document.firstElementChild.dataset.href = location.href;
@@ -299,7 +307,10 @@
         "当前的地址栏路径为" + location.pathname,
         "当前的网页document路径为" + document.firstElementChild.dataset.pathname
       );
-      if (document.firstElementChild.dataset.pathname !== location.pathname) {
+      if (
+        document.firstElementChild.dataset.pathname !== location.pathname ||
+        document.firstElementChild.dataset.search !== location.search
+      ) {
         console.log("动态加载网页内容不刷新开始执行");
         动态加载网页内容不刷新();
       }
@@ -359,7 +370,7 @@
         // console.log(
         //   "当前页面的document的href为" + document.firstElementChild.dataset.href
         // );
-        document.firstElementChild.dataset.search = location.search;
+        /*   document.firstElementChild.dataset.search = location.search;
         document.firstElementChild.dataset.href = location.href;
         document.firstElementChild.dataset.pathname = location.pathname;
         console.log(
@@ -373,7 +384,7 @@
         console.log(
           "当前页面的document的search为",
           document.firstElementChild.dataset.search
-        );
+        ); */
       }
       /*  () => {
               setTimeout(() => {
@@ -779,6 +790,13 @@
             dataresponse = await fetch(url);
           } catch (error) {
             console.warn(error);
+            history.pushState(
+              undefined,
+              undefined,
+              document.firstElementChild.dataset.href
+            );
+            window.open(url, "_blank");
+            console.log("此链接加载失败，打开新页面");
             /* 有些网站的不同页面是用不同的http协议 */
             if (url.protocal === "https:") {
               url.protocal = "http:";
@@ -789,12 +807,27 @@
               dataresponse = await fetch(url);
             } catch (error) {
               console.warn(error);
+              history.pushState(
+                undefined,
+                undefined,
+                document.firstElementChild.dataset.href
+              );
+              return;
               //   history.back();
             }
           }
           /* 如果链接的protocol与当前的网页的protocol不同,则fetch加载失败 */
           if (typeof dataresponse != "undefined") {
             console.log("response", dataresponse);
+            if (dataresponse.ok == false) {
+              console.log("此链接加载失败，", dataresponse.status);
+              history.pushState(
+                undefined,
+                undefined,
+                document.firstElementChild.dataset.href
+              );
+              return;
+            }
             try {
               var arraybuffer = await dataresponse.arrayBuffer();
               console.log("html二进制数组", arraybuffer);
@@ -806,6 +839,15 @@
               //     history.pushState(undefined, undefined, url);
 
               //    location.reload();
+              /* 如果直接设置location.href会刷新页面 */
+              history.pushState(
+                undefined,
+                undefined,
+                "document.firstElementChild.dataset.href"
+              );
+              //   location.search = document.firstElementChild.dataset.search;
+              //   location.href = document.firstElementChild.dataset.href;
+              //   location.pathname = document.firstElementChild.dataset.pathname;
               window.open(url, "_blank");
               return;
               // history.back();
@@ -816,21 +858,65 @@
               // );
             }
           }
+          var datacontenttype;
+          try {
+            datacontenttype = dataresponse.headers
+              .get("Content-Type")
+              .toLowerCase();
+            console.log("Content-Type", datacontenttype);
 
-          var datacontenttype = dataresponse.headers
-            .get("Content-Type")
-            .toLowerCase();
-          console.log("Content-Type", datacontenttype);
-
-          if (!datacontenttype.includes("text/html")) {
-            console.log("此链接不是网页，打开新页面");
-            //     history.pushState(undefined, undefined, url);
+            if (!datacontenttype.includes("text/html")) {
+              console.log("此链接不是网页，打开新页面");
+              //     history.pushState(undefined, undefined, url);
+              window.open(url, "_blank");
+              history.pushState(
+                undefined,
+                undefined,
+                document.firstElementChild.dataset.href
+              );
+              /*  location.search = document.firstElementChild.dataset.search;
+            location.href = document.firstElementChild.dataset.href;
+            location.pathname = document.firstElementChild.dataset.pathname; */
+              return;
+              //    location.reload();
+            }
+          } catch (error) {
+            console.warn(error);
+            console.log("此链接加载失败，打开新页面");
+            history.pushState(
+              undefined,
+              undefined,
+              "document.firstElementChild.dataset.href"
+            );
             window.open(url, "_blank");
             return;
-            //    location.reload();
           }
+
           /* fetch加载成功,而且网页类型正确 */
-          history.pushState(undefined, undefined, url);
+          //   history.pushState(undefined, undefined, url);
+
+          if (
+            document.firstElementChild.dataset.search !== location.search ||
+            document.firstElementChild.dataset.href !== location.href ||
+            document.firstElementChild.dataset.pathname !== location.pathname
+          ) {
+            document.firstElementChild.dataset.search = location.search;
+            document.firstElementChild.dataset.href = location.href;
+            document.firstElementChild.dataset.pathname = location.pathname;
+            console.log(
+              "当前页面的document的href为",
+              document.firstElementChild.dataset.href
+            );
+            console.log(
+              "当前页面的document的pathname为",
+              document.firstElementChild.dataset.pathname
+            );
+            console.log(
+              "当前页面的document的search为",
+              document.firstElementChild.dataset.search
+            );
+          }
+
           if (datacontenttype.includes("charset")) {
             myhtmlcharset = datacontenttype.slice(
               datacontenttype.indexOf("charset") + "charset".length + 1
@@ -1206,5 +1292,7 @@
         );
       }
     }
-  }
-})((typeof window != "undefined" && window) || this);
+  } /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
+})(
+  (typeof window != "undefined" && window) || this
+); /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
