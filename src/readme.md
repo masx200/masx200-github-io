@@ -4,6 +4,11 @@
 
 [源代码 js](https://github.com/masx200/masx200.github.io/blob/master/src/%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js)
 
+https://github.com/masx200/masx200.github.io/blob/master/src/readme.md
+
+
+https://masx200.github.io/src/index-%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.html
+
 ## 介绍大概和注意
 
 点击链接不跳转修改当前的网页地址动态加载网页内容不刷新
@@ -15,6 +20,7 @@
 注意:对于使用了 document.write 的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖,所以 修改了 document.write 方法
 
 ## 预先的准备工作
+0.添加css样式"body, html {    scroll-behavior: smooth;}"就可以实现平滑滚动
 
 1.把当前页面的网址的 href 写入到 docment 的 html 的 dataset 当中
 
