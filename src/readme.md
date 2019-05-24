@@ -18,6 +18,7 @@ https://masx200.github.io/src/index-%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8
 注意:对于使用了 document.write 的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖,所以 修改了 document.write 方法
 
 ## 预先的准备工作
+0.添加css样式"body, html {    scroll-behavior: smooth;}"就可以实现平滑滚动
 
 1.把当前页面的网址的 href 写入到 docment 的 html 的 dataset 当中
 
