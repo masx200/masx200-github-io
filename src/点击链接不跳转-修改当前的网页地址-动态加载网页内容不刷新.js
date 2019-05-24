@@ -71,6 +71,13 @@
     if ("function" == typeof jQuery) {
       console.log("当前的jquery版本号为" + jQuery.fn.jquery);
     }
+
+
+
+(async ()=>{
+
+
+
     if ("function" !== typeof jQuery) {
       importjquery();
     } else {
@@ -79,6 +86,10 @@
         importjquery();
       }
     }
+
+})();
+
+
     document.write = t => {
       if (jQuery.fn.jquery[0] < 3) {
         importjquery();
