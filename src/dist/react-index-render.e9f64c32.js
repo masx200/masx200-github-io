@@ -230,6 +230,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
   // console.log(regeneratorRuntime)
   $(window).one("load", function () {
     function onhashchange() {
+      // refreshall();
       scrollTo(0, 0);
       $("#collapsibleNavbar").removeClass("show");
       $("#my主体").css("padding-top", $("#my导航栏").height());
@@ -935,12 +936,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
               fallback: React.createElement("div", null, "loading")
             }, React.createElement(Switch, null, React.createElement(Route, {
               exact: true,
-              path: "" // component={allcomponent.app}
-              ,
-              component: home //    component={require("./module-app.js").default}
-
-            }), React.createElement(Route, {
-              exact: true,
               path: "/" // component={allcomponent.app}
               ,
               component: home //    component={require("./module-app.js").default}
@@ -955,6 +950,12 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
               ,
               component: about // component={require("./module-about.js").default}
               // component={()=>i}
+
+            }), React.createElement(Route, {
+              exact: true,
+              path: "" // component={allcomponent.app}
+              ,
+              component: home //    component={require("./module-app.js").default}
 
             }))))));
           }
@@ -1032,7 +1033,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "5747" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "11510" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

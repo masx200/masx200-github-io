@@ -9,6 +9,7 @@
   // console.log(regeneratorRuntime)
   $(window).one("load", () => {
     function onhashchange() {
+      // refreshall();
       scrollTo(0, 0);
       $("#collapsibleNavbar").removeClass("show");
       $("#my主体").css("padding-top", $("#my导航栏").height());
@@ -741,13 +742,6 @@
                   {/* <Suspense fallback={<div>Loading...</div>}> */}
                   <Suspense fallback={<div>loading</div>}>
                     <Switch>
-                    <Route
-                        exact
-                        path=""
-                        // component={allcomponent.app}
-                        component={home}
-                        //    component={require("./module-app.js").default}
-                      />
                       <Route
                         exact
                         path="/"
@@ -768,6 +762,14 @@
                         // component={require("./module-about.js").default}
                         // component={()=>i}
                       />
+                      <Route
+                        exact
+                        path=""
+                        // component={allcomponent.app}
+                        component={home}
+                        //    component={require("./module-app.js").default}
+                      />
+                      {/* <Redirect from="*" to="/" /> */}
                       {
                         // 如果当前路径变化则不启用路由
                         //    if( this.locationpath===window.location.pathname)
