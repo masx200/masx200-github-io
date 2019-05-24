@@ -257,7 +257,7 @@
     script加载完成.script完成数量 = script加载完成.script总数量 = 0;
     function script加载完成(urlortext) {
       script加载完成.script完成数量, script加载完成.script总数量;
-      scrollTo(0, 0);
+     if(script加载完成.script完成数量===0) scrollTo(0, 0);
       //   console.log("滚动到顶部")
       替换a链接();
       script加载完成.script完成数量++;
@@ -273,13 +273,13 @@
       /* script完成数量 可能大于 script总数量 */
       if (script加载完成.script完成数量 >= script加载完成.script总数量) {
         console.log("触发window的allscriptload事件");
-
+window.dispatchEvent(new Event("allscriptload"));
         requestAnimationFrame(() => {
           console.log("触发window的load事件");
           window.dispatchEvent(new Event("load"));
         });
         /* 等到所有用src加载的script全部加载完成,再加载文本内容的script */
-        window.dispatchEvent(new Event("allscriptload"));
+        
         /* 创建新的事件 */
         setTimeout(() => {
           替换a链接();
