@@ -133,6 +133,11 @@
         e.src = e.src;
       }
     });
+    Array(...document.querySelectorAll("link[rel='stylesheet']")).forEach(e => {
+      if (e.href !== "") {
+        e.href = e.href;
+      }
+    });
     document.firstElementChild.dataset.search = location.search;
     document.firstElementChild.dataset.href = location.href;
     document.firstElementChild.dataset.pathname = location.pathname;
@@ -152,8 +157,9 @@
     document.addEventListener("mouseover", 替换a链接);
 
     //   document.addEventListener("scroll", 替换a链接);
+    var 替换a链接数组 = [];
     function 替换a链接() {
-      var 替换a链接数组 = [];
+     替换a链接数组 = [];
       document.firstElementChild.dataset.search = location.search;
       document.firstElementChild.dataset.href = location.href;
       document.firstElementChild.dataset.pathname = location.pathname;
@@ -162,38 +168,6 @@
       var alinkarr = Array.from(document.getElementsByTagName("a"));
       //   console.log(alinkarr);
       alinkarr.forEach(替换所有a链接的arrayhandler);
-      function 替换所有a链接的arrayhandler(e) {
-        /* 尝试把http和https都替换,因为协议不同导致origin不同 */
-        // e.protocol = location.protocol;
-        /* 使用hostname代替origin判断 */
-        e.href = e.href;
-        if (e.protocol === "http:" || e.protocol === "https:") {
-          /* 如果search不同也是不同的页面,比如说论坛 */
-          if (e.href != "javascript:;" && location.hostname === e.hostname) {
-            if (
-              e.pathname !== location.pathname ||
-              e.search !== location.search
-            ) {
-              e.dataset.href = e.href;
-
-              e.href = "javascript:;";
-
-              替换a链接数组.push({ name: "替换a链接", text: e.outerHTML });
-              /*  */
-              //   console.log("替换a链接", e.outerHTML);
-              //
-              e.onclick = () => {
-                /*   document.firstElementChild.dataset.href = location.href;
-                      document.firstElementChild.dataset.pathname = location.pathname; */
-                var url = new URL(e.dataset.href);
-                /* 替换协议与当前网页相同的协议 */
-                url.protocol = location.protocol;
-                动态加载网页内容不刷新(url);
-              };
-            }
-          }
-        }
-      }
 
       var docuiframes = Array(...document.getElementsByTagName("iframe"));
       docuiframes.forEach(e => {
@@ -232,6 +206,38 @@
         console.log("替换a链接", 替换a链接数组);
       }
     }
+    function 替换所有a链接的arrayhandler(e) {
+      /* 尝试把http和https都替换,因为协议不同导致origin不同 */
+      // e.protocol = location.protocol;
+      /* 使用hostname代替origin判断 */
+      e.href = e.href;
+      if (e.protocol === "http:" || e.protocol === "https:") {
+        /* 如果search不同也是不同的页面,比如说论坛 */
+        if (e.href != "javascript:;" && location.hostname === e.hostname) {
+          if (
+            e.pathname !== location.pathname ||
+            e.search !== location.search
+          ) {
+            e.dataset.href = e.href;
+
+            e.href = "javascript:;";
+
+            替换a链接数组.push({ name: "替换a链接", text: e.outerHTML });
+            /*  */
+            //   console.log("替换a链接", e.outerHTML);
+            //
+            e.onclick = () => {
+              /*   document.firstElementChild.dataset.href = location.href;
+                      document.firstElementChild.dataset.pathname = location.pathname; */
+              var url = new URL(e.dataset.href);
+              /* 替换协议与当前网页相同的协议 */
+              url.protocol = location.protocol;
+              动态加载网页内容不刷新(url);
+            };
+          }
+        }
+      }
+    }
     //   document.onclick();
     function onpopstatehandler() {
       console.log("事件onpopstate,执行,");
@@ -252,7 +258,7 @@
     function script加载完成(urlortext) {
       script加载完成.script完成数量, script加载完成.script总数量;
       scrollTo(0, 0);
-    //   console.log("滚动到顶部")
+      //   console.log("滚动到顶部")
       替换a链接();
       script加载完成.script完成数量++;
       console.log(
@@ -606,6 +612,32 @@
         替换a链接();
       }, 150);
     }
+    function 失败StyleSheet(fileurl) {
+      /* 如果加载失败也要触发事件 */
+      console.warn("加载失败" + fileurl);
+      单个stylesheet加载完成.完成linkstylesheet++;
+      if (
+        单个stylesheet加载完成.完成linkstylesheet >=
+        单个stylesheet加载完成.数量linkstylesheet
+      ) {
+        console.log("触发window的allstylesheetload事件");
+        window.dispatchEvent(new Event("allstylesheetload"));
+      }
+    }
+    function 失败scriptsrc(fileurl) {
+      /* 如果加载失败也要触发事件 */
+      console.warn("加载失败" + fileurl);
+      script加载完成.script完成数量++;
+      if (script加载完成.script完成数量 >= script加载完成.script总数量) {
+        window.dispatchEvent(new Event("allscriptload"));
+        console.log("触发window的allscriptload事件");
+        requestAnimationFrame(() => {
+          console.log("触发window的load事件");
+          window.dispatchEvent(new Event("load"));
+        });
+      }
+    }
+
     async function 动态加载网页内容不刷新(url = location.href) {
       单个stylesheet加载完成.数量linkstylesheet = 0;
       单个stylesheet加载完成.完成linkstylesheet = 0;
@@ -643,7 +675,7 @@
         /* 竟然有的网页甚至还要给html标签加style! */
         document.firstElementChild.style = "";
         /* 添加顺滑的滚动效果在scrollto的时候用到 */
-        $("html").css("scroll-behavior",'smooth')
+        $("html").css("scroll-behavior", "smooth");
         document.firstElementChild.className = "";
         document.getElementsByTagName("body")[0].style = "";
         document.getElementsByTagName("body")[0].className = "";
@@ -811,18 +843,7 @@
           ).length;
 
           /* 有href的link 的stylesheet 也要设置onload之后,全部加载完成之后,再删除旧元素*/
-          function 失败StyleSheet(fileurl) {
-            /* 如果加载失败也要触发事件 */
-            console.warn("加载失败" + fileurl);
-            单个stylesheet加载完成.完成linkstylesheet++;
-            if (
-              单个stylesheet加载完成.完成linkstylesheet >=
-              单个stylesheet加载完成.数量linkstylesheet
-            ) {
-              console.log("触发window的allstylesheetload事件");
-              window.dispatchEvent(new Event("allstylesheetload"));
-            }
-          }
+
           requestAnimationFrame(() => {
             var 添加stylesheet元素到head数组 = [];
             Array.from(
@@ -902,22 +923,11 @@
           script加载完成.script总数量 = Array.from(
             myhtmldata.querySelectorAll("script")
           ).length;
-          function 失败scriptsrc(fileurl) {
-            /* 如果加载失败也要触发事件 */
-            console.warn("加载失败" + fileurl);
-            script加载完成.script完成数量++;
-            if (script加载完成.script完成数量 >= script加载完成.script总数量) {
-              window.dispatchEvent(new Event("allscriptload"));
-              console.log("触发window的allscriptload事件");
-              requestAnimationFrame(() => {
-                console.log("触发window的load事件");
-                window.dispatchEvent(new Event("load"));
-              });
-            }
-          }
+          var 添加文本script元素数组 = [];
+          var script文本内容数组 = [];
           requestAnimationFrame(() => {
             var 添加script元素数组 = [];
-            var script文本内容数组 = [];
+             script文本内容数组 = [];
             Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
               e.type = e.type.toLowerCase();
               if (e.type == "text/javascript" || "" == e.type) {
@@ -1009,53 +1019,50 @@
             script文本内容数组.forEach(e => {
               script加载完成.script总数量--;
             });
-            var 添加文本script元素数组 = [];
+            // var 添加文本script元素数组 = [];
             window.addEventListener("allscriptload", onallscriptload);
-            function onallscriptload() {
-              window.removeEventListener("allscriptload", onallscriptload);
-              script文本内容数组.forEach(text => {
-                // var 添加script元素数组 = [];
-                /* 函数返回outerhtml */
-                添加文本script元素数组.push({
-                  type: "text/javascript",
-                  name: "添加script元素",
-                  text: loadscripttext(text, loadid)
-                });
-                // loadscripttext(e.innerHTML, loadid);
-                /*  script加载完成 */
-
-                // script加载完成.script总数量--;
-              });
-              console.log(
-                "添加文本内容加载的script元素",
-                添加文本script元素数组
-              );
-            }
           });
-          //   setTimeout(() => {
-          requestAnimationFrame(() => {
-            var allstyleloadhandler = () => {
-              window.removeEventListener(
-                "allstylesheetload",
-                allstyleloadhandler
-              );
-              var 删除旧元素数组 = [];
-
-              Array(
-                ...document.querySelectorAll("link"),
-                ...document.querySelectorAll("style"),
-                ...document.querySelectorAll("meta"),
-                ...document.querySelectorAll("script")
-              ).forEach(e => {
-                if (loadid != e.dataset.loadid) {
-                  e.parentNode.removeChild(e);
-                  删除旧元素数组.push({ name: "删除元素", text: e.outerHTML });
-                  // console.log("删除旧元素", e.outerHTML);
-                }
+          function onallscriptload() {
+            window.removeEventListener("allscriptload", onallscriptload);
+            script文本内容数组.forEach(text => {
+              // var 添加script元素数组 = [];
+              /* 函数返回outerhtml */
+              添加文本script元素数组.push({
+                type: "text/javascript",
+                name: "添加script元素",
+                text: loadscripttext(text, loadid)
               });
+              // loadscripttext(e.innerHTML, loadid);
+              /*  script加载完成 */
 
-              console.log("删除旧元素", 删除旧元素数组);
-            };
+              // script加载完成.script总数量--;
+            });
+            console.log("添加文本内容加载的script元素", 添加文本script元素数组);
+          }
+          //   setTimeout(() => {
+          function allstyleloadhandler() {
+            window.removeEventListener(
+              "allstylesheetload",
+              allstyleloadhandler
+            );
+            var 删除旧元素数组 = [];
+
+            Array(
+              ...document.querySelectorAll("link"),
+              ...document.querySelectorAll("style"),
+              ...document.querySelectorAll("meta"),
+              ...document.querySelectorAll("script")
+            ).forEach(e => {
+              if (loadid != e.dataset.loadid) {
+                e.parentNode.removeChild(e);
+                删除旧元素数组.push({ name: "删除元素", text: e.outerHTML });
+                // console.log("删除旧元素", e.outerHTML);
+              }
+            });
+
+            console.log("删除旧元素", 删除旧元素数组);
+          }
+          requestAnimationFrame(() => {
             window.addEventListener("allstylesheetload", allstyleloadhandler);
           });
           //   }, 100);
