@@ -159,7 +159,7 @@
     //   document.addEventListener("scroll", 替换a链接);
     var 替换a链接数组 = [];
     function 替换a链接() {
-     替换a链接数组 = [];
+      替换a链接数组 = [];
       document.firstElementChild.dataset.search = location.search;
       document.firstElementChild.dataset.href = location.href;
       document.firstElementChild.dataset.pathname = location.pathname;
@@ -779,19 +779,22 @@
             <meta http-equiv="Content-Type" content="text/html; charset=gb2312" >
             */
             try {
-              var dataContentType = Array(
+              var charsetelement = Array(
                 ...new DOMParser()
                   .parseFromString(
                     new TextDecoder().decode(arraybuffer),
                     "text/html"
                   )
                   .querySelectorAll(`meta[http-equiv="Content-Type"]`)
-              )[0]
-                .getAttribute("content")
-                .toLowerCase();
-              myhtmlcharset = dataContentType.slice(
-                dataContentType.indexOf("charset") + "charset".length + 1
-              );
+              )[0];
+              if (typeof charsetelement != "undefined") {
+                var dataContentType = charsetelement
+                  .getAttribute("content")
+                  .toLowerCase();
+                myhtmlcharset = dataContentType.slice(
+                  dataContentType.indexOf("charset") + "charset".length + 1
+                );
+              }
             } catch (error) {
               console.warn(error);
             }
@@ -927,7 +930,7 @@
           var script文本内容数组 = [];
           requestAnimationFrame(() => {
             var 添加script元素数组 = [];
-             script文本内容数组 = [];
+            script文本内容数组 = [];
             Array.from(myhtmldata.querySelectorAll("script")).forEach(e => {
               e.type = e.type.toLowerCase();
               if (e.type == "text/javascript" || "" == e.type) {
