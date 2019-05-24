@@ -46,9 +46,9 @@
         console.log("hashchange");
         $("#mynavul").click();
       });
-      const about = () => import("./vue-component-about");
-      const home = () => import("./vue-component-home");
-      const huami = () => import("./vue-component-huami");
+      const about = () => import("./vue-component-about.js");
+      const home = () => import("./vue-component-home.js");
+      const huami = () => import("./vue-component-huami.js");
       const router = new VueRouter({
         routes: [
           {
@@ -71,11 +71,11 @@
             path: "/huami",
             name: "huami",
             component: huami
-          },
-          {
-            path: "*",
-            redirect: "/"
           }
+          //   {
+          //     path: "*",
+          //     redirect: "/"
+          //   }
         ]
       });
 

@@ -36,9 +36,9 @@
     function myonloadfunc() {
       const { Link, Switch, BrowserRouter, Route, Redirect } = ReactRouterDOM;
       const { Suspense, lazy } = React;
-      const home = lazy(() => import("./module-home"));
-      const rssreader = lazy(() => import("./module-rssreader"));
-      const about = lazy(() => import("./module-about"));
+      const home = lazy(() => import("./react-module-home.js"));
+      const rssreader = lazy(() => import("./react-module-rssreader.js"));
+      const about = lazy(() => import("./react-module-about.js"));
       // hashchangehandler();
       var lasthash;
       /* var about = (app = rssreader = "undefined");
@@ -741,6 +741,13 @@
                   {/* <Suspense fallback={<div>Loading...</div>}> */}
                   <Suspense fallback={<div>loading</div>}>
                     <Switch>
+                    <Route
+                        exact
+                        path=""
+                        // component={allcomponent.app}
+                        component={home}
+                        //    component={require("./module-app.js").default}
+                      />
                       <Route
                         exact
                         path="/"
@@ -761,9 +768,11 @@
                         // component={require("./module-about.js").default}
                         // component={()=>i}
                       />
-                      {/* 如果当前路径变化则不启用路由 */}
-                      if( this.locationpath===window.location.pathname)
-                      {<Redirect from="*" to="/" />}
+                      {
+                        // 如果当前路径变化则不启用路由
+                        //    if( this.locationpath===window.location.pathname)
+                        //    {<Redirect from="*" to="/" />}}
+                      }
                     </Switch>
                   </Suspense>
                   {/* </Suspense> */}
