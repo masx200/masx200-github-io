@@ -151,11 +151,17 @@
     window.removeEventListener("load", windowloadhandler);
 
     var htmldataboject = new Object();
-    /*  Array(...document.querySelectorAll("script")).forEach(e => {
-      if (e.src !== "") {
-        e.src = e.src;
-      }
-    });
+    Array(...document.querySelectorAll("a")).forEach(e => {
+        if (e.href !== "") {
+          e.href = e.href;
+        }
+      });
+    Array(...document.querySelectorAll("script")).forEach(e => {
+        if (e.src !== "") {
+          e.src = e.src;
+        }
+      });
+    /*  
     Array(...document.querySelectorAll("link[rel='stylesheet']")).forEach(e => {
       if (e.href !== "") {
         e.href = e.href;
