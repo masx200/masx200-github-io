@@ -2,3 +2,7 @@ node_modules
 .cache
 *.bak
 yarn-error.log
+.cache
+node_modules
+dist
+.vscode
