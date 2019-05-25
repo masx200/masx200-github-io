@@ -28,7 +28,7 @@
     module.exports = windowloadhandler;
   }
   if (
-    typeof 点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 !== "function"
+    typeof 修改当前的网页地址动态加载网页内容不刷新 !== "function"
   ) {
     window.addEventListener("load", windowloadhandler);
   }
@@ -37,13 +37,26 @@
    *
    *   *
    */
-  global.点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 = windowloadhandler;
+  global.修改当前的网页地址动态加载网页内容不刷新 = windowloadhandler;
+  function 同源网址跳转动态加载(url=location.href) {
+    var url = new URL(url);
+    /* 替换协议与当前网页相同的协议 */
+    url.protocol = location.protocol;
+    if (
+      (url.origin === location.origin && url.pathname !== location.pathname) ||
+      url.search !== location.search
+    ) {
+      history.pushState(undefined, undefined, url);
+      window.dispatchEvent(new PopStateEvent("popstate"));
+    }
+  }
+  windowloadhandler.同源网址跳转动态加载 = 同源网址跳转动态加载;
   windowloadhandler.alreadyrun = 0;
   function windowloadhandler() {
     if (windowloadhandler.alreadyrun != 1) {
       windowloadhandler.alreadyrun = 1;
       console.log(
-        "第一次运行此函数启动,点击链接不跳转修改当前的网页地址动态加载网页内容不刷新"
+        "第一次运行此函数启动,点击链接不跳转,修改当前的网页地址,动态加载网页内容,不刷新"
       );
     } else {
       console.log("已经运行过此函数,不能再次运行");
@@ -152,15 +165,15 @@
 
     var htmldataboject = new Object();
     Array(...document.querySelectorAll("a")).forEach(e => {
-        if (e.href !== "") {
-          e.href = e.href;
-        }
-      });
+      if (e.href !== "") {
+        e.href = e.href;
+      }
+    });
     Array(...document.querySelectorAll("script")).forEach(e => {
-        if (e.src !== "") {
-          e.src = e.src;
-        }
-      });
+      if (e.src !== "") {
+        e.src = e.src;
+      }
+    });
     /*  
     Array(...document.querySelectorAll("link[rel='stylesheet']")).forEach(e => {
       if (e.href !== "") {
@@ -193,7 +206,7 @@
     //   document.addEventListener("scroll", 替换a链接);
     var 替换a链接数组 = [];
     function 替换a链接() {
-      requestAnimationFrame(()=>{
+      requestAnimationFrame(() => {
         替换a链接数组 = [];
         //   if (
         //     document.firstElementChild.dataset.search !== location.search ||
@@ -216,12 +229,12 @@
         //   document.firstElementChild.dataset.search = location.search;
         //   document.firstElementChild.dataset.href = location.href;
         //   document.firstElementChild.dataset.pathname = location.pathname;
-  
+
         /* 把网页中的所有iframe中的a链接也进行替换 */
         var alinkarr = Array.from(document.getElementsByTagName("a"));
         //   console.log(alinkarr);
         alinkarr.forEach(替换所有a链接的arrayhandler);
-  
+
         var docuiframes = Array(...document.getElementsByTagName("iframe"));
         docuiframes.forEach(e => {
           if (e.contentDocument) {
@@ -258,7 +271,7 @@
         if (替换a链接数组.length > 0) {
           console.log("替换a链接", 替换a链接数组);
         }
-      })
+      });
     }
     function 替换所有a链接的arrayhandler(e) {
       /* 尝试把http和https都替换,因为协议不同导致origin不同 */
@@ -288,7 +301,11 @@
               var url = new URL(e.dataset.href);
               /* 替换协议与当前网页相同的协议 */
               url.protocol = location.protocol;
-              if (url.origin === location.origin) {
+              if (
+                (url.origin === location.origin &&
+                  url.pathname !== location.pathname) ||
+                url.search !== location.search
+              ) {
                 history.pushState(undefined, undefined, url);
                 window.dispatchEvent(new PopStateEvent("popstate"));
               }
