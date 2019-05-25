@@ -27,9 +27,7 @@
   if ("object" == typeof module && "object" == typeof module.exports) {
     module.exports = windowloadhandler;
   }
-  if (
-    typeof 修改当前的网页地址动态加载网页内容不刷新 !== "function"
-  ) {
+  if (typeof 修改当前的网页地址动态加载网页内容不刷新 !== "function") {
     window.addEventListener("load", windowloadhandler);
   }
   /**
@@ -38,7 +36,7 @@
    *   *
    */
   global.修改当前的网页地址动态加载网页内容不刷新 = windowloadhandler;
-  function 同源网址跳转动态加载(url=location.href) {
+  function 同源网址跳转动态加载(url = location.href) {
     var url = new URL(url);
     /* 替换协议与当前网页相同的协议 */
     url.protocol = location.protocol;
@@ -277,7 +275,9 @@
       /* 尝试把http和https都替换,因为协议不同导致origin不同 */
       // e.protocol = location.protocol;
       /* 使用hostname代替origin判断 */
-      e.href = e.href;
+      if (e.href !== "") {
+        e.href = e.href;
+      }
       if (e.protocol === "http:" || e.protocol === "https:") {
         /* 如果search不同也是不同的页面,比如说论坛 */
         if (e.href != "javascript:;" && location.hostname === e.hostname) {
@@ -1095,8 +1095,9 @@
           Array.from(myhtmldata.querySelectorAll("link")).forEach(e => {
             if (e.getAttribute("rel") !== "stylesheet") {
               e.dataset.loadid = loadid;
-
-              e.href = e.href;
+              if (e.href !== "") {
+                e.href = e.href;
+              }
               添加元素到head数组.push({
                 name: "添加link元素",
                 text: e.outerHTML
