@@ -193,70 +193,72 @@
     //   document.addEventListener("scroll", 替换a链接);
     var 替换a链接数组 = [];
     function 替换a链接() {
-      替换a链接数组 = [];
-      //   if (
-      //     document.firstElementChild.dataset.search !== location.search ||
-      //     document.firstElementChild.dataset.href !== location.href ||
-      //     document.firstElementChild.dataset.pathname !== location.pathname
-      //   ) {
-      //     console.log(
-      //       "当前页面的document的href为",
-      //       document.firstElementChild.dataset.href
-      //     );
-      //     console.log(
-      //       "当前页面的document的pathname为",
-      //       document.firstElementChild.dataset.pathname
-      //     );
-      //     console.log(
-      //       "当前页面的document的search为",
-      //       document.firstElementChild.dataset.search
-      //     );
-      //   }
-      //   document.firstElementChild.dataset.search = location.search;
-      //   document.firstElementChild.dataset.href = location.href;
-      //   document.firstElementChild.dataset.pathname = location.pathname;
-
-      /* 把网页中的所有iframe中的a链接也进行替换 */
-      var alinkarr = Array.from(document.getElementsByTagName("a"));
-      //   console.log(alinkarr);
-      alinkarr.forEach(替换所有a链接的arrayhandler);
-
-      var docuiframes = Array(...document.getElementsByTagName("iframe"));
-      docuiframes.forEach(e => {
-        if (e.contentDocument) {
-          var iframealinkarr = Array(
-            ...e.contentDocument.getElementsByTagName("a")
-          );
-          iframealinkarr.forEach(替换所有a链接的arrayhandler);
-        }
-      });
-      /*  e.onclick = () => {
-              // lasthref=location.href
-              console.log(e.href);
-      
-              if (location.origin === e.origin) {
-                if (e.pathname === location.pathname) {
-                  if (e.hash !== location.hash) {
-                    return true;
+      requestAnimationFrame(()=>{
+        替换a链接数组 = [];
+        //   if (
+        //     document.firstElementChild.dataset.search !== location.search ||
+        //     document.firstElementChild.dataset.href !== location.href ||
+        //     document.firstElementChild.dataset.pathname !== location.pathname
+        //   ) {
+        //     console.log(
+        //       "当前页面的document的href为",
+        //       document.firstElementChild.dataset.href
+        //     );
+        //     console.log(
+        //       "当前页面的document的pathname为",
+        //       document.firstElementChild.dataset.pathname
+        //     );
+        //     console.log(
+        //       "当前页面的document的search为",
+        //       document.firstElementChild.dataset.search
+        //     );
+        //   }
+        //   document.firstElementChild.dataset.search = location.search;
+        //   document.firstElementChild.dataset.href = location.href;
+        //   document.firstElementChild.dataset.pathname = location.pathname;
+  
+        /* 把网页中的所有iframe中的a链接也进行替换 */
+        var alinkarr = Array.from(document.getElementsByTagName("a"));
+        //   console.log(alinkarr);
+        alinkarr.forEach(替换所有a链接的arrayhandler);
+  
+        var docuiframes = Array(...document.getElementsByTagName("iframe"));
+        docuiframes.forEach(e => {
+          if (e.contentDocument) {
+            var iframealinkarr = Array(
+              ...e.contentDocument.getElementsByTagName("a")
+            );
+            iframealinkarr.forEach(替换所有a链接的arrayhandler);
+          }
+        });
+        /*  e.onclick = () => {
+                // lasthref=location.href
+                console.log(e.href);
+        
+                if (location.origin === e.origin) {
+                  if (e.pathname === location.pathname) {
+                    if (e.hash !== location.hash) {
+                      return true;
+                    } else {
+                      return false;
+                    }
                   } else {
+                    history.pushState(undefined, undefined, e.href);
+                    console.log("执行,history.pushState,成功");
+                    window.onpopstate();
                     return false;
                   }
+        
+                  //   return false;
                 } else {
-                  history.pushState(undefined, undefined, e.href);
-                  console.log("执行,history.pushState,成功");
-                  window.onpopstate();
-                  return false;
+                  return true;
                 }
-      
-                //   return false;
-              } else {
-                return true;
-              }
-            }; */
-      // return true
-      if (替换a链接数组.length > 0) {
-        console.log("替换a链接", 替换a链接数组);
-      }
+              }; */
+        // return true
+        if (替换a链接数组.length > 0) {
+          console.log("替换a链接", 替换a链接数组);
+        }
+      })
     }
     function 替换所有a链接的arrayhandler(e) {
       /* 尝试把http和https都替换,因为协议不同导致origin不同 */
