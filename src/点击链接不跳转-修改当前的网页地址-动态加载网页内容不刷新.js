@@ -1223,7 +1223,7 @@
           /* 当没有通过src加载的script时,script总数量,等于, script完成数量, */
           console.log("添加通过src加载的script元素", 添加script元素数组);
 
-          script文本内容数组.forEach(e => {
+          script文本内容数组.forEach(() => {
             script加载完成.script总数量--;
           });
           if (添加script元素数组.length === 0) script加载完成();
