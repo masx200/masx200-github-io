@@ -8,7 +8,7 @@ function importcjsamdumd(url) {
       (async () => {
         var response = await fetch(url);
 
-        var text = await response.text();
+        var scripttext = await response.text();
         // define([
         //     'require',
         //     'dependency'
@@ -65,25 +65,29 @@ function importcjsamdumd(url) {
         var module = {
           exports: {}
         };
-function define(...args){
-}
-define.amd=true
-function require(m){
-}
-       var exportmodule = (function(require,define,module, exports,scripttext) {
+        function define(...args) {}
+        define.amd = true;
+        function require(m) {}
+        var exportmodule = (function(
+          require,
+          define,
+          module,
+          exports,
+          scripttext
+        ) {
           eval(scripttext);
           // for (let __key__ in module.exports ){
           //     module[__key__]=module.exports[__key__]
           // }
 
-          var moduleexport={}
-          if(Object.keys(exports)){
-moduleexport.default = exports;
-}else if(Object.keys(module.exports)){
-          moduleexport.default=module.exports
+          var moduleexport = {};
+          if (Object.keys(exports)) {
+            moduleexport.default = exports;
+          } else if (Object.keys(module.exports)) {
+            moduleexport.default = module.exports;
           }
           return moduleexport;
-        })(require,define,module, exports,scripttext);
+        })(require, define, module, exports, scripttext);
 
         resolve(exportmodule);
       })();
