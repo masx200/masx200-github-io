@@ -70,7 +70,7 @@ function define(...args){
 define.amd=true
 function require(m){
 }
-        module = (function(require,define,module, exports,scripttext) {
+        exportmodule = (function(require,define,module, exports,scripttext) {
           eval(scripttext);
           // for (let __key__ in module.exports ){
           //     module[__key__]=module.exports[__key__]
@@ -85,7 +85,7 @@ moduleexport.default = exports;
           return moduleexport;
         })(require,define,module, exports,scripttext);
 
-        resolve(module);
+        resolve(exportmodule);
       })();
     } catch (e) {
       console.error(e);
