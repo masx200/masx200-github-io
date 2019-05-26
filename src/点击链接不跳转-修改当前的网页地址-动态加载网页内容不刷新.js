@@ -1339,4 +1339,6 @@
 })(
     (typeof window != "undefined" && window) || this
 ); /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
-export default 修改当前的网页地址动态加载网页内容不刷新
+
+  //  export default 修改当前的网页地址动态加载网页内容不刷新
+
