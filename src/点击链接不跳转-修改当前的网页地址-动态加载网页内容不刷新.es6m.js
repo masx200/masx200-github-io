@@ -1,7 +1,7 @@
 /* es6模块写法 */
-export default windowloadhandler
+// export default windowloadhandler
 /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
-// (global => {
+(global => {
     /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
     /* 注意不能跨域 */
     /* 注意:对于使用了document.write的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖
@@ -37,7 +37,7 @@ export default windowloadhandler
      *
      *   *
      */
-    // global.修改当前的网页地址动态加载网页内容不刷新 = windowloadhandler;
+    global.修改当前的网页地址动态加载网页内容不刷新 = windowloadhandler;
 
     function 同源网址跳转动态加载(url = location.href) {
         var url = new URL(url);
@@ -1338,9 +1338,12 @@ export default windowloadhandler
             }
         }
     } /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
-// })(
-//     (typeof window != "undefined" && window) || this
-// ); /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
+})(
+    (typeof window != "undefined" && window) || this
+);
+
+/**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
 
   //  export default 修改当前的网页地址动态加载网页内容不刷新
 
+  export default windowloadhandler
