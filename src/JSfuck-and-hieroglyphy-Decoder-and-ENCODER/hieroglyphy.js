@@ -333,4 +333,4 @@
     (typeof WorkerGlobalScope !== "undefined" ? WorkerGlobalScope : false) ||
     this
 );
-export default hieroglyphy 
+// export default hieroglyphy 
