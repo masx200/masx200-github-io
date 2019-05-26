@@ -11,7 +11,7 @@
 
 
 ```javascript
-import("http://masx200.github.io/src/点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新.es6m.js").then(m=>m.default())
+import("https://masx200.github.io/src/点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新.es6m.js").then(m=>m.default())
 ```   
 
 
