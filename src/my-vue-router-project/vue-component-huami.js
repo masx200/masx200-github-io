@@ -1,6 +1,7 @@
-let huami = ({
+import vuehuamirender from"./vue-huami-render.js";
+let huami = {
   mounted() {
-    require("./vue-huami-render.js");
+    vuehuamirender()
     console.log("huami,mounted");
     document.title = "vue-router-project-" + "huami";
     // window.mychangemenu();
@@ -44,7 +45,7 @@ let huami = ({
   name: "huami",
   created() {
     console.log("huami,created");
-    
+
     //    /*  /*
     //      * jQuery MD5 Plugin 1.2.1
     //      * https://github.com/blueimpjQuery/jQuery-MD5
@@ -349,6 +350,6 @@ let huami = ({
     //     return window. jQuery
     // }
   }
-});
+};
 
 export default huami;

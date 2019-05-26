@@ -11,14 +11,22 @@
     }
     $(window).on("hashchange", onhashchange);
     let haverun = 0;
-    let myonloadfunc = myonload2;
+    // let myonloadfunc = myonload2;
     herewindowonload();
 
     function herewindowonload() {
       if (haverun == 0) {
         haverun = 1;
         console.log("开始运行此onload函数");
-        myonloadfunc();
+
+        Promise.all([
+          import(
+            `https://cdn.staticfile.org/vue-router/3.0.6/vue-router.esm.browser.min.js`
+          ),
+          import(`https://cdn.staticfile.org/vue/2.6.10/vue.esm.browser.min.js`)
+        ]).then(myonloadfunc);
+
+        // myonloadfunc();
       } else {
         console.log("不要重复运行此onload函数");
       }
@@ -35,7 +43,10 @@
 
     // window.mychangemenu = function () {
 
-    function myonload2() {
+    function myonloadfunc(modulearray) {
+        console.log(modulearray)
+      VueRouter = modulearray[0].default;
+      Vue = modulearray[1].default;
       Vue.config.productionTip = false;
       Vue.config.silent = true;
       Vue.config.devtools = true;
