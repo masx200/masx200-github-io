@@ -456,3 +456,4 @@
     (typeof WorkerGlobalScope !== "undefined" ? WorkerGlobalScope : false) ||
     this
 );
+export default JSFuck

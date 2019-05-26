@@ -5,6 +5,7 @@
 /* eslint-disable */
 // import React from 'react';
 //在react的jsx文件中这句话能删除!
+// import "parcel-bundler/src/builtins/bundle-url.js"
 (() => {
   // console.log(regeneratorRuntime)
   $(window).one("load", () => {
@@ -15,7 +16,7 @@
       $("#my主体").css("padding-top", $("#my导航栏").height());
     }
     $(window).on("hashchange", onhashchange);
-    let haverun = 0;
+    var haverun = 0;
     herewindowonload();
     function herewindowonload() {
       if (haverun == 0) {
@@ -35,6 +36,7 @@
     //   }, 1000);
 
     function myonloadfunc() {
+        const render=ReactDOM.render
       const { Link, Switch, BrowserRouter, Route, Redirect } = ReactRouterDOM;
       const { Suspense, lazy } = React;
       const home = lazy(() => import("./react-module-home.js"));
@@ -802,7 +804,7 @@
       }
 
       function refreshall() {
-        ReactDOM.render(<Apphome />, document.getElementById("root"));
+        render(<Apphome />, document.getElementById("root"));
       }
       refreshall();
       // ReactDOM.render(<Apphome />, document.getElementById("root"));
