@@ -70,7 +70,7 @@ function define(...args){
 define.amd=true
 function require(m){
 }
-        exportmodule = (function(require,define,module, exports,scripttext) {
+       var exportmodule = (function(require,define,module, exports,scripttext) {
           eval(scripttext);
           // for (let __key__ in module.exports ){
           //     module[__key__]=module.exports[__key__]
