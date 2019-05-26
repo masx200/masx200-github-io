@@ -68,20 +68,22 @@ function importcjsamdumd(url) {
 function define(...args){
 }
 define.amd=true
-        module = (function(define,module, exports) {
-          eval(text);
+function require(m){
+}
+        module = (function(require,define,module, exports,scripttext) {
+          eval(scripttext);
           // for (let __key__ in module.exports ){
           //     module[__key__]=module.exports[__key__]
           // }
 
-          var moduleexport
+          var moduleexport={}
           if(Object.keys(exports)){
 moduleexport.default = exports;
-}else{
+}else if(Object.keys(module.exports)){
           moduleexport.default=module.exports
           }
           return moduleexport;
-        })(define,module, exports);
+        })(require,define,module, exports,scripttext);
 
         resolve(module);
       })();
