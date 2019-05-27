@@ -7,16 +7,15 @@
     module.exports = importcjsamdumd;
   }
   global.IMPORTCJSAMDUMD = importcjsamdumd;
-  importcjsamdumd.REQUIREPACKAGE= require;
+  importcjsamdumd.REQUIREPACKAGE = require;
   importcjsamdumd.GLOBALPACKAGESTORE = importcjsamdumd.GLOBALPACKAGESTORE || [];
-  function require(packagename=undefined) {
-      var findpackage= importcjsamdumd.GLOBALPACKAGESTORE[packagename]
-      if(findpackage){
-        return findpackage;
-      }else{
-          throw new Error("Cannot find module  "+ packagename )
-      }
-    
+  function require(packagename = undefined) {
+    var findpackage = importcjsamdumd.GLOBALPACKAGESTORE[packagename];
+    if (findpackage) {
+      return findpackage;
+    } else {
+      throw new Error("Cannot find module  " + packagename);
+    }
   }
   function define(name, deps, callback) {
     define.globalDefQueue = [];
@@ -99,7 +98,7 @@
     }
     console.log(define.globalDefQueue[0]);
     if (typeof define.globalDefQueue[0][0] === "string") {
-      packagename = define.globalDefQueue[0][0];
+      importcjsamdumd.packagename = define.globalDefQueue[0][0];
     }
     var canshu = define.globalDefQueue[0][1].map(e => require(e));
     //   console.log(canshu);
@@ -110,7 +109,7 @@
   function importcjsamdumd(url, packagename = undefined) {
     //   window.GLOBALPACKAGESTORE = window.GLOBALPACKAGESTORE || [];
     url = new URL(url);
-
+    importcjsamdumd.packagename = packagename;
     return new Promise((resolve, reject) => {
       try {
         (async () => {
@@ -246,8 +245,8 @@
           ) {
             moduleexport.default = define.exports;
           }
-          if (typeof packagename !== "undefined") {
-            importcjsamdumd.GLOBALPACKAGESTORE[packagename] =
+          if (typeof importcjsamdumd.packagename !== "undefined") {
+            importcjsamdumd.GLOBALPACKAGESTORE[importcjsamdumd.packagename] =
               moduleexport.default;
           }
           console.log("GLOBALPACKAGESTORE", importcjsamdumd.GLOBALPACKAGESTORE);
