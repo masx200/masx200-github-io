@@ -193,8 +193,37 @@ https://masx200.github.io/my-vue-router-project/
 https://masx200.github.io/my-react-router-test/
 
 ## react-router 的单页面应用
+异步动态加载依赖包方法
 
+https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
 
+```javascript
+
+import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
+Promise.all([
+          IMPORTCJSAMDUMD(
+            "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
+            "react"
+          ),
+          IMPORTCJSAMDUMD(
+            "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
+            "react-dom"
+          ),
+          IMPORTCJSAMDUMD(
+            "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
+            "react-router-dom"
+          )
+        ]).then(myonloadfunc);
+function myonloadfunc(reactmodulearray) {
+    //   window.React = IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+      console.log(reactmodulearray);
+      const React = reactmodulearray[0].default;
+      const ReactDOM = reactmodulearray[1].default;
+      const ReactRouterDOM = reactmodulearray[2].default;
+      //............................
+      
+      }
+```
 
 按需异步动态加载组件方法
 
@@ -241,8 +270,8 @@ Promise.all([
 
 function myonloadfunc(modulearray) {
         console.log(modulearray)
-      VueRouter = modulearray[0].default;
-      Vue = modulearray[1].default;
+  var    VueRouter = modulearray[0].default;
+   var   Vue = modulearray[1].default;
 //.................................
 }
 ```
