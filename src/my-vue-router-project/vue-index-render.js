@@ -282,7 +282,7 @@
             </nav>
             </div>
             
-            <div class="container" id="my主体" ><router-view /> </div>
+            <div class="container" id="my主体" style="min-width: 100%;padding-top: 53px;"><router-view /> </div>
             
             </div>`,
         name: "App",

@@ -760,7 +760,7 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
                   </nav>
                 </div>
 
-                <div class="container" id="my主体">
+                <div class="container" id="my主体"style="min-width: 100%;padding-top: 53px;">
                   {/* <Suspense fallback={<div>Loading...</div>}> */}
                   <Suspense fallback={<div>loading</div>}>
                     <Switch>
