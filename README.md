@@ -193,7 +193,7 @@ https://masx200.github.io/my-vue-router-project/
 https://masx200.github.io/my-react-router-test/
 
 ## react-router 的单页面应用
-异步动态加载依赖包方法
+异步动态加载UMD的依赖包方法
 
 https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
 
@@ -259,7 +259,7 @@ const about = lazy(() => import("./module-about"));
 
 ## vue-router 的单页面应用
 
-异步动态加载依赖包方法
+异步动态加载es6模块的依赖包方法
 ```javascript
 Promise.all([
           import(
