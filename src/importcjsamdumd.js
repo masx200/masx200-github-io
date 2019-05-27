@@ -3,35 +3,35 @@
  *动态异步加载commonjs和umd和amd模块
  *
  *
- *  
+ *
  * 用法:
- * 
+ *
  * IMPORTCJSAMDUMD('https://cdn.staticfile.org/jquery/3.4.1/jquery.js').then((m)=>{console.log(m.default.fn.jquery)})
- * 
+ *
  * var jquery=IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.jquery
- * 
+ *
  *  Promise.all([IMPORTCJSAMDUMD("https://cdn.bootcss.com/jquery/3.4.1/jquery.js"),IMPORTCJSAMDUMD("https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js"),IMPORTCJSAMDUMD("https://cdn.staticfile.org/vue/2.6.10/vue.min.js")]).then(console.log)
- * 
+ *
  * IMPORTCJSAMDUMD("https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.js").then(console.log)
- * 
- * 
+ *
+ *
  *
  * IMPORTCJSAMDUMD("https://cdn.bootcss.com/underscore.js/1.9.1/underscore-min.js","underscore").then(console.log).catch(console.error)
- * 
- * 
+ *
+ *
  * IMPORTCJSAMDUMD("https://cdn.bootcss.com/jquery/3.4.1/jquery.js",).then(console.log).catch(console.error)
- * 
+ *
  *var jquery= IMPORTCJSAMDUMD.REQUIREPACKAGE("jquery")
- * 
- * 
+ *
+ *
  * var underscore=IMPORTCJSAMDUMD.REQUIREPACKAGE("underscore")
- * 
+ *
  * Promise.all([IMPORTCJSAMDUMD("https://cdn.bootcss.com/jquery/3.4.1/jquery.js","jquery"),IMPORTCJSAMDUMD("https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js","react"),IMPORTCJSAMDUMD("https://cdn.staticfile.org/vue/2.6.10/vue.min.js","vue")]).then(console.log)
- * 
- * 
+ *
+ *
  * 如果要加载es6模块
  * import("https://cdn.staticfile.org/vue/2.6.10/vue.esm.browser.min.js").then(console.log)
- * 
+ *
  *  */
 //就像es6模块的import函数返回promise对象一样
 // window . importcjsamdumd= importcjsamdumd
@@ -50,103 +50,103 @@
       throw new Error("Cannot find module  " + packagename);
     }
   }
- 
+
   function importcjsamdumd(url, packagename = undefined) {
     //   window.GLOBALPACKAGESTORE = window.GLOBALPACKAGESTORE || [];
     url = new URL(url);
     // importcjsamdumd.packagename = packagename;
     function define(name, deps, callback) {
-        define.globalDefQueue = [];
-        //   window.globalDefQueue = globalDefQueue;
-        var op = Object.prototype;
-        var ostring = op.toString;
-        var useInteractive = false;
-        function isArray(it) {
-          return ostring.call(it) === "[object Array]";
-        }
-        function isFunction(it) {
-          return ostring.call(it) === "[object Function]";
-        }
-        var node, context;
-    
-        //Allow for anonymous modules
-        if (typeof name !== "string") {
-          //Adjust args appropriately
-          callback = deps;
-          deps = name;
-          name = null;
-        }
-    
-        //This module may not have dependencies
-        if (!isArray(deps)) {
-          callback = deps;
-          deps = null;
-        }
-    
-        //If no name, and callback is a function, then figure out if it a
-        //CommonJS thing with dependencies.
-        if (!deps && isFunction(callback)) {
-          deps = [];
-          //Remove comments from the callback string,
-          //look for require calls, and pull them into the dependencies,
-          //but only if there are function args.
-          if (callback.length) {
-            callback
-              .toString()
-              .replace(commentRegExp, commentReplace)
-              .replace(cjsRequireRegExp, function(match, dep) {
-                deps.push(dep);
-              });
-    
-            //May be a CommonJS thing even without require calls, but still
-            //could use exports, and module. Avoid doing exports and module
-            //work though if it just needs require.
-            //REQUIRES the function to expect the CommonJS variables in the
-            //order listed below.
-            deps = (callback.length === 1
-              ? ["require"]
-              : ["require", "exports", "module"]
-            ).concat(deps);
-          }
-        }
-    
-        //If in IE 6-8 and hit an anonymous define() call, do the interactive
-        //work.
-        if (useInteractive) {
-          node = currentlyAddingScript || getInteractiveScript();
-          if (node) {
-            if (!name) {
-              name = node.getAttribute("data-requiremodule");
-            }
-            context = contexts[node.getAttribute("data-requirecontext")];
-          }
-        }
-    
-        //Always save off evaluating the def call until the script onload handler.
-        //This allows multiple modules to be in a file without prematurely
-        //tracing dependencies, and allows for anonymous module support,
-        //where the module name is not known until the script onload event
-        //occurs. If no context, use the global queue, and get it processed
-        //in the onscript load callback.
-        if (context) {
-          context.defQueue.push([name, deps, callback]);
-          context.defQueueMap[name] = true;
-        } else {
-          define.globalDefQueue.push([name, deps, callback]);
-        }
-        console.log("检测到amd模块",define.globalDefQueue[0]);
-        if (
-          typeof define.globalDefQueue[0][0] === "string" &&
-          typeof packagename === "undefined"
-        ) {
-          packagename = define.globalDefQueue[0][0];
-        }
-        var canshu = define.globalDefQueue[0][1].map(e => require(e));
-        //   console.log(canshu);
-        define.exports = define.globalDefQueue[0][2](...canshu);
+      define.globalDefQueue = [];
+      //   window.globalDefQueue = globalDefQueue;
+      var op = Object.prototype;
+      var ostring = op.toString;
+      var useInteractive = false;
+      function isArray(it) {
+        return ostring.call(it) === "[object Array]";
       }
-    
-      define.amd = true;
+      function isFunction(it) {
+        return ostring.call(it) === "[object Function]";
+      }
+      var node, context;
+
+      //Allow for anonymous modules
+      if (typeof name !== "string") {
+        //Adjust args appropriately
+        callback = deps;
+        deps = name;
+        name = null;
+      }
+
+      //This module may not have dependencies
+      if (!isArray(deps)) {
+        callback = deps;
+        deps = null;
+      }
+
+      //If no name, and callback is a function, then figure out if it a
+      //CommonJS thing with dependencies.
+      if (!deps && isFunction(callback)) {
+        deps = [];
+        //Remove comments from the callback string,
+        //look for require calls, and pull them into the dependencies,
+        //but only if there are function args.
+        if (callback.length) {
+          callback
+            .toString()
+            .replace(commentRegExp, commentReplace)
+            .replace(cjsRequireRegExp, function(match, dep) {
+              deps.push(dep);
+            });
+
+          //May be a CommonJS thing even without require calls, but still
+          //could use exports, and module. Avoid doing exports and module
+          //work though if it just needs require.
+          //REQUIRES the function to expect the CommonJS variables in the
+          //order listed below.
+          deps = (callback.length === 1
+            ? ["require"]
+            : ["require", "exports", "module"]
+          ).concat(deps);
+        }
+      }
+
+      //If in IE 6-8 and hit an anonymous define() call, do the interactive
+      //work.
+      if (useInteractive) {
+        node = currentlyAddingScript || getInteractiveScript();
+        if (node) {
+          if (!name) {
+            name = node.getAttribute("data-requiremodule");
+          }
+          context = contexts[node.getAttribute("data-requirecontext")];
+        }
+      }
+
+      //Always save off evaluating the def call until the script onload handler.
+      //This allows multiple modules to be in a file without prematurely
+      //tracing dependencies, and allows for anonymous module support,
+      //where the module name is not known until the script onload event
+      //occurs. If no context, use the global queue, and get it processed
+      //in the onscript load callback.
+      if (context) {
+        context.defQueue.push([name, deps, callback]);
+        context.defQueueMap[name] = true;
+      } else {
+        define.globalDefQueue.push([name, deps, callback]);
+      }
+      console.log("检测到amd模块", define.globalDefQueue[0]);
+      if (
+        typeof define.globalDefQueue[0][0] === "string" &&
+        typeof packagename === "undefined"
+      ) {
+        packagename = define.globalDefQueue[0][0];
+      }
+      var canshu = define.globalDefQueue[0][1].map(e => require(e));
+      //   console.log(canshu);
+      define.exports = define.globalDefQueue[0][2](...canshu);
+    }
+
+    define.amd = true;
     return new Promise((resolve, reject) => {
       try {
         (async () => {
@@ -207,7 +207,11 @@
           // console.log(exportmodule);
           // exports = exportmodule[0];
           // module.exports = exportmodule[1];
-          var moduleexport = {};
+          var moduleexport = {
+            name: undefined,
+            default: undefined,
+            url: undefined
+          };
           // console.log(
           //   "exports",
           //   exports,
@@ -227,32 +231,37 @@
             JSON.stringify(exportmodule[0]) !== "{}" ||
             Object.keys(exportmodule[0]).length
           ) {
-            console.log("检测到umd模块",url);
+            console.log("检测到umd模块", url);
             moduleexport.default = exportmodule[0];
           } else if (
             typeof exportmodule[1] !== "object" ||
             JSON.stringify(exportmodule[1]) !== "{}" ||
             Object.keys(exportmodule[1]).length
           ) {
-            console.log("检测到cjs模块",url);
+            console.log("检测到cjs模块", url);
             moduleexport.default = exportmodule[1];
           } else if (
             typeof define.exports !== "object" ||
             JSON.stringify(define.exports) !== "{}" ||
             Object.keys(define.exports).length
           ) {
-            console.log("检测到amd模块",url);
+            console.log("检测到amd模块", url);
             moduleexport.default = define.exports;
           }
           if (typeof packagename !== "undefined") {
-            moduleexport.name=packagename
+            moduleexport.name = packagename;
             importcjsamdumd.GLOBALPACKAGESTORE[packagename] =
               moduleexport.default;
-          }else{
-            moduleexport.name=undefined
+          } else {
+            moduleexport.name = undefined;
           }
-          moduleexport.url=url
-          console.log("GLOBALPACKAGESTORE", importcjsamdumd.GLOBALPACKAGESTORE);
+          moduleexport.url = url;
+          if(typeof moduleexport.default !=="undefined"){
+            console.log("GLOBALPACKAGESTORE", importcjsamdumd.GLOBALPACKAGESTORE);
+          }else{
+              console.warn("加载的模块没有输出",url)
+          }
+         
           resolve(moduleexport);
         })();
       } catch (e) {
