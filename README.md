@@ -194,6 +194,8 @@ https://masx200.github.io/my-react-router-test/
 
 ## react-router 的单页面应用
 
+
+
 按需异步动态加载组件方法
 
 ```javascript
@@ -228,6 +230,22 @@ const about = lazy(() => import("./module-about"));
 
 ## vue-router 的单页面应用
 
+异步动态加载依赖包方法
+```javascript
+Promise.all([
+          import(
+            `https://cdn.staticfile.org/vue-router/3.0.6/vue-router.esm.browser.min.js`
+          ),
+          import(`https://cdn.staticfile.org/vue/2.6.10/vue.esm.browser.min.js`)
+        ]).then(myonloadfunc);
+
+function myonloadfunc(modulearray) {
+        console.log(modulearray)
+      VueRouter = modulearray[0].default;
+      Vue = modulearray[1].default;
+//.................................
+}
+```
 按需异步动态加载组件方法
 
 ```javascript
