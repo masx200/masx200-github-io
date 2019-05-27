@@ -151,7 +151,9 @@ function importcjsamdumd(url, packagename = undefined) {
           if (typeof define.globalDefQueue[0][0] === "string") {
             packagename = define.globalDefQueue[0][0];
           }
-          define.exports = define.globalDefQueue[0][2]();
+          var canshu = define.globalDefQueue[0][1].map(e => require(e));
+          console.log(canshu);
+          define.exports = define.globalDefQueue[0][2](...canshu);
         }
 
         define.amd = true;
@@ -219,7 +221,7 @@ function importcjsamdumd(url, packagename = undefined) {
         if (typeof packagename !== "undefined") {
           window.globalpackagestore[packagename] = moduleexport.default;
         }
-        console.log(window.globalpackagestore);
+        console.log("globalpackagestore", window.globalpackagestore);
         resolve(moduleexport);
       })();
     } catch (e) {
