@@ -252,10 +252,13 @@ import regeneratorRuntime from "regenerator-runtime";
             Object.keys(define.exports).length
           ); */
           //   if(){
-        //   console.log(typeof exportmodule);
+          //   console.log(typeof exportmodule);
           //   }
-          if(typeof exportmodule==="undefined"){
+          if (typeof exportmodule === "undefined") {
             var exportmodule = [{}, {}];
+          }
+          if (typeof define.exports === "undefined") {
+            define.exports = {};
           }
           console.log(exportmodule[0], exportmodule[1], define.exports);
           if (
@@ -280,6 +283,13 @@ import regeneratorRuntime from "regenerator-runtime";
             console.log("检测到amd模块", url);
             moduleexport.default = define.exports;
           }
+
+          if (typeof Symbol !== "undefined" && Symbol.toStringTag) {
+            Object.defineProperty(moduleexport, Symbol.toStringTag, {
+              value: "Module"
+            });
+          }
+
           if (typeof packagename !== "undefined") {
             moduleexport.name = packagename;
             importcjsamdumd.GLOBALPACKAGESTORE[packagename] =
