@@ -148,6 +148,9 @@ function importcjsamdumd(url, packagename = undefined) {
             define.globalDefQueue.push([name, deps, callback]);
           }
           console.log(define.globalDefQueue[0]);
+          if (typeof define.globalDefQueue[0][0] === "string") {
+            packagename = define.globalDefQueue[0][0];
+          }
           define.exports = define.globalDefQueue[0][2]();
         }
 
@@ -216,7 +219,7 @@ function importcjsamdumd(url, packagename = undefined) {
         if (typeof packagename !== "undefined") {
           window.globalpackagestore[packagename] = moduleexport.default;
         }
-
+        console.log(window.globalpackagestore);
         resolve(moduleexport);
       })();
     } catch (e) {
