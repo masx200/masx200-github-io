@@ -109,7 +109,7 @@ import regeneratorRuntime from "regenerator-runtime";
       if ("function" == typeof jQuery) {
         console.log("当前的jquery版本号为" + jQuery.fn.jquery);
       }
-      new Promise(resolve => {
+     /* new Promise(resolve => {
         if ("function" !== typeof jQuery) {
           importjquery();
         } else {
@@ -119,7 +119,7 @@ import regeneratorRuntime from "regenerator-runtime";
           }
         }
         resolve();
-      });
+      });*/
 
       document.write = t => {
         if (jQuery.fn.jquery[0] < 3) {
