@@ -10,9 +10,9 @@
 导入模块方法 
 
 
-```javascript
-import("https://masx200.github.io/src/点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新.es6m.min.js").then(m=>m.default())
-```   
+
+https://masx200.github.io/src/点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新.min.js
+
 
 
 https://github.com/masx200/masx200.github.io/blob/master/src/readme.md
