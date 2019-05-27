@@ -3,6 +3,7 @@
 //就像es6模块的import函数返回promise对象一样
 
 function importcjsamdumd(url) {
+  url = new URL(url);
   return new Promise((resolve, reject) => {
     try {
       (async () => {
@@ -81,9 +82,11 @@ function importcjsamdumd(url) {
           // }
 
           var moduleexport = {};
-          if (Object.keys(exports)) {
+          console.log("exports",exports,"module.exports",module.exports)
+        //   console.log()
+          if (Object.keys(exports).length) {
             moduleexport.default = exports;
-          } else if (Object.keys(module.exports)) {
+          } else if (Object.keys(module.exports).length) {
             moduleexport.default = module.exports;
           }
           return moduleexport;
