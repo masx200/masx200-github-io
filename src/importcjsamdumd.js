@@ -256,12 +256,17 @@
             moduleexport.name = undefined;
           }
           moduleexport.url = url;
-          if(typeof moduleexport.default !=="undefined"){
-            console.log("GLOBALPACKAGESTORE", importcjsamdumd.GLOBALPACKAGESTORE);
-          }else{
-              console.warn("加载的模块没有输出",url)
+          if (typeof moduleexport.default !== "undefined") {
+            if (typeof moduleexport.name !== "undefined") {
+              console.log(
+                "GLOBALPACKAGESTORE",
+                importcjsamdumd.GLOBALPACKAGESTORE
+              );
+            }
+          } else {
+            console.warn("加载的模块没有输出", url);
           }
-         
+
           resolve(moduleexport);
         })();
       } catch (e) {
