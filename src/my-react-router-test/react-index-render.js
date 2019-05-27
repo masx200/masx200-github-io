@@ -1,3 +1,4 @@
+import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 // import { async } from "q";
 // import regeneratorRuntime from "regenerator-runtime"
 
@@ -22,7 +23,21 @@
       if (haverun == 0) {
         haverun = 1;
         console.log("开始运行此onload函数");
-        myonloadfunc();
+        // myonloadfunc();
+        Promise.all([
+          IMPORTCJSAMDUMD(
+            "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
+            "react"
+          ),
+          IMPORTCJSAMDUMD(
+            "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
+            "react-dom"
+          ),
+          IMPORTCJSAMDUMD(
+            "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
+            "react-router-dom"
+          )
+        ]).then(myonloadfunc);
       } else {
         console.log("不要重复运行此onload函数");
       }
@@ -35,8 +50,13 @@
     //     herewindowonload();
     //   }, 1000);
 
-    function myonloadfunc() {
-        const render=ReactDOM.render
+    function myonloadfunc(reactmodulearray) {
+    //   window.React = IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+      console.log(reactmodulearray);
+      const React = reactmodulearray[0].default;
+      const ReactDOM = reactmodulearray[1].default;
+      const ReactRouterDOM = reactmodulearray[2].default;
+      const render = ReactDOM.render;
       const { Link, Switch, BrowserRouter, Route, Redirect } = ReactRouterDOM;
       const { Suspense, lazy } = React;
       const home = lazy(() => import("./react-module-home.js"));

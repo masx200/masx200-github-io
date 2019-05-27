@@ -1,3 +1,6 @@
+//由于使用了async函数所以需要regeneratorRuntime
+import regeneratorRuntime from "regenerator-runtime";
+
 //包装cjs和amd和umd模块为异步加载promise方法
 /**
  *动态异步加载commonjs和umd和amd模块
@@ -152,11 +155,14 @@
         (async () => {
           try {
             var response = await fetch(url);
-
+            if (!response.ok) {
+              throw new Error("fetch failed " + url);
+            }
             var scripttext = await response.text();
           } catch (e) {
             console.error(e);
             reject(e);
+            return;
           }
 
           var exports = {};
@@ -173,7 +179,24 @@
               exports,
               scripttext
             ) {
-              eval(scripttext);
+            //   console.log(
+            //     Function(
+            //         "require",
+            //         "define",
+            //         "module",
+            //         "exports",
+            //         scripttext + `; return [exports, module.exports];`
+            //       ).toString()
+            //   );
+              //   eval(scripttext);
+              /* 有的网站安全考虑不能运行eval */
+              return Function(
+                "require",
+                "define",
+                "module",
+                "exports",
+                scripttext + `; return [exports, module.exports];`
+              )(require, define, module, exports);
               // for (let __key__ in module.exports ){
               //     module[__key__]=module.exports[__key__]
               // }
@@ -196,11 +219,12 @@
               //     // globalDefQueue[2]
               //   );
 
-              return [exports, module.exports];
+              //   return [exports, module.exports];
             })(require, define, module, exports, scripttext);
           } catch (e) {
             console.error(e);
             reject(e);
+            return;
           }
 
           // console.log(define.exports);
@@ -226,24 +250,25 @@
             Object.keys(exportmodule[1]).length,
             Object.keys(define.exports).length
           ); */
+          console.log(exportmodule[0], exportmodule[1], define.exports);
           if (
             typeof exportmodule[0] !== "object" ||
-            JSON.stringify(exportmodule[0]) !== "{}" ||
-            Object.keys(exportmodule[0]).length
+            Object.keys(exportmodule[0]).length ||
+            JSON.stringify(exportmodule[0]) !== "{}"
           ) {
             console.log("检测到umd模块", url);
             moduleexport.default = exportmodule[0];
           } else if (
             typeof exportmodule[1] !== "object" ||
-            JSON.stringify(exportmodule[1]) !== "{}" ||
-            Object.keys(exportmodule[1]).length
+            Object.keys(exportmodule[1]).length ||
+            JSON.stringify(exportmodule[1]) !== "{}"
           ) {
             console.log("检测到cjs模块", url);
             moduleexport.default = exportmodule[1];
           } else if (
             typeof define.exports !== "object" ||
-            JSON.stringify(define.exports) !== "{}" ||
-            Object.keys(define.exports).length
+            Object.keys(define.exports).length ||
+            JSON.stringify(define.exports) !== "{}"
           ) {
             console.log("检测到amd模块", url);
             moduleexport.default = define.exports;

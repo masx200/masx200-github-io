@@ -1,3 +1,21 @@
+// IMPORTCJSAMDUMD(
+//     "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
+//     "react"
+//   ).then(
+
+
+//     reactmoduleload
+//   )
+
+// function reactmoduleload(module){
+// console.log(window)
+// React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
+
+
+// console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
+
+var React=window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react
+
 function tanchu弹出消息通用(infotype) {
   // var id=Math.random()*100000000|0
   var textinfo;
@@ -271,3 +289,4 @@ export default class rssreader extends React.Component {
 function refreshall() {
   $("#allnavbar").click();
 }
+// }
