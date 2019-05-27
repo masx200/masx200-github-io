@@ -171,23 +171,24 @@ import regeneratorRuntime from "regenerator-runtime";
           };
           define.exports = {};
           // var globalDefQueue = [];
+          var exportmodule = [{}, {}];
           try {
-            var exportmodule = (function(
+            exportmodule = (function(
               require,
               define,
               module,
               exports,
               scripttext
             ) {
-            //   console.log(
-            //     Function(
-            //         "require",
-            //         "define",
-            //         "module",
-            //         "exports",
-            //         scripttext + `; return [exports, module.exports];`
-            //       ).toString()
-            //   );
+              //   console.log(
+              //     Function(
+              //         "require",
+              //         "define",
+              //         "module",
+              //         "exports",
+              //         scripttext + `; return [exports, module.exports];`
+              //       ).toString()
+              //   );
               //   eval(scripttext);
               /* 有的网站安全考虑不能运行eval */
               return Function(
@@ -250,6 +251,12 @@ import regeneratorRuntime from "regenerator-runtime";
             Object.keys(exportmodule[1]).length,
             Object.keys(define.exports).length
           ); */
+          //   if(){
+        //   console.log(typeof exportmodule);
+          //   }
+          if(typeof exportmodule==="undefined"){
+            var exportmodule = [{}, {}];
+          }
           console.log(exportmodule[0], exportmodule[1], define.exports);
           if (
             typeof exportmodule[0] !== "object" ||
