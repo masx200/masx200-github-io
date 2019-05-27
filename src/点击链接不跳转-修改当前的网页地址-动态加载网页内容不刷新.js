@@ -114,7 +114,7 @@ import regeneratorRuntime from "regenerator-runtime";
           importjquery();
         } else {
           /* 判断jquery版本号 */
-          if (jQuery.fn.jquery[0] < 3) {
+   /*       if (jQuery.fn.jquery[0] < 3) {
             importjquery();
           }
         }
