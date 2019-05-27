@@ -44,9 +44,9 @@
     // window.mychangemenu = function () {
 
     function myonloadfunc(modulearray) {
-        console.log(modulearray)
-      VueRouter = modulearray[0].default;
-      Vue = modulearray[1].default;
+      console.log(modulearray);
+      var VueRouter = modulearray[0].default;
+      var Vue = modulearray[1].default;
       Vue.config.productionTip = false;
       Vue.config.silent = true;
       Vue.config.devtools = true;
