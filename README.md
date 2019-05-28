@@ -12,6 +12,20 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 
 https://github.com/masx200/masx200.github.io/blob/master/src/%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js
 
+## IMPORTCJSAMDUMD
+
+https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
+
+动态异步加载" commonjs "和 "umd "和 "amd" 模块 ,包装" cjs "和 "amd "和 "umd" 模块为异步加载" promise" 方法,使用" fetch "方法来获取指定的模块包源代码 ， 可以把模块放入模块仓库中，
+
+并且解决了包之间的依赖关系，如果依赖包当中的 "require" 函数需要，则在模块仓库中引入需要的模块包
+
+定义了模块包的" define "方法，"require "方法，"module.exports "对象和 "exports "对象
+
+"IMPORTCJSAMDUMD" 的函数功能类似于"systemjs"的 "system.import" 函数，
+
+"IMPORTCJSAMDUMD "的定义的"define"函数基于"requirejs"的 "define"函数
+
 ## 介绍大概和注意
 点击链接不跳转修改当前的网页地址动态加载网页内容不刷新
 
@@ -209,19 +223,7 @@ The function of IMPORTCJSAMDUMD is similar to the "system.import" function of "s
 The "define" function defined by IMPORTCJSAMDUMD is based on the "define" function of requirejs.
 
 
-## IMPORTCJSAMDUMD
 
-https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
-
-动态异步加载" commonjs "和 "umd "和 "amd" 模块 ,包装" cjs "和 "amd "和 "umd" 模块为异步加载" promise" 方法,使用" fetch "方法来获取指定的模块包源代码 ， 可以把模块放入模块仓库中，
-
-并且解决了包之间的依赖关系，如果依赖包当中的 "require" 函数需要，则在模块仓库中引入需要的模块包
-
-定义了模块包的" define "方法，"require "方法，"module.exports "对象和 "exports "对象
-
-"IMPORTCJSAMDUMD" 的函数功能类似于"systemjs"的 "system.import" 函数，
-
-"IMPORTCJSAMDUMD "的定义的"define"函数基于"requirejs"的 "define"函数
 
 ## react-router 的单页面应用
 
