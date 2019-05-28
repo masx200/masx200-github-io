@@ -361,25 +361,27 @@ import regeneratorRuntime from "regenerator-runtime";
         替换a链接();
       }
       window.addEventListener("popstate", onpopstatehandler);
-      script加载完成.script完成数量 = script加载完成.script总数量 = 0;
+      var script完成数量="script完成数量"
+      var script总数量="script总数量"
+      script加载完成[script完成数量]= script加载完成[script总数量] = 0;
 
       function script加载完成(urlortext) {
-        //   script加载完成.script完成数量, script加载完成.script总数量;
-        if (script加载完成.script完成数量 === 0) scrollTo(0, 0);
+        //   script加载完成[script完成数量], script加载完成[script总数量];
+        if (script加载完成[script完成数量]=== 0) scrollTo(0, 0);
         //   console.log("滚动到顶部")
         替换a链接();
-        script加载完成.script完成数量++;
+        script加载完成[script完成数量]++;
         console.log(
           "script完成数量",
-          script加载完成.script完成数量,
+          script加载完成[script完成数量],
           "script总数量",
-          script加载完成.script总数量,
+          script加载完成[script总数量],
           "script加载完成",
           urlortext
         );
         //   console.log("script加载完成", urlortext);
         /* script完成数量 可能大于 script总数量 */
-        if (script加载完成.script完成数量 >= script加载完成.script总数量) {
+        if (script加载完成[script完成数量]>= script加载完成[script总数量]) {
           requestAnimationFrame(() => {
             console.log("触发window的allscriptloadformsrc事件");
             window.dispatchEvent(new Event("allscriptloadformsrc"));
@@ -729,23 +731,25 @@ import regeneratorRuntime from "regenerator-runtime";
       //         }
       //       }, 300); */
       // } */
-      单个stylesheet加载完成.完成linkstylesheet = 单个stylesheet加载完成.数量linkstylesheet = 0;
+      var 完成linkstylesheet="完成linkstylesheet"
+      var 数量linkstylesheet="数量linkstylesheet"
+      单个stylesheet加载完成[完成linkstylesheet] = 单个stylesheet加载完成[数量linkstylesheet] = 0;
 
       function 单个stylesheet加载完成(fileurl) {
         替换a链接();
-        单个stylesheet加载完成.完成linkstylesheet++;
+        单个stylesheet加载完成[完成linkstylesheet]++;
         console.log(
           "完成linkstylesheet",
-          单个stylesheet加载完成.完成linkstylesheet,
+          单个stylesheet加载完成[完成linkstylesheet],
           "数量linkstylesheet",
-          单个stylesheet加载完成.数量linkstylesheet,
+          单个stylesheet加载完成[数量linkstylesheet],
           "stylesheet加载完成",
           fileurl
         );
 
         if (
-          单个stylesheet加载完成.完成linkstylesheet >=
-          单个stylesheet加载完成.数量linkstylesheet
+          单个stylesheet加载完成[完成linkstylesheet] >=
+          单个stylesheet加载完成[数量linkstylesheet]
         ) {
           requestAnimationFrame(() => {
             console.log("触发window的allstylesheetload事件");
@@ -760,10 +764,10 @@ import regeneratorRuntime from "regenerator-runtime";
       function 失败StyleSheet(fileurl) {
         /* 如果加载失败也要触发事件 */
         console.warn("加载失败" + fileurl);
-        单个stylesheet加载完成.完成linkstylesheet++;
+        单个stylesheet加载完成[完成linkstylesheet]++;
         if (
-          单个stylesheet加载完成.完成linkstylesheet >=
-          单个stylesheet加载完成.数量linkstylesheet
+          单个stylesheet加载完成[完成linkstylesheet] >=
+          单个stylesheet加载完成[数量linkstylesheet]
         ) {
           requestAnimationFrame(() => {
             console.log("触发window的allstylesheetload事件");
@@ -775,8 +779,8 @@ import regeneratorRuntime from "regenerator-runtime";
       function 失败scriptsrc(fileurl) {
         /* 如果加载失败也要触发事件 */
         console.warn("加载失败" + fileurl);
-        script加载完成.script完成数量++;
-        if (script加载完成.script完成数量 >= script加载完成.script总数量) {
+        script加载完成[script完成数量]++;
+        if (script加载完成[script完成数量]>= script加载完成[script总数量]) {
           requestAnimationFrame(() => {
             window.dispatchEvent(new Event("allscriptloadformsrc"));
             console.log("触发window的allscriptloadformsrc事件");
@@ -789,10 +793,10 @@ import regeneratorRuntime from "regenerator-runtime";
       }
 
       async function 动态加载网页内容不刷新(url = location.href) {
-        单个stylesheet加载完成.数量linkstylesheet = 0;
-        单个stylesheet加载完成.完成linkstylesheet = 0;
-        script加载完成.script总数量 = 0;
-        script加载完成.script完成数量 = 0;
+        单个stylesheet加载完成[数量linkstylesheet] = 0;
+        单个stylesheet加载完成[完成linkstylesheet] = 0;
+        script加载完成[script总数量] = 0;
+        script加载完成[script完成数量]= 0;
         //   document.charset = "UTF-8";
         /*  if (typeof url === "undefined") {
               url = location.href;
@@ -1069,8 +1073,8 @@ import regeneratorRuntime from "regenerator-runtime";
 
             /* 把源代码中的body的style也加载到document的body中 */
 
-            单个stylesheet加载完成.完成linkstylesheet = 0;
-            单个stylesheet加载完成.数量linkstylesheet = Array.from(
+            单个stylesheet加载完成[完成linkstylesheet] = 0;
+            单个stylesheet加载完成[数量linkstylesheet] = Array.from(
               myhtmldata.querySelectorAll("link[rel='stylesheet']")
             ).length;
 
@@ -1105,7 +1109,7 @@ import regeneratorRuntime from "regenerator-runtime";
                   )
                 });
               } else {
-                单个stylesheet加载完成.数量linkstylesheet--;
+                单个stylesheet加载完成[数量linkstylesheet]--;
               }
 
               //   console.log("添加css元素到head", e.outerHTML);
@@ -1159,8 +1163,8 @@ import regeneratorRuntime from "regenerator-runtime";
 
             console.log("添加其他元素到head", 添加元素到head数组);
 
-            script加载完成.script完成数量 = 0;
-            script加载完成.script总数量 = Array.from(
+            script加载完成[script完成数量]= 0;
+            script加载完成[script总数量] = Array.from(
               myhtmldata.querySelectorAll("script")
             ).length;
             var 添加文本script元素数组 = [];
@@ -1222,9 +1226,9 @@ import regeneratorRuntime from "regenerator-runtime";
                   //                       添加script元素数组
                   //                     );
                   //                   }
-                  //                   script加载完成.script总数量--; */
+                  //                   script加载完成[script总数量]--; */
 
-                  /* script加载完成.script完成数量++; */
+                  /* script加载完成[script完成数量]++; */
                 }
               } else {
                 /* 不是javascript文件的script */
@@ -1238,19 +1242,19 @@ import regeneratorRuntime from "regenerator-runtime";
                   name: "添加script元素",
                   text: e.outerHTML
                 });
-                // script加载完成.script完成数量++;
+                // script加载完成[script完成数量]++;
                 document.getElementsByTagName("head")[0].appendChild(e);
-                script加载完成.script总数量--;
+                script加载完成[script总数量]--;
               }
               /*  console.log(
                             "script总数量",
-                            script加载完成.script总数量,
+                            script加载完成[script总数量],
                             "script完成数量",
-                            script加载完成.script完成数量
+                            script加载完成[script完成数量]
                           ); */
               /* 居然有的网站都没有通过src加载的script元素!,全都用文本的script而且还全都是document.write! */
               //   if (
-              //     script加载完成.script总数量 === script加载完成.script完成数量
+              //     script加载完成[script总数量] === script加载完成[script完成数量]
               //   ) {
               //     script加载完成();
               //   }
@@ -1259,7 +1263,7 @@ import regeneratorRuntime from "regenerator-runtime";
             console.log("添加通过src加载的script元素", 添加script元素数组);
 
             script文本内容数组.forEach(() => {
-              script加载完成.script总数量--;
+              script加载完成[script总数量]--;
             });
             if (添加script元素数组.length === 0) script加载完成();
             // var 添加文本script元素数组 = [];
@@ -1279,7 +1283,7 @@ import regeneratorRuntime from "regenerator-runtime";
                 // loadscripttext(e.innerHTML, loadid);
                 /*  script加载完成 */
 
-                // script加载完成.script总数量--;
+                // script加载完成[script总数量]--;
               });
               console.log(
                 "添加文本内容加载的script元素",

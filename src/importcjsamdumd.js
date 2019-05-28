@@ -1,4 +1,4 @@
-import sha256 from "./sha256.min"
+import sha256 from "./sha256.min";
 //由于使用了async函数所以需要regeneratorRuntime//
 //import regeneratorRuntime from "regenerator-runtime";
 
@@ -114,13 +114,12 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
   //   try {
   //     console.log(global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE);
   //   } catch (error) {}
-//   if (typeof global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.sha256 === "undefined") {
-//     importcjsamdumd(
-//       "https://cdn.staticfile.org/js-sha256/0.9.0/sha256.min.js",
-//       "sha256"
-//     );
-//   }
-
+  //   if (typeof global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.sha256 === "undefined") {
+  //     importcjsamdumd(
+  //       "https://cdn.staticfile.org/js-sha256/0.9.0/sha256.min.js",
+  //       "sha256"
+  //     );
+  //   }
 
   function require(packagename = undefined) {
     var findpackage = global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[packagename];
@@ -286,7 +285,7 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
                       "define",
                       "module",
                       "exports",
-                      scripttext + `; return [exports, module.exports];`
+                  ` \/\* ${url} \*\/`+";\n"+   scripttext + `;\n return [exports, module.exports]; \n`+ ` \/\* ${url} \*\/`
                     )(require, define, module, exports);
                     // for (let __key__ in module.exports ){
                     //     module[__key__]=module.exports[__key__]
@@ -350,7 +349,12 @@ console.log(
                 if (typeof define.exports === "undefined") {
                   define.exports = {};
                 }
-                console.log("模块的输出为",exportmodule[0], exportmodule[1], define.exports);
+                console.log(
+                  "模块的输出为",
+                  exportmodule[0],
+                  exportmodule[1],
+                  define.exports
+                );
                 if (
                   typeof exportmodule[0] !== "object" ||
                   Object.keys(exportmodule[0]).length ||
@@ -372,6 +376,10 @@ console.log(
                 ) {
                   console.log("检测到amd模块", url);
                   moduleexport.default = define.exports;
+                }else{
+                    console.warn("加载的模块没有输出", url);
+                    resolve(moduleexport)
+                    return
                 }
 
                 if (typeof Symbol !== "undefined" && Symbol.toStringTag) {
@@ -379,22 +387,24 @@ console.log(
                     value: "Module"
                   });
                 }
-
+                moduleexport.sha256 = sha256(url);
                 if (typeof packagename !== "undefined") {
-
-
-                    /* 修改模块仓库里面存放模块,而不是模块的默认输出 */
+                  /* 修改模块仓库里面存放模块,而不是模块的默认输出 */
                   moduleexport.name = packagename;
-                //   global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[packagename] =
-                //     moduleexport.default;
+                  //   global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[packagename] =
+                  //     moduleexport.default;
 
-                global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[packagename] =
-                    moduleexport;
+                  global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[
+                    packagename
+                  ] = moduleexport;
                 } else {
                   /* 如果存在不要重复加载了sha256 */
-
+                  moduleexport.name = sha256(url);
+                  global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[
+                    sha256(url)
+                  ] = moduleexport;
                   /* 如果没有指定模块的名字则把url转成Sha256作为名字 */
-                  moduleexport.name = undefined;
+                  //   moduleexport.name = undefined;
                 }
                 moduleexport.url = url;
                 if (typeof moduleexport.default !== "undefined") {
