@@ -1,21 +1,45 @@
 {
-  "name": "masx200.github.io",
-  "version": "1.0.0",
-  "description": "masx200 的 github",
-  "scripts": {
-    "start": "live-server ./ --port=9090"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/masx200/masx200.github.io.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/masx200/masx200.github.io/issues"
-  },
-  "homepage": "https://github.com/masx200/masx200.github.io#readme",
-  "dependencies": {
-    "live-server": "^1.2.1"
-  }
+    "name": "masx200.github.io",
+    "version": "1.0.0",
+    "description": "masx200 的 github",
+    "scripts": {
+        "build": "parcel build ./src/index.html --no-source-maps  --out-dir ./",
+        "start": "parcel ./src/index.html  --out-dir ./src/dist/",
+        "server": "live-server ./ --port=9090"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/masx200/masx200.github.io.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/masx200/masx200.github.io/issues"
+    },
+    "homepage": "https://github.com/masx200/masx200.github.io#readme",
+    "dependencies": {
+        "cssnano": "^4.1.10",
+        "parcel-bundler": "^1.12.3",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "regenerator": "^0.14.1",
+        "vue": "^2.6.10",
+        "@babel/preset-env": "^7.4.5",
+        "@babel/core": "^7.4.5",
+        "live-server": "^1.2.1"
+    },
+    "babel": {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "edge": "18",
+                        "firefox": "66",
+                        "chrome": "75"
+                    }
+                }
+            ]
+        ]
+    }
 }

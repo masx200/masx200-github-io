@@ -64,7 +64,7 @@ import "../拉伸导航栏与主体部分的顶部距离.js";
         $2("input").value,
         $2("eval").checked,
 
-        $("#jsfuckscript").attr("src")
+        // $("#jsfuckscript").attr("src")
       ]);
       myservice.onmessage = e => {
         var output = e.data;

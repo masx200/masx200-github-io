@@ -1,7 +1,7 @@
 // React=IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
-var  React=window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react
+var  React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 export default class home extends React.Component {
   componentWillMount() {}
   componentDidMount() {

@@ -17,13 +17,16 @@ import hieroglyphy from "./hieroglyphy.js";
 //   var hieroglyphy = import("hieroglyphy.js");
 // console.log(this,)
 addEventListener("message", e => {
-    // var hieroglyphy = WorkerGlobalScope.hieroglyphy;
+  // var hieroglyphy = WorkerGlobalScope.hieroglyphy;
   //   console.log( (typeof window !== 'undefined' ? window : false) ||
   //   (typeof WorkerGlobalScope !== 'undefined' ? WorkerGlobalScope : false))
   var d = e.data;
 
   console.log("副线程" + "从主线程接收" + "event.data\n");
   console.log(...d);
+//   if (typeof hieroglyphy === "undefined") {
+//     var hieroglyphy = d[2];
+//   }
 
   //   importScripts(d[2]);
   //   var hieroglyphy = WorkerGlobalScope.hieroglyphy;

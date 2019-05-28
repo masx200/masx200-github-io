@@ -14,7 +14,7 @@
 
 // console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
 
-var React=window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react
+var React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 
 function tanchu弹出消息通用(infotype) {
   // var id=Math.random()*100000000|0

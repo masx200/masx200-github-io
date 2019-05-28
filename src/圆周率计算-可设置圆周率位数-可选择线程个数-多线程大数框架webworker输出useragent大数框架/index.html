@@ -4,8 +4,8 @@
 <head>
     <link rel="prefetch" href="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js">
     <link rel="prefetch" href="./pi-calc-render.js" />
-    <link rel="prefetch" href="./mythread1-bigint.js" />
-    <link rel="prefetch" href="./mythread1-decimal.js" />
+    <link rel="prefetch" href="./service-worker-mythread1-bigint.js" />
+    <link rel="prefetch" href="./service-worker-mythread1-decimal.js" />
     <link rel="prefetch" href="https://cdn.staticfile.org/jqueryui/1.12.1/jquery-ui.min.js" />
     <link rel="prefetch" href="https://cdn.staticfile.org/jqueryui/1.12.1/jquery-ui.min.js" />
     <link rel="prefetch" href="https://cdn.staticfile.org/marked/0.6.2/marked.min.js" />
@@ -56,13 +56,14 @@
         } */
     </style>
     <title>圆周率计算多线程</title>
-    <script src="https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js" type="text/javascript"
-        charset="utf-8"></script>
+    <!-- 模块化改造 -->
+    <!-- <script src="https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js" type="text/javascript"
+        charset="utf-8"></script> -->
     <!-- <script defer charset="utf-8" src="./mypidashujisuan-decimal.js"></script> -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta charset="utf-8" />
-    <script src="https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js"></script>
+    <!-- <script src="https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js"></script> -->
     <script src="https://cdn.staticfile.org/mui/3.7.1/js/mui.min.js"></script>
     <link rel="stylesheet" href="https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css" />
     <script async src="pi-calc-render.js"></script>
