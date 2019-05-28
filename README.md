@@ -194,21 +194,37 @@ https://masx200.github.io/my-react-router-test/
 
 
 
+## IMPORTCJSAMDUMD
 
+https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
+
+Dynamically asynchronously load commonjs and umd and amd modules, wrap cjs and amd and umd modules to load the promise method asynchronously, use the fetch method to get the specified module package source code, and put the module into the module repository.
+
+And solve the dependencies between the packages, if the "require" function in the dependent package needs, then introduce the required module package in the module repository
+
+Defines the "define" method of the module package, the "require" method, the "module.exports" object, and the "exports" object
+
+The function of IMPORTCJSAMDUMD is similar to the "system.import" function of "systemjs".
+
+The "define" function defined by IMPORTCJSAMDUMD is based on the "define" function of requirejs.
 
 
 ## IMPORTCJSAMDUMD
 
+https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
 
+动态异步加载" commonjs "和 "umd "和 "amd" 模块 ,包装" cjs "和 "amd "和 "umd" 模块为异步加载" promise" 方法,使用" fetch "方法来获取指定的模块包源代码 ， 可以把模块放入模块仓库中，
 
+并且解决了包之间的依赖关系，如果依赖包当中的 "require" 函数需要，则在模块仓库中引入需要的模块包
 
-动态异步加载 commonjs 和 umd 和 amd 模块 ,包装 cjs 和 amd 和 umd 模块为异步加载 promise 方法,使用 fetch 方法来获取指定的模块包源代码 ， 可以把模块放入模块仓库中，
+定义了模块包的" define "方法，"require "方法，"module.exports "对象和 "exports "对象
 
-并且解决了包之间的依赖关系，如果依赖包当中的 require 函数需要，则在模块仓库中引入需要的模块包
+"IMPORTCJSAMDUMD" 的函数功能类似于"systemjs"的 "system.import" 函数，
 
-定义了模块包的 define 方法，require 方法，module.exports 对象和 exports 对象
+"IMPORTCJSAMDUMD "的定义的"define"函数基于"requirejs"的 "define"函数
 
 ## react-router 的单页面应用
+
 异步动态加载UMD的依赖包方法
 
 https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
@@ -216,22 +232,27 @@ https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
 ```javascript
 
 import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
-Promise.all([
-          IMPORTCJSAMDUMD(
+(async () => {
+          const react = await IMPORTCJSAMDUMD(
             "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
             "react"
-          ),
-          IMPORTCJSAMDUMD(
-            "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
-            "react-dom"
-          ),
-          IMPORTCJSAMDUMD(
-            "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
-            "react-router-dom"
-          )
-        ]).then(myonloadfunc);
+          );
+          const [reactdom, reactrouterdom] = await Promise.all([
+            IMPORTCJSAMDUMD(
+              "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
+              "react-dom"
+            ),
+            IMPORTCJSAMDUMD(
+              "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
+              "react-router-dom"
+            )
+          ]);
+          
+          var reactmodulearray = [react, reactdom, reactrouterdom];
+          myonloadfunc(reactmodulearray);
+          })();
 function myonloadfunc(reactmodulearray) {
-    //   window.React = IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+    
       console.log(reactmodulearray);
       const React = reactmodulearray[0].default;
       const ReactDOM = reactmodulearray[1].default;
@@ -275,7 +296,10 @@ const about = lazy(() => import("./module-about"));
 
 ## vue-router 的单页面应用
 
+https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
+
 异步动态加载es6模块的依赖包方法
+
 ```javascript
 Promise.all([
           import(
