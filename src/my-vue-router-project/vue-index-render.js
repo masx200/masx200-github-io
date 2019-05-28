@@ -25,10 +25,10 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
         console.log("开始运行此onload函数");
 
         Promise.all([
-          import(
-            `https://cdn.staticfile.org/vue-router/3.0.6/vue-router.esm.browser.min.js`
+          IMPORTCJSAMDUMD(
+            `https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js`
           ),
-          import(`https://cdn.staticfile.org/vue/2.6.10/vue.esm.browser.min.js`)
+          IMPORTCJSAMDUMD(`https://cdn.staticfile.org/vue/2.6.10/vue.min.js`)
         ]).then(myonloadfunc);
 
         // myonloadfunc();
