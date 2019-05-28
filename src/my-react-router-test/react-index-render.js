@@ -1,6 +1,6 @@
 import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 // import { async } from "q";
-// import regeneratorRuntime from "regenerator-runtime"
+import regeneratorRuntime from "regenerator-runtime";
 
 // eslint-disable-next-line
 /* eslint-disable */
@@ -24,20 +24,49 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
         haverun = 1;
         console.log("开始运行此onload函数");
         // myonloadfunc();
-        Promise.all([
-          IMPORTCJSAMDUMD(
+        // IMPORTCJSAMDUMD(
+        //     "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
+        //     "react"
+        //   ).then(
+
+        //     reactmodule=>{
+
+        //     }
+        //   )
+        // Promise.all([
+
+        //   IMPORTCJSAMDUMD(
+        //     "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
+        //     "react-dom"
+        //   ),
+        //   IMPORTCJSAMDUMD(
+        //     "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
+        //     "react-router-dom"
+        //   )
+        // ]).then(myonloadfunc);
+
+        /* react模块加载有依赖顺序 */
+
+        (async () => {
+          const react = await IMPORTCJSAMDUMD(
             "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
             "react"
-          ),
-          IMPORTCJSAMDUMD(
-            "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
-            "react-dom"
-          ),
-          IMPORTCJSAMDUMD(
-            "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
-            "react-router-dom"
-          )
-        ]).then(myonloadfunc);
+          );
+          const [reactdom, reactrouterdom] = await Promise.all([
+            IMPORTCJSAMDUMD(
+              "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
+              "react-dom"
+            ),
+            IMPORTCJSAMDUMD(
+              "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
+              "react-router-dom"
+            )
+          ]);
+          //   resolve([])
+          // console.log(jquery, popper, bootstrap);
+          var reactmodulearray = [react, reactdom, reactrouterdom];
+          myonloadfunc(reactmodulearray);
+        })();
       } else {
         console.log("不要重复运行此onload函数");
       }
@@ -51,7 +80,7 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
     //   }, 1000);
 
     function myonloadfunc(reactmodulearray) {
-    //   window.React = IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+      //   window.React = IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
       console.log(reactmodulearray);
       const React = reactmodulearray[0].default;
       const ReactDOM = reactmodulearray[1].default;
@@ -760,7 +789,11 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
                   </nav>
                 </div>
 
-                <div class="container" id="my主体"style="min-width: 100%;padding-top: 53px;">
+                <div
+                  class="container"
+                  id="my主体"
+                //   style={"min-width: 100%;padding-top: 53px;"}
+                >
                   {/* <Suspense fallback={<div>Loading...</div>}> */}
                   <Suspense fallback={<div>loading</div>}>
                     <Switch>

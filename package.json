@@ -1,0 +1,21 @@
+{
+  "name": "masx200.github.io",
+  "version": "1.0.0",
+  "description": "masx200 的 github",
+  "scripts": {
+    "start": "live-server ./ --port=9090"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masx200/masx200.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masx200/masx200.github.io/issues"
+  },
+  "homepage": "https://github.com/masx200/masx200.github.io#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
