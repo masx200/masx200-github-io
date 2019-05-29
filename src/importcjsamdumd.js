@@ -1,6 +1,18 @@
 import sha256 from "./sha256.min";
+/*
+更新:
+1.可以在一句IMPORTCJSAMDUMD语句中,传入多个模块的url的name了,返回一个数组,相当于promise.all的语法糖,
+2.可以尝试乱序加载有依赖更新的模块包了,加载之前,先把模块的url和name信息存入模块配置列表,如果依赖的包还没有加载完成,则多次尝试加载,最终可以加载完成
+
+甚至是这么变态的依赖关系,这么乱序加载,都可以!
+
+IMPORTCJSAMDUMD(["https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js","bootstrap"],["https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js","jquery"],["https://cdn.staticfile.org/mui/3.7.1/js/mui.min.js","mui"],["https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js","clipboard"],["https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js","popper.js"],["https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js","react-dom"],["https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js","react-router-dom"],["https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js","react"]).then(console.log).catch(console.warn)
+
+
+
+ */
 //由于使用了async函数所以需要regeneratorRuntime//
-//import regeneratorRuntime from "regenerator-runtime";
+// import regeneratorRuntime from "regenerator-runtime";
 
 //包装cjs和amd和umd模块为异步加载promise方法
 /**
@@ -109,7 +121,11 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
   global.IMPORTCJSAMDUMD.REQUIREPACKAGE =
     global.IMPORTCJSAMDUMD.REQUIREPACKAGE || require;
   global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE =
-    global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE || [];
+    global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE || {};
+  global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST =
+    global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST || {};
+
+  // console.log(eval(`(async function(){return await})`))
   /* 为了不要把全局的模块仓库覆盖 */
   //   try {
   //     console.log(global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE);
@@ -120,319 +136,426 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
   //       "sha256"
   //     );
   //   }
-
+  // reqiregenerator=require()
   function require(packagename = undefined) {
     var findpackage = global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[packagename];
     if (findpackage) {
+      console.log("在模块仓库中找到了", packagename);
       return findpackage.default;
+    } else if (global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename]) {
+      //  sleep(50)
+      console.warn("模块仓库中没有找到,但是模块列表中存在" + packagename);
+      throw new Error("模块仓库中没有找到,但是模块列表中存在  " + packagename);
+   /*  //   console.log(global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename].url);
+    //   var urltoload = global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename].url;
+    //   var stingtoeval = `(async ()=>{moduletoload=(await window.IMPORTCJSAMDUMD('${urltoload}'))})()`;
+    //   //   console.log(stingtoeval);
+    //   var moduletoload;
+    //   eval(stingtoeval);
+    //   //   (async () => {
+    //   //     moduletoload = await window.IMPORTCJSAMDUMD(urltoload);
+    //   //   })()
+    //   //   yield
+    //   /* 如果不存在则多次尝试 */
+    //   try {
+    //     return moduletoload.default;
+    //   } catch (error) {
+    //     return moduletoload.default;
+    //   } finally {
+    //     return moduletoload.default;
+    //   }
+    //   // return moduletoload.default;
+    //   //   throw new Error("模块仓库中没有找到,但是模块列表中存在");
+    //   //   return  require(packagename) */
     } else {
-      throw new Error("Cannot find module  " + packagename);
+      throw new Error("Cannot find module in packagestore  " + packagename);
     }
   }
+  /* 同步等待函数 */
+  //导致浏览器卡死
+  // function sleep(ms) {
+  //     var start = Date.now();
+  //     while ((Date.now() - start) < ms) {
+  //     }
+  //   }
+
+  //   }
 
   function importcjsamdumd(url, packagename = undefined) {
-    //   window.GLOBALPACKAGESTORE = window.GLOBALPACKAGESTORE || [];
-    url = new URL(url);
-    url = url.href;
-    // importcjsamdumd.packagename = packagename;
-    function define(name, deps, callback) {
-      define.globalDefQueue = [];
-      //   window.globalDefQueue = globalDefQueue;
-      var op = Object.prototype;
-      var ostring = op.toString;
-      var useInteractive = false;
-      function isArray(it) {
-        return ostring.call(it) === "[object Array]";
-      }
-      function isFunction(it) {
-        return ostring.call(it) === "[object Function]";
-      }
-      var node, context;
+    console.log("输入的参数为", Array(...arguments));
+    if (typeof url === "object" || typeof packagename === "object") {
+      /*新的写法,同时加载多个 (["",""],["",""]) */
+      //   console.log(
+      //     Array(...arguments).map(e => {
+      //       e[0]+ e[1];
+      //     })
+      //   );
+      /* IMPORTCJSAMDUMD(["https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js","jquery"],["https://cdn.staticfile.org/mui/3.7.1/js/mui.min.js","mui"],["https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js","clipboard"]) */
+      /* 先把传入的模块列表信息放到 IMPORTCJSAMDUMD.PACKAGECONFIGLIST中*/
+      Array(...arguments).forEach(e => {
+        var url = e[0],
+          packagename = e[1];
+        global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename] = {
+          name: packagename,
+          sha256: sha256(url),
+          url: url
+        };
+      });
 
-      //Allow for anonymous modules
-      if (typeof name !== "string") {
-        //Adjust args appropriately
-        callback = deps;
-        deps = name;
-        name = null;
-      }
-
-      //This module may not have dependencies
-      if (!isArray(deps)) {
-        callback = deps;
-        deps = null;
-      }
-
-      //If no name, and callback is a function, then figure out if it a
-      //CommonJS thing with dependencies.
-      if (!deps && isFunction(callback)) {
-        deps = [];
-        //Remove comments from the callback string,
-        //look for require calls, and pull them into the dependencies,
-        //but only if there are function args.
-        if (callback.length) {
-          callback
-            .toString()
-            .replace(commentRegExp, commentReplace)
-            .replace(cjsRequireRegExp, function(match, dep) {
-              deps.push(dep);
-            });
-
-          //May be a CommonJS thing even without require calls, but still
-          //could use exports, and module. Avoid doing exports and module
-          //work though if it just needs require.
-          //REQUIRES the function to expect the CommonJS variables in the
-          //order listed below.
-          deps = (callback.length === 1
-            ? ["require"]
-            : ["require", "exports", "module"]
-          ).concat(deps);
-        }
-      }
-
-      //If in IE 6-8 and hit an anonymous define() call, do the interactive
-      //work.
-      if (useInteractive) {
-        node = currentlyAddingScript || getInteractiveScript();
-        if (node) {
-          if (!name) {
-            name = node.getAttribute("data-requiremodule");
-          }
-          context = contexts[node.getAttribute("data-requirecontext")];
-        }
-      }
-
-      //Always save off evaluating the def call until the script onload handler.
-      //This allows multiple modules to be in a file without prematurely
-      //tracing dependencies, and allows for anonymous module support,
-      //where the module name is not known until the script onload event
-      //occurs. If no context, use the global queue, and get it processed
-      //in the onscript load callback.
-      if (context) {
-        context.defQueue.push([name, deps, callback]);
-        context.defQueueMap[name] = true;
-      } else {
-        define.globalDefQueue.push([name, deps, callback]);
-      }
-      console.log("检测到amd模块", define.globalDefQueue[0]);
-      if (
-        typeof define.globalDefQueue[0][0] === "string" &&
-        typeof packagename === "undefined"
-      ) {
-        packagename = define.globalDefQueue[0][0];
-      }
-      var canshu = define.globalDefQueue[0][1].map(e => require(e));
-      //   console.log(canshu);
-      define.exports = define.globalDefQueue[0][2](...canshu);
-    }
-
-    define.amd = true;
-    return new Promise((resolve, reject) => {
+      /* 如果不存在则多次尝试 */
+      var suoyouimportpromise;
       try {
-        (() => {
-          //   (async () => {
-          var fetchpromise;
-          try {
-            try {
-              fetchpromise = fetch(url).then(response => {
-                if (!response.ok) {
-                  throw new Error("fetch failed " + url);
-                }
+          console.log("第一次尝试批量加载模块")
+        suoyouimportpromise = Promise.all(
+          Array(...arguments).map(e => {
+            return IMPORTCJSAMDUMD(e[0], e[1]);
+          })
+        );
+        return suoyouimportpromise;
+      } catch (error) {
+        console.log("第二次尝试批量加载模块")
+        suoyouimportpromise = Promise.all(
+          Array(...arguments).map(e => {
+            return IMPORTCJSAMDUMD(e[0], e[1]);
+          })
+        );
+        return suoyouimportpromise;
+      } finally {
+        console.log("最后一次尝试批量加载模块")
+        suoyouimportpromise = Promise.all(
+          Array(...arguments).map(e => {
+            return IMPORTCJSAMDUMD(e[0], e[1]);
+          })
+        );
+        return suoyouimportpromise;
+      }
+      //   suoyouimportpromise.then(console.log)
+      //   console.log("suoyouimportpromise",suoyouimportpromise);
+    } else if (typeof url === "string" || typeof packagename === "string") {
+      //   window.GLOBALPACKAGESTORE = window.GLOBALPACKAGESTORE || [];
+      if (typeof packagename === "undefined") {
+        packagename = sha256(url);
+      }
+      url = new URL(url);
+      url = url.href;
 
-                return response.text();
+      global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename] = {
+        name: packagename,
+        sha256: sha256(url),
+        url: url
+      };
+      console.log(
+        " IMPORTCJSAMDUMD.PACKAGECONFIGLIST",
+        global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST
+      );
+      // importcjsamdumd.packagename = packagename;
+      function define(name, deps, callback) {
+        define.globalDefQueue = [];
+        //   window.globalDefQueue = globalDefQueue;
+        var op = Object.prototype;
+        var ostring = op.toString;
+        var useInteractive = false;
+        function isArray(it) {
+          return ostring.call(it) === "[object Array]";
+        }
+        function isFunction(it) {
+          return ostring.call(it) === "[object Function]";
+        }
+        var node, context;
+
+        //Allow for anonymous modules
+        if (typeof name !== "string") {
+          //Adjust args appropriately
+          callback = deps;
+          deps = name;
+          name = null;
+        }
+
+        //This module may not have dependencies
+        if (!isArray(deps)) {
+          callback = deps;
+          deps = null;
+        }
+
+        //If no name, and callback is a function, then figure out if it a
+        //CommonJS thing with dependencies.
+        if (!deps && isFunction(callback)) {
+          deps = [];
+          //Remove comments from the callback string,
+          //look for require calls, and pull them into the dependencies,
+          //but only if there are function args.
+          if (callback.length) {
+            callback
+              .toString()
+              .replace(commentRegExp, commentReplace)
+              .replace(cjsRequireRegExp, function(match, dep) {
+                deps.push(dep);
               });
-            } catch (e) {
-              console.error(e);
-              reject(e);
-              return;
+
+            //May be a CommonJS thing even without require calls, but still
+            //could use exports, and module. Avoid doing exports and module
+            //work though if it just needs require.
+            //REQUIRES the function to expect the CommonJS variables in the
+            //order listed below.
+            deps = (callback.length === 1
+              ? ["require"]
+              : ["require", "exports", "module"]
+            ).concat(deps);
+          }
+        }
+
+        //If in IE 6-8 and hit an anonymous define() call, do the interactive
+        //work.
+        if (useInteractive) {
+          node = currentlyAddingScript || getInteractiveScript();
+          if (node) {
+            if (!name) {
+              name = node.getAttribute("data-requiremodule");
             }
+            context = contexts[node.getAttribute("data-requirecontext")];
+          }
+        }
 
-            //   .catch(e => {
-            //     console.error(e);
-            //     reject(e);
-            //     return;
-            //   })
+        //Always save off evaluating the def call until the script onload handler.
+        //This allows multiple modules to be in a file without prematurely
+        //tracing dependencies, and allows for anonymous module support,
+        //where the module name is not known until the script onload event
+        //occurs. If no context, use the global queue, and get it processed
+        //in the onscript load callback.
+        if (context) {
+          context.defQueue.push([name, deps, callback]);
+          context.defQueueMap[name] = true;
+        } else {
+          define.globalDefQueue.push([name, deps, callback]);
+        }
+        console.log("检测到amd模块", define.globalDefQueue[0]);
+        if (
+          typeof define.globalDefQueue[0][0] === "string" &&
+          typeof packagename === "undefined"
+        ) {
+          packagename = define.globalDefQueue[0][0];
+        }
+        var canshu = define.globalDefQueue[0][1].map(e => require(e));
+        //   console.log(canshu);
+        define.exports = define.globalDefQueue[0][2](...canshu);
+      }
+
+      define.amd = true;
+      return new Promise((resolve, reject) => {
+        try {
+          (() => {
+            //   (async () => {
+            var fetchpromise;
             try {
-              fetchpromise.then(scripttext => {
-                var exports = {};
-                var module = {
-                  exports: {}
-                };
-                define.exports = {};
-                // var globalDefQueue = [];
-                var exportmodule = [{}, {}];
-                try {
-                  exportmodule = (function(
-                    require,
-                    define,
-                    module,
-                    exports,
-                    scripttext
-                  ) {
-                    //   console.log(
-                    //     Function(
-                    //         "require",
-                    //         "define",
-                    //         "module",
-                    //         "exports",
-                    //         scripttext + `; return [exports, module.exports];`
-                    //       ).toString()
-                    //   );
-                    //   eval(scripttext);
-                    /* 有的网站安全考虑不能运行eval */
-                    return Function(
-                      "require",
-                      "define",
-                      "module",
-                      "exports",
-                  ` \/\* ${url} \*\/`+";\n"+   scripttext + `;\n return [exports, module.exports]; \n`+ ` \/\* ${url} \*\/`
-                    )(require, define, module, exports);
-                    // for (let __key__ in module.exports ){
-                    //     module[__key__]=module.exports[__key__]
-                    // }
+              try {
+                fetchpromise = fetch(url).then(response => {
+                  if (!response.ok) {
+                    throw new Error("fetch failed " + url);
+                  }
 
-                    //   var moduleexport = {};
-                    //   console.log("exports", exports, "module.exports", module.exports);
-                    //   //   console.log()
-                    //   if (Object.keys(exports).length) {
-                    //     moduleexport.default = exports;
-                    //   } else if (Object.keys(module.exports).length) {
-                    //     moduleexport.default = module.exports;
-                    //   }
+                  return response.text();
+                });
+              } catch (e) {
+                console.error(e);
+                reject(e);
+                return;
+              }
 
-                    //   console.log(
-                    //     "exports",
-                    //     exports,
-                    //     "module.exports",
-                    //     module.exports,
-                    //     // "globalDefQueue[2]",
-                    //     // globalDefQueue[2]
-                    //   );
+              //   .catch(e => {
+              //     console.error(e);
+              //     reject(e);
+              //     return;
+              //   })
+              try {
+                fetchpromise.then(scripttext => {
+                  var exports = {};
+                  var module = {
+                    exports: {}
+                  };
+                  define.exports = {};
+                  // var globalDefQueue = [];
+                  var exportmodule = [{}, {}, {}];
+                  try {
+                    exportmodule = (function(
+                      require,
+                      define,
+                      module,
+                      exports,
+                      scripttext
+                    ) {
+                      //   console.log(
+                      //     Function(
+                      //         "require",
+                      //         "define",
+                      //         "module",
+                      //         "exports",
+                      //         scripttext + `; return [exports, module.exports];`
+                      //       ).toString()
+                      //   );
+                      //   eval(scripttext);
+                      /* 有的网站安全考虑不能运行eval */
+                      return Function(
+                        "require",
+                        "define",
+                        "module",
+                        "exports",
+                        ` \/\* ${url} \*\/` +
+                          ";\n" +
+                          scripttext +
+                          `;\n return [exports, module.exports, define.exports]; \n` +
+                          ` \/\* ${url} \*\/`
+                      )(require, define, module, exports);
+                      // for (let __key__ in module.exports ){
+                      //     module[__key__]=module.exports[__key__]
+                      // }
 
-                    //   return [exports, module.exports];
-                  })(require, define, module, exports, scripttext);
-                } catch (e) {
-                  console.error(e);
-                  reject(e);
-                  return;
-                }
+                      //   var moduleexport = {};
+                      //   console.log("exports", exports, "module.exports", module.exports);
+                      //   //   console.log()
+                      //   if (Object.keys(exports).length) {
+                      //     moduleexport.default = exports;
+                      //   } else if (Object.keys(module.exports).length) {
+                      //     moduleexport.default = module.exports;
+                      //   }
 
-                // console.log(define.exports);
-                // console.log(exportmodule);
-                // exports = exportmodule[0];
-                // module.exports = exportmodule[1];
-                var moduleexport = {
-                  name: undefined,
-                  default: undefined,
-                  url: undefined
-                };
-                // console.log(
-                //   "exports",
-                //   exports,
-                //   "module.exports",
-                //   module.exports,
-                // //   "globalDefQueue[2]",
-                // //   globalDefQueue[2]
-                // );
-                /* console.log(exportmodule[0], exportmodule[1], define.exports);
+                      //   console.log(
+                      //     "exports",
+                      //     exports,
+                      //     "module.exports",
+                      //     module.exports,
+                      //     // "globalDefQueue[2]",
+                      //     // globalDefQueue[2]
+                      //   );
+
+                      //   return [exports, module.exports];
+                    })(require, define, module, exports, scripttext);
+                  } catch (e) {
+                    console.error(e);
+                    reject(e);
+                    return;
+                  }
+
+                  // console.log(define.exports);
+                  // console.log(exportmodule);
+                  // exports = exportmodule[0];
+                  // module.exports = exportmodule[1];
+                  var moduleexport = {
+                    name: undefined,
+                    default: undefined,
+                    url: undefined
+                  };
+                  // console.log(
+                  //   "exports",
+                  //   exports,
+                  //   "module.exports",
+                  //   module.exports,
+                  // //   "globalDefQueue[2]",
+                  // //   globalDefQueue[2]
+                  // );
+                  /* console.log(exportmodule[0], exportmodule[1], define.exports);
 console.log(
   Object.keys(exportmodule[0]).length,
   Object.keys(exportmodule[1]).length,
   Object.keys(define.exports).length
 ); */
-                //   if(){
-                //   console.log(typeof exportmodule);
-                //   }
-                if (typeof exportmodule === "undefined") {
-                  var exportmodule = [{}, {}];
-                }
-                if (typeof define.exports === "undefined") {
-                  define.exports = {};
-                }
-                console.log(
-                  "模块的输出为",
-                  exportmodule[0],
-                  exportmodule[1],
-                  define.exports
-                );
-                if (
-                  typeof exportmodule[0] !== "object" ||
-                  Object.keys(exportmodule[0]).length ||
-                  JSON.stringify(exportmodule[0]) !== "{}"
-                ) {
-                  console.log("检测到umd模块", url);
-                  moduleexport.default = exportmodule[0];
-                } else if (
-                  typeof exportmodule[1] !== "object" ||
-                  Object.keys(exportmodule[1]).length ||
-                  JSON.stringify(exportmodule[1]) !== "{}"
-                ) {
-                  console.log("检测到cjs模块", url);
-                  moduleexport.default = exportmodule[1];
-                } else if (
-                  typeof define.exports !== "object" ||
-                  Object.keys(define.exports).length ||
-                  JSON.stringify(define.exports) !== "{}"
-                ) {
-                  console.log("检测到amd模块", url);
-                  moduleexport.default = define.exports;
-                }else{
-                    console.warn("加载的模块没有输出", url);
-                    resolve(moduleexport)
-                    return
-                }
-
-                if (typeof Symbol !== "undefined" && Symbol.toStringTag) {
-                  Object.defineProperty(moduleexport, Symbol.toStringTag, {
-                    value: "Module"
-                  });
-                }
-                moduleexport.sha256 = sha256(url);
-                if (typeof packagename !== "undefined") {
-                  /* 修改模块仓库里面存放模块,而不是模块的默认输出 */
-                  moduleexport.name = packagename;
-                  //   global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[packagename] =
-                  //     moduleexport.default;
-
-                  global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[
-                    packagename
-                  ] = moduleexport;
-                } else {
-                  /* 如果存在不要重复加载了sha256 */
-                  moduleexport.name = sha256(url);
-                  global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[
-                    sha256(url)
-                  ] = moduleexport;
-                  /* 如果没有指定模块的名字则把url转成Sha256作为名字 */
-                  //   moduleexport.name = undefined;
-                }
-                moduleexport.url = url;
-                if (typeof moduleexport.default !== "undefined") {
-                  if (typeof moduleexport.name !== "undefined") {
-                    console.log(
-                      "GLOBALPACKAGESTORE",
-                      global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE
-                    );
+                  //   if(){
+                  //   console.log(typeof exportmodule);
+                  //   }
+                  if (typeof exportmodule === "undefined") {
+                    var exportmodule = [{}, {}, {}];
                   }
-                } else {
-                  console.warn("加载的模块没有输出", url);
-                }
+                  if (typeof define.exports === "undefined") {
+                    define.exports = {};
+                  }
+                  console.log("模块的输出为", [
+                    exportmodule[0],
+                    exportmodule[1],
+                    // define.exports
+                    exportmodule[2]
+                  ]);
+                  if (
+                    typeof exportmodule[0] !== "object" ||
+                    Object.keys(exportmodule[0]).length ||
+                    JSON.stringify(exportmodule[0]) !== "{}"
+                  ) {
+                    console.log("检测到umd模块", url);
+                    moduleexport.default = exportmodule[0];
+                  } else if (
+                    typeof exportmodule[1] !== "object" ||
+                    Object.keys(exportmodule[1]).length ||
+                    JSON.stringify(exportmodule[1]) !== "{}"
+                  ) {
+                    console.log("检测到cjs模块", url);
+                    moduleexport.default = exportmodule[1];
+                  } else if (
+                    typeof exportmodule[2] !== "object" ||
+                    Object.keys(exportmodule[2]).length ||
+                    JSON.stringify(exportmodule[2]) !== "{}"
 
-                resolve(moduleexport);
-              });
-            } catch (e) {
-              console.error(e);
-              reject(e);
-              return;
-            }
+                    // typeof define.exports !== "object" ||
+                    // Object.keys(define.exports).length ||
+                    // JSON.stringify(define.exports) !== "{}"
+                  ) {
+                    console.log("检测到amd模块", url);
+                    // moduleexport.default = define.exports;
+                    moduleexport.default = exportmodule[2];
+                  } else {
+                    console.warn("加载的模块没有输出", url);
+                    resolve(moduleexport);
+                    return;
+                  }
 
-            //   .catch(e => {
-            //     console.error(e);
-            //     reject(e);
-            //     return;
-            //   });
+                  if (typeof Symbol !== "undefined" && Symbol.toStringTag) {
+                    Object.defineProperty(moduleexport, Symbol.toStringTag, {
+                      value: "Module"
+                    });
+                  }
+                  moduleexport.sha256 = sha256(url);
+                  if (typeof packagename !== "undefined") {
+                    /* 修改模块仓库里面存放模块,而不是模块的默认输出 */
+                    moduleexport.name = packagename;
+                    //   global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[packagename] =
+                    //     moduleexport.default;
 
-            /*    var response = await fetch(url);
+                    global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[
+                      packagename
+                    ] = moduleexport;
+                  } else {
+                    /* 如果存在不要重复加载了sha256 */
+                    moduleexport.name = sha256(url);
+                    global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[
+                      sha256(url)
+                    ] = moduleexport;
+                    /* 如果没有指定模块的名字则把url转成Sha256作为名字 */
+                    //   moduleexport.name = undefined;
+                  }
+                  moduleexport.url = url;
+                  if (typeof moduleexport.default !== "undefined") {
+                    if (typeof moduleexport.name !== "undefined") {
+                      console.log(
+                        "IMPORTCJSAMDUMD.GLOBALPACKAGESTORE",
+                        global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE
+                      );
+                    }
+                  } else {
+                    console.warn("加载的模块没有输出", url);
+                  }
+
+                  resolve(moduleexport);
+                });
+              } catch (e) {
+                console.error(e);
+                reject(e);
+                return;
+              }
+
+              //   .catch(e => {
+              //     console.error(e);
+              //     reject(e);
+              //     return;
+              //   });
+
+              /*    var response = await fetch(url);
             if (!response.ok) {
               throw new Error("fetch failed " + url);
             }
@@ -443,16 +566,19 @@ console.log(
             return;
           }
 */
-          } catch (e) {
-            console.error(e);
-            reject(e);
-          }
-        })();
-      } catch (e) {
-        console.error(e);
-        reject(e);
-      }
-    });
+            } catch (e) {
+              console.error(e);
+              reject(e);
+            }
+          })();
+        } catch (e) {
+          console.error(e);
+          reject(e);
+        }
+      });
+    } else {
+      throw new Error("输入的类型错误,输入的类型必须是字符串或者数组");
+    }
   }
 })(
   (typeof window !== "undefined" ? window : false) ||

@@ -3,7 +3,7 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 (() => {
   $(window).one("load", () => {
     IMPORTCJSAMDUMD(
-      "https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js"
+      "https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js","big-integer"
     ).then(module => {
    const   bigInt = module.default;
       var myptext,

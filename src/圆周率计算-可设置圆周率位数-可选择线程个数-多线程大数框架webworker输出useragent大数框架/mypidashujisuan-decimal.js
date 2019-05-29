@@ -3,9 +3,10 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 (() => {
   $(window).one("load", () => {
     IMPORTCJSAMDUMD(
-      "https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js"
+      "https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js",
+      "decimal"
     ).then(module => {
-     const Decimal = module.default;
+      const Decimal = module.default;
       var myptext,
         myshurukuangneirong,
         p,

@@ -69,10 +69,10 @@ import regeneratorRuntime from "regenerator-runtime";
     }
 
     var loadid;
-    IMPORTCJSAMDUMD(
-      "https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"
-    ).then(module => {
-      var jQuery = module.default;
+    // IMPORTCJSAMDUMD(
+    //   "https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"
+    // ).then(module => {
+    //   var jQuery = module.default;
 
       // if (!importScripts) {
       /* var importScripts = (function(globalEval) {
@@ -106,9 +106,9 @@ import regeneratorRuntime from "regenerator-runtime";
       };
     })(eval); */
       // }
-      if ("function" == typeof jQuery) {
-        console.log("当前的jquery版本号为" + jQuery.fn.jquery);
-      }
+      //   if ("function" == typeof jQuery) {
+      //     console.log("当前的jquery版本号为" + jQuery.fn.jquery);
+      //   }
       /* new Promise(resolve => {
         if ("function" !== typeof jQuery) {
           importjquery();
@@ -122,46 +122,53 @@ import regeneratorRuntime from "regenerator-runtime";
       });*/
 
       document.write = t => {
-        if (jQuery.fn.jquery[0] < 3) {
-          importjquery();
-        }
-        console.warn(
-          "document.write已被禁用，" +
-            "把document.write中的内容生成dom元素放入body之中" +
-            "要写入的内容为：",
-          t
-        );
-        // var writeelement = document.createElement("div");
-        // writeelement.innerHTML = t;
-        // document.getElementsByTagName("head")[0].appendChild(writeelement);
-        var newelemnet = jQuery(t);
-        try {
-          newelemnet.attr("data-loadid", loadid);
-        } catch (error) {
-          console.warn(error);
-          return;
-        }
+          /* 等到使用document.write时再加载jquery */
+        IMPORTCJSAMDUMD(
+          "https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js","jquery"
+        ).then(module => {
+          var jQuery = module.default;
+          // if (jQuery.fn.jquery[0] < 3) {
+          //   importjquery();
+          // }
 
-        //   newelemnet = jQuery(Array(...newelemnet).reverse());
-        jQuery("body").append(newelemnet);
-        console.log("添加元素到body ");
-        /*  for (var i of newelemnet) {
+          console.warn(
+            "document.write已被禁用，" +
+              "把document.write中的内容生成dom元素放入body之中" +
+              "要写入的内容为：",
+            t
+          );
+          // var writeelement = document.createElement("div");
+          // writeelement.innerHTML = t;
+          // document.getElementsByTagName("head")[0].appendChild(writeelement);
+          var newelemnet = jQuery(t);
+          try {
+            newelemnet.attr("data-loadid", loadid);
+          } catch (error) {
+            console.warn(error);
+            return;
+          }
+
+          //   newelemnet = jQuery(Array(...newelemnet).reverse());
+          jQuery("body").append(newelemnet);
+          console.log("添加元素到body ");
+          /*  for (var i of newelemnet) {
               console.log(i.outerHTML);
             } */
-        console.log(Array(...newelemnet).map(i => i.outerHTML));
-        // console.log("把document.write中的内容生成dom元素放入head之中");
+          console.log(Array(...newelemnet).map(i => i.outerHTML));
+          // console.log("把document.write中的内容生成dom元素放入head之中");
+        });
       };
 
-      function importjquery() {
-        if ("function" == typeof jQuery) {
-          console.log("当前的jquery版本号为" + jQuery.fn.jquery);
-        } else {
-          console.log("当前的jquery不存在");
-        }
+      //   function importjquery() {
+      //     if ("function" == typeof jQuery) {
+      //       console.log("当前的jquery版本号为" + jQuery.fn.jquery);
+      //     } else {
+      //       console.log("当前的jquery不存在");
+      //     }
 
-        //   importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
-        console.log("加载jquery版本号3.4.1");
-      }
+      //   importScripts("https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js");
+      //     console.log("加载jquery版本号3.4.1");
+      //   }
 
       // Object.freeze(jQuery);
       /* jQuery可能被覆盖,所以改名 */
@@ -361,13 +368,13 @@ import regeneratorRuntime from "regenerator-runtime";
         替换a链接();
       }
       window.addEventListener("popstate", onpopstatehandler);
-      var script完成数量="script完成数量"
-      var script总数量="script总数量"
-      script加载完成[script完成数量]= script加载完成[script总数量] = 0;
+      var script完成数量 = "script完成数量";
+      var script总数量 = "script总数量";
+      script加载完成[script完成数量] = script加载完成[script总数量] = 0;
 
       function script加载完成(urlortext) {
         //   script加载完成[script完成数量], script加载完成[script总数量];
-        if (script加载完成[script完成数量]=== 0) scrollTo(0, 0);
+        if (script加载完成[script完成数量] === 0) scrollTo(0, 0);
         //   console.log("滚动到顶部")
         替换a链接();
         script加载完成[script完成数量]++;
@@ -381,7 +388,7 @@ import regeneratorRuntime from "regenerator-runtime";
         );
         //   console.log("script加载完成", urlortext);
         /* script完成数量 可能大于 script总数量 */
-        if (script加载完成[script完成数量]>= script加载完成[script总数量]) {
+        if (script加载完成[script完成数量] >= script加载完成[script总数量]) {
           requestAnimationFrame(() => {
             console.log("触发window的allscriptloadformsrc事件");
             window.dispatchEvent(new Event("allscriptloadformsrc"));
@@ -731,9 +738,11 @@ import regeneratorRuntime from "regenerator-runtime";
       //         }
       //       }, 300); */
       // } */
-      var 完成linkstylesheet="完成linkstylesheet"
-      var 数量linkstylesheet="数量linkstylesheet"
-      单个stylesheet加载完成[完成linkstylesheet] = 单个stylesheet加载完成[数量linkstylesheet] = 0;
+      var 完成linkstylesheet = "完成linkstylesheet";
+      var 数量linkstylesheet = "数量linkstylesheet";
+      单个stylesheet加载完成[完成linkstylesheet] = 单个stylesheet加载完成[
+        数量linkstylesheet
+      ] = 0;
 
       function 单个stylesheet加载完成(fileurl) {
         替换a链接();
@@ -780,7 +789,7 @@ import regeneratorRuntime from "regenerator-runtime";
         /* 如果加载失败也要触发事件 */
         console.warn("加载失败" + fileurl);
         script加载完成[script完成数量]++;
-        if (script加载完成[script完成数量]>= script加载完成[script总数量]) {
+        if (script加载完成[script完成数量] >= script加载完成[script总数量]) {
           requestAnimationFrame(() => {
             window.dispatchEvent(new Event("allscriptloadformsrc"));
             console.log("触发window的allscriptloadformsrc事件");
@@ -796,7 +805,7 @@ import regeneratorRuntime from "regenerator-runtime";
         单个stylesheet加载完成[数量linkstylesheet] = 0;
         单个stylesheet加载完成[完成linkstylesheet] = 0;
         script加载完成[script总数量] = 0;
-        script加载完成[script完成数量]= 0;
+        script加载完成[script完成数量] = 0;
         //   document.charset = "UTF-8";
         /*  if (typeof url === "undefined") {
               url = location.href;
@@ -1163,7 +1172,7 @@ import regeneratorRuntime from "regenerator-runtime";
 
             console.log("添加其他元素到head", 添加元素到head数组);
 
-            script加载完成[script完成数量]= 0;
+            script加载完成[script完成数量] = 0;
             script加载完成[script总数量] = Array.from(
               myhtmldata.querySelectorAll("script")
             ).length;
@@ -1362,7 +1371,7 @@ import regeneratorRuntime from "regenerator-runtime";
           );
         }
       }
-    });
+    // });
   }
 
   /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
