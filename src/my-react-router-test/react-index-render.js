@@ -1,6 +1,6 @@
 import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 // import { async } from "q";
-import regeneratorRuntime from "regenerator-runtime";
+// import regeneratorRuntime from "regenerator-runtime";
 
 // eslint-disable-next-line
 /* eslint-disable */
@@ -47,7 +47,7 @@ import regeneratorRuntime from "regenerator-runtime";
 
         /* react模块加载有依赖顺序 */
 
-        (async () => {
+        /*   (async () => {
           const react = await IMPORTCJSAMDUMD(
             "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
             "react"
@@ -66,7 +66,22 @@ import regeneratorRuntime from "regenerator-runtime";
           // console.log(jquery, popper, bootstrap);
           var reactmodulearray = [react, reactdom, reactrouterdom];
           myonloadfunc(reactmodulearray);
-        })();
+        })(); */
+        /*  IMPORTCJSAMDUMD已经升级,乱序依赖的模块可以自动加载了 */
+        IMPORTCJSAMDUMD(
+          [
+            "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
+            "react"
+          ],
+          [
+            "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
+            "react-dom"
+          ],
+          [
+            "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
+            "react-router-dom"
+          ]
+        ).then(myonloadfunc);
       } else {
         console.log("不要重复运行此onload函数");
       }
@@ -792,7 +807,7 @@ import regeneratorRuntime from "regenerator-runtime";
                 <div
                   class="container"
                   id="my主体"
-                //   style={"min-width: 100%;padding-top: 53px;"}
+                  //   style={"min-width: 100%;padding-top: 53px;"}
                 >
                   {/* <Suspense fallback={<div>Loading...</div>}> */}
                   <Suspense fallback={<div>loading</div>}>

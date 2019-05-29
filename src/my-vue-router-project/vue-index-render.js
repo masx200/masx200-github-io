@@ -25,9 +25,9 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 
         Promise.all([
           IMPORTCJSAMDUMD(
-            `https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js`
+            `https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js`,"vue-router"
           ),
-          IMPORTCJSAMDUMD(`https://cdn.staticfile.org/vue/2.6.10/vue.min.js`)
+          IMPORTCJSAMDUMD(`https://cdn.staticfile.org/vue/2.6.10/vue.min.js`,"vue")
         ]).then(myonloadfunc);
 
         // myonloadfunc();
