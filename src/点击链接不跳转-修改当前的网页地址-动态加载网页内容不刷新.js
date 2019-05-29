@@ -839,9 +839,10 @@ import regeneratorRuntime from "regenerator-runtime";
           url.href
         );
         /* 竟然有的网页甚至还要给html标签加style! */
-        document.firstElementChild.style = "";
+        // document.firstElementChild.style = "";
         /* 添加顺滑的滚动效果在scrollto的时候用到 */
-        $("html").css("scroll-behavior", "smooth");
+        document.firstElementChild.style="scroll-behavior: smooth;"
+        // $("html").css("scroll-behavior", "smooth");
         document.firstElementChild.className = "";
         document.getElementsByTagName("body")[0].style = "";
         document.getElementsByTagName("body")[0].className = "";
