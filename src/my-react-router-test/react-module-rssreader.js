@@ -1,3 +1,4 @@
+import parser from "fast-xml-parser"
 // IMPORTCJSAMDUMD(
 //     "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
 //     "react"
