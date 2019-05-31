@@ -1,4 +1,5 @@
-import sha256 from "./sha256.min";
+"use strict";
+// import sha256 from "./sha256.min";
 /*
 更新:
 1.可以在一句IMPORTCJSAMDUMD语句中,传入多个模块的url的name了,返回一个数组,相当于promise.all的语法糖,
@@ -110,6 +111,7 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
 //就像es6模块的import函数返回promise对象一样
 // window . importcjsamdumd= importcjsamdumd
 (global => {
+  "use strict";
   if ("object" == typeof exports && "undefined" != typeof module) {
     module.exports = importcjsamdumd;
   }
@@ -122,8 +124,8 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
     global.IMPORTCJSAMDUMD.REQUIREPACKAGE || require;
   global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE =
     global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE || {};
-  global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST =
-    global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST || {};
+  //   global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST =
+  //     global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST || {};
 
   // console.log(eval(`(async function(){return await})`))
   /* 为了不要把全局的模块仓库覆盖 */
@@ -142,33 +144,38 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
     if (findpackage) {
       console.log("在模块仓库中找到了", packagename);
       return findpackage.default;
-    } else if (global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename]) {
-      //  sleep(50)
-      //   console.warn("模块仓库中没有找到,但是模块列表中存在" + packagename);
-      throw new Error("模块仓库中没有找到,但是模块列表中存在  " + packagename);
-      /*  //   console.log(global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename].url);
-    //   var urltoload = global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename].url;
-    //   var stingtoeval = `(async ()=>{moduletoload=(await window.IMPORTCJSAMDUMD('${urltoload}'))})()`;
-    //   //   console.log(stingtoeval);
-    //   var moduletoload;
-    //   eval(stingtoeval);
-    //   //   (async () => {
-    //   //     moduletoload = await window.IMPORTCJSAMDUMD(urltoload);
-    //   //   })()
-    //   //   yield
-    //   /* 如果不存在则多次尝试 */
-      //   try {
-      //     return moduletoload.default;
-      //   } catch (error) {
-      //     return moduletoload.default;
-      //   } finally {
-      //     return moduletoload.default;
-      //   }
-      //   // return moduletoload.default;
-      //   //   throw new Error("模块仓库中没有找到,但是模块列表中存在");
-      //   //   return  require(packagename) */
-    } else {
-      throw new Error("Cannot find module in packagestore  " + packagename);
+    }
+    // else if (global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename]) {
+    //   //  sleep(50)
+    //   //   console.warn("模块仓库中没有找到,但是模块列表中存在" + packagename);
+    // //   throw new Error("模块仓库中没有找到,但是模块列表中存在  " + packagename);
+    //   /*  //   console.log(global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename].url);
+    // //   var urltoload = global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename].url;
+    // //   var stingtoeval = `(async ()=>{moduletoload=(await window.IMPORTCJSAMDUMD('${urltoload}'))})()`;
+    // //   //   console.log(stingtoeval);
+    // //   var moduletoload;
+    // //   eval(stingtoeval);
+    // //   //   (async () => {
+    // //   //     moduletoload = await window.IMPORTCJSAMDUMD(urltoload);
+    // //   //   })()
+    // //   //   yield
+    // //   /* 如果不存在则多次尝试 */
+    //   //   try {
+    //   //     return moduletoload.default;
+    //   //   } catch (error) {
+    //   //     return moduletoload.default;
+    //   //   } finally {
+    //   //     return moduletoload.default;
+    //   //   }
+    //   //   // return moduletoload.default;
+    //   //   //   throw new Error("模块仓库中没有找到,但是模块列表中存在");
+    //   //   //   return  require(packagename) */
+    // }
+    else {
+      throw new Error(
+        "Cannot find module in packagestore, 模块仓库中没有找到,  " +
+          packagename
+      );
     }
   }
   /* 同步等待函数 */
@@ -237,13 +244,13 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
           );
         }
         if (typeof packagename === "undefined") {
-          packagename = sha256(url);
+          packagename = new URL(url).href;
         }
-        global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename] = {
-          name: packagename,
-          sha256: sha256(url),
-          url: url
-        };
+        // global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename] = {
+        //   name: packagename,
+        // //   sha256: sha256(url),
+        //   url: url
+        // };
       });
 
       /* 如果不存在则多次尝试 */
@@ -338,22 +345,26 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
         );
       }
       //   window.GLOBALPACKAGESTORE = window.GLOBALPACKAGESTORE || [];
+      //   if (typeof packagename === "undefined") {
+      //     packagename = sha256(url);
+      //   }
       if (typeof packagename === "undefined") {
-        packagename = sha256(url);
+        packagename = new URL(url).href;
       }
       url = new URL(url);
       url = url.href;
 
-      global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename] = {
-        name: packagename,
-        sha256: sha256(url),
-        url: url
-      };
-      console.log(
-        " IMPORTCJSAMDUMD.PACKAGECONFIGLIST",
-        global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST
-      );
+      //   global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename] = {
+      //     name: packagename,
+      //     // sha256: sha256(url),
+      //     url: url
+      //   };
+      //   console.log(
+      //     " IMPORTCJSAMDUMD.PACKAGECONFIGLIST",
+      //     global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST
+      //   );
       function define(name, deps, callback) {
+        define.amd = true;
         define.globalDefQueue = [];
         //   window.globalDefQueue = globalDefQueue;
         var op = Object.prototype;
@@ -524,11 +535,18 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
                           "define",
                           "module",
                           "exports",
-                          ` \/\* ${url} \*\/` +
-                            ";\n" +
-                            scripttext +
-                            `;\n return [exports, module.exports, define.exports]; \n` +
-                            ` \/\* ${url} \*\/`
+
+                          `\/\* ${url} \*\/;
+                          \n
+                          ${scripttext};
+                          \n
+                          \/\* ${url} \*\/;
+                          
+                          return [exports, module.exports, define.exports]; `
+                          /* 这里必须换行因为如果遇到最后一行是注释的话,这句return也被注释了 */
+                          //  +
+                          // `;\n return [exports, module.exports, define.exports]; \n` +
+                          // ` \/\* ${url} \*\/`
                         )(require, define, module, exports);
                         // for (let __key__ in module.exports ){
                         //     module[__key__]=module.exports[__key__]
@@ -635,25 +653,30 @@ console.log(
                         value: "Module"
                       });
                     }
-                    moduleexport.sha256 = sha256(url);
-                    if (typeof packagename !== "undefined") {
-                      /* 修改模块仓库里面存放模块,而不是模块的默认输出 */
-                      moduleexport.name = packagename;
-                      //   global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[packagename] =
-                      //     moduleexport.default;
+                    // moduleexport.sha256 = sha256(url);
+                    if (typeof moduleexport.default !== "undefined") {
+                      if (typeof packagename !== "undefined") {
+                        /* 修改模块仓库里面存放模块,而不是模块的默认输出 */
+                        moduleexport.name = packagename;
+                        //   global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[packagename] =
+                        //     moduleexport.default;
 
-                      global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[
-                        packagename
-                      ] = moduleexport;
-                    } else {
-                      /* 如果存在不要重复加载了sha256 */
-                      moduleexport.name = sha256(url);
-                      global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[
-                        sha256(url)
-                      ] = moduleexport;
-                      /* 如果没有指定模块的名字则把url转成Sha256作为名字 */
-                      //   moduleexport.name = undefined;
+                        global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[
+                          packagename
+                        ] = moduleexport;
+                      } else {
+                        /* 如果存在不要重复加载了sha256 */
+                        //   moduleexport.name = sha256(url);
+                        packagename = url;
+                        global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[
+                          packagename
+                          // sha256(url)
+                        ] = moduleexport;
+                        /* 如果没有指定模块的名字则把url转成Sha256作为名字 */
+                        //   moduleexport.name = undefined;
+                      }
                     }
+
                     moduleexport.url = url;
                     if (typeof moduleexport.default !== "undefined") {
                       if (typeof moduleexport.name !== "undefined") {
