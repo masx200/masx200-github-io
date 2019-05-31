@@ -1,5 +1,5 @@
 //由于使用了async函数所以需要regeneratorRuntime
-import IMPORTCJSAMDUMD from "./IMPORTCJSAMDUMD";
+// import IMPORTCJSAMDUMD from "./IMPORTCJSAMDUMD";
 import regeneratorRuntime from "regenerator-runtime";
 // console.log(regeneratorRuntime)
 
@@ -122,43 +122,50 @@ import regeneratorRuntime from "regenerator-runtime";
       });*/
 
     document.write = t => {
-      var jQuery;
-      /* 等到使用document.write时再加载jquery */
-      IMPORTCJSAMDUMD(
-        "https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js",
-        "jquery"
-      ).then(module => {
-        jQuery = module.default;
-        // if (jQuery.fn.jquery[0] < 3) {
-        //   importjquery();
-        // }
-
         console.warn(
-          "document.write已被禁用，" +
-            "把document.write中的内容生成dom元素放入body之中" +
-            "要写入的内容为：",
-          t
-        );
-        // var writeelement = document.createElement("div");
-        // writeelement.innerHTML = t;
-        // document.getElementsByTagName("head")[0].appendChild(writeelement);
-        var newelemnet = jQuery(t);
-        try {
-          newelemnet.attr("data-loadid", loadid);
-        } catch (error) {
-          console.warn(error);
-          return;
-        }
+            "document.write已被禁用，" +
+              "把document.write中的内容生成dom元素放入body之中" +
+              "要写入的内容为：",
+            t
+          );
 
-        //   newelemnet = jQuery(Array(...newelemnet).reverse());
-        jQuery("body").append(newelemnet);
-        console.log("添加元素到body ");
-        /*  for (var i of newelemnet) {
-              console.log(i.outerHTML);
-            } */
-        console.log(Array(...newelemnet).map(i => i.outerHTML));
-        // console.log("把document.write中的内容生成dom元素放入head之中");
-      });
+    //   var jQuery;
+    //   /* 等到使用document.write时再加载jquery */
+    //   IMPORTCJSAMDUMD(
+    //     "https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js",
+    //     "jquery"
+    //   ).then(module => {
+    //     jQuery = module.default;
+    //     // if (jQuery.fn.jquery[0] < 3) {
+    //     //   importjquery();
+    //     // }
+
+    //     console.warn(
+    //       "document.write已被禁用，" +
+    //         "把document.write中的内容生成dom元素放入body之中" +
+    //         "要写入的内容为：",
+    //       t
+    //     );
+    //     // var writeelement = document.createElement("div");
+    //     // writeelement.innerHTML = t;
+    //     // document.getElementsByTagName("head")[0].appendChild(writeelement);
+    //     var newelemnet = jQuery(t);
+    //     try {
+    //       newelemnet.attr("data-loadid", loadid);
+    //     } catch (error) {
+    //       console.warn(error);
+    //       return;
+    //     }
+
+    //     //   newelemnet = jQuery(Array(...newelemnet).reverse());
+    //     jQuery("body").append(newelemnet);
+    //     console.log("添加元素到body ");
+    //     /*  for (var i of newelemnet) {
+    //           console.log(i.outerHTML);
+    //         } */
+    //     console.log(Array(...newelemnet).map(i => i.outerHTML));
+    //     // console.log("把document.write中的内容生成dom元素放入head之中");
+    //   });
     };
 
     //   function importjquery() {
