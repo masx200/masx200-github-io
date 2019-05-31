@@ -8,9 +8,22 @@ https://masx200.github.io/
 
 https://github.com/masx200/masx200.github.io/tree/master/src
 
+<hr>
+
 # 点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新 脚本
 
 https://github.com/masx200/masx200.github.io/blob/master/src/%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js
+
+## 介绍大概和注意
+点击链接不跳转修改当前的网页地址动态加载网页内容不刷新
+
+这个脚本能够通过异步 fetch 加载 html 页面,动态替换当前的页面内容
+
+注意 不能跨域 ,history.pushState 函数是改变地址栏的 url,有同源限制
+
+注意:对于使用了 document.write 的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖,所以 修改了 document.write 方法
+
+<hr>
 
 ## IMPORTCJSAMDUMD
 
@@ -26,14 +39,24 @@ https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
 
 "IMPORTCJSAMDUMD "的定义的"define"函数基于"requirejs"的 "define"函数
 
-## 介绍大概和注意
-点击链接不跳转修改当前的网页地址动态加载网页内容不刷新
 
-这个脚本能够通过异步 fetch 加载 html 页面,动态替换当前的页面内容
+# 相比systemjs和requirejs的优势:
 
-注意 不能跨域 ,history.pushState 函数是改变地址栏的 url,有同源限制
+1.跟systemjs的import函数的全局运行模块的代码,会修改全局变量,相比,
 
-注意:对于使用了 document.write 的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖,所以 修改了 document.write 方法
+IMPORTCJSAMDUMD中所有模块的代码全部放在函数闭包中执行,
+
+2.systemjs不支持在模块代码中的require函数来加载依赖包,也不支持识别amd模块中的define函数的定义模块的名称的功能,导致这些有依赖关系的模块都会到全局变量中寻找需要的模块,否则加载失败,
+
+IMPORTCJSAMDUMD支持在模块内部使用require函数和define函数定义依赖关系,并在模块仓库中查找需要的模块
+
+比如说jquery和jquery-ui都是amd模块定义方式,jquery-ui依赖于jquery
+
+比如说bootstrap是umd模块定义方式,bootstrap依赖于jquery和popper.js
+
+3.requriejs不支持cjs和umd模块的定义方式,使用比较麻烦,
+
+<hr>
 
 # 圆周率计算多线程,使用 BigInteger.js 和浏览器原生的 BigInt 之后速度得到巨大提升!
 
@@ -104,6 +127,9 @@ chrome 74 测试 原生BigInt 达到11.16倍速度
 <hr>
 </div>
 
+
+<hr>
+
 ### 使用 babel-standalone 代替本地 node 模块
 
 使用 babel 在线解析 jsx 语法和 es6 以上的语法
@@ -113,6 +139,8 @@ chrome 74 测试 原生BigInt 达到11.16倍速度
 Babel · The compiler for next generation JavaScript
 
 https://babeljs.io/
+
+<hr>
 
 ## 使用 parcel bundler 代替 webpcak 成功
 
@@ -145,6 +173,9 @@ parcel index.html
 parcel build index.html
 
 parcel build entry.js
+
+
+<hr>
 
 # 使用 cdn 加载依赖包,加快速度
 
@@ -183,6 +214,7 @@ https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js
 
 https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
 ```
+<hr>
 
 # 网站结构介绍
 
@@ -224,6 +256,7 @@ The "define" function defined by IMPORTCJSAMDUMD is based on the "define" functi
 
 
 
+<hr>
 
 ## react-router 的单页面应用
 
@@ -295,6 +328,7 @@ const about = lazy(() => import("./module-about"));
 旧版:把 react 相关所有代码都合并放在 index.jsx 文件中,除了 css 文件
 
 
+<hr>
 
 ## vue-router 的单页面应用
 
@@ -354,6 +388,8 @@ const router = new VueRouter({
 
 旧版:不使用.vue 格式的文件,把 vue 相关的所有 vue 组件都合并放在一个 index.js 文件中,把 template 组件放在 template.html 文件中通过 ajax 加载,除了 css 文件
 
+<hr>
+
 ## JSfuck-and-hieroglyphy-Decoder-and-ENCODER
 
 JSfuck and hieroglyphy Decoder and ENCODER
@@ -381,7 +417,7 @@ https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/hieroglyphy
 https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSFuck---Write-any-JavaScript-with-6-Characters_-[]()!+.html
 
 
-
+<hr>
 
 # 动态加载javascript,使用fetch加载xml转换成json.js
 
@@ -449,6 +485,7 @@ if (!importScripts) {
 ```
 
 
+<hr>
 
 # 在vscode中安装npm-scripts插件即可轻松调试
 
