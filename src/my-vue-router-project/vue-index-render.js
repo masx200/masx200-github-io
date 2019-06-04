@@ -60,7 +60,7 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
       Vue.config.devtools = true;
       //   Router = VueRouter;
       Vue.use(VueRouter);
-      window.keysave = "";
+     // window.keysave = "";
       $(window).on("hashchange", () => {
         console.log("hashchange");
         $("#mynavul").click();
