@@ -45,6 +45,7 @@ function tanchu弹出消息通用(infotype) {
   </div>`).fadeTo(5000, 0.5, () => {
       console.log(jQuery("#" + id));
       jQuery("#" + id).remove();
+refreshall() 
     })
   );
 }
