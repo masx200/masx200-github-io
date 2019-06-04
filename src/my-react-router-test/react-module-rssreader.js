@@ -1,9 +1,8 @@
-import parser from "./fast-xml-parser"
+import parser from "./fast-xml-parser";
 // IMPORTCJSAMDUMD(
 //     "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
 //     "react"
 //   ).then(
-
 
 //     reactmoduleload
 //   )
@@ -12,10 +11,9 @@ import parser from "./fast-xml-parser"
 // console.log(window)
 // React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 
-
 // console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
 
-var React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
+var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 
 function tanchu弹出消息通用(infotype) {
   // var id=Math.random()*100000000|0
@@ -45,7 +43,7 @@ function tanchu弹出消息通用(infotype) {
   </div>`).fadeTo(5000, 0.5, () => {
       console.log(jQuery("#" + id));
       jQuery("#" + id).remove();
-refreshall() 
+      refreshall();
     })
   );
 }
@@ -70,14 +68,14 @@ function jiazaiload(myid, eid) {
       .then(s => {
         var str = s;
         myxmlstrcontent.push(str);
-        console.log("xml",myxmlstrcontent);
+        console.log("xml", myxmlstrcontent);
         var data = parser.parse(str);
-        console.log("json",data);
+        console.log("json", data);
         myrsscontent.title = data.rss.channel.title;
         myrsscontent.description = data.rss.channel.description;
         myrsscontent.push(...data.rss.channel.item);
-        console.log("rsscontent",myrsscontent);
-        
+        console.log("rsscontent", myrsscontent);
+
         mui(document.getElementById(eid)).button("reset");
         tanchu弹出消息通用("success");
         refreshall();

@@ -1,5 +1,7 @@
+var keysave=""
 export default function() {
   (() => {
+    $("#key").val(keysave);
     /*
      * jQuery MD5 Plugin 1.2.1
      * https://github.com/blueimpjQuery/jQuery-MD5
@@ -260,10 +262,10 @@ export default function() {
         }
         $("#code16").val(code16);
 
-        window.keysave = $("#key").val();
+        keysave = $("#key").val();
       }
 
-      // console.log(window.keysave)
+      console.log("keysave",keysave)
     }
     $(function() {
       $("#password").change(countCode);

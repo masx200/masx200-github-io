@@ -25,9 +25,13 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 
         Promise.all([
           IMPORTCJSAMDUMD(
-            `https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js`,"vue-router"
+            `https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js`,
+            "vue-router"
           ),
-          IMPORTCJSAMDUMD(`https://cdn.staticfile.org/vue/2.6.10/vue.min.js`,"vue")
+          IMPORTCJSAMDUMD(
+            `https://cdn.staticfile.org/vue/2.6.10/vue.min.js`,
+            "vue"
+          )
         ]).then(myonloadfunc);
 
         // myonloadfunc();
@@ -243,7 +247,7 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
           } */
       // window.App2=App2
       // console.log(App2.toString())
-      let App = Vue.extend({
+      let App =  Vue.extend({
         template: `<div id="root">
             <div id="my导航栏" class="fixed-top container-fluid">
             <nav class="navbar navbar-default navbar navbar-expand-sm bg-light navbar-light" role="navigation">
@@ -853,14 +857,14 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
           created() {// window.mychangemenu();
           }
       }; */
-      try {
+    //   try {
         Vue.component("App", App);
         //   Vue.component("about", about);
         //   Vue.component("home", home);
         //   Vue.component("huami", huami);
-      } catch (error) {
-        console.error(error);
-      }
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
       /*   home = ({
               template: `<div class="hello"><div class="container"><div class="jumbotron"><h1>欢迎登陆页面！</h1><p><a target="_blank"href="https://weibo.com/2174458781?">一生忽而得一夏当司掌好年华的微博</a></p><p><a target="_blank"href="https://github.com/masx200">masx200的github仓库</a></p></div></div><p><a target="_blank" href="https://cn.vuejs.org/v2/api/">文档API — Vue.js</a></p><p><a target="_blank" href="https://cn.vuejs.org/v2/guide/">教程介绍 — Vue.js</a></p><h1>VUE ROUTER测试</h1><h2>欢迎来到VUE</h2><h1>Hello, world!</h1><h2>现在是 {{new Date().toLocaleTimeString()}}.</h2><h1>{{ msg }}</h1></div>`,
               name: "home",
