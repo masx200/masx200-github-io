@@ -9,3 +9,13 @@
     padding-right: 0;
     padding-left: 0
 }
+        * {
+            text-align: center;
+        }
+body {
+            scroll-behavior: smooth;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
