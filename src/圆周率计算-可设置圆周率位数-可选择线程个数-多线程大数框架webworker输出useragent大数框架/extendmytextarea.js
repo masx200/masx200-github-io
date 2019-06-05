@@ -33,13 +33,16 @@ export default () => {
       }, 200);
     };
     if (el.addEventListener) {
-      el.addEventListener(
-        "input",
-        function() {
-          setStyle(el, 1);
-        },
-        false
-      );
+      try {
+        el.addEventListener(
+          "input",
+          function() {
+            setStyle(el, 1);
+          },
+          false
+        );
+      } catch (error) {}
+
       setStyle(el);
     } else if (el.attachEvent) {
       el.attachEvent("onpropertychange", function() {
@@ -75,9 +78,11 @@ export default () => {
     el.onchange = function() {
       delayedResize(el);
     };
-    el.addEventListener("click", function() {
-      delayedResize(el);
-    });
+    try {
+      el.addEventListener("click", function() {
+        delayedResize(el);
+      });
+    } catch (error) {}
   }
 
   //   var textarea = document.getElementById('tp');
