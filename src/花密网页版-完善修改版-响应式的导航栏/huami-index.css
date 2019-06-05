@@ -15,4 +15,4 @@ input {
 
 @import "../myfontandtextalign.css";
 /* <link href="./fp.css" rel="stylesheet"> */
-@import "./fp.css";
+@import "./fp.less";
