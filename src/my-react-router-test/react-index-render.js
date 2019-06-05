@@ -17,6 +17,15 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
       $("#my主体").css("padding-top", $("#my导航栏").height());
     }
     $(window).on("hashchange", onhashchange);
+    // $(window).on("hashchange", hashchangehandler);
+    //   function hashchangehandler() {
+    //     if (lasthash === window.location.hash) {
+    //       console.log("hash不改变");
+    //       return;
+    //     }
+    //     lasthash = window.location.hash;
+    //     // console.log("hash", window.location.hash);
+    //   }
     var haverun = 0;
     herewindowonload();
     function herewindowonload() {
@@ -80,15 +89,7 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
       );
       var lasthash;
 
-      $(window).on("hashchange", hashchangehandler);
-      function hashchangehandler() {
-        if (lasthash === window.location.hash) {
-          console.log("hash不改变");
-          return;
-        }
-        lasthash = window.location.hash;
-        // console.log("hash", window.location.hash);
-      }
+      
 
       class Apphome extends React.Component {
         constructor(props) {
@@ -99,7 +100,7 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
         shouqi收起折叠的导航栏菜单() {
           $("#my主体").css("padding-top", $("#my导航栏").height());
           $("#example-navbar-collapse").removeClass("show");
-          hashchangehandler();
+        //   hashchangehandler();
           refreshall();
         }
         render() {
@@ -282,7 +283,7 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
         componentDidMount() {
           $("#my主体").css("padding-top", $("#my导航栏").height());
 
-          hashchangehandler();
+        //   hashchangehandler();
           refreshall();
         }
         componentWillReceiveProps(newProps) {}
@@ -296,6 +297,8 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 
       function refreshall() {
         render(<Apphome />, document.getElementById("root"));
+        scrollTo(0, 0);
+        $("#collapsibleNavbar").removeClass("show");
       }
       refreshall();
       // ReactDOM.render(<Apphome />, document.getElementById("root"));
