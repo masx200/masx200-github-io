@@ -184,7 +184,7 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
                         </li>
                         <li>
                           <a
-                            href="../花密网页版-完善修改版-响应式的导航栏/index.html"
+                            href="../my-vue-router-project/index.html#/huami"
                             class="nav-link"
                           >
                             花密网页版
