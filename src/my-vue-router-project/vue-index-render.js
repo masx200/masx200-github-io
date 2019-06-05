@@ -90,11 +90,19 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
             path: "/huami",
             name: "huami",
             component: huami
-          }
-          //   {
-          //     path: "*",
-          //     redirect: "/"
-          //   }
+          },
+          {
+            path: "",
+          //   redirect: "/"
+          name: "home",
+          component: home
+          },
+            {
+              path: "*",
+            //   redirect: "/"
+            name: "home",
+            component: home
+            }
         ]
       });
 
@@ -115,10 +123,10 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
         }
         lasthash = window.location.hash;
         console.log("hash", window.location.hash);
-        if ("" == window.location.hash) {
-          window.location.hash = "#/";
-          return;
-        }
+        // if ("" == window.location.hash) {
+        //   window.location.hash = "#/";
+        //   return;
+        // }
 
         /*   try {
               异步按需加载外部组件("#/", import("./vue-component-home.js"), "home");

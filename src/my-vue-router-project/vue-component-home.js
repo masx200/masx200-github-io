@@ -9,7 +9,9 @@ let home = Vue.extend({
   },
   methods: {},
   mounted() {
+
     document.title = "vue-router-project-" + "home";
+    window.location.hash = "#/";
     // window.mychangemenu();
     // mychangemenu();
   }

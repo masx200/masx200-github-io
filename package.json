@@ -22,6 +22,7 @@
     "@babel/preset-env": "^7.4.5",
     "cssnano": "^4.1.10",
     "fast-xml-parser": "^3.12.16",
+    "less": "^3.9.0",
     "live-server": "^1.2.1",
     "parcel-bundler": "^1.12.3",
     "react": "^16.8.6",

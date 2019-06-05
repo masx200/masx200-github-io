@@ -40,7 +40,7 @@ let huami = Vue.extend({
   destroyed() {
     // console.log("huami,destroyed")
   },
-  template: `<div class="hello"><div class="container" id="rong1" style="text-align: center;">
+  template: `<div class="hello flowerpassword"><div class="container" id="rong1" style="text-align: center;">
     <div class="" id="rong2">
     <h2><span>1</span> 输入</h2><div id="input"><p></p><h3>记忆密码</h3><p></p><p>
     

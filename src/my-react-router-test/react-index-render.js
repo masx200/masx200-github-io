@@ -834,11 +834,12 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
                       />
                       <Route
                         exact
-                        path=""
+                        path="*"
                         // component={allcomponent.app}
                         component={home}
                         //    component={require("./module-app.js").default}
                       />
+
                       {/* <Redirect from="*" to="/" /> */}
                       {
                         // 如果当前路径变化则不启用路由
