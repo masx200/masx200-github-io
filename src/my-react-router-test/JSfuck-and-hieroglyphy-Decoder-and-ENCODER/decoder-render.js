@@ -14,10 +14,11 @@ export default function decoderrender() {
 
     function mystart() {
       $("#my主体").css("padding-top", $("#my导航栏").height());
-
-      document.querySelector("#code").value = hieroglyphy.hieroglyphyScript(
-        `alert('1');console.log("hello")`
-      );
+      try {
+        document.querySelector("#code").value = hieroglyphy.hieroglyphyScript(
+          `alert('1');console.log("hello")`
+        );
+      } catch (error) {}
     }
 
     function 匹配纯字符串(code) {

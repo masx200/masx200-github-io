@@ -52,7 +52,7 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
     // window.mychangemenu = function () {
 
     function myonloadfunc(modulearray) {
-      console.log(modulearray);
+    //   console.log(modulearray);
       var VueRouter = modulearray[0].default;
       var Vue = modulearray[1].default;
       Vue.config.productionTip = false;
