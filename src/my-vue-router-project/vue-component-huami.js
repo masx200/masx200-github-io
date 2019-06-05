@@ -1,5 +1,5 @@
 var Vue = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("vue");
-import vuehuamirender from "./vue-huami-render.js";
+import vuehuamirender from "./vue-component-huami-render";
 let huami = Vue.extend({
   mounted() {
     vuehuamirender();

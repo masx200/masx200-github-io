@@ -80,63 +80,6 @@ function jiazaiload(myid, eid) {
         tanchu弹出消息通用("success");
         refreshall();
       });
-
-    //   var str = await r.text();
-
-    /*   fetch(xmlurl).then(r => {
-        console.log(r.statusText, r);
-        // return r.text();
-
-        var str = r.text();
-        myxmlstrcontent.push(str);
-        console.log(myxmlstrcontent);
-        var data = parser.parse(str);
-        console.log(data);
-        myrsscontent.title = data.rss.channel.title;
-        myrsscontent.description = data.rss.channel.description;
-        myrsscontent.push(...data.rss.channel.item);
-        console.log(myrsscontent);
-        refreshall();
-      }); */
-    //   .then(str => {
-    //     myxmlstrcontent.push(str);
-    //     console.log(myxmlstrcontent);
-    //     return parser.parse(str);
-    //   })
-    //   .then(data => {
-    //     console.log(data);
-    //     myrsscontent.title = data.rss.channel.title;
-    //     myrsscontent.description = data.rss.channel.description;
-    //     myrsscontent.push(...data.rss.channel.item);
-    //     console.log(myrsscontent);
-    //     refreshall();
-    //   });
-
-    // $.get($(myselectorid).attr("src"), function (data, status) {
-    //     console.log(status, typeof data, data);
-    //     xmlDoc = data;
-    //     x = xmlDoc.getElementsByTagName("item");
-    //     for (i = 0; i < x.length; i++) {
-    //         onetitle = x[i].getElementsByTagName("title")[0].childNodes[0]
-    //             .nodeValue;
-    //         onelink = x[i].getElementsByTagName("link")[0].childNodes[0]
-    //             .nodeValue;
-    //         description = "";
-    //         for (value of x[i].getElementsByTagName("description")[0]
-    //             .childNodes) {
-    //             description += value.nodeValue;
-    //         }
-    //         // window.myrsscontent.push
-    //         myrsscontent.push({
-    //             title: onetitle,
-    //             link: onelink,
-    //             description
-    //         });
-    //     }
-    //     console.log(myrsscontent);
-    //     // console.log(window.myrsscontent)
-    //     refreshall();
-    // });
   }
 }
 function guid() {
@@ -268,8 +211,8 @@ export default class rssreader extends React.Component {
 
             <ul class="mui-table-view">
               {// window.myrsscontent.map
-              myrsscontent.map(e => (
-                <li class="mui-table-view-cell mui-media">
+              myrsscontent.map((e, index) => (
+                <li class="mui-table-view-cell mui-media" key={index}>
                   <div class="mui-media-body">
                     <b> {e.title}</b>
                     <a href={e.link} target="_blank">

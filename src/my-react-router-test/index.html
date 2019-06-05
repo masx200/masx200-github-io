@@ -1,49 +1,95 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <link href="./react-index-render.css" rel="stylesheet" />
-    <link rel="prefetch" href="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" />
+    <link
+      rel="prefetch"
+      href="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"
+    />
     <!-- <link rel="prefetch" href="./react-index-render.css" /> -->
-    <link rel="prefetch" href="./react-index-render.js" />
-    <link rel="prefetch" href="./react-module-about.js" />
-    <link rel="prefetch" href="./react-module-home.js" />
-    <link rel="prefetch" href="./react-module-rssreader.js" />
-    <link rel="prefetch" href="https://cdn.staticfile.org/jqueryui/1.12.1/jquery-ui.min.js" />
-    <link rel="prefetch" href="https://cdn.staticfile.org/marked/0.6.2/marked.min.js" />
-    <link rel="prefetch" href="https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js" />
-    <link rel="prefetch" href="https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js" />
-    <link rel="prefetch" href="https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js" />
-    <link rel="prefetch" href="https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js" />
-    <link rel="prefetch" href="https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js" />
-    <link rel="prefetch" href="https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js" />
 
-    <link rel="prefetch" href="https://cdn.staticfile.org/vue/2.6.10/vue.min.js" />
-    <link rel="prefetch" href="https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js" />
+    <link
+      rel="prefetch"
+      href="https://cdn.staticfile.org/jqueryui/1.12.1/jquery-ui.min.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdn.staticfile.org/marked/0.6.2/marked.min.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js"
+    />
+
+    <link
+      rel="prefetch"
+      href="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js"
+    />
     <!-- <link rel="prefetch" href="https://cdn.staticfile.org/fast-xml-parser/3.12.16/parser.min.js" /> -->
-    <link rel="prefetch" href="https://cdn.staticfile.org/highlight.js/9.15.6/highlight.min.js" />
-    <link rel="prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" />
-    <link rel="prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathMenu.js" />
-    <link rel="prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathZoom.js" />
+    <link
+      rel="prefetch"
+      href="https://cdn.staticfile.org/highlight.js/9.15.6/highlight.min.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathMenu.js"
+    />
+    <link
+      rel="prefetch"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathZoom.js"
+    />
     <style>
-        body {
-            scroll-behavior: smooth;
-        }
+      body {
+        scroll-behavior: smooth;
+      }
 
-        html {
-            scroll-behavior: smooth;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
     <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
-    <script
-        src="../%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js"></script>
+    <script src="../%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js"></script>
     <link rel="icon" href="./favicon.ico" type="img/x-ico" />
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
 
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.staticfile.org/mui/3.7.1/js/mui.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css"
+    />
     <!-- <script src="https://cdn.staticfile.org/fast-xml-parser/3.12.16/parser.min.js"></script> -->
     <!-- <link href="../myfontandtextalign.css" rel="stylesheet" /> -->
     <!-- <link rel="stylesheet" href="https://img.cdn.aliyun.dcloud.net.cn/mui/dist/css/mui.min.css?v=2017-02-15 11:53:40 +0800"> -->
@@ -66,27 +112,34 @@
 
     <!-- <link href="./react-index-render.css" rel="stylesheet" /> -->
     <script src="./react-index-render.js" async></script>
-    
+    <!-- <link
+      rel="stylesheet"
+      href="./JSfuck-and-hieroglyphy-Decoder-and-ENCODER/Decoder-and-ENCODER.css"
+    /> -->
     <link rel="prefetch" href="./feed.iplaysoft.com.xml" />
     <link rel="prefetch" href="./ifanr.com.feed.xml" />
     <link rel="prefetch" href="./landiannews.com.feed.xml" />
     <link rel="prefetch" href="./pingwest.com.feed.xml" />
     <link rel="prefetch" href="./www.ithome.com.rss.xml" />
     <link rel="prefetch" href="./www.tmtpost.com.rss.xml" />
-</head>
-
-<body style="font-family:Microsoft Yahei">
-    <noscript>You need to enable JavaScript to run this app. </noscript>
-    <div id="root"></div>
+    <link rel="prefetch" href="./react-index-render.js" />
+    <link rel="prefetch" href="./react-module-about.js" />
+    <link rel="prefetch" href="./react-module-home.js" />
+    <link rel="prefetch" href="./react-module-rssreader.js" />
     <script src="www.tmtpost.com.rss.xml" id="xml1" type="text/xml"></script>
     <script src="feed.iplaysoft.com.xml" id="xml2" type="text/xml"></script>
     <script src="landiannews.com.feed.xml" id="xml3" type="text/xml"></script>
     <script src="www.ithome.com.rss.xml" id="xml4" type="text/xml"></script>
     <script src="ifanr.com.feed.xml" id="xml5" type="text/xml"></script>
     <script src="pingwest.com.feed.xml" id="xml6" type="text/xml"></script>
+  </head>
+
+  <body style="font-family:Microsoft Yahei">
+    <noscript>You need to enable JavaScript to run this app. </noscript>
+    <div id="root"></div>
+    
     <!-- <script src="index.jsx" type="text/babel">
     </script> -->
     <!-- <script src="../拉伸导航栏与主体部分的顶部距离.js"></script> -->
-</body>
-
+  </body>
 </html>

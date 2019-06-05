@@ -5,6 +5,7 @@ import regeneratorRuntime from "regenerator-runtime";
 
 /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
 (global => {
+    "use strict";
   /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
   /* 注意不能跨域 */
   /* 注意:对于使用了document.write的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖
