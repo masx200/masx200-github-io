@@ -89,8 +89,6 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
       );
       var lasthash;
 
-      
-
       class Apphome extends React.Component {
         constructor(props) {
           super(props);
@@ -100,7 +98,7 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
         shouqi收起折叠的导航栏菜单() {
           $("#my主体").css("padding-top", $("#my导航栏").height());
           $("#example-navbar-collapse").removeClass("show");
-        //   hashchangehandler();
+          //   hashchangehandler();
           refreshall();
         }
         render() {
@@ -224,7 +222,13 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
                   //   style={"min-width: 100%;padding-top: 53px;"}
                 >
                   {/* <Suspense fallback={<div>Loading...</div>}> */}
-                  <Suspense fallback={<div>loading</div>}>
+                  <Suspense
+                    fallback={
+                      <div>
+                        <h1>loading</h1>
+                      </div>
+                    }
+                  >
                     <Switch>
                       <Route
                         exact
@@ -283,7 +287,7 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
         componentDidMount() {
           $("#my主体").css("padding-top", $("#my导航栏").height());
 
-        //   hashchangehandler();
+          //   hashchangehandler();
           refreshall();
         }
         componentWillReceiveProps(newProps) {}
