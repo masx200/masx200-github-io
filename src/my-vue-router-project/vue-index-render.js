@@ -117,12 +117,12 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
       $(window).on("hashchange", hashchangehandler);
       function hashchangehandler() {
         jQuery("#example-navbar-collapse").removeClass("show");
-        if (lasthash === window.location.hash) {
-          console.log("hash不改变");
-          return;
-        }
-        lasthash = window.location.hash;
-        console.log("hash", window.location.hash);
+        // if (lasthash === window.location.hash) {
+        //   console.log("hash不改变");
+        //   return;
+        // }
+        // lasthash = window.location.hash;
+        // console.log("hash", window.location.hash);
         // if ("" == window.location.hash) {
         //   window.location.hash = "#/";
         //   return;
