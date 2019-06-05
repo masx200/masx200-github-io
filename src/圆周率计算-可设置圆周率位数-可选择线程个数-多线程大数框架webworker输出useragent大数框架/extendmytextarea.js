@@ -87,11 +87,14 @@ export default () => {
   setmytextareinit("tp", "tp2", "tp-big", "tp2-big");
 
   function setmytextareinit(...id) {
-    for ( var value of id) {
+    for (var value of id) {
       var textarea = document.getElementById(value);
-    //   textarea.scrollHeight = 60;
+      //   textarea.scrollHeight = 60;
       //Uncaught TypeError: Cannot assign to read only property 'scrollHeight' of object '#<HTMLTextAreaElement>'
-      textarea.style.height = "60px";
+      try {
+        textarea.style.height = "60px";
+      } catch (error) {}
+
       makeExpandingArea(textarea);
     }
   }
