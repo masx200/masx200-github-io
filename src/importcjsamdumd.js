@@ -610,12 +610,12 @@ console.log(
                     if (typeof define.exports === "undefined") {
                       define.exports = {};
                     }
-                    console.log("模块的输出为", [
-                      exportmodule[0],
-                      exportmodule[1],
-                      // define.exports
-                      exportmodule[2]
-                    ]);
+                    // console.log("模块的输出为", [
+                    //   exportmodule[0],
+                    //   exportmodule[1],
+                    //   // define.exports
+                    //   exportmodule[2]
+                    // ]);
                     if (
                       typeof exportmodule[0] !== "object" ||
                       Object.keys(exportmodule[0]).length ||

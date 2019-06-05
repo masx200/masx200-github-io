@@ -67,7 +67,14 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
       const ReactDOM = reactmodulearray[1].default;
       const ReactRouterDOM = reactmodulearray[2].default;
       const render = ReactDOM.render;
-      const { Link, Switch, BrowserRouter, Route, Redirect } = ReactRouterDOM;
+      const {
+        Link,
+        Switch,
+        BrowserRouter,
+        Route,
+        Redirect,
+        HashRouter
+      } = ReactRouterDOM;
       const { Suspense, lazy } = React;
       const home = lazy(() => import("./react-module-home.js"));
       const rssreader = lazy(() => import("./react-module-rssreader.js"));
@@ -87,13 +94,13 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
           "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.js"
         )
       );
-      var lasthash;
+    //   var lasthash;
 
       class Apphome extends React.Component {
         constructor(props) {
           super(props);
-          this.pathnamestate = window.location.pathname + "#/";
-          this.locationpath = window.location.pathname;
+          //   this.pathnamestate = window.location.pathname + "#/";
+          //   this.locationpath = window.location.pathname;
         }
         shouqi收起折叠的导航栏菜单() {
           $("#my主体").css("padding-top", $("#my导航栏").height());
@@ -103,12 +110,14 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
         }
         render() {
           return (
-            <BrowserRouter
+            /*   <BrowserRouter
               //   basename={window.location.pathname + "#/"}
               basename={this.pathnamestate}
               forceRefresh={false}
               keyLength={12}
-            >
+            > */
+            /* 改成Hashrouter */
+            <HashRouter>
               <div>
                 <div class="container-fluid fixed-top" id="my导航栏">
                   <nav
@@ -278,9 +287,9 @@ import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
                   {/* </Suspense> */}
                 </div>
               </div>
-
-              {/* </Suspense> */}
-            </BrowserRouter>
+            </HashRouter>
+            //  {/* </Suspense> */}
+            /* </BrowserRouter> */
           );
         }
         componentWillMount() {}
