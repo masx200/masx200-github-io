@@ -138,7 +138,7 @@ export default class picalc extends React.Component {
             </p>
             <button
               data-loading-icon="mui-spinner mui-spinner-custom"
-              class="mui-btn mui-btn-primary btn btn-info"
+              class="mui-btn mui-btn-primary btn btn-info  btn btn-outline-primary mui-btn mui-btn-outline-primary"
               id="start-big"
               type="button"
               style={{ width: "100%" }}
@@ -235,7 +235,7 @@ export default class picalc extends React.Component {
             </p>
             <button
               data-loading-icon="mui-spinner mui-spinner-custom"
-              class="mui-btn mui-btn-primary btn btn-info"
+              class="mui-btn mui-btn-primary btn btn-info  btn btn-outline-primary mui-btn mui-btn-outline-primary"
               id="start"
               type="button"
               style={{ width: "100%" }}
