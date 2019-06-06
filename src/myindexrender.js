@@ -2,7 +2,8 @@
 // console .log(React)
 
 (() => {
-  $(window).one("load", () => {
+  $(window).one("load", 
+  () => {
     $("#my主体").css("padding-top", $("#my导航栏").height());
     $("#btn1").click(() => {
       tanchu弹出消息通用("primary");
@@ -63,7 +64,9 @@
     //  window.myimportreact= require("_bundle_loader")(require.resolve("https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js"))
     // );
     //    console.log(()=> import('https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js'))
-  });
+  }
+  
+  );
 
   //       function tanchu弹出消息失败() {
   //         // var id=Math.random()*100000000|0

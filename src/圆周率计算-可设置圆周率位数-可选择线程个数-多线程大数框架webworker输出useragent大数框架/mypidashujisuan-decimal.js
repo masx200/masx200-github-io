@@ -1,8 +1,9 @@
-import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
+// import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 
 // (() => {
 //   $(window).one("load",
-
+"use strict";
+const IMPORTCJSAMDUMD = window.IMPORTCJSAMDUMD;
 export default () => {
   IMPORTCJSAMDUMD(
     "https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js",
@@ -57,7 +58,7 @@ export default () => {
 
     function lashentextarea(...ids) {
       setTimeout(function() {
-        for ( var value of ids) {
+        for (var value of ids) {
           var myptext = document.getElementById(value);
           var el = myptext;
 

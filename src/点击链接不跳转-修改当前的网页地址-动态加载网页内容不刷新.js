@@ -5,7 +5,7 @@ import regeneratorRuntime from "regenerator-runtime";
 
 /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
 (global => {
-    "use strict";
+  "use strict";
   /**点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 */
   /* 注意不能跨域 */
   /* 注意:对于使用了document.write的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖
@@ -41,7 +41,8 @@ import regeneratorRuntime from "regenerator-runtime";
    *
    *   *
    */
-  global.修改当前的网页地址动态加载网页内容不刷新 =   global.修改当前的网页地址动态加载网页内容不刷新||windowloadhandler;
+  global.修改当前的网页地址动态加载网页内容不刷新 =
+    global.修改当前的网页地址动态加载网页内容不刷新 || windowloadhandler;
 
   function 同源网址跳转动态加载(url = location.href) {
     url = new URL(url);
@@ -123,50 +124,50 @@ import regeneratorRuntime from "regenerator-runtime";
       });*/
 
     document.write = t => {
-        console.warn(
-            "document.write已被禁用，" +
-              "把document.write中的内容生成dom元素放入body之中" +
-              "要写入的内容为：",
-            t
-          );
+      console.warn(
+        "document.write已被禁用，" +
+          "把document.write中的内容生成dom元素放入body之中" +
+          "要写入的内容为：",
+        t
+      );
 
-    //   var jQuery;
-    //   /* 等到使用document.write时再加载jquery */
-    //   IMPORTCJSAMDUMD(
-    //     "https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js",
-    //     "jquery"
-    //   ).then(module => {
-    //     jQuery = module.default;
-    //     // if (jQuery.fn.jquery[0] < 3) {
-    //     //   importjquery();
-    //     // }
+      //   var jQuery;
+      //   /* 等到使用document.write时再加载jquery */
+      //   IMPORTCJSAMDUMD(
+      //     "https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js",
+      //     "jquery"
+      //   ).then(module => {
+      //     jQuery = module.default;
+      //     // if (jQuery.fn.jquery[0] < 3) {
+      //     //   importjquery();
+      //     // }
 
-    //     console.warn(
-    //       "document.write已被禁用，" +
-    //         "把document.write中的内容生成dom元素放入body之中" +
-    //         "要写入的内容为：",
-    //       t
-    //     );
-    //     // var writeelement = document.createElement("div");
-    //     // writeelement.innerHTML = t;
-    //     // document.getElementsByTagName("head")[0].appendChild(writeelement);
-    //     var newelemnet = jQuery(t);
-    //     try {
-    //       newelemnet.attr("data-loadid", loadid);
-    //     } catch (error) {
-    //       console.warn(error);
-    //       return;
-    //     }
+      //     console.warn(
+      //       "document.write已被禁用，" +
+      //         "把document.write中的内容生成dom元素放入body之中" +
+      //         "要写入的内容为：",
+      //       t
+      //     );
+      //     // var writeelement = document.createElement("div");
+      //     // writeelement.innerHTML = t;
+      //     // document.getElementsByTagName("head")[0].appendChild(writeelement);
+      //     var newelemnet = jQuery(t);
+      //     try {
+      //       newelemnet.attr("data-loadid", loadid);
+      //     } catch (error) {
+      //       console.warn(error);
+      //       return;
+      //     }
 
-    //     //   newelemnet = jQuery(Array(...newelemnet).reverse());
-    //     jQuery("body").append(newelemnet);
-    //     console.log("添加元素到body ");
-    //     /*  for (var i of newelemnet) {
-    //           console.log(i.outerHTML);
-    //         } */
-    //     console.log(Array(...newelemnet).map(i => i.outerHTML));
-    //     // console.log("把document.write中的内容生成dom元素放入head之中");
-    //   });
+      //     //   newelemnet = jQuery(Array(...newelemnet).reverse());
+      //     jQuery("body").append(newelemnet);
+      //     console.log("添加元素到body ");
+      //     /*  for (var i of newelemnet) {
+      //           console.log(i.outerHTML);
+      //         } */
+      //     console.log(Array(...newelemnet).map(i => i.outerHTML));
+      //     // console.log("把document.write中的内容生成dom元素放入head之中");
+      //   });
     };
 
     //   function importjquery() {
@@ -360,7 +361,7 @@ import regeneratorRuntime from "regenerator-runtime";
     }
     //   document.onclick();
     function onpopstatehandler() {
-      console.log("事件onpopstate,执行,");
+    //   console.log("事件onpopstate,执行,");
       //    document.firstElementChild.dataset.href = document.firstElementChild.dataset.href;
       console.log(
         "当前的地址栏路径为" + location.pathname,
@@ -849,7 +850,7 @@ import regeneratorRuntime from "regenerator-runtime";
         /* 竟然有的网页甚至还要给html标签加style! */
         // document.firstElementChild.style = "";
         /* 添加顺滑的滚动效果在scrollto的时候用到 */
-        document.firstElementChild.style="scroll-behavior: smooth;"
+        document.firstElementChild.style = "scroll-behavior: smooth;";
         // $("html").css("scroll-behavior", "smooth");
         document.firstElementChild.className = "";
         document.getElementsByTagName("body")[0].style = "";
@@ -967,7 +968,9 @@ import regeneratorRuntime from "regenerator-runtime";
 
           /* fetch加载成功,而且网页类型正确 */
           //   history.pushState(undefined, undefined, url);
-
+          document.firstElementChild.dataset.hash = url.hash;
+          location.hash = document.firstElementChild.dataset.hash;
+          /* 把location.hash改成url.hash */
           if (
             document.firstElementChild.dataset.search !== location.search ||
             document.firstElementChild.dataset.href !== location.href ||

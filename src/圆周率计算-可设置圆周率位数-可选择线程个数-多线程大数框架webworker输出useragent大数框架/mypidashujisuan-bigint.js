@@ -1,9 +1,12 @@
-import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
-
+// import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
+// import("../IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
 // (() => {
 //   $(window).one("load",
 // 自动开启严格模式
-export default () => {
+"use strict";
+const IMPORTCJSAMDUMD = window.IMPORTCJSAMDUMD;
+const _default = () => {
+  "use strict";
   IMPORTCJSAMDUMD(
     "https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js",
     "big-integer"
@@ -22,7 +25,6 @@ export default () => {
       durt,
       testname;
     mytestpi();
-
     function guid() {
       return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(
         c
@@ -53,7 +55,6 @@ export default () => {
     // $('window').load(mytestpi)
     //   $(document).ready(mytestpi);
     // mytestpi;
-
     for (var key = 0; key < myworker.length; key++) {
       myworker[key] = undefined;
     }
@@ -63,15 +64,12 @@ export default () => {
         for (var value of ids) {
           var myptext = document.getElementById(value);
           var el = myptext;
-
           // textarea.scrollHeight = 60
           // textarea.style.height = "60px"
           // makeExpandingArea(textarea);
           if (Math.abs(parseInt(el.style.height) - el.scrollHeight) > 5) {
             console.log(parseInt(el.style.height), el.scrollHeight);
-
             myptext.style.height = myptext.scrollHeight + 2 + "px";
-
             console.log(
               "拉伸文本框",
               parseInt(el.style.height),
@@ -82,14 +80,12 @@ export default () => {
         }
       }, 0);
     }
-
     function mytestpi() {
       var mystartid = "#start-big";
       // document.getElementById("start").onclick = mystart;
       $(mystartid).click(mystart);
       getConstpinewhighefficiency105();
     }
-
     function getConstpinewhighefficiency105() {
       var myeleid3 = "tp-big";
       var myinput1 = document.getElementById("thread-big");
@@ -101,7 +97,6 @@ export default () => {
       threadgeshu = 8;
       x = 0;
       // piwei = 3000;
-
       myptext = mytextarea1;
       myshurukuangneirong = " ";
       myshurukuangneirong =
@@ -120,13 +115,10 @@ export default () => {
       //   myptext.style.height = myptext.scrollHeight + "px";
       // }, 0);
     }
-
     function mystart() {
       mui(document.getElementById("start-big")).button("loading");
       bigInt.abs = n => bigInt(n).abs();
-
       bigInt.mul = (n, m) => bigInt(n).multiply(m);
-
       bigInt.div = (n, m) => bigInt(n).divide(m);
       bigInt.add = (n, m) => bigInt(n).add(m);
       bigInt().__proto__.cmp = bigInt().__proto__.compare;
@@ -172,10 +164,8 @@ export default () => {
         console.time(testname);
         strt = new Date().getTime();
         p = new bigInt(0);
-
         //   myworker = [];
         //   myworker.length = threadgeshu;
-
         finishflag = [];
         finishflag.length = threadgeshu;
         //   if (typeof worker1 == "undefined") {
@@ -186,7 +176,6 @@ export default () => {
         //     myworker[i] = worker1;
         //   }
         //   var worker1 = Array(threadgeshu);
-
         //   myworker =Array(threadgeshu);
         //   for(var key=0;key< threadgeshu; key++){
         //       myworker[key]=undefined
@@ -220,7 +209,6 @@ export default () => {
               "\n第二个参数",
               event.data[1]
             );
-
             var p1 = new bigInt(event.data[0]);
             p = bigInt.add(p, p1);
             x = Math.max(x, parseInt(event.data[1]));
@@ -245,7 +233,6 @@ export default () => {
         myinput1.value = 8;
       }
     }
-
     function threadfinish() {
       var myeleid3 = "tp-big";
       var myeleid4 = "tp2-big";
@@ -261,7 +248,6 @@ export default () => {
         mui(document.getElementById("start-big")).button("reset");
         var endt = new Date().getTime();
         durt = (endt - strt) / 1000;
-
         eventdata =
           "计算完成,用时" +
           durt +
@@ -275,7 +261,6 @@ export default () => {
         // "  \n" +
         // p +
         // "  \n"
-
         mytextarea2.value =
           "圆周率" +
           piwei +
@@ -302,6 +287,8 @@ export default () => {
     }
   });
 };
+export { _default as default };
 
 //   );
 // })();
+// });

@@ -189,7 +189,7 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
   //   }
 
   function importcjsamdumd(url, packagename = undefined) {
-    console.log("输入的参数为", Array(...arguments));
+    // console.log("输入的参数为", Array(...arguments));
     if (typeof url === "object" || typeof packagename === "object") {
       var 已经加载过的模块数量 = 0;
       for (var canshuinput of Array(...arguments)) {
