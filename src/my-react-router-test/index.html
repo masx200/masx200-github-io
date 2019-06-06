@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+        <link
+        rel="stylesheet"
+        href="https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css"
+      />
     <link href="./react-index-render.css" rel="stylesheet" />
     <link
       rel="prefetch"
@@ -66,17 +70,9 @@
       rel="prefetch"
       href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathZoom.js"
     />
-    <style>
-      body {
-        scroll-behavior: smooth;
-      }
 
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
     <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
-    
+
     <link rel="icon" href="./favicon.ico" type="img/x-ico" />
     <link
       rel="stylesheet"
@@ -86,10 +82,7 @@
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.staticfile.org/mui/3.7.1/js/mui.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css"
-    />
+    
     <!-- <script src="https://cdn.staticfile.org/fast-xml-parser/3.12.16/parser.min.js"></script> -->
     <!-- <link href="../myfontandtextalign.css" rel="stylesheet" /> -->
     <!-- <link rel="stylesheet" href="https://img.cdn.aliyun.dcloud.net.cn/mui/dist/css/mui.min.css?v=2017-02-15 11:53:40 +0800"> -->
@@ -133,13 +126,34 @@
     <script src="www.ithome.com.rss.xml" id="xml4" type="text/xml"></script>
     <script src="ifanr.com.feed.xml" id="xml5" type="text/xml"></script>
     <script src="pingwest.com.feed.xml" id="xml6" type="text/xml"></script> -->
-    <script src="../%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js" async></script>
+    <script
+      src="../%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js"
+      async
+    ></script>
+    <!-- 终于解决了文字不能复制的问题,mui.css设置禁止复制文字 -->
+    <style>
+      * {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -o-user-select: text;
+        user-select: text;
+      }
+    </style>
+    <style>
+      body {
+        scroll-behavior: smooth;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
 
-  <body >
+  <body>
     <noscript>You need to enable JavaScript to run this app. </noscript>
     <div id="root"></div>
-    
+
     <!-- <script src="index.jsx" type="text/babel">
     </script> -->
     <!-- <script src="../拉伸导航栏与主体部分的顶部距离.js"></script> -->
