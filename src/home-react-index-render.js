@@ -1,4 +1,8 @@
 // import IMPORTCJSAMDUMD from "./IMPORTCJSAMDUMD";
+// import myreacthtml from "./my-react-router-test/index.html";
+// console.log(myreacthtml)
+// import myvuehtml from "./my-vue-router-project/index.html";
+// console.log(myreacthtml, myvuehtml);
 import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
   //   var IMPORTCJSAMDUMD = module1;
   (() => {
@@ -153,7 +157,8 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                             //   class={window.location.hash == "#/" ? "active" : ""}
                           >
                             <a
-                              href="./my-react-router-test/index.html"
+                                href="./my-react-router-test/index.html"
+                            //   href={myreacthtml}
                               class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                             >
                               基于REACT的主页
@@ -163,7 +168,8 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                           <li>
                             <a
                               class="nav-item"
-                              href="./my-react-router-test/index.html#/decoder"
+                                href="./my-react-router-test/index.html#/decoder"
+                            //   href={myreacthtml + "#/decoder"}
                               class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                             >
                               JSfuck-and-hieroglyphy-Decoder-and-ENCODER

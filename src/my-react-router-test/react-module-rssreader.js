@@ -1,4 +1,11 @@
 import parser from "./fast-xml-parser";
+import rssxml1 from "./www.tmtpost.com.rss.xml";
+import rssxml2 from "./feed.iplaysoft.com.xml";
+import rssxml3 from "./landiannews.com.feed.xml";
+import rssxml4 from "./www.ithome.com.rss.xml";
+import rssxml5 from "./ifanr.com.feed.xml";
+import rssxml6 from "./pingwest.com.feed.xml";
+"use strict";
 // IMPORTCJSAMDUMD(
 //     "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
 //     "react"
@@ -49,17 +56,22 @@ function tanchu弹出消息通用(infotype) {
 }
 var myxmlstrcontent = [];
 var myrsscontent = [];
-function jiazaiload(myid, eid) {
-  var myselectorid = myid;
+// function jiazaiload(myid, eid) {
+//   var myselectorid = myid;
+function jiazaiload(xmlurl, eid) {
   // window.myrsscontent = []
   myrsscontent = [];
-  console.log("开始加载外部内容", $(myselectorid).attr("src"));
-  if (typeof $(myselectorid).attr("src") == "undefined") {
+  console.log(
+    "开始加载外部内容",
+    xmlurl
+    /* $(myselectorid).attr("src") */
+  );
+  if (typeof /* $(myselectorid).attr("src")  */ xmlurl == "undefined") {
     console.log("加载失败");
   } else {
     //使用fetch函数代替$.get
     //使用fast-xml-parser把xml转换为json
-    var xmlurl = $(myselectorid).attr("src");
+    // var xmlurl = $(myselectorid).attr("src");
     fetch(xmlurl)
       .then(r => {
         console.log(r.statusText, r);
@@ -107,33 +119,34 @@ export default class rssreader extends React.Component {
   jiazairss1() {
     // console.log(this.buttonid1);
     mui(document.getElementById(mybuttonids.buttonid1)).button("loading");
-    var myselectorid = "#xml1";
-    jiazaiload(myselectorid, mybuttonids.buttonid1);
+    // var myselectorid = "#xml1";
+    // jiazaiload(myselectorid, mybuttonids.buttonid1);
+    jiazaiload(rssxml1, mybuttonids.buttonid1);
   }
   jiazairss2() {
     mui(document.getElementById(mybuttonids.buttonid2)).button("loading");
-    var myselectorid = "#xml2";
-    jiazaiload(myselectorid, mybuttonids.buttonid2);
+    // var myselectorid = "#xml2";
+    jiazaiload(rssxml2, mybuttonids.buttonid2);
   }
   jiazairss3() {
     mui(document.getElementById(mybuttonids.buttonid3)).button("loading");
-    var myselectorid = "#xml3";
-    jiazaiload(myselectorid, mybuttonids.buttonid3);
+    // var myselectorid = "#xml3";
+    jiazaiload(rssxml3, mybuttonids.buttonid3);
   }
   jiazairss4() {
     mui(document.getElementById(mybuttonids.buttonid4)).button("loading");
-    var myselectorid = "#xml4";
-    jiazaiload(myselectorid, mybuttonids.buttonid4);
+    // var myselectorid = "#xml4";
+    jiazaiload(rssxml4, mybuttonids.buttonid4);
   }
   jiazairss5() {
     mui(document.getElementById(mybuttonids.buttonid5)).button("loading");
-    var myselectorid = "#xml5";
-    jiazaiload(myselectorid, mybuttonids.buttonid5);
+    // var myselectorid = "#xml5";
+    jiazaiload(rssxml5, mybuttonids.buttonid5);
   }
   jiazairss6() {
     mui(document.getElementById(mybuttonids.buttonid6)).button("loading");
-    var myselectorid = "#xml6";
-    jiazaiload(myselectorid, mybuttonids.buttonid6);
+    // var myselectorid = "#xml6";
+    jiazaiload(rssxml6, mybuttonids.buttonid6);
   }
   componentDidMount() {
     document.title = "React router App-" + "rssreader";

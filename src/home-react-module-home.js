@@ -1,11 +1,11 @@
-import picture1 from "./babeljs.png";
+/* import picture1 from "./babeljs.png";
 
 import picture2 from "./parcel.jpg";
 import picture3 from "./bootstrap.png";
 import picture4 from "./logo-jquery.png";
 import picture5 from "./react.svg";
 import picture6 from "./vue.png";
-import picture7 from "./webpack.svg";
+import picture7 from "./webpack.svg"; */
 var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 export default class home extends React.Component {
   componentDidMount() {
@@ -126,7 +126,7 @@ export default class home extends React.Component {
             弹出警告提示框
           </button>
         </div>
-        <div id="图片列表200">
+       {/*  <div id="图片列表200">
           <hr />
           <img loading="lazy" src={picture1} />
           <hr />
@@ -141,7 +141,7 @@ export default class home extends React.Component {
           <img loading="lazy" src={picture6} />
           <hr />
           <img loading="lazy" src={picture7} />
-        </div>
+        </div> */}
         <div
           id="readme"
           class="Box Box--condensed instapaper_body md js-code-block-container"
