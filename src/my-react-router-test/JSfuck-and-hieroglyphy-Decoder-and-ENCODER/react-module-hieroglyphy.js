@@ -23,7 +23,7 @@ export default class Hieroglyphy extends React.Component {
           建议在最新超高版本chrome或者Firefox或者safari浏览器中运行！
         </p>
         <br />
-        <textarea id="input" type="text" />
+        <textarea class="form-control" id="input" type="text" />
         <br />
         <p>
           <button
@@ -48,7 +48,7 @@ export default class Hieroglyphy extends React.Component {
         </p>
         <br />
         <br />
-        <textarea id="output" />
+        <textarea id="output" class="form-control" />
         <div class="actions">
           <span id="stats">0 chars</span>
           <button class="btn btn-outline-primary btn-lg" id="run">

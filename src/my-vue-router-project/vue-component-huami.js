@@ -51,7 +51,9 @@ let huami = Vue.extend({
     name="key" type="text"value tabindex="2">
     
     
-    </p></div><br><p></p><h2><span>2</span> 获取</h2><p></p><div id="get"><p id="tuijian"></p><p></p><h3>最终密码</h3><p></p><span id="myhezi"><p><input id="code16" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 snippet code16d" readonly></p><br><p>
+    </p></div><br><p></p><h2><span>2</span> 获取</h2><p></p><div id="get"><p id="tuijian"></p><p></p><h3>最终密码</h3><p></p><span id="myhezi"><p>
+    
+    <input id="code16" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 snippet code16d form-control" readonly></p><br><p>
 
     <button id="copycode16" class="btn copycode16d btn-info" 
     
@@ -63,10 +65,8 @@ let huami = Vue.extend({
     // console.log("huami,created");
   },
   data() {
-    return {  };
+    return {};
   },
-  methods: {
-    
-  }
+  methods: {}
 });
 export default huami;

@@ -39,6 +39,7 @@ export default class Decoder extends React.Component {
         </p>
         <br />
         <textarea
+          class="form-control"
           placeholder="Paste your code here!"
           id="code"
           style={{
@@ -54,6 +55,7 @@ export default class Decoder extends React.Component {
           class="btn btn-primary btn-lg"
         />
         <textarea
+          class="form-control"
           id="code2"
           style={{ width: "100%", "min-height": "250px" }}
           // style="width:100%;min-height:250px"

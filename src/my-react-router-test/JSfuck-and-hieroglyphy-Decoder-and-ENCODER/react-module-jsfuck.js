@@ -7,7 +7,7 @@ export default class Jsfuck extends React.Component {
     document.title =
       "React router App-" +
       "JSFuck encoder- Write any JavaScript with 6 Characters: []()!+";
-      jsfuckencoderender()
+    jsfuckencoderender();
   }
   render() {
     return (
@@ -35,7 +35,7 @@ export default class Jsfuck extends React.Component {
           建议在最新超高版本的chrome或者Firefox或者safari浏览器中运行！
         </p>
         <br />
-        <textarea id="input" type="text" />
+        <textarea id="input" type="text" class="form-control" />
         <br />
         <button
           class="btn btn-outline-primary btn-lg"
@@ -49,7 +49,7 @@ export default class Jsfuck extends React.Component {
           <input id="eval" type="checkbox" checked="" />
           <label for="eval">Eval Source</label>
         </div>
-        <textarea id="output" />
+        <textarea id="output" class="form-control" />
         <div class="actions">
           <span id="stats">0 chars</span>
           <button class="btn btn-outline-success btn-lg" id="run">
