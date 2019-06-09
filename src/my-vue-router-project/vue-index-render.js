@@ -145,14 +145,14 @@ import("../IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
             <router-link to="/about"  class="nav-link mui-btn mui-btn-primary mui-btn-outlined">关于VUE</router-link>
             </li>
             <li>
-            <a href="../my-react-router-test/index.html"  class="nav-link mui-btn mui-btn-primary mui-btn-outlined">基于react的首页</a>
+            <a href="../index.html#/react-home"  class="nav-link mui-btn mui-btn-primary mui-btn-outlined">基于react的首页</a>
             </li>
             <li class="">
 
             <a href="../index.html#/picalc"  class="nav-link mui-btn mui-btn-primary mui-btn-outlined">圆周率计算多线程</a>
             
             </li>
-            <li><a href="../my-react-router-test/index.html#/decoder"  class="nav-link mui-btn mui-btn-primary mui-btn-outlined">JSfuck-and-hieroglyphy-Decoder-and-ENCODER</a>
+            <li><a href="../index.html#/decoder"  class="nav-link mui-btn mui-btn-primary mui-btn-outlined">JSfuck-and-hieroglyphy-Decoder-and-ENCODER</a>
             </li>
             </ul>
             </div>

@@ -18,3 +18,10 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+* {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -o-user-select: text;
+        user-select: text;
+      }

@@ -1,15 +1,18 @@
 /* <link href="myfontandtextalign.css" rel="stylesheet" /> */
 @import "./myfontandtextalign.css";
-#图片列表200 img{
-    min-height:150px;
-min-width:150px;
-       height: auto;
-                    
-width: auto;
+#图片列表200 img {
+  min-height: 150px;
+  min-width: 150px;
+  height: auto;
 
-      max-width: 100%;
-       
-        max-height: 200px;
+  width: auto;
+
+  max-width: 100%;
+
+  max-height: 200px;
 }
-
-
+#my导航栏 .navbar-nav li a {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+@import "./my-react-router-test/react-index-render.css";

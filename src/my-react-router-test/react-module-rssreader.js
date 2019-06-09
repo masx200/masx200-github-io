@@ -5,7 +5,8 @@ import rssxml3 from "./landiannews.com.feed.xml";
 import rssxml4 from "./www.ithome.com.rss.xml";
 import rssxml5 from "./ifanr.com.feed.xml";
 import rssxml6 from "./pingwest.com.feed.xml";
-"use strict";
+("use strict");
+var refreshallsetstate;
 // IMPORTCJSAMDUMD(
 //     "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
 //     "react"
@@ -50,7 +51,7 @@ function tanchu弹出消息通用(infotype) {
   </div>`).fadeTo(5000, 0.5, () => {
       console.log(jQuery("#" + id));
       jQuery("#" + id).remove();
-      refreshall();
+      //   refreshall();
     })
   );
 }
@@ -58,42 +59,7 @@ var myxmlstrcontent = [];
 var myrsscontent = [];
 // function jiazaiload(myid, eid) {
 //   var myselectorid = myid;
-function jiazaiload(xmlurl, eid) {
-  // window.myrsscontent = []
-  myrsscontent = [];
-  console.log(
-    "开始加载外部内容",
-    xmlurl
-    /* $(myselectorid).attr("src") */
-  );
-  if (typeof /* $(myselectorid).attr("src")  */ xmlurl == "undefined") {
-    console.log("加载失败");
-  } else {
-    //使用fetch函数代替$.get
-    //使用fast-xml-parser把xml转换为json
-    // var xmlurl = $(myselectorid).attr("src");
-    fetch(xmlurl)
-      .then(r => {
-        console.log(r.statusText, r);
-        return r.text();
-      })
-      .then(s => {
-        var str = s;
-        myxmlstrcontent.push(str);
-        console.log("xml", myxmlstrcontent);
-        var data = parser.parse(str);
-        console.log("json", data);
-        myrsscontent.title = data.rss.channel.title;
-        myrsscontent.description = data.rss.channel.description;
-        myrsscontent.push(...data.rss.channel.item);
-        console.log("rsscontent", myrsscontent);
 
-        mui(document.getElementById(eid)).button("reset");
-        tanchu弹出消息通用("success");
-        refreshall();
-      });
-  }
-}
 function guid() {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
     var r = (Math.random() * 16) | 0,
@@ -103,6 +69,48 @@ function guid() {
 }
 var mybuttonids = {};
 export default class rssreader extends React.Component {
+  constructor() {
+    super();
+    // this.state = { undefined: "undefined" };
+    // refreshallsetstate = this.forceUpdate;
+  }
+  jiazaiload(xmlurl, eid) {
+    // window.myrsscontent = []
+    myrsscontent = [];
+    console.log(
+      "开始加载外部内容",
+      xmlurl
+      /* $(myselectorid).attr("src") */
+    );
+    if (typeof /* $(myselectorid).attr("src")  */ xmlurl == "undefined") {
+      console.log("加载失败");
+    } else {
+      //使用fetch函数代替$.get
+      //使用fast-xml-parser把xml转换为json
+      // var xmlurl = $(myselectorid).attr("src");
+      fetch(xmlurl)
+        .then(r => {
+          console.log(r.statusText, r);
+          return r.text();
+        })
+        .then(s => {
+          var str = s;
+          myxmlstrcontent.push(str);
+          console.log("xml", myxmlstrcontent);
+          var data = parser.parse(str);
+          console.log("json", data);
+          myrsscontent.title = data.rss.channel.title;
+          myrsscontent.description = data.rss.channel.description;
+          myrsscontent.push(...data.rss.channel.item);
+          console.log("rsscontent", myrsscontent);
+
+          mui(document.getElementById(eid)).button("reset");
+          tanchu弹出消息通用("success");
+          //   refreshall();
+          this.forceUpdate();
+        });
+    }
+  }
   /*  constructor() {
       super()
       this.buttonid1 = this.buttonid2 =this. buttonid3 =this. buttonid4 = this.buttonid5 =this. buttonid6 = 'undefined';
@@ -121,36 +129,36 @@ export default class rssreader extends React.Component {
     mui(document.getElementById(mybuttonids.buttonid1)).button("loading");
     // var myselectorid = "#xml1";
     // jiazaiload(myselectorid, mybuttonids.buttonid1);
-    jiazaiload(rssxml1, mybuttonids.buttonid1);
+    this.jiazaiload(rssxml1, mybuttonids.buttonid1);
   }
   jiazairss2() {
     mui(document.getElementById(mybuttonids.buttonid2)).button("loading");
     // var myselectorid = "#xml2";
-    jiazaiload(rssxml2, mybuttonids.buttonid2);
+    this.jiazaiload(rssxml2, mybuttonids.buttonid2);
   }
   jiazairss3() {
     mui(document.getElementById(mybuttonids.buttonid3)).button("loading");
     // var myselectorid = "#xml3";
-    jiazaiload(rssxml3, mybuttonids.buttonid3);
+    this.jiazaiload(rssxml3, mybuttonids.buttonid3);
   }
   jiazairss4() {
     mui(document.getElementById(mybuttonids.buttonid4)).button("loading");
     // var myselectorid = "#xml4";
-    jiazaiload(rssxml4, mybuttonids.buttonid4);
+    this.jiazaiload(rssxml4, mybuttonids.buttonid4);
   }
   jiazairss5() {
     mui(document.getElementById(mybuttonids.buttonid5)).button("loading");
     // var myselectorid = "#xml5";
-    jiazaiload(rssxml5, mybuttonids.buttonid5);
+    this.jiazaiload(rssxml5, mybuttonids.buttonid5);
   }
   jiazairss6() {
     mui(document.getElementById(mybuttonids.buttonid6)).button("loading");
     // var myselectorid = "#xml6";
-    jiazaiload(rssxml6, mybuttonids.buttonid6);
+    this.jiazaiload(rssxml6, mybuttonids.buttonid6);
   }
   componentDidMount() {
     document.title = "React router App-" + "rssreader";
-    refreshall();
+    // refreshall();
   }
   componentWillReceiveProps(newProps) {}
   shouldComponentUpdate(newProps, newState) {
@@ -169,7 +177,10 @@ export default class rssreader extends React.Component {
               id={mybuttonids.buttonid1}
               data-loading-icon="mui-spinner mui-spinner-custom"
               class="mui-btn mui-btn-royal mui-btn-outlined"
-              onClick={this.jiazairss1}
+              onClick={() => {
+                  /* 使用箭头函数可以自动绑定this! */
+                this.jiazairss1();
+              }}
             >
               加载tmtpost
             </button>
@@ -177,7 +188,11 @@ export default class rssreader extends React.Component {
               id={mybuttonids.buttonid2}
               data-loading-icon="mui-spinner mui-spinner-custom"
               class="mui-btn mui-btn-primary mui-btn-outlined"
-              onClick={this.jiazairss2}
+            //   onClick={this.jiazairss2}
+            onClick={() => {
+                /* 使用箭头函数可以自动绑定this! */
+              this.jiazairss2();
+            }}
             >
               加载iplaysoft
             </button>
@@ -185,7 +200,11 @@ export default class rssreader extends React.Component {
               id={mybuttonids.buttonid3}
               data-loading-icon="mui-spinner mui-spinner-custom"
               class="mui-btn mui-btn-warning mui-btn-outlined"
-              onClick={this.jiazairss3}
+            //   onClick={this.jiazairss3}
+            onClick={() => {
+                /* 使用箭头函数可以自动绑定this! */
+              this.jiazairss3();
+            }}
             >
               加载landiannews
             </button>
@@ -193,7 +212,11 @@ export default class rssreader extends React.Component {
               id={mybuttonids.buttonid4}
               data-loading-icon="mui-spinner mui-spinner-custom"
               class="mui-btn mui-btn-danger mui-btn-outlined"
-              onClick={this.jiazairss4}
+            //   onClick={this.jiazairss4}
+            onClick={() => {
+                /* 使用箭头函数可以自动绑定this! */
+              this.jiazairss4();
+            }}
             >
               加载ithome
             </button>
@@ -201,7 +224,11 @@ export default class rssreader extends React.Component {
               id={mybuttonids.buttonid5}
               data-loading-icon="mui-spinner mui-spinner-custom"
               class="mui-btn mui-btn-success mui-btn-outlined"
-              onClick={this.jiazairss5}
+            //   onClick={this.jiazairss5}
+            onClick={() => {
+                /* 使用箭头函数可以自动绑定this! */
+              this.jiazairss5();
+            }}
             >
               加载ifanr
             </button>
@@ -209,7 +236,11 @@ export default class rssreader extends React.Component {
               id={mybuttonids.buttonid6}
               data-loading-icon="mui-spinner mui-spinner-custom"
               class="mui-btn mui-btn-primary mui-btn-outlined"
-              onClick={this.jiazairss6}
+            //   onClick={this.jiazairss6}
+            onClick={() => {
+                /* 使用箭头函数可以自动绑定this! */
+              this.jiazairss6();
+            }}
             >
               加载pingwest
             </button>
@@ -242,7 +273,8 @@ export default class rssreader extends React.Component {
     );
   }
 }
-function refreshall() {
-  $("#allnavbar").click();
-}
+/* function refreshall() {
+  //   $("#allnavbar").click();
+  refreshallsetstate();
+} */
 // }

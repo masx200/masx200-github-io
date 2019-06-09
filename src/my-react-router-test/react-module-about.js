@@ -5,7 +5,7 @@ var  React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 export default class about extends React.Component {
   componentWillMount() {}
   componentDidMount() {
-    refreshall();
+    // refreshall();
     document.title = "React router App-" + "about";
   }
   componentWillReceiveProps(newProps) {}

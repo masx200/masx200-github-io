@@ -1,3 +1,4 @@
+// import"./my-react-router-test/react-index-render.css"
 // import IMPORTCJSAMDUMD from "./IMPORTCJSAMDUMD";
 // import myreacthtml from "./my-react-router-test/index.html";
 // console.log(myreacthtml)
@@ -112,6 +113,44 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                           id="allnavbar"
                           onClick={this.shouqi收起折叠的导航栏菜单}
                         >
+                          <li
+                            id="mynav1"
+                            // class={window.location.hash == "#/" ? "active" : ""}
+                          >
+                            <Link
+                              to="/react-home"
+                              class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                            >
+                              基于REACT的主页
+                            </Link>
+                          </li>
+                          <li
+                          // class={
+                          //   window.location.hash == "#/rssreader"
+                          //     ? "active"
+                          //     : ""
+                          // }
+                          >
+                            <Link
+                              to="/react-rssreader"
+                              class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                            >
+                              rss阅读
+                            </Link>
+                          </li>
+                          <li
+                            id="mynav2"
+                            // class={
+                            //   window.location.hash == "#/about" ? "active" : ""
+                            // }
+                          >
+                            <Link
+                              to="/react-about"
+                              class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                            >
+                              关于REACT
+                            </Link>
+                          </li>
                           <li class="nav-item">
                             <Link
                               to="/picalc"
@@ -152,7 +191,16 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                               基于vue的主页
                             </a>
                           </li>
-                          <li
+                          <li>
+                            <a
+                              href="./my-vue-router-project/index.html#/about"
+                              class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                            >
+                              关于Vue
+                            </a>
+                          </li>
+                          {/* http://localhost:1234/my-vue-router-project/index.html#/about */}
+                          {/* <li
                             id="mynav1"
                             //   class={window.location.hash == "#/" ? "active" : ""}
                           >
@@ -163,9 +211,9 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                             >
                               基于REACT的主页
                             </a>
-                          </li>
+                          </li> */}
 
-                          <li>
+                          {/* <li>
                             <a
                               class="nav-item"
                                 href="./my-react-router-test/index.html#/decoder"
@@ -174,6 +222,30 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                             >
                               JSfuck-and-hieroglyphy-Decoder-and-ENCODER
                             </a>
+                          </li> */}
+                          <li>
+                            <Link
+                              to="/decoder"
+                              class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                            >
+                              JSfuck-and-hieroglyphy-Decoder
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/jsfuck"
+                              class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                            >
+                              JSfuck-ENCODER
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/hieroglyphy"
+                              class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                            >
+                              hieroglyphy-ENCODER
+                            </Link>
                           </li>
                         </ul>
                       </div>
@@ -201,6 +273,55 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                           path="/IMPORTCJSAMDUMD动态异步加载"
                           component={IMPORTCJSAMDUMD动态异步加载}
                         />
+                        <Route
+                          path="/react-home"
+                          component={lazy(() =>
+                            import(
+                              "./my-react-router-test/react-module-home.js"
+                            )
+                          )}
+                        />
+                        <Route
+                          path="/react-rssreader"
+                          component={lazy(() =>
+                            import(
+                              "./my-react-router-test/react-module-rssreader.js"
+                            )
+                          )}
+                        />
+                        <Route
+                          path="/react-about"
+                          component={lazy(() =>
+                            import(
+                              "./my-react-router-test/react-module-about.js"
+                            )
+                          )}
+                        />
+                        <Route
+                          path="/decoder"
+                          component={lazy(() =>
+                            import(
+                              "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder"
+                            )
+                          )}
+                        />
+                        <Route
+                          path="/jsfuck"
+                          component={lazy(() =>
+                            import(
+                              "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck"
+                            )
+                          )}
+                        />
+                        <Route
+                          path="/hieroglyphy"
+                          component={lazy(() =>
+                            import(
+                              "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.js"
+                            )
+                          )}
+                        />
+
                         <Route exact path="*" component={home} />
                       </Switch>
                     </Suspense>

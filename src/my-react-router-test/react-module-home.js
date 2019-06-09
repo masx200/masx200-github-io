@@ -5,8 +5,8 @@ var  React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 export default class home extends React.Component {
   componentWillMount() {}
   componentDidMount() {
-    window.location.hash = "#/";
-    refreshall();
+    // window.location.hash = "#/";
+    // refreshall();
     document.title = "React router App-" + "home";
   }
   componentWillReceiveProps(newProps) {}
