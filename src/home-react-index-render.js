@@ -4,6 +4,26 @@
 // console.log(myreacthtml)
 // import myvuehtml from "./my-vue-router-project/index.html";
 // console.log(myreacthtml, myvuehtml);
+"use strict";
+/* function addlinkprefetch(url) {
+  var linkmarkdwon = document.createElement("link");
+  linkmarkdwon.rel = "prefetch";
+  linkmarkdwon.href = url;
+  document.head.appendChild(linkmarkdwon);
+}
+var prefetchfiles = [
+  "./home-react-module-home.js",
+  "./home-react-module-picalc.js",
+  "./home-react-module-点击链接不跳转修改当前的网页地址动态加载网页内容不刷新.js",
+  "./home-react-module-IMPORTCJSAMDUMD动态异步加载.js",
+  "./my-react-router-test/react-module-home.js",
+  "./my-react-router-test/react-module-rssreader.js",
+  "./my-react-router-test/react-module-about.js",
+  "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder.js",
+  "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck.js",
+  "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.js"
+];
+prefetchfiles.forEach(addlinkprefetch); */
 import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
   //   var IMPORTCJSAMDUMD = module1;
   (() => {

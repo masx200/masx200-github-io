@@ -20,11 +20,13 @@
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "autoprefixer": "^9.6.0",
     "cssnano": "^4.1.10",
     "fast-xml-parser": "^3.12.16",
     "less": "^3.9.0",
     "live-server": "^1.2.1",
     "parcel-bundler": "^1.12.3",
+    "postcss-modules": "^1.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "regenerator": "^0.14.1",
