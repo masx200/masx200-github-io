@@ -66,7 +66,7 @@ export default () => {
           // textarea.style.height = "60px"
           // makeExpandingArea(textarea);
           if (Math.abs(parseInt(el.style.height) - el.scrollHeight) > 5) {
-            console.log(parseInt(el.style.height), el.scrollHeight);
+            // console.log(parseInt(el.style.height), el.scrollHeight);
 
             myptext.style.height = myptext.scrollHeight + 2 + "px";
             // console.log("拉伸文本框", myptext.outerHTML)

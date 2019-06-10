@@ -10,7 +10,7 @@ export default () => {
       // if (auto) el.style.height = 'auto';
 
       if (Math.abs(parseInt(el.style.height) - el.scrollHeight) > 5) {
-        console.log(parseInt(el.style.height), el.scrollHeight);
+        // console.log(parseInt(el.style.height), el.scrollHeight);
 
         el.style.height = el.scrollHeight + 3 + "px";
         var myptext = el;
@@ -32,24 +32,27 @@ export default () => {
         setStyle(el);
       }, 200);
     };
-    if (el.addEventListener) {
-      try {
-        el.addEventListener(
-          "input",
-          function() {
-            setStyle(el, 1);
-          },
-          false
-        );
-      } catch (error) {}
+    try {
+      if (el.addEventListener) {
+        try {
+          el.addEventListener(
+            "input",
+            function() {
+              setStyle(el, 1);
+            },
+            false
+          );
+        } catch (error) {}
 
-      setStyle(el);
-    } else if (el.attachEvent) {
-      el.attachEvent("onpropertychange", function() {
         setStyle(el);
-      });
-      setStyle(el);
-    }
+      } else if (el.attachEvent) {
+        el.attachEvent("onpropertychange", function() {
+          setStyle(el);
+        });
+        setStyle(el);
+      }
+    } catch (error) {}
+
     if (window.VBArray && window.addEventListener) {
       //IE9
       el.attachEvent("onkeydown", function() {

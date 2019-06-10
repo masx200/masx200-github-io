@@ -76,7 +76,7 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
         } = ReactRouterDOM;
         const { Suspense, lazy } = React;
         const home = lazy(() => import("./home-react-module-home.js"));
-        const picalc = lazy(() => import("./home-react-module-picalc.js"));
+        const picalc = lazy(() => import("./home-react-module-picalc"));
 
         const 点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 = lazy(
           () =>
