@@ -5,7 +5,7 @@
     "scripts": {
         "build": "parcel build ./src/index.html --no-source-maps  --out-dir ./  --public-url /",
         "start": "parcel ./src/index.html  --out-dir ./src/dist/ --open",
-        "server": "live-server ./ --port=9090"
+        "server": "live-server --host=localhost   ./ --port=9090"
     },
     "repository": {
         "type": "git",
