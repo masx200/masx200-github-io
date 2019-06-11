@@ -6,67 +6,70 @@ import picture4 from "./logo-jquery.png";
 import picture5 from "./react.svg";
 import picture6 from "./vue.png";
 import picture7 from "./webpack.svg"; */
+import myindexrender from "./myindexrender";
 var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 export default class home extends React.Component {
   componentDidMount() {
-      location.hash="#/"
+    location.hash = "#/";
     document.title = "masx200的github主页-" + "首页";
-    (() => {
-      $("#my主体").css("padding-top", $("#my导航栏").height());
-      $("#btn1").click(() => {
-        tanchu弹出消息通用("primary");
-      });
-      $("#btn2").click(() => {
-        tanchu弹出消息通用("success");
-      });
-      $("#btn3").click(() => {
-        tanchu弹出消息通用("danger");
-      });
-      $("#btn4").click(() => {
-        tanchu弹出消息通用("warning");
-      });
+    // require("./myindexrender")();
+    myindexrender();
+    // (() => {
+    //   $("#my主体").css("padding-top", $("#my导航栏").height());
+    //   $("#btn1").click(() => {
+    //     tanchu弹出消息通用("primary");
+    //   });
+    //   $("#btn2").click(() => {
+    //     tanchu弹出消息通用("success");
+    //   });
+    //   $("#btn3").click(() => {
+    //     tanchu弹出消息通用("danger");
+    //   });
+    //   $("#btn4").click(() => {
+    //     tanchu弹出消息通用("warning");
+    //   });
 
-      function guid() {
-        return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(
-          c
-        ) {
-          var r = (Math.random() * 16) | 0,
-            v = c == "x" ? r : (r & 0x3) | 0x8;
-          return v.toString(16);
-        });
-      }
+    //   function guid() {
+    //     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(
+    //       c
+    //     ) {
+    //       var r = (Math.random() * 16) | 0,
+    //         v = c == "x" ? r : (r & 0x3) | 0x8;
+    //       return v.toString(16);
+    //     });
+    //   }
 
-      function tanchu弹出消息通用(infotype) {
-        var textinfo;
-        switch (infotype) {
-          case "success":
-            textinfo = "成功";
-            break;
-          case "primary":
-            textinfo = "首选";
-            break;
-          case "danger":
-            textinfo = "失败";
-            break;
-          case "warning":
-            textinfo = "警告";
-            break;
-          default:
-            return;
-            break;
-        }
-        var id = guid();
-        jQuery("#my导航栏").append(
-          jQuery(`<div id="${id}" class="alert alert-${infotype} alert-dismissible fade show">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>${textinfo}!</strong> 操作${textinfo}提示信息。
-                </div>`).fadeTo(5000, 0.5, () => {
-            console.log(jQuery("#" + id));
-            jQuery("#" + id).remove();
-          })
-        );
-      }
-    })();
+    //   function tanchu弹出消息通用(infotype) {
+    //     var textinfo;
+    //     switch (infotype) {
+    //       case "success":
+    //         textinfo = "成功";
+    //         break;
+    //       case "primary":
+    //         textinfo = "首选";
+    //         break;
+    //       case "danger":
+    //         textinfo = "失败";
+    //         break;
+    //       case "warning":
+    //         textinfo = "警告";
+    //         break;
+    //       default:
+    //         return;
+    //         break;
+    //     }
+    //     var id = guid();
+    //     jQuery("#my导航栏").append(
+    //       jQuery(`<div id="${id}" class="alert alert-${infotype} alert-dismissible fade show">
+    //             <button type="button" class="close" data-dismiss="alert">&times;</button>
+    //             <strong>${textinfo}!</strong> 操作${textinfo}提示信息。
+    //             </div>`).fadeTo(5000, 0.5, () => {
+    //         console.log(jQuery("#" + id));
+    //         jQuery("#" + id).remove();
+    //       })
+    //     );
+    //   }
+    // })();
   }
   render() {
     return (
@@ -116,17 +119,17 @@ export default class home extends React.Component {
           <button class="btn btn-outline-primary" id="btn1">
             弹出首选提示框
           </button>
-          <button class="btn btn-outline-success" id="btn2" >
+          <button class="btn btn-outline-success" id="btn2">
             弹出成功提示框
           </button>
           <button class="btn btn-outline-danger" id="btn3">
             弹出失败提示框
           </button>
-          <button class="btn btn-outline-warning" id="btn4" >
+          <button class="btn btn-outline-warning" id="btn4">
             弹出警告提示框
           </button>
         </div>
-       {/*  <div id="图片列表200">
+        {/*  <div id="图片列表200">
           <hr />
           <img loading="lazy" src={picture1} />
           <hr />

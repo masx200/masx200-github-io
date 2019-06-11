@@ -1,50 +1,57 @@
 {
-  "name": "masx200.github.io",
-  "version": "1.0.0",
-  "description": "masx200 的 github",
-  "scripts": {
-    "build": "parcel build ./src/index.html --no-source-maps  --out-dir ./  --public-url /",
-    "start": "parcel ./src/index.html  --out-dir ./src/dist/ --open",
-    "server": "live-server ./ --port=9090"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/masx200/masx200.github.io.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/masx200/masx200.github.io/issues"
-  },
-  "homepage": "https://github.com/masx200/masx200.github.io#readme",
-  "dependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "autoprefixer": "^9.6.0",
-    "cssnano": "^4.1.10",
-    "fast-xml-parser": "^3.12.16",
-    "less": "^3.9.0",
-    "live-server": "^1.2.1",
-    "parcel-bundler": "^1.12.3",
-    "postcss-modules": "^1.4.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "regenerator": "^0.14.1",
-    "regenerator-runtime": "^0.13.2",
-    "vue": "^2.6.10"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "edge": "18",
-            "firefox": "66",
-            "chrome": "75"
-          }
-        }
-      ]
-    ]
-  }
+    "name": "masx200.github.io",
+    "version": "1.0.0",
+    "description": "masx200 的 github",
+    "scripts": {
+        "build": "parcel build ./src/index.html --no-source-maps  --out-dir ./  --public-url /",
+        "start": "parcel ./src/index.html  --out-dir ./src/dist/ --open",
+        "server": "live-server ./ --port=9090"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/masx200/masx200.github.io.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/masx200/masx200.github.io/issues"
+    },
+    "homepage": "https://github.com/masx200/masx200.github.io#readme",
+    "dependencies": {
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
+        "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+        "@vue/babel-preset-jsx": "^1.0.0",
+        "autoprefixer": "^9.6.0",
+        "cssnano": "^4.1.10",
+        "fast-xml-parser": "^3.12.16",
+        "less": "^3.9.0",
+        "live-server": "^1.2.1",
+        "parcel-bundler": "^1.12.3",
+        "postcss-modules": "^1.4.1",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "regenerator": "^0.14.1",
+        "regenerator-runtime": "^0.13.2",
+        "vue": "^2.6.10"
+    },
+    "babel": {
+        "presets": [
+            
+            "@babel/preset-react",
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "edge": "18",
+                        "firefox": "66",
+                        "chrome": "75"
+                    }
+                }
+            ]
+        ]
+    },
+    "devDependencies": {
+        "@babel/preset-react": "^7.0.0"
+    }
 }

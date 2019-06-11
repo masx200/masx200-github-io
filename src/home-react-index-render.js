@@ -75,6 +75,7 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
           HashRouter
         } = ReactRouterDOM;
         const { Suspense, lazy } = React;
+        // var h = React.createElement;
         const home = lazy(() => import("./home-react-module-home.js"));
         const picalc = lazy(() => import("./home-react-module-picalc"));
 
