@@ -58,6 +58,21 @@ IMPORTCJSAMDUMD支持在模块内部使用require函数和define函数定义依�
 
 <hr>
 
+# React Hooks
+
+Hook是React 16.8中的新增功能。它们允许您在不编写类的情况下使用状态和其他React功能。
+
+https://reactjs.org/docs/hooks-overview.html#state-hook
+
+Hooks at a Glance
+Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
+
+Hooks are backwards-compatible. This page provides an overview of Hooks for experienced React users. This is a fast-paced overview. If you get confused, look for a yellow box like this:
+
+Detailed Explanation
+
+Read the Motivation to learn why we’re introducing Hooks to React.
+
 # 圆周率计算多线程,使用 BigInteger.js 和浏览器原生的 BigInt 之后速度得到巨大提升!
 
 优化了圆周率计算的多线程方式,开启一次 webworker 后,不再关闭它,每一个线程一个 webworker,也不重复创建过多 webweorker,并给按钮添加 mui 的 loading 效果,全局加上 mui 的支持
