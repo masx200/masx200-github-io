@@ -3,18 +3,20 @@
 
 // (() => {
 //   $(window).one("load",
-export default () => {
+export default (ele1,ele2,ele3,ele4) => {
+    // console.log(ele1)
   $("#my主体").css("padding-top", $("#my导航栏").height());
-  $("#btn1").click(() => {
+//   $("#btn1").click(() => {
+    $(ele1).click(() => {
     tanchu弹出消息通用("primary");
   });
-  $("#btn2").click(() => {
+  $(ele2).click(() => {
     tanchu弹出消息通用("success");
   });
-  $("#btn3").click(() => {
+  $(ele3).click(() => {
     tanchu弹出消息通用("danger");
   });
-  $("#btn4").click(() => {
+  $(ele4).click(() => {
     tanchu弹出消息通用("warning");
   });
 

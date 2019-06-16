@@ -3,16 +3,16 @@
 // console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
 var  React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 export default class about extends React.Component {
-  componentWillMount() {}
+//   componentWillMount() {}
   componentDidMount() {
     // refreshall();
     document.title = "React router App-" + "about";
   }
-  componentWillReceiveProps(newProps) {}
+//   componentWillReceiveProps(newProps) {}
   shouldComponentUpdate(newProps, newState) {
     return true;
   }
-  componentWillUpdate(nextProps, nextState) {}
+//   componentWillUpdate(nextProps, nextState) {}
   componentDidUpdate(prevProps, prevState) {}
   componentWillUnmount() {}
   render() {

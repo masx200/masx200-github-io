@@ -1,19 +1,27 @@
 // React=IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
+import picture1 from "../babeljs.png";
+
+import picture2 from "../parcel.jpg";
+import picture3 from "../bootstrap.png";
+import picture4 from "../logo-jquery.png";
+import picture5 from "../react.svg";
+import picture6 from "../vue.png";
+import picture7 from "../webpack.svg";
 var  React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 export default class home extends React.Component {
-  componentWillMount() {}
+//   componentWillMount() {}
   componentDidMount() {
     // window.location.hash = "#/";
     // refreshall();
     document.title = "React router App-" + "home";
   }
-  componentWillReceiveProps(newProps) {}
+//   componentWillReceiveProps(newProps) {}
   shouldComponentUpdate(newProps, newState) {
     return true;
   }
-  componentWillUpdate(nextProps, nextState) {}
+//   componentWillUpdate(nextProps, nextState) {}
   componentDidUpdate(prevProps, prevState) {}
   componentWillUnmount() {}
   render() {
@@ -71,6 +79,22 @@ export default class home extends React.Component {
           <h1>Hello, world!</h1>
           <h2>现在是 {new Date().toLocaleTimeString()}.</h2>
         </header>
+        <div id="图片列表200">
+            <hr />
+            <img loading="lazy" src={picture1} />
+            <hr />
+            <img loading="lazy" src={picture2} />
+            <hr />
+            <img loading="lazy" src={picture3} />
+            <hr />
+            <img loading="lazy" src={picture4} />
+            <hr />
+            <img loading="lazy" src={picture5} />
+            <hr />
+            <img loading="lazy" src={picture6} />
+            <hr />
+            <img loading="lazy" src={picture7} />
+          </div>
       </div>
     );
   }

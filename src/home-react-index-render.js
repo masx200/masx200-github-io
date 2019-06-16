@@ -5,6 +5,21 @@
 // import myvuehtml from "./my-vue-router-project/index.html";
 // console.log(myreacthtml, myvuehtml);
 "use strict";
+if (process.env.NODE_ENV === "production") {
+  var Reacturl =
+    "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js";
+  var Reactdomurl =
+    "https://cdn.staticfile.org/react-dom/16.9.0-alpha.0/umd/react-dom.production.min.js";
+  var Reactrouterdomurl =
+    "https://cdn.staticfile.org/react-router-dom/5.0.1/react-router-dom.min.js";
+} else {
+  var Reacturl =
+    "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.development.js";
+  var Reactdomurl =
+    "https://cdn.staticfile.org/react-dom/16.9.0-alpha.0/umd/react-dom.development.js";
+  var Reactrouterdomurl =
+    "https://cdn.staticfile.org/react-router-dom/5.0.1/react-router-dom.js";
+}
 /* function addlinkprefetch(url) {
   var linkmarkdwon = document.createElement("link");
   linkmarkdwon.rel = "prefetch";
@@ -44,15 +59,21 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
 
           IMPORTCJSAMDUMD(
             [
-              "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
+              //   "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
+              //   "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.development.js",
+              Reacturl,
               "react"
             ],
             [
-              "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
+              //   "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
+              //   "https://cdn.staticfile.org/react-dom/16.9.0-alpha.0/umd/react-dom.development.js",
+              Reactdomurl,
               "react-dom"
             ],
             [
-              "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
+              //   "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
+              //   "https://cdn.staticfile.org/react-router-dom/5.0.1/react-router-dom.js",
+              Reactrouterdomurl,
               "react-router-dom"
             ]
           ).then(myonloadfunc);
@@ -62,11 +83,11 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
       }
 
       function myonloadfunc(reactmodulearray) {
-        const React = reactmodulearray[0].default;
-        const ReactDOM = reactmodulearray[1].default;
-        const ReactRouterDOM = reactmodulearray[2].default;
-        const { render } = ReactDOM;
-        const {
+        var React = reactmodulearray[0].default;
+        var ReactDOM = reactmodulearray[1].default;
+        var ReactRouterDOM = reactmodulearray[2].default;
+        var { render } = ReactDOM;
+        var {
           Link,
           Switch,
           // BrowserRouter,
@@ -74,25 +95,24 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
           // Redirect,
           HashRouter
         } = ReactRouterDOM;
-        const { Suspense, lazy } = React;
+        var { Suspense, lazy } = React;
         // var h = React.createElement;
-        const home = lazy(() => import("./home-react-module-home.js"));
-        const picalc = lazy(() => import("./home-react-module-picalc"));
+        var home = lazy(() => import("./home-react-module-home.js"));
+        var picalc = lazy(() => import("./home-react-module-picalc"));
 
-        const 点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 = lazy(
-          () =>
-            import(
-              "./home-react-module-点击链接不跳转修改当前的网页地址动态加载网页内容不刷新.js"
-            )
+        var 点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 = lazy(() =>
+          import(
+            "./home-react-module-点击链接不跳转修改当前的网页地址动态加载网页内容不刷新.js"
+          )
         );
-        const IMPORTCJSAMDUMD动态异步加载 = lazy(() =>
+        var IMPORTCJSAMDUMD动态异步加载 = lazy(() =>
           import("./home-react-module-IMPORTCJSAMDUMD动态异步加载.js")
         );
 
         class Apphome extends React.Component {
-          constructor(props) {
-            super(props);
-          }
+        //   varructor(props) {
+        //     super(props);
+        //   }
           shouqi收起折叠的导航栏菜单() {
             $("#my主体").css("padding-top", $("#my导航栏").height());
             $("#example-navbar-collapse").removeClass("show");
@@ -351,17 +371,35 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
               </HashRouter>
             );
           }
-          componentWillMount() {}
+          //   componentWillMount() {}
+          /* Warning: componentWillMount is deprecated and will be removed in the next major version. Use componentDidMount instead. As a temporary workaround, you can rename to UNSAFE_componentWillMount.
+
+Please update the following components: about
+
+Learn more about this warning here:
+https://fb.me/react-async-component-lifecycle-hooks */
           componentDidMount() {
             $("#my主体").css("padding-top", $("#my导航栏").height());
 
             refreshall();
           }
-          componentWillReceiveProps(newProps) {}
+          //   componentWillReceiveProps(newProps) {}
+          /* Warning: componentWillReceiveProps is deprecated and will be removed in the next major version. Use static getDerivedStateFromProps instead.
+
+Please update the following components: Apphome
+
+Learn more about this warning here:
+https://fb.me/react-async-component-lifecycle-hooks */
           shouldComponentUpdate(newProps, newState) {
             return true;
           }
-          componentWillUpdate(nextProps, nextState) {}
+          //   componentWillUpdate(nextProps, nextState) {}
+          /* Warning: componentWillUpdate is deprecated and will be removed in the next major version. Use componentDidUpdate instead. As a temporary workaround, you can rename to UNSAFE_componentWillUpdate.
+
+Please update the following components: Apphome
+
+Learn more about this warning here:
+https://fb.me/react-async-component-lifecycle-hooks */
           componentDidUpdate(prevProps, prevState) {}
           componentWillUnmount() {}
         }
