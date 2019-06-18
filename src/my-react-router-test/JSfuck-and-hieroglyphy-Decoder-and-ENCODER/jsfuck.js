@@ -1,3 +1,4 @@
+"use strict";
 /*! JSFuck 0.4.0 - http://jsfuck.com */
 (function(global) {
   // console.log(global)

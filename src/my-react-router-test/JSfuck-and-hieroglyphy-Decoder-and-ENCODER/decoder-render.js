@@ -1,7 +1,24 @@
+"use strict";
 import JSFuck from "./jsfuck";
 import hieroglyphy from "./hieroglyphy";
 export default function decoderrender() {
   ((JSFuck, hieroglyphy) => {
+    const t匹配纯字符串 = code => {
+      try {
+        var mytext1 = eval(code.value);
+        document.querySelector("#code2").value = mytext1;
+        console.log(mytext1);
+        console.log("匹配字符模式成功");
+        tanchu弹出消息提示();
+        return 1;
+      } catch (e) {
+        console.log("匹配错误");
+
+        tanchu弹出消息失败();
+        return 0;
+      }
+    };
+
     $("#run").click(function() {
       eval($2("code2").value);
     });
@@ -21,21 +38,6 @@ export default function decoderrender() {
       } catch (error) {}
     }
 
-    function 匹配纯字符串(code) {
-      try {
-        var mytext1 = eval(code.value);
-        document.querySelector("#code2").value = mytext1;
-        console.log(mytext1);
-        console.log("匹配字符模式成功");
-        tanchu弹出消息提示();
-        return 1;
-      } catch (e) {
-        console.log("匹配错误");
-
-        tanchu弹出消息失败();
-        return 0;
-      }
-    }
     function pipeizifu(pre, post) {
       var prefix = pre,
         postfix = post;
@@ -165,7 +167,7 @@ export default function decoderrender() {
         } else {
         }
       }
-      匹配纯字符串(code);
+      t匹配纯字符串(code);
     }
   })(JSFuck, hieroglyphy);
 }

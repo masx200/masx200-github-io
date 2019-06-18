@@ -1,7 +1,7 @@
 //由于使用了async函数所以需要regeneratorRuntime
 // import IMPORTCJSAMDUMD from "./IMPORTCJSAMDUMD";
 /* 添加了TextEncoder和TextDecoder的polyfill */
-import "./fast-text-encoding-text.min.js"
+import "./fast-text-encoding-text.min.js";
 import regeneratorRuntime from "regenerator-runtime";
 // console.log(regeneratorRuntime)
 
@@ -275,7 +275,7 @@ import regeneratorRuntime from "regenerator-runtime";
             iframealinkarr.forEach(替换所有a链接的arrayhandler);
           }
         });
-     
+
         if (替换a链接数组.length > 0) {
           console.log("替换a链接", 替换a链接数组);
         }
@@ -309,7 +309,8 @@ import regeneratorRuntime from "regenerator-runtime";
             //
 
             /* 不应该用onclick,防止与网页原本定义的onclick冲突 */
-            e.addEventListener("click", () => {
+            e.addEventListener("click", event => {
+              event.preventDefault();
               /*   document.firstElementChild.dataset.href = location.href;
                                       document.firstElementChild.dataset.pathname = location.pathname; */
               var url = new URL(e.dataset.href);
@@ -604,7 +605,7 @@ import regeneratorRuntime from "regenerator-runtime";
           url.search == document.firstElementChild.dataset.search
         ) {
           return;
-          
+
           /* 等到加载成功再pushstate */
         }
 
@@ -672,13 +673,12 @@ import regeneratorRuntime from "regenerator-runtime";
             // var htmldatatext = await dataresponse.text();
             try {
               var arraybuffer = await dataresponse.arrayBuffer();
-              console.log("html二进制数组", arraybuffer);
+            //   console.log("html二进制数组", arraybuffer);
               /* 等到加载成功再pushstate */
               /* 如果网页的类型正确再pushstate */
             } catch (error) {
               console.warn(error);
               console.log("此链接加载失败，打开新页面");
-             
 
               //    location.reload();
               /* 如果直接设置location.href会刷新页面 */
@@ -709,7 +709,7 @@ import regeneratorRuntime from "regenerator-runtime";
 
             if (!datacontenttype.includes("text/html")) {
               console.log("此链接不是网页，打开新页面");
-             
+
               window.open(url, "_blank");
               history.pushState(
                 undefined,
@@ -735,7 +735,7 @@ import regeneratorRuntime from "regenerator-runtime";
           }
 
           /* fetch加载成功,而且网页类型正确 */
-          
+
           document.firstElementChild.dataset.hash = url.hash;
           location.hash = document.firstElementChild.dataset.hash;
           /* 把location.hash改成url.hash */
