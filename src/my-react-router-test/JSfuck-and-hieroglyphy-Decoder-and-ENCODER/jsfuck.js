@@ -8,12 +8,14 @@
   //     encode: encode
   //   };
   // console.log(this)
-  global.JSFuck = {
-    encode: encode
-  };
+
   if (typeof exports === "object" && typeof module !== "undefined") {
     // module.exports = mainExports;
-    module.exports = global.JSFuck;
+    module.exports = { encode };
+  } else {
+    global.JSFuck = {
+      encode
+    };
   }
   var USE_CHAR_CODE = "USE_CHAR_CODE";
 

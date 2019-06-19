@@ -10,20 +10,20 @@ export default () => {
 
 function decoderrender() {
   "use strict";
-  var preandpost = undefined;
+  var preandpost;
   //   ((JSFuck, hieroglyphy) => {
-  const t匹配纯字符串 = code => {
+  const tpipeichunzifuchuan = code => {
     try {
       var mytext1 = eval(code.value);
       document.querySelector("#code2").value = mytext1;
       console.log(mytext1);
       console.log("匹配字符模式成功");
-      tanchu弹出消息提示();
+      tanchutanchuxiaoxitishi();
       return 1;
     } catch (e) {
       console.log("匹配错误");
 
-      tanchu弹出消息失败();
+      tanchutanchuxiaoxishibai();
       return 0;
     }
   };
@@ -40,11 +40,11 @@ function decoderrender() {
     });
 
     $("#my主体").css("padding-top", $("#my导航栏").height());
-    try {
-      document.querySelector("#code").value = hieroglyphy.hieroglyphyScript(
-        `alert('1');console.log('hello')`
-      );
-    } catch (error) {}
+    // try {
+    //   document.querySelector("#code").value = hieroglyphy.hieroglyphyScript(
+    //     `alert('1');console.log('hello')`
+    //   );
+    // } catch (error) {}
   }
 
   function pipeizifu(pre, post) {
@@ -87,7 +87,7 @@ function decoderrender() {
     return document.getElementById(id);
   }
 
-  function tanchu弹出消息提示() {
+  function tanchutanchuxiaoxitishi() {
     var id = guid();
     jQuery("#my导航栏").append(
       jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
@@ -101,7 +101,7 @@ function decoderrender() {
     console.timeEnd("解码JSFUCK 和hieroglyphy");
   }
 
-  function tanchu弹出消息失败() {
+  function tanchutanchuxiaoxishibai() {
     var id = guid();
     jQuery("#my导航栏").append(
       jQuery(`<div  id="${id}" class="alert alert-danger alert-dismissible fade show">
@@ -169,13 +169,13 @@ function decoderrender() {
     for (var e = 0; e < preandpost.length; e++) {
       if (pipeizifu(preandpost[e].prefix, preandpost[e].postfix)) {
         console.log("使用匹配模版" + (e + 1) + "成功");
-        tanchu弹出消息提示();
+        tanchutanchuxiaoxitishi();
         return 1;
       }
       // else {
       // }
     }
-    t匹配纯字符串(code);
+    tpipeichunzifuchuan(code);
   }
 
   mystart();

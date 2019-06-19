@@ -1,4 +1,4 @@
-import decoderrender from "./decoder-render";
+import decoderrender from "./decoder-render.min";
 // import "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER.less"
 var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 var useState = React.useState,
