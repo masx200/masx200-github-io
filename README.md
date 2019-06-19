@@ -10,24 +10,27 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 
 <hr>
 
-# 防止css加载阻塞页面加载,当页面加载完成时再加载css
+# 防止 css 加载阻塞页面加载,当页面加载完成时再加载 css
+
 ```javascript
- $(window).one("load", () => {
-      /* 当页面加载完成时再加载css */
-      jQuery(`<style>
+$(window).one("load", () => {
+  /* 当页面加载完成时再加载css */
+  jQuery(`<style>
         @import "https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css";
   
         @import "https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css";
         @import "https://github.githubassets.com/assets/github-6556dfa9be535e551ffffaadfecdad99.css";
         @import "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css";
       </style>`).appendTo(document.head);
-      })
+});
 ```
+
 # 点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新 脚本
 
 https://github.com/masx200/masx200.github.io/blob/master/src/%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js
 
 ## 介绍大概和注意
+
 点击链接不跳转修改当前的网页地址动态加载网页内容不刷新
 
 这个脚本能够通过异步 fetch 加载 html 页面,动态替换当前的页面内容
@@ -52,28 +55,27 @@ https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
 
 "IMPORTCJSAMDUMD "的定义的"define"函数基于"requirejs"的 "define"函数
 
+# 相比 systemjs 和 requirejs 的优势:
 
-# 相比systemjs和requirejs的优势:
+1.跟 systemjs 的 import 函数的全局运行模块的代码,会修改全局变量,相比,
 
-1.跟systemjs的import函数的全局运行模块的代码,会修改全局变量,相比,
+IMPORTCJSAMDUMD 中所有模块的代码全部放在函数闭包中执行,
 
-IMPORTCJSAMDUMD中所有模块的代码全部放在函数闭包中执行,
+2.systemjs 不支持在模块代码中的 require 函数来加载依赖包,也不支持识别 amd 模块中的 define 函数的定义模块的名称的功能,导致这些有依赖关系的模块都会到全局变量中寻找需要的模块,否则加载失败,
 
-2.systemjs不支持在模块代码中的require函数来加载依赖包,也不支持识别amd模块中的define函数的定义模块的名称的功能,导致这些有依赖关系的模块都会到全局变量中寻找需要的模块,否则加载失败,
+IMPORTCJSAMDUMD 支持在模块内部使用 require 函数和 define 函数定义依赖关系,并在模块仓库中查找需要的模块
 
-IMPORTCJSAMDUMD支持在模块内部使用require函数和define函数定义依赖关系,并在模块仓库中查找需要的模块
+比如说 jquery 和 jquery-ui 都是 amd 模块定义方式,jquery-ui 依赖于 jquery
 
-比如说jquery和jquery-ui都是amd模块定义方式,jquery-ui依赖于jquery
+比如说 bootstrap 是 umd 模块定义方式,bootstrap 依赖于 jquery 和 popper.js
 
-比如说bootstrap是umd模块定义方式,bootstrap依赖于jquery和popper.js
-
-3.requriejs不支持cjs和umd模块的定义方式,使用比较麻烦,
+3.requriejs 不支持 cjs 和 umd 模块的定义方式,使用比较麻烦,
 
 <hr>
 
 # React Hooks
 
-Hook是React 16.8中的新增功能。它们允许您在不编写类的情况下使用状态和其他React功能。
+Hook 是 React 16.8 中的新增功能。它们允许您在不编写类的情况下使用状态和其他 React 功能。
 
 https://reactjs.org/docs/hooks-overview.html#state-hook
 
@@ -85,13 +87,15 @@ Hooks are backwards-compatible. This page provides an overview of Hooks for expe
 Detailed Explanation
 
 Read the Motivation to learn why we’re introducing Hooks to React.
-##  State Hook
+
+## State Hook
+
 Here, useState is a Hook (we’ll talk about what this means in a moment). We call it inside a function component to add some local state to it. React will preserve this state between re-renders. useState returns a pair: the current state value and a function that lets you update it. You can call this function from an event handler or somewhere else. It’s similar to this.setState in a class, except it doesn’t merge the old and new state together. (We’ll show an example comparing useState to this.state in Using the State Hook.)
 
 The only argument to useState is the initial state. In the example above, it is 0 because our counter starts from zero. Note that unlike this.state, the state here doesn’t have to be an object — although it can be if you want. The initial state argument is only used during the first render.
 
-
 ## Effect Hook
+
 You’ve likely performed data fetching, subscriptions, or manually changing the DOM from React components before. We call these operations “side effects” (or “effects” for short) because they can affect other components and can’t be done during rendering.
 
 The Effect Hook, useEffect, adds the ability to perform side effects from a function component. It serves the same purpose as componentDidMount, componentDidUpdate, and componentWillUnmount in React classes, but unified into a single API. (We’ll show examples comparing useEffect to these methods in Using the Effect Hook.)
@@ -165,7 +169,6 @@ chrome 74 测试 原生BigInt 达到11.16倍速度
 <hr>
 </div>
 
-
 <hr>
 
 ### 使用 babel-standalone 代替本地 node 模块
@@ -212,7 +215,6 @@ parcel build index.html
 
 parcel build entry.js
 
-
 <hr>
 
 # 使用 cdn 加载依赖包,加快速度
@@ -252,6 +254,7 @@ https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js
 
 https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
 ```
+
 <hr>
 
 # 网站结构介绍
@@ -260,9 +263,9 @@ https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
 
 在图片中添加 loading="lazy"实现图片懒加载
 
-css中使用@import实现全部模块化
+css 中使用@import 实现全部模块化
 
-js中使用import实现全部模块化
+js 中使用 import 实现全部模块化
 
 按钮弹出式 Bootstrap4 信息提示框测试
 
@@ -275,8 +278,6 @@ https://masx200.github.io/%E8%8A%B1%E5%AF%86%E7%BD%91%E9%A1%B5%E7%89%88-%E5%AE%8
 https://masx200.github.io/my-vue-router-project/
 
 https://masx200.github.io/my-react-router-test/
-
-
 
 ## IMPORTCJSAMDUMD
 
@@ -292,47 +293,42 @@ The function of IMPORTCJSAMDUMD is similar to the "system.import" function of "s
 
 The "define" function defined by IMPORTCJSAMDUMD is based on the "define" function of requirejs.
 
-
-
 <hr>
 
 ## react-router 的单页面应用
 
-异步动态加载UMD的依赖包方法
+异步动态加载 UMD 的依赖包方法
 
 https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
 
 ```javascript
-
 import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 (async () => {
-          const react = await IMPORTCJSAMDUMD(
-            "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
-            "react"
-          );
-          const [reactdom, reactrouterdom] = await Promise.all([
-            IMPORTCJSAMDUMD(
-              "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
-              "react-dom"
-            ),
-            IMPORTCJSAMDUMD(
-              "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
-              "react-router-dom"
-            )
-          ]);
-          
-          var reactmodulearray = [react, reactdom, reactrouterdom];
-          myonloadfunc(reactmodulearray);
-          })();
+  const react = await IMPORTCJSAMDUMD(
+    "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
+    "react"
+  );
+  const [reactdom, reactrouterdom] = await Promise.all([
+    IMPORTCJSAMDUMD(
+      "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
+      "react-dom"
+    ),
+    IMPORTCJSAMDUMD(
+      "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
+      "react-router-dom"
+    )
+  ]);
+
+  var reactmodulearray = [react, reactdom, reactrouterdom];
+  myonloadfunc(reactmodulearray);
+})();
 function myonloadfunc(reactmodulearray) {
-    
-      console.log(reactmodulearray);
-      const React = reactmodulearray[0].default;
-      const ReactDOM = reactmodulearray[1].default;
-      const ReactRouterDOM = reactmodulearray[2].default;
-      //............................
-      
-      }
+  console.log(reactmodulearray);
+  const React = reactmodulearray[0].default;
+  const ReactDOM = reactmodulearray[1].default;
+  const ReactRouterDOM = reactmodulearray[2].default;
+  //............................
+}
 ```
 
 按需异步动态加载组件方法
@@ -359,12 +355,12 @@ const about = lazy(() => import("./module-about"));
   </Suspense>
 </BrowserRouter>;
 ```
-新版:按照路由组件分包加载,不使用本地 node 模块,大大减小了生成的文件大小,依赖包从cdn加载
+
+新版:按照路由组件分包加载,不使用本地 node 模块,大大减小了生成的文件大小,依赖包从 cdn 加载
 
 新版:升级到 bootsrtap4 的导航栏和使用 fetch 的 rss 阅读器演示的消息成功加载通知框效果
 
 旧版:把 react 相关所有代码都合并放在 index.jsx 文件中,除了 css 文件
-
 
 <hr>
 
@@ -372,23 +368,24 @@ const about = lazy(() => import("./module-about"));
 
 https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
 
-异步动态加载es6模块的依赖包方法
+异步动态加载 es6 模块的依赖包方法
 
 ```javascript
 Promise.all([
-          import(
-            `https://cdn.staticfile.org/vue-router/3.0.6/vue-router.esm.browser.min.js`
-          ),
-          import(`https://cdn.staticfile.org/vue/2.6.10/vue.esm.browser.min.js`)
-        ]).then(myonloadfunc);
+  import(
+    `https://cdn.staticfile.org/vue-router/3.0.6/vue-router.esm.browser.min.js`
+  ),
+  import(`https://cdn.staticfile.org/vue/2.6.10/vue.esm.browser.min.js`)
+]).then(myonloadfunc);
 
 function myonloadfunc(modulearray) {
-        console.log(modulearray)
-  var    VueRouter = modulearray[0].default;
-   var   Vue = modulearray[1].default;
-//.................................
+  console.log(modulearray);
+  var VueRouter = modulearray[0].default;
+  var Vue = modulearray[1].default;
+  //.................................
 }
 ```
+
 按需异步动态加载组件方法
 
 ```javascript
@@ -420,7 +417,8 @@ const router = new VueRouter({
   ]
 });
 ```
-新版:按照路由组件分包加载,不使用本地 node 模块,大大减小了生成的文件大小,依赖包从cdn加载
+
+新版:按照路由组件分包加载,不使用本地 node 模块,大大减小了生成的文件大小,依赖包从 cdn 加载
 
 旧版:vue 把所有组件全部放在 index.jsx 中,除了 css 文件
 
@@ -454,20 +452,19 @@ https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/hieroglyphy
 
 https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSFuck---Write-any-JavaScript-with-6-Characters_-[]()!+.html
 
-
 <hr>
 
-# 动态加载javascript,使用fetch加载xml转换成json.js
+# 动态加载 javascript,使用 fetch 加载 xml 转换成 json.js
 
 ```javascript
-function loadscript(fileurl,callback) {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = fileurl;
-    script.onload=callback
-    document.firstElementChild.firstElementChild.appendChild(script);
-    
-    console.log({script})
+function loadscript(fileurl, callback) {
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = fileurl;
+  script.onload = callback;
+  document.firstElementChild.firstElementChild.appendChild(script);
+
+  console.log({ script });
 }
 loadscript("https://cdn.staticfile.org/fast-xml-parser/3.12.16/parser.min.js");
 
@@ -480,58 +477,56 @@ fetch("https://www.pingwest.com/feed")
   .then(r => (console.log(r.statusText, r), r.text()))
   .then(str => parser.parse(str))
   .then(data => console.log(data));
-
 ```
-# 另一种加载外部JavaScript的方法
+
+# 另一种加载外部 JavaScript 的方法
 
 ```javascript
 if (!importScripts) {
-            var importScripts = (function(globalEval) {
-                var xhr = new XMLHttpRequest();
-                return function importScripts() {
-                    var args = Array.prototype.slice.call(arguments),
-                        len = args.length,
-                        i = 0,
-                        meta,
-                        data,
-                        content;
-                    for (; i < len; i++) {
-                        if (args[i].substr(0, 5).toLowerCase() === "data:") {
-                            data = args[i];
-                            content = data.indexOf(",");
-                            meta = data.substr(5, content).toLowerCase();
-                            data = decodeURIComponent(data.substr(content + 1));
-                            if (/;\s*base64\s*[;,]/.test(meta)) {
-                                data = atob(data);
-                            }
-                            if (/;\s*charset=[uU][tT][fF]-?8\s*[;,]/.test(meta)) {
-                                data = decodeURIComponent(escape(data));
-                            }
-                        } else {
-                            xhr.open("GET", args[i], false);
-                            xhr.send(null);
-                            data = xhr.responseText;
-                        }
-                        globalEval(data);
-                    }
-                };
-            })(eval);
+  var importScripts = (function(globalEval) {
+    var xhr = new XMLHttpRequest();
+    return function importScripts() {
+      var args = Array.prototype.slice.call(arguments),
+        len = args.length,
+        i = 0,
+        meta,
+        data,
+        content;
+      for (; i < len; i++) {
+        if (args[i].substr(0, 5).toLowerCase() === "data:") {
+          data = args[i];
+          content = data.indexOf(",");
+          meta = data.substr(5, content).toLowerCase();
+          data = decodeURIComponent(data.substr(content + 1));
+          if (/;\s*base64\s*[;,]/.test(meta)) {
+            data = atob(data);
+          }
+          if (/;\s*charset=[uU][tT][fF]-?8\s*[;,]/.test(meta)) {
+            data = decodeURIComponent(escape(data));
+          }
+        } else {
+          xhr.open("GET", args[i], false);
+          xhr.send(null);
+          data = xhr.responseText;
         }
+        globalEval(data);
+      }
+    };
+  })(eval);
+}
 
-        importScripts("https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js")
-
+importScripts("https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js");
 ```
-
 
 <hr>
 
-# 在vscode中安装npm-scripts插件即可轻松调试
+# 在 vscode 中安装 npm-scripts 插件即可轻松调试
 
 npm start
 
 npm run build
 
-# 推荐的vscode插件
+# 推荐的 vscode 插件
 
 名称: Beautify
 id: hookyqr.beautify
