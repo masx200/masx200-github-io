@@ -10,6 +10,19 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 
 <hr>
 
+# 防止css加载阻塞页面加载,当页面加载完成时再加载css
+```javascript
+ $(window).one("load", () => {
+      /* 当页面加载完成时再加载css */
+      jQuery(`<style>
+        @import "https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css";
+  
+        @import "https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css";
+        @import "https://github.githubassets.com/assets/github-6556dfa9be535e551ffffaadfecdad99.css";
+        @import "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css";
+      </style>`).appendTo(document.head);
+      })
+```
 # 点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新 脚本
 
 https://github.com/masx200/masx200.github.io/blob/master/src/%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js
