@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link
+    <!-- /* 当页面加载完成时再加载css */ -->
+    <!-- <style>
+      @import "https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css";
+
+      @import "https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css";
+      @import "https://github.githubassets.com/assets/github-6556dfa9be535e551ffffaadfecdad99.css";
+      @import "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css";
+    </style> -->
+    <!-- <link
       rel="stylesheet"
       href="https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css"
     />
@@ -18,8 +26,8 @@
     <link
       rel="stylesheet"
       href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-
+    /> -->
+    <!--改为 在js中引入css文件 -->
     <link
       rel="prefetch"
       href="https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js"
@@ -74,22 +82,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
-    
-    <script src="./home-react-index-render.js" async></script>
+
+    <script src="./home-react-index-render.js" defer></script>
     <!-- <script
       src="./%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js"
       async
     ></script> -->
     <link rel="prefetch" href="./my-vue-router-project/index.html" />
     <!-- <link rel="prefetch" href="./my-react-router-test/index.html" /> -->
-    <style>
+    <!-- <style>
       * {
         -webkit-user-select: text !important;
         -moz-user-select: text;
         -o-user-select: text;
         user-select: text !important;
       }
-    </style>
+    </style> -->
     <link rel="prefetch" href="./home-react-module-home.js" />
     <link rel="prefetch" href="./home-react-module-picalc.js" />
     <link
@@ -150,13 +158,13 @@
     <link rel="prefetch" href="my-vue-router-project/vue-component-about.js" />
     <link rel="prefetch" href="my-vue-router-project/vue-component-home.js" />
     <link rel="prefetch" href="my-vue-router-project/vue-component-huami.js" />
-    <style>
+    <!-- <style>
       * {
         font-family: "Microsoft Yahei", Helvetica, Tahoma, Arial, "PingFang SC",
           "Hiragino Sans GB", "Heiti SC", "MicrosoftYaHei",
           "WenQuanYi Micro Hei", sans-serif !important;
       }
-    </style>
+    </style> -->
   </head>
 
   <body>

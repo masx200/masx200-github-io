@@ -16,3 +16,15 @@
   margin-right: 2px;
 }
 @import "./my-react-router-test/react-index-render.css";
+/* 2019年6月20日 00:14:36 把index.html中的style的css放到这里*/
+* {
+  font-family: "Microsoft Yahei", Helvetica, Tahoma, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Heiti SC", "MicrosoftYaHei", "WenQuanYi Micro Hei",
+    sans-serif !important;
+}
+* {
+  -webkit-user-select: text !important;
+  -moz-user-select: text;
+  -o-user-select: text;
+  user-select: text !important;
+}
