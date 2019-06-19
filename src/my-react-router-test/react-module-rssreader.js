@@ -34,6 +34,7 @@ var { useState, useEffect, useRef } = React;
 
 export default function Rssreader() {
   const [rssstate, setrssState] = useState(myrsscontent);
+  //   console.log(setrssState);
   const mybuttonidsbuttonid1 = useRef();
   const mybuttonidsbuttonid2 = useRef();
   const mybuttonidsbuttonid3 = useRef();
