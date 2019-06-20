@@ -27,12 +27,7 @@ return  <textarea
         }}
        
         class="form-control"
-        placeholder="Paste your code here!"
-        id="code"
-        style={{
-          width: "100%",
-          "min-height": "250px"
-        }}
+      
         
       />}
 ```
