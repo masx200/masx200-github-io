@@ -56,7 +56,8 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
       </style>`).appendTo(document.head);
       function onhashchange() {
         scrollTo(0, 0);
-        $("#collapsibleNavbar").removeClass("show");
+        $("#example-navbar-collapse").removeClass("show");
+        // $("#collapsibleNavbar").removeClass("show");
         $("#my主体").css("padding-top", $("#my导航栏").height());
       }
       $(window).on("hashchange", onhashchange);
@@ -381,7 +382,8 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
         function refreshall() {
           render(<Apphome />, document.getElementById("root"));
           scrollTo(0, 0);
-          $("#collapsibleNavbar").removeClass("show");
+          //   $("#collapsibleNavbar").removeClass("show");
+          $("#example-navbar-collapse").removeClass("show");
         }
         refreshall();
       }

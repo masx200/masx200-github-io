@@ -16,7 +16,9 @@ import("../IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
 
       function onhashchange() {
         scrollTo(0, 0);
-        $("#collapsibleNavbar").removeClass("show");
+        /*  $("#collapsibleNavbar") 不存在!*/
+        $("#example-navbar-collapse").removeClass("show");
+        // $("#collapsibleNavbar").removeClass("show");
         $("#my主体").css("padding-top", $("#my导航栏").height());
       }
       $(window).on("hashchange", onhashchange);
