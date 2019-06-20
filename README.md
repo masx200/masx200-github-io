@@ -9,7 +9,29 @@ https://masx200.github.io/
 https://github.com/masx200/masx200.github.io/tree/master/src
 
 <hr>
+# react hooks写的数据双向绑定
+```javascript
+var { useState, useEffect, useRef } = React;
+var [inputcode, setinputcode] = useState("");
+  <textarea
+        /* 数据双向绑定,如果不设置onchange则变成了只读的value */
+        value={inputcode}
+        onChange={e => {
+         
 
+          setinputcode(e.target.value);
+        }}
+       
+        class="form-control"
+        placeholder="Paste your code here!"
+        id="code"
+        style={{
+          width: "100%",
+          "min-height": "250px"
+        }}
+        
+      />
+```
 # 防止 css 加载阻塞页面加载,当页面加载完成时再加载 css
 
 ```javascript
