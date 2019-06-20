@@ -10,6 +10,7 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 
 <hr>
 # react hooks写的数据双向绑定
+
 ```javascript
 var { useState, useEffect, useRef } = React;
 var [inputcode, setinputcode] = useState("");
@@ -32,6 +33,7 @@ var [inputcode, setinputcode] = useState("");
         
       />
 ```
+
 # 防止 css 加载阻塞页面加载,当页面加载完成时再加载 css
 
 ```javascript
