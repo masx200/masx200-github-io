@@ -9,13 +9,16 @@ https://masx200.github.io/
 https://github.com/masx200/masx200.github.io/tree/master/src
 
 <hr>
-# react hooks写的数据双向绑定
+
+# react hooks写的数据双向绑定,数据双向绑定,如果不设置onchange则变成了只读的value 
 
 ```javascript
 var { useState, useEffect, useRef } = React;
+ function Decoder() {
 var [inputcode, setinputcode] = useState("");
-  <textarea
-        /* 数据双向绑定,如果不设置onchange则变成了只读的value */
+
+return  <textarea
+     
         value={inputcode}
         onChange={e => {
          
@@ -31,7 +34,7 @@ var [inputcode, setinputcode] = useState("");
           "min-height": "250px"
         }}
         
-      />
+      />}
 ```
 
 # 防止 css 加载阻塞页面加载,当页面加载完成时再加载 css
