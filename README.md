@@ -10,26 +10,23 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 
 <hr>
 
-# react hooks写的数据双向绑定,数据双向绑定,如果不设置onchange则变成了只读的value 
+# 用 react hooks 写的数据双向绑定,数据双向绑定,如果不设置 onchange 则变成了只读的 value
 
 ```javascript
 var { useState, useEffect, useRef } = React;
- function Decoder() {
-var [inputcode, setinputcode] = useState("");
+function Decoder() {
+  var [inputcode, setinputcode] = useState("");
 
-return  <textarea
-     
-        value={inputcode}
-        onChange={e => {
-         
-
-          setinputcode(e.target.value);
-        }}
-       
-        class="form-control"
-      
-        
-      />}
+  return (
+    <textarea
+      value={inputcode}
+      onChange={e => {
+        setinputcode(e.target.value);
+      }}
+      class="form-control"
+    />
+  );
+}
 ```
 
 # 防止 css 加载阻塞页面加载,当页面加载完成时再加载 css
