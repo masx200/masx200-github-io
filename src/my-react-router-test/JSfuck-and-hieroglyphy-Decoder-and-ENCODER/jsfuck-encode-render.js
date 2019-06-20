@@ -1,7 +1,8 @@
 var myservice; /* 不要每次挂载组件时都创建新的worker */
 export function 关闭所有worker() {
   try {
-    myservice.terminate();
+    myservice.terminate(); /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
+    myservice = undefined;
   } catch (error) {}
 }
 /* import "../拉伸导航栏与主体部分的顶部距离.js";

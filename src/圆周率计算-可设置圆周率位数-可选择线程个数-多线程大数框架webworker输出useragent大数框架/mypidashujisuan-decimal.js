@@ -10,6 +10,8 @@ export function 关闭所有worker() {
     /* 可能worker的数量没有满,undefined的terminate函数不存在 */
     try {
       arr[index].terminate();
+      /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
+      arr[index] = undefined;
     } catch (error) {}
   });
 }
