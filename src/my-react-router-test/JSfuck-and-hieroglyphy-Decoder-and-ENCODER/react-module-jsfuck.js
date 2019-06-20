@@ -58,7 +58,11 @@ export default function Jsfuck() {
         Encode
       </button>
       <div class="checkbox">
-        <input id="eval" type="checkbox" checked="" />
+        <input
+          id="eval"
+          type="checkbox"
+          //  checked=""
+        />
         <label for="eval">Eval Source</label>
       </div>
       <div id={"clip" + outputdivid}>

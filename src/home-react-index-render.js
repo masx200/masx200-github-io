@@ -121,9 +121,8 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
         );
         function Apphome() {
           function shouqi收起折叠的导航栏菜单() {
-            $("#my主体").css("padding-top", $("#my导航栏").height());
             $("#example-navbar-collapse").removeClass("show");
-
+            $("#my主体").css("padding-top", $("#my导航栏").height());
             refreshall();
           }
           useEffect(() => {
@@ -162,7 +161,7 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                         class="nav navbar-nav"
                         id="allnavbar"
                         onClick={() => {
-                          shouqi收起折叠的导航栏菜单;
+                          shouqi收起折叠的导航栏菜单();
                         }}
                       >
                         <li
