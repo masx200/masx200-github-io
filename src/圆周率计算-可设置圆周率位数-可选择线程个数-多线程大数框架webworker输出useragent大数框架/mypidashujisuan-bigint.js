@@ -3,9 +3,20 @@
 // (() => {
 //   $(window).one("load",
 // 自动开启严格模式
+/* 应该再卸载组件时关闭所有worker */
 "use strict";
 const IMPORTCJSAMDUMD = window.IMPORTCJSAMDUMD;
-const _default = () => {
+var myworker = Array(16).fill();
+export function 关闭所有worker() {
+  myworker.forEach(function(currentValue, index, arr) {
+    /* 可能worker的数量没有满,undefined的terminate函数不存在 */
+    try {
+      arr[index].terminate();
+    } catch (error) {}
+  });
+}
+
+export default () => {
   "use strict";
   IMPORTCJSAMDUMD(
     "https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js",
@@ -18,7 +29,7 @@ const _default = () => {
       threadgeshu,
       x,
       piwei,
-      myworker = Array(16),
+      //   myworker = Array(16).fill(),
       eventdata,
       strt,
       finishflag,
@@ -55,9 +66,9 @@ const _default = () => {
     // $('window').load(mytestpi)
     //   $(document).ready(mytestpi);
     // mytestpi;
-    for (var key = 0; key < myworker.length; key++) {
-      myworker[key] = undefined;
-    }
+    // for (var key = 0; key < myworker.length; key++) {
+    //   myworker[key] = undefined;
+    // }
     //   console.log(myworker);
     function lashentextarea(...ids) {
       setTimeout(function() {
@@ -273,9 +284,9 @@ const _default = () => {
         myptext.value = myshurukuangneirong;
         tanchu弹出消息提示();
         // jisuanfinishflag = 1;
-        myworker.forEach(function(currentValue, index, arr) {
-          // arr[index].terminate();
-        });
+        // myworker.forEach(function(currentValue, index, arr) {
+        //   // arr[index].terminate();
+        // });
         x = 0;
         //alert("ok")
         setTimeout(function() {
@@ -287,7 +298,7 @@ const _default = () => {
     }
   });
 };
-export { _default as default };
+// export { _default as default };
 
 //   );
 // })();

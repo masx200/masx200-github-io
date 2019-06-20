@@ -1,9 +1,18 @@
 // import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
-
+/* 应该再卸载组件时关闭所有worker */
 // (() => {
 //   $(window).one("load",
 "use strict";
 const IMPORTCJSAMDUMD = window.IMPORTCJSAMDUMD;
+var myworker = Array(16).fill();
+export function 关闭所有worker() {
+  myworker.forEach(function(currentValue, index, arr) {
+    /* 可能worker的数量没有满,undefined的terminate函数不存在 */
+    try {
+      arr[index].terminate();
+    } catch (error) {}
+  });
+}
 export default () => {
   IMPORTCJSAMDUMD(
     "https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js",
@@ -16,15 +25,15 @@ export default () => {
       threadgeshu,
       x,
       piwei,
-      myworker = Array(16),
+      //   myworker = Array(16),
       eventdata,
       strt,
       finishflag,
       durt,
       testname;
-    for (var key = 0; key < myworker.length; key++) {
-      myworker[key] = undefined;
-    }
+    // for (var key = 0; key < myworker.length; key++) {
+    //   myworker[key] = undefined;
+    // }
     mytestpi();
     function guid() {
       return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(
@@ -243,9 +252,9 @@ export default () => {
         myptext.value = myshurukuangneirong;
         tanchu弹出消息提示();
         // jisuanfinishflag = 1;
-        myworker.forEach(function(currentValue, index, arr) {
-          // arr[index].terminate();
-        });
+        // myworker.forEach(function(currentValue, index, arr) {
+        //   // arr[index].terminate();
+        // });
         x = 0;
         //alert("ok")
         setTimeout(function() {

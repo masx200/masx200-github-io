@@ -1,3 +1,9 @@
+var myservice; /* 不要每次挂载组件时都创建新的worker */
+export function 关闭所有worker() {
+  try {
+    myservice.terminate();
+  } catch (error) {}
+}
 /* import "../拉伸导航栏与主体部分的顶部距离.js";
 // onload =
 (() => {
@@ -26,7 +32,7 @@ export default () => {
     );
     // console.timeEnd('解码JSFUCK 和hieroglyphy')
   }
-  var myservice = undefined;
+  //   var myservice = undefined;
   $2("input").value =
     "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')";
 
@@ -85,7 +91,10 @@ export default () => {
   // $2("run").onclick =
   $("#eval")[0].checked = true;
   $("#run").click(function() {
-    var value = eval($2("output").value);
+    var codestring = $2("output").value;
+    var value = Function(`return ${codestring}`)();
+    //终于找到了uglifyjs压缩混淆失败的原因了!严格模式不能使用eval!
+    // eval($2("output").value);
 
     if (!$2("eval").checked) {
       alert('"' + value + '"');

@@ -1,3 +1,9 @@
+var myservice; /* 不要每次挂载组件时都创建新的worker */
+export function 关闭所有worker() {
+  try {
+    myservice.terminate();
+  } catch (error) {}
+}
 export default function() {
   function guid() {
     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
@@ -20,12 +26,15 @@ export default function() {
     );
     // console.timeEnd('解码JSFUCK 和hieroglyphy')
   }
-  var myservice = undefined;
+  //   var myservice = undefined;
   var lastclick;
 
   // $("run").onclick =
   $("#run").click(function() {
-    var value = eval($2("output").value);
+    var codestring = $2("output").value;
+    var value = Function(`return ${codestring}`)();
+    //终于找到了uglifyjs压缩混淆失败的原因了!严格模式不能使用eval!
+    // var value = eval($2("output").value);
 
     if (lastclick === "encodestring") {
       alert('"' + value + '"');
