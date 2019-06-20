@@ -6,7 +6,7 @@ import picture4 from "./logo-jquery.png";
 import picture5 from "./react.svg";
 import picture6 from "./vue.png";
 import picture7 from "./webpack.svg"; */
-import myindexrender from "./myindexrender";
+// import myindexrender from "./myindexrender";
 var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 // function guid() {
 //   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
@@ -18,20 +18,61 @@ var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 var { useState, useEffect, useRef } = React;
 
 export default function Home() {
+  function guid() {
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+      var r = (Math.random() * 16) | 0,
+        v = c == "x" ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+  }
+
+  function tanchu弹出消息通用(infotype) {
+    // var id=Math.random()*100000000|0
+    var textinfo;
+    switch (infotype) {
+      case "success":
+        textinfo = "成功";
+        break;
+      case "primary":
+        textinfo = "首选";
+        break;
+      case "danger":
+        textinfo = "失败";
+        break;
+      case "warning":
+        textinfo = "警告";
+        break;
+      default:
+        return;
+        break;
+    }
+    var id = guid();
+    jQuery("#my导航栏").append(
+      jQuery(`<div id="${id}" class="alert alert-${infotype} alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>${textinfo}!</strong> 操作${textinfo}提示信息。
+            </div>`).fadeTo(5000, 0.5, () => {
+        console.log(jQuery("#" + id));
+        jQuery("#" + id).remove();
+      })
+    );
+  }
+
   const mybuttonidsbuttonid1 = useRef();
   const mybuttonidsbuttonid2 = useRef();
   const mybuttonidsbuttonid3 = useRef();
   const mybuttonidsbuttonid4 = useRef();
   useEffect(() => {
+    /* 组件第一次加载时和每次组件刷新时会加载这个函数 */
     location.hash = "#/";
     document.title = "masx200的github主页-" + "首页";
-// console.log(mybuttonidsbuttonid1)
-    myindexrender(
-      mybuttonidsbuttonid1.current,
-      mybuttonidsbuttonid2.current,
-      mybuttonidsbuttonid3.current,
-      mybuttonidsbuttonid4.current
-    );
+    // console.log(mybuttonidsbuttonid1)
+    // myindexrender(
+    //   mybuttonidsbuttonid1.current,
+    //   mybuttonidsbuttonid2.current,
+    //   mybuttonidsbuttonid3.current,
+    //   mybuttonidsbuttonid4.current
+    // );
   });
   return (
     <div>
@@ -77,16 +118,40 @@ export default function Home() {
         </p>
       </div>
       <div>
-        <button class="btn btn-outline-primary" ref={mybuttonidsbuttonid1}>
+        <button
+          class="btn btn-outline-primary btn-lg"
+          ref={mybuttonidsbuttonid1}
+          onClick={() => {
+            tanchu弹出消息通用("primary");
+          }}
+        >
           弹出首选提示框
         </button>
-        <button class="btn btn-outline-success" ref={mybuttonidsbuttonid2}>
+        <button
+          class="btn btn-outline-success btn-lg"
+          ref={mybuttonidsbuttonid2}
+          onClick={() => {
+            tanchu弹出消息通用("success");
+          }}
+        >
           弹出成功提示框
         </button>
-        <button class="btn btn-outline-danger" ref={mybuttonidsbuttonid3}>
+        <button
+          class="btn btn-outline-danger btn-lg"
+          ref={mybuttonidsbuttonid3}
+          onClick={() => {
+            tanchu弹出消息通用("danger");
+          }}
+        >
           弹出失败提示框
         </button>
-        <button class="btn btn-outline-warning" ref={mybuttonidsbuttonid4}>
+        <button
+          class="btn btn-outline-warning btn-lg"
+          ref={mybuttonidsbuttonid4}
+          onClick={() => {
+            tanchu弹出消息通用("warning");
+          }}
+        >
           弹出警告提示框
         </button>
       </div>

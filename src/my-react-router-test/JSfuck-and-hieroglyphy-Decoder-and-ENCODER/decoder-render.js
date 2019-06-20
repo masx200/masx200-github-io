@@ -1,7 +1,12 @@
+/* 终于找到问题所在了!如果严格模式存在使用eval的语句则uglify-js压缩失败 */
 // import regeneratorRuntime from "regenerator-runtime";
 "use strict";
-import JSFuck from "./jsfuck";
-import hieroglyphy from "./hieroglyphy";
+var JSFuck = require("./jsfuck"),
+  hieroglyphy = require("./hieroglyphy");
+// var JSFuck = _0x546dc4;
+// var hieroglyphy = _0x2df39d;
+// import JSFuck from "./jsfuck";
+// import hieroglyphy from "./hieroglyphy";
 export default () => {
   Promise.resolve().then(() => {
     decoderrender();
@@ -11,12 +16,51 @@ export default () => {
 function decoderrender() {
   "use strict";
   var preandpost;
+  function setDecoded(decodedCode) {
+    //  eval(decodedCode);
+    console.log(
+      (document.querySelector("#code2").value = Function(
+        `return ${decodedCode}`
+      )())
+    );
+  }
+  function tanchutanchuxiaoxitishi() {
+    var id = guid();
+    jQuery("#my导航栏").append(
+      jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>成功!</strong> 匹配成功提示信息。
+                </div>`).fadeTo(5000, 0.5, () => {
+        console.log(jQuery("#" + id));
+        jQuery("#" + id).remove();
+      })
+    );
+    console.timeEnd("解码JSFUCK 和hieroglyphy");
+  }
+
+  function tanchutanchuxiaoxishibai() {
+    var id = guid();
+    jQuery("#my导航栏").append(
+      jQuery(`<div  id="${id}" class="alert alert-danger alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>失败!</strong> 匹配失败提示信息。
+                </div>`).fadeOut(5000, () => {
+        console.log(jQuery("#" + id));
+        jQuery("#" + id).remove();
+      })
+    );
+    console.timeEnd("解码JSFUCK 和hieroglyphy");
+  }
+
   //   ((JSFuck, hieroglyphy) => {
-  const tpipeichunzifuchuan = code => {
+  function tpipeichunzifuchuan(codestring) {
     try {
-      var mytext1 = eval(code.value);
-      document.querySelector("#code2").value = mytext1;
-      console.log(mytext1);
+      console.log(
+        (document.querySelector("#code2").value = Function(
+          `return ${codestring}`
+        )())
+        //   eval(codestring)
+      );
       console.log("匹配字符模式成功");
       tanchutanchuxiaoxitishi();
       return 1;
@@ -26,11 +70,12 @@ function decoderrender() {
       tanchutanchuxiaoxishibai();
       return 0;
     }
-  };
+  }
 
   function mystart() {
     $("#run").click(function() {
-      eval($2("code2").value);
+      Function(`return ${$2("code2").value}`)();
+      //   eval($2("code2").value);
     });
 
     $("#decode").click(() => {
@@ -76,43 +121,8 @@ function decoderrender() {
     return null;
   }
 
-  function setDecoded(decodedCode) {
-    var code2 = document.querySelector("#code2");
-
-    code2.value = eval(decodedCode);
-    console.log(code2.value);
-  }
-
   function $2(id) {
     return document.getElementById(id);
-  }
-
-  function tanchutanchuxiaoxitishi() {
-    var id = guid();
-    jQuery("#my导航栏").append(
-      jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>成功!</strong> 匹配成功提示信息。
-                </div>`).fadeTo(5000, 0.5, () => {
-        console.log(jQuery("#" + id));
-        jQuery("#" + id).remove();
-      })
-    );
-    console.timeEnd("解码JSFUCK 和hieroglyphy");
-  }
-
-  function tanchutanchuxiaoxishibai() {
-    var id = guid();
-    jQuery("#my导航栏").append(
-      jQuery(`<div  id="${id}" class="alert alert-danger alert-dismissible fade show">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>失败!</strong> 匹配失败提示信息。
-                </div>`).fadeOut(5000, () => {
-        console.log(jQuery("#" + id));
-        jQuery("#" + id).remove();
-      })
-    );
-    console.timeEnd("解码JSFUCK 和hieroglyphy");
   }
 
   function guid() {
@@ -175,7 +185,7 @@ function decoderrender() {
       // else {
       // }
     }
-    tpipeichunzifuchuan(code);
+    tpipeichunzifuchuan(code.value);
   }
 
   mystart();

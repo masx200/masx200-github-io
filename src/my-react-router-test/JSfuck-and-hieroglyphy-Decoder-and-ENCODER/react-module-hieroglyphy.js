@@ -1,6 +1,15 @@
+new ClipboardJS(".btn");
 import hieroglyphyencoderender from "./hieroglyphy-encode-render";
 var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 // import "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER.less"
+var outputdivid = "clip" + guid();
+function guid() {
+  return "xxxxxxxx-xxxx-yxxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+    var r = (Math.random() * 16) | 0,
+      v = c == "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
 export default class Hieroglyphy extends React.Component {
   componentDidMount() {
     document.title = "React router App-" + "hieroglyphy encoder";
@@ -33,10 +42,7 @@ export default class Hieroglyphy extends React.Component {
             type="text"
           >
             Encode script
-          </button>
-        </p>
-        <br />
-        <p>
+          </button>{" "}
           <button
             id="encodestring"
             type="text"
@@ -46,13 +52,21 @@ export default class Hieroglyphy extends React.Component {
             Encode string
           </button>
         </p>
-        <br />
-        <br />
-        <textarea id="output" class="form-control" />
+
+        <div id={"clip" + outputdivid}>
+          <textarea id="output" class="form-control" />
+        </div>
+
         <div class="actions">
           <span id="stats">0 chars</span>
           <button class="btn btn-outline-primary btn-lg" id="run">
             Run This
+          </button>{" "}
+          <button
+            class="btn btn-outline-success btn-lg"
+            data-clipboard-target={"#" + "clip" + outputdivid}
+          >
+            复制
           </button>
         </div>
         <br />

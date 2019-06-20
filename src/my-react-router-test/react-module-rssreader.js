@@ -51,26 +51,26 @@ export default function Rssreader() {
       /* $(myselectorid).attr("src") */
     );
     if (typeof /* $(myselectorid).attr("src")  */ xmlurl == "undefined") {
-      console.log("加载失败");
+      //   console.log("加载失败");
     } else {
       //使用fetch函数代替$.get
       //使用fast-xml-parser把xml转换为json
       // var xmlurl = $(myselectorid).attr("src");
       fetch(xmlurl)
         .then(r => {
-          console.log(r.statusText, r);
+          //   console.log(r.statusText, r);
           return r.text();
         })
         .then(s => {
           var str = s;
           myxmlstrcontent.push(str);
-          console.log("xml", myxmlstrcontent);
+          //   console.log("xml", myxmlstrcontent);
           var data = parser.parse(str);
-          console.log("json", data);
+          //   console.log("json", data);
           myrsscontent.title = data.rss.channel.title;
           myrsscontent.description = data.rss.channel.description;
           myrsscontent.push(...data.rss.channel.item);
-          console.log("rsscontent", myrsscontent);
+          //   console.log("rsscontent", myrsscontent);
 
           mui(element).button("reset");
           tanchu弹出消息通用("success");
@@ -89,7 +89,8 @@ export default function Rssreader() {
   });
   return (
     <div className="">
-      <h1>异步fetch加载rss阅读器演示</h1>
+      <h2>异步fetch加载rss阅读器演示</h2>
+      <p>使用fast-xml-parser把xml转换成json</p>
       <nav class="navbar navbar-expand-sm bg-light navbar-light ">
         <ul class="demo">
           <button

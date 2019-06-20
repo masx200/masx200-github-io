@@ -85,7 +85,7 @@ export default () => {
   // $2("run").onclick =
   $("#eval")[0].checked = true;
   $("#run").click(function() {
-    value = eval($2("output").value);
+    var value = eval($2("output").value);
 
     if (!$2("eval").checked) {
       alert('"' + value + '"');
