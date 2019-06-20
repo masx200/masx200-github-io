@@ -1,7 +1,7 @@
 // import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 
 //edge和Firefox不支持动态import函数加载模块！
-
+import "./vue-render-all.css";
 // eslint-disable-next-line
 /* eslint-disable */
 // import Vue from 'vue';
@@ -10,6 +10,10 @@ import("../IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
   (() => {
     "use strict";
     $(window).one("load", () => {
+      jQuery(
+        '<style>\n        @import "https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css";\n  \n        @import "https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css";\n        @import "https://github.githubassets.com/assets/github-6556dfa9be535e551ffffaadfecdad99.css";\n        @import "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css";\n      </style>'
+      ).appendTo(document.head);
+
       function onhashchange() {
         scrollTo(0, 0);
         $("#collapsibleNavbar").removeClass("show");
@@ -23,7 +27,7 @@ import("../IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
       function herewindowonload() {
         if (haverun == 0) {
           haverun = 1;
-          console.log("开始运行此onload函数");
+          //   console.log("开始运行此onload函数");
 
           Promise.all([
             IMPORTCJSAMDUMD(
@@ -108,7 +112,6 @@ import("../IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
           ]
         });
 
-    
         $(window).on("hashchange", hashchangehandler);
         function hashchangehandler() {
           jQuery("#example-navbar-collapse").removeClass("show");
@@ -181,12 +184,12 @@ import("../IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                 (this.isActive3 =
                   window.location.hash == "#/about" ? true : false);
               // Vue.set(this.isActive1)
-            //   console.log(
-            //     "myfreshdata",
-            //     this.isActive1,
-            //     this.isActive2,
-            //     this.isActive3
-            //   );
+              //   console.log(
+              //     "myfreshdata",
+              //     this.isActive1,
+              //     this.isActive2,
+              //     this.isActive3
+              //   );
             } // mychangemenu=()=>mychangemenu
           },
           mounted() {
