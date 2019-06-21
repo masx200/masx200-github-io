@@ -94,6 +94,7 @@ let huami = Vue.extend({
   },
   methods: {
     handlechange() {
+      //   console.log(this);
       //   countCode();
       //   (function countCode() {
       var password = this.message1;
