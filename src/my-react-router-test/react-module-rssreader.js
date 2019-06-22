@@ -116,7 +116,7 @@ export default function Rssreader() {
             // id={mybuttonids.buttonid1}
             ref={mybuttonidsbuttonid1}
             data-loading-icon="mui-spinner mui-spinner-custom"
-            class="mui-btn mui-btn-royal mui-btn-outlined"
+            class="mui-btn mui-btn-royal mui-btn-outlined btn-lg"
             onClick={() => {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss1();
@@ -129,7 +129,7 @@ export default function Rssreader() {
             // id={mybuttonids.buttonid2}
             ref={mybuttonidsbuttonid2}
             data-loading-icon="mui-spinner mui-spinner-custom"
-            class="mui-btn mui-btn-primary mui-btn-outlined"
+            class="mui-btn mui-btn-primary mui-btn-outlined btn-lg"
             //   onClick={this.jiazairss2}
             onClick={() => {
               /* 使用箭头函数可以自动绑定this! */
@@ -143,7 +143,7 @@ export default function Rssreader() {
             // id={mybuttonids.buttonid3}
             ref={mybuttonidsbuttonid3}
             data-loading-icon="mui-spinner mui-spinner-custom"
-            class="mui-btn mui-btn-warning mui-btn-outlined"
+            class="mui-btn mui-btn-warning mui-btn-outlined btn-lg"
             //   onClick={this.jiazairss3}
             onClick={() => {
               /* 使用箭头函数可以自动绑定this! */
@@ -157,7 +157,7 @@ export default function Rssreader() {
             // id={mybuttonids.buttonid4}
             ref={mybuttonidsbuttonid4}
             data-loading-icon="mui-spinner mui-spinner-custom"
-            class="mui-btn mui-btn-danger mui-btn-outlined"
+            class="mui-btn mui-btn-danger mui-btn-outlined btn-lg"
             //   onClick={this.jiazairss4}
             onClick={() => {
               /* 使用箭头函数可以自动绑定this! */
@@ -171,7 +171,7 @@ export default function Rssreader() {
             // id={mybuttonids.buttonid5}
             ref={mybuttonidsbuttonid5}
             data-loading-icon="mui-spinner mui-spinner-custom"
-            class="mui-btn mui-btn-success mui-btn-outlined"
+            class="mui-btn mui-btn-success mui-btn-outlined btn-lg"
             //   onClick={this.jiazairss5}
             onClick={() => {
               /* 使用箭头函数可以自动绑定this! */
@@ -185,7 +185,7 @@ export default function Rssreader() {
             // id={mybuttonids.buttonid6}
             ref={mybuttonidsbuttonid6}
             data-loading-icon="mui-spinner mui-spinner-custom"
-            class="mui-btn mui-btn-primary mui-btn-outlined"
+            class="mui-btn mui-btn-primary mui-btn-outlined btn-lg"
             //   onClick={this.jiazairss6}
             onClick={() => {
               /* 使用箭头函数可以自动绑定this! */
@@ -207,7 +207,13 @@ export default function Rssreader() {
           <ul class="mui-table-view">
             {// window.myrsscontent.map
             rssstate.map((e, index) => (
-              <li class="mui-table-view-cell mui-media" key={index}>
+              <li
+                class="mui-table-view-cell mui-media"
+                key={index}
+                /* style="width: 100%;" */
+                /* 每个项目占一行,防止一行多个项目 */
+                style={{ width: " 100%" }}
+              >
                 <div class="mui-media-body">
                   <b> {e.title}</b>
                   <a href={e.link} target="_blank">

@@ -397,7 +397,11 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
           );
         }
 
-        exports.refreshall = refreshall;
+        exports.forcerefreshall = () => {
+          render(<div />, document.getElementById("root"));
+          refreshall();
+        };
+        exports.default = Apphome;
         function refreshall() {
           render(<Apphome />, document.getElementById("root"));
           scrollTo(0, 0);
