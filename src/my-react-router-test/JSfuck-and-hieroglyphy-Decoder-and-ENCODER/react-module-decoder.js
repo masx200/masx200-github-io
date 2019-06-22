@@ -1,4 +1,16 @@
-new ClipboardJS(".btn");
+const clipboard = new ClipboardJS(".btn");
+
+clipboard.on("success", function(e) {
+  if (!e.text) {
+    console.log("复制内容空");
+  } else {
+    //   console.info("Action:", e.action);
+    //   console.info("Text:", e.text);
+  }
+
+  e.clearSelection();
+});
+
 var JSFuck = require("./jsfuck"),
   hieroglyphy = require("./hieroglyphy");
 // import decoderrender from "./decoder-render";
@@ -7,6 +19,7 @@ var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 var useState = React.useState,
   useEffect = React.useEffect,
   useRef = React.useRef;
+var { useCallback } = React;
 function guid() {
   return "xxxxxxxx-xxxx-yxxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
     var r = (Math.random() * 16) | 0,
@@ -19,6 +32,19 @@ var preandpost;
 export default function Decoder() {
   var [outputcode, setoutputcode] = useState("");
   var [inputcode, setinputcode] = useState("");
+  const inputonchange = useCallback(
+    e => {
+      setinputcode(e.target.value);
+    },
+    [inputcode]
+  );
+  const outputonchange = useCallback(
+    e => {
+      setoutputcode(e.target.value);
+    },
+    [outputcode]
+  );
+
   function tpipeichunzifuchuan(codestring) {
     try {
       //   console.log(
@@ -202,11 +228,7 @@ export default function Decoder() {
       <textarea
         /* 数据双向绑定,如果不设置onchange则变成了只读的value */
         value={inputcode}
-        onChange={e => {
-          //   console.log(e.target);
-
-          setinputcode(e.target.value);
-        }}
+        onChange={inputonchange}
         // ref={inputtext}
         class="form-control"
         placeholder="Paste your code here!"
@@ -232,11 +254,7 @@ export default function Decoder() {
         <textarea
           /* 数据双向绑定,如果不设置onchange则变成了只读的value */
           value={outputcode}
-          onChange={e => {
-            //   console.log(e.target);
-
-            setoutputcode(e.target.value);
-          }}
+          onChange={outputonchange}
           class="form-control"
           id="code2"
           style={{ width: "100%", "min-height": "250px" }}

@@ -2,6 +2,7 @@
 
 //edge和Firefox不支持动态import函数加载模块！
 import "./vue-render-all.css";
+import "../myindexrender.css";
 // eslint-disable-next-line
 /* eslint-disable */
 // import Vue from 'vue';

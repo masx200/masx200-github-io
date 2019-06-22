@@ -66,11 +66,30 @@ export default function Rssreader() {
           myxmlstrcontent.push(str);
           //   console.log("xml", myxmlstrcontent);
           var data = parser.parse(str);
-          //   console.log("json", data);
+          console.log("rssjson", data);
           myrsscontent.title = data.rss.channel.title;
+          //   myrsscontent.description = $(data.rss.channel.description).text();
           myrsscontent.description = data.rss.channel.description;
-          myrsscontent.push(...data.rss.channel.item);
-          //   console.log("rsscontent", myrsscontent);
+          myrsscontent.push(
+            /* 提取e.description里面的文字 */
+            /* 不要修改原来的rssjson,改成深拷贝 */
+            ...JSON.parse(JSON.stringify(data.rss.channel.item)).map(e => {
+              //   console.log(e);
+              try {
+                /* 如果 e.description是以以文字开头则在外面包上一个div*/
+                e.description =
+                  $("<div/>")
+                    .append(e.description)
+                    .text() || e.description;
+              } catch (error) {
+                // e.description = e.description;
+              }
+
+              return e;
+            })
+            // description: $(data.rss.channel.item.description).text()
+          );
+          console.log("rsscontent", myrsscontent);
 
           mui(element).button("reset");
           tanchu弹出消息通用("success");

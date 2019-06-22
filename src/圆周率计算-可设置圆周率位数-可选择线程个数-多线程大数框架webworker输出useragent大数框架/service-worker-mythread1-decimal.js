@@ -56,14 +56,17 @@ JavaScript的任意精度Decimal类型。
 */
 
 addEventListener("message", function(event) {
-    var piwei;
+  var piwei;
   //   console.log(self.name)
   piwei = event.data[0];
   var threadall = event.data[1];
   var threadid = event.data[2];
-  console.log("副线程" + (threadid + 1) + "从主线程接收" + "event.data\n");
-  console.log(...event.data);
-
+  //   console.log("副线程" + (threadid + 1) + "从主线程接收" + "event.data\n");
+  //   console.log(...event.data);
+  console.log(
+    "副线程" + (threadid + 1) + "从主线程接收" + "event.data\n",
+    JSON.stringify(event.data)
+  );
   Decimal.precision = piwei + 1;
   var p = new Decimal(0);
   var a = new Decimal(1);

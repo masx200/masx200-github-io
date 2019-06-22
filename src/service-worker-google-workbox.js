@@ -13,22 +13,22 @@ if (workbox) {
 //   new workbox.strategies.NetworkFirst({ cacheName: "js-cache" })
 // );
 workbox.routing.registerRoute(
-    /* 任意网址的js文件 */
-    new RegExp('.*\.js'),
-    new workbox.strategies.NetworkFirst({ cacheName: "js-cache" })
-  );
+  /* 任意网址的js文件 */
+  new RegExp(".*.js"),
+  new workbox.strategies.NetworkFirst({ cacheName: "js-cache" })
+);
 workbox.routing.registerRoute(
-  new RegExp(".*\.html"),
+  new RegExp(".*.html"),
   new workbox.strategies.NetworkFirst({ cacheName: "html-cache" })
 );
 workbox.routing.registerRoute(
-    new RegExp(".*/$"),
-    new workbox.strategies.NetworkFirst({ cacheName: "html-cache" })
-  );
+  new RegExp(".*/$"),
+  new workbox.strategies.NetworkFirst({ cacheName: "html-cache" })
+);
 workbox.routing.registerRoute(
   // Cache CSS files.
-//   /.*\.css$/,
-new RegExp('.*\.css'),
+  //   /.*\.css$/,
+  new RegExp(".*.css"),
   // Use cache but update in the background.
   new workbox.strategies.StaleWhileRevalidate({
     // Use a custom cache name.
@@ -36,19 +36,29 @@ new RegExp('.*\.css'),
   })
 );
 workbox.routing.registerRoute(
-    // Cache CSS files.
-    /.*\.md$/,
-//   new RegExp('.*\.css'),
-    // Use cache but update in the background.
-    new workbox.strategies.StaleWhileRevalidate({
-      // Use a custom cache name.
-      cacheName: "md-cache"
-    })
-  );
+  // Cache CSS files.
+  /.*\.md$/,
+  //   new RegExp('.*\.css'),
+  // Use cache but update in the background.
+  new workbox.strategies.StaleWhileRevalidate({
+    // Use a custom cache name.
+    cacheName: "md-cache"
+  })
+);
 workbox.routing.registerRoute(
   // Cache CSS files.
   /* 仅限当前域名下的xml文件 */
   /\.xml$/,
+  // Use cache but update in the background.
+  new workbox.strategies.StaleWhileRevalidate({
+    // Use a custom cache name.
+    cacheName: "xml-cache"
+  })
+);
+workbox.routing.registerRoute(
+  // Cache CSS files.
+  /* 仅限当前域名下的xml文件 */
+  /\.json$/,
   // Use cache but update in the background.
   new workbox.strategies.StaleWhileRevalidate({
     // Use a custom cache name.

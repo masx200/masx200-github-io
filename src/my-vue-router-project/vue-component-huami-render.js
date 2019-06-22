@@ -275,7 +275,17 @@ export default function() {
       //   $("#key").change(countCode);
       //   $("#password").keyup(countCode);
       //   $("#key").keyup(countCode);
-      $("#code16").mouseover(function() {
+
+      $([...$("#code16 "), ...$("#copycode16")]).mouseover(function() {
+        $("#copycode16").addClass("copycode16h");
+        $("#code16").addClass("code16h");
+      });
+      $([...$("#code16 "), ...$("#copycode16")]).mouseout(function() {
+        $("#copycode16").removeClass("copycode16h");
+        $("#code16").removeClass("code16h");
+      });
+
+      /*    $("#code16").mouseover(function() {
         $("#copycode16").addClass("copycode16h");
         $("#code16").addClass("code16h");
       });
@@ -290,8 +300,8 @@ export default function() {
       $("#copycode16").mouseout(function() {
         $("#copycode16").removeClass("copycode16h");
         $("#code16").removeClass("code16h");
-      });
-      $("#copycode16").click(function() {
+      }); */
+      /*     $("#copycode16").click(function() {
         if ($("#code16").val()) {
           $("#copyOK").show();
           $("#copyOK")
@@ -304,7 +314,7 @@ export default function() {
               $("#copyOK").hide();
             });
         }
-      });
+      }); */
     });
     // jQuery=window. jQuery
     jQuery(function() {

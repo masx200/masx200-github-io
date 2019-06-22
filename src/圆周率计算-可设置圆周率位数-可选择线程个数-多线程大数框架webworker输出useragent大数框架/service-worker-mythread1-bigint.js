@@ -57,8 +57,12 @@ addEventListener("message", function(event) {
   //   "副线程" + (threadid + 1) + "从主线程接收" + "event.data\n",
   //   ...event.data
   // );
-  console.log("副线程" + (threadid + 1) + "从主线程接收" + "event.data\n");
-  console.log(...event.data);
+  console.log(
+    "副线程" + (threadid + 1) + "从主线程接收" + "event.data\n",
+    /* 线程中的console.log不能输出对象,只能输出文本 */
+    JSON.stringify(event.data)
+  );
+  //   console.log(...event.data);
 
   // Decimal.precision = piwei + 1;
   var p = new bigInt(0);

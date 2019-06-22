@@ -5,7 +5,7 @@ let huami = Vue.extend({
   mounted() {
     vuehuamirender();
     // console.log("huami,mounted");
-    document.title = "vue-router-project-" + "huami";
+    document.title = "masx200的github主页-" + "花密  不一样的密码管理工具";
   },
   beforeDestroy() {
     // console.log("huami,beforeDestroy");
@@ -33,7 +33,7 @@ let huami = Vue.extend({
     // console.log("huami,destroyed")
   },
   template: `
-  <div class="hello flowerpassword">
+  <div class="hello flowerpassword"><h1>花密  不一样的密码管理工具</h1>
   <div class="container" id="rong1" style="text-align: center;">
       <div class="" id="rong2">
           <h2>
@@ -73,7 +73,7 @@ let huami = Vue.extend({
                   </p>
                   <br>
                   <p>
-                      <button id="copycode16" class="btn-lg btn copycode16d btn-info" data-clipboard-target="#code16" style="width: 100%;">点击复制</button>
+                      <button id="copycode16" class="btn-lg btn copycode16d btn-info" data-clipboard-target="#code16" style="width: 100%;"  v-on:click="functioncopy">点击复制</button>
                   </p>
               </span>
               <p>
@@ -93,6 +93,23 @@ let huami = Vue.extend({
     return { message1: "", message2: "", message3: "" };
   },
   methods: {
+    functioncopy() {
+      if (
+        this.message3
+        // $("#code16").val()
+      ) {
+        $("#copyOK").show();
+        $("#copyOK")
+          .fadeTo(0, 0)
+          .css("border-color", "#22B614")
+          .css("background-color", "#22B614")
+          .fadeTo("normal", 1)
+          .fadeTo(2000, 1)
+          .fadeTo(3000, 0, function() {
+            $("#copyOK").hide();
+          });
+      }
+    },
     handlechange() {
       //   console.log(this);
       //   countCode();

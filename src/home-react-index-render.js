@@ -1,4 +1,5 @@
 import "./myindexrender.css";
+import "./my-vue-router-project/vue-render-all.css";
 // import"./my-react-router-test/react-index-render.css"
 // import IMPORTCJSAMDUMD from "./IMPORTCJSAMDUMD";
 // import myreacthtml from "./my-react-router-test/index.html";
@@ -47,13 +48,21 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
     "use strict";
     $(window).one("load", () => {
       /* 当页面加载完成时再加载css */
-      jQuery(`<style>
-        @import "https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css";
-  
-        @import "https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css";
-        @import "https://github.githubassets.com/assets/github-6556dfa9be535e551ffffaadfecdad99.css";
-        @import "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css";
-      </style>`).appendTo(document.head);
+      jQuery(`<style/>`)
+        .text(
+          `${[
+            "https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css",
+            "https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css",
+            "https://github.githubassets.com/assets/github-6556dfa9be535e551ffffaadfecdad99.css",
+            "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+          ].map(u => `\n @import '${u}';\n`)}`.replace(/,/g, "")
+        )
+        .appendTo(document.head);
+      //   ${/* @import "https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css";
+
+      //   @import "https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css";
+      //   @import "https://github.githubassets.com/assets/github-6556dfa9be535e551ffffaadfecdad99.css";
+      //   @import "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"; */}
       function onhashchange() {
         scrollTo(0, 0);
         $("#example-navbar-collapse").removeClass("show");
@@ -124,7 +133,8 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
           function shouqi收起折叠的导航栏菜单() {
             $("#example-navbar-collapse").removeClass("show");
             $("#my主体").css("padding-top", $("#my导航栏").height());
-            refreshall();
+            // refreshall();
+            scrollTo(0, 0);
           }
           useEffect(() => {
             $("#my主体").css("padding-top", $("#my导航栏").height());
@@ -219,6 +229,15 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                             点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新
                           </Link>
                         </li>
+                        <li>
+                          <Link
+                            to="/react-huami"
+                            // href="./my-vue-router-project/index.html#/huami"
+                            class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          >
+                            花密网页版
+                          </Link>
+                        </li>
                         <li class="nav-item">
                           <Link
                             to="/IMPORTCJSAMDUMD动态异步加载"
@@ -227,30 +246,7 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                             IMPORTCJSAMDUMD-动态异步加载-commonjs和umd和amd模块
                           </Link>
                         </li>
-                        <li>
-                          <a
-                            href="./my-vue-router-project/index.html#/huami"
-                            class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                          >
-                            花密网页版
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="./my-vue-router-project/index.html"
-                            class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                          >
-                            基于vue的主页
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="./my-vue-router-project/index.html#/about"
-                            class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                          >
-                            关于Vue
-                          </a>
-                        </li>
+
                         {/* http://localhost:1234/my-vue-router-project/index.html#/about */}
                         {/* <li
                             id="mynav1"
@@ -298,6 +294,22 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                           >
                             hieroglyphy-ENCODER
                           </Link>
+                        </li>
+                        <li>
+                          <a
+                            href="./my-vue-router-project/index.html"
+                            class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          >
+                            基于vue的主页
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="./my-vue-router-project/index.html#/about"
+                            class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          >
+                            关于Vue
+                          </a>
                         </li>
                       </ul>
                     </div>
@@ -369,7 +381,13 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
                           )
                         )}
                       />
-
+                      <Route
+                        path="/react-huami"
+                        component={lazy(() =>
+                          import("./home-react-module-huami.js")
+                        )}
+                      />
+                      {/* "/react-huami" */}
                       <Route exact path="*" component={home} />
                     </Switch>
                   </Suspense>
@@ -379,6 +397,7 @@ import("./IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
           );
         }
 
+        exports.refreshall = refreshall;
         function refreshall() {
           render(<Apphome />, document.getElementById("root"));
           scrollTo(0, 0);
