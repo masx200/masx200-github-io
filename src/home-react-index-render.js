@@ -1,3 +1,4 @@
+import "./RegisteraServiceWorkerFile.js";
 import "./myindexrender.css";
 import "./my-vue-router-project/vue-render-all.css";
 // import"./my-react-router-test/react-index-render.css"

@@ -1,3 +1,4 @@
+import "../RegisteraServiceWorkerFile.js";
 // import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 
 //edge和Firefox不支持动态import函数加载模块！
