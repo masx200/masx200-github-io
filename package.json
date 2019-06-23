@@ -20,8 +20,6 @@
     "dependencies": {
         "@babel/core": "^7.4.5",
         "@babel/preset-env": "^7.4.5",
-        "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
-        "@vue/babel-preset-jsx": "^1.0.0",
         "autoprefixer": "^9.6.0",
         "cssnano": "^4.1.10",
         "fast-xml-parser": "^3.12.16",
@@ -37,7 +35,6 @@
     },
     "babel": {
         "presets": [
-            
             "@babel/preset-react",
             [
                 "@babel/preset-env",
@@ -49,6 +46,18 @@
                     }
                 }
             ]
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
         ]
     },
     "devDependencies": {
