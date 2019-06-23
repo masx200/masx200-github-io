@@ -18,6 +18,7 @@
     },
     "homepage": "https://github.com/masx200/masx200.github.io#readme",
     "dependencies": {
+        "babel-preset-react-app": "^9.0.0",
         "@babel/core": "^7.4.5",
         "@babel/preset-env": "^7.4.5",
         "autoprefixer": "^9.6.0",
@@ -45,7 +46,8 @@
                         "chrome": "75"
                     }
                 }
-            ]
+            ],
+            "react-app"
         ]
     },
     "browserslist": {
