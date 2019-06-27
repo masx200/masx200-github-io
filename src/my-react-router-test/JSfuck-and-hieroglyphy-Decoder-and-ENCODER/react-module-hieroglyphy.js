@@ -1,21 +1,35 @@
-const clipboard = new ClipboardJS(".btn");
+import hieroglyphyworker from "./service-worker-hieroglyphy.worker";
+import React from "react";
 
-clipboard.on("success", function(e) {
-  if (!e.text) {
-    console.log("复制内容空");
-  } else {
-    //   console.info("Action:", e.action);
-    //   console.info("Text:", e.text);
-  }
-  /* 不显示选择的区域形式 */
-  e.clearSelection();
-});
+// import("../../clipboard.min.js").then(module => {
+//   const ClipboardJS = module.default;
+//   new ClipboardJS(".btn").on("success", function(e) {
+//     e.clearSelection();
+//   });
+// });
+// import ClipboardJS from "../../clipboard.min.js";
+// import mui from "@/mui.js";
+import mui from "../../mui.min.js";
+import $ from "jquery";
+const jQuery = $;
+// const clipboard = new ClipboardJS(".btn");
+
+// clipboard.on("success", function(e) {
+//   if (!e.text) {
+//     console.log("复制内容空");
+//   } else {
+//     //   console.info("Action:", e.action);
+//     //   console.info("Text:", e.text);
+//   }
+//   /* 不显示选择的区域形式 */
+//   e.clearSelection();
+// });
 
 // new ClipboardJS(".btn");
 // import hieroglyphyencoderender, {
 //   关闭所有worker
 // } from "./hieroglyphy-encode-render";
-var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 // import "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER.less"
 var { useState, useEffect, useRef, useCallback } = React;
 var outputdivid = "clip" + guid();
@@ -41,10 +55,11 @@ export default function Hieroglyphy() {
   function encodeall(typename, btnele) {
     console.time(typename);
     console.log(typename);
-    if (!myservice) {
-      myservice = new Worker("service-worker-hieroglyphy.js");
-      console.log("创建新线程", "service-worker-hieroglyphy.js");
-    }
+    // if (!myservice) {
+    myservice = myservice || hieroglyphyworker();
+    // new Worker("./service-worker-hieroglyphy.worker.js");
+    //   console.log("创建新线程", "service-worker-hieroglyphy.js");
+    // }
     mui(btnele).button("loading");
     lastclick = typename;
     // debugger;
@@ -84,7 +99,7 @@ export default function Hieroglyphy() {
       // tanchu弹出消息提示();
     };
     myservice.onerror = e => {
-      console.error("Error:", e.message, e.filename);
+      throw new Error(e.message + " " + e.filename);
       //   myservice.terminate();
       //   console.log("线程已关闭","service-worker-jsfuck.js")
     };
@@ -130,7 +145,7 @@ export default function Hieroglyphy() {
   }, []);
 
   return (
-    <div class="JSfuck-Decoder-and-hieroglyphy-decoder">
+    <div class="jdahd">
       <h1 style={{ "font-size": "30px" }}>
         编码hieroglyphy <br />
         encode hieroglyphy
@@ -158,8 +173,8 @@ export default function Hieroglyphy() {
           ref={btnencodescript}
           class="btn btn-outline-success btn-lg"
           id="encodescript"
-          onClick={() => {
-            encodeall("encodescript", btnencodescript.current);
+          onClick={e => {
+            encodeall("encodescript", e.target);
           }}
           data-loading-icon="mui-spinner mui-spinner-custom"
           type="text"
@@ -172,8 +187,8 @@ export default function Hieroglyphy() {
           type="text"
           data-loading-icon="mui-spinner mui-spinner-custom"
           class="btn btn-outline-info btn-lg"
-          onClick={() => {
-            encodeall("encodestring", btnencodestring.current);
+          onClick={e => {
+            encodeall("encodestring", e.target);
           }}
         >
           Encode string

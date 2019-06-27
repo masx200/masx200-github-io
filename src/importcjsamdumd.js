@@ -1,4 +1,10 @@
+
+
+
 "use strict";
+
+
+
 // import sha256 from "./sha256.min";
 /*
 更新:
@@ -13,7 +19,7 @@ IMPORTCJSAMDUMD(["https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstra
 
  */
 //由于使用了async函数所以需要regeneratorRuntime//
-import regeneratorRuntime from "regenerator-runtime";
+// import regeneratorRuntime from "regenerator-runtime";
 
 //包装cjs和amd和umd模块为异步加载promise方法
 /**
@@ -112,7 +118,6 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
 // window . importcjsamdumd= importcjsamdumd
 (global => {
   "use strict";
-  var IMPORTCJSAMDUMD = importcjsamdumd;
   if ("object" == typeof exports && "undefined" != typeof module) {
     module.exports = importcjsamdumd;
   }
@@ -143,7 +148,7 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
   function require(packagename = undefined) {
     var findpackage = global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[packagename];
     if (findpackage) {
-      console.log("在模块仓库中找到了", packagename, findpackage.url);
+      console.log("在模块仓库中找到了", packagename);
       return findpackage.default;
     }
     // else if (global.IMPORTCJSAMDUMD.PACKAGECONFIGLIST[packagename]) {
@@ -189,8 +194,8 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
 
   //   }
 
-  async function importcjsamdumd(url, packagename = undefined) {
-    // console.log("输入的参数为", Array(...arguments));
+  function importcjsamdumd(url, packagename = undefined) {
+    console.log("输入的参数为", Array(...arguments));
     if (typeof url === "object" || typeof packagename === "object") {
       var 已经加载过的模块数量 = 0;
       for (var canshuinput of Array(...arguments)) {
@@ -205,17 +210,17 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
           global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[inputpackagename].url ===
             inputurl
         ) {
-          //   console.log(
-          //     "模块仓库中已经存在模块,不会重新加载",
-          //     inputurl,
-          //     inputpackagename
-          //   );
+          console.log(
+            "模块仓库中已经存在模块,不会重新加载",
+            inputurl,
+            inputpackagename
+          );
           已经加载过的模块数量++;
         }
       }
       if (已经加载过的模块数量 >= Array(...arguments).length) {
-        // console.log("输入的所有模块都已经加载过了,不会再次加载");
-        return await Promise.all(
+        console.log("输入的所有模块都已经加载过了,不会再次加载");
+        return Promise.all(
           Array(...arguments).map(inputarray => {
             var packagename = inputarray[1];
             return new Promise(resolve => {
@@ -258,24 +263,31 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
       var suoyouimportpromise;
       try {
         // console.log("第一次尝试批量加载模块");
-        suoyouimportpromise = await Promise.all(
+        suoyouimportpromise = Promise.all(
           Array(...arguments).map(e => {
+            //   try {
             return IMPORTCJSAMDUMD(e[0], e[1]);
+            //   } catch (error) {
+            //     return IMPORTCJSAMDUMD(e[0], e[1]);
+            //   }finally{
+            //     return IMPORTCJSAMDUMD(e[0], e[1]);
+            //   }
           })
         );
         // return suoyouimportpromise;
         /* 这里return无效,因为有finally */
       } catch (error) {
-        console.warn(error);
-        suoyouimportpromise = await Promise.all(
-          Array(...arguments).map(e => {
-            return IMPORTCJSAMDUMD(e[0], e[1]);
-          })
-        );
+        console.error(error);
       } finally {
-        suoyouimportpromise = await Promise.all(
+        suoyouimportpromise = Promise.all(
           Array(...arguments).map(e => {
+            //   try {
             return IMPORTCJSAMDUMD(e[0], e[1]);
+            //   } catch (error) {
+            //     return IMPORTCJSAMDUMD(e[0], e[1]);
+            //   }finally{
+            //     return IMPORTCJSAMDUMD(e[0], e[1]);
+            //   }
           })
         );
         return suoyouimportpromise;
@@ -459,9 +471,9 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
           .default !== "undefined" &&
         global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[packagename].url === url
       ) {
-        // console.log("模块仓库中已经存在模块,不会重新加载", url,packagename);
+        console.log("模块仓库中已经存在模块,不会重新加载", packagename);
 
-        return await new Promise(resolve => {
+        return new Promise(resolve => {
           resolve(
             /* 返回的是模块不是模块的默认输出 */
 
@@ -471,7 +483,7 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
       } else {
         // importcjsamdumd.packagename = packagename;
 
-        return await new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) => {
           try {
             (() => {
               //   (async () => {
@@ -537,15 +549,11 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
                           \/\* ${url} \*\/;
                           
                           return [exports, module.exports, define.exports]; `
-                        )(
-                          require,
-                          define,
-                          module,
-                          exports
-                        ); /* 这里必须换行因为如果遇到最后一行是注释的话,这句return也被注释了 */
-                        //  +
-                        // `;\n return [exports, module.exports, define.exports]; \n` +
-                        // ` \/\* ${url} \*\/`
+                          /* 这里必须换行因为如果遇到最后一行是注释的话,这句return也被注释了 */
+                          //  +
+                          // `;\n return [exports, module.exports, define.exports]; \n` +
+                          // ` \/\* ${url} \*\/`
+                        )(require, define, module, exports);
                         // for (let __key__ in module.exports ){
                         //     module[__key__]=module.exports[__key__]
                         // }
@@ -571,7 +579,7 @@ IMPORTCJSAMDUMD.GLOBALPACKAGESTORE[name]和 IMPORTCJSAMDUMD.REQUIREPACKAGE(name)
                         //   return [exports, module.exports];
                       })(require, define, module, exports, scripttext);
                     } catch (e) {
-                      console.warn(e);
+                      console.error(e);
                       reject(e);
                       return;
                     }
@@ -608,12 +616,12 @@ console.log(
                     if (typeof define.exports === "undefined") {
                       define.exports = {};
                     }
-                    // console.log("模块的输出为", [
-                    //   exportmodule[0],
-                    //   exportmodule[1],
-                    //   // define.exports
-                    //   exportmodule[2]
-                    // ]);
+                    console.log("模块的输出为", [
+                      exportmodule[0],
+                      exportmodule[1],
+                      // define.exports
+                      exportmodule[2]
+                    ]);
                     if (
                       typeof exportmodule[0] !== "object" ||
                       Object.keys(exportmodule[0]).length ||
@@ -678,13 +686,13 @@ console.log(
                     moduleexport.url = url;
                     if (typeof moduleexport.default !== "undefined") {
                       if (typeof moduleexport.name !== "undefined") {
-                        // console.log(
-                        //   "IMPORTCJSAMDUMD.GLOBALPACKAGESTORE",
-                        //   global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE
-                        // );
+                        console.log(
+                          "IMPORTCJSAMDUMD.GLOBALPACKAGESTORE",
+                          global.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE
+                        );
                       }
                     } else {
-                      console.warn("加载的模块没有输出", packagename, url);
+                      console.warn("加载的模块没有输出", url);
                       resolve(moduleexport);
                       return;
                     }

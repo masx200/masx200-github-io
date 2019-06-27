@@ -1,5 +1,8 @@
-var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-var { useState, useEffect, useRef } = React;
+import $ from "jquery";
+
+import React from "react";
+// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+var { useEffect } = React;
 export default function 点击链接不跳转修改当前的网页地址动态加载网页内容不刷新() {
   useEffect(function componentDidMount() {
     document.title =

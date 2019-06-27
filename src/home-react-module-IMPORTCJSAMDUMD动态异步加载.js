@@ -1,5 +1,6 @@
-var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-var { useState, useEffect, useRef } = React;
+// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+import React from "react";
+var { useEffect } = React;
 /* 把class组件改成function组件 */
 export default function IMPORTCJSAMDUMD动态异步加载() {
   useEffect(function componentDidMount() {

@@ -1,8 +1,9 @@
+import React from "react";
 // import extendmytextarea from "./圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/extendmytextarea.js";
 import Mypidashujisuanbigint from "./圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/mypidashujisuan-bigint.js"; // } //   关闭所有worker as 关闭所有worker1 // , {
 import Mypidashujisuandecimal from "./圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/mypidashujisuan-decimal.js"; // } //   关闭所有worker as 关闭所有worker2 //  {
-var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-var { useState, useEffect, useRef } = React;
+// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+var { useEffect } = React;
 /* 应该再卸载组件时关闭所有worker */
 export default function Picalc() {
   useEffect(() => {

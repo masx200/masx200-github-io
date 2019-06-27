@@ -1,18 +1,30 @@
-const clipboard = new ClipboardJS(".btn");
+import jsfuckworker from "./service-worker-jsfuck.worker.js";
+// import ClipboardJS from "../../clipboard.min.js";
+// import("../../clipboard.min.js").then(module => {
+//   const ClipboardJS = module.default;
+//   new ClipboardJS(".btn").on("success", function(e) {
+//     e.clearSelection();
+//   });
+// });
+import mui from "../../mui.min.js";
+import $ from "jquery";
+import React from "react";
+const jQuery = $;
+// const clipboard = new ClipboardJS(".btn");
 
-clipboard.on("success", function(e) {
-  if (!e.text) {
-    console.log("复制内容空");
-  } else {
-    //   console.info("Action:", e.action);
-    //   console.info("Text:", e.text);
-  }
-  /* 不显示选择的区域形式 */
-  e.clearSelection();
-});
+// clipboard.on("success", function(e) {
+//   if (!e.text) {
+//     console.log("复制内容空");
+//   } else {
+//     //   console.info("Action:", e.action);
+//     //   console.info("Text:", e.text);
+//   }
+//   /* 不显示选择的区域形式 */
+//   e.clearSelection();
+// });
 //new ClipboardJS(".btn");
 // import jsfuckencoderender, { 关闭所有worker } from "./jsfuck-encode-render";
-var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 var { useState, useEffect, useRef, useCallback } = React;
 // import "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER.less"
 var outputdivid = "clip" + guid();
@@ -38,10 +50,11 @@ export default function Jsfuck() {
     console.log("encodescript");
     mui(btnencode).button("loading");
 
-    if (!myservice) {
-      myservice = new Worker("service-worker-jsfuck.js");
-      console.log("创建新线程", "service-worker-jsfuck.js");
-    }
+    // if (!myservice) {
+    myservice = myservice || jsfuckworker();
+    // new Worker("./service-worker-jsfuck.worker.js");
+    //   console.log("创建新线程", "service-worker-jsfuck.js");
+    // }
 
     myservice.postMessage([
       //   $2("input").value,
@@ -74,7 +87,8 @@ export default function Jsfuck() {
       // tanchu弹出消息提示();
     };
     myservice.onerror = e => {
-      console.error("Error:", e.message, e.filename);
+      //   console.error("Error:", e.message, e.filename);
+      throw new Error(e.message + " " + e.filename);
       //   myservice.terminate();
       //   console.log("线程已关闭","service-worker-jsfuck.js")
     };
@@ -124,7 +138,7 @@ export default function Jsfuck() {
   }, []);
 
   return (
-    <div class="JSfuck-Decoder-and-hieroglyphy-decoder">
+    <div class="jdahd">
       <h1
         style={{ "font-size": "30px" }}
         //       "
@@ -157,8 +171,8 @@ export default function Jsfuck() {
       />
       <br />
       <button
-        onClick={() => {
-          encode(btnencode.current);
+        onClick={e => {
+          encode(e.target);
         }}
         ref={btnencode}
         class="btn btn-outline-primary btn-lg"

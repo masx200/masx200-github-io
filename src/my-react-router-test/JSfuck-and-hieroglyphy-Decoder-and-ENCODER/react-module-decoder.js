@@ -1,24 +1,39 @@
-const clipboard = new ClipboardJS(".btn");
+import hieroglyphy from "./hieroglyphy";
+import JSFuck from "./jsfuck";
+import React from "react";
 
-clipboard.on("success", function(e) {
-  if (!e.text) {
-    console.log("复制内容空");
-  } else {
-    //   console.info("Action:", e.action);
-    //   console.info("Text:", e.text);
-  }
+// 改为动态引入剪贴板
 
-  e.clearSelection();
-});
+// import("../../clipboard.min.js").then(module => {
+//   const ClipboardJS = module.default;
+//   new ClipboardJS(".btn").on("success", function(e) {
+//     e.clearSelection();
+//   });
+// });
+// import ClipboardJS from "../../clipboard.min.js";
+// import mui from "../../mui.js";
+import $ from "jquery";
+const jQuery = $;
+// const clipboard = new ClipboardJS(".btn");
 
-var JSFuck = require("./jsfuck"),
-  hieroglyphy = require("./hieroglyphy");
+// clipboard.on("success", function(e) {
+//   if (!e.text) {
+//     console.log("复制内容空");
+//   } else {
+//     //   console.info("Action:", e.action);
+//     //   console.info("Text:", e.text);
+//   }
+
+//   e.clearSelection();
+// });
+
+// var JSFuck = require("./jsfuck"),
+//   hieroglyphy = require("./hieroglyphy");
 // import decoderrender from "./decoder-render";
 // import "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER.less"
-var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 var useState = React.useState,
-  useEffect = React.useEffect,
-  useRef = React.useRef;
+  useEffect = React.useEffect;
 var { useCallback } = React;
 function guid() {
   return "xxxxxxxx-xxxx-yxxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
@@ -30,6 +45,61 @@ function guid() {
 var outputdivid = "clip" + guid();
 var preandpost;
 export default function Decoder() {
+  const decode = inputcode => {
+    preandpost = preandpost || [
+      /* jsfuck的初始化导致卡顿 */
+      {
+        prefix:
+          "[][(![]+[])[!+[]+!![]+!![]]+([]+{})[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][([]+{})[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]]+(![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+[]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(!![]+[])[+[]]+([]+{})[+!![]]+(!![]+[])[+!![]]](",
+        postfix: ")()"
+      },
+      {
+        prefix:
+          "[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]](",
+        postfix: ")()"
+      },
+      {
+        prefix:
+          "[][" +
+          hieroglyphy.hieroglyphyString("sort") +
+          "][" +
+          hieroglyphy.hieroglyphyString("constructor") +
+          "]" +
+          "(",
+        postfix: ")()"
+      },
+      {
+        prefix:
+          "[][" +
+          JSFuck.encode("filter") +
+          "]" +
+          "[" +
+          JSFuck.encode("constructor") +
+          "](",
+        postfix: ")()"
+      }
+    ];
+
+    var codevalue = inputcode;
+    // var code = document.querySelector("#code");
+    if (codevalue.length === 0) {
+      alert("输入框不能为空");
+      return;
+    }
+    console.time("解码JSFUCK 和hieroglyphy");
+    console.log("解码JSFUCK 和hieroglyphy");
+
+    for (var e = 0; e < preandpost.length; e++) {
+      if (pipeizifu(preandpost[e].prefix, preandpost[e].postfix)) {
+        console.log("使用匹配模版" + (e + 1) + "成功");
+        tanchutanchuxiaoxitishi();
+        return 1;
+      }
+      // else {
+      // }
+    }
+    tpipeichunzifuchuan(codevalue);
+  };
   var [outputcode, setoutputcode] = useState("");
   var [inputcode, setinputcode] = useState("");
   const inputonchange = useCallback(
@@ -128,61 +198,6 @@ export default function Decoder() {
       } catch (e) {}
     }
   }
-  function decode() {
-    preandpost = preandpost || [
-      /* jsfuck的初始化导致卡顿 */
-      {
-        prefix:
-          "[][(![]+[])[!+[]+!![]+!![]]+([]+{})[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][([]+{})[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]]+(![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+[]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(!![]+[])[+[]]+([]+{})[+!![]]+(!![]+[])[+!![]]](",
-        postfix: ")()"
-      },
-      {
-        prefix:
-          "[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]](",
-        postfix: ")()"
-      },
-      {
-        prefix:
-          "[][" +
-          hieroglyphy.hieroglyphyString("sort") +
-          "][" +
-          hieroglyphy.hieroglyphyString("constructor") +
-          "]" +
-          "(",
-        postfix: ")()"
-      },
-      {
-        prefix:
-          "[][" +
-          JSFuck.encode("filter") +
-          "]" +
-          "[" +
-          JSFuck.encode("constructor") +
-          "](",
-        postfix: ")()"
-      }
-    ];
-
-    var codevalue = inputcode;
-    // var code = document.querySelector("#code");
-    if (codevalue.length === 0) {
-      alert("输入框不能为空");
-      return;
-    }
-    console.time("解码JSFUCK 和hieroglyphy");
-    console.log("解码JSFUCK 和hieroglyphy");
-
-    for (var e = 0; e < preandpost.length; e++) {
-      if (pipeizifu(preandpost[e].prefix, preandpost[e].postfix)) {
-        console.log("使用匹配模版" + (e + 1) + "成功");
-        tanchutanchuxiaoxitishi();
-        return 1;
-      }
-      // else {
-      // }
-    }
-    tpipeichunzifuchuan(codevalue);
-  }
 
   //   var inputtext = useRef();
   useEffect(
@@ -195,7 +210,7 @@ export default function Decoder() {
     }
   );
   return (
-    <div class="JSfuck-Decoder-and-hieroglyphy-decoder">
+    <div class="jdahd">
       {/* <>5ddddddd</> */}
       {/* The `style` prop expects a mapping from style properties to values, not a string. For example, style={{marginRight: spacing + 'em'}} when using JSX. */}
       <h1
@@ -241,7 +256,7 @@ export default function Decoder() {
       />
       <button
         onClick={() => {
-          decode();
+          decode(inputcode);
         }}
         type="button"
         id="decode"

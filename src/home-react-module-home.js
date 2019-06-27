@@ -7,7 +7,10 @@ import picture5 from "./react.svg";
 import picture6 from "./vue.png";
 import picture7 from "./webpack.svg"; */
 // import myindexrender from "./myindexrender";
-var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+import React from "react";
+import $ from "jquery";
+const jQuery = $;
+// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 // function guid() {
 //   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
 //     var r = (Math.random() * 16) | 0,
@@ -15,9 +18,10 @@ var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 //     return v.toString(16);
 //   });
 // }
-var { useState, useEffect, useRef } = React;
+const location = window.location;
+var { useEffect } = React;
 
-export default function Home() {
+export default function() {
   function guid() {
     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
       var r = (Math.random() * 16) | 0,
@@ -94,7 +98,11 @@ export default function Home() {
         </p>
         <p>
           <b>
-            <a target="_blank" href="https://masx200.github.io/ditto/">
+            <a
+              target="_blank"
+              href="https://masx200.github.io/ditto/"
+              className={"mui-btn mui-btn-primary mui-btn-outlined"}
+            >
               masx200的ditto: 轻量级markdown文档系统阅读器
             </a>
           </b>
@@ -102,6 +110,7 @@ export default function Home() {
         <p>
           <b>
             <a
+              className={"mui-btn mui-btn-primary mui-btn-outlined"}
               target="_blank"
               href="https://masx200.github.io/javascript-tutorial/"
             >
@@ -111,7 +120,11 @@ export default function Home() {
         </p>
         <p>
           <b>
-            <a target="_blank" href="https://masx200.github.io/es6tutorial/">
+            <a
+              target="_blank"
+              href="https://masx200.github.io/es6tutorial/"
+              className={"mui-btn mui-btn-primary mui-btn-outlined"}
+            >
               ecmascript6教程,基于ditto的markdown阅读器
             </a>
           </b>

@@ -1,9 +1,10 @@
 // React=IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
-var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-var { useState, useEffect, useRef } = React;
-export default function about() {
+// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+import React from "react";
+var { useEffect } = React;
+export default function() {
   useEffect(function //   componentWillMount() {}
   componentDidMount() {
     // refreshall();

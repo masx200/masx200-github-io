@@ -1,6 +1,7 @@
 // React=IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
+import React from "react";
 import picture1 from "../babeljs.png";
 
 import picture2 from "../parcel.jpg";
@@ -9,23 +10,15 @@ import picture4 from "../logo-jquery.png";
 import picture5 from "../react.svg";
 import picture6 from "../vue.png";
 import picture7 from "../webpack.svg";
-var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-var { useState, useEffect, useRef } = React;
-export default function home() {
-  useEffect(function //   componentWillMount() {}
-  componentDidMount() {
+// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+const { useEffect } = React;
+export default function() {
+  useEffect(() => {
     // window.location.hash = "#/";
     // refreshall();
     document.title = "React router App-" + "home";
   });
-  //   componentWillReceiveProps(newProps) {}
-  //   shouldComponentUpdate(newProps, newState) {
-  //     return true;
-  //   }
-  //   componentWillUpdate(nextProps, nextState) {}
-  //   componentDidUpdate(prevProps, prevState) {}
-  //   componentWillUnmount() {}
-  //   render() {
+
   return (
     <div className="App">
       <header className="">
