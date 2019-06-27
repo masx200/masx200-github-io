@@ -1,6 +1,6 @@
 # masx200.github.io
 
-masx200 的 github网页
+masx200 的 github 网页
 
 https://masx200.github.io/
 
@@ -13,6 +13,8 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 # 使用 webpack-react-vue-spa-awesome-config 重构网页
 
 基于 webpack4.x, 同时支持 react 和 vue 的单页面应用 通用的 webpack 配置文件,提供开箱即用支持
+
+您无需学习和配置许多构建工具。即时重新加载可帮助您专注于开发。在部署时，您的捆绑包会自动优化
 
 https://github.com/masx200/webpack-react-vue-spa-awesome-config
 
@@ -550,14 +552,17 @@ importScripts("https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js");
 <hr>
 
 # 在 vscode 中安装 npm-scripts 插件即可轻松调试
+
 ```
 npm start
 
 npm run build
 ```
-或者 
+
+或者
+
 ```
-yarn start 
+yarn start
 
 yarn build
 ```
