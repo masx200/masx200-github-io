@@ -550,7 +550,13 @@ importScripts("https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js");
 <hr>
 
 # 在 vscode 中安装 npm-scripts 插件即可轻松调试
-
+```
 npm start
 
 npm run build
+```
+或者 
+```
+yarn start 
+
+yarn build```
