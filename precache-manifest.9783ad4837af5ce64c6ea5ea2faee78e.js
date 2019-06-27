@@ -3,64 +3,64 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./babeljs.a3109f62b30ba938cca6dd8e654cf8a9.png"
   },
   {
-    "url": "./bundle.runtime~main.14d0b0ec400b4031154e.js"
+    "url": "./bundle.runtime~main.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.0.14d0b0ec400b4031154e.js"
+    "url": "./chunk.0.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.1.14d0b0ec400b4031154e.js"
+    "url": "./chunk.1.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.10.14d0b0ec400b4031154e.js"
+    "url": "./chunk.10.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.11.14d0b0ec400b4031154e.js"
+    "url": "./chunk.11.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.12.14d0b0ec400b4031154e.js"
+    "url": "./chunk.12.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.13.14d0b0ec400b4031154e.js"
+    "url": "./chunk.13.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.14.14d0b0ec400b4031154e.js"
+    "url": "./chunk.14.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.15.14d0b0ec400b4031154e.js"
+    "url": "./chunk.15.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.16.14d0b0ec400b4031154e.js"
+    "url": "./chunk.16.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.17.14d0b0ec400b4031154e.js"
+    "url": "./chunk.17.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.18.14d0b0ec400b4031154e.js"
+    "url": "./chunk.18.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.19.14d0b0ec400b4031154e.js"
+    "url": "./chunk.19.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.4.14d0b0ec400b4031154e.js"
+    "url": "./chunk.4.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.5.14d0b0ec400b4031154e.js"
+    "url": "./chunk.5.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.6.14d0b0ec400b4031154e.js"
+    "url": "./chunk.6.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.7.14d0b0ec400b4031154e.js"
+    "url": "./chunk.7.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.8.14d0b0ec400b4031154e.js"
+    "url": "./chunk.8.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.9.14d0b0ec400b4031154e.js"
+    "url": "./chunk.9.e52f8be834453b81abd5.js"
   },
   {
-    "url": "./chunk.main.14d0b0ec400b4031154e.js"
+    "url": "./chunk.main.e52f8be834453b81abd5.js"
   },
   {
     "url": "./feed.iplaysoft.com.790f8a4184aae5f189d9f1fbb1f4a5ec.xml"
@@ -72,7 +72,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./landiannews.com.feed.f91b36986dcd849ed8da9fd8cb586c8b.xml"
   },
   {
-    "url": "./main.14d0b0ec400b4031154e.chunk.css"
+    "url": "./main.e52f8be834453b81abd5.chunk.css"
   },
   {
     "url": "./parcel.9dc2fb9f99082fe3a958daf07adb4e9b.jpg"
