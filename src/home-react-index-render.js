@@ -180,7 +180,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                     >
                       masx200的
                       <hr
-                        style={{ display: innerWidth > 400 ? "block" : "none" }}
+                        style={{ display: innerWidth > 500 ? "block" : "none" }}
                       />
                       github主页
                     </Link>
@@ -436,7 +436,13 @@ prefetchfiles.forEach(addlinkprefetch); */
                         )
                       )}
                     />
-                    {/* "/react-huami" */}
+                    <Route
+                      //   exact
+                      path="/markdown/:url"
+                      component={lazy(() =>
+                        import("./component-react-动态路由markdown")
+                      )}
+                    />
                     <Route exact path="*" component={home} />
                   </Switch>
                 </Suspense>

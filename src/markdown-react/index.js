@@ -6,64 +6,91 @@ import $ from "jquery";
 // console.log(marked, hljs);
 
 /* 因为会被复用,所以,要根据不同的网址,缓存不同内容,否则会有冲突 */
-let allmarkcache = {};
+// let allmarkcache = {};
+
+/* 如果使用缓存可能导致:传入参数改变,但是组件内容却不刷新的情况 
+
+缓存交给workbox了
+*/
 let markdowncache = "";
 let cache加载完成 = false;
 let cache加载失败 = false;
-const Fallback = props => (
-  <div {...props}>
+const Fallback = () => (
+  <div>
     <h1>loading</h1>
   </div>
 );
+/* 外部传入的参数改变会导致组件刷新! */
 export default function(props) {
-  allmarkcache[props.src] = allmarkcache[props.src] || {};
+  //   allmarkcache[props.src] = allmarkcache[props.src] || {};
   const [加载完成, set加载完成] = useState(
-    allmarkcache[props.src].cache加载完成 || cache加载完成
+    // allmarkcache[props.src].cache加载完成 ||
+    cache加载完成
   );
   const [加载失败, set加载失败] = useState(
-    allmarkcache[props.src].cache加载失败 || cache加载失败
+    // allmarkcache[props.src].cache加载失败 ||
+    cache加载失败
   );
   const [markdown内容, setmarkdown内容] = useState(
-    allmarkcache[props.src].markdowncache || markdowncache
+    // allmarkcache[props.src].markdowncache ||
+    markdowncache
   );
   //   console.log(markdown内容.length);
   //   console.log(markdowncache.length);
   const ref = useRef();
+  useEffect(
+    () => {
+      return () => {
+        /* 在组件卸载时缓存内容 */
+        /* 因为会被复用,所以,要根据不同的网址,缓存不同内容,否则会有冲突 */
+        //   allmarkcache[props.src] = allmarkcache[props.src] || {};
+        // allmarkcache[props.src].cache加载完成 = 加载完成;
+        // allmarkcache[props.src].markdowncache = markdown内容;
+        // allmarkcache[props.src].cache加载失败 = 加载失败;
+        // console.log(allmarkcache);
+        //   console.log(markdowncache);
+      };
+    },
+    /* 组件卸载时运行 */
+
+    []
+  );
   useEffect(() => {
-    if (markdown内容 === "") {
+    if (true) {
       hljs.initHighlightingOnLoad();
+
       fetch(props.src)
-        .then(r => (r.ok ? r.text() : null))
-        .then(t => setmarkdown内容(marked(t)))
-        .catch(() => set加载失败(true));
+        .then(r => {
+          if (r.ok) {
+            return r.text();
+          } else throw new Error();
+        })
+        .catch(() => set加载失败(true))
+        .then(t => $(ref.current).html(marked(t)))
+        .finally(() => {
+          Array.from($("pre code")).forEach(block =>
+            hljs.highlightBlock(block)
+          );
+
+          setmarkdown内容(ref.current.innerHTML);
+          set加载完成(true);
+        });
+
+      // .catch(() => set加载失败(true));
     }
-
-    return () => {
-      /* 在组件卸载时缓存内容 */
-      /* 因为会被复用,所以,要根据不同的网址,缓存不同内容,否则会有冲突 */
-      //   allmarkcache[props.src] = allmarkcache[props.src] || {};
-      allmarkcache[props.src].cache加载完成 = 加载完成;
-      allmarkcache[props.src].markdowncache = markdown内容;
-      allmarkcache[props.src].cache加载失败 = 加载失败;
-      console.log(allmarkcache);
-
-      //   console.log(markdowncache);
-    };
   });
-  useEffect(() => {
-    // console.log(
-    //   [ref.current.innerHTML, markdown内容],
-    //   [ref.current.innerHTML.length, markdown内容.length],
-    //   ref.current.innerHTML !== markdown内容
-    // );
-    // console.log();
-    if (ref.current.innerHTML !== markdown内容) {
-      Array.from($("pre code")).forEach(block => hljs.highlightBlock(block));
+  //   useEffect(() => {
+  //     // console.log(
+  //     //   [ref.current.innerHTML, markdown内容],
+  //     //   [ref.current.innerHTML.length, markdown内容.length],
+  //     //   ref.current.innerHTML !== markdown内容
+  //     // );
+  //     // console.log();
+  //     if (ref.current.innerHTML !== markdown内容) {
 
-      setmarkdown内容(ref.current.innerHTML);
-      set加载完成(true);
-    }
-  }, [markdown内容]);
+  //       setmarkdown内容(ref.current.innerHTML);
+  //     }
+  //   }, [markdown内容]);
   return (
     <div class="container">
       <div
