@@ -163,7 +163,8 @@ prefetchfiles.forEach(addlinkprefetch); */
         }
         useEffect(() => {
           $("#my主体").css("padding-top", $("#my导航栏").height());
-        });
+          document.title = "masx200的github主页";
+        }, []);
         return (
           <HashRouter>
             <div>
@@ -177,7 +178,11 @@ prefetchfiles.forEach(addlinkprefetch); */
                       class="navbar-brand mui-btn mui-btn-primary mui-btn-outlined"
                       to="/"
                     >
-                      masx200的github主页
+                      masx200的
+                      <hr
+                        style={{ display: innerWidth > 400 ? "block" : "none" }}
+                      />
+                      github主页
                     </Link>
 
                     <button
@@ -246,14 +251,6 @@ prefetchfiles.forEach(addlinkprefetch); */
                           圆周率计算多线程
                         </Link>
                       </li>
-                      <li class="nav-item">
-                        <Link
-                          to="/点击链接不跳转修改当前的网页地址动态加载网页内容不刷新"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                        >
-                          点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新
-                        </Link>
-                      </li>
                       <li>
                         <Link
                           to="/react-huami"
@@ -263,6 +260,48 @@ prefetchfiles.forEach(addlinkprefetch); */
                           花密网页版
                         </Link>
                       </li>
+                      <li>
+                        <Link
+                          to="/decoder"
+                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                        >
+                          JSfuck-and-hieroglyphy-Decoder
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/jsfuck"
+                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                        >
+                          JSfuck-ENCODER
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/hieroglyphy"
+                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                        >
+                          hieroglyphy-ENCODER
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/webpack-react-vue-spa-awesome-config"
+                          // href="./my-vue-router-project/index.html#/huami"
+                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                        >
+                          webpack-react-vue- 极速零配置的单页面 web 应用打包工具
+                        </Link>
+                      </li>
+                      <li class="nav-item">
+                        <Link
+                          to="/点击链接不跳转修改当前的网页地址动态加载网页内容不刷新"
+                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                        >
+                          点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新
+                        </Link>
+                      </li>
+
                       <li class="nav-item">
                         <Link
                           to="/IMPORTCJSAMDUMD动态异步加载"
@@ -296,30 +335,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                               JSfuck-and-hieroglyphy-Decoder-and-ENCODER
                             </a>
                           </li> */}
-                      <li>
-                        <Link
-                          to="/decoder"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                        >
-                          JSfuck-and-hieroglyphy-Decoder
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/jsfuck"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                        >
-                          JSfuck-ENCODER
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/hieroglyphy"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                        >
-                          hieroglyphy-ENCODER
-                        </Link>
-                      </li>
+
                       <li>
                         <a
                           href="./my-vue-router-project/index.html"
@@ -410,6 +426,14 @@ prefetchfiles.forEach(addlinkprefetch); */
                       path="/react-huami"
                       component={lazy(() =>
                         import("./home-react-module-huami.js")
+                      )}
+                    />
+                    <Route
+                      path="/webpack-react-vue-spa-awesome-config"
+                      component={lazy(() =>
+                        import(
+                          "./home-react-webpack-react-vue-spa-awesome-config.js"
+                        )
                       )}
                     />
                     {/* "/react-huami" */}

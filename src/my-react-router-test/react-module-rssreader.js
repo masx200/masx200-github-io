@@ -107,6 +107,7 @@ export default function Rssreader() {
     document.title = "React router App-" + "rssreader";
 
     return () => {
+      //   console.log("缓存rssstate");
       myrsscontent = rssstate;
     };
   });

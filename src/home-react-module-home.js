@@ -1,3 +1,4 @@
+import Markdownreact from "./markdown-react/index";
 /* import picture1 from "./babeljs.png";
 
 import picture2 from "./parcel.jpg";
@@ -80,7 +81,14 @@ export default function() {
   });
   return (
     <div>
-      <div class="jumbotron">
+      {/* The tag <markdownreact> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. */}
+
+      <div
+        class="jumbotron"
+        style={{
+          padding: 0
+        }}
+      >
         <h1>欢迎登陆页面！</h1>
         <p>
           <b>
@@ -129,45 +137,47 @@ export default function() {
             </a>
           </b>
         </p>
+        <div>
+          <button
+            class="btn btn-outline-primary btn-lg"
+            //   ref={mybuttonidsbuttonid1}
+            onClick={() => {
+              tanchu弹出消息通用("primary");
+            }}
+          >
+            弹出首选提示框
+          </button>
+          <button
+            class="btn btn-outline-success btn-lg"
+            //   ref={mybuttonidsbuttonid2}
+            onClick={() => {
+              tanchu弹出消息通用("success");
+            }}
+          >
+            弹出成功提示框
+          </button>
+          <button
+            class="btn btn-outline-danger btn-lg"
+            //   ref={mybuttonidsbuttonid3}
+            onClick={() => {
+              tanchu弹出消息通用("danger");
+            }}
+          >
+            弹出失败提示框
+          </button>
+          <button
+            class="btn btn-outline-warning btn-lg"
+            //   ref={mybuttonidsbuttonid4}
+            onClick={() => {
+              tanchu弹出消息通用("warning");
+            }}
+          >
+            弹出警告提示框
+          </button>
+        </div>
       </div>
-      <div>
-        <button
-          class="btn btn-outline-primary btn-lg"
-          //   ref={mybuttonidsbuttonid1}
-          onClick={() => {
-            tanchu弹出消息通用("primary");
-          }}
-        >
-          弹出首选提示框
-        </button>
-        <button
-          class="btn btn-outline-success btn-lg"
-          //   ref={mybuttonidsbuttonid2}
-          onClick={() => {
-            tanchu弹出消息通用("success");
-          }}
-        >
-          弹出成功提示框
-        </button>
-        <button
-          class="btn btn-outline-danger btn-lg"
-          //   ref={mybuttonidsbuttonid3}
-          onClick={() => {
-            tanchu弹出消息通用("danger");
-          }}
-        >
-          弹出失败提示框
-        </button>
-        <button
-          class="btn btn-outline-warning btn-lg"
-          //   ref={mybuttonidsbuttonid4}
-          onClick={() => {
-            tanchu弹出消息通用("warning");
-          }}
-        >
-          弹出警告提示框
-        </button>
-      </div>
+      <Markdownreact src="https://masx200.github.io/README.md" />
+      {/* <Markdownreact src="https://masx200.github.io/webpack-react-vue-spa-awesome-config/README.md" /> */}
       {/*  <div id="图片列表200">
             <hr />
             <img loading="lazy" src={picture1} />
@@ -184,7 +194,7 @@ export default function() {
             <hr />
             <img loading="lazy" src={picture7} />
           </div> */}
-      <div
+      {/* <div
         id="readme"
         class="Box Box--condensed instapaper_body md js-code-block-container"
       >
@@ -1604,6 +1614,7 @@ export default function() {
           </article>
         </div>
       </div>
+    </div> */}
     </div>
   );
 }
