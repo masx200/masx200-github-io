@@ -9,7 +9,7 @@ export default function() {
   componentDidMount() {
     // refreshall();
     document.title = "React router App-" + "about";
-  });
+  }, []);
   //   componentWillReceiveProps(newProps) {}
   //   shouldComponentUpdate(newProps, newState) {
   //     return true;

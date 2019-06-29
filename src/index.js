@@ -1,5 +1,6 @@
 import "./index.css";
 import "./markdown-react/github.css";
+import "./markdown-react/padding0.css";
 // import "./github.css";
 // import "./新建文本文档.less";
 // import "./新建文本文档.scss";

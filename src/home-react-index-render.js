@@ -4,11 +4,43 @@
 // import ReactRouterDOM from "react-router-dom";
 import ReactDOM from "react-dom";
 import React from "react";
+var { render } = ReactDOM;
+var { Suspense, lazy } = React;
+var { useEffect, useState } = React;
 import $ from "jquery";
 // import "./RegisteraServiceWorkerFile.js";
 // import "./myindexrender.css";
 // import "./my-vue-router-project/vue-render-all.css";
 import { Link, Switch, Route, HashRouter } from "react-router-dom";
+
+function 可变路径的rssreader链接() {
+  const [rsssitename, setrsssitename] = useState("");
+  $(window).on("hashchange", () => {
+    switch (location.hash) {
+      case "#/react-rssreader/iplaysoft":
+      case "#/react-rssreader/tmtpost":
+      case "#/react-rssreader/landiannews":
+      case "#/react-rssreader/ithome":
+      case "#/react-rssreader/ifanr":
+      case "#/react-rssreader/pingwest":
+        setrsssitename(location.hash.slice("#/react-rssreader".length));
+        break;
+
+      default:
+        break;
+    }
+    /*  */
+  });
+  return (
+    <Link
+      to={"/react-rssreader" + rsssitename}
+      class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+    >
+      rss阅读
+    </Link>
+  );
+}
+
 // import Switch from "react-router-dom/Switch";
 // import Route from "react-router-dom/Route";
 // import HashRouter from "react-router-dom/HashRouter";
@@ -131,7 +163,7 @@ prefetchfiles.forEach(addlinkprefetch); */
       //   var React = reactmodulearray[0].default;
       //   var ReactDOM = reactmodulearray[1].default;
       //   var ReactRouterDOM = reactmodulearray[2].default;
-      var { render } = ReactDOM;
+
       //   var {
       //     Link,
       //     Switch,
@@ -140,8 +172,7 @@ prefetchfiles.forEach(addlinkprefetch); */
       //     // Redirect,
       //     HashRouter
       //   } = ReactRouterDOM;
-      var { Suspense, lazy } = React;
-      var { useEffect } = React;
+
       // var h = React.createElement;
       var home = lazy(() => import("./home-react-module-home.js"));
       var picalc = lazy(() => import("./home-react-module-picalc"));
@@ -223,12 +254,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                       //     : ""
                       // }
                       >
-                        <Link
-                          to="/react-rssreader"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                        >
-                          rss阅读
-                        </Link>
+                        <可变路径的rssreader链接 />
                       </li>
                       <li
                         id="mynav2"
@@ -367,24 +393,28 @@ prefetchfiles.forEach(addlinkprefetch); */
                 >
                   <Switch>
                     <Route exact path="/" component={home} />
-                    <Route path="/picalc" component={picalc} />
+                    <Route exact path="/picalc" component={picalc} />
                     <Route
+                      exact
                       path="/点击链接不跳转修改当前的网页地址动态加载网页内容不刷新"
                       component={
                         点击链接不跳转修改当前的网页地址动态加载网页内容不刷新
                       }
                     />
                     <Route
+                      exact
                       path="/IMPORTCJSAMDUMD动态异步加载"
                       component={IMPORTCJSAMDUMD动态异步加载}
                     />
                     <Route
+                      exact
                       path="/react-home"
                       component={lazy(() =>
                         import("./my-react-router-test/react-module-home.js")
                       )}
                     />
                     <Route
+                      exact
                       path="/react-rssreader"
                       component={lazy(() =>
                         import(
@@ -393,12 +423,23 @@ prefetchfiles.forEach(addlinkprefetch); */
                       )}
                     />
                     <Route
+                      exact
+                      path="/react-rssreader/:sitename"
+                      component={lazy(() =>
+                        import(
+                          "./my-react-router-test/react-module-rssreader.js"
+                        )
+                      )}
+                    />
+                    <Route
+                      exact
                       path="/react-about"
                       component={lazy(() =>
                         import("./my-react-router-test/react-module-about.js")
                       )}
                     />
                     <Route
+                      exact
                       path="/decoder"
                       component={lazy(() =>
                         import(
@@ -407,6 +448,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                       )}
                     />
                     <Route
+                      exact
                       path="/jsfuck"
                       component={lazy(() =>
                         import(
@@ -415,6 +457,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                       )}
                     />
                     <Route
+                      exact
                       path="/hieroglyphy"
                       component={lazy(() =>
                         import(
@@ -423,12 +466,14 @@ prefetchfiles.forEach(addlinkprefetch); */
                       )}
                     />
                     <Route
+                      exact
                       path="/react-huami"
                       component={lazy(() =>
                         import("./home-react-module-huami.js")
                       )}
                     />
                     <Route
+                      exact
                       path="/webpack-react-vue-spa-awesome-config"
                       component={lazy(() =>
                         import(
@@ -436,13 +481,13 @@ prefetchfiles.forEach(addlinkprefetch); */
                         )
                       )}
                     />
-                    <Route
+                    {/* <Route
                       //   exact
                       path="/markdown/:url"
                       component={lazy(() =>
                         import("./component-react-动态路由markdown")
                       )}
-                    />
+                    /> */}
                     <Route exact path="*" component={home} />
                   </Switch>
                 </Suspense>

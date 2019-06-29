@@ -104,6 +104,7 @@ export default function Jsfuck() {
                         </div>`).fadeTo(10000, 0.5, () => {
         console.log(jQuery("#" + id));
         jQuery("#" + id).remove();
+        $("#my主体").css("padding-top", $("#my导航栏").height());
       })
     );
     // console.timeEnd('解码JSFUCK 和hieroglyphy')

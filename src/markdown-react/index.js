@@ -12,16 +12,26 @@ import $ from "jquery";
 
 缓存交给workbox了
 */
-let markdowncache = "";
-let cache加载完成 = false;
-let cache加载失败 = false;
-const Fallback = () => (
-  <div>
-    <h1>loading</h1>
-  </div>
-);
+
 /* 外部传入的参数改变会导致组件刷新! */
+
+async function fetchtext(url) {
+  var r = await fetch(url);
+  if (r.ok) {
+    return await r.text();
+  } else {
+    throw new Error("fetch failed");
+  }
+}
 export default function(props) {
+  let markdowncache = "";
+  let cache加载完成 = false;
+  let cache加载失败 = false;
+  const Fallback = () => (
+    <div>
+      <h1>loading</h1>
+    </div>
+  );
   //   allmarkcache[props.src] = allmarkcache[props.src] || {};
   const [加载完成, set加载完成] = useState(
     // allmarkcache[props.src].cache加载完成 ||
@@ -38,47 +48,60 @@ export default function(props) {
   //   console.log(markdown内容.length);
   //   console.log(markdowncache.length);
   const ref = useRef();
-  useEffect(
-    () => {
-      return () => {
-        /* 在组件卸载时缓存内容 */
-        /* 因为会被复用,所以,要根据不同的网址,缓存不同内容,否则会有冲突 */
-        //   allmarkcache[props.src] = allmarkcache[props.src] || {};
-        // allmarkcache[props.src].cache加载完成 = 加载完成;
-        // allmarkcache[props.src].markdowncache = markdown内容;
-        // allmarkcache[props.src].cache加载失败 = 加载失败;
-        // console.log(allmarkcache);
-        //   console.log(markdowncache);
-      };
-    },
-    /* 组件卸载时运行 */
+  //   useEffect(
+  //     () => {
+  //       return () => {
+  //         /* 在组件卸载时缓存内容 */
+  //         /* 因为会被复用,所以,要根据不同的网址,缓存不同内容,否则会有冲突 */
+  //         //   allmarkcache[props.src] = allmarkcache[props.src] || {};
+  //         // allmarkcache[props.src].cache加载完成 = 加载完成;
+  //         // allmarkcache[props.src].markdowncache = markdown内容;
+  //         // allmarkcache[props.src].cache加载失败 = 加载失败;
+  //         // console.log(allmarkcache);
+  //         //   console.log(markdowncache);
+  //       };
+  //     },
+  //     /* 组件卸载时运行 */
 
-    []
-  );
+  //     []
+  //   );
   useEffect(() => {
-    if (true) {
+    (async () => {
+      // if (true) {
       hljs.initHighlightingOnLoad();
 
-      fetch(props.src)
-        .then(r => {
-          if (r.ok) {
-            return r.text();
-          } else throw new Error();
-        })
-        .catch(() => set加载失败(true))
-        .then(t => $(ref.current).html(marked(t)))
-        .finally(() => {
-          Array.from($("pre code")).forEach(block =>
-            hljs.highlightBlock(block)
-          );
+      // fetch(props.src)
+      //   .then(r => {
+      //     if (r.ok) {
+      //       return r.text();
+      //     } else throw new Error();
+      //   })
+      let text;
+      try {
+        text = await fetchtext(props.src);
+      } catch (error) {
+        set加载失败(true);
+        return;
+      }
+      //   .catch(() => set加载失败(true))
+      try {
+        $(ref.current).html(marked(text));
+      } catch (error) {
+        console.error(error);
+      }
 
-          setmarkdown内容(ref.current.innerHTML);
-          set加载完成(true);
-        });
+      //   .then(t => $(ref.current).html(marked(t)))
+      //   .finally(() => {
+      Array.from($("pre code")).forEach(block => hljs.highlightBlock(block));
+
+      setmarkdown内容(ref.current.innerHTML);
+      set加载完成(true);
+      //   });
 
       // .catch(() => set加载失败(true));
-    }
-  });
+      // }
+    })();
+  }, []);
   //   useEffect(() => {
   //     // console.log(
   //     //   [ref.current.innerHTML, markdown内容],
@@ -142,7 +165,8 @@ export default function(props) {
           <article
             class="markdown-body entry-content p-5"
             itemprop="text"
-            style={{ padding: " 0px" }}
+            id="padding0"
+            // style={{ padding: " 0px !important" }}
           >
             <div
               ref={ref}

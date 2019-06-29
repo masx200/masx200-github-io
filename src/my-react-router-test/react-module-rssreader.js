@@ -30,13 +30,14 @@ https://reactjs.org/docs/hooks-overview.html#state-hook
  */
 /* https://reactjs.org/docs/hooks-reference.html#useref */
 // var mybuttonids = {};
-var myxmlstrcontent = [];
-var myrsscontent = [];
+
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 var { useState, useEffect, useRef } = React;
 // var{ useState }=React
 
-export default function Rssreader() {
+export default function Rssreader(props) {
+  var myxmlstrcontent = [];
+  var myrsscontent = [];
   const [rssstate, setrssState] = useState(myrsscontent);
   //   console.log(setrssState);
   const mybuttonidsbuttonid1 = useRef();
@@ -62,8 +63,12 @@ export default function Rssreader() {
       // var xmlurl = $(myselectorid).attr("src");
       fetch(xmlurl)
         .then(r => {
-          //   console.log(r.statusText, r);
-          return r.text();
+          if (r.ok) {
+            //   console.log(r.statusText, r);
+            return r.text();
+          } else {
+            throw new Error("fetch failed");
+          }
         })
         .then(s => {
           var str = s;
@@ -86,6 +91,7 @@ export default function Rssreader() {
                     .append(e.description)
                     .text() || e.description;
               } catch (error) {
+                console.error(error);
                 // e.description = e.description;
               }
 
@@ -103,14 +109,59 @@ export default function Rssreader() {
         });
     }
   }
-  useEffect(() => {
-    document.title = "React router App-" + "rssreader";
+  useEffect(
+    () => {
+      console.log(props);
+      if ("undefined" !== typeof props.match.params.sitename) {
+        document.title =
+          "React router App-" + "rssreader-" + props.match.params.sitename;
+        console.log(props.match.params.sitename);
+        switch (props.match.params.sitename) {
+          case "tmtpost":
+            jiazaiload(rssxml1, mybuttonidsbuttonid1.current);
+            break;
+          case "iplaysoft":
+            jiazaiload(rssxml2, mybuttonidsbuttonid2.current);
+            break;
+          case "landiannews":
+            jiazaiload(rssxml3, mybuttonidsbuttonid3.current);
+            break;
+          case "ithome":
+            jiazaiload(rssxml4, mybuttonidsbuttonid4.current);
+            break;
+          case "ifanr":
+            jiazaiload(rssxml5, mybuttonidsbuttonid5.current);
+            break;
+          case "pingwest":
+            jiazaiload(rssxml6, mybuttonidsbuttonid6.current);
+            break;
 
-    return () => {
-      //   console.log("缓存rssstate");
-      myrsscontent = rssstate;
-    };
-  });
+          default:
+            break;
+        }
+      }
+    },
+    /* 依赖项设置为props就会在上级传入的参数变化时生效 */
+
+    [props]
+  );
+  useEffect(() => {
+    // document.title = "React router App-" + "rssreader";
+    if ("undefined" !== typeof props.match.params.sitename) {
+      document.title =
+        "React router App-" + "rssreader-" + props.match.params.sitename;
+    } else {
+      document.title = "React router App-" + "rssreader-";
+    }
+    // document.title =
+    //   "React router App-" + "rssreader-" +
+    //     ? props.match.params.sitename
+    //     : "";
+    // return () => {
+    //   //   console.log("缓存rssstate");
+    //   //   myrsscontent = rssstate;
+    // };
+  }, []);
   return (
     <div className="">
       <h2>异步fetch加载rss阅读器演示</h2>
@@ -125,7 +176,8 @@ export default function Rssreader() {
             onClick={() => {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss1();
-              jiazaiload(rssxml1, mybuttonidsbuttonid1.current);
+              //   jiazaiload(rssxml1, mybuttonidsbuttonid1.current);
+              location.hash = "#/react-rssreader/tmtpost";
             }}
           >
             加载tmtpost
@@ -139,7 +191,8 @@ export default function Rssreader() {
             onClick={() => {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss2();
-              jiazaiload(rssxml2, mybuttonidsbuttonid2.current);
+              //   jiazaiload(rssxml2, mybuttonidsbuttonid2.current);
+              location.hash = "#/react-rssreader/iplaysoft";
             }}
           >
             加载iplaysoft
@@ -153,7 +206,8 @@ export default function Rssreader() {
             onClick={() => {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss3();
-              jiazaiload(rssxml3, mybuttonidsbuttonid3.current);
+              //   jiazaiload(rssxml3, mybuttonidsbuttonid3.current);
+              location.hash = "#/react-rssreader/landiannews";
             }}
           >
             加载landiannews
@@ -167,7 +221,8 @@ export default function Rssreader() {
             onClick={() => {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss4();
-              jiazaiload(rssxml4, mybuttonidsbuttonid4.current);
+              //   jiazaiload(rssxml4, mybuttonidsbuttonid4.current);
+              location.hash = "#/react-rssreader/ithome";
             }}
           >
             加载ithome
@@ -181,7 +236,8 @@ export default function Rssreader() {
             onClick={() => {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss5();
-              jiazaiload(rssxml5, mybuttonidsbuttonid5.current);
+              //   jiazaiload(rssxml5, mybuttonidsbuttonid5.current);
+              location.hash = "#/react-rssreader/ifanr";
             }}
           >
             加载ifanr
@@ -195,7 +251,8 @@ export default function Rssreader() {
             onClick={() => {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss6();
-              jiazaiload(rssxml6, mybuttonidsbuttonid6.current);
+              //   jiazaiload(rssxml6, mybuttonidsbuttonid6.current);
+              location.hash = "#/react-rssreader/pingwest";
             }}
           >
             加载pingwest
@@ -262,6 +319,7 @@ function tanchu弹出消息通用(infotype) {
   </div>`).fadeTo(5000, 0.5, () => {
       console.log(jQuery("#" + id));
       jQuery("#" + id).remove();
+      $("#my主体").css("padding-top", $("#my导航栏").height());
       //   refreshall();
     })
   );
