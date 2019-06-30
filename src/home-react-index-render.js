@@ -211,7 +211,9 @@ prefetchfiles.forEach(addlinkprefetch); */
                     >
                       masx200的
                       <hr
-                        style={{ display: innerWidth > 500 ? "block" : "none" }}
+                        id="hidewidthless500"
+                        // style={{ display: innerWidth > 500 ? "block" : "none" }}
+                        /* 改为css媒体查询 */
                       />
                       github主页
                     </Link>
