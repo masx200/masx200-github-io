@@ -390,6 +390,8 @@ prefetchfiles.forEach(addlinkprefetch); */
                   fallback={
                     <div>
                       <h1>loading</h1>
+                      <span class="mui-spinner mui-spinner-custom" />
+                      {/* loading转圈图标 */}
                     </div>
                   }
                 >

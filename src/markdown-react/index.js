@@ -16,7 +16,7 @@ import $ from "jquery";
 /* 外部传入的参数改变会导致组件刷新! */
 
 async function fetchtext(url) {
-  var r = await fetch(url);
+  var r = await fetch(new URL(url).toString());
   if (r.ok) {
     return await r.text();
   } else {
@@ -30,6 +30,8 @@ export default function(props) {
   const Fallback = () => (
     <div>
       <h1>loading</h1>
+      <span class="mui-spinner mui-spinner-custom" />
+      {/* loading转圈图标 */}
     </div>
   );
   //   allmarkcache[props.src] = allmarkcache[props.src] || {};
@@ -80,6 +82,7 @@ export default function(props) {
       try {
         text = await fetchtext(props.src);
       } catch (error) {
+        console.error(error);
         set加载失败(true);
         return;
       }
