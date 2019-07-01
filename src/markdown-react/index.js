@@ -104,7 +104,7 @@ export default function(props) {
       // .catch(() => set加载失败(true));
       // }
     })();
-  }, []);
+  }, [props]);
   //   useEffect(() => {
   //     // console.log(
   //     //   [ref.current.innerHTML, markdown内容],
