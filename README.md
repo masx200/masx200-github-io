@@ -22,6 +22,7 @@ https://github.com/masx200/webpack-react-vue-spa-awesome-config
 
 https://github.com/masx200/masx200.github.io/blob/master/src/markdown-react/index.js
 
+https://github.com/masx200/masx200.github.io/blob/master/src/home-react-webpack-react-vue-spa-awesome-config.js
 
 # 适合于 javascript/html/css/vue/reqct 编程的 vscode 的优秀扩展推荐和 vscode 的推荐设置
 
