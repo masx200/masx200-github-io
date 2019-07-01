@@ -54,10 +54,10 @@ window.addEventListener("hashchange",
         break;
     }
   //  /*  */
-  }
+ // }
 
 
-);*/
+//);*/
   return (
     <Link
       to={"/react-rssreader" + rsssitename}
