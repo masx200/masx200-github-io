@@ -15,7 +15,31 @@ import { Link, Switch, Route, HashRouter } from "react-router-dom";
 
 function 可变路径的rssreader链接() {
   const [rsssitename, setrsssitename] = useState("");
-  $(window).on("hashchange", () => {
+useEffect(()=>{
+window.addEventListener("hashchange",
+
+() => {
+    switch (location.hash) {
+      case "#/react-rssreader/iplaysoft":
+      case "#/react-rssreader/tmtpost":
+      case "#/react-rssreader/landiannews":
+      case "#/react-rssreader/ithome":
+      case "#/react-rssreader/ifanr":
+      case "#/react-rssreader/pingwest":
+        setrsssitename(location.hash.slice("#/react-rssreader".length));
+        break;
+
+      default:
+        break;
+    }
+
+
+)
+
+},[])
+
+ 
+/* $(window).on("hashchange", () => {
     switch (location.hash) {
       case "#/react-rssreader/iplaysoft":
       case "#/react-rssreader/tmtpost":
@@ -30,7 +54,10 @@ function 可变路径的rssreader链接() {
         break;
     }
     /*  */
-  });
+  }
+
+
+);*/
   return (
     <Link
       to={"/react-rssreader" + rsssitename}
