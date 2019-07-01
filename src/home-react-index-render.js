@@ -53,7 +53,7 @@ window.addEventListener("hashchange",
       default:
         break;
     }
-    /*  */
+  //  /*  */
   }
 
 
