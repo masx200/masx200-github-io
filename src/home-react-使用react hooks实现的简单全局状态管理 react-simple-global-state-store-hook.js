@@ -1,0 +1,69 @@
+import useGlobalstate from "react-simple-global-state-store-hook";
+import Markdownreact from "./markdown-react/index";
+import React, { useEffect } from "react";
+export default function() {
+  useEffect(() => {
+    document.title =
+      "masx200的github主页-" +
+      "使用react hooks实现的简单全局状态管理 react-simple-global-state-store-hook";
+  }, []);
+  return (
+    <div>
+      <Htest text={"-hello-"} />
+      <hr />
+      <Htest text={"-world-"} />
+      <Markdownreact src="https://masx200.github.io/react-simple-global-state-store-hook/README.md" />
+    </div>
+  );
+}
+function Htest(props) {
+  let {
+    number: [number, setnumber]
+  } = useGlobalstate({ number: 78546 * Math.random() });
+
+  let {
+    testname: [testname, settestname]
+  } = useGlobalstate({ testname: "helloworld-test-" + props.text });
+  return (
+    <div>
+      <h1>test{props.text}</h1>
+
+      <p>
+        testname:
+        <input
+          class="form-control"
+          value={testname}
+          onChange={e => {
+            settestname(e.target.value);
+          }}
+        />
+      </p>
+      <button
+        className="btn btn-outline-success btn-lg"
+        onClick={() => {
+          settestname(testname + props.text);
+        }}
+      >
+        修改testname
+      </button>
+      <p>
+        number:
+        <input
+          class="form-control"
+          value={number}
+          onChange={e => {
+            setnumber(e.target.value);
+          }}
+        />
+      </p>
+      <button
+        className="btn btn-outline-success btn-lg"
+        onClick={() => {
+          setnumber(number * 3);
+        }}
+      >
+        修改number
+      </button>
+    </div>
+  );
+}

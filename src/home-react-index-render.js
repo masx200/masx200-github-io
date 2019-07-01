@@ -335,7 +335,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                           to="/IMPORTCJSAMDUMD动态异步加载"
                           class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
-                          IMPORTCJSAMDUMD-动态异步加载-commonjs和umd和amd模块
+                          动态异步加载-commonjs和umd和amd模块库
                         </Link>
                       </li>
 
@@ -363,7 +363,14 @@ prefetchfiles.forEach(addlinkprefetch); */
                               JSfuck-and-hieroglyphy-Decoder-and-ENCODER
                             </a>
                           </li> */}
-
+                      <li class="nav-item">
+                        <Link
+                          to="/react-simple-global-state-store-hook"
+                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                        >
+                          使用react hooks实现的简单全局状态管理库
+                        </Link>
+                      </li>
                       <li>
                         <a
                           href="./my-vue-router-project/index.html"
@@ -485,6 +492,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                         )
                       )}
                     />
+
                     {/* <Route
                       //   exact
                       path="/markdown/:url"
@@ -492,6 +500,16 @@ prefetchfiles.forEach(addlinkprefetch); */
                         import("./component-react-动态路由markdown")
                       )}
                     /> */}
+
+                    <Route
+                      exact
+                      path="/react-simple-global-state-store-hook"
+                      component={lazy(() =>
+                        import(
+                          "./home-react-使用react hooks实现的简单全局状态管理 react-simple-global-state-store-hook"
+                        )
+                      )}
+                    />
                     <Route exact path="*" component={home} />
                   </Switch>
                 </Suspense>
