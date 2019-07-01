@@ -36,6 +36,7 @@ var { useState, useEffect, useRef } = React;
 // var{ useState }=React
 
 export default function Rssreader(props) {
+  const [website, setwebsite] = useState("");
   var myxmlstrcontent = [];
   var myrsscontent = [];
   const [rssstate, setrssState] = useState(myrsscontent);
@@ -46,7 +47,7 @@ export default function Rssreader(props) {
   const mybuttonidsbuttonid4 = useRef();
   const mybuttonidsbuttonid5 = useRef();
   const mybuttonidsbuttonid6 = useRef();
-  function jiazaiload(xmlurl, element) {
+  async function jiazaiload(xmlurl, element) {
     mui(element).button("loading");
     // window.myrsscontent = []
     var myrsscontent = [];
@@ -61,83 +62,128 @@ export default function Rssreader(props) {
       //使用fetch函数代替$.get
       //使用fast-xml-parser把xml转换为json
       // var xmlurl = $(myselectorid).attr("src");
-      fetch(xmlurl)
-        .then(r => {
-          if (r.ok) {
-            //   console.log(r.statusText, r);
-            return r.text();
-          } else {
-            throw new Error("fetch failed");
-          }
-        })
-        .then(s => {
-          var str = s;
-          myxmlstrcontent.push(str);
-          //   console.log("xml", myxmlstrcontent);
-          var data = parser.parse(str);
-          console.log("rssjson", data);
-          myrsscontent.title = data.rss.channel.title;
-          //   myrsscontent.description = $(data.rss.channel.description).text();
-          myrsscontent.description = data.rss.channel.description;
-          myrsscontent.push(
-            /* 提取e.description里面的文字 */
-            /* 不要修改原来的rssjson,改成深拷贝 */
-            ...JSON.parse(JSON.stringify(data.rss.channel.item)).map(e => {
-              //   console.log(e);
-              try {
-                /* 如果 e.description是以以文字开头则在外面包上一个div*/
-                e.description =
-                  $("<div/>")
-                    .append(e.description)
-                    .text() || e.description;
-              } catch (error) {
-                console.error(error);
-                // e.description = e.description;
-              }
+      var xmlstring = await fetch(xmlurl).then(r => {
+        if (r.ok) {
+          //   console.log(r.statusText, r);
+          return r.text();
+        } else {
+          throw new Error("fetch failed");
+        }
+      });
+      (() => {
+        var str = xmlstring;
+        myxmlstrcontent.push(str);
+        //   console.log("xml", myxmlstrcontent);
+        var data = parser.parse(str);
+        console.log("rssjson", data);
+        myrsscontent.title = data.rss.channel.title;
+        //   myrsscontent.description = $(data.rss.channel.description).text();
+        myrsscontent.description = data.rss.channel.description;
+        myrsscontent.push(
+          /* 提取e.description里面的文字 */
+          /* 不要修改原来的rssjson,改成深拷贝 */
+          ...JSON.parse(JSON.stringify(data.rss.channel.item)).map(e => {
+            //   console.log(e);
+            try {
+              /* 如果 e.description是以以文字开头则在外面包上一个div*/
+              e.description =
+                $("<div/>")
+                  .append(e.description)
+                  .text() || e.description;
+            } catch (error) {
+              console.error(error);
+              // e.description = e.description;
+            }
 
-              return e;
-            })
-            // description: $(data.rss.channel.item.description).text()
-          );
-          console.log("rsscontent", myrsscontent);
+            return e;
+          })
+          // description: $(data.rss.channel.item.description).text()
+        );
+        console.log("rsscontent", myrsscontent);
 
-          mui(element).button("reset");
-          tanchu弹出消息通用("success");
-          //   refreshall();
-          //   this.forceUpdate();
-          setrssState(myrsscontent);
-        });
+        mui(element).button("reset");
+        tanchu弹出消息通用("success");
+        //   refreshall();
+        //   this.forceUpdate();
+        setrssState(myrsscontent);
+      })();
+      // .then(s => {
+      //   var str = s;
+      //   myxmlstrcontent.push(str);
+      //   //   console.log("xml", myxmlstrcontent);
+      //   var data = parser.parse(str);
+      //   console.log("rssjson", data);
+      //   myrsscontent.title = data.rss.channel.title;
+      //   //   myrsscontent.description = $(data.rss.channel.description).text();
+      //   myrsscontent.description = data.rss.channel.description;
+      //   myrsscontent.push(
+      //     /* 提取e.description里面的文字 */
+      //     /* 不要修改原来的rssjson,改成深拷贝 */
+      //     ...JSON.parse(JSON.stringify(data.rss.channel.item)).map(e => {
+      //       //   console.log(e);
+      //       try {
+      //         /* 如果 e.description是以以文字开头则在外面包上一个div*/
+      //         e.description =
+      //           $("<div/>")
+      //             .append(e.description)
+      //             .text() || e.description;
+      //       } catch (error) {
+      //         console.error(error);
+      //         // e.description = e.description;
+      //       }
+
+      //       return e;
+      //     })
+      //     // description: $(data.rss.channel.item.description).text()
+      //   );
+      //   console.log("rsscontent", myrsscontent);
+
+      //   mui(element).button("reset");
+      //   tanchu弹出消息通用("success");
+      //   //   refreshall();
+      //   //   this.forceUpdate();
+      //   setrssState(myrsscontent);
+      // });
     }
   }
   useEffect(
     () => {
       console.log(props);
-      if ("undefined" !== typeof props.match.params.sitename) {
-        document.title =
-          "React router App-" + "rssreader-" + props.match.params.sitename;
-        console.log(props.match.params.sitename);
-        switch (props.match.params.sitename) {
-          case "tmtpost":
-            jiazaiload(rssxml1, mybuttonidsbuttonid1.current);
-            break;
-          case "iplaysoft":
-            jiazaiload(rssxml2, mybuttonidsbuttonid2.current);
-            break;
-          case "landiannews":
-            jiazaiload(rssxml3, mybuttonidsbuttonid3.current);
-            break;
-          case "ithome":
-            jiazaiload(rssxml4, mybuttonidsbuttonid4.current);
-            break;
-          case "ifanr":
-            jiazaiload(rssxml5, mybuttonidsbuttonid5.current);
-            break;
-          case "pingwest":
-            jiazaiload(rssxml6, mybuttonidsbuttonid6.current);
-            break;
 
-          default:
-            break;
+      if ("undefined" !== typeof props.match.params.sitename) {
+        if (website !== props.match.params.sitename) {
+          document.title =
+            "React router App-" + "rssreader-" + props.match.params.sitename;
+          console.log(props.match.params.sitename);
+          switch (props.match.params.sitename) {
+            case "tmtpost":
+              setwebsite(props.match.params.sitename);
+              jiazaiload(rssxml1, mybuttonidsbuttonid1.current);
+              break;
+            case "iplaysoft":
+              setwebsite(props.match.params.sitename);
+              jiazaiload(rssxml2, mybuttonidsbuttonid2.current);
+              break;
+            case "landiannews":
+              setwebsite(props.match.params.sitename);
+              jiazaiload(rssxml3, mybuttonidsbuttonid3.current);
+              break;
+            case "ithome":
+              setwebsite(props.match.params.sitename);
+              jiazaiload(rssxml4, mybuttonidsbuttonid4.current);
+              break;
+            case "ifanr":
+              setwebsite(props.match.params.sitename);
+              jiazaiload(rssxml5, mybuttonidsbuttonid5.current);
+              break;
+            case "pingwest":
+              setwebsite(props.match.params.sitename);
+              jiazaiload(rssxml6, mybuttonidsbuttonid6.current);
+              break;
+
+            default:
+              break;
+          }
         }
       }
     },
