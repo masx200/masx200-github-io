@@ -1,1 +1,1 @@
-npm run server
+live-server ./dist/

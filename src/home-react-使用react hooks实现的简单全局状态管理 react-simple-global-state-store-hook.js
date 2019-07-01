@@ -9,6 +9,16 @@ export default function() {
   }, []);
   return (
     <div>
+      <h2>
+        <a
+          href="https://github.com/masx200/react-simple-global-state-store-hook"
+          target="_blank"
+        >
+          使用react hooks实现的简单全局状态管理
+          <br />
+          react-simple-global-state-store-hook
+        </a>
+      </h2>
       <Htest text={"-hello-"} />
       <hr />
       <Htest text={"-world-"} />
@@ -41,7 +51,9 @@ function Htest(props) {
       <button
         className="btn btn-outline-success btn-lg"
         onClick={() => {
-          settestname(testname + props.text);
+          settestname(
+            Math.random() > 0.5 ? testname + props.text : props.text + testname
+          );
         }}
       >
         修改testname
