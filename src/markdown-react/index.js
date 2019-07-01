@@ -96,9 +96,11 @@ export default function(props) {
       //   .then(t => $(ref.current).html(marked(t)))
       //   .finally(() => {
       Array.from($("pre code")).forEach(block => hljs.highlightBlock(block));
-
-      setmarkdown内容(ref.current.innerHTML);
       set加载完成(true);
+      try {
+        setmarkdown内容(ref.current.innerHTML);
+      } catch (error) {}
+
       //   });
 
       // .catch(() => set加载失败(true));
