@@ -19,9 +19,17 @@ export default function() {
           react-simple-global-state-store-hook
         </a>
       </h2>
-      <Htest text={"-hello-"} />
       <hr />
-      <Htest text={"-world-"} />
+      <div className="row">
+        <div class="col-xl-6  col-lg-6 col-md-6 col-sm-12 col-12">
+          <Htest text={"-hello-"} />
+        </div>
+        <div class="col-xl-6  col-lg-6 col-md-6 col-sm-12 col-12">
+          <Htest text={"-world-"} />
+        </div>
+      </div>
+
+      <hr />
       <Markdownreact src="https://masx200.github.io/react-simple-global-state-store-hook/README.md" />
     </div>
   );
