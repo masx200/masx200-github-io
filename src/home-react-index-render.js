@@ -1,3 +1,4 @@
+// import { AnimatedSwitch } from "react-router-transition";
 // import IMPORTCJSAMDUMD from "./importcjsamdumd";
 // const IMPORTCJSAMDUMD = require("./importcjsamdumd");
 // import "./App.css";
@@ -15,31 +16,29 @@ import { Link, Switch, Route, HashRouter } from "react-router-dom";
 
 function 可变路径的rssreader链接() {
   const [rsssitename, setrsssitename] = useState("");
-useEffect(()=>{
-window.addEventListener("hashchange",
+  useEffect(() => {
+    window.addEventListener(
+      "hashchange",
 
-() => {
-    switch (location.hash) {
-      case "#/react-rssreader/iplaysoft":
-      case "#/react-rssreader/tmtpost":
-      case "#/react-rssreader/landiannews":
-      case "#/react-rssreader/ithome":
-      case "#/react-rssreader/ifanr":
-      case "#/react-rssreader/pingwest":
-        setrsssitename(location.hash.slice("#/react-rssreader".length));
-        break;
+      () => {
+        switch (location.hash) {
+          case "#/react-rssreader/iplaysoft":
+          case "#/react-rssreader/tmtpost":
+          case "#/react-rssreader/landiannews":
+          case "#/react-rssreader/ithome":
+          case "#/react-rssreader/ifanr":
+          case "#/react-rssreader/pingwest":
+            setrsssitename(location.hash.slice("#/react-rssreader".length));
+            break;
 
-      default:
-        break;
-    }
+          default:
+            break;
+        }
+      }
+    );
+  }, []);
 
-
-)
-
-},[])
-
- 
-/* $(window).on("hashchange", () => {
+  /* $(window).on("hashchange", () => {
     switch (location.hash) {
       case "#/react-rssreader/iplaysoft":
       case "#/react-rssreader/tmtpost":
@@ -54,10 +53,9 @@ window.addEventListener("hashchange",
         break;
     }
   //  /*  */
- // }
+  // }
 
-
-//);*/
+  //);*/
   return (
     <Link
       to={"/react-rssreader" + rsssitename}
@@ -429,6 +427,12 @@ prefetchfiles.forEach(addlinkprefetch); */
                     </div>
                   }
                 >
+                  {/* <Switch> */}
+                  {/* <AnimatedSwitch
+                    atEnter={{ opacity: 0 }}
+                    atLeave={{ opacity: 0 }}
+                    atActive={{ opacity: 1 }}
+                  > */}
                   <Switch>
                     <Route exact path="/" component={home} />
                     <Route exact path="/picalc" component={picalc} />
@@ -539,6 +543,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                     />
                     <Route exact path="*" component={home} />
                   </Switch>
+                  {/* </AnimatedSwitch> */}
                 </Suspense>
               </div>
             </div>
