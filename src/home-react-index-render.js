@@ -5,6 +5,7 @@
 // import ReactRouterDOM from "react-router-dom";
 import ReactDOM from "react-dom";
 import React from "react";
+// var createElement = React.createElement;
 var { render } = ReactDOM;
 var { Suspense, lazy } = React;
 var { useEffect, useState } = React;
@@ -561,6 +562,7 @@ prefetchfiles.forEach(addlinkprefetch); */
         scrollTo(0, 0);
         //   $("#collapsibleNavbar").removeClass("show");
         $("#example-navbar-collapse").removeClass("show");
+        // console.log(<Apphome />);
       }
       refreshall();
     }
