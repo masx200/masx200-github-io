@@ -1,5 +1,5 @@
 "use strict";
-export default (function(global, undefined) {
+export default (function(global) {
   //   console.log(global);
   /*jshint sub:true, evil:true */
   ("use strict");
@@ -265,7 +265,7 @@ export default (function(global, undefined) {
     var charCode = char.charCodeAt(0),
       unescapeSequence,
       hexaSequence,
-      unicodeSequence,
+      //   unicodeSequence,
       shortestSequence;
 
     if (characters[char] !== undefined) {

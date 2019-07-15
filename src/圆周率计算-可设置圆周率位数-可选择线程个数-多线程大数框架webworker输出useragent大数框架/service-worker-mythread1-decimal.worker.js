@@ -1,6 +1,8 @@
 // (() => {
 // console.log(self.name)
 importScripts("https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js");
+// eslint-disable-next-line no-undef
+const Decimal = globalThis.Decimal;
 // importScripts("./decimal.min.js");
 /** 
      * 
@@ -37,11 +39,6 @@ For a lighter version of this library without the trigonometric functions see de
 
 
 JavaScript的任意精度Decimal类型。
-
-    
-
-
-
 
 特征
 整数和浮点数
@@ -95,7 +92,7 @@ addEventListener("message", function(event) {
     p = Decimal.add(p, t);
     if (Decimal.abs(t).cmp(new Decimal("1e-" + (1 + piwei))) == -1) break;
 
-    for (var i = 0, len = threadall; i < len; i++) {
+    for (let i = 0, len = threadall; i < len; i++) {
       fu = -1 * fu;
       a = Decimal.mul(a, 1024);
       x = x.plus(1);

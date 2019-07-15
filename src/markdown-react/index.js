@@ -1,4 +1,5 @@
 // import "./github.css";
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState, useRef } from "react";
 import marked from "./marked.min.js";
 import hljs from "./highlight.min.js";
@@ -27,6 +28,7 @@ export default function(props) {
   let markdowncache = "";
   let cache加载完成 = false;
   let cache加载失败 = false;
+  // eslint-disable-next-line no-unused-vars
   const Fallback = () => (
     <div>
       <h1>loading</h1>
@@ -99,7 +101,9 @@ export default function(props) {
       set加载完成(true);
       try {
         setmarkdown内容(ref.current.innerHTML);
-      } catch (error) {}
+      } catch (error) {
+        //
+      }
 
       //   });
 

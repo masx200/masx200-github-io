@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index";
 /* import picture1 from "./babeljs.png";
 
@@ -49,7 +50,7 @@ export default function() {
         break;
       default:
         return;
-        break;
+      // break;
     }
     var id = guid();
     jQuery("#my导航栏").append(

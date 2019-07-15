@@ -7,6 +7,7 @@
 import decimalworker from "./service-worker-mythread1-decimal.worker.js";
 import Decimal from "../decimal.min.js";
 import mui from "../mui.min.js";
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useRef } from "react";
 // ("use strict");
 import $ from "jquery";
@@ -50,7 +51,9 @@ function 关闭所有worker() {
       myworker[index].terminate();
       /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
       myworker[index] = undefined;
-    } catch (error) {}
+    } catch (error) {
+      /*  */
+    }
   });
 }
 export default function() {

@@ -58,7 +58,9 @@ function 关闭所有worker() {
       myworker[index].terminate();
       /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
       myworker[index] = undefined;
-    } catch (error) {}
+    } catch (error) {
+      /*  */
+    }
   });
 }
 export default () => {

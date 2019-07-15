@@ -3,6 +3,8 @@
 importScripts(
   "https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js"
 );
+// eslint-disable-next-line no-undef
+const bigInt = globalThis.bigInt;
 // ()=>{
 // console.log("加载完成")}
 //   console.log(bigInt)
@@ -101,7 +103,7 @@ addEventListener("message", function(event) {
     p = bigInt.add(p, t);
     if (bigInt.abs(t).cmp(new bigInt(0)) <= 0) break;
 
-    for (var i = 0, len = threadall; i < len; i++) {
+    for (let i = 0, len = threadall; i < len; i++) {
       fu = -1 * fu;
       a = bigInt.mul(a, 1024);
       x = x.plus(1);

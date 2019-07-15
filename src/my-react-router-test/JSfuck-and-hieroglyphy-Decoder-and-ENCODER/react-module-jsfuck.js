@@ -41,7 +41,9 @@ function 关闭所有worker() {
     myservice.terminate();
     /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
     myservice = undefined;
-  } catch (error) {}
+  } catch (error) {
+    /*  */
+  }
 }
 export default function Jsfuck() {
   const evalcheckbox = useRef();

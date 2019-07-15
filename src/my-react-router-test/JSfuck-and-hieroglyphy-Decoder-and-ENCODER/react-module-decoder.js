@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import hieroglyphy from "./hieroglyphy";
 import JSFuck from "./jsfuck";
 import React from "react";
@@ -196,7 +197,9 @@ export default function Decoder() {
         console.log("匹配成功");
 
         return 1;
-      } catch (e) {}
+      } catch (e) {
+        /*  */
+      }
     }
   }
 

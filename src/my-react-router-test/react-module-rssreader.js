@@ -355,7 +355,6 @@ function tanchu弹出消息通用(infotype) {
       break;
     default:
       return;
-      break;
   }
   var id = guid();
   jQuery("#my导航栏").append(

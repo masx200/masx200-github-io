@@ -32,10 +32,11 @@ addEventListener("message", e => {
   //   var hieroglyphy = WorkerGlobalScope.hieroglyphy;
   // var hieroglyphy= import(d[2]);
   // mui(document.getElementById("encode")).button("loading");
+  let output;
   if ("encodescript" === d[1]) {
-    var output = hieroglyphy.hieroglyphyScript(d[0]);
+    output = hieroglyphy.hieroglyphyScript(d[0]);
   } else if ("encodestring" === d[1]) {
-    var output = hieroglyphy.hieroglyphyString(d[0]);
+    output = hieroglyphy.hieroglyphyString(d[0]);
   }
   //   var output = JSFuck.encode(d[0], d[1]);
   // $2("output").value = output;

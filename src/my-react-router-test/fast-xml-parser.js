@@ -54,7 +54,7 @@ var parser = (function(t) {
     r((r.s = 2))
   );
 })([
-  function(t, e, r) {
+  function(t, e) {
     "use strict";
     var a = function(t, e) {
       var r = e.exec(t);
@@ -318,7 +318,7 @@ var parser = (function(t) {
       return i;
     };
   },
-  function(t, e, r) {
+  function(t) {
     "use strict";
     t.exports = function(t, e, r) {
       (this.tagname = t),
@@ -441,7 +441,7 @@ var parser = (function(t) {
     var a = r(0),
       i = r(0).buildOptions,
       n = r(1),
-      s = function t(e, r, i) {
+      s = function t(e, r) {
         for (
           var n, s = "{", o = Object.keys(e.child), l = 0;
           l < o.length;
@@ -699,6 +699,7 @@ var parser = (function(t) {
               msg: "attribute " + o + " is an invalid name."
             }
           };
+        // eslint-disable-next-line no-prototype-builtins
         if (n.hasOwnProperty(o))
           return {
             err: {

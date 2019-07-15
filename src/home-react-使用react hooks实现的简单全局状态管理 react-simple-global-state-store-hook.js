@@ -1,5 +1,7 @@
 import useGlobalstate from "react-simple-global-state-store-hook";
+// eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index";
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
 export default function() {
   useEffect(() => {
@@ -34,6 +36,7 @@ export default function() {
     </div>
   );
 }
+// eslint-disable-next-line no-unused-vars
 function Htest(props) {
   let {
     number: [number, setnumber]

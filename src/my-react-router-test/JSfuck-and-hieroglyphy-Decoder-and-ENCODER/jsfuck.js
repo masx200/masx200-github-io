@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 "use strict";
 /*! JSFuck 0.4.0 - http://jsfuck.com */
 export default (function(global) {
@@ -131,7 +132,7 @@ export default (function(global) {
     "{": '(NaN+[]["filter"])[21]',
     // '{': '([]["filter"]+[])[18]',
     "|": USE_CHAR_CODE,
-    "}": USE_CHAR_CODE,
+    // "}": USE_CHAR_CODE,
     "}": '(NaN+[]["filter"])[37]',
     "~": USE_CHAR_CODE
   };
@@ -199,10 +200,11 @@ export default (function(global) {
   }
 
   function replaceMap() {
+    // let original;
     // console.log("replaceMap")
     var character = "",
       value,
-      original,
+      //   original,
       i,
       key;
 
@@ -241,7 +243,7 @@ export default (function(global) {
       if (!value) {
         continue;
       }
-      original = value;
+      //   original = value;
 
       for (key in CONSTRUCTORS) {
         replace("\\b" + key, CONSTRUCTORS[key] + '["constructor"]');
