@@ -1,3 +1,5 @@
+"use strict";
+import mui from "@/mui.精简.button";
 import jsfuckworker from "./service-worker-jsfuck.worker.js";
 // import ClipboardJS from "../../clipboard.min.js";
 // import("../../clipboard.min.js").then(module => {
@@ -6,7 +8,7 @@ import jsfuckworker from "./service-worker-jsfuck.worker.js";
 //     e.clearSelection();
 //   });
 // });
-import mui from "../../mui.min.js";
+// import mui from "../../mui.min.js";
 import $ from "jquery";
 import React from "react";
 const jQuery = $;

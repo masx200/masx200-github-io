@@ -6976,7 +6976,7 @@ react-router@5.0.1:
 
 "react-simple-global-state-store-hook@https://github.com/masx200/react-simple-global-state-store-hook.git":
   version "1.0.0"
-  resolved "https://github.com/masx200/react-simple-global-state-store-hook.git#e8396e4ea48612100040a95825b3e19dbb60de93"
+  resolved "https://github.com/masx200/react-simple-global-state-store-hook.git#f51a6f816a81289459cf1600fda377a2e60891ff"
   dependencies:
     react "^16.8.6"
 
@@ -8642,7 +8642,7 @@ webpack-plugin-compat@^1.0.1:
 
 "webpack-react-vue-spa-awesome-config@https://github.com/masx200/webpack-react-vue-spa-awesome-config.git":
   version "2.2.2"
-  resolved "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git#99e76d61e85c4e88fd2299829bd18ee9924f92ce"
+  resolved "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git#58c35c61faf97464e41d7c5f1798eba1a5fcc932"
   dependencies:
     "@babel/core" "7.4.5"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"

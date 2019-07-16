@@ -1,10 +1,12 @@
+"use strict";
+import bigInt from "big-integer/BigInteger.js";
 // (() => {
 //使用bigint测试
-importScripts(
-  "https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js"
-);
-// eslint-disable-next-line no-undef
-const bigInt = globalThis.bigInt;
+// importScripts(
+//   "https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js"
+// );
+// // eslint-disable-next-line no-undef
+// const bigInt = globalThis.bigInt;
 // ()=>{
 // console.log("加载完成")}
 //   console.log(bigInt)

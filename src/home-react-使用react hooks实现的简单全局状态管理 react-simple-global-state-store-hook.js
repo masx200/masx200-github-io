@@ -1,3 +1,4 @@
+"use strict";
 import useGlobalstate from "react-simple-global-state-store-hook";
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index";

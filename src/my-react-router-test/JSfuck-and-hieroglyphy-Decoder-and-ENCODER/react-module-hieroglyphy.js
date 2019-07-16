@@ -1,3 +1,5 @@
+"use strict";
+import mui from "@/mui.精简.button";
 import hieroglyphyworker from "./service-worker-hieroglyphy.worker";
 import React from "react";
 
@@ -9,7 +11,7 @@ import React from "react";
 // });
 // import ClipboardJS from "../../clipboard.min.js";
 // import mui from "@/mui.js";
-import mui from "../../mui.min.js";
+// import mui from "../../mui.min.js";
 import $ from "jquery";
 const jQuery = $;
 // const clipboard = new ClipboardJS(".btn");

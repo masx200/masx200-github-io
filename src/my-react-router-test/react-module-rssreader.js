@@ -1,3 +1,5 @@
+"use strict";
+import mui from "@/mui.精简.button";
 import React from "react";
 import parser from "fast-xml-parser";
 import rssxml1 from "./www.tmtpost.com.rss.xml";
@@ -7,7 +9,7 @@ import rssxml4 from "./www.ithome.com.rss.xml";
 import rssxml5 from "./ifanr.com.feed.xml";
 import rssxml6 from "./pingwest.com.feed.xml";
 import $ from "jquery";
-import mui from "../mui.min.js";
+// import mui from "../mui.min.js";
 const jQuery = $;
 // ("use strict");
 /* Hook是React 16.8中的新增功能。它们允许您在不编写类的情况下使用状态和其他React功能。

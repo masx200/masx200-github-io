@@ -1,3 +1,4 @@
+"use strict";
 import "./index.css";
 import "./markdown-react/github.css";
 import "./markdown-react/padding0.css";

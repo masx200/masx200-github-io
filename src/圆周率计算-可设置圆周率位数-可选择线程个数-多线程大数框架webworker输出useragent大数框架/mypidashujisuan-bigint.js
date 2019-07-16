@@ -1,3 +1,6 @@
+"use strict";
+import mui from "@/mui.精简.button";
+
 /*
 worker-loader
 查看原文|查看仓库|编辑此页
@@ -21,7 +24,7 @@ worker.postMessage({ a: 1 });
 worker.onmessage = function (event) {};
 
 worker.addEventListener("message", function (event) {}); */
-import bigInt from "big-integer/BigInteger.min.js";
+import bigInt from "big-integer/BigInteger.js";
 
 // const bigintworker = "./service-worker-mythread1-bigint.worker.js";
 import bigintworker from "./service-worker-mythread1-bigint.worker.js";
@@ -33,7 +36,7 @@ import bigintworker from "./service-worker-mythread1-bigint.worker.js";
 // 自动开启严格模式
 /* 应该再卸载组件时关闭所有worker */
 // ("use strict");
-import mui from "../mui.min.js";
+// import mui from "../mui.min.js";
 import React from "react";
 import $ from "jquery";
 const jQuery = $;
@@ -64,6 +67,17 @@ function 关闭所有worker() {
   });
 }
 export default () => {
+  const btnele = useRef();
+  const outtext1 = useRef();
+  const outtext2 = useRef();
+  useEffect(() => {
+    lashentextarea(outtext1.current);
+    lashentextarea(outtext2.current);
+    // onmount();
+    return () => {
+      关闭所有worker();
+    };
+  }, []);
   var p,
     piwei,
     strt,
@@ -130,9 +144,7 @@ export default () => {
   );
 
   const [outputtext2, setoutputtext2old, onchangeoutputtext2] = useBindtext("");
-  const btnele = useRef();
-  const outtext1 = useRef();
-  const outtext2 = useRef();
+
   function setoutputtext1(t) {
     setoutputtext1old(t);
     lashentextarea(outtext1.current);
@@ -141,12 +153,6 @@ export default () => {
     lashentextarea(outtext2.current);
     setoutputtext2old(t);
   }
-  useEffect(() => {
-    // onmount();
-    return () => {
-      关闭所有worker();
-    };
-  }, []);
 
   async function mystart(btnele) {
     // const { default: bigInt } = await IMPORTCJSAMDUMD(

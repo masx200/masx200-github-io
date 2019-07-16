@@ -1,3 +1,4 @@
+"use strict";
 import React from "react";
 // import extendmytextarea from "./圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/extendmytextarea.js";
 // eslint-disable-next-line no-unused-vars

@@ -1,3 +1,6 @@
+"use strict";
+import mui from "@/mui.精简.button";
+
 // // import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 // /* 应该再卸载组件时关闭所有worker */
 // // (() => {
@@ -6,7 +9,7 @@
 // const decimalworker = "./service-worker-mythread1-decimal.worker.js";
 import decimalworker from "./service-worker-mythread1-decimal.worker.js";
 import Decimal from "../decimal.min.js";
-import mui from "../mui.min.js";
+// import mui from "../mui.min.js";
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useRef } from "react";
 // ("use strict");
@@ -57,7 +60,12 @@ function 关闭所有worker() {
   });
 }
 export default function() {
+  const btnele = useRef();
+  const outtext1 = useRef();
+  const outtext2 = useRef();
   useEffect(() => {
+    lashentextarea(outtext1.current);
+    lashentextarea(outtext2.current);
     // onmount();
     return () => {
       关闭所有worker();
@@ -136,9 +144,7 @@ export default function() {
   );
 
   const [outputtext2, setoutputtext2old, onchangeoutputtext2] = useBindtext("");
-  const btnele = useRef();
-  const outtext1 = useRef();
-  const outtext2 = useRef();
+
   function setoutputtext1(t) {
     setoutputtext1old(t);
     lashentextarea(outtext1.current);

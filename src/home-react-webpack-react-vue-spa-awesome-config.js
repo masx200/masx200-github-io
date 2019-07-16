@@ -1,3 +1,4 @@
+"use strict";
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index";
 // eslint-disable-next-line no-unused-vars

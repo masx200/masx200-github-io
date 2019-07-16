@@ -1,8 +1,10 @@
+"use strict";
+import Decimal from "../decimal.min.js";
 // (() => {
 // console.log(self.name)
-importScripts("https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js");
-// eslint-disable-next-line no-undef
-const Decimal = globalThis.Decimal;
+// importScripts("https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js");
+// // eslint-disable-next-line no-undef
+// const Decimal = globalThis.Decimal;
 // importScripts("./decimal.min.js");
 /** 
      * 

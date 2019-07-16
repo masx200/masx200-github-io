@@ -1,3 +1,4 @@
+"use strict";
 // import "./github.css";
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState, useRef } from "react";

@@ -1,3 +1,4 @@
+"use strict";
 // import { AnimatedSwitch } from "react-router-transition";
 // import IMPORTCJSAMDUMD from "./importcjsamdumd";
 // const IMPORTCJSAMDUMD = require("./importcjsamdumd");

@@ -1,3 +1,4 @@
+"use strict";
 /* eslint-disable no-useless-escape */
 import hieroglyphy from "./hieroglyphy";
 import JSFuck from "./jsfuck";
