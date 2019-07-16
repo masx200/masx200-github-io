@@ -26,7 +26,6 @@
         "babel-loader": "^8.0.6",
         "babel-plugin-named-asset-import": "^0.3.2",
         "babel-plugin-transform-runtime": "^6.23.0",
-        "babel-preset-react-app": "^9.0.0",
         "big-integer": "^1.6.44",
         "bootstrap": "^4.3.1",
         "clean-webpack-plugin": "^3.0.0",
@@ -70,8 +69,11 @@
     "dependencies": {
         "@babel/core": "7.4.5",
         "@babel/plugin-transform-runtime": "^7.4.4",
+        "@babel/runtime": "https://github.com/masx200/-babel-runtime.git",
+        "babel-preset-react-app": "https://github.com/masx200/babel-preset-react-app.git",
         "node-sass": "^4.12.0",
         "react-simple-global-state-store-hook": "https://github.com/masx200/react-simple-global-state-store-hook.git",
+        "regenerator-runtime": "https://github.com/masx200/regenerator-runtime.git",
         "webpack-react-vue-spa-awesome-config": "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git"
     },
     "name": "masx200.github.io",
