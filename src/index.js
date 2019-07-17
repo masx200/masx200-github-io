@@ -1,4 +1,5 @@
 "use strict";
+import("./home-react-index-render.js");
 import "./index.css";
 import "./markdown-react/github.css";
 import "./markdown-react/padding0.css";
@@ -6,8 +7,8 @@ import "./hidewidthless500.css";
 // import "./github.css";
 // import "./新建文本文档.less";
 // import "./新建文本文档.scss";
-import("bootstrap");
-import("./home-react-index-render.js");
+import("bootstrap/dist/js/bootstrap.bundle");
+
 import "./registerserviceworker";
 
 // import("./vue-loader-test");

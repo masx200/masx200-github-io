@@ -1,4 +1,7 @@
 "use strict";
+function 获取当前时间() {
+  return new Date().toString().slice(0, new Date().toString().indexOf("GMT"));
+}
 // React=IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
@@ -12,13 +15,17 @@ import picture5 from "../react.svg";
 import picture6 from "../vue.png";
 import picture7 from "../webpack.svg";
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-const { useEffect } = React;
+const { useEffect, useState } = React;
 export default function() {
+  const [nowtime, setnowtime] = useState(获取当前时间());
   useEffect(() => {
     // window.location.hash = "#/";
     // refreshall();
     document.title = "React router App-" + "home";
-  });
+    setInterval(() => {
+      setnowtime(获取当前时间());
+    }, 1100);
+  }, []);
 
   return (
     <div className="App">
@@ -37,7 +44,8 @@ export default function() {
               </a>
             </p>
           </div>
-        </div>
+        </div>{" "}
+        <h2>现在是 {nowtime}</h2>
         <p>
           <a
             target="_blank"
@@ -72,7 +80,6 @@ export default function() {
           Learn React
         </a>
         <h1>Hello, world!</h1>
-        <h2>现在是 {new Date().toLocaleTimeString()}.</h2>
       </header>
       <div id="图片列表200">
         <hr />

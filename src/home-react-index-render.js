@@ -1,4 +1,5 @@
 "use strict";
+import 路由列表 from "./react-路由列表";
 // import { AnimatedSwitch } from "react-router-transition";
 // import IMPORTCJSAMDUMD from "./importcjsamdumd";
 // const IMPORTCJSAMDUMD = require("./importcjsamdumd");
@@ -8,13 +9,13 @@ import ReactDOM from "react-dom";
 import React from "react";
 // var createElement = React.createElement;
 var { render } = ReactDOM;
-var { Suspense, lazy } = React;
+var { Suspense } = React;
 var { useEffect, useState } = React;
 import $ from "jquery";
 // import "./RegisteraServiceWorkerFile.js";
 // import "./myindexrender.css";
 // import "./my-vue-router-project/vue-render-all.css";
-import { Link, Switch, Route, HashRouter } from "react-router-dom";
+import { Link, HashRouter } from "react-router-dom";
 
 function 可变路径的rssreader链接() {
   const [rsssitename, setrsssitename] = useState("");
@@ -201,17 +202,7 @@ prefetchfiles.forEach(addlinkprefetch); */
       //   } = ReactRouterDOM;
 
       // var h = React.createElement;
-      var home = lazy(() => import("./home-react-module-home.js"));
-      var picalc = lazy(() => import("./home-react-module-picalc"));
 
-      var 点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 = lazy(() =>
-        import(
-          "./home-react-module-点击链接不跳转修改当前的网页地址动态加载网页内容不刷新.js"
-        )
-      );
-      var IMPORTCJSAMDUMD动态异步加载 = lazy(() =>
-        import("./home-react-module-IMPORTCJSAMDUMD动态异步加载.js")
-      );
       function Apphome() {
         function shouqi收起折叠的导航栏菜单() {
           $("#example-navbar-collapse").removeClass("show");
@@ -395,7 +386,15 @@ prefetchfiles.forEach(addlinkprefetch); */
                           to="/react-simple-global-state-store-hook"
                           class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
-                          使用react hooks实现的简单全局状态管理库
+                          React 极简全局状态管理库
+                        </Link>
+                      </li>
+                      <li class="nav-item">
+                        <Link
+                          to="/excellent-vscode-extensions-for-javascript"
+                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                        >
+                          VScode的优秀扩展推荐
                         </Link>
                       </li>
                       <li>
@@ -435,117 +434,10 @@ prefetchfiles.forEach(addlinkprefetch); */
                     atLeave={{ opacity: 0 }}
                     atActive={{ opacity: 1 }}
                   > */}
-                  <Switch>
-                    <Route exact path="/" component={home} />
-                    <Route exact path="/picalc" component={picalc} />
-                    <Route
-                      exact
-                      path="/点击链接不跳转修改当前的网页地址动态加载网页内容不刷新"
-                      component={
-                        点击链接不跳转修改当前的网页地址动态加载网页内容不刷新
-                      }
-                    />
-                    <Route
-                      exact
-                      path="/IMPORTCJSAMDUMD动态异步加载"
-                      component={IMPORTCJSAMDUMD动态异步加载}
-                    />
-                    <Route
-                      exact
-                      path="/react-home"
-                      component={lazy(() =>
-                        import("./my-react-router-test/react-module-home.js")
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/react-rssreader"
-                      component={lazy(() =>
-                        import(
-                          "./my-react-router-test/react-module-rssreader.js"
-                        )
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/react-rssreader/:sitename"
-                      component={lazy(() =>
-                        import(
-                          "./my-react-router-test/react-module-rssreader.js"
-                        )
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/react-about"
-                      component={lazy(() =>
-                        import("./my-react-router-test/react-module-about.js")
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/decoder"
-                      component={lazy(() =>
-                        import(
-                          "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder"
-                        )
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/jsfuck"
-                      component={lazy(() =>
-                        import(
-                          "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck"
-                        )
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/hieroglyphy"
-                      component={lazy(() =>
-                        import(
-                          "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.js"
-                        )
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/react-huami"
-                      component={lazy(() =>
-                        import("./home-react-module-huami.js")
-                      )}
-                    />
-                    <Route
-                      exact
-                      path="/webpack-react-vue-spa-awesome-config"
-                      component={lazy(() =>
-                        import(
-                          "./home-react-webpack-react-vue-spa-awesome-config.js"
-                        )
-                      )}
-                    />
 
-                    {/* <Route
-                      //   exact
-                      path="/markdown/:url"
-                      component={lazy(() =>
-                        import("./component-react-动态路由markdown")
-                      )}
-                    /> */}
-
-                    <Route
-                      exact
-                      path="/react-simple-global-state-store-hook"
-                      component={lazy(() =>
-                        import(
-                          "./home-react-使用react hooks实现的简单全局状态管理 react-simple-global-state-store-hook"
-                        )
-                      )}
-                    />
-                    <Route exact path="*" component={home} />
-                  </Switch>
                   {/* </AnimatedSwitch> */}
+
+                  <路由列表 />
                 </Suspense>
               </div>
             </div>

@@ -184,7 +184,7 @@ export default function(props) {
               class="container"
               dangerouslySetInnerHTML={{ __html: markdown内容 }}
             />
-            {!加载完成 ? <Fallback /> : <div />}
+            {!加载完成 ? <Fallback /> : <React.Fragment />}
             {/* <Fallback style={{ display: !加载完成 ? "block" : "none" }} /> */}
 
             {加载失败 ? (
@@ -192,7 +192,7 @@ export default function(props) {
                 <h1>Error!</h1>
               </div>
             ) : (
-              <div />
+              <React.Fragment />
             )}
           </article>
         </div>
