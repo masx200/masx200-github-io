@@ -1,8 +1,10 @@
 "use strict";
-export default (function(global) {
+export default (function() //global
+{
+  "use strict";
   //   console.log(global);
   /*jshint sub:true, evil:true */
-  ("use strict");
+
   var numbers,
     _object_Object,
     _NaN,
@@ -27,13 +29,13 @@ export default (function(global) {
   //   console.log(
   //     global.hieroglyphy
   //   )
-  if (global.define && global.define.amd) {
-    global.define([], API);
-  } else if (typeof exports !== "undefined") {
-    module.exports = API;
-  } else {
-    global.hieroglyphy = API;
-  }
+  //   if (global.define && global.define.amd) {
+  //     global.define([], API);
+  //   } else if (typeof exports !== "undefined") {
+  //     module.exports = API;
+  //   } else {
+  //     // global.hieroglyphy = API;
+  //   }
 
   numbers = [
     "+[]",

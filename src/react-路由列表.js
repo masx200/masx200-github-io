@@ -1,3 +1,4 @@
+"use strict";
 import { Switch, Route } from "react-router-dom";
 import React from "react";
 var { lazy } = React;
