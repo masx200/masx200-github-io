@@ -18,7 +18,38 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 
 https://github.com/masx200/webpack-react-vue-spa-awesome-config
 
-# 基于react hooks 编写的在线markdown阅读器 组件
+# 适合于 react 编程的 eslint 配置文件
+
+`.eslintrc.json`
+
+```json
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "worker": true,
+    "commonjs": true,
+    "amd": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "react-hooks"],
+  "rules": {}
+}
+```
+
+# 基于 react hooks 编写的在线 markdown 阅读器 组件
 
 https://github.com/masx200/masx200.github.io/blob/master/src/markdown-react/index.js
 
@@ -205,8 +236,6 @@ chrome 74 测试 原生BigInt 达到11.16倍速度
 </details>
 <hr>
 </div>
-
-
 
 ### 使用 babel-standalone 代替本地 node 模块
 
