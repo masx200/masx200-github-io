@@ -1,7 +1,8 @@
 /* eslint-disable no-useless-escape */
 "use strict";
 /*! JSFuck 0.4.0 - http://jsfuck.com */
-export default (function() //global
+//export default
+(function(global) //global
 {
   // console.log(global)
   "use strict";
@@ -11,14 +12,15 @@ export default (function() //global
   //   };
   // console.log(this)
 
-  //   if (typeof exports === "object" && typeof module !== "undefined") {
-  //     // module.exports = mainExports;
-  //     module.exports = { encode };
-  //   } else {
-  //     // global.JSFuck = {
-  //     //   encode
-  //     // };
-  //   }
+    if (typeof exports === "object" && typeof module !== "undefined") {
+   
+      
+       module.exports = { encode };
+     } else {
+   global.JSFuck = {
+     encode
+   };
+     }
   var USE_CHAR_CODE = "USE_CHAR_CODE";
 
   var MIN = 32,
