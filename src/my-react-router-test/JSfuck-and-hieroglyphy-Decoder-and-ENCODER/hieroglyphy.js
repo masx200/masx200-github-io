@@ -1,5 +1,6 @@
 "use strict";
-export default (function() //global
+//export default
+(function(global) //global
 {
   "use strict";
   //   console.log(global);
@@ -31,11 +32,12 @@ export default (function() //global
   //   )
   //   if (global.define && global.define.amd) {
   //     global.define([], API);
-  //   } else if (typeof exports !== "undefined") {
-  //     module.exports = API;
-  //   } else {
-  //     // global.hieroglyphy = API;
-  //   }
+  //   } else 
+  if (typeof exports !== "undefined") {
+       module.exports = API;
+     } else {
+        global.Hieroglyphy = API;
+     }
 
   numbers = [
     "+[]",
