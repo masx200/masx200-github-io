@@ -1,14 +1,14 @@
 "use strict";
 (() => {
   /* 注册google的workbox的serviceworker */
-
-  try {
+  if ("production" === process.env.NODE_ENV) {
+    // try {
     "serviceWorker" in navigator &&
       window.addEventListener("load", function() {
-        navigator.serviceWorker.register("service-worker.js");
-        //   .catch(console.error);
+        navigator.serviceWorker.register("service-worker.js").catch(() => {});
       });
-  } catch (error) {
-    /*  */
+    // } catch (e) {
+    //   /*  */
+    // }
   }
 })();
