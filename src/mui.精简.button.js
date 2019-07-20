@@ -132,14 +132,22 @@ function slct(selector) {
         // console.log(state);
 
         this.forEach(e => {
-          var loadingText = e.getAttribute("data-loading-text");
-          var loadingIcon = e.getAttribute("data-loading-icon");
-          var loadingIconPosition = e.getAttribute(
-            "data-loading-icon-position"
-          );
+          if (e instanceof HTMLElement) {
+            var loadingText = e.getAttribute("data-loading-text");
+            var loadingIcon = e.getAttribute("data-loading-icon");
+            var loadingIconPosition = e.getAttribute(
+              "data-loading-icon-position"
+            );
 
-          setstate(state, e, { loadingText, loadingIcon, loadingIconPosition });
-          //   button(e, );
+            setstate(state, e, {
+              loadingText,
+              loadingIcon,
+              loadingIconPosition
+            });
+            //   button(e, );
+          } else {
+            console.error(new TypeError("invalid element"), e);
+          }
         });
         return this;
       } else {

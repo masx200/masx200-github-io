@@ -59,7 +59,7 @@ function 关闭所有worker() {
     }
   });
 }
-export default function() {
+export default function decimalcom() {
   const btnele = useRef();
   const outtext1 = useRef();
   const outtext2 = useRef();
@@ -362,7 +362,7 @@ export default function() {
     }
   }
   return (
-    <div class="container">
+    <div className="container">
       <h3>Decimal.js</h3>
       <p>
         Decimal.js是JavaScript的任意精度Decimal类型。 特征: 整数和浮点数,
@@ -381,7 +381,7 @@ export default function() {
             <input
               value={inputtext1}
               onChange={onchangeinputtext1}
-              class="form-control"
+              className="form-control"
               id="thread-big"
               type="number"
               name="quantity"
@@ -396,7 +396,7 @@ export default function() {
             <input
               value={inputtext2}
               onChange={onchangeinputtext2}
-              class="form-control"
+              className="form-control"
               id="pichangwei-big"
               type="number"
               name="quantity"
@@ -408,7 +408,7 @@ export default function() {
         <button
           ref={btnele}
           data-loading-icon="mui-spinner mui-spinner-custom"
-          class="mui-btn mui-btn-primary btn btn-info  btn btn-outline-primary mui-btn mui-btn-outline-primary"
+          className="mui-btn mui-btn-primary btn btn-info  btn btn-outline-primary mui-btn mui-btn-outline-primary"
           id="start-big"
           onClick={e => {
             // console.log(e);
@@ -430,7 +430,7 @@ export default function() {
             onchangeoutputtext1(e);
             lashentextarea(e.target);
           }}
-          class="form-control"
+          className="form-control"
           cols="100"
           rows="100"
           style={{
@@ -450,13 +450,13 @@ export default function() {
             data-target="#collapsiblecontainer2"
           > */}
         <details open>
-          <summary class=" btn btn-outline-primary mui-btn mui-btn-outline-primary">
+          <summary className=" btn btn-outline-primary mui-btn mui-btn-outline-primary">
             展开收起圆周率结果
           </summary>
           {/* </button> */}
           <br />
           <br />
-          <div id="collapsiblecontainer2" class="collapse show">
+          <div id="collapsiblecontainer2" className="collapse show">
             <textarea
               ref={outtext2}
               value={outputtext2}
@@ -465,7 +465,7 @@ export default function() {
                 onchangeoutputtext2(e);
                 lashentextarea(e.target);
               }}
-              class="form-control"
+              className="form-control"
               cols="100"
               rows="100"
               style={{

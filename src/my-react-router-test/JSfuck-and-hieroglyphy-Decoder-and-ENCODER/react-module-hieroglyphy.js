@@ -150,7 +150,7 @@ export default function Hieroglyphy() {
   }, []);
 
   return (
-    <div class="jdahd">
+    <div className="jdahd">
       <h1 style={{ "font-size": "30px" }}>
         编码hieroglyphy <br />
         encode hieroglyphy
@@ -166,7 +166,7 @@ export default function Hieroglyphy() {
       </p>
       <br />
       <textarea
-        class="form-control"
+        className="form-control"
         id="input"
         type="text"
         value={inputcode}
@@ -176,7 +176,7 @@ export default function Hieroglyphy() {
       <p>
         <button
           ref={btnencodescript}
-          class="btn btn-outline-success btn-lg"
+          className="btn btn-outline-success btn-lg"
           id="encodescript"
           onClick={e => {
             encodeall("encodescript", e.target);
@@ -191,7 +191,7 @@ export default function Hieroglyphy() {
           id="encodestring"
           type="text"
           data-loading-icon="mui-spinner mui-spinner-custom"
-          class="btn btn-outline-info btn-lg"
+          className="btn btn-outline-info btn-lg"
           onClick={e => {
             encodeall("encodestring", e.target);
           }}
@@ -203,16 +203,16 @@ export default function Hieroglyphy() {
       <div id={"clip" + outputdivid}>
         <textarea
           id="output"
-          class="form-control"
+          className="form-control"
           value={outputcode}
           onChange={outputonchange}
         />
       </div>
 
-      <div class="actions">
+      <div className="actions">
         <span id="stats">{statstext}</span>
         <button
-          class="btn btn-outline-primary btn-lg"
+          className="btn btn-outline-primary btn-lg"
           id="run"
           onClick={function() {
             var codestring = outputcode;
@@ -231,7 +231,7 @@ export default function Hieroglyphy() {
           Run This
         </button>
         <button
-          class="btn btn-outline-success btn-lg"
+          className="btn btn-outline-success btn-lg"
           data-clipboard-target={"#" + "clip" + outputdivid}
         >
           复制
@@ -240,12 +240,20 @@ export default function Hieroglyphy() {
       <br />
 
       <p>
-        <a href="https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER"
+        >
           https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER
         </a>
       </p>
       <p>
-        <a href="https://github.com/alcuadrado/hieroglyphy/blob/master/hieroglyphy.js">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://github.com/alcuadrado/hieroglyphy/blob/master/hieroglyphy.js"
+        >
           https://github.com/alcuadrado/hieroglyphy/blob/master/hieroglyphy.js
         </a>
       </p>

@@ -10,6 +10,16 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 
 <hr>
 
+# 防止单页面应用首页白屏的方法,先显示 loading 图标,然后使用异步加载 react 或者 vue
+
+```javascript
+document.getElementById("root").innerHTML = `<div>
+<h1>loading</h1>
+<span class="mui-spinner mui-spinner-custom">
+
+</span></div>`;
+```
+
 # 使用 webpack-react-vue-spa-awesome-config 重构网页
 
 基于 webpack4.x, 同时支持 react 和 vue 的单页面应用 通用的 webpack 配置文件,提供开箱即用支持

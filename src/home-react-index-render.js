@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 "use strict";
 import 路由列表 from "./react-路由列表";
 // import { AnimatedSwitch } from "react-router-transition";
@@ -15,8 +16,24 @@ import $ from "jquery";
 // import "./RegisteraServiceWorkerFile.js";
 // import "./myindexrender.css";
 // import "./my-vue-router-project/vue-render-all.css";
-import { Link, HashRouter } from "react-router-dom";
-
+import * as reactrouterdom from "react-router-dom"; // } //   HashRouter //   // Link, // , {
+const HashRouter = reactrouterdom.HashRouter;
+const Link = reactrouterdom.Link;
+// function Link(props) {
+//   var Oldlink = reactrouterdom.Link;
+//   return (
+//     <Oldlink
+//       {...props}
+//       className={
+//         props.class
+//           ? props.class
+//           : "" + " " + props.className
+//           ? props.className
+//           : ""
+//       }
+//     />
+//   );
+// }
 function 可变路径的rssreader链接() {
   const [rsssitename, setrsssitename] = useState("");
   useEffect(() => {
@@ -62,7 +79,7 @@ function 可变路径的rssreader链接() {
   return (
     <Link
       to={"/react-rssreader" + rsssitename}
-      class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+      className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
     >
       rss阅读
     </Link>
@@ -217,14 +234,14 @@ prefetchfiles.forEach(addlinkprefetch); */
         return (
           <HashRouter>
             <div>
-              <div class="container-fluid fixed-top" id="my导航栏">
+              <div className="container-fluid fixed-top" id="my导航栏">
                 <nav
-                  class="navbar navbar-default navbar navbar-expand-sm bg-light navbar-light"
+                  className="navbar navbar-default navbar navbar-expand-sm bg-light navbar-light"
                   role="navigation"
                 >
                   <div>
                     <Link
-                      class="navbar-brand mui-btn mui-btn-primary mui-btn-outlined"
+                      className="navbar-brand mui-btn mui-btn-primary mui-btn-outlined"
                       to="/"
                     >
                       masx200的
@@ -237,20 +254,20 @@ prefetchfiles.forEach(addlinkprefetch); */
                     </Link>
 
                     <button
-                      class="navbar-toggler"
+                      className="navbar-toggler"
                       type="button"
                       data-toggle="collapse"
                       data-target="#example-navbar-collapse"
                     >
-                      <span class="navbar-toggler-icon" />
+                      <span className="navbar-toggler-icon" />
                     </button>
                   </div>
                   <div
-                    class="collapse navbar-collapse"
+                    className="collapse navbar-collapse"
                     id="example-navbar-collapse"
                   >
                     <ul
-                      class="nav navbar-nav"
+                      className="nav navbar-nav"
                       id="allnavbar"
                       onClick={() => {
                         shouqi收起折叠的导航栏菜单();
@@ -258,17 +275,17 @@ prefetchfiles.forEach(addlinkprefetch); */
                     >
                       <li
                         id="mynav1"
-                        // class={window.location.hash == "#/" ? "active" : ""}
+                        // className={window.location.hash == "#/" ? "active" : ""}
                       >
                         <Link
                           to="/react-home"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           基于REACT的主页
                         </Link>
                       </li>
                       <li
-                      // class={
+                      // className={
                       //   window.location.hash == "#/rssreader"
                       //     ? "active"
                       //     : ""
@@ -278,21 +295,21 @@ prefetchfiles.forEach(addlinkprefetch); */
                       </li>
                       <li
                         id="mynav2"
-                        // class={
+                        // className={
                         //   window.location.hash == "#/about" ? "active" : ""
                         // }
                       >
                         <Link
                           to="/react-about"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           关于REACT
                         </Link>
                       </li>
-                      <li class="nav-item">
+                      <li className="nav-item">
                         <Link
                           to="/picalc"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           圆周率计算多线程
                         </Link>
@@ -301,7 +318,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                         <Link
                           to="/react-huami"
                           // href="./my-vue-router-project/index.html#/huami"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           花密网页版
                         </Link>
@@ -309,7 +326,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                       <li>
                         <Link
                           to="/decoder"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           JSfuck-and-hieroglyphy-Decoder
                         </Link>
@@ -317,7 +334,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                       <li>
                         <Link
                           to="/jsfuck"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           JSfuck-ENCODER
                         </Link>
@@ -325,7 +342,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                       <li>
                         <Link
                           to="/hieroglyphy"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           hieroglyphy-ENCODER
                         </Link>
@@ -334,24 +351,24 @@ prefetchfiles.forEach(addlinkprefetch); */
                         <Link
                           to="/webpack-react-vue-spa-awesome-config"
                           // href="./my-vue-router-project/index.html#/huami"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           webpack-react-vue- 极速零配置的单页面 web 应用打包工具
                         </Link>
                       </li>
-                      <li class="nav-item">
+                      <li className="nav-item">
                         <Link
                           to="/点击链接不跳转修改当前的网页地址动态加载网页内容不刷新"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新
                         </Link>
                       </li>
 
-                      <li class="nav-item">
+                      <li className="nav-item">
                         <Link
                           to="/IMPORTCJSAMDUMD动态异步加载"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           动态异步加载-commonjs和umd和amd模块库
                         </Link>
@@ -360,12 +377,12 @@ prefetchfiles.forEach(addlinkprefetch); */
                       {/* http://localhost:1234/my-vue-router-project/index.html#/about */}
                       {/* <li
                             id="mynav1"
-                            //   class={window.location.hash == "#/" ? "active" : ""}
+                            //   className={window.location.hash == "#/" ? "active" : ""}
                           >
                             <a
                                 href="./my-react-router-test/index.html"
                             //   href={myreacthtml}
-                              class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                              className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                             >
                               基于REACT的主页
                             </a>
@@ -373,26 +390,26 @@ prefetchfiles.forEach(addlinkprefetch); */
 
                       {/* <li>
                             <a
-                              class="nav-item"
+                              className="nav-item"
                                 href="./my-react-router-test/index.html#/decoder"
                             //   href={myreacthtml + "#/decoder"}
-                              class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                              className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                             >
                               JSfuck-and-hieroglyphy-Decoder-and-ENCODER
                             </a>
                           </li> */}
-                      <li class="nav-item">
+                      <li className="nav-item">
                         <Link
                           to="/react-simple-global-state-store-hook"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           React 极简全局状态管理库
                         </Link>
                       </li>
-                      <li class="nav-item">
+                      <li className="nav-item">
                         <Link
                           to="/excellent-vscode-extensions-for-javascript"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           VScode的优秀扩展推荐
                         </Link>
@@ -400,7 +417,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                       <li>
                         <a
                           href="./my-vue-router-project/index.html"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           基于vue的主页
                         </a>
@@ -408,7 +425,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                       <li>
                         <a
                           href="./my-vue-router-project/index.html#/about"
-                          class="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                         >
                           关于Vue
                         </a>
@@ -418,12 +435,12 @@ prefetchfiles.forEach(addlinkprefetch); */
                 </nav>
               </div>
 
-              <div class="container" id="my主体">
+              <div className="container" id="my主体">
                 <Suspense
                   fallback={
                     <div>
                       <h1>loading</h1>
-                      <span class="mui-spinner mui-spinner-custom" />
+                      <span className="mui-spinner mui-spinner-custom" />
                       {/* loading转圈图标 */}
                     </div>
                   }

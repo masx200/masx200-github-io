@@ -22,7 +22,8 @@ export var md5 =
    * Distributed under the BSD License
    * See http://pajhome.org.uk/crypt/md5 for more info.
    */
-  (function($) {
+  (function() //   $
+  {
     "use strict";
 
     function safe_add(x, y) {
@@ -219,7 +220,7 @@ export var md5 =
     function hex_hmac_md5(k, d) {
       return rstr2hex(raw_hmac_md5(k, d));
     }
-    $.md5 = function(string, key, raw) {
+    var emd5 = function(string, key, raw) {
       if (!key) {
         if (!raw) {
           return hex_md5(string);
@@ -233,11 +234,10 @@ export var md5 =
         return raw_hmac_md5(key, string);
       }
     };
-    return $.md5;
-  })(
-    {}
-    //   typeof jQuery === "function" ? jQuery : this
-  );
+    return emd5;
+  })();
+  // {}
+  //   typeof jQuery === "function" ? jQuery : this
 
 // export default function() {
 //   (() => {

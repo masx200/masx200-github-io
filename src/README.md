@@ -4,15 +4,7 @@
 
 ## 注意! 此脚本仅用于学习测试浏览器加载网页的过程模拟,此脚本不适合于单页面应用!在静态页面的测试效果更好
 
-
-导入模块方法 
-
-
-
-
-
 https://github.com/masx200/masx200.github.io/blob/master/src/readme.md
-
 
 ## 介绍大概和注意
 
@@ -25,7 +17,8 @@ https://github.com/masx200/masx200.github.io/blob/master/src/readme.md
 注意:对于使用了 document.write 的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖,所以 修改了 document.write 方法
 
 ## 预先的准备工作
-0.添加css样式"body, html {    scroll-behavior: smooth;}"就可以实现平滑滚动
+
+0.添加 css 样式"body, html { scroll-behavior: smooth;}"就可以实现平滑滚动
 
 1.把当前页面的网址的 href 写入到 docment 的 html 的 dataset 当中
 

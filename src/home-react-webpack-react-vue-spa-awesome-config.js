@@ -3,7 +3,7 @@
 import Markdownreact from "./markdown-react/index";
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
-export default function() {
+export default function component() {
   useEffect(() => {
     document.title =
       "masx200的github主页-" +

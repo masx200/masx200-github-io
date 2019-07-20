@@ -143,7 +143,7 @@ export default function Jsfuck() {
   }, []);
 
   return (
-    <div class="jdahd">
+    <div className="jdahd">
       <h1
         style={{ "font-size": "30px" }}
         //       "
@@ -170,7 +170,7 @@ export default function Jsfuck() {
       <textarea
         id="input"
         type="text"
-        class="form-control"
+        className="form-control"
         value={inputcode}
         onChange={inputonchange}
       />
@@ -180,7 +180,7 @@ export default function Jsfuck() {
           encode(e.target);
         }}
         ref={btnencode}
-        class="btn btn-outline-primary btn-lg"
+        className="btn btn-outline-primary btn-lg"
         id="encode"
         type="text"
         data-loading-icon="mui-spinner mui-spinner-custom"
@@ -188,7 +188,7 @@ export default function Jsfuck() {
         Encode
       </button>
       <div
-        class="checkbox"
+        className="checkbox"
         // onClick={() => {
         //   encode(btnencode.current);
         // }}
@@ -207,17 +207,17 @@ export default function Jsfuck() {
       <div id={"clip" + outputdivid}>
         <textarea
           id="output"
-          class="form-control"
+          className="form-control"
           value={outputcode}
           onChange={outputonchange}
         />
       </div>
 
-      <div class="actions">
+      <div className="actions">
         <span id="stats">{statstext}</span>
         {/* <span id="stats">0 chars</span> */}
         <button
-          class="btn btn-outline-primary btn-lg"
+          className="btn btn-outline-primary btn-lg"
           id="run"
           onClick={function() {
             // var codestring = $2("output").value;
@@ -238,7 +238,7 @@ export default function Jsfuck() {
           Run This
         </button>
         <button
-          class="btn btn-outline-success btn-lg"
+          className="btn btn-outline-success btn-lg"
           data-clipboard-target={"#" + "clip" + outputdivid}
         >
           复制
@@ -246,12 +246,20 @@ export default function Jsfuck() {
       </div>
       <br />
       <p>
-        <a href="https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER">
+        <a
+          href="https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER
         </a>
       </p>
       <p>
-        <a href="https://github.com/aemkei/jsfuck/blob/master/jsfuck.js">
+        <a
+          href="https://github.com/aemkei/jsfuck/blob/master/jsfuck.js"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           https://github.com/aemkei/jsfuck/blob/master/jsfuck.js
         </a>
       </p>

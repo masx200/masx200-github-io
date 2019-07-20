@@ -16,7 +16,7 @@ import picture6 from "../vue.png";
 import picture7 from "../webpack.svg";
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 const { useEffect, useState } = React;
-export default function() {
+export default function home() {
   const [nowtime, setnowtime] = useState(获取当前时间());
   useEffect(() => {
     // window.location.hash = "#/";
@@ -30,16 +30,24 @@ export default function() {
   return (
     <div className="App">
       <header className="">
-        <div class="container">
-          <div class="jumbotron">
+        <div className="container">
+          <div className="jumbotron">
             <h1>欢迎登陆页面！</h1>
             <p>
-              <a target="_blank" href="https://weibo.com/2174458781?">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://weibo.com/2174458781?"
+              >
                 一生忽而得一夏当司掌好年华的微博
               </a>
             </p>
             <p>
-              <a target="_blank" href="https://github.com/masx200">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://github.com/masx200"
+              >
                 masx200的github仓库
               </a>
             </p>
@@ -48,6 +56,7 @@ export default function() {
         <h2>现在是 {nowtime}</h2>
         <p>
           <a
+            rel="noopener noreferrer"
             target="_blank"
             href="https://zh-hans.reactjs.org/tutorial/tutorial.html"
           >
@@ -56,6 +65,7 @@ export default function() {
         </p>
         <p>
           <a
+            rel="noopener noreferrer"
             target="_blank"
             href="https://zh-hans.reactjs.org/docs/getting-started.html"
           >

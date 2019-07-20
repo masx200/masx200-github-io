@@ -215,7 +215,7 @@ export default function Decoder() {
     }
   );
   return (
-    <div class="jdahd">
+    <div className="jdahd">
       {/* <>5ddddddd</> */}
       {/* The `style` prop expects a mapping from style properties to values, not a string. For example, style={{marginRight: spacing + 'em'}} when using JSX. */}
       <h1
@@ -250,7 +250,7 @@ export default function Decoder() {
         value={inputcode}
         onChange={inputonchange}
         // ref={inputtext}
-        class="form-control"
+        className="form-control"
         placeholder="Paste your code here!"
         id="code"
         style={{
@@ -266,7 +266,7 @@ export default function Decoder() {
         type="button"
         id="decode"
         value="Decode"
-        class="btn btn-primary btn-lg"
+        className="btn btn-primary btn-lg"
       >
         Decode
       </button>
@@ -275,7 +275,7 @@ export default function Decoder() {
           /* 数据双向绑定,如果不设置onchange则变成了只读的value */
           value={outputcode}
           onChange={outputonchange}
-          class="form-control"
+          className="form-control"
           id="code2"
           style={{ width: "100%", "min-height": "250px" }}
           // style="width:100%;min-height:250px"
@@ -283,7 +283,7 @@ export default function Decoder() {
       </div>
 
       <button
-        class="btn btn-outline-primary btn-lg"
+        className="btn btn-outline-primary btn-lg"
         id="run"
         onClick={() => {
           Function(`return ${outputcode}`)();
@@ -293,7 +293,7 @@ export default function Decoder() {
       </button>
 
       <button
-        class="btn btn-outline-success btn-lg"
+        className="btn btn-outline-success btn-lg"
         data-clipboard-target={"#" + "clip" + outputdivid}
       >
         复制
@@ -301,16 +301,28 @@ export default function Decoder() {
       <br />
       <br />
       <p>
-        <a href="https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER">
+        <a
+          href="https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           https://github.com/masx200/JSfuck-and-hieroglyphy-Decoder-and-ENCODER
         </a>
       </p>
       <p>
-        <a href="https://github.com/aemkei/jsfuck/blob/master/jsfuck.js">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://github.com/aemkei/jsfuck/blob/master/jsfuck.js"
+        >
           https://github.com/aemkei/jsfuck/blob/master/jsfuck.js
         </a>
       </p>
-      <a href="https://github.com/alcuadrado/hieroglyphy/blob/master/hieroglyphy.js">
+      <a
+        href="https://github.com/alcuadrado/hieroglyphy/blob/master/hieroglyphy.js"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         https://github.com/alcuadrado/hieroglyphy/blob/master/hieroglyphy.js
       </a>
     </div>

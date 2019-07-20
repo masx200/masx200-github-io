@@ -66,7 +66,7 @@ function 关闭所有worker() {
     }
   });
 }
-export default () => {
+export default function bigcom() {
   const btnele = useRef();
   const outtext1 = useRef();
   const outtext2 = useRef();
@@ -362,7 +362,7 @@ export default () => {
     }
   }
   return (
-    <div class="container">
+    <div className="container">
       <h3>BigInteger.js</h3>
       <p>
         BigInteger.js是Javascript的任意长度整数库，允许对无限大小的整数进行算术运算，尽管存在内存和时间限制。
@@ -383,7 +383,7 @@ export default () => {
             <input
               value={inputtext1}
               onChange={onchangeinputtext1}
-              class="form-control"
+              className="form-control"
               id="thread-big"
               type="number"
               name="quantity"
@@ -398,7 +398,7 @@ export default () => {
             <input
               value={inputtext2}
               onChange={onchangeinputtext2}
-              class="form-control"
+              className="form-control"
               id="pichangwei-big"
               type="number"
               name="quantity"
@@ -410,7 +410,7 @@ export default () => {
         <button
           ref={btnele}
           data-loading-icon="mui-spinner mui-spinner-custom"
-          class="mui-btn mui-btn-primary btn btn-info  btn btn-outline-primary mui-btn mui-btn-outline-primary"
+          className="mui-btn mui-btn-primary btn btn-info  btn btn-outline-primary mui-btn mui-btn-outline-primary"
           id="start-big"
           onClick={e => {
             // console.log(e.target);
@@ -433,7 +433,7 @@ export default () => {
             onchangeoutputtext1(e);
             lashentextarea(e.target);
           }}
-          class="form-control"
+          className="form-control"
           cols="100"
           rows="100"
           style={{
@@ -453,13 +453,13 @@ export default () => {
             data-target="#collapsiblecontainer2"
           > */}
         <details open>
-          <summary class=" btn btn-outline-primary mui-btn mui-btn-outline-primary">
+          <summary className=" btn btn-outline-primary mui-btn mui-btn-outline-primary">
             展开收起圆周率结果
           </summary>
           {/* </button> */}
           <br />
           <br />
-          <div id="collapsiblecontainer2" class="collapse show">
+          <div id="collapsiblecontainer2" className="collapse show">
             <textarea
               ref={outtext2}
               value={outputtext2}
@@ -468,7 +468,7 @@ export default () => {
                 onchangeoutputtext2(e);
                 lashentextarea(e.target);
               }}
-              class="form-control"
+              className="form-control"
               cols="100"
               rows="100"
               style={{
@@ -485,7 +485,7 @@ export default () => {
       </div>
     </div>
   );
-};
+}
 // export
 
 // const onmount = () => {

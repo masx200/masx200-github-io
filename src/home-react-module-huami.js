@@ -29,7 +29,7 @@ function useBindtext(默认值) {
   );
   return [inputcode, setinputcode, inputonchange];
 }
-export default function() {
+export default function huami() {
   useEffect(() => {
     document.title = "masx200的github主页-" + "花密  不一样的密码管理工具";
     // vuehuamirender();
@@ -113,10 +113,10 @@ export default function() {
   }, [inputtext1, inputtext2]);
 
   return (
-    <div class="hello flowerpassword">
+    <div className="hello flowerpassword">
       <h1>{"花密  不一样的密码管理工具"}</h1>
 
-      <div id="rong1" class="container" style={{ "text-align": " center" }}>
+      <div id="rong1" className="container" style={{ "text-align": " center" }}>
         <div id="rong2">
           <h2>
             <span>1</span>
@@ -139,8 +139,8 @@ export default function() {
                 name="password"
                 type="password"
                 // value=""
-                tabindex="1"
-                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control"
+                tabIndex="1"
+                className="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control"
               />
             </p>{" "}
             <p /> <span>+</span> <h3>区分代号</h3> <p />{" "}
@@ -165,8 +165,8 @@ export default function() {
                 name="key"
                 type="text"
                 // value=""
-                tabindex="2"
-                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control"
+                tabIndex="2"
+                className="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control"
               />
             </p>
           </div>{" "}
@@ -184,8 +184,8 @@ export default function() {
                   value={inputtext3}
                   onChange={onchangeinputtext3}
                   id="code16"
-                  readonly="readonly"
-                  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 snippet code16d form-control"
+                  readOnly="readonly"
+                  className="col-lg-12 col-md-12 col-sm-12 col-xs-12 snippet code16d form-control"
 
                   /*      使用css的:hover实现样式!
      
@@ -208,7 +208,7 @@ export default function() {
                   }}
                   id="copycode16"
                   data-clipboard-target="#code16"
-                  class="btn-lg btn copycode16d btn-info"
+                  className="btn-lg btn copycode16d btn-info"
                   style={{ width: " 100%" }}
 
                   //   "width: 100%;"

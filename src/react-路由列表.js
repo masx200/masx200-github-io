@@ -2,7 +2,17 @@
 import { Switch, Route } from "react-router-dom";
 import React from "react";
 var { lazy } = React;
+export default function 路由() {
+  return (
+    <Switch>
+      {路由list.map((a, i) => (
+        <Route exact path={a[0]} component={a[1]} key={i} />
+      ))}
+    </Switch>
+  );
+}
 var home = lazy(() => import("./home-react-module-home.js"));
+
 // var picalc = lazy(() => import("./home-react-module-picalc"));
 
 // var 点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 = lazy(() =>
@@ -88,15 +98,6 @@ var 路由list = [
   ],
   ["*", home]
 ];
-export default function() {
-  return (
-    <Switch>
-      {路由list.map((a, i) => (
-        <Route exact path={a[0]} component={a[1]} key={i} />
-      ))}
-    </Switch>
-  );
-}
 
 // {
 //   /* <Route exact path="/" component={home} />

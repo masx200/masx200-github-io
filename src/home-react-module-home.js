@@ -24,7 +24,7 @@ const jQuery = $;
 const location = window.location;
 var { useEffect } = React;
 
-export default function() {
+export default function home() {
   function guid() {
     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
       var r = (Math.random() * 16) | 0,
@@ -87,7 +87,7 @@ export default function() {
       {/* The tag <markdownreact> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. */}
 
       <div
-        class="jumbotron"
+        className="jumbotron"
         style={{
           padding: 0
         }}
@@ -95,14 +95,22 @@ export default function() {
         <h1>欢迎登陆页面！</h1>
         <p>
           <b>
-            <a target="_blank" href="https://weibo.com/2174458781?">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://weibo.com/2174458781?"
+            >
               一生忽而得一夏当司掌好年华的微博
             </a>
           </b>
         </p>
         <p>
           <b>
-            <a target="_blank" href="https://github.com/masx200">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/masx200"
+            >
               masx200的github仓库
             </a>
           </b>
@@ -111,6 +119,7 @@ export default function() {
           <b>
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://masx200.github.io/ditto/"
               className={"mui-btn mui-btn-primary mui-btn-outlined"}
             >
@@ -123,6 +132,7 @@ export default function() {
             <a
               className={"mui-btn mui-btn-primary mui-btn-outlined"}
               target="_blank"
+              rel="noopener noreferrer"
               href="https://masx200.github.io/javascript-tutorial/"
             >
               javascript教程,基于ditto的markdown阅读器
@@ -133,6 +143,7 @@ export default function() {
           <b>
             <a
               target="_blank"
+              rel="noopener noreferrer"
               href="https://masx200.github.io/es6tutorial/"
               className={"mui-btn mui-btn-primary mui-btn-outlined"}
             >
@@ -142,7 +153,7 @@ export default function() {
         </p>
         <div>
           <button
-            class="btn btn-outline-primary btn-lg"
+            className="btn btn-outline-primary btn-lg"
             //   ref={mybuttonidsbuttonid1}
             onClick={() => {
               tanchu弹出消息通用("primary");
@@ -151,7 +162,7 @@ export default function() {
             弹出首选提示框
           </button>
           <button
-            class="btn btn-outline-success btn-lg"
+            className="btn btn-outline-success btn-lg"
             //   ref={mybuttonidsbuttonid2}
             onClick={() => {
               tanchu弹出消息通用("success");
@@ -160,7 +171,7 @@ export default function() {
             弹出成功提示框
           </button>
           <button
-            class="btn btn-outline-danger btn-lg"
+            className="btn btn-outline-danger btn-lg"
             //   ref={mybuttonidsbuttonid3}
             onClick={() => {
               tanchu弹出消息通用("danger");
@@ -169,7 +180,7 @@ export default function() {
             弹出失败提示框
           </button>
           <button
-            class="btn btn-outline-warning btn-lg"
+            className="btn btn-outline-warning btn-lg"
             //   ref={mybuttonidsbuttonid4}
             onClick={() => {
               tanchu弹出消息通用("warning");

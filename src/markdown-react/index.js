@@ -25,7 +25,7 @@ async function fetchtext(url) {
     throw new Error("fetch failed");
   }
 }
-export default function(props) {
+export default function markdown(props) {
   let markdowncache = "";
   let cache加载完成 = false;
   let cache加载失败 = false;
@@ -33,7 +33,7 @@ export default function(props) {
   const Fallback = () => (
     <div>
       <h1>loading</h1>
-      <span class="mui-spinner mui-spinner-custom" />
+      <span className="mui-spinner mui-spinner-custom" />
       {/* loading转圈图标 */}
     </div>
   );
@@ -125,15 +125,15 @@ export default function(props) {
   //     }
   //   }, [markdown内容]);
   return (
-    <div class="container">
+    <div className="container">
       <div
         id="readme"
-        class="Box Box--condensed instapaper_body md js-code-block-container"
+        className="Box Box--condensed instapaper_body md js-code-block-container"
       >
-        <div class="Box-header d-flex flex-items-center flex-justify-between px-2">
-          <h3 class="Box-title pr-3">
+        <div className="Box-header d-flex flex-items-center flex-justify-between px-2">
+          <h3 className="Box-title pr-3">
             <svg
-              class="octicon octicon-book"
+              className="octicon octicon-book"
               viewBox="0 0 16 16"
               version="1.1"
               width="16"
@@ -141,7 +141,7 @@ export default function(props) {
               aria-hidden="true"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"
               />
             </svg>
@@ -171,17 +171,17 @@ export default function(props) {
             </a> */}
           </div>
         </div>
-        <div class="Box-body" style={{ padding: " 0px" }}>
+        <div className="Box-body" style={{ padding: " 0px" }}>
           <article
-            class="markdown-body entry-content p-5"
-            itemprop="text"
+            className="markdown-body entry-content p-5"
+            itemProp="text"
             id="padding0"
             // style={{ padding: " 0px !important" }}
           >
             <div
               ref={ref}
               style={{ display: 加载完成 ? "block" : "none" }}
-              class="container"
+              className="container"
               dangerouslySetInnerHTML={{ __html: markdown内容 }}
             />
             {!加载完成 ? <Fallback /> : <React.Fragment />}

@@ -9,7 +9,7 @@ function 获取当前时间() {
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 import React from "react";
 var { useEffect, useState } = React;
-export default function() {
+export default function about() {
   const [nowtime, setnowtime] = useState(获取当前时间());
   useEffect(function() //   componentWillMount() {}
   {
@@ -38,6 +38,7 @@ export default function() {
         <h2>现在是 {nowtime} </h2>
         <p>
           <a
+            rel="noopener noreferrer"
             target="_blank"
             href="https://zh-hans.reactjs.org/tutorial/tutorial.html"
           >
@@ -46,6 +47,7 @@ export default function() {
         </p>
         <p>
           <a
+            rel="noopener noreferrer"
             target="_blank"
             href="https://zh-hans.reactjs.org/docs/getting-started.html"
           >

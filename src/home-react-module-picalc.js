@@ -38,7 +38,7 @@ export default function Picalc() {
         <hr />
 
         <details>
-          <summary class=" btn btn-outline-primary mui-btn mui-btn-outline-primary">
+          <summary className=" btn btn-outline-primary mui-btn mui-btn-outline-primary">
             {/* <button
                   class=" btn btn-outline-primary"
                   // type="button"
@@ -50,8 +50,8 @@ export default function Picalc() {
           </summary>
 
           <br />
-          <div id="collapsiblecontainer1" class="collapse row show">
-            <div class="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-12">
+          <div id="collapsiblecontainer1" className="collapse row show">
+            <div className="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-12">
               <h4>线程数为8 圆周率计算15000位测试结果</h4>
               <br />
               <p>chrome 62 测试 BigInteger.js 达到1倍速度</p>
@@ -60,7 +60,7 @@ export default function Picalc() {
               <p>chrome 74 测试 原生BigInt 达到11.16倍速度</p>
             </div>
             <hr />
-            <div class="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-12">
+            <div className="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-12">
               <h4>线程数为4 圆周率计算6000位测试结果</h4>
               <br />
               <p>firefox 66 测试 decimal.js 达到1倍速度</p>
@@ -75,7 +75,7 @@ export default function Picalc() {
               <p>chrome 75 测试 原生BigInt 达到74.038倍速度</p>
             </div>
             <hr />
-            <div class="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-12">
+            <div className="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-12">
               <h4>线程数为4 圆周率计算10000位测试结果</h4>
               <br />
               <p>firefox 66 测试 decimal.js 达到1倍速度</p>
@@ -88,7 +88,7 @@ export default function Picalc() {
               <p>chrome 75 测试 原生BigInt 达到100.773倍速度</p>
             </div>
             <hr />
-            <div class="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-12">
+            <div className="col-xl-3  col-lg-3 col-md-6 col-sm-6 col-12">
               <h4>线程数为8 圆周率计算10000位测试结果</h4>
 
               <br />

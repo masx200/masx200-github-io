@@ -1,4 +1,9 @@
 "use strict";
+document.getElementById("root").innerHTML = `<div>
+<h1>loading</h1>
+<span class="mui-spinner mui-spinner-custom">
+
+</span></div>`;
 import("./home-react-index-render.js");
 import "./index.css";
 import "./markdown-react/github.css";
@@ -9,7 +14,7 @@ import "./hidewidthless500.css";
 // import "./新建文本文档.scss";
 import("bootstrap/dist/js/bootstrap.bundle");
 
-import "./registerserviceworker";
+import "webpack-react-vue-spa-awesome-config/registerserviceworker";
 
 // import("./vue-loader-test");
 /* 全局开启剪切板复制功能 */

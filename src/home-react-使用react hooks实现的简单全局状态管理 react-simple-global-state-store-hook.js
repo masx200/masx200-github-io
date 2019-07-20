@@ -4,7 +4,7 @@ import useGlobalstate from "react-simple-global-state-store-hook";
 import Markdownreact from "./markdown-react/index";
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
-export default function() {
+export default function 全局状态管理() {
   useEffect(() => {
     document.title =
       "masx200的github主页-" +
@@ -16,6 +16,7 @@ export default function() {
         <a
           href="https://github.com/masx200/react-simple-global-state-store-hook"
           target="_blank"
+          rel="noopener noreferrer"
         >
           使用react hooks实现的简单全局状态管理
           <br />
@@ -24,10 +25,10 @@ export default function() {
       </h2>
       <hr />
       <div className="row">
-        <div class="col-xl-6  col-lg-6 col-md-6 col-sm-12 col-12">
+        <div className="col-xl-6  col-lg-6 col-md-6 col-sm-12 col-12">
           <Htest text={"-hello-"} />
         </div>
-        <div class="col-xl-6  col-lg-6 col-md-6 col-sm-12 col-12">
+        <div className="col-xl-6  col-lg-6 col-md-6 col-sm-12 col-12">
           <Htest text={"-world-"} />
         </div>
       </div>
@@ -53,7 +54,7 @@ function Htest(props) {
       <p>
         testname:
         <input
-          class="form-control"
+          className="form-control"
           value={testname}
           onChange={e => {
             settestname(e.target.value);
@@ -73,7 +74,7 @@ function Htest(props) {
       <p>
         number:
         <input
-          class="form-control"
+          className="form-control"
           value={number}
           onChange={e => {
             setnumber(e.target.value);
