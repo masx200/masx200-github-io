@@ -30,7 +30,8 @@ https://github.com/masx200/webpack-react-vue-spa-awesome-config
 
 # 适合于 react 编程的 eslint 配置文件
 
-`.eslintrc.json`
+先在vscode中安装eslint插件，然后创建
+`.eslintrc.json`文件
 
 ```json
 {
