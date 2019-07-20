@@ -146,7 +146,7 @@ function slct(selector) {
             });
             //   button(e, );
           } else {
-            console.error(new TypeError("invalid element"), e);
+           // console.error(new TypeError("invalid element"), e);
           }
         });
         return this;
