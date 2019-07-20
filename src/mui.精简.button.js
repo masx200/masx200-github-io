@@ -72,6 +72,10 @@ function slct(selector) {
     }
 
     button(state) {
+    	function isbutton(e){
+
+return e instanceof HTMLElement&&e.tagName==="BUTTON"||(e.tagName==="INPUT"&&e.getAttribute("type")==="button")
+}
       var CLASS_DISABLED = "mui-disabled";
       var defaultOptions = {
         loadingText: "Loading...",
@@ -82,12 +86,21 @@ function slct(selector) {
       var STATE_LOADING = "loading";
       //   console.log(this.button);
 
-      function sethtml(html, element) {
+      function sethtml(html, e) {
         // console.log(html);
-        element.innerHTML = html;
+        if(e instanceof HTMLElement){
+        	e.tagName==="INPUT"?
+e.value=html
+:
+e.innerHTML = html;
+}
+        
       }
       //   function button(element, options) {}
       function setstate(state, element, options) {
+      	
+      if (element instanceof HTMLElement) {
+      
         if (!element.State) {
           element.ResetHTML = element.innerHTML;
           element.State = "reset";
@@ -126,13 +139,17 @@ function slct(selector) {
           }
           sethtml(html, element);
         }
+        
+        
+        }
+        
       }
 
       if (state === STATE_LOADING || state === STATE_RESET) {
         // console.log(state);
 
         this.forEach(e => {
-          if (e instanceof HTMLElement) {
+          if (e instanceof HTMLElement&&isbutton(e)) {
             var loadingText = e.getAttribute("data-loading-text");
             var loadingIcon = e.getAttribute("data-loading-icon");
             var loadingIconPosition = e.getAttribute(
