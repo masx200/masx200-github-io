@@ -28,7 +28,7 @@ document.getElementById("root").innerHTML = `<div>
 
 https://github.com/masx200/webpack-react-vue-spa-awesome-config
 
-# 适合于 react 编程的 eslint 配置文件
+# 适合于 react.js 编程的 eslint 配置文件
 
 先在vscode中安装eslint插件，然后创建
 `.eslintrc.json`文件
