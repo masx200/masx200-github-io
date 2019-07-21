@@ -104,8 +104,8 @@ function slct(selector) {
           }
           if (element.State === state) {
             return false;
-          }
-          element.State = state;
+          }else 
+       {   element.State = state;}
           // var resetHTML;
           // if (state === STATE_LOADING) {
 
@@ -127,7 +127,9 @@ function slct(selector) {
           } else if (state === STATE_LOADING) {
             element.disabled = true;
             element.classList.add(CLASS_DISABLED);
-            let html = "<span>" + options.loadingText + "</span>";
+            var html
+          if(  !   element.tagName === "INPUT"){
+             html = "<span>" + options.loadingText + "</span>";
             if (options.loadingIconPosition === "right") {
               html += '&nbsp;<span class="' + options.loadingIcon + '"></span>';
             } else {
@@ -137,6 +139,10 @@ function slct(selector) {
                 '"></span>&nbsp;' +
                 html;
             }
+            
+            }else{html=options.loadingText}
+            
+            
             sethtml(html, element);
           }
         }
