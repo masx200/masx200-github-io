@@ -97,15 +97,31 @@ function slct(selector) {
       //   function button(element, options) {}
       function setstate(state, element, options) {
         if (element instanceof HTMLElement) {
+          //debugger;
+          //   console.log(
+          //     element,
+          //     "\n",
+          //     element.outerHTML,
+          //     "\n",
+          //     element.innerHTML,
+          //     "\n",
+          //     element.value,
+          //     "\n",
+          //     element.State,
+          //     "\n",
+          //     element.ResetHTML
+          //   );
           if (!element.State) {
             element.ResetHTML =
               element.tagName === "INPUT" ? element.value : element.innerHTML;
             element.State = "reset";
           }
+          //debugger;
           if (element.State === state) {
             return false;
-          }else 
-       {   element.State = state;}
+          } else {
+            element.State = state;
+          }
           // var resetHTML;
           // if (state === STATE_LOADING) {
 
@@ -127,22 +143,23 @@ function slct(selector) {
           } else if (state === STATE_LOADING) {
             element.disabled = true;
             element.classList.add(CLASS_DISABLED);
-            var html
-          if(  !   element.tagName === "INPUT"){
-             html = "<span>" + options.loadingText + "</span>";
-            if (options.loadingIconPosition === "right") {
-              html += '&nbsp;<span class="' + options.loadingIcon + '"></span>';
+            var html;
+            if (element.tagName !== "INPUT") {
+              html = "<span>" + options.loadingText + "</span>";
+              if (options.loadingIconPosition === "right") {
+                html +=
+                  '&nbsp;<span class="' + options.loadingIcon + '"></span>';
+              } else {
+                html =
+                  '<span class="' +
+                  options.loadingIcon +
+                  '"></span>&nbsp;' +
+                  html;
+              }
             } else {
-              html =
-                '<span class="' +
-                options.loadingIcon +
-                '"></span>&nbsp;' +
-                html;
+              html = options.loadingText;
             }
-            
-            }else{html=options.loadingText}
-            
-            
+            //debugger;
             sethtml(html, element);
           }
         }
