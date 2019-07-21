@@ -147,7 +147,7 @@ prefetchfiles.forEach(addlinkprefetch); */
 //   var IMPORTCJSAMDUMD = module1;
 (() => {
   "use strict";
-  $(window).one("load", () => {
+  $(() => {
     /* 当页面加载完成时再加载css */
     // jQuery(`<style/>`)
     //   .text(
@@ -468,7 +468,15 @@ prefetchfiles.forEach(addlinkprefetch); */
       //   };
       //   exports.default = Apphome;
       function refreshall() {
-        render(<Apphome />, document.getElementById("root"));
+        try {
+          render(<Apphome />, document.getElementById("root"));
+        } catch (error) {
+          console.error(error);
+          //   setTimeout(() => {
+          //     refreshall();
+          //   }, 500);
+        }
+
         scrollTo(0, 0);
         //   $("#collapsibleNavbar").removeClass("show");
         $("#example-navbar-collapse").removeClass("show");
