@@ -72,10 +72,12 @@ function slct(selector) {
     }
 
     button(state) {
-    	function isbutton(e){
-
-return e instanceof HTMLElement&&e.tagName==="BUTTON"||(e.tagName==="INPUT"&&e.getAttribute("type")==="button")
-}
+      function isbutton(e) {
+        return (
+          (e instanceof HTMLElement && e.tagName === "BUTTON") ||
+          (e.tagName === "INPUT" && e.getAttribute("type") === "button")
+        );
+      }
       var CLASS_DISABLED = "mui-disabled";
       var defaultOptions = {
         loadingText: "Loading...",
@@ -88,68 +90,63 @@ return e instanceof HTMLElement&&e.tagName==="BUTTON"||(e.tagName==="INPUT"&&e.g
 
       function sethtml(html, e) {
         // console.log(html);
-        if(e instanceof HTMLElement){
-        	e.tagName==="INPUT"?
-e.value=html
-:
-e.innerHTML = html;
-}
-        
+        if (e instanceof HTMLElement) {
+          e.tagName === "INPUT" ? (e.value = html) : (e.innerHTML = html);
+        }
       }
       //   function button(element, options) {}
       function setstate(state, element, options) {
-      	
-      if (element instanceof HTMLElement) {
-      
-        if (!element.State) {
-          element.ResetHTML = element.innerHTML;
-          element.State = "reset";
-        }
-        if (element.State === state) {
-          return false;
-        }
-        element.State = state;
-        // var resetHTML;
-        // if (state === STATE_LOADING) {
-
-        // }
-        // var options = { ...defaultOptions, ...options };
-        if (!options.loadingText) {
-          options.loadingText = defaultOptions.loadingText;
-        }
-        if (!options.loadingIcon) {
-          options.loadingIcon = defaultOptions.loadingIcon;
-        }
-        if (!options.loadingIconPosition) {
-          options.loadingIconPosition = defaultOptions.loadingIconPosition;
-        }
-        if (state === STATE_RESET) {
-          element.disabled = false;
-          element.classList.remove(CLASS_DISABLED);
-          sethtml(element.ResetHTML, element);
-        } else if (state === STATE_LOADING) {
-          element.disabled = true;
-          element.classList.add(CLASS_DISABLED);
-          let html = "<span>" + options.loadingText + "</span>";
-          if (options.loadingIconPosition === "right") {
-            html += '&nbsp;<span class="' + options.loadingIcon + '"></span>';
-          } else {
-            html =
-              '<span class="' + options.loadingIcon + '"></span>&nbsp;' + html;
+        if (element instanceof HTMLElement) {
+          if (!element.State) {
+            element.ResetHTML =
+              element.tagName === "INPUT" ? element.value : element.innerHTML;
+            element.State = "reset";
           }
-          sethtml(html, element);
+          if (element.State === state) {
+            return false;
+          }
+          element.State = state;
+          // var resetHTML;
+          // if (state === STATE_LOADING) {
+
+          // }
+          // var options = { ...defaultOptions, ...options };
+          if (!options.loadingText) {
+            options.loadingText = defaultOptions.loadingText;
+          }
+          if (!options.loadingIcon) {
+            options.loadingIcon = defaultOptions.loadingIcon;
+          }
+          if (!options.loadingIconPosition) {
+            options.loadingIconPosition = defaultOptions.loadingIconPosition;
+          }
+          if (state === STATE_RESET) {
+            element.disabled = false;
+            element.classList.remove(CLASS_DISABLED);
+            sethtml(element.ResetHTML, element);
+          } else if (state === STATE_LOADING) {
+            element.disabled = true;
+            element.classList.add(CLASS_DISABLED);
+            let html = "<span>" + options.loadingText + "</span>";
+            if (options.loadingIconPosition === "right") {
+              html += '&nbsp;<span class="' + options.loadingIcon + '"></span>';
+            } else {
+              html =
+                '<span class="' +
+                options.loadingIcon +
+                '"></span>&nbsp;' +
+                html;
+            }
+            sethtml(html, element);
+          }
         }
-        
-        
-        }
-        
       }
 
       if (state === STATE_LOADING || state === STATE_RESET) {
         // console.log(state);
 
         this.forEach(e => {
-          if (e instanceof HTMLElement&&isbutton(e)) {
+          if (e instanceof HTMLElement && isbutton(e)) {
             var loadingText = e.getAttribute("data-loading-text");
             var loadingIcon = e.getAttribute("data-loading-icon");
             var loadingIconPosition = e.getAttribute(
@@ -163,7 +160,7 @@ e.innerHTML = html;
             });
             //   button(e, );
           } else {
-           // console.error(new TypeError("invalid element"), e);
+            // console.error(new TypeError("invalid element"), e);
           }
         });
         return this;
