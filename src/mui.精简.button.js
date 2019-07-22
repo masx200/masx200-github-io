@@ -72,6 +72,8 @@ function slct(selector) {
     }
 
     button(state) {
+      const loadingState = Symbol.for("loadingState");
+      const ResetHTML = Symbol.for("ResetHTML");
       function isbutton(e) {
         return (
           (e instanceof HTMLElement && e.tagName === "BUTTON") ||
@@ -107,20 +109,20 @@ function slct(selector) {
           //     "\n",
           //     element.value,
           //     "\n",
-          //     element.State,
+          //     element[loadingState],
           //     "\n",
-          //     element.ResetHTML
+          //     element[ResetHTML]
           //   );
-          if (!element.State) {
-            element.ResetHTML =
+          if (!element[loadingState]) {
+            element[ResetHTML] =
               element.tagName === "INPUT" ? element.value : element.innerHTML;
-            element.State = "reset";
+            element[loadingState] = "reset";
           }
           //debugger;
-          if (element.State === state) {
+          if (element[loadingState] === state) {
             return false;
           } else {
-            element.State = state;
+            element[loadingState] = state;
           }
           // var resetHTML;
           // if (state === STATE_LOADING) {
@@ -139,7 +141,7 @@ function slct(selector) {
           if (state === STATE_RESET) {
             element.disabled = false;
             element.classList.remove(CLASS_DISABLED);
-            sethtml(element.ResetHTML, element);
+            sethtml(element[ResetHTML], element);
           } else if (state === STATE_LOADING) {
             element.disabled = true;
             element.classList.add(CLASS_DISABLED);

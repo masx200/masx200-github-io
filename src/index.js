@@ -12,16 +12,29 @@ import "./hidewidthless500.css";
 // import "./github.css";
 // import "./新建文本文档.less";
 // import "./新建文本文档.scss";
-import("bootstrap/dist/js/bootstrap.bundle");
 
 import "webpack-react-vue-spa-awesome-config/registerserviceworker";
 
 // import("./vue-loader-test");
 /* 全局开启剪切板复制功能 */
-import("./clipboard.min.js").then(module => {
-  const ClipboardJS = module.default;
-  new ClipboardJS(".btn").on("success", function(e) {
-    e.clearSelection();
+window.addEventListener("load", () => {
+  import("bootstrap");
+  import("./clipboard.js").then(module => {
+    //   console.log(module);
+    const ClipboardJS = module.default;
+    var clip = new ClipboardJS(".btn").on("success", function(e) {
+      console.log(e);
+      console.info("Text:", e.text);
+      //   if (!e.text) {
+      //     console.log("复制内容空");
+      //   } else {
+      //     //   console.info("Action:", e.action);
+      //     console.info("Text:", e.text);
+      //   }
+      //   console.info("Text:", e.text);
+      e.clearSelection();
+    });
+    //   console.log(clip);
   });
 });
 

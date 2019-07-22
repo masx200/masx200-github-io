@@ -32,6 +32,13 @@ function useBindtext(默认值) {
 export default function huami() {
   useEffect(() => {
     document.title = "masx200的github主页-" + "花密  不一样的密码管理工具";
+    // import("./clipboard.min.js").then(module => {
+    //   const ClipboardJS = module.default;
+    //   new ClipboardJS("button").on("success", function(e) {
+    //     console.info("Text:", e.text);
+    //     e.clearSelection();
+    //   });
+    // });
     // vuehuamirender();
     // return () => {};
   }, []);
@@ -85,26 +92,24 @@ export default function huami() {
     [inputtext1, inputtext2]
   );
 
-  const functioncopy = useCallback(
-    function functionc1opy(inputtext3) {
-      if (
-        inputtext3
-        // $("#code16").val()
-      ) {
-        $("#copyOK").show();
-        $("#copyOK")
-          .fadeTo(0, 0)
-          .css("border-color", "#22B614")
-          .css("background-color", "#22B614")
-          .fadeTo("normal", 1)
-          .fadeTo(2000, 1)
-          .fadeTo(3000, 0, function() {
-            $("#copyOK").hide();
-          });
-      }
-    },
-    [inputtext3]
-  );
+  const functioncopy = function functionc1opy(inputtext3) {
+    if (
+      inputtext3
+      // $("#code16").val()
+    ) {
+      $("#copyOK").show();
+      $("#copyOK")
+        .fadeTo(0, 0)
+        .css("border-color", "#22B614")
+        .css("background-color", "#22B614")
+        .fadeTo("normal", 1)
+        .fadeTo(2000, 1)
+        .fadeTo(3000, 0, function() {
+          $("#copyOK").hide();
+        });
+    }
+  };
+  // [inputtext3]
   useEffect(() => {
     /*
     这个时候(inputtext1, inputtext2数据已经刷新了!
@@ -208,7 +213,7 @@ export default function huami() {
                   }}
                   id="copycode16"
                   data-clipboard-target="#code16"
-                  className="btn-lg btn copycode16d btn-info"
+                  className="btn btn-lg btn copycode16d btn-info"
                   style={{ width: " 100%" }}
 
                   //   "width: 100%;"
