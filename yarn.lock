@@ -56,6 +56,26 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
+"@babel/core@7.5.5":
+  version "7.5.5"
+  resolved "https://registry.npm.taobao.org/@babel/core/download/@babel/core-7.5.5.tgz#17b2686ef0d6bc58f963dddd68ab669755582c30"
+  integrity sha1-F7JobvDWvFj5Y93daKtml1VYLDA=
+  dependencies:
+    "@babel/code-frame" "^7.5.5"
+    "@babel/generator" "^7.5.5"
+    "@babel/helpers" "^7.5.5"
+    "@babel/parser" "^7.5.5"
+    "@babel/template" "^7.4.4"
+    "@babel/traverse" "^7.5.5"
+    "@babel/types" "^7.5.5"
+    convert-source-map "^1.1.0"
+    debug "^4.1.0"
+    json5 "^2.1.0"
+    lodash "^4.17.13"
+    resolve "^1.3.2"
+    semver "^5.4.1"
+    source-map "^0.5.0"
+
 "@babel/generator@^7.4.0", "@babel/generator@^7.4.4", "@babel/generator@^7.5.5":
   version "7.5.5"
   resolved "https://registry.npm.taobao.org/@babel/generator/download/@babel/generator-7.5.5.tgz#873a7f936a3c89491b43536d12245b626664e3cf"
@@ -165,7 +185,7 @@
   dependencies:
     "@babel/types" "^7.0.0"
 
-"@babel/helper-module-transforms@^7.1.0", "@babel/helper-module-transforms@^7.4.4":
+"@babel/helper-module-transforms@^7.1.0", "@babel/helper-module-transforms@^7.4.4", "@babel/helper-module-transforms@^7.5.5":
   version "7.5.5"
   resolved "https://registry.npm.taobao.org/@babel/helper-module-transforms/download/@babel/helper-module-transforms-7.5.5.tgz#f84ff8a09038dcbca1fd4355661a500937165b4a"
   integrity sha1-+E/4oJA43Lyh/UNVZhpQCTcWW0o=
@@ -189,7 +209,7 @@
   resolved "https://registry.npm.taobao.org/@babel/helper-plugin-utils/download/@babel/helper-plugin-utils-7.0.0.tgz#bbb3fbee98661c569034237cc03967ba99b4f250"
   integrity sha1-u7P77phmHFaQNCN8wDlnupm08lA=
 
-"@babel/helper-regex@^7.0.0", "@babel/helper-regex@^7.4.4":
+"@babel/helper-regex@^7.0.0", "@babel/helper-regex@^7.4.4", "@babel/helper-regex@^7.5.5":
   version "7.5.5"
   resolved "https://registry.npm.taobao.org/@babel/helper-regex/download/@babel/helper-regex-7.5.5.tgz?cache=0&sync_timestamp=1563427045119&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fhelper-regex%2Fdownload%2F%40babel%2Fhelper-regex-7.5.5.tgz#0aa6824f7100a2e0e89c1527c23936c152cab351"
   integrity sha1-CqaCT3EAouDonBUnwjk2wVLKs1E=
@@ -242,7 +262,7 @@
     "@babel/traverse" "^7.1.0"
     "@babel/types" "^7.2.0"
 
-"@babel/helpers@^7.4.3", "@babel/helpers@^7.4.4":
+"@babel/helpers@^7.4.3", "@babel/helpers@^7.4.4", "@babel/helpers@^7.5.5":
   version "7.5.5"
   resolved "https://registry.npm.taobao.org/@babel/helpers/download/@babel/helpers-7.5.5.tgz#63908d2a73942229d1e6685bc2a0e730dde3b75e"
   integrity sha1-Y5CNKnOUIinR5mhbwqDnMN3jt14=
@@ -5118,7 +5138,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.npm.taobao.org/lodash.uniq/download/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.3, lodash@^4.17.5, lodash@~4.17.10:
+lodash@4.17.15, lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.3, lodash@^4.17.5, lodash@~4.17.10:
   version "4.17.15"
   resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.15.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flodash%2Fdownload%2Flodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha1-tEf2ZwoEVbv+7dETku/zMOoJdUg=
