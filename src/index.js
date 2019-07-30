@@ -21,7 +21,7 @@ import "webpack-react-vue-spa-awesome-config/registerserviceworker";
 window.addEventListener("load", () => {
   import("bootstrap");
 
-  import("./clipboard.js").then(module => {
+  import("./assetsjs/clipboard").then(module => {
     //   console.log(module);
     const ClipboardJS = module.default;
     var clip = new ClipboardJS(".btn").on("success", function(e) {

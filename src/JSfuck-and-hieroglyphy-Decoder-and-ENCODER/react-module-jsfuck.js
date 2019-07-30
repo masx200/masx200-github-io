@@ -1,5 +1,5 @@
 "use strict";
-import mui from "@/mui.精简.button";
+import mui from "@/assetsjs/mui.精简.button";
 import jsfuckworker from "./service-worker-jsfuck.worker.js";
 // import ClipboardJS from "../../clipboard.min.js";
 // import("../../clipboard.min.js").then(module => {

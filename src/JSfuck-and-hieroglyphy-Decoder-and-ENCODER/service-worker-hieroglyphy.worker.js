@@ -9,7 +9,7 @@ for (var i = 0; i < 128; i++) {
 console.log(sum, sum / 128) */
 // var document={}
 // import("./hieroglyphy.js").then(m=>(WorkerGlobalScope.hieroglyphy=m))
-import hieroglyphy from "./hieroglyphy.js";
+import hieroglyphy from "@/assetsjs/./hieroglyphy.js";
 // console.log(hieroglyphy,WorkerGlobalScope.hieroglyphy)
 // var hieroglyphy=import("./hieroglyphy.js")
 /* console.log( (WorkerGlobalScope !== undefined ? WorkerGlobalScope : false))

@@ -35,6 +35,7 @@ const Link = reactrouterdom.Link;
 //   );
 // }
 function 可变路径的rssreader链接() {
+  console.log(arguments);
   const [rsssitename, setrsssitename] = useState("");
   useEffect(() => {
     window.addEventListener(
@@ -221,6 +222,7 @@ prefetchfiles.forEach(addlinkprefetch); */
       // var h = React.createElement;
 
       function Apphome() {
+        // console.log(arguments);
         function shouqi收起折叠的导航栏菜单() {
           $("#example-navbar-collapse").removeClass("show");
           $("#my主体").css("padding-top", $("#my导航栏").height());

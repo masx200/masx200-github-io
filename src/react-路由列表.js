@@ -59,23 +59,21 @@ var 路由list = [
     "/decoder",
     lazy(() =>
       import(
-        "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder"
+        "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder"
       )
     )
   ],
   [
     "/jsfuck",
     lazy(() =>
-      import(
-        "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck"
-      )
+      import("./JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck")
     )
   ],
   [
     "/hieroglyphy",
     lazy(() =>
       import(
-        "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.js"
+        "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.js"
       )
     )
   ],

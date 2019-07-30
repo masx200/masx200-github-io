@@ -1,5 +1,5 @@
 "use strict";
-import mui from "@/mui.精简.button";
+import mui from "@/assetsjs/mui.精简.button";
 
 // // import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 // /* 应该再卸载组件时关闭所有worker */
@@ -8,7 +8,7 @@ import mui from "@/mui.精简.button";
 // import mui from "@/mui.js";
 // const decimalworker = "./service-worker-mythread1-decimal.worker.js";
 import decimalworker from "./service-worker-mythread1-decimal.worker.js";
-import Decimal from "../decimal.min.js";
+import Decimal from "@/assetsjs/decimal.min.js";
 // import mui from "../mui.min.js";
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useRef } from "react";

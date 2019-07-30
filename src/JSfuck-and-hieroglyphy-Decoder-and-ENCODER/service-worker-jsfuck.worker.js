@@ -8,7 +8,7 @@ for (var i = 0; i < 128; i++) {
 }
 console.log(sum, sum / 128) */
 /** 旧版:测试结果表明使用webworker进行jsfuck反而更慢*/
-import JSFuck from "./jsfuck.js";
+import JSFuck from "@/assetsjs/./jsfuck.js";
 /** 新版:使用import JSFuck from "./jsfuck.js";后,测试结果表明使用webworker进行jsfuck速度更快*/
 // (() => {
 var mymessagehandler = e => {

@@ -15,7 +15,7 @@ import React from "react";
 import {
   // vuehuamirender,
   md5
-} from "./my-vue-router-project/md5";
+} from "@/assetsjs/md5";
 import $ from "jquery";
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 var { useState, useEffect, useCallback, useRef } = React;

@@ -1,7 +1,7 @@
 "use strict";
 /* eslint-disable no-useless-escape */
-import hieroglyphy from "./hieroglyphy";
-import JSFuck from "./jsfuck";
+import hieroglyphy from "@/assetsjs/./hieroglyphy";
+import JSFuck from "@/assetsjs/./jsfuck";
 import React from "react";
 
 // 改为动态引入剪贴板

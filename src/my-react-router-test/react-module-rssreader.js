@@ -1,7 +1,7 @@
 "use strict";
-import mui from "@/mui.精简.button";
+import mui from "@/assetsjs/mui.精简.button";
 import React from "react";
-import parser from "fast-xml-parser";
+import parser from "@/assetsjs/fast-xml-parser";
 import rssxml1 from "./www.tmtpost.com.rss.xml";
 import rssxml2 from "./feed.iplaysoft.com.xml";
 import rssxml3 from "./landiannews.com.feed.xml";

@@ -2,8 +2,8 @@
 // import "./github.css";
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState, useRef } from "react";
-import marked from "./marked.min.js";
-import hljs from "./highlight.min.js";
+import marked from "@/assetsjs/./marked.min.js";
+import hljs from "@/assetsjs/./highlight.min.js";
 import $ from "jquery";
 // console.log(marked, hljs);
 

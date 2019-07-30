@@ -1,5 +1,5 @@
 "use strict";
-import mui from "@/mui.精简.button";
+import mui from "@/assetsjs/mui.精简.button";
 
 /*
 worker-loader
