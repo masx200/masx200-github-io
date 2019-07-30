@@ -976,11 +976,33 @@ var parser = (function(t) {
 //# sourceMappingURL=parser.min.js.map
 */
 
-exports.default = parser;
+// exports.default = parser;
 
-Object.keys(parser).forEach(key => {
-  exports[key] = parser[key];
-});
-Object.defineProperty(exports, "__esModule", {
-  value: !0
-});
+// Object.keys(parser).forEach(key => {
+//   exports[key] = parser[key];
+// });
+// Object.defineProperty(exports, "__esModule", {
+//   value: !0
+// });
+
+const {
+  parse,
+  convertTonimn,
+  getTraversalObj,
+  convertToJson,
+  convertToJsonString,
+  validate,
+  j2xParser,
+  parseToNimn
+} = parser;
+export {
+  parse,
+  convertTonimn,
+  getTraversalObj,
+  convertToJson,
+  convertToJsonString,
+  validate,
+  j2xParser,
+  parseToNimn
+};
+// export const parse = parser.parse;
