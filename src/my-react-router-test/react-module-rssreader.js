@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 "use strict";
 import mui from "@/assetsjs/mui.精简.button";
 import React from "react";
 import parser from "@/assetsjs/fast-xml-parser";
+// console.log(parser);
 import rssxml1 from "./www.tmtpost.com.rss.xml";
 import rssxml2 from "./feed.iplaysoft.com.xml";
 import rssxml3 from "./landiannews.com.feed.xml";
@@ -38,6 +40,7 @@ var { useState, useEffect, useRef } = React;
 // var{ useState }=React
 
 export default function Rssreader(props) {
+  // console.log(arguments);
   const [website, setwebsite] = useState("");
   var myxmlstrcontent = [];
   var myrsscontent = [];
@@ -194,7 +197,10 @@ export default function Rssreader(props) {
     },
     /* 依赖项设置为props就会在上级传入的参数变化时生效 */
 
-    [props]
+    [
+      // props.match.params.sitename
+      props
+    ]
   );
   useEffect(() => {
     // document.title = "React router App-" + "rssreader";
@@ -228,7 +234,9 @@ export default function Rssreader(props) {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss1();
               //   jiazaiload(rssxml1, mybuttonidsbuttonid1.current);
-              location.hash = "#/react-rssreader/tmtpost";
+              // location.hash = "#/react-rssreader/tmtpost";
+
+              props.history.replace("/react-rssreader/tmtpost", Math.random);
             }}
           >
             加载tmtpost
@@ -243,7 +251,8 @@ export default function Rssreader(props) {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss2();
               //   jiazaiload(rssxml2, mybuttonidsbuttonid2.current);
-              location.hash = "#/react-rssreader/iplaysoft";
+              // location.hash = "#/react-rssreader/iplaysoft";
+              props.history.replace("/react-rssreader/iplaysoft", Math.random);
             }}
           >
             加载iplaysoft
@@ -258,7 +267,11 @@ export default function Rssreader(props) {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss3();
               //   jiazaiload(rssxml3, mybuttonidsbuttonid3.current);
-              location.hash = "#/react-rssreader/landiannews";
+              // location.hash = "#/react-rssreader/landiannews";
+              props.history.replace(
+                "/react-rssreader/landiannews",
+                Math.random
+              );
             }}
           >
             加载landiannews
@@ -273,7 +286,8 @@ export default function Rssreader(props) {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss4();
               //   jiazaiload(rssxml4, mybuttonidsbuttonid4.current);
-              location.hash = "#/react-rssreader/ithome";
+              // location.hash = "#/react-rssreader/ithome";
+              props.history.replace("/react-rssreader/ithome", Math.random);
             }}
           >
             加载ithome
@@ -288,7 +302,8 @@ export default function Rssreader(props) {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss5();
               //   jiazaiload(rssxml5, mybuttonidsbuttonid5.current);
-              location.hash = "#/react-rssreader/ifanr";
+              // location.hash = "#/react-rssreader/ifanr";
+              props.history.replace("/react-rssreader/ifanr", Math.random);
             }}
           >
             加载ifanr
@@ -303,7 +318,8 @@ export default function Rssreader(props) {
               /* 使用箭头函数可以自动绑定this! */
               //   this.jiazairss6();
               //   jiazaiload(rssxml6, mybuttonidsbuttonid6.current);
-              location.hash = "#/react-rssreader/pingwest";
+              // location.hash = "#/react-rssreader/pingwest";
+              props.history.replace("/react-rssreader/pingwest", Math.random);
             }}
           >
             加载pingwest
