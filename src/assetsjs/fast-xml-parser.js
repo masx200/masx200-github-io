@@ -966,7 +966,9 @@ var parser = (function(t) {
     // ,
 
     // ,
-    t.exports = (...argvs) => new j2xParser(...argvs);
+    t.exports = function(...argvs) {
+      return new j2xParser(...argvs);
+    };
   }
 ]);
 
