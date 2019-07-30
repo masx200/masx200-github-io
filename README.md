@@ -10,6 +10,10 @@ https://github.com/masx200/masx200.github.io/tree/master/src
 
 <hr>
 
+# 网站升级到cdn加速服务器
+
+https://cdn.jsdelivr.net/gh/masx200/masx200.github.io/
+
 # 防止单页面应用首页白屏的方法,先显示 loading 图标,然后使用异步加载 react 或者 vue
 
 ```javascript
