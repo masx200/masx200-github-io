@@ -17,6 +17,8 @@ import $ from "jquery";
 // import "./myindexrender.css";
 // import "./my-vue-router-project/vue-render-all.css";
 import * as reactrouterdom from "react-router-dom"; // } //   HashRouter //   // Link, // , {
+
+// console.log(reactrouterdom);
 const HashRouter = reactrouterdom.HashRouter;
 const Link = reactrouterdom.Link;
 // function Link(props) {
@@ -35,7 +37,7 @@ const Link = reactrouterdom.Link;
 //   );
 // }
 function 可变路径的rssreader链接() {
-  console.log(arguments);
+  // console.log(arguments);
   const [rsssitename, setrsssitename] = useState("");
   useEffect(() => {
     window.addEventListener(
