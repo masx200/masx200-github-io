@@ -4,12 +4,20 @@ import mui from "@/assetsjs/mui.精简.button";
 import React from "react";
 import * as parser from "@/assetsjs/fast-xml-parser";
 // console.log(parser);
-import rssxml1 from "./www.tmtpost.com.rss.xml";
-import rssxml2 from "./feed.iplaysoft.com.xml";
-import rssxml3 from "./landiannews.com.feed.xml";
-import rssxml4 from "./www.ithome.com.rss.xml";
-import rssxml5 from "./ifanr.com.feed.xml";
-import rssxml6 from "./pingwest.com.feed.xml";
+// import rssxml1 from "./www.tmtpost.com.rss.xml";
+// import rssxml2 from "./feed.iplaysoft.com.xml";
+// import rssxml3 from "./landiannews.com.feed.xml";
+// import rssxml4 from "./www.ithome.com.rss.xml";
+// import rssxml5 from "./ifanr.com.feed.xml";
+// import rssxml6 from "./pingwest.com.feed.xml";
+import {
+  rssxml2,
+  rssxml3,
+  rssxml4,
+  rssxml5,
+  rssxml6,
+  rssxml1
+} from "./rssfeedxml";
 import $ from "jquery";
 // import mui from "../mui.min.js";
 const jQuery = $;
