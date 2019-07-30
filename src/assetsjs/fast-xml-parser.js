@@ -981,3 +981,6 @@ exports.default = parser;
 Object.keys(parser).forEach(key => {
   exports[key] = parser[key];
 });
+Object.defineProperty(exports, "__esModule", {
+  value: !0
+});
