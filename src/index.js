@@ -5,10 +5,11 @@ document.getElementById("root").innerHTML = `<div>
 
 </span></div>`;
 import("./home-react-index-render.js");
-import "./index.css";
+import "./assetscss/masx200-main.0b9ca398071be6517552.css";
+/* import "./index.css";
 import "./markdown-react/github.css";
 import "./markdown-react/padding0.css";
-import "./hidewidthless500.css";
+import "./hidewidthless500.css"; */
 // import "./github.css";
 // import "./新建文本文档.less";
 // import "./新建文本文档.scss";
@@ -19,6 +20,7 @@ import "webpack-react-vue-spa-awesome-config/registerserviceworker";
 /* 全局开启剪切板复制功能 */
 window.addEventListener("load", () => {
   import("bootstrap");
+
   import("./clipboard.js").then(module => {
     //   console.log(module);
     const ClipboardJS = module.default;
