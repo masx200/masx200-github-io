@@ -97,6 +97,7 @@ function markdown(props) {
         const divele = document.createElement("div");
         try {
           // $(ref.current).html(marked(text));
+          /* 使用jquery的漏洞,如果内容包括html标签的话,当前网页会被覆盖 */
 
           divele.innerHTML = marked(text);
         } catch (error) {
@@ -107,8 +108,9 @@ function markdown(props) {
         //   .finally(() => {
         // Array.from($("pre code"))
 
-        Array.from(divele.querySelectorAll("pre code"))
-        .forEach(block => hljs.highlightBlock(block));
+        Array.from(divele.querySelectorAll("pre code")).forEach(block =>
+          hljs.highlightBlock(block)
+        );
         set加载完成(true);
         try {
           // setmarkdown内容(ref.current.innerHTML);
