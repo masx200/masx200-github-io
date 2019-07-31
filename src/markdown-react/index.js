@@ -5,7 +5,7 @@ import React, { useEffect, useState, useRef } from "react";
 // console.log(React.memo);
 import marked from "@/assetsjs/./marked.min.js";
 import hljs from "@/assetsjs/./highlight.min.js";
-import $ from "jquery";
+// import $ from "jquery";
 // console.log(marked, hljs);
 
 /* 因为会被复用,所以,要根据不同的网址,缓存不同内容,否则会有冲突 */
@@ -94,18 +94,25 @@ function markdown(props) {
           return;
         }
         //   .catch(() => set加载失败(true))
+        const divele = document.createElement("div");
         try {
-          $(ref.current).html(marked(text));
+          // $(ref.current).html(marked(text));
+
+          divele.innerHTML = marked(text);
         } catch (error) {
           console.error(error);
         }
 
         //   .then(t => $(ref.current).html(marked(t)))
         //   .finally(() => {
-        Array.from($("pre code")).forEach(block => hljs.highlightBlock(block));
+        // Array.from($("pre code"))
+
+        Array.from(divele.querySelectorAll("pre code"))
+        .forEach(block => hljs.highlightBlock(block));
         set加载完成(true);
         try {
-          setmarkdown内容(ref.current.innerHTML);
+          // setmarkdown内容(ref.current.innerHTML);
+          setmarkdown内容(divele.innerHTML);
         } catch (error) {
           //
         }

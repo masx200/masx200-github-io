@@ -4,7 +4,10 @@ import Markdownreact from "./markdown-react/index";
 
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 import React from "react";
-var { useEffect, useState } = React;
+var {
+  useEffect
+  // , useState
+} = React;
 /* 把class组件改成function组件 */
 const urlmark =
   "https://masx200.github.io/excellent-vscode-extensions-for-javascript/README.md";
