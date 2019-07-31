@@ -1,19 +1,12 @@
 "use strict";
+import tanchu弹出消息通用 from "@/my弹出消息通用.js";
+function tanchu弹出消息提示() {
+  tanchu弹出消息通用("success");
+}
 import mui from "@/assetsjs/mui.精简.button";
 import hieroglyphyworker from "./service-worker-hieroglyphy.worker";
 import React from "react";
 
-// import("../../clipboard.min.js").then(module => {
-//   const ClipboardJS = module.default;
-//   new ClipboardJS(".btn").on("success", function(e) {
-//     e.clearSelection();
-//   });
-// });
-// import ClipboardJS from "../../clipboard.min.js";
-// import mui from "@/mui.js";
-// import mui from "../../mui.min.js";
-import $ from "jquery";
-const jQuery = $;
 // const clipboard = new ClipboardJS(".btn");
 
 // clipboard.on("success", function(e) {
@@ -109,21 +102,21 @@ export default function Hieroglyphy() {
     };
   }
   var lastclick;
-  function tanchu弹出消息提示() {
-    // var id=Math.random()*100000000|0
-    var id = guid();
-    jQuery("#my导航栏").append(
-      jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
-                      <button type="button" class="close" data-dismiss="alert">&times;</button>
-                      <strong>成功!</strong> 编码成功提示信息。
-                      </div>`).fadeTo(10000, 0.5, () => {
-        console.log(jQuery("#" + id));
-        jQuery("#" + id).remove();
-        $("#my主体").css("padding-top", $("#my导航栏").height());
-      })
-    );
-    // console.timeEnd('解码JSFUCK 和hieroglyphy')
-  }
+  // function tanchu弹出消息提示() {
+  //   // var id=Math.random()*100000000|0
+  //   var id = guid();
+  //   jQuery("#my导航栏").append(
+  //     jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
+  //                     <button type="button" class="close" data-dismiss="alert">&times;</button>
+  //                     <strong>成功!</strong> 编码成功提示信息。
+  //                     </div>`).fadeTo(10000, 0.5, () => {
+  //       console.log(jQuery("#" + id));
+  //       jQuery("#" + id).remove();
+  //       $("#my主体").css("padding-top", $("#my导航栏").height());
+  //     })
+  //   );
+  //   // console.timeEnd('解码JSFUCK 和hieroglyphy')
+  // }
   var [outputcode, setoutputcode] = useState("");
   var [inputcode, setinputcode] = useState(
     "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')"

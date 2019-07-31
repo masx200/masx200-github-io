@@ -1,4 +1,5 @@
 "use strict";
+import tanchu弹出消息通用 from "@/my弹出消息通用.js";
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index";
 /* import picture1 from "./babeljs.png";
@@ -11,8 +12,8 @@ import picture6 from "./vue.png";
 import picture7 from "./webpack.svg"; */
 // import myindexrender from "./myindexrender";
 import React from "react";
-import $ from "jquery";
-const jQuery = $;
+// import $ from "jquery";
+// const jQuery = $;
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 // function guid() {
 //   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
@@ -25,46 +26,46 @@ const location = window.location;
 var { useEffect } = React;
 
 export default function home() {
-  function guid() {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
-      var r = (Math.random() * 16) | 0,
-        v = c == "x" ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    });
-  }
+  // function guid() {
+  //   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+  //     var r = (Math.random() * 16) | 0,
+  //       v = c == "x" ? r : (r & 0x3) | 0x8;
+  //     return v.toString(16);
+  //   });
+  // }
 
-  function tanchu弹出消息通用(infotype) {
-    // var id=Math.random()*100000000|0
-    var textinfo;
-    switch (infotype) {
-      case "success":
-        textinfo = "成功";
-        break;
-      case "primary":
-        textinfo = "首选";
-        break;
-      case "danger":
-        textinfo = "失败";
-        break;
-      case "warning":
-        textinfo = "警告";
-        break;
-      default:
-        return;
-      // break;
-    }
-    var id = guid();
-    jQuery("#my导航栏").append(
-      jQuery(`<div id="${id}" class="alert alert-${infotype} alert-dismissible fade show">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>${textinfo}!</strong> 操作${textinfo}提示信息。
-            </div>`).fadeTo(5000, 0.5, () => {
-        console.log(jQuery("#" + id));
-        jQuery("#" + id).remove();
-        $("#my主体").css("padding-top", $("#my导航栏").height());
-      })
-    );
-  }
+  // function tanchu弹出消息通用(infotype) {
+  //   // var id=Math.random()*100000000|0
+  //   var textinfo;
+  //   switch (infotype) {
+  //     case "success":
+  //       textinfo = "成功";
+  //       break;
+  //     case "primary":
+  //       textinfo = "首选";
+  //       break;
+  //     case "danger":
+  //       textinfo = "失败";
+  //       break;
+  //     case "warning":
+  //       textinfo = "警告";
+  //       break;
+  //     default:
+  //       return;
+  //     // break;
+  //   }
+  //   var id = guid();
+  //   jQuery("#my导航栏").append(
+  //     jQuery(`<div id="${id}" class="alert alert-${infotype} alert-dismissible fade show">
+  //           <button type="button" class="close" data-dismiss="alert">&times;</button>
+  //           <strong>${textinfo}!</strong> 操作${textinfo}提示信息。
+  //           </div>`).fadeTo(5000, 0.5, () => {
+  //       console.log(jQuery("#" + id));
+  //       jQuery("#" + id).remove();
+  //       $("#my主体").css("padding-top", $("#my导航栏").height());
+  //     })
+  //   );
+  // }
 
   //   const mybuttonidsbuttonid1 = useRef();
   //   const mybuttonidsbuttonid2 = useRef();

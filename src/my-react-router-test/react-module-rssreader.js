@@ -1,5 +1,8 @@
+import tanchu弹出消息通用 from "@/my弹出消息通用.js";
+
 /* eslint-disable react/prop-types */
-"use strict";
+("use strict");
+
 import mui from "@/assetsjs/mui.精简.button";
 import React from "react";
 import * as parser from "@/assetsjs/fast-xml-parser";
@@ -20,7 +23,7 @@ import {
 } from "./rssfeedxml";
 import $ from "jquery";
 // import mui from "../mui.min.js";
-const jQuery = $;
+// const jQuery = $;
 // ("use strict");
 /* Hook是React 16.8中的新增功能。它们允许您在不编写类的情况下使用状态和其他React功能。
 https://reactjs.org/docs/hooks-overview.html#state-hook
@@ -47,7 +50,11 @@ https://reactjs.org/docs/hooks-overview.html#state-hook
 var { useState, useEffect, useRef } = React;
 // var{ useState }=React
 
-export default function Rssreader(props) {
+export default React.memo(Rssreader);
+function Rssreader(props) {
+  function setarssstatefun() {
+    setwebsite(props.match.params.sitename);
+  }
   // console.log(arguments);
   const [website, setwebsite] = useState("");
   var myxmlstrcontent = [];
@@ -61,14 +68,15 @@ export default function Rssreader(props) {
   const mybuttonidsbuttonid5 = useRef();
   const mybuttonidsbuttonid6 = useRef();
   async function jiazaiload(xmlurl, element) {
-    mui(element).button("loading");
+    mui(element).button.loading();
+    // mui(element).button("loading");
     // window.myrsscontent = []
     var myrsscontent = [];
-    console.log(
-      "开始加载外部内容",
-      xmlurl
-      /* $(myselectorid).attr("src") */
-    );
+    // console.log(
+    //   "开始加载外部内容",
+    //   xmlurl
+    //   /* $(myselectorid).attr("src") */
+    // );
     if (typeof /* $(myselectorid).attr("src")  */ xmlurl == "undefined") {
       //   console.log("加载失败");
     } else {
@@ -88,7 +96,7 @@ export default function Rssreader(props) {
         myxmlstrcontent.push(str);
         //   console.log("xml", myxmlstrcontent);
         var data = parser.parse(str);
-        console.log("rssjson", data);
+        // console.log("rssjson", data);
         myrsscontent.title = data.rss.channel.title;
         //   myrsscontent.description = $(data.rss.channel.description).text();
         myrsscontent.description = data.rss.channel.description;
@@ -104,7 +112,7 @@ export default function Rssreader(props) {
                   .append(e.description)
                   .text() || e.description;
             } catch (error) {
-              console.error(error);
+              // console.error(error);
               // e.description = e.description;
             }
 
@@ -112,13 +120,15 @@ export default function Rssreader(props) {
           })
           // description: $(data.rss.channel.item.description).text()
         );
-        console.log("rsscontent", myrsscontent);
+        // console.log("rsscontent", myrsscontent);
 
-        mui(element).button("reset");
+        // mui(element).button("reset");
+
         tanchu弹出消息通用("success");
         //   refreshall();
         //   this.forceUpdate();
         setrssState(myrsscontent);
+        mui(element).button.reset();
       })();
       // .then(s => {
       //   var str = s;
@@ -167,30 +177,36 @@ export default function Rssreader(props) {
           if (website !== props.match.params.sitename) {
             document.title =
               "React router App-" + "rssreader-" + props.match.params.sitename;
-            console.log(props.match.params.sitename);
+            // console.log(props.match.params.sitename);
             switch (props.match.params.sitename) {
               case "tmtpost":
-                setwebsite(props.match.params.sitename);
+                // setwebsite(props.match.params.sitename);
+                setarssstatefun();
                 jiazaiload(rssxml1, mybuttonidsbuttonid1.current);
                 break;
               case "iplaysoft":
-                setwebsite(props.match.params.sitename);
+                // setwebsite(props.match.params.sitename);
+                setarssstatefun();
                 jiazaiload(rssxml2, mybuttonidsbuttonid2.current);
                 break;
               case "landiannews":
-                setwebsite(props.match.params.sitename);
+                // setwebsite(props.match.params.sitename);
+                setarssstatefun();
                 jiazaiload(rssxml3, mybuttonidsbuttonid3.current);
                 break;
               case "ithome":
-                setwebsite(props.match.params.sitename);
+                // setwebsite(props.match.params.sitename);
+                setarssstatefun();
                 jiazaiload(rssxml4, mybuttonidsbuttonid4.current);
                 break;
               case "ifanr":
-                setwebsite(props.match.params.sitename);
+                // setwebsite(props.match.params.sitename);
+                setarssstatefun();
                 jiazaiload(rssxml5, mybuttonidsbuttonid5.current);
                 break;
               case "pingwest":
-                setwebsite(props.match.params.sitename);
+                // setwebsite(props.match.params.sitename);
+                setarssstatefun();
                 jiazaiload(rssxml6, mybuttonidsbuttonid6.current);
                 break;
 
@@ -366,49 +382,51 @@ export default function Rssreader(props) {
     </div>
   );
 }
-function tanchu弹出消息通用(infotype) {
-  // var id=Math.random()*100000000|0
-  var textinfo;
-  switch (infotype) {
-    case "success":
-      textinfo = "成功";
-      break;
-    case "primary":
-      textinfo = "首选";
-      break;
-    case "danger":
-      textinfo = "失败";
-      break;
-    case "warning":
-      textinfo = "警告";
-      break;
-    default:
-      return;
-  }
-  var id = guid();
-  jQuery("#my导航栏").append(
-    jQuery(`<div id="${id}" class="alert alert-${infotype} alert-dismissible fade show">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>${textinfo}!</strong> 操作${textinfo}提示信息。
-  </div>`).fadeTo(5000, 0.5, () => {
-      console.log(jQuery("#" + id));
-      jQuery("#" + id).remove();
-      $("#my主体").css("padding-top", $("#my导航栏").height());
-      //   refreshall();
-    })
-  );
-}
+// function tanchu弹出消息通用(infotype) {
+//   // var id=Math.random()*100000000|0
+//   var textinfo;
+//   switch (infotype) {
+//     case "success":
+//       textinfo = "成功";
+//       break;
+//     case "primary":
+//       textinfo = "首选";
+//       break;
+//     case "danger":
+//       textinfo = "失败";
+//       break;
+//     case "warning":
+//       textinfo = "警告";
+//       break;
+//     default:
+//       return;
+//   }
+//   var id = guid();
+//   // console.log($("[data-tanchuxiaoxi]"));
+//   $("[data-tanchuxiaoxi]").remove();
+//   jQuery("#my导航栏").append(
+//     jQuery(`<div id="${id}" class="alert alert-${infotype} alert-dismissible fade show" data-tanchuxiaoxi>
+//   <button type="button" class="close" data-dismiss="alert">&times;</button>
+//   <strong>${textinfo}!</strong> 操作${textinfo}提示信息。
+//   </div>`).fadeTo(5000, 0.5, () => {
+//       // console.log(jQuery("#" + id));
+//       jQuery("#" + id).remove();
+//       $("#my主体").css("padding-top", $("#my导航栏").height());
+//       //   refreshall();
+//     })
+//   );
+// }
 
-// function jiazaiload(myid, eid) {
-//   var myselectorid = myid;
+// // function jiazaiload(myid, eid) {
+// //   var myselectorid = myid;
 
-function guid() {
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
-    var r = (Math.random() * 16) | 0,
-      v = c == "x" ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
-  });
-}
+// function guid() {
+//   return "xxxxxxxx-xxxx-yxxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+//     var r = (Math.random() * 16) | 0,
+//       v = c == "x" ? r : (r & 0x3) | 0x8;
+//     return v.toString(16);
+//   });
+// }
 
 // export default
 // class rssreader extends React.Component {

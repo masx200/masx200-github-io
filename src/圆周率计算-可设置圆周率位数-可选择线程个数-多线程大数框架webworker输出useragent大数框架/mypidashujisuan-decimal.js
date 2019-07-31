@@ -1,4 +1,8 @@
 "use strict";
+import tanchu弹出消息通用 from "@/my弹出消息通用.js";
+function tanchu弹出消息提示() {
+  tanchu弹出消息通用("success");
+}
 import mui from "@/assetsjs/mui.精简.button";
 
 // // import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
@@ -12,9 +16,6 @@ import Decimal from "@/assetsjs/decimal.min.js";
 // import mui from "../mui.min.js";
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useRef } from "react";
-// ("use strict");
-import $ from "jquery";
-const jQuery = $;
 // const IMPORTCJSAMDUMD = window.IMPORTCJSAMDUMD;
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 // var { useState, useEffect, useRef } = React;
@@ -85,28 +86,21 @@ export default function decimalcom() {
     x = 0,
     threadgeshu,
     testname;
-  function guid() {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
-      var r = (Math.random() * 16) | 0,
-        v = c == "x" ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    });
-  }
-  function tanchu弹出消息提示() {
-    // var id=Math.random()*100000000|0
-    var id = guid();
-    jQuery("#my导航栏").append(
-      jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>成功!</strong> 计算成功提示信息。
-                    </div>`).fadeTo(5000, 0.5, () => {
-        console.log(jQuery("#" + id));
-        jQuery("#" + id).remove();
-        $("#my主体").css("padding-top", $("#my导航栏").height());
-      })
-    );
-    // console.timeEnd('解码JSFUCK 和hieroglyphy')
-  }
+  // function tanchu弹出消息提示() {
+  //   // var id=Math.random()*100000000|0
+  //   var id = guid();
+  //   jQuery("#my导航栏").append(
+  //     jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
+  //                   <button type="button" class="close" data-dismiss="alert">&times;</button>
+  //                   <strong>成功!</strong> 计算成功提示信息。
+  //                   </div>`).fadeTo(5000, 0.5, () => {
+  //       console.log(jQuery("#" + id));
+  //       jQuery("#" + id).remove();
+  //       $("#my主体").css("padding-top", $("#my导航栏").height());
+  //     })
+  //   );
+  //   // console.timeEnd('解码JSFUCK 和hieroglyphy')
+  // }
   function lashentextarea(eles) {
     // console.log(eles.outerHTML);
     requestAnimationFrame(function() {
