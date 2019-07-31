@@ -260,7 +260,7 @@ function Rssreader(props) {
               //   jiazaiload(rssxml1, mybuttonidsbuttonid1.current);
               // location.hash = "#/react-rssreader/tmtpost";
 
-              props.history.replace("/react-rssreader/tmtpost", Math.random);
+              props.history.replace("/react-rssreader/tmtpost");
             }}
           >
             加载tmtpost
@@ -276,7 +276,7 @@ function Rssreader(props) {
               //   this.jiazairss2();
               //   jiazaiload(rssxml2, mybuttonidsbuttonid2.current);
               // location.hash = "#/react-rssreader/iplaysoft";
-              props.history.replace("/react-rssreader/iplaysoft", Math.random);
+              props.history.replace("/react-rssreader/iplaysoft");
             }}
           >
             加载iplaysoft
@@ -292,10 +292,7 @@ function Rssreader(props) {
               //   this.jiazairss3();
               //   jiazaiload(rssxml3, mybuttonidsbuttonid3.current);
               // location.hash = "#/react-rssreader/landiannews";
-              props.history.replace(
-                "/react-rssreader/landiannews",
-                Math.random
-              );
+              props.history.replace("/react-rssreader/landiannews");
             }}
           >
             加载landiannews
@@ -311,7 +308,7 @@ function Rssreader(props) {
               //   this.jiazairss4();
               //   jiazaiload(rssxml4, mybuttonidsbuttonid4.current);
               // location.hash = "#/react-rssreader/ithome";
-              props.history.replace("/react-rssreader/ithome", Math.random);
+              props.history.replace("/react-rssreader/ithome");
             }}
           >
             加载ithome
@@ -327,7 +324,7 @@ function Rssreader(props) {
               //   this.jiazairss5();
               //   jiazaiload(rssxml5, mybuttonidsbuttonid5.current);
               // location.hash = "#/react-rssreader/ifanr";
-              props.history.replace("/react-rssreader/ifanr", Math.random);
+              props.history.replace("/react-rssreader/ifanr");
             }}
           >
             加载ifanr
@@ -343,7 +340,7 @@ function Rssreader(props) {
               //   this.jiazairss6();
               //   jiazaiload(rssxml6, mybuttonidsbuttonid6.current);
               // location.hash = "#/react-rssreader/pingwest";
-              props.history.replace("/react-rssreader/pingwest", Math.random);
+              props.history.replace("/react-rssreader/pingwest");
             }}
           >
             加载pingwest
@@ -383,7 +380,7 @@ function Rssreader(props) {
   );
 }
 // function tanchu弹出消息通用(infotype) {
-//   // var id=Math.random()*100000000|0
+//   // var id=()*100000000|0
 //   var textinfo;
 //   switch (infotype) {
 //     case "success":
@@ -422,7 +419,7 @@ function Rssreader(props) {
 
 // function guid() {
 //   return "xxxxxxxx-xxxx-yxxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
-//     var r = (Math.random() * 16) | 0,
+//     var r = (() * 16) | 0,
 //       v = c == "x" ? r : (r & 0x3) | 0x8;
 //     return v.toString(16);
 //   });
