@@ -25,7 +25,9 @@ async function fetchtext(url) {
     throw new Error("fetch failed");
   }
 }
-export default function markdown(props) {
+export default React.memo(markdown);
+
+function markdown(props) {
   let markdowncache = "";
   let cache加载完成 = false;
   let cache加载失败 = false;
@@ -71,46 +73,48 @@ export default function markdown(props) {
   //     []
   //   );
   useEffect(() => {
-    (async () => {
-      // if (true) {
-      hljs.initHighlightingOnLoad();
+    if (props.src) {
+      (async () => {
+        // if (true) {
+        hljs.initHighlightingOnLoad();
 
-      // fetch(props.src)
-      //   .then(r => {
-      //     if (r.ok) {
-      //       return r.text();
-      //     } else throw new Error();
-      //   })
-      let text;
-      try {
-        text = await fetchtext(props.src);
-      } catch (error) {
-        console.error(error);
-        set加载失败(true);
-        return;
-      }
-      //   .catch(() => set加载失败(true))
-      try {
-        $(ref.current).html(marked(text));
-      } catch (error) {
-        console.error(error);
-      }
+        // fetch(props.src)
+        //   .then(r => {
+        //     if (r.ok) {
+        //       return r.text();
+        //     } else throw new Error();
+        //   })
+        let text;
+        try {
+          text = await fetchtext(props.src);
+        } catch (error) {
+          console.error(error);
+          set加载失败(true);
+          return;
+        }
+        //   .catch(() => set加载失败(true))
+        try {
+          $(ref.current).html(marked(text));
+        } catch (error) {
+          console.error(error);
+        }
 
-      //   .then(t => $(ref.current).html(marked(t)))
-      //   .finally(() => {
-      Array.from($("pre code")).forEach(block => hljs.highlightBlock(block));
-      set加载完成(true);
-      try {
-        setmarkdown内容(ref.current.innerHTML);
-      } catch (error) {
-        //
-      }
+        //   .then(t => $(ref.current).html(marked(t)))
+        //   .finally(() => {
+        Array.from($("pre code")).forEach(block => hljs.highlightBlock(block));
+        set加载完成(true);
+        try {
+          setmarkdown内容(ref.current.innerHTML);
+        } catch (error) {
+          //
+        }
 
-      //   });
+        //   });
 
-      // .catch(() => set加载失败(true));
-      // }
-    })();
+        // .catch(() => set加载失败(true));
+        // }
+      })();
+    }
   }, [props]);
   //   useEffect(() => {
   //     // console.log(
