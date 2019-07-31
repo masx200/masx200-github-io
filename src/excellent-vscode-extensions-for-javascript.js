@@ -4,9 +4,14 @@ import Markdownreact from "./markdown-react/index";
 
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 import React from "react";
-var { useEffect } = React;
+var { useEffect, useState } = React;
 /* 把class组件改成function组件 */
+const urlmark =
+  "https://masx200.github.io/excellent-vscode-extensions-for-javascript/README.md";
 export default function component() {
+  // const [urlmark, seturlmark] = useState(
+  //   "https://masx200.github.io/excellent-vscode-extensions-for-javascript/README.md"
+  // );
   useEffect(function() {
     document.title =
       "masx200的github主页-" +
@@ -14,8 +19,12 @@ export default function component() {
   }, []);
 
   return (
-    <div>
-      <Markdownreact src="https://masx200.github.io/excellent-vscode-extensions-for-javascript/README.md" />
+    <div
+    // onClick={() => {
+    //   seturlmark("https://masx200.github.io/README.md");
+    // }}
+    >
+      <Markdownreact src={urlmark} />
     </div>
   );
 }

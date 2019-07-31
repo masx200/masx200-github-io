@@ -2,6 +2,7 @@
 // import "./github.css";
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState, useRef } from "react";
+// console.log(React.memo);
 import marked from "@/assetsjs/./marked.min.js";
 import hljs from "@/assetsjs/./highlight.min.js";
 import $ from "jquery";
@@ -115,7 +116,7 @@ function markdown(props) {
         // }
       })();
     }
-  }, [props]);
+  }, [props.src]);
   //   useEffect(() => {
   //     // console.log(
   //     //   [ref.current.innerHTML, markdown内容],
