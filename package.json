@@ -1,5 +1,5 @@
 {
-    "version": "4.2.4",
+    "version": "4.2.5",
     "scripts": {
         "start": "webpack-react-vue-spa-awesome-config start",
         "build": "webpack-react-vue-spa-awesome-config build --output-public-path=https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@latest/ "
