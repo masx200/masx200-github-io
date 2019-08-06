@@ -1,5 +1,5 @@
 "use strict";
-import "./ie11babelpolyfill";
+import "webpack-react-vue-spa-awesome-config/ie11babelpolyfill";
 document.getElementById("root").innerHTML = `<div>
 <h1>loading</h1>
 <span class="mui-spinner mui-spinner-custom">

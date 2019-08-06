@@ -72,10 +72,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@latest/chunk.9.f8be7d00a238c37c0003.js"
   },
   {
-    "url": "https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@latest/chunk.main.5946bdec98aff3dfb818.js"
+    "url": "https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@latest/chunk.main.475ea6cbbf22a0a76751.js"
   },
   {
-    "url": "https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@latest/main.5946bdec98aff3dfb818.css"
+    "url": "https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@latest/main.475ea6cbbf22a0a76751.css"
   },
   {
     "url": "https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@latest/parcel.9dc2fb9f99082fe3a958daf07adb4e9b.jpg"

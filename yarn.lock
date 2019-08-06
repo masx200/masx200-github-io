@@ -9004,7 +9004,7 @@ webpack-plugin-compat@^1.0.1:
 
 "webpack-react-vue-spa-awesome-config@https://github.com/masx200/webpack-react-vue-spa-awesome-config.git":
   version "2.3.3"
-  resolved "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git#d16d2d107c52d3757b41b3bce2d343318695e5ca"
+  resolved "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git#6ac67d0cc8f55992ff8667ab49e3c6e0adbb4819"
   dependencies:
     "@babel/core" "^7.5.5"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
