@@ -9003,8 +9003,8 @@ webpack-plugin-compat@^1.0.1:
   integrity sha1-GlJJJCWn0nsGJ9W6LeTqzJno6ao=
 
 "webpack-react-vue-spa-awesome-config@https://github.com/masx200/webpack-react-vue-spa-awesome-config.git":
-  version "2.3.3"
-  resolved "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git#6ac67d0cc8f55992ff8667ab49e3c6e0adbb4819"
+  version "2.3.5"
+  resolved "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git#e58ddaeaa04f8b27e5d51df1b3fa8e1c37c45911"
   dependencies:
     "@babel/core" "^7.5.5"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
