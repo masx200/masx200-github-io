@@ -116,6 +116,7 @@ function markdown(props) {
           // setmarkdown内容(ref.current.innerHTML);
           setmarkdown内容(divele.innerHTML);
         } catch (error) {
+          console.error(error);
           //
         }
 
@@ -125,7 +126,7 @@ function markdown(props) {
         // }
       })();
     }
-  }, [props.src]);
+  }, [props]);
   //   useEffect(() => {
   //     // console.log(
   //     //   [ref.current.innerHTML, markdown内容],
