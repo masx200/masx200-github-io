@@ -22,9 +22,13 @@ export default function home() {
     // window.location.hash = "#/";
     // refreshall();
     document.title = "React router App-" + "home";
-    setInterval(() => {
+    let timer = setInterval(() => {
       setnowtime(获取当前时间());
     }, 1100);
+
+    return () => {
+      clearInterval(timer);
+    };
   }, []);
 
   return (

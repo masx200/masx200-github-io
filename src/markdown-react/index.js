@@ -19,7 +19,7 @@ import hljs from "@/assetsjs/./highlight.min.js";
 /* 外部传入的参数改变会导致组件刷新! */
 
 async function fetchtext(url) {
-  var r = await fetch(new URL(url).toString());
+  var r = await fetch(new URL(url).href);
   if (r.ok) {
     return await r.text();
   } else {

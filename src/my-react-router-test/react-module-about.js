@@ -15,9 +15,12 @@ export default function about() {
   {
     // refreshall();
     document.title = "React router App-" + "about";
-    setInterval(() => {
+    let timer = setInterval(() => {
       setnowtime(获取当前时间());
     }, 1100);
+    return () => {
+      clearInterval(timer);
+    };
   }, []);
   //   componentWillReceiveProps(newProps) {}
   //   shouldComponentUpdate(newProps, newState) {

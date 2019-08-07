@@ -20,7 +20,7 @@ export default function IMPORTCJSAMDUMD动态异步加载() {
 
   return (
     <div>
-      <Markdownreact src="https://masx200.github.io/IMPORTCJSAMDUMD/README.md" />
+      <Markdownreact src="https://masx200.github.io/importcjsamdumd/README.md" />
     </div>
   );
 }
