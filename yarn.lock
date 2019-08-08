@@ -944,9 +944,9 @@
   integrity sha1-S5X7rMv7qQGFaQiQvfGi+72hBZU=
 
 "@hapi/hoek@8.x.x":
-  version "8.1.0"
-  resolved "https://registry.npm.taobao.org/@hapi/hoek/download/@hapi/hoek-8.1.0.tgz#8f7627b23ed9bf67088fc7f9669e48c63ad421bd"
-  integrity sha1-j3Ynsj7Zv2cIj8f5Zp5IxjrUIb0=
+  version "8.2.0"
+  resolved "https://registry.npm.taobao.org/@hapi/hoek/download/@hapi/hoek-8.2.0.tgz#079a133be240ff866ad8532eaa46a691bdd91117"
+  integrity sha1-B5oTO+JA/4Zq2FMuqkamkb3ZERc=
 
 "@hapi/joi@^15.0.0":
   version "15.1.0"
@@ -964,9 +964,9 @@
   integrity sha1-ZbCysB0b4GMEiGzptLd7G/shp2k=
 
 "@hapi/topo@3.x.x":
-  version "3.1.2"
-  resolved "https://registry.npm.taobao.org/@hapi/topo/download/@hapi/topo-3.1.2.tgz#57cc1317be1a8c5f47c124f9b0e3c49cd78424d2"
-  integrity sha1-V8wTF74ajF9HwST5sOPEnNeEJNI=
+  version "3.1.3"
+  resolved "https://registry.npm.taobao.org/@hapi/topo/download/@hapi/topo-3.1.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40hapi%2Ftopo%2Fdownload%2F%40hapi%2Ftopo-3.1.3.tgz#c7a02e0d936596d29f184e6d7fdc07e8b5efce11"
+  integrity sha1-x6AuDZNlltKfGE5tf9wH6LXvzhE=
   dependencies:
     "@hapi/hoek" "8.x.x"
 
@@ -1008,9 +1008,9 @@
   integrity sha1-PcoOPzOyAPx9ETnAzZbBJoyt/Z0=
 
 "@types/node@*":
-  version "12.7.0"
-  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.7.0.tgz?cache=0&sync_timestamp=1565131296624&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-12.7.0.tgz#545dde2a1a5c27d281cfb8308d6736e0708f5d6c"
-  integrity sha1-VF3eKhpcJ9KBz7gwjWc24HCPXWw=
+  version "12.7.1"
+  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.7.1.tgz?cache=0&sync_timestamp=1565214337285&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-12.7.1.tgz#3b5c3a26393c19b400844ac422bd0f631a94d69d"
+  integrity sha1-O1w6Jjk8GbQAhErEIr0PYxqU1p0=
 
 "@types/q@^1.5.1":
   version "1.5.2"
@@ -3030,9 +3030,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.122, electron-to-chromium@^1.3.191:
-  version "1.3.218"
-  resolved "https://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.218.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Felectron-to-chromium%2Fdownload%2Felectron-to-chromium-1.3.218.tgz#8a873456e6640da1bed18a8718da1b1a3c4f604c"
-  integrity sha1-ioc0VuZkDaG+0YqHGNobGjxPYEw=
+  version "1.3.220"
+  resolved "https://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.220.tgz?cache=0&sync_timestamp=1565236968013&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Felectron-to-chromium%2Fdownload%2Felectron-to-chromium-1.3.220.tgz#632fbf125fca4d69d7a140a66fe98572f67c0778"
+  integrity sha1-Yy+/El/KTWnXoUCmb+mFcvZ8B3g=
 
 elliptic@^6.0.0:
   version "6.5.0"
@@ -3506,9 +3506,9 @@ file-entry-cache@^5.0.1:
     flat-cache "^2.0.1"
 
 file-loader@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.npm.taobao.org/file-loader/download/file-loader-4.1.0.tgz#3a763391bc9502da7c59612fe348e38fc1980336"
-  integrity sha1-OnYzkbyVAtp8WWEv40jjj8GYAzY=
+  version "4.2.0"
+  resolved "https://registry.npm.taobao.org/file-loader/download/file-loader-4.2.0.tgz#5fb124d2369d7075d70a9a5abecd12e60a95215e"
+  integrity sha1-X7Ek0jadcHXXCppavs0S5gqVIV4=
   dependencies:
     loader-utils "^1.2.3"
     schema-utils "^2.0.0"
@@ -5015,7 +5015,7 @@ less-loader@^5.0.0:
 
 less@^3.9.0:
   version "3.9.0"
-  resolved "https://registry.npm.taobao.org/less/download/less-3.9.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fless%2Fdownload%2Fless-3.9.0.tgz#b7511c43f37cf57dc87dffd9883ec121289b1474"
+  resolved "https://registry.npm.taobao.org/less/download/less-3.9.0.tgz#b7511c43f37cf57dc87dffd9883ec121289b1474"
   integrity sha1-t1EcQ/N89X3Iff/ZiD7BISibFHQ=
   dependencies:
     clone "^2.1.2"
@@ -6945,9 +6945,9 @@ postcss-value-parser@^3.0.0, postcss-value-parser@^3.3.1:
   integrity sha1-n/giVH4okyE88cMO+lGsX9G6goE=
 
 postcss-value-parser@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.npm.taobao.org/postcss-value-parser/download/postcss-value-parser-4.0.1.tgz#e3f6172cc91302912c89da55a42454025485250f"
-  integrity sha1-4/YXLMkTApEsidpVpCRUAlSFJQ8=
+  version "4.0.2"
+  resolved "https://registry.npm.taobao.org/postcss-value-parser/download/postcss-value-parser-4.0.2.tgz#482282c09a42706d1fc9a069b73f44ec08391dc9"
+  integrity sha1-SCKCwJpCcG0fyaBptz9E7Ag5Hck=
 
 postcss-values-parser@^2.0.0, postcss-values-parser@^2.0.1:
   version "2.0.1"
@@ -7753,7 +7753,7 @@ scheduler@^0.13.6:
 
 schema-utils@^0.4.0:
   version "0.4.7"
-  resolved "https://registry.npm.taobao.org/schema-utils/download/schema-utils-0.4.7.tgz?cache=0&sync_timestamp=1563466381874&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fschema-utils%2Fdownload%2Fschema-utils-0.4.7.tgz#ba74f597d2be2ea880131746ee17d0a093c68187"
+  resolved "https://registry.npm.taobao.org/schema-utils/download/schema-utils-0.4.7.tgz#ba74f597d2be2ea880131746ee17d0a093c68187"
   integrity sha1-unT1l9K+LqiAExdG7hfQoJPGgYc=
   dependencies:
     ajv "^6.1.0"
@@ -7761,7 +7761,7 @@ schema-utils@^0.4.0:
 
 schema-utils@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npm.taobao.org/schema-utils/download/schema-utils-1.0.0.tgz?cache=0&sync_timestamp=1563466381874&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fschema-utils%2Fdownload%2Fschema-utils-1.0.0.tgz#0b79a93204d7b600d4b2850d1f66c2a34951c770"
+  resolved "https://registry.npm.taobao.org/schema-utils/download/schema-utils-1.0.0.tgz#0b79a93204d7b600d4b2850d1f66c2a34951c770"
   integrity sha1-C3mpMgTXtgDUsoUNH2bCo0lRx3A=
   dependencies:
     ajv "^6.1.0"
@@ -7769,9 +7769,9 @@ schema-utils@^1.0.0:
     ajv-keywords "^3.1.0"
 
 schema-utils@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.npm.taobao.org/schema-utils/download/schema-utils-2.0.1.tgz?cache=0&sync_timestamp=1563466381874&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fschema-utils%2Fdownload%2Fschema-utils-2.0.1.tgz#1eec2e059556af841b7f3a83b61af13d7a3f9196"
-  integrity sha1-HuwuBZVWr4QbfzqDthrxPXo/kZY=
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/schema-utils/download/schema-utils-2.1.0.tgz#940363b6b1ec407800a22951bdcc23363c039393"
+  integrity sha1-lANjtrHsQHgAoilRvcwjNjwDk5M=
   dependencies:
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
@@ -9025,8 +9025,8 @@ webpack-plugin-compat@^1.0.1:
   integrity sha1-GlJJJCWn0nsGJ9W6LeTqzJno6ao=
 
 "webpack-react-vue-spa-awesome-config@https://github.com/masx200/webpack-react-vue-spa-awesome-config.git":
-  version "2.3.5"
-  resolved "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git#aa91f4eb85897ec27474affae3d49ad5c2b3dd19"
+  version "2.3.7"
+  resolved "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git#2a5ced9c5639975419b6e19b139bd3cc3943fe32"
   dependencies:
     "@babel/core" "^7.5.5"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
@@ -9056,20 +9056,15 @@ webpack-plugin-compat@^1.0.1:
     postcss-safe-parser "^4.0.1"
     purify-css "^1.2.5"
     purifycss-webpack "^0.7.0"
-    react "^16.8.6"
     react-app-polyfill "^1.0.1"
     react-dev-utils "^9.0.1"
-    react-dom "^16.8.6"
-    react-router-dom "^5.0.1"
     regenerator-runtime "^0.13.3"
     style-loader "^0.23.1"
     terser-webpack-plugin "^1.3.0"
     uglifyjs-webpack-plugin "^2.1.3"
     unicode-loader "^1.0.7"
     url-loader "^2.1.0"
-    vue "^2.6.10"
     vue-loader "^15.7.1"
-    vue-router "^3.0.7"
     vue-style-loader "^4.1.2"
     vue-template-compiler "^2.6.10"
     webpack "^4.38.0"
