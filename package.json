@@ -1,5 +1,5 @@
 {
-    "version": "4.2.11",
+    "version": "4.2.12",
     "scripts": {
         "start": "webpack-react-vue-spa-awesome-config start",
         "build": "webpack-react-vue-spa-awesome-config build --output-public-path=https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@latest/ ",
@@ -21,7 +21,22 @@
         "type": "git",
         "url": "git+https://github.com/masx200/masx200.github.io.git"
     },
-    "dependencies": {
+    "dependencies": {},
+    "name": "masx200.github.io",
+    "description": "masx200.github.io",
+    "author": "",
+    "license": "",
+    "babel": {
+        "presets": [
+            "react-app",
+            "@babel/preset-env",
+            "@babel/preset-react"
+        ],
+        "plugins": [
+            "@babel/plugin-syntax-dynamic-import"
+        ]
+    },
+    "devDependencies": {
         "@babel/core": "^7.5.5",
         "@babel/generator": "^7.5.5",
         "@babel/helper-define-map": "^7.5.5",
@@ -84,20 +99,5 @@
         "webpack-react-vue-spa-awesome-config": "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git",
         "workbox-webpack-plugin": "^4.3.1",
         "worker-loader": "^2.0.0"
-    },
-    "name": "masx200.github.io",
-    "description": "masx200.github.io",
-    "author": "",
-    "license": "ISC",
-    "babel": {
-        "presets": [
-            "react-app",
-            "@babel/preset-env",
-            "@babel/preset-react"
-        ],
-        "plugins": [
-            "@babel/plugin-syntax-dynamic-import"
-        ]
-    },
-    "devDependencies": {}
+    }
 }
