@@ -25,7 +25,7 @@
     "name": "masx200.github.io",
     "description": "masx200.github.io",
     "author": "",
-    "license": "",
+    "license": "MIT",
     "babel": {
         "presets": [
             "react-app",
