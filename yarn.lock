@@ -7316,7 +7316,7 @@ react-router@5.0.1:
 
 "react-simple-global-state-store-hook@https://github.com/masx200/react-simple-global-state-store-hook.git":
   version "1.0.1"
-  resolved "https://github.com/masx200/react-simple-global-state-store-hook.git#0f3ed7796d1f543948c7f3853ee0fa6fa0e66e5f"
+  resolved "https://github.com/masx200/react-simple-global-state-store-hook.git#0bab0d8b94458306e2487788b60c9f9cda8e078c"
   dependencies:
     react "^16.8.6"
 
