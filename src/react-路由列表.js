@@ -2,11 +2,17 @@
 import { Switch, Route } from "react-router-dom";
 import React from "react";
 var { lazy } = React;
-export default function 路由() {
+export default 
+React.memo(路由)
+function 路由() {
   return (
     <Switch>
       {路由list.map((a, i) => (
-        <Route exact path={a[0]} component={a[1]} key={i} />
+        <Route exact path={a[0]} component={
+React.memo(
+a[1]
+)
+} key={i} />
       ))}
     </Switch>
   );
