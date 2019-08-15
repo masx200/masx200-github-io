@@ -1,5 +1,20 @@
 "use strict";
-import useGlobalstate from "react-simple-global-state-store-hook";
+import {
+  useGlobalStore,
+  initGlobalState
+} from "react-simple-global-state-store-hook";
+
+// var initaaaaaaaaaaaa =
+initGlobalState({
+  testnumber: String(22418 * 99999),
+  testname: "helloworld-test使用全局状态管理"
+});
+
+// initGlobalState({
+//   testnumber: String(2418 * 999),
+//   testname: "helloworl使s实现的简单全局状态管理"
+// });
+// console.log(initaaaaaaaaaaaa);
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index";
 // eslint-disable-next-line no-unused-vars
@@ -40,13 +55,14 @@ export default function 全局状态管理() {
 }
 // eslint-disable-next-line no-unused-vars
 function Htest(props) {
+  //   console.log(useGlobalStore({ testnumber: 78546 * Math.random() }));
   let {
-    number: [number, setnumber]
-  } = useGlobalstate({ number: 78546 * Math.random() });
+    testnumber: [number, setnumber]
+  } = useGlobalStore({ testnumber: 78546 * Math.random() });
 
   let {
     testname: [testname, settestname]
-  } = useGlobalstate({ testname: "helloworld-test-" + props.text });
+  } = useGlobalStore({ testname: "helloworld-test-" + props.text });
   return (
     <div>
       <h1>test{props.text}</h1>
@@ -84,7 +100,7 @@ function Htest(props) {
       <button
         className="btn btn-outline-success btn-lg"
         onClick={() => {
-          setnumber(number * 3);
+          setnumber(String(number) + String(number));
         }}
       >
         修改number
