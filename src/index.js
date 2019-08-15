@@ -39,7 +39,7 @@ window.addEventListener("load", () => {
     });
     //   console.log(clip);
   });
-});
+},{once:true});
 
 // (() => {
 //     /* 不能跨域! */
