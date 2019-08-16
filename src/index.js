@@ -19,27 +19,31 @@ import "webpack-react-vue-spa-awesome-config/registerserviceworker";
 
 // import("./vue-loader-test");
 /* 全局开启剪切板复制功能 */
-window.addEventListener("load", () => {
-  import("bootstrap");
+window.addEventListener(
+  "load",
+  () => {
+    //   import("bootstrap");
 
-  import("./assetsjs/clipboard").then(module => {
-    //   console.log(module);
-    const ClipboardJS = module.default;
-    var clip = new ClipboardJS(".btn").on("success", function(e) {
-      console.log(e);
-      console.info("Text:", e.text);
-      //   if (!e.text) {
-      //     console.log("复制内容空");
-      //   } else {
-      //     //   console.info("Action:", e.action);
-      //     console.info("Text:", e.text);
-      //   }
-      //   console.info("Text:", e.text);
-      e.clearSelection();
+    import("./assetsjs/clipboard").then(module => {
+      //   console.log(module);
+      const ClipboardJS = module.default;
+      var clip = new ClipboardJS(".btn").on("success", function(e) {
+        console.log(e);
+        console.info("Text:", e.text);
+        //   if (!e.text) {
+        //     console.log("复制内容空");
+        //   } else {
+        //     //   console.info("Action:", e.action);
+        //     console.info("Text:", e.text);
+        //   }
+        //   console.info("Text:", e.text);
+        e.clearSelection();
+      });
+      //   console.log(clip);
     });
-    //   console.log(clip);
-  });
-},{once:true});
+  },
+  { once: true }
+);
 
 // (() => {
 //     /* 不能跨域! */

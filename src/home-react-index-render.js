@@ -7,7 +7,7 @@ import 路由列表 from "./react-路由列表";
 // import "./App.css";
 // import ReactRouterDOM from "react-router-dom";
 import ReactDOM from "react-dom";
-import React from "react";
+import React, { useRef } from "react";
 // var createElement = React.createElement;
 var { render } = ReactDOM;
 var { Suspense } = React;
@@ -235,6 +235,7 @@ prefetchfiles.forEach(addlinkprefetch); */
           $("#my主体").css("padding-top", $("#my导航栏").height());
           document.title = "masx200的github主页";
         }, []);
+        const example_navbar_collapse = useRef();
         return (
           <HashRouter>
             <div>
@@ -262,11 +263,15 @@ prefetchfiles.forEach(addlinkprefetch); */
                       type="button"
                       data-toggle="collapse"
                       data-target="#example-navbar-collapse"
+                      onClick={() => {
+                        $(example_navbar_collapse.current).toggle();
+                      }}
                     >
                       <span className="navbar-toggler-icon" />
                     </button>
                   </div>
                   <div
+                    ref={example_navbar_collapse}
                     className="collapse navbar-collapse"
                     id="example-navbar-collapse"
                   >

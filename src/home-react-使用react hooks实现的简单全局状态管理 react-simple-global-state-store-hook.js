@@ -63,6 +63,7 @@ function Htest(props) {
   let {
     testname: [testname, settestname]
   } = useGlobalStore({ testname: "helloworld-test-" + props.text });
+  //   console.log(number, testname);
   return (
     <div>
       <h1>test{props.text}</h1>
