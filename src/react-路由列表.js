@@ -75,7 +75,7 @@ function 路由() {
     ],
     [
       "/excellent-vscode-extensions-for-javascript",
-      lazy(() => import("./excellent-vscode-extensions-for-javascript"))
+      lazy(() => import("./components/excellent-vscode-extensions-for-javascript"))
     ],
     ["*", home]
   ];
