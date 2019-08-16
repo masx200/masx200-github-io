@@ -169,7 +169,7 @@ prefetchfiles.forEach(addlinkprefetch); */
     //   @import "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"; */}
     function onhashchange() {
       scrollTo(0, 0);
-      $("#example-navbar-collapse").removeClass("show");
+      $(example_navbar_collapse.current).hide();             //$(example_navbar_collapse.current).removeClass("show");
       // $("#collapsibleNavbar").removeClass("show");
       $("#my主体").css("padding-top", $("#my导航栏").height());
     }
@@ -226,7 +226,7 @@ prefetchfiles.forEach(addlinkprefetch); */
       function Apphome() {
         // console.log(arguments);
         function shouqi收起折叠的导航栏菜单() {
-          $("#example-navbar-collapse").removeClass("show");
+          $(example_navbar_collapse.current).hide();             //$(example_navbar_collapse.current).removeClass("show");
           $("#my主体").css("padding-top", $("#my导航栏").height());
           // refreshall();
           scrollTo(0, 0);
@@ -262,7 +262,7 @@ prefetchfiles.forEach(addlinkprefetch); */
                       className="navbar-toggler"
                       type="button"
                       data-toggle="collapse"
-                      data-target="#example-navbar-collapse"
+                     // data-target=example_navbar_collapse.current
                       onClick={() => {
                         $(example_navbar_collapse.current).toggle();
                       }}
@@ -488,7 +488,7 @@ prefetchfiles.forEach(addlinkprefetch); */
 
         scrollTo(0, 0);
         //   $("#collapsibleNavbar").removeClass("show");
-        $("#example-navbar-collapse").removeClass("show");
+        $(example_navbar_collapse.current).hide();             //$(example_navbar_collapse.current).removeClass("show");
         // console.log(<Apphome />);
       }
       refreshall();
