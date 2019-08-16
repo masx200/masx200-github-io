@@ -121,10 +121,10 @@ export default function home() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://masx200.github.io/ditto/"
+              href="https://masx200.github.io/markdown-reader/"
               className={"mui-btn mui-btn-primary mui-btn-outlined"}
             >
-              masx200的ditto: 轻量级markdown文档系统阅读器
+              masx200的 轻量级markdown文档系统阅读器
             </a>
           </b>
         </p>
