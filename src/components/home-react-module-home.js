@@ -97,6 +97,8 @@ export default function home() {
         <p>
           <b>
             <a
+className={"mui-btn mui-btn-primary mui-btn-outlined"}
+            
               target="_blank"
               rel="noopener noreferrer"
               href="https://weibo.com/2174458781?"
@@ -108,6 +110,8 @@ export default function home() {
         <p>
           <b>
             <a
+className={"mui-btn mui-btn-primary mui-btn-outlined"}
+            
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/masx200"
@@ -136,7 +140,7 @@ export default function home() {
               rel="noopener noreferrer"
               href="https://masx200.github.io/javascript-tutorial/"
             >
-              javascript教程,基于ditto的markdown阅读器
+              javascript教程,markdown阅读器
             </a>
           </b>
         </p>
@@ -148,7 +152,7 @@ export default function home() {
               href="https://masx200.github.io/es6tutorial/"
               className={"mui-btn mui-btn-primary mui-btn-outlined"}
             >
-              ecmascript6教程,基于ditto的markdown阅读器
+              ecmascript6教程,markdown阅读器
             </a>
           </b>
         </p>
