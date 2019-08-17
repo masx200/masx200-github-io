@@ -11,7 +11,9 @@ var {
 /* 把class组件改成function组件 */
 const urlmark =
   "https://masx200.github.io/excellent-vscode-extensions-for-javascript/README.md";
-export default function component() {
+export default React.memo(component);
+
+function component() {
   // const [urlmark, seturlmark] = useState(
   //   "https://masx200.github.io/excellent-vscode-extensions-for-javascript/README.md"
   // );
