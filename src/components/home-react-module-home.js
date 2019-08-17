@@ -1,4 +1,6 @@
-"use strict";
+import 首页推荐网址目录 from "./首页推荐网址目录";
+
+("use strict");
 import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index";
@@ -94,6 +96,30 @@ export default function home() {
         }}
       >
         <h1>欢迎登陆页面！</h1>
+
+        <div>
+          <ul>
+            {首页推荐网址目录.map((t, i) => {
+              return (
+                <li key={i}>
+                  <p>
+                    <b>
+                      <a
+                        className={"mui-btn mui-btn-primary mui-btn-outlined"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={t[0]}
+                      >
+                        {t[1]}
+                      </a>
+                    </b>
+                  </p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        {/*         
         <p>
           <b>
             <a
@@ -154,6 +180,8 @@ export default function home() {
             </a>
           </b>
         </p>
+      
+       */}
         <div>
           <button
             className="btn btn-outline-primary btn-lg"
