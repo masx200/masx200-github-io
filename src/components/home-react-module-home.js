@@ -1,5 +1,5 @@
 "use strict";
-import tanchu弹出消息通用 from "@/my弹出消息通用.js";
+import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index";
 /* import picture1 from "./babeljs.png";
@@ -97,8 +97,7 @@ export default function home() {
         <p>
           <b>
             <a
-className={"mui-btn mui-btn-primary mui-btn-outlined"}
-            
+              className={"mui-btn mui-btn-primary mui-btn-outlined"}
               target="_blank"
               rel="noopener noreferrer"
               href="https://weibo.com/2174458781?"
@@ -110,8 +109,7 @@ className={"mui-btn mui-btn-primary mui-btn-outlined"}
         <p>
           <b>
             <a
-className={"mui-btn mui-btn-primary mui-btn-outlined"}
-            
+              className={"mui-btn mui-btn-primary mui-btn-outlined"}
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/masx200"

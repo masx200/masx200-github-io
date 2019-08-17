@@ -1,4 +1,4 @@
-import tanchu弹出消息通用 from "@/my弹出消息通用.js";
+import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 
 /* eslint-disable react/prop-types */
 ("use strict");

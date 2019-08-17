@@ -1,5 +1,5 @@
 "use strict";
-import tanchu弹出消息通用 from "@/my弹出消息通用.js";
+import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {
   tanchu弹出消息通用("success");
 }
