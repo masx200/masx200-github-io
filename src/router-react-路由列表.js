@@ -91,7 +91,7 @@ function 路由() {
       )
     ],
     [
-      "/components/excellent-vscode-extensions-for-javascript",
+      "/excellent-vscode-extensions-for-javascript",
       lazy(() =>
         import("./components/excellent-vscode-extensions-for-javascript")
       )
