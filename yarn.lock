@@ -7320,8 +7320,8 @@ react-router@5.0.1:
     tiny-warning "^1.0.0"
 
 "react-simple-global-state-store-hook@https://github.com/masx200/react-simple-global-state-store-hook.git":
-  version "1.1.1"
-  resolved "https://github.com/masx200/react-simple-global-state-store-hook.git#f33a2d7837a5b13525691e76efb4d152c2169b51"
+  version "1.1.2"
+  resolved "https://github.com/masx200/react-simple-global-state-store-hook.git#583cab10dda203e513ad206dd31b641485c42f85"
 
 react@^16.9.0:
   version "16.9.0"
