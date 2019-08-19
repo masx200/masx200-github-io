@@ -21,7 +21,9 @@
         "type": "git",
         "url": "git+https://github.com/masx200/masx200.github.io.git"
     },
-    "dependencies": {},
+    "dependencies": {
+        "babel-eslint": "^10.0.2"
+    },
     "name": "masx200.github.io",
     "description": "masx200.github.io",
     "author": "",

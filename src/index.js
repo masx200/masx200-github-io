@@ -27,7 +27,8 @@ window.addEventListener(
     import("./assetsjs/clipboard").then(module => {
       //   console.log(module);
       const ClipboardJS = module.default;
-      var clip = new ClipboardJS(".btn").on("success", function(e) {
+      //   var clip =
+      new ClipboardJS(".btn").on("success", function(e) {
         console.log(e);
         console.info("Text:", e.text);
         //   if (!e.text) {
@@ -95,15 +96,12 @@ accept */
 // import testjson from "./PingWest品玩-https___www.pingwest.com_feed-Sun_Jun_23_2019_16_30_22_GMT+0800_(GMT+08_00).json";
 // console.log(testjson);
 
+import { render } from "react-dom";
 
-
-import ReactDOM from "react-dom";
-import React from "react";
-
-import("./home-react-index-render.js").then(({default})=>{
-
-render(default,
-           // React.createElement(React.memo(Apphome)),
-            document.getElementById("root")
-          );
+import("./home-react-index-render.js").then(({ default: Homeelement }) => {
+  render(
+    Homeelement,
+    // React.createElement(React.memo(Apphome)),
+    document.getElementById("root")
+  );
 });

@@ -6,10 +6,10 @@ import Apphome from "./react-apphome";
 // const IMPORTCJSAMDUMD = require("./importcjsamdumd");
 // import "./App.css";
 // import ReactRouterDOM from "react-router-dom";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import React from "react";
 // var createElement = React.createElement;
-var { render } = ReactDOM;
+// var { render } = ReactDOM;
 import $ from "jquery";
 // import "./RegisteraServiceWorkerFile.js";
 // import "./myindexrender.css";
@@ -173,7 +173,7 @@ prefetchfiles.forEach(addlinkprefetch); */
       //   exports.default = Apphome;
       function refreshall() {
         try {
-        /*
+          /*
   render(
             React.createElement(React.memo(Apphome)),
 
@@ -203,4 +203,4 @@ window.addEventListener("resize", () => {
     $("#my主体").css("padding-top", $("#my导航栏").height());
   });
 });
-export default React.createElement(React.memo(Apphome))
+export default React.createElement(React.memo(Apphome));

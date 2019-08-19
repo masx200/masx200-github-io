@@ -222,7 +222,7 @@ function Apphome() {
                     关于Vue
                   </a>
                 </li>
-<li className="nav-item">
+                <li className="nav-item">
                   <Link
                     to="/vue-simple-global-state-store-manager"
                     className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
@@ -230,10 +230,6 @@ function Apphome() {
                     适用于Vue的极简全局状态管理库
                   </Link>
                 </li>
-
-
-
-
               </ul>
             </div>
           </nav>
@@ -245,19 +241,10 @@ function Apphome() {
               <div>
                 <h1>loading</h1>
                 <span className="mui-spinner mui-spinner-custom" />
-                {/* loading转圈图标 */}
+                {/*             //loading转圈图标 */}
               </div>
             }
           >
-            {/* <Switch> */}
-            {/* <AnimatedSwitch
-                atEnter={{ opacity: 0 }}
-                atLeave={{ opacity: 0 }}
-                atActive={{ opacity: 1 }}
-              > */}
-
-            {/* </AnimatedSwitch> */}
-
             <路由列表 />
           </Suspense>
         </div>
