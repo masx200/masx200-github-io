@@ -98,7 +98,9 @@ function 路由() {
     ],
     [
       "/vue-simple-global-state-store-manager",
-      lazy(() => import("./components/vue-simple-global-state-store-manager"))
+      lazy(() =>
+        import("./components/vue-simple-global-state-store-manager.jsx")
+      )
     ],
     ["*", home]
   ];

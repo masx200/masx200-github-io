@@ -33,10 +33,15 @@ export default function 全局状态管理() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          使用react hooks实现的简单全局状态管理
+          适用于React的极简全局状态管理库
           <br />
-          react-simple-global-state-store-hook
+          {/*  react-simple-global-state-store-hook */}
         </a>
+        <p>
+          <a href="https://github.com/masx200/react-simple-global-state-store-hook">
+            https://github.com/masx200/react-simple-global-state-store-hook
+          </a>
+        </p>
       </h2>
       <hr />
       <div className="row">
