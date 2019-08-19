@@ -5,7 +5,7 @@ document.getElementById("root").innerHTML = `<div>
 <span class="mui-spinner mui-spinner-custom">
 
 </span></div>`;
-import("./home-react-index-render.js");
+
 import "./assetscss/masx200-main.0b9ca398071be6517552.css";
 /* import "./index.css";
 import "./markdown-react/github.css";
@@ -100,3 +100,10 @@ accept */
 import ReactDOM from "react-dom";
 import React from "react";
 
+import("./home-react-index-render.js").then(({default})=>{
+
+render(default,
+           // React.createElement(React.memo(Apphome)),
+            document.getElementById("root")
+          );
+});
