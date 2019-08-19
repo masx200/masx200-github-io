@@ -94,3 +94,9 @@ accept */
 
 // import testjson from "./PingWest品玩-https___www.pingwest.com_feed-Sun_Jun_23_2019_16_30_22_GMT+0800_(GMT+08_00).json";
 // console.log(testjson);
+
+
+
+import ReactDOM from "react-dom";
+import React from "react";
+
