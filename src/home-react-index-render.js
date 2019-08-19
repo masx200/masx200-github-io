@@ -173,11 +173,14 @@ prefetchfiles.forEach(addlinkprefetch); */
       //   exports.default = Apphome;
       function refreshall() {
         try {
-          render(
+        /*
+  render(
             React.createElement(React.memo(Apphome)),
 
             document.getElementById("root")
           );
+
+*/
         } catch (error) {
           console.error(error);
           //   setTimeout(() => {
@@ -200,3 +203,4 @@ window.addEventListener("resize", () => {
     $("#my主体").css("padding-top", $("#my导航栏").height());
   });
 });
+export default React.createElement(React.memo(Apphome))
