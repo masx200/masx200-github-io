@@ -96,6 +96,12 @@ function 路由() {
         import("./components/excellent-vscode-extensions-for-javascript")
       )
     ],
+[
+      "/vue-simple-global-state-store-manager",
+      lazy(() =>
+        import("./components/vue-simple-global-state-store-manager")
+      )
+    ],
     ["*", home]
   ];
 
