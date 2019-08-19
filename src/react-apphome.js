@@ -195,7 +195,7 @@ function Apphome() {
                     to="/react-simple-global-state-store-hook"
                     className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                   >
-                    React 极简全局状态管理库
+                    适用于React的极简全局状态管理库
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -222,6 +222,18 @@ function Apphome() {
                     关于Vue
                   </a>
                 </li>
+<li className="nav-item">
+                  <Link
+                    to="/vue-simple-global-state-store-manager"
+                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                  >
+                    适用于Vue的极简全局状态管理库
+                  </Link>
+                </li>
+
+
+
+
               </ul>
             </div>
           </nav>
