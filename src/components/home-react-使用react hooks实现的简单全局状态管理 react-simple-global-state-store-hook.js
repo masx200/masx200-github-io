@@ -106,7 +106,7 @@ function Htest(props) {
       <button
         className="btn btn-outline-success btn-lg"
         onClick={() => {
-          setnumber(String(number) + String(number));
+          setnumber(String(number) + Math.random());
         }}
       >
         修改number

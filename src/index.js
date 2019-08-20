@@ -1,5 +1,5 @@
-import './样式.css'
-"use strict";
+import "./样式.css";
+("use strict");
 import "webpack-react-vue-spa-awesome-config/ie11babelpolyfill";
 document.getElementById("root").innerHTML = `<div>
 <h1>loading</h1>
@@ -105,4 +105,15 @@ import("./home-react-index-render.js").then(({ default: Homeelement }) => {
     // React.createElement(React.memo(Apphome)),
     document.getElementById("root")
   );
+});
+
+import {
+  // useGlobalStore,
+  initGlobalState
+} from "react-simple-global-state-store-hook";
+
+// var initaaaaaaaaaaaa =
+initGlobalState({
+  testnumber: String(22418 * 99999) + Math.random(),
+  testname: "使用React全局状态管理" + Math.random()
 });
