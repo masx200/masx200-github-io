@@ -8,14 +8,14 @@ function 路由() {
   var 路由list = [
     ["/", home],
     ["/picalc", lazy(() => import("./components/home-react-module-picalc"))],
-    [
+    /* [
       "/点击链接不跳转修改当前的网页地址动态加载网页内容不刷新",
       lazy(() =>
         import(
           "./components/home-react-module-点击链接不跳转修改当前的网页地址动态加载网页内容不刷新.js"
         )
       )
-    ],
+    ], */
     [
       "/IMPORTCJSAMDUMD动态异步加载",
       lazy(() =>

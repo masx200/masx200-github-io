@@ -148,14 +148,14 @@ function Apphome() {
                     webpack-react-vue- 极速零配置的单页面 web 应用打包工具
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/*    <li className="nav-item">
                   <Link
                     to="/点击链接不跳转修改当前的网页地址动态加载网页内容不刷新"
                     className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                   >
                     点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新
                   </Link>
-                </li>
+                </li> */}
 
                 <li className="nav-item">
                   <Link
