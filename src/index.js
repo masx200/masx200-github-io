@@ -1,3 +1,4 @@
+import './样式.css'
 "use strict";
 import "webpack-react-vue-spa-awesome-config/ie11babelpolyfill";
 document.getElementById("root").innerHTML = `<div>
