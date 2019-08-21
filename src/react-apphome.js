@@ -206,6 +206,14 @@ function Apphome() {
                     VScode的优秀扩展推荐
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link
+                    to="/vue-simple-global-state-store-manager"
+                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                  >
+                    适用于Vue的极简全局状态管理库
+                  </Link>
+                </li>
                 <li>
                   <a
                     href="./my-vue-router-project/index.html"
@@ -221,14 +229,6 @@ function Apphome() {
                   >
                     关于Vue
                   </a>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    to="/vue-simple-global-state-store-manager"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    适用于Vue的极简全局状态管理库
-                  </Link>
                 </li>
               </ul>
             </div>

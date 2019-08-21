@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/prop-types */
 "use strict";
 // import "./github.css";
 // eslint-disable-next-line no-unused-vars
@@ -193,22 +195,24 @@ function markdown(props) {
             id="padding0"
             // style={{ padding: " 0px !important" }}
           >
-            <div
-              ref={ref}
-              style={{ display: 加载完成 ? "block" : "none" }}
-              className="container"
-              dangerouslySetInnerHTML={{ __html: markdown内容 }}
-            />
-            {!加载完成 ? <Fallback /> : <React.Fragment />}
-            {/* <Fallback style={{ display: !加载完成 ? "block" : "none" }} /> */}
+            <div class="article-content">
+              <div
+                ref={ref}
+                style={{ display: 加载完成 ? "block" : "none" }}
+                className="container"
+                dangerouslySetInnerHTML={{ __html: markdown内容 }}
+              />
+              {!加载完成 ? <Fallback /> : <React.Fragment />}
+              {/* <Fallback style={{ display: !加载完成 ? "block" : "none" }} /> */}
 
-            {加载失败 ? (
-              <div>
-                <h1>Error!</h1>
-              </div>
-            ) : (
-              <React.Fragment />
-            )}
+              {加载失败 ? (
+                <div>
+                  <h1>Error!</h1>
+                </div>
+              ) : (
+                <React.Fragment />
+              )}
+            </div>
           </article>
         </div>
       </div>
