@@ -1,3 +1,4 @@
+import 我的自定义导航链接 from "./我的自定义导航链接.tsx";
 import $ from "jquery";
 import 可变路径的rssreader链接 from "./可变路径的rssreader链接";
 import 路由列表 from "./router-react-路由列表";
@@ -65,39 +66,16 @@ function Apphome() {
                   shouqi收起折叠的导航栏菜单();
                 }}
               >
-                <li
-                  id="mynav1"
-                  // className={window.location.hash == "#/" ? "active" : ""}
-                >
-                  <Link
-                    to="/react-home"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    基于REACT的主页
-                  </Link>
-                </li>
-                <li
-                // className={
-                //   window.location.hash == "#/rssreader"
-                //     ? "active"
-                //     : ""
-                // }
-                >
+                <我的自定义导航链接
+                  linkto={"/react-home"}
+                  text={"基于REACT的主页"}
+                />
+                <li>
                   <可变路径的rssreader链接 />
                 </li>
-                <li
-                  id="mynav2"
-                  // className={
-                  //   window.location.hash == "#/about" ? "active" : ""
-                  // }
-                >
-                  <Link
-                    to="/react-about"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    关于REACT
-                  </Link>
-                </li>
+                <我的自定义导航链接 linkto="/react-about" text="关于REACT" />
+                <我的自定义导航链接 linkto="/picalc" text="圆周率计算多线程" />
+                {/*{" "}
                 <li className="nav-item">
                   <Link
                     to="/picalc"
@@ -106,6 +84,9 @@ function Apphome() {
                     圆周率计算多线程
                   </Link>
                 </li>
+                */}
+                <我的自定义导航链接 linkto="/react-huami" text="花密网页版" />
+                {/*{" "}
                 <li>
                   <Link
                     to="/react-huami"
@@ -114,7 +95,13 @@ function Apphome() {
                   >
                     花密网页版
                   </Link>
-                </li>
+                </li>{" "}
+                */}
+                <我的自定义导航链接
+                  linkto="/decoder"
+                  text="JSfuck-and-hieroglyphy-Decoder"
+                />
+                {/*{" "}
                 <li>
                   <Link
                     to="/decoder"
@@ -122,7 +109,10 @@ function Apphome() {
                   >
                     JSfuck-and-hieroglyphy-Decoder
                   </Link>
-                </li>
+                </li>{" "}
+                */}
+                <我的自定义导航链接 linkto="/jsfuck" text="JSfuck-ENCODER" />
+                {/*{" "}
                 <li>
                   <Link
                     to="/jsfuck"
@@ -130,7 +120,13 @@ function Apphome() {
                   >
                     JSfuck-ENCODER
                   </Link>
-                </li>
+                </li>{" "}
+                */}
+                <我的自定义导航链接
+                  linkto="/hieroglyphy"
+                  text="hieroglyphy-ENCODER"
+                />
+                {/*{" "}
                 <li>
                   <Link
                     to="/hieroglyphy"
@@ -138,7 +134,13 @@ function Apphome() {
                   >
                     hieroglyphy-ENCODER
                   </Link>
-                </li>
+                </li>{" "}
+                */}
+                <我的自定义导航链接
+                  linkto="/webpack-react-vue-spa-awesome-config"
+                  text="webpack-react-vue- 极速零配置的单页面 web 应用打包工具"
+                />
+                {/*{" "}
                 <li>
                   <Link
                     to="/webpack-react-vue-spa-awesome-config"
@@ -147,16 +149,13 @@ function Apphome() {
                   >
                     webpack-react-vue- 极速零配置的单页面 web 应用打包工具
                   </Link>
-                </li>
-                {/*    <li className="nav-item">
-                  <Link
-                    to="/点击链接不跳转修改当前的网页地址动态加载网页内容不刷新"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新
-                  </Link>
-                </li> */}
-
+                </li>{" "}
+                */}
+                <我的自定义导航链接
+                  linkto="/IMPORTCJSAMDUMD动态异步加载"
+                  text=" 动态异步加载-commonjs和umd和amd模块库"
+                />
+                {/*{" "}
                 <li className="nav-item">
                   <Link
                     to="/IMPORTCJSAMDUMD动态异步加载"
@@ -164,40 +163,25 @@ function Apphome() {
                   >
                     动态异步加载-commonjs和umd和amd模块库
                   </Link>
-                </li>
-
-                {/* http://localhost:1234/my-vue-router-project/index.html#/about */}
-                {/* <li
-                        id="mynav1"
-                        //   className={window.location.hash == "#/" ? "active" : ""}
-                      >
-                        <a
-                            href="./my-react-router-test/index.html"
-                        //   href={myreacthtml}
-                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                        >
-                          基于REACT的主页
-                        </a>
-                      </li> */}
-
-                {/* <li>
-                        <a
-                          className="nav-item"
-                            href="./my-react-router-test/index.html#/decoder"
-                        //   href={myreacthtml + "#/decoder"}
-                          className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                        >
-                          JSfuck-and-hieroglyphy-Decoder-and-ENCODER
-                        </a>
-                      </li> */}
+                </li>{" "}
+                */
+                /*{" "}
                 <li className="nav-item">
                   <Link
                     to="/react-simple-global-state-store-hook"
                     className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    适用于React的极简全局状态管理库
-                  </Link>
-                </li>
+                  ></Link>
+                </li>{" "}
+                */}
+                <我的自定义导航链接
+                  linkto="/react-simple-global-state-store-hook"
+                  text="适用于React的极简全局状态管理库"
+                />
+                <我的自定义导航链接
+                  linkto="/excellent-vscode-extensions-for-javascript"
+                  text="VScode的优秀扩展推荐"
+                />
+                {/*{" "}
                 <li className="nav-item">
                   <Link
                     to="/excellent-vscode-extensions-for-javascript"
@@ -205,7 +189,9 @@ function Apphome() {
                   >
                     VScode的优秀扩展推荐
                   </Link>
-                </li>
+                </li>{" "}
+                */}
+                {/*{" "}
                 <li className="nav-item">
                   <Link
                     to="/vue-simple-global-state-store-manager"
@@ -214,6 +200,11 @@ function Apphome() {
                     适用于Vue的极简全局状态管理库
                   </Link>
                 </li>
+                */}
+                <我的自定义导航链接
+                  linkto="/vue-simple-global-state-store-manager"
+                  text="适用于Vue的极简全局状态管理库"
+                />
                 <li>
                   <a
                     href="./my-vue-router-project/index.html"
@@ -228,6 +219,14 @@ function Apphome() {
                     className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                   >
                     关于Vue
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="./my-vue-router-project/index.html#/beautify-javascript"
+                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
+                  >
+                    美化javascript代码
                   </a>
                 </li>
               </ul>

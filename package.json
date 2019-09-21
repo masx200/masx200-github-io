@@ -1,8 +1,8 @@
 {
-    "version": "4.3.3",
+    "version": "4.3.4",
     "scripts": {
         "start": "webpack-react-vue-spa-awesome-config start",
-        "build": "webpack-react-vue-spa-awesome-config build --output-public-path=https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@4.3.3/ ",
+        "build": "webpack-react-vue-spa-awesome-config build --output-public-path=https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@4.3.4/ ",
         "test": "webpack-react-vue-spa-awesome-config build "
     },
     "browserslist": {
@@ -81,7 +81,7 @@
         "react-dev-utils": "^9.0.1",
         "react-dom": "^16.9.0",
         "react-router-dom": "^5.0.1",
-        "react-simple-global-state-store-hook": "https://github.com/masx200/react-simple-global-state-store-hook.git",
+        "react-simple-global-state-store-hook": "https://gitee.com/masx200/react-simple-global-state-store-hook.git",
         "regenerator-runtime": "^0.13.3",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
@@ -98,7 +98,7 @@
         "webpack-copyfiles-plugin": "^1.0.6",
         "webpack-deep-scope-plugin": "^1.6.2",
         "webpack-dev-server": "^3.7.2",
-        "webpack-react-vue-spa-awesome-config": "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git",
+        "webpack-react-vue-spa-awesome-config": "https://gitee.com/masx200/webpack-react-vue-spa-awesome-config.git",
         "workbox-webpack-plugin": "^4.3.1",
         "worker-loader": "^2.0.0"
     }
