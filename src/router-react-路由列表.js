@@ -86,7 +86,7 @@ function 路由() {
       "/react-simple-global-state-store-hook",
       lazy(() =>
         import(
-          "./components/home-react-使用react hooks实现的简单全局状态管理 react-simple-global-state-store-hook"
+          "./components/home-react-使用react hooks实现的简单全局状态管理 react-simple-global-state-store-hook.tsx"
         )
       )
     ],
@@ -99,7 +99,7 @@ function 路由() {
     [
       "/vue-simple-global-state-store-manager",
       lazy(() =>
-        import("./components/vue-simple-global-state-store-manager.jsx")
+        import("./components/vue-simple-global-state-store-manager.tsx")
       )
     ],
     ["*", home]

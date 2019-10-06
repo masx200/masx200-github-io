@@ -1,5 +1,7 @@
 {
-  "parser": "babel-eslint",
+  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "parser": "@typescript-eslint/parser",
+  //   "parser": "babel-eslint",
   "env": {
     "browser": true,
     "es6": true,
@@ -20,6 +22,8 @@
       "jsx": true
     }
   },
-  "plugins": ["react", "react-hooks"],
-  "rules": {}
+  //   "plugins": ["react", "react-hooks"],
+  "rules": {
+    "react/prop-types": 0
+  }
 }

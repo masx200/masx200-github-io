@@ -1,8 +1,8 @@
 {
-    "version": "4.3.4",
+    "version": "4.3.5",
     "scripts": {
         "start": "webpack-react-vue-spa-awesome-config start",
-        "build": "webpack-react-vue-spa-awesome-config build --output-public-path=https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@4.3.4/ ",
+        "build": "webpack-react-vue-spa-awesome-config build --output-public-path=https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@4.3.5/ ",
         "test": "webpack-react-vue-spa-awesome-config build "
     },
     "browserslist": {
@@ -21,9 +21,6 @@
         "type": "git",
         "url": "git+https://github.com/masx200/masx200.github.io.git"
     },
-    "dependencies": {
-        "babel-eslint": "^10.0.2"
-    },
     "name": "masx200.github.io",
     "description": "masx200.github.io",
     "author": "",
@@ -38,6 +35,7 @@
             "@babel/plugin-syntax-dynamic-import"
         ]
     },
+    "dependencies": {},
     "devDependencies": {
         "@babel/core": "^7.5.5",
         "@babel/generator": "^7.5.5",
@@ -50,6 +48,14 @@
         "@babel/preset-env": "^7.5.5",
         "@babel/preset-react": "^7.0.0",
         "@babel/runtime": "^7.5.5",
+        "@masx200/react-simple-global-state-store-hook": "https://gitee.com/masx200/react-simple-global-state-store-hook.git",
+        "@masx200/webpack-react-vue-spa-awesome-config": "https://gitee.com/masx200/webpack-react-vue-spa-awesome-config.git",
+        "@types/react": "^16.9.5",
+        "@types/react-dom": "^16.9.1",
+        "@types/react-router-dom": "^5.1.0",
+        "@typescript-eslint/eslint-plugin": "^2.3.2",
+        "@typescript-eslint/parser": "^2.3.2",
+        "babel-eslint": "^10.0.2",
         "babel-loader": "^8.0.6",
         "babel-plugin-named-asset-import": "^0.3.2",
         "babel-plugin-transform-runtime": "^6.23.0",
@@ -76,16 +82,16 @@
         "postcss-safe-parser": "^4.0.1",
         "purify-css": "^1.2.5",
         "purifycss-webpack": "^0.7.0",
-        "react": "^16.9.0",
+        "react": "^16.10.2",
         "react-app-polyfill": "^1.0.1",
         "react-dev-utils": "^9.0.1",
         "react-dom": "^16.9.0",
         "react-router-dom": "^5.0.1",
-        "react-simple-global-state-store-hook": "https://gitee.com/masx200/react-simple-global-state-store-hook.git",
         "regenerator-runtime": "^0.13.3",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
         "terser-webpack-plugin": "^1.3.0",
+        "typescript": "^3.6.3",
         "uglifyjs-webpack-plugin": "^2.1.3",
         "url-loader": "^2.1.0",
         "vue": "^2.6.10",
@@ -98,7 +104,6 @@
         "webpack-copyfiles-plugin": "^1.0.6",
         "webpack-deep-scope-plugin": "^1.6.2",
         "webpack-dev-server": "^3.7.2",
-        "webpack-react-vue-spa-awesome-config": "https://gitee.com/masx200/webpack-react-vue-spa-awesome-config.git",
         "workbox-webpack-plugin": "^4.3.1",
         "worker-loader": "^2.0.0"
     }
