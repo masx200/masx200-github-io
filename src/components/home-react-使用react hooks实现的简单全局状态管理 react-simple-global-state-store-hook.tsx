@@ -24,6 +24,9 @@ initGlobalState({ clicktimes: 0 });
 function increment() {
   changeState("clicktimes", (a: number) => a + 1);
 }
+function decrement() {
+    changeState("clicktimes", (a: number) => a - 1);
+  }
 function Clicktime() {
   let [clicktimes] = useGlobalStore("clicktimes");
 
@@ -36,6 +39,13 @@ function Clicktime() {
         }}
       >
         increment
+      </button>
+      <button
+        onClick={() => {
+            decrement();
+        }}
+      >
+        decrement
       </button>
     </div>
   );

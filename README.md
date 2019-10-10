@@ -4,13 +4,13 @@ masx200 的 github 网页
 
 https://masx200.github.io/
 
-添加了全局状态管理库,极简react.js全局状态管理库
+添加了全局状态管理库,极简 react.js 全局状态管理库
 
 https://github.com/masx200/react-simple-global-state-store-hook/
 
 <hr>
 
-# 网站升级到cdn加速服务器
+# 网站升级到 cdn 加速服务器
 
 https://cdn.jsdelivr.net/gh/masx200/masx200.github.io/
 
@@ -34,7 +34,7 @@ https://github.com/masx200/webpack-react-vue-spa-awesome-config
 
 # 适合于 react.js 编程的 eslint 配置文件
 
-先在vscode中安装eslint插件，然后创建
+先在 vscode 中安装 eslint 插件，然后创建
 `.eslintrc.json`文件
 
 ```json
@@ -108,11 +108,11 @@ $(window).one("load", () => {
 });
 ```
 
-# 点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新 脚本
+<!-- # 点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新 脚本
 
-https://github.com/masx200/masx200.github.io/blob/master/%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0/%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js
+https://github.com/masx200/masx200.github.io/blob/master/%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0/%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js -->
 
-## 介绍大概和注意
+<!-- ## 介绍大概和注意
 
 点击链接不跳转修改当前的网页地址动态加载网页内容不刷新
 
@@ -120,7 +120,7 @@ https://github.com/masx200/masx200.github.io/blob/master/%E7%82%B9%E5%87%BB%E9%9
 
 注意 不能跨域 ,history.pushState 函数是改变地址栏的 url,有同源限制
 
-注意:对于使用了 document.write 的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖,所以 修改了 document.write 方法
+注意:对于使用了 document.write 的网站, 加载会出错,因为脚本都是异步加载的,网页内容会被覆盖,所以 修改了 document.write 方法 -->
 
 <hr>
 
