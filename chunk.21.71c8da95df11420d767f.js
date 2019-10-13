@@ -1,1 +1,0 @@
-(Function("return this")().webpackJsonp=Function("return this")().webpackJsonp||[]).push([[21],{81:function(t,e,n){"use strict";n.r(e);var u=n(0),s=n.n(u),a=n(29),r=n(0).createElement,i=s.a.useEffect,c="https://masx200.github.io/vue-simple-global-state-store-manager/README.md";e.default=s.a.memo((function(){return i((function(){}),[]),r("div",null,r(a.a,{src:c}))}))}}]);

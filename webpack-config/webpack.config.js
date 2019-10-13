@@ -1,3 +1,4 @@
+const path = require("path");
 // const { default: InjectPlugin } = require("webpack-inject-plugin");
 /* --output-public-path=https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@4.3.6/  */
 // @ts-ignore
@@ -62,4 +63,12 @@ webpackconfig.module.rules = [
   bannercontentloader
 ];
 // webpackconfig.plugins = [...plugins /* myinjectplugin */];
+const babelloaderrule = rules.find(loader => {
+  return loader.loader === require.resolve("babel-loader");
+});
+if (babelloaderrule) {
+  babelloaderrule.include = [path.resolve("./")];
+  babelloaderrule.exclude = [];
+}
+/* 让babel-loader转换所有文件 */
 module.exports = webpackconfig;
