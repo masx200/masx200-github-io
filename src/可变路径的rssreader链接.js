@@ -1,4 +1,5 @@
 import React from "react";
+// console.log(React);
 import { Link } from "react-router-dom";
 // var { useEffect } = React;
 var { useEffect, useState } = React;

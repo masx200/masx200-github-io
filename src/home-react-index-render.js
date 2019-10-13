@@ -8,6 +8,7 @@ import Apphome from "./react-apphome";
 // import ReactRouterDOM from "react-router-dom";
 // import ReactDOM from "react-dom";
 import React from "react";
+
 // var createElement = React.createElement;
 // var { render } = ReactDOM;
 import $ from "jquery";
@@ -15,22 +16,6 @@ import $ from "jquery";
 // import "./myindexrender.css";
 // import "./my-vue-router-project/vue-render-all.css";
 //import * as reactrouterdom from "react-router-dom"; // } //   HashRouter //   // Link, // , {
-
-// function Link(props) {
-//   var Oldlink = reactrouterdom.Link;
-//   return (
-//     <Oldlink
-//       {...props}
-//       className={
-//         props.class
-//           ? props.class
-//           : "" + " " + props.className
-//           ? props.className
-//           : ""
-//       }
-//     />
-//   );
-// }
 
 // import Switch from "react-router-dom/Switch";
 // import Route from "react-router-dom/Route";

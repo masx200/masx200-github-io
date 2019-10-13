@@ -1,3 +1,11 @@
+import React from "react";
+/* if (!React["memo"]) {
+  React["memo"] = a => a;
+} */
+
+React["__esModule"] = true;
+React["default"] = React;
+console.log(React);
 /* import "./index.css";
 import "./markdown-react/github.css";
 import "./markdown-react/padding0.css";
