@@ -19,7 +19,7 @@ const { /* plugins, */ module: webpackmodule } = webpackconfig;
 }; */
 
 const randomstring = Math.floor(Math.random() * 10000000);
-const webpackreplaceloaderandbannercontentloader = {
+const bannercontentloader = {
   test: /\.(js|mjs|jsx|ts|tsx)$/,
   use: [
     {
@@ -28,7 +28,12 @@ const webpackreplaceloaderandbannercontentloader = {
         prefix: ` var {createElement:ReactcreateElement${randomstring}}=require('react');`,
         delimiter: "\n"
       }
-    },
+    }
+  ]
+};
+const webpackreplaceloader = {
+  test: /\.(js|mjs|jsx|ts|tsx)$/,
+  use: [
     {
       loader: require.resolve("webpack-replace-loader"),
       options: {
@@ -40,7 +45,6 @@ const webpackreplaceloaderandbannercontentloader = {
     }
   ]
 };
-
 /* const myinjectplugin = new InjectPlugin(
   function() {
     return ` var ReactcreateElement=require('react').createElement;
@@ -53,9 +57,9 @@ const { rules: rules } = webpackmodule;
 /* webpack的loader是从后往前执行 */
 // @ts-ignore
 webpackconfig.module.rules = [
-  webpackreplaceloaderandbannercontentloader,
+  webpackreplaceloader,
   ...rules,
-  webpackreplaceloaderandbannercontentloader
+  bannercontentloader
 ];
 // webpackconfig.plugins = [...plugins /* myinjectplugin */];
 module.exports = webpackconfig;
