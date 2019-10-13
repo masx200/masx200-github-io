@@ -53,6 +53,7 @@ const { rules: rules } = webpackmodule;
 /* webpack的loader是从后往前执行 */
 // @ts-ignore
 webpackconfig.module.rules = [
+  webpackreplaceloaderandbannercontentloader,
   ...rules,
   webpackreplaceloaderandbannercontentloader
 ];
