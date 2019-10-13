@@ -21,6 +21,7 @@ const { /* plugins, */ module: webpackmodule } = webpackconfig;
 
 const randomstring = Math.floor(Math.random() * 10000000);
 const bannercontentloader = {
+  exclude: [/node_modules/],
   test: /\.(js|mjs|jsx|ts|tsx)$/,
   use: [
     {
@@ -33,6 +34,7 @@ const bannercontentloader = {
   ]
 };
 const webpackreplaceloader = {
+  exclude: [/node_modules/],
   test: /\.(js|mjs|jsx|ts|tsx)$/,
   use: [
     {
