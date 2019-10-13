@@ -4,7 +4,7 @@ import React from "react";
 var { lazy } = React;
 export default React.memo(路由);
 function 路由() {
-  var home = lazy(() => import("./components/home-react-module-home"));
+  var home = lazy(() => import("./components/home-react-module-home.tsx"));
   var 路由list = [
     ["/", home],
     ["/picalc", lazy(() => import("./components/home-react-module-picalc"))],
@@ -25,7 +25,7 @@ function 路由() {
     [
       "/react-home",
       lazy(() =>
-        import("./components/my-react-router-test/react-module-home.js")
+        import("./components/my-react-router-test/react-module-home.tsx")
       )
     ],
     [

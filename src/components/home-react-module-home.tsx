@@ -1,7 +1,7 @@
 import 首页推荐网址目录 from "./首页推荐网址目录";
 
 ("use strict");
-import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
+import tanchu弹出消息通用 from "@/utils/my弹出消息通用";
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index";
 /* import picture1 from "./babeljs.png";

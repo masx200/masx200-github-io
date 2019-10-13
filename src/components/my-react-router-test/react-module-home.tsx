@@ -79,12 +79,14 @@ export default function home() {
         <h1>react-router测试</h1>
         <h1>Hello, world!</h1>
         <h2>欢迎来到主页</h2>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p className="App-intro">
+        {
+          // <p>
+          //   Edit <code>src/App.js</code> and save to reload.
+          // </p>}
+        }
+        {/* { <p className="App-intro">
           你可以在 <code>src/App.js</code> 文件中修改。
-        </p>
+        </p>} */}
         <a
           className="App-link"
           href="https://reactjs.org"

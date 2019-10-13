@@ -1,5 +1,6 @@
+import { hot } from "react-hot-loader";
 /* eslint-disable react/prop-types */
-"use strict";
+("use strict");
 import Apphome from "./react-apphome";
 // import { AnimatedSwitch } from "react-router-transition";
 // import IMPORTCJSAMDUMD from "./importcjsamdumd";
@@ -188,4 +189,9 @@ window.addEventListener("resize", () => {
     $("#my主体").css("padding-top", $("#my导航栏").height());
   });
 });
-export default React.createElement(React.memo(Apphome));
+
+const hotApp =
+  "development" === process.env.NODE_ENV
+    ? hot(module)(Apphome)
+    : React.memo(Apphome);
+export default hotApp;

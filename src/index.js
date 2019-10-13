@@ -5,7 +5,7 @@ import React from "react";
 
 React["__esModule"] = true;
 React["default"] = React;
-console.log(React);
+// console.log(React);
 /* import "./index.css";
 import "./markdown-react/github.css";
 import "./markdown-react/padding0.css";
@@ -69,7 +69,7 @@ window.addEventListener(
 
 import("./home-react-index-render.js").then(({ default: Homeelement }) => {
   render(
-    Homeelement,
+    React.createElement(Homeelement),
     // React.createElement(React.memo(Apphome)),
     document.getElementById("root")
   );
@@ -119,3 +119,19 @@ accept */
 // }
 // import testjson from "./PingWest品玩-https___www.pingwest.com_feed-Sun_Jun_23_2019_16_30_22_GMT+0800_(GMT+08_00).json";
 // console.log(testjson);
+
+/* React Hot Loader v4:
+
+// App.js
+import React from 'react';
+import { hot } from 'react-hot-loader';
+
+const App = () => <div>Hello world!</div>;
+
+export default hot(module)(App);
+// main.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './containers/App';
+
+ReactDOM.render(<App />, document.getElementById('root')); */

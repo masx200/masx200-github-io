@@ -87,9 +87,7 @@ export default function about() {
           实现了单向响应的数据流，从而减少了重复代码，这也是它为什么比传统数据绑定更简单。
         </h3>
         <div>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
+          <p></p>
           <a
             className="App-link"
             href="https://reactjs.org"
