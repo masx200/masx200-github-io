@@ -100,7 +100,9 @@ prefetchfiles.forEach(addlinkprefetch); */
       scrollTo(0, 0);
       $("#example-navbar-collapse").hide(); //$(example_navbar_collapse.current).removeClass("show");
       // $("#collapsibleNavbar").removeClass("show");
-      $("#my主体").css("padding-top", $("#my导航栏").height());
+      setTimeout(() => {
+        $("#my主体").css("padding-top", $("#my导航栏").height());
+      }, 50);
     }
     $(window).on("hashchange", onhashchange);
 

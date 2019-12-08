@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
 "use strict";
@@ -19,7 +20,7 @@ import hljs from "@/assetsjs/./highlight.min.js";
 */
 
 /* 外部传入的参数改变会导致组件刷新! */
-
+const cachemarkdown = new Map();
 async function fetchtext(url) {
   var r = await fetch(new URL(url).href);
   if (r.ok) {
@@ -31,6 +32,7 @@ async function fetchtext(url) {
 export default React.memo(markdown);
 
 function markdown(props) {
+  console.log(cachemarkdown);
   let markdowncache = "";
   let cache加载完成 = false;
   let cache加载失败 = false;
@@ -77,6 +79,12 @@ function markdown(props) {
   //   );
   useEffect(() => {
     if (props.src) {
+      const marktext = cachemarkdown.get(props.src);
+      if (marktext) {
+        set加载完成(true);
+        setmarkdown内容(marktext);
+        return;
+      }
       (async () => {
         // if (true) {
         hljs.initHighlightingOnLoad();
@@ -117,6 +125,7 @@ function markdown(props) {
         try {
           // setmarkdown内容(ref.current.innerHTML);
           setmarkdown内容(divele.innerHTML);
+          cachemarkdown.set(props.src, divele.innerHTML);
         } catch (error) {
           console.error(error);
           //
@@ -128,7 +137,7 @@ function markdown(props) {
         // }
       })();
     }
-  }, [props]);
+  }, [props.src]);
   //   useEffect(() => {
   //     // console.log(
   //     //   [ref.current.innerHTML, markdown内容],
