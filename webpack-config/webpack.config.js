@@ -5,7 +5,7 @@ const webpackconfig = require("@masx200/webpack-react-vue-spa-awesome-config");
 if ("production" === process.env.NODE_ENV) {
   webpackconfig.output.publicPath = `https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@${version}/`;
 }
-const { module: webpackmodule } = webpackconfig;
+/*const { module: webpackmodule } = webpackconfig;
 const randomstring = Math.floor(Math.random() * 10000000);
 const bannercontentloader = {
   exclude: [/node_modules/],
@@ -41,6 +41,7 @@ webpackconfig.module.rules = [
   ...rules,
   bannercontentloader
 ];
+*/
 const babelloaderrule = rules.find(loader => {
   return loader.loader === require.resolve("babel-loader");
 });
