@@ -41,7 +41,10 @@ webpackconfig.module.rules = [
   ...rules,
   bannercontentloader
 ];
-*/
+*/ const {
+  module: webpackmodule
+} = webpackconfig;
+const { rules: rules } = webpackmodule;
 const babelloaderrule = rules.find(loader => {
   return loader.loader === require.resolve("babel-loader");
 });
