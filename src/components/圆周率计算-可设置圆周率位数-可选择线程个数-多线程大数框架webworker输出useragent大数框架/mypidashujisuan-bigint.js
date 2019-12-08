@@ -1,5 +1,7 @@
 "use strict";
+// @ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
+// @ts-ignore
 import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {
   tanchu弹出消息通用("success");
@@ -30,6 +32,7 @@ worker.addEventListener("message", function (event) {}); */
 import bigInt from "big-integer/BigInteger.js";
 
 // const bigintworker = "./service-worker-mythread1-bigint.worker.js";
+// @ts-ignore
 import bigintworker from "./service-worker-mythread1-bigint.worker.js";
 
 // import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
@@ -54,8 +57,10 @@ function useBindtext(默认值) {
   );
   return [inputcode, setinputcode, inputonchange];
 }
+// @ts-ignore
 var myworker = Array(16).fill();
 function 关闭所有worker() {
+  // @ts-ignore
   myworker.forEach(function(currentValue, index) {
     /* 可能worker的数量没有满,undefined的terminate函数不存在 */
     try {
@@ -125,8 +130,10 @@ export default function bigcom() {
       //   }
     });
   }
-  const [inputtext1, setinputtext1, onchangeinputtext1] = useBindtext(6);
-  const [inputtext2, setinputtext2, onchangeinputtext2] = useBindtext(4);
+  const [inputtext1, setinputtext1, onchangeinputtext1] = useBindtext(
+    navigator.hardwareConcurrency || 6
+  );
+  const [inputtext2, setinputtext2, onchangeinputtext2] = useBindtext(6);
   const [outputtext1, setoutputtext1old, onchangeoutputtext1] = useBindtext(
     "UserAgent: " +
       navigator.userAgent +
@@ -154,21 +161,34 @@ export default function bigcom() {
     //   "big-integer"
     // );
     mui(btnele).button("loading");
+    // @ts-ignore
     bigInt.abs = n => bigInt(n).abs();
+    // @ts-ignore
     bigInt.mul = (n, m) => bigInt(n).multiply(m);
+    // @ts-ignore
     bigInt.div = (n, m) => bigInt(n).divide(m);
+    // @ts-ignore
     bigInt.add = (n, m) => bigInt(n).add(m);
+    // @ts-ignore
     bigInt().__proto__.cmp = bigInt().__proto__.compare;
+    // @ts-ignore
     bigInt().__proto__.div = bigInt().__proto__.divide;
+    // @ts-ignore
     bigInt().__proto__.mul = bigInt().__proto__.multiply;
+    // @ts-ignore
     bigInt("90071992547409920").__proto__.cmp = bigInt(
       "90071992547409920"
+      // @ts-ignore
     ).__proto__.compare;
+    // @ts-ignore
     bigInt("90071992547409920").__proto__.div = bigInt(
       "90071992547409920"
+      // @ts-ignore
     ).__proto__.divide;
+    // @ts-ignore
     bigInt("90071992547409920").__proto__.mul = bigInt(
       "90071992547409920"
+      // @ts-ignore
     ).__proto__.multiply;
 
     // var myinput1 = document.getElementById("thread-big");
@@ -197,6 +217,7 @@ export default function bigcom() {
       /* react hooks 的state 刷新太慢? */
       setoutputtext1(
         // outputtext1 +
+        // @ts-ignore
         outtext1.current.value +
           testname +
           "线程数为" +
@@ -213,6 +234,7 @@ export default function bigcom() {
       console.log(testname);
       console.time(testname);
       strt = new Date().getTime();
+      // @ts-ignore
       p = new bigInt(0);
       //   myworker = [];
       //   myworker.length = threadgeshu;
@@ -234,6 +256,7 @@ export default function bigcom() {
       /* myworker.forEach(function(currentValue, index, arr) { */
       /* 等待所有线程完成之后再下一步 */
       var 所有输出promise = await Promise.all(
+        // @ts-ignore
         myworker.slice(0, threadgeshu).map(function(currentValue, index) {
           const arr = myworker;
           /* arr和myworker不是同一个对象了! */
@@ -275,7 +298,9 @@ export default function bigcom() {
               //   "\n第二个参数",
               //   event.data[1]
               // );
+              // @ts-ignore
               var p1 = new bigInt(event.data[0]);
+              // @ts-ignore
               p = bigInt.add(p, p1);
               x = Math.max(x, parseInt(event.data[1]));
               finishflag[index] = 1;
@@ -340,6 +365,7 @@ export default function bigcom() {
           /* 改变状态是异步的! 两个输出一样 */
           //   debugger;
           /* 等到下次刷新组件时,获取到的state才会改变 */
+          // @ts-ignore
           setoutputtext1(outtext1.current.value + eventdata);
           //   console.log(outputtext1);
           // debugger;
@@ -428,12 +454,15 @@ export default function bigcom() {
             lashentextarea(e.target);
           }}
           className="form-control"
+          // @ts-ignore
           cols="100"
+          // @ts-ignore
           rows="100"
           style={{
             width: "100%",
             height: "100px",
             margin: "0 0",
+            // @ts-ignore
             "text-align": "center"
           }}
           width="100%"
@@ -463,12 +492,15 @@ export default function bigcom() {
                 lashentextarea(e.target);
               }}
               className="form-control"
+              // @ts-ignore
               cols="100"
+              // @ts-ignore
               rows="100"
               style={{
                 width: "100%",
                 height: "100px",
                 margin: "0 0",
+                // @ts-ignore
                 "text-align": "center"
               }}
               width="100%"

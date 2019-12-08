@@ -8,7 +8,7 @@ if ("production" === process.env.NODE_ENV) {
 const { module: webpackmodule } = webpackconfig;
 const randomstring = Math.floor(Math.random() * 10000000);
 const bannercontentloader = {
-  exclude: [/node_modules/],
+  exclude: [/node_modules/, /\.worker\./],
   test: /\.(js|mjs|jsx|ts|tsx)$/,
   use: [
     {

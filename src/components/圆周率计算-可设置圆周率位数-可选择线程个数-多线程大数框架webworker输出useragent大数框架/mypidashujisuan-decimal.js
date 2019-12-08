@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use strict";
 import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {
@@ -125,8 +126,10 @@ export default function decimalcom() {
       //   }
     });
   }
-  const [inputtext1, setinputtext1, onchangeinputtext1] = useBindtext(6);
-  const [inputtext2, setinputtext2, onchangeinputtext2] = useBindtext(4);
+  const [inputtext1, setinputtext1, onchangeinputtext1] = useBindtext(
+    navigator.hardwareConcurrency || 6
+  );
+  const [inputtext2, setinputtext2, onchangeinputtext2] = useBindtext(6);
   const [outputtext1, setoutputtext1old, onchangeoutputtext1] = useBindtext(
     "UserAgent: " +
       navigator.userAgent +
