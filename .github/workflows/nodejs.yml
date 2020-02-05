@@ -20,7 +20,7 @@ jobs:
     - run: npm install -g yarn
     - run: yarn install
     - run: yarn run build
-    - run: cp -f ./dist/* ./public/
+    - run: cp -f ./dist/* ./build/
     - run: now  --token 2vrtRctFUVK9pNcsR1Seee5O
     
     - run: now --prod --token 2vrtRctFUVK9pNcsR1Seee5O
