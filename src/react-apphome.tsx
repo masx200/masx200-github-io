@@ -13,6 +13,13 @@ var { useEffect } = React;
 export default React.memo(Apphome);
 function Apphome() {
     const { state, toggle } = useToggle(true);
+    useEffect(() => {
+        $("#my主体").css(
+            "padding-top",
+            // @ts-ignore
+            $("#my导航栏").height() || 0
+        );
+    }, [state]);
     // console.log(arguments);
     function shouqi收起折叠的导航栏菜单() {
         toggle(false);
@@ -21,7 +28,7 @@ function Apphome() {
         $("#my主体").css(
             "padding-top",
             // @ts-ignore
-            $("#my导航栏").height()
+            $("#my导航栏").height() || 0
         );
         // refreshall();
         scrollTo(0, 0);
@@ -31,7 +38,7 @@ function Apphome() {
         $("#my主体").css(
             "padding-top",
             // @ts-ignore
-            $("#my导航栏").height()
+            $("#my导航栏").height() || 0
         );
         document.title = "masx200的github主页";
     }, []);

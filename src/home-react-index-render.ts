@@ -102,7 +102,7 @@ prefetchfiles.forEach(addlinkprefetch); */
             // $("#example-navbar-collapse").hide(); //$(example_navbar_collapse.current).removeClass("show");
             // $("#collapsibleNavbar").removeClass("show");
             setTimeout(() => {
-                $("#my主体").css("padding-top", $("#my导航栏").height());
+                $("#my主体").css("padding-top", $("#my导航栏").height() || 0);
             }, 50);
         }
         $(window).on("hashchange", onhashchange);
@@ -188,9 +188,13 @@ prefetchfiles.forEach(addlinkprefetch); */
 })();
 // });
 window.addEventListener("resize", () => {
-    requestAnimationFrame(() => {
-        $("#my主体").css("padding-top", $("#my导航栏").height());
-    });
+    setTimeout(() => {
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                $("#my主体").css("padding-top", $("#my导航栏").height() || 0);
+            }, 0);
+        });
+    }, 0);
 });
 
 const hotApp =

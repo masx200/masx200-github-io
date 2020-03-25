@@ -1759,15 +1759,12 @@
                                         u > 1 && we(p),
                                         u > 1 &&
                                             xe(
-                                                e
-                                                    .slice(0, u - 1)
-                                                    .concat({
-                                                        value:
-                                                            " " ===
-                                                            e[u - 2].type
-                                                                ? "*"
-                                                                : "",
-                                                    })
+                                                e.slice(0, u - 1).concat({
+                                                    value:
+                                                        " " === e[u - 2].type
+                                                            ? "*"
+                                                            : "",
+                                                })
                                             ).replace(W, "$1"),
                                         n,
                                         u < o && Ee(e.slice(u, o)),

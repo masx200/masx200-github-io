@@ -67,7 +67,7 @@ window.addEventListener(
     { once: true }
 );
 
-import("./home-react-index-render.js").then(({ default: Homeelement }) => {
+import("./home-react-index-render.ts").then(({ default: Homeelement }) => {
     render(
         // @ts-ignore
         React.createElement(Homeelement),

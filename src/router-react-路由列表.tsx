@@ -116,7 +116,7 @@ function 路由() {
         [
             "/react-simple-global-state-store-hook",
             lazy(() =>
-            // @ts-ignore
+                // @ts-ignore
                 import(
                     "./components/home-react-使用react hooks实现的简单全局状态管理 react-simple-global-state-store-hook.tsx"
                 )
@@ -125,7 +125,7 @@ function 路由() {
         [
             "/excellent-vscode-extensions-for-javascript",
             lazy(() =>
-            // @ts-ignore
+                // @ts-ignore
                 import(
                     "./components/excellent-vscode-extensions-for-javascript"
                 )
@@ -134,7 +134,7 @@ function 路由() {
         [
             "/vue-simple-global-state-store-manager",
             lazy(() =>
-            // @ts-ignore
+                // @ts-ignore
                 import("./components/vue-simple-global-state-store-manager.tsx")
             ),
         ],

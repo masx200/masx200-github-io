@@ -97,7 +97,7 @@ export default function decimalcom() {
     //                   </div>`).fadeTo(5000, 0.5, () => {
     //       console.log(jQuery("#" + id));
     //       jQuery("#" + id).remove();
-    //       $("#my主体").css("padding-top", $("#my导航栏").height());
+    //       $("#my主体").css("padding-top",  $("#my导航栏").height() || 0);
     //     })
     //   );
     //   // console.timeEnd('解码JSFUCK 和hieroglyphy')
