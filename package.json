@@ -1,5 +1,5 @@
 {
-    "version": "4.4.1",
+    "version": "4.5.0",
     "scripts": {
         "start": "webpack-react-vue-spa-awesome-config start   --config=./webpack-config/webpack.config.js --mode=development --react-hot-loader=true",
         "build-cdn": "webpack-react-vue-spa-awesome-config build --config=./webpack-config/webpack.config.js --mode=production ",
@@ -24,7 +24,7 @@
     },
     "name": "masx200-github-io",
     "description": "masx200.github.io",
-    "author": "",
+    "author": "masx200 <masx200@qq.c60>",
     "license": "MIT",
     "babel": {
         "presets": [
@@ -38,9 +38,6 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "prettier": "^1.19.1",
-        "@types/highlight.js": "^9.12.3",
-        "highlight.js": "^9.16.2",
         "@babel/core": "^7.6.4",
         "@babel/generator": "^7.5.5",
         "@babel/helper-define-map": "^7.5.5",
@@ -54,12 +51,11 @@
         "@babel/runtime": "^7.5.5",
         "@masx200/react-simple-global-state-store-hook": "",
         "@masx200/webpack-react-vue-spa-awesome-config": "",
+        "@types/highlight.js": "^9.12.3",
         "@types/react": "^16.9.5",
         "@types/react-dom": "^16.9.1",
         "@types/react-router-dom": "^5.1.0",
-        "@typescript-eslint/eslint-plugin": "^2.3.2",
-        "@typescript-eslint/parser": "^2.3.2",
-        "babel-eslint": "^10.0.2",
+        "acorn": "7.1.1",
         "babel-loader": "^8.0.6",
         "babel-plugin-named-asset-import": "^0.3.2",
         "babel-plugin-transform-runtime": "^6.23.0",
@@ -69,12 +65,9 @@
         "bootstrap": "^4.3.1",
         "clean-webpack-plugin": "^3.0.0",
         "css-loader": "^3.1.0",
-        "minimist": "1.2.5",
-        "acorn": "7.1.1",
-        "eslint-plugin-react": "^7.14.3",
-        "eslint-plugin-react-hooks": "^1.6.1",
         "fast-xml-parser": "^3.12.18",
         "file-loader": "^4.1.0",
+        "highlight.js": "^9.16.2",
         "html-webpack-plugin": "^3.2.0",
         "jquery": "^3.4.1",
         "json-loader": "^0.5.7",
@@ -82,10 +75,12 @@
         "less-loader": "^5.0.0",
         "lodash": "^4.17.15",
         "mini-css-extract-plugin": "^0.8.0",
+        "minimist": "1.2.5",
         "node-sass": "^4.12.0",
         "optimize-css-assets-webpack-plugin": "^5.0.3",
         "popper.js": "^1.15.0",
         "postcss-safe-parser": "^4.0.1",
+        "prettier": "^1.19.1",
         "purify-css": "^1.2.5",
         "purifycss-webpack": "^0.7.0",
         "react": "^16.10.2",
@@ -111,5 +106,11 @@
         "webpack-replace-loader": "^1.3.0",
         "workbox-webpack-plugin": "^4.3.1",
         "worker-loader": "^2.0.0"
-    }
+    },
+    "main": "index.js",
+    "bugs": {
+        "url": "https://github.com/masx200/masx200.github.io/issues"
+    },
+    "homepage": "https://github.com/masx200/masx200.github.io#readme",
+    "keywords": []
 }

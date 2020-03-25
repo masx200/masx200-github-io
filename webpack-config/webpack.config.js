@@ -3,7 +3,7 @@ const path = require("path");
 const { version } = require("../package.json");
 const webpackconfig = require("@masx200/webpack-react-vue-spa-awesome-config");
 if ("production" === process.env.NODE_ENV) {
-  webpackconfig.output.publicPath = `https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@${version}/`;
+    webpackconfig.output.publicPath = `https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@${version}/`;
 }
 /*const { module: webpackmodule } = webpackconfig;
 const randomstring = Math.floor(Math.random() * 10000000);
@@ -42,14 +42,14 @@ webpackconfig.module.rules = [
   bannercontentloader
 ];
 */ const {
-  module: webpackmodule
+    module: webpackmodule,
 } = webpackconfig;
 const { rules: rules } = webpackmodule;
-const babelloaderrule = rules.find(loader => {
-  return loader.loader === require.resolve("babel-loader");
+const babelloaderrule = rules.find((loader) => {
+    return loader.loader === require.resolve("babel-loader");
 });
 if (babelloaderrule) {
-  babelloaderrule.include = [path.resolve("./")];
-  babelloaderrule.exclude = [];
+    babelloaderrule.include = [path.resolve("./")];
+    babelloaderrule.exclude = [];
 }
 module.exports = webpackconfig;

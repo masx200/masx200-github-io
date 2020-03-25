@@ -78,90 +78,90 @@ prefetchfiles.forEach(addlinkprefetch); */
 // import("./IMPORTCJSAMDUMD.js").then(IMPORTCJSAMDUMD => {
 //   var IMPORTCJSAMDUMD = module1;
 (() => {
-  "use strict";
-  $(() => {
-    /* 当页面加载完成时再加载css */
-    // jQuery(`<style/>`)
-    //   .text(
-    //     `${[
-    //       "https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css",
-    //       "https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css",
-    //       "https://github.githubassets.com/assets/github-6556dfa9be535e551ffffaadfecdad99.css",
-    //       "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
-    //     ].map(u => `\n @import '${u}';\n`)}`.replace(/,/g, "")
-    //   )
-    //   .appendTo(document.head);
-    //   ${/* @import "https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css";
+    "use strict";
+    $(() => {
+        /* 当页面加载完成时再加载css */
+        // jQuery(`<style/>`)
+        //   .text(
+        //     `${[
+        //       "https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css",
+        //       "https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css",
+        //       "https://github.githubassets.com/assets/github-6556dfa9be535e551ffffaadfecdad99.css",
+        //       "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+        //     ].map(u => `\n @import '${u}';\n`)}`.replace(/,/g, "")
+        //   )
+        //   .appendTo(document.head);
+        //   ${/* @import "https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css";
 
-    //   @import "https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css";
-    //   @import "https://github.githubassets.com/assets/github-6556dfa9be535e551ffffaadfecdad99.css";
-    //   @import "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"; */}
-    function onhashchange() {
-      scrollTo(0, 0);
-      $("#example-navbar-collapse").hide(); //$(example_navbar_collapse.current).removeClass("show");
-      // $("#collapsibleNavbar").removeClass("show");
-      setTimeout(() => {
-        $("#my主体").css("padding-top", $("#my导航栏").height());
-      }, 50);
-    }
-    $(window).on("hashchange", onhashchange);
+        //   @import "https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css";
+        //   @import "https://github.githubassets.com/assets/github-6556dfa9be535e551ffffaadfecdad99.css";
+        //   @import "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"; */}
+        function onhashchange() {
+            scrollTo(0, 0);
+            $("#example-navbar-collapse").hide(); //$(example_navbar_collapse.current).removeClass("show");
+            // $("#collapsibleNavbar").removeClass("show");
+            setTimeout(() => {
+                $("#my主体").css("padding-top", $("#my导航栏").height());
+            }, 50);
+        }
+        $(window).on("hashchange", onhashchange);
 
-    var haverun = 0;
-    herewindowonload();
-    function herewindowonload() {
-      if (haverun == 0) {
-        haverun = 1;
+        var haverun = 0;
+        herewindowonload();
+        function herewindowonload() {
+            if (haverun == 0) {
+                haverun = 1;
 
-        // IMPORTCJSAMDUMD(
-        //   [
-        //     //   "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
-        //     //   "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.development.js",
-        //     Reacturl,
-        //     "react"
-        //   ],
-        //   [
-        //     //   "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
-        //     //   "https://cdn.staticfile.org/react-dom/16.9.0-alpha.0/umd/react-dom.development.js",
-        //     Reactdomurl,
-        //     "react-dom"
-        //   ],
-        //   [
-        //     //   "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
-        //     //   "https://cdn.staticfile.org/react-router-dom/5.0.1/react-router-dom.js",
-        //     Reactrouterdomurl,
-        //     "react-router-dom"
-        //   ]
-        // ).then(myonloadfunc);
-        myonloadfunc();
-      } else {
-        console.log("不要重复运行此onload函数");
-      }
-    }
+                // IMPORTCJSAMDUMD(
+                //   [
+                //     //   "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
+                //     //   "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.development.js",
+                //     Reacturl,
+                //     "react"
+                //   ],
+                //   [
+                //     //   "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
+                //     //   "https://cdn.staticfile.org/react-dom/16.9.0-alpha.0/umd/react-dom.development.js",
+                //     Reactdomurl,
+                //     "react-dom"
+                //   ],
+                //   [
+                //     //   "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
+                //     //   "https://cdn.staticfile.org/react-router-dom/5.0.1/react-router-dom.js",
+                //     Reactrouterdomurl,
+                //     "react-router-dom"
+                //   ]
+                // ).then(myonloadfunc);
+                myonloadfunc();
+            } else {
+                console.log("不要重复运行此onload函数");
+            }
+        }
 
-    function myonloadfunc() {
-      //   var React = reactmodulearray[0].default;
-      //   var ReactDOM = reactmodulearray[1].default;
-      //   var ReactRouterDOM = reactmodulearray[2].default;
+        function myonloadfunc() {
+            //   var React = reactmodulearray[0].default;
+            //   var ReactDOM = reactmodulearray[1].default;
+            //   var ReactRouterDOM = reactmodulearray[2].default;
 
-      //   var {
-      //     Link,
-      //     Switch,
-      //     // BrowserRouter,
-      //     Route,
-      //     // Redirect,
-      //     HashRouter
-      //   } = ReactRouterDOM;
+            //   var {
+            //     Link,
+            //     Switch,
+            //     // BrowserRouter,
+            //     Route,
+            //     // Redirect,
+            //     HashRouter
+            //   } = ReactRouterDOM;
 
-      // var h = React.createElement;
+            // var h = React.createElement;
 
-      //   exports.forcerefreshall = () => {
-      //     render(<div />, document.getElementById("root"));
-      //     refreshall();
-      //   };
-      //   exports.default = Apphome;
-      function refreshall() {
-        try {
-          /*
+            //   exports.forcerefreshall = () => {
+            //     render(<div />, document.getElementById("root"));
+            //     refreshall();
+            //   };
+            //   exports.default = Apphome;
+            function refreshall() {
+                try {
+                    /*
   render(
             React.createElement(React.memo(Apphome)),
 
@@ -169,31 +169,31 @@ prefetchfiles.forEach(addlinkprefetch); */
           );
 
 */
-        } catch (error) {
-          console.error(error);
-          //   setTimeout(() => {
-          //     refreshall();
-          //   }, 500);
-        }
+                } catch (error) {
+                    console.error(error);
+                    //   setTimeout(() => {
+                    //     refreshall();
+                    //   }, 500);
+                }
 
-        scrollTo(0, 0);
-        //   $("#collapsibleNavbar").removeClass("show");
-        $("#example-navbar-collapse").hide(); //$(example_navbar_collapse.current).removeClass("show");
-        // console.log(<Apphome />);
-      }
-      refreshall();
-    }
-  });
+                scrollTo(0, 0);
+                //   $("#collapsibleNavbar").removeClass("show");
+                $("#example-navbar-collapse").hide(); //$(example_navbar_collapse.current).removeClass("show");
+                // console.log(<Apphome />);
+            }
+            refreshall();
+        }
+    });
 })();
 // });
 window.addEventListener("resize", () => {
-  requestAnimationFrame(() => {
-    $("#my主体").css("padding-top", $("#my导航栏").height());
-  });
+    requestAnimationFrame(() => {
+        $("#my主体").css("padding-top", $("#my导航栏").height());
+    });
 });
 
 const hotApp =
-  "development" === process.env.NODE_ENV
-    ? hot(module)(Apphome)
-    : React.memo(Apphome);
+    "development" === process.env.NODE_ENV
+        ? hot(module)(Apphome)
+        : React.memo(Apphome);
 export default hotApp;

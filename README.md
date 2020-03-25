@@ -39,28 +39,28 @@ https://github.com/masx200/webpack-react-vue-spa-awesome-config
 
 ```json
 {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true,
-    "worker": true,
-    "commonjs": true,
-    "amd": true
-  },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
-  "parserOptions": {
-    "ecmaVersion": 2019,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "plugins": ["react", "react-hooks"],
-  "rules": {}
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "worker": true,
+        "commonjs": true,
+        "amd": true
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2019,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": ["react", "react-hooks"],
+    "rules": {}
 }
 ```
 
@@ -79,17 +79,17 @@ https://github.com/masx200/excellent-vscode-extensions-for-javascript
 ```javascript
 var { useState, useEffect, useRef } = React;
 function Decoder() {
-  var [inputcode, setinputcode] = useState("");
+    var [inputcode, setinputcode] = useState("");
 
-  return (
-    <textarea
-      value={inputcode}
-      onChange={e => {
-        setinputcode(e.target.value);
-      }}
-      class="form-control"
-    />
-  );
+    return (
+        <textarea
+            value={inputcode}
+            onChange={(e) => {
+                setinputcode(e.target.value);
+            }}
+            class="form-control"
+        />
+    );
 }
 ```
 
@@ -97,8 +97,8 @@ function Decoder() {
 
 ```javascript
 $(window).one("load", () => {
-  /* 当页面加载完成时再加载css */
-  jQuery(`<style>
+    /* 当页面加载完成时再加载css */
+    jQuery(`<style>
         @import "https://cdn.staticfile.org/mui/3.7.1/css/mui.min.css";
   
         @import "https://github.githubassets.com/assets/frameworks-a2fba223d5af91496cac70d4ec3624df.css";
@@ -385,30 +385,30 @@ https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
 ```javascript
 import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 (async () => {
-  const react = await IMPORTCJSAMDUMD(
-    "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
-    "react"
-  );
-  const [reactdom, reactrouterdom] = await Promise.all([
-    IMPORTCJSAMDUMD(
-      "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
-      "react-dom"
-    ),
-    IMPORTCJSAMDUMD(
-      "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
-      "react-router-dom"
-    )
-  ]);
+    const react = await IMPORTCJSAMDUMD(
+        "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
+        "react"
+    );
+    const [reactdom, reactrouterdom] = await Promise.all([
+        IMPORTCJSAMDUMD(
+            "https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js",
+            "react-dom"
+        ),
+        IMPORTCJSAMDUMD(
+            "https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js",
+            "react-router-dom"
+        ),
+    ]);
 
-  var reactmodulearray = [react, reactdom, reactrouterdom];
-  myonloadfunc(reactmodulearray);
+    var reactmodulearray = [react, reactdom, reactrouterdom];
+    myonloadfunc(reactmodulearray);
 })();
 function myonloadfunc(reactmodulearray) {
-  console.log(reactmodulearray);
-  const React = reactmodulearray[0].default;
-  const ReactDOM = reactmodulearray[1].default;
-  const ReactRouterDOM = reactmodulearray[2].default;
-  //............................
+    console.log(reactmodulearray);
+    const React = reactmodulearray[0].default;
+    const ReactDOM = reactmodulearray[1].default;
+    const ReactRouterDOM = reactmodulearray[2].default;
+    //............................
 }
 ```
 
@@ -422,18 +422,18 @@ const rssreader = lazy(() => import("./module-rssreader"));
 const about = lazy(() => import("./module-about"));
 
 <BrowserRouter
-  basename={window.location.pathname + "#/"}
-  forceRefresh={false}
-  keyLength={12}
+    basename={window.location.pathname + "#/"}
+    forceRefresh={false}
+    keyLength={12}
 >
-  <Suspense fallback={<div>loading</div>}>
-    <Switch>
-      <Route exact path="/" component={home} />
-      <Route path="/rssreader" component={rssreader} />
-      <Route path="/about" component={about} />
-      <Redirect from="*" to="/" />
-    </Switch>
-  </Suspense>
+    <Suspense fallback={<div>loading</div>}>
+        <Switch>
+            <Route exact path="/" component={home} />
+            <Route path="/rssreader" component={rssreader} />
+            <Route path="/about" component={about} />
+            <Redirect from="*" to="/" />
+        </Switch>
+    </Suspense>
 </BrowserRouter>;
 ```
 
@@ -453,17 +453,17 @@ https://github.com/masx200/IMPORTCJSAMDUMD/blob/master/README.md
 
 ```javascript
 Promise.all([
-  import(
-    `https://cdn.staticfile.org/vue-router/3.0.6/vue-router.esm.browser.min.js`
-  ),
-  import(`https://cdn.staticfile.org/vue/2.6.10/vue.esm.browser.min.js`)
+    import(
+        `https://cdn.staticfile.org/vue-router/3.0.6/vue-router.esm.browser.min.js`
+    ),
+    import(`https://cdn.staticfile.org/vue/2.6.10/vue.esm.browser.min.js`),
 ]).then(myonloadfunc);
 
 function myonloadfunc(modulearray) {
-  console.log(modulearray);
-  var VueRouter = modulearray[0].default;
-  var Vue = modulearray[1].default;
-  //.................................
+    console.log(modulearray);
+    var VueRouter = modulearray[0].default;
+    var Vue = modulearray[1].default;
+    //.................................
 }
 ```
 
@@ -474,28 +474,28 @@ const about = () => import("./vue-component-about");
 const home = () => import("./vue-component-home");
 const huami = () => import("./vue-component-huami");
 const router = new VueRouter({
-  routes: [
-    {
-      path: "/about",
-      name: "about",
+    routes: [
+        {
+            path: "/about",
+            name: "about",
 
-      component: about
-    },
-    {
-      path: "/",
-      name: "home",
-      component: home
-    },
-    {
-      path: "/huami",
-      name: "huami",
-      component: huami
-    },
-    {
-      path: "*",
-      redirect: "/"
-    }
-  ]
+            component: about,
+        },
+        {
+            path: "/",
+            name: "home",
+            component: home,
+        },
+        {
+            path: "/huami",
+            name: "huami",
+            component: huami,
+        },
+        {
+            path: "*",
+            redirect: "/",
+        },
+    ],
 });
 ```
 
@@ -539,61 +539,61 @@ https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSFuck---Wr
 
 ```javascript
 function loadscript(fileurl, callback) {
-  var script = document.createElement("script");
-  script.type = "text/javascript";
-  script.src = fileurl;
-  script.onload = callback;
-  document.firstElementChild.firstElementChild.appendChild(script);
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = fileurl;
+    script.onload = callback;
+    document.firstElementChild.firstElementChild.appendChild(script);
 
-  console.log({ script });
+    console.log({ script });
 }
 loadscript("https://cdn.staticfile.org/fast-xml-parser/3.12.16/parser.min.js");
 
 fetch("https://www.pingwest.com/feed")
-  .then(r => (console.log(r.statusText, r), r.text()))
-  .then(str => new DOMParser().parseFromString(str, "text/xml"))
-  .then(data => console.log(data));
+    .then((r) => (console.log(r.statusText, r), r.text()))
+    .then((str) => new DOMParser().parseFromString(str, "text/xml"))
+    .then((data) => console.log(data));
 
 fetch("https://www.pingwest.com/feed")
-  .then(r => (console.log(r.statusText, r), r.text()))
-  .then(str => parser.parse(str))
-  .then(data => console.log(data));
+    .then((r) => (console.log(r.statusText, r), r.text()))
+    .then((str) => parser.parse(str))
+    .then((data) => console.log(data));
 ```
 
 # 另一种加载外部 JavaScript 的方法
 
 ```javascript
 if (!importScripts) {
-  var importScripts = (function(globalEval) {
-    var xhr = new XMLHttpRequest();
-    return function importScripts() {
-      var args = Array.prototype.slice.call(arguments),
-        len = args.length,
-        i = 0,
-        meta,
-        data,
-        content;
-      for (; i < len; i++) {
-        if (args[i].substr(0, 5).toLowerCase() === "data:") {
-          data = args[i];
-          content = data.indexOf(",");
-          meta = data.substr(5, content).toLowerCase();
-          data = decodeURIComponent(data.substr(content + 1));
-          if (/;\s*base64\s*[;,]/.test(meta)) {
-            data = atob(data);
-          }
-          if (/;\s*charset=[uU][tT][fF]-?8\s*[;,]/.test(meta)) {
-            data = decodeURIComponent(escape(data));
-          }
-        } else {
-          xhr.open("GET", args[i], false);
-          xhr.send(null);
-          data = xhr.responseText;
-        }
-        globalEval(data);
-      }
-    };
-  })(eval);
+    var importScripts = (function (globalEval) {
+        var xhr = new XMLHttpRequest();
+        return function importScripts() {
+            var args = Array.prototype.slice.call(arguments),
+                len = args.length,
+                i = 0,
+                meta,
+                data,
+                content;
+            for (; i < len; i++) {
+                if (args[i].substr(0, 5).toLowerCase() === "data:") {
+                    data = args[i];
+                    content = data.indexOf(",");
+                    meta = data.substr(5, content).toLowerCase();
+                    data = decodeURIComponent(data.substr(content + 1));
+                    if (/;\s*base64\s*[;,]/.test(meta)) {
+                        data = atob(data);
+                    }
+                    if (/;\s*charset=[uU][tT][fF]-?8\s*[;,]/.test(meta)) {
+                        data = decodeURIComponent(escape(data));
+                    }
+                } else {
+                    xhr.open("GET", args[i], false);
+                    xhr.send(null);
+                    data = xhr.responseText;
+                }
+                globalEval(data);
+            }
+        };
+    })(eval);
 }
 
 importScripts("https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js");

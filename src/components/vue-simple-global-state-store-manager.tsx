@@ -5,34 +5,34 @@ import React from "react";
 import Markdownreact from "./markdown-react/index";
 
 var {
-  useEffect
-  // , useState
+    useEffect,
+    // , useState
 } = React;
 /* 把class组件改成function组件 */
 const urlmark =
-  "https://masx200.github.io/vue-simple-global-state-store-manager/README.md";
+    "https://masx200.github.io/vue-simple-global-state-store-manager/README.md";
 export default React.memo(component);
 
 function component() {
-  // const [urlmark, seturlmark] = useState(
-  //   "https://masx200.github.io/excellent-vscode-extensions-for-javascript/README.md"
-  // );
-  useEffect(function() {
-    /* 
+    // const [urlmark, seturlmark] = useState(
+    //   "https://masx200.github.io/excellent-vscode-extensions-for-javascript/README.md"
+    // );
+    useEffect(function () {
+        /* 
  document.title =
       "masx200的github主页-" +
       `   excellent-vscode-extensions-for-javascript  适合于javascript/html/css/vue/reqct编程的vscode的优秀扩展推荐和vscode 的推荐设置 `;
  
 */
-  }, []);
+    }, []);
 
-  return (
-    <div
-    // onClick={() => {
-    //   seturlmark("https://masx200.github.io/README.md");
-    // }}
-    >
-      <Markdownreact src={urlmark} />
-    </div>
-  );
+    return (
+        <div
+        // onClick={() => {
+        //   seturlmark("https://masx200.github.io/README.md");
+        // }}
+        >
+            <Markdownreact src={urlmark} />
+        </div>
+    );
 }

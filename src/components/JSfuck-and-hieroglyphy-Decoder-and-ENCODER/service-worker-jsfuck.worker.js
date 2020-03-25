@@ -11,29 +11,29 @@ console.log(sum, sum / 128) */
 import JSFuck from "@/assetsjs/./jsfuck.js";
 /** 新版:使用import JSFuck from "./jsfuck.js";后,测试结果表明使用webworker进行jsfuck速度更快*/
 // (() => {
-var mymessagehandler = e => {
-  //   try {
-  //     console.log(JSFuck);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // function globalimport(srciptsrc) {
-  //   importScripts(srciptsrc);
-  // }
+var mymessagehandler = (e) => {
+    //   try {
+    //     console.log(JSFuck);
+    //   } catch (e) {
+    //     console.log(e);
+    //   }
+    // function globalimport(srciptsrc) {
+    //   importScripts(srciptsrc);
+    // }
 
-  var d = e.data;
+    var d = e.data;
 
-  console.log("副线程" + "从主线程接收" + "event.data\n");
-  //   console.log(...d);
-  console.log(JSON.stringify(d));
-  // globalimport(d[2]);
+    console.log("副线程" + "从主线程接收" + "event.data\n");
+    //   console.log(...d);
+    console.log(JSON.stringify(d));
+    // globalimport(d[2]);
 
-  // mui(document.getElementById("encode")).button("loading");
-  var output = JSFuck.encode(d[0], d[1]);
-  // $2("output").value = output;
-  // $2("stats").innerHTML = output.length + " chars";
-  // mui(document.getElementById("encode")).button("reset");
-  postMessage(output);
+    // mui(document.getElementById("encode")).button("loading");
+    var output = JSFuck.encode(d[0], d[1]);
+    // $2("output").value = output;
+    // $2("stats").innerHTML = output.length + " chars";
+    // mui(document.getElementById("encode")).button("reset");
+    postMessage(output);
 };
 addEventListener("message", mymessagehandler);
 // })();

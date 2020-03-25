@@ -41,38 +41,38 @@ document.getElementById("root").innerHTML = `<div>
 // import("./vue-loader-test");
 /* 全局开启剪切板复制功能 */
 window.addEventListener(
-  "load",
-  () => {
-    //   import("bootstrap");
+    "load",
+    () => {
+        //   import("bootstrap");
 
-    import("./assetsjs/clipboard").then(module => {
-      //   console.log(module);
-      const ClipboardJS = module.default;
-      //   var clip =
-      new ClipboardJS(".btn").on("success", function(e) {
-        console.log(e);
-        console.info("Text:", e.text);
-        //   if (!e.text) {
-        //     console.log("复制内容空");
-        //   } else {
-        //     //   console.info("Action:", e.action);
-        //     console.info("Text:", e.text);
-        //   }
-        //   console.info("Text:", e.text);
-        e.clearSelection();
-      });
-      //   console.log(clip);
-    });
-  },
-  { once: true }
+        import("./assetsjs/clipboard").then((module) => {
+            //   console.log(module);
+            const ClipboardJS = module.default;
+            //   var clip =
+            new ClipboardJS(".btn").on("success", function (e) {
+                console.log(e);
+                console.info("Text:", e.text);
+                //   if (!e.text) {
+                //     console.log("复制内容空");
+                //   } else {
+                //     //   console.info("Action:", e.action);
+                //     console.info("Text:", e.text);
+                //   }
+                //   console.info("Text:", e.text);
+                e.clearSelection();
+            });
+            //   console.log(clip);
+        });
+    },
+    { once: true }
 );
 
 import("./home-react-index-render.js").then(({ default: Homeelement }) => {
-  render(
-    React.createElement(Homeelement),
-    // React.createElement(React.memo(Apphome)),
-    document.getElementById("root")
-  );
+    render(
+        React.createElement(Homeelement),
+        // React.createElement(React.memo(Apphome)),
+        document.getElementById("root")
+    );
 });
 
 // (() => {
