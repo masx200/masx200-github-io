@@ -24,7 +24,7 @@ jobs:
     - run: cp -f ./dist/* ./build/
     
     
-    - run: now --prod --token 2vrtRctFUVK9pNcsR1Seee5O
+    - run: now --confirm --prod --token 2vrtRctFUVK9pNcsR1Seee5O
 
       env:
         CI: true
