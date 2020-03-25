@@ -69,6 +69,7 @@ window.addEventListener(
 
 import("./home-react-index-render.js").then(({ default: Homeelement }) => {
     render(
+        // @ts-ignore
         React.createElement(Homeelement),
         // React.createElement(React.memo(Apphome)),
         document.getElementById("root")

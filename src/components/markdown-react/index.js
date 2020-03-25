@@ -204,7 +204,7 @@ function markdown(props) {
                         id="padding0"
                         // style={{ padding: " 0px !important" }}
                     >
-                        <div class="article-content">
+                        <div className="article-content">
                             <div
                                 ref={ref}
                                 style={{ display: 加载完成 ? "block" : "none" }}

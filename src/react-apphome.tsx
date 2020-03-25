@@ -1,25 +1,41 @@
-import 我的自定义导航链接 from "./我的自定义导航链接.tsx";
+import { useToggle } from "@umijs/hooks";
 import $ from "jquery";
-import 可变路径的rssreader链接 from "./可变路径的rssreader链接";
-import 路由列表 from "./router-react-路由列表";
-import React, { useRef } from "react";
+import React from "react";
+import { HashRouter, Link } from "react-router-dom";
+// @ts-ignore
+import 路由列表 from "./router-react-路由列表.tsx";
+// @ts-ignore
+import 可变路径的rssreader链接 from "./可变路径的rssreader链接.tsx";
+// @ts-ignore
+import 我的自定义导航链接 from "./我的自定义导航链接.tsx";
 var { Suspense } = React;
 var { useEffect } = React;
-import { Link, HashRouter } from "react-router-dom";
 export default React.memo(Apphome);
 function Apphome() {
+    const { state, toggle } = useToggle(true);
     // console.log(arguments);
     function shouqi收起折叠的导航栏菜单() {
-        $(example_navbar_collapse.current).hide(); //$(example_navbar_collapse.current).removeClass("show");
-        $("#my主体").css("padding-top", $("#my导航栏").height());
+        toggle(false);
+        // $(example_navbar_collapse.current).hide(); //$(example_navbar_collapse.current).removeClass("show");
+        // @ts-ignore
+        $("#my主体").css(
+            "padding-top",
+            // @ts-ignore
+            $("#my导航栏").height()
+        );
         // refreshall();
         scrollTo(0, 0);
     }
     useEffect(() => {
-        $("#my主体").css("padding-top", $("#my导航栏").height());
+        // @ts-ignore
+        $("#my主体").css(
+            "padding-top",
+            // @ts-ignore
+            $("#my导航栏").height()
+        );
         document.title = "masx200的github主页";
     }, []);
-    const example_navbar_collapse = useRef();
+    // const example_navbar_collapse = useRef();
     return (
         <HashRouter>
             <div>
@@ -28,7 +44,21 @@ function Apphome() {
                         className="navbar navbar-default navbar navbar-expand-sm bg-light navbar-light"
                         role="navigation"
                     >
-                        <div>
+                        {" "}
+                        <button
+                            style={{ display: "block" }}
+                            className="navbar-toggler"
+                            type="button"
+                            data-toggle="collapse"
+                            // data-target=example_navbar_collapse.current
+                            onClick={() => {
+                                toggle();
+                                // $(example_navbar_collapse.current).toggle();
+                            }}
+                        >
+                            <span className="navbar-toggler-icon" />
+                        </button>
+                        <div style={{ display: state ? "block" : "none" }}>
                             <Link
                                 className="navbar-brand mui-btn mui-btn-primary mui-btn-outlined"
                                 to="/"
@@ -41,23 +71,12 @@ function Apphome() {
                                 />
                                 github主页
                             </Link>
-
-                            <button
-                                className="navbar-toggler"
-                                type="button"
-                                data-toggle="collapse"
-                                // data-target=example_navbar_collapse.current
-                                onClick={() => {
-                                    $(example_navbar_collapse.current).toggle();
-                                }}
-                            >
-                                <span className="navbar-toggler-icon" />
-                            </button>
                         </div>
                         <div
-                            ref={example_navbar_collapse}
-                            className="collapse navbar-collapse"
-                            id="example-navbar-collapse"
+                            style={{ display: state ? "block" : "none" }}
+                            // ref={example_navbar_collapse}
+                            // className="collapse navbar-collapse"
+                            // id="example-navbar-collapse"
                         >
                             <ul
                                 className="nav navbar-nav"

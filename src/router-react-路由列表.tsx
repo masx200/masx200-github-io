@@ -4,11 +4,16 @@ import React from "react";
 var { lazy } = React;
 export default React.memo(路由);
 function 路由() {
+    // @ts-ignore
     var home = lazy(() => import("./components/home-react-module-home.tsx"));
-    var 路由list = [
+    var 路由list: [
+        string,
+        React.LazyExoticComponent<React.ComponentType<any>>
+    ][] = [
         ["/", home],
         [
             "/picalc",
+            // @ts-ignore
             lazy(() => import("./components/home-react-module-picalc")),
         ],
         /* [
@@ -21,16 +26,21 @@ function 路由() {
     ], */
         [
             "/IMPORTCJSAMDUMD动态异步加载",
+            // @ts-ignore
             lazy(() =>
                 import(
+                    // @ts-ignore
                     "./components/home-react-module-IMPORTCJSAMDUMD动态异步加载.js"
                 )
             ),
         ],
         [
             "/react-home",
+            // @ts-ignore
             lazy(() =>
+                // @ts-ignore
                 import(
+                    // @ts-ignore
                     "./components/my-react-router-test/react-module-home.tsx"
                 )
             ),
@@ -38,6 +48,7 @@ function 路由() {
         [
             "/react-rssreader",
             lazy(() =>
+                // @ts-ignore
                 import(
                     "./components/my-react-router-test/react-module-rssreader.js"
                 )
@@ -46,6 +57,7 @@ function 路由() {
         [
             "/react-rssreader/:sitename",
             lazy(() =>
+                // @ts-ignore
                 import(
                     "./components/my-react-router-test/react-module-rssreader.js"
                 )
@@ -54,6 +66,7 @@ function 路由() {
         [
             "/react-about",
             lazy(() =>
+                // @ts-ignore
                 import(
                     "./components/my-react-router-test/react-module-about.js"
                 )
@@ -62,6 +75,7 @@ function 路由() {
         [
             "/decoder",
             lazy(() =>
+                // @ts-ignore
                 import(
                     "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder"
                 )
@@ -70,6 +84,7 @@ function 路由() {
         [
             "/jsfuck",
             lazy(() =>
+                // @ts-ignore
                 import(
                     "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck"
                 )
@@ -78,6 +93,7 @@ function 路由() {
         [
             "/hieroglyphy",
             lazy(() =>
+                // @ts-ignore
                 import(
                     "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.js"
                 )
@@ -85,11 +101,13 @@ function 路由() {
         ],
         [
             "/react-huami",
+            // @ts-ignore
             lazy(() => import("./components/home-react-module-huami.js")),
         ],
         [
             "/webpack-react-vue-spa-awesome-config",
             lazy(() =>
+                // @ts-ignore
                 import(
                     "./components/home-react-webpack-react-vue-spa-awesome-config.js"
                 )
@@ -98,6 +116,7 @@ function 路由() {
         [
             "/react-simple-global-state-store-hook",
             lazy(() =>
+            // @ts-ignore
                 import(
                     "./components/home-react-使用react hooks实现的简单全局状态管理 react-simple-global-state-store-hook.tsx"
                 )
@@ -106,6 +125,7 @@ function 路由() {
         [
             "/excellent-vscode-extensions-for-javascript",
             lazy(() =>
+            // @ts-ignore
                 import(
                     "./components/excellent-vscode-extensions-for-javascript"
                 )
@@ -114,6 +134,7 @@ function 路由() {
         [
             "/vue-simple-global-state-store-manager",
             lazy(() =>
+            // @ts-ignore
                 import("./components/vue-simple-global-state-store-manager.tsx")
             ),
         ],

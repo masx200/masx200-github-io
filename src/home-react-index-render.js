@@ -1,7 +1,6 @@
-import { hot } from "react-hot-loader";
-/* eslint-disable react/prop-types */
-("use strict");
-import Apphome from "./react-apphome";
+// var createElement = React.createElement;
+// var { render } = ReactDOM;
+import $ from "jquery";
 // import { AnimatedSwitch } from "react-router-transition";
 // import IMPORTCJSAMDUMD from "./importcjsamdumd";
 // const IMPORTCJSAMDUMD = require("./importcjsamdumd");
@@ -9,10 +8,12 @@ import Apphome from "./react-apphome";
 // import ReactRouterDOM from "react-router-dom";
 // import ReactDOM from "react-dom";
 import React from "react";
+import { hot } from "react-hot-loader";
+// @ts-ignore
+import Apphome from "./react-apphome.tsx";
+/* eslint-disable react/prop-types */
+("use strict");
 
-// var createElement = React.createElement;
-// var { render } = ReactDOM;
-import $ from "jquery";
 // import "./RegisteraServiceWorkerFile.js";
 // import "./myindexrender.css";
 // import "./my-vue-router-project/vue-render-all.css";
@@ -98,7 +99,7 @@ prefetchfiles.forEach(addlinkprefetch); */
         //   @import "https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"; */}
         function onhashchange() {
             scrollTo(0, 0);
-            $("#example-navbar-collapse").hide(); //$(example_navbar_collapse.current).removeClass("show");
+            // $("#example-navbar-collapse").hide(); //$(example_navbar_collapse.current).removeClass("show");
             // $("#collapsibleNavbar").removeClass("show");
             setTimeout(() => {
                 $("#my主体").css("padding-top", $("#my导航栏").height());
@@ -178,7 +179,7 @@ prefetchfiles.forEach(addlinkprefetch); */
 
                 scrollTo(0, 0);
                 //   $("#collapsibleNavbar").removeClass("show");
-                $("#example-navbar-collapse").hide(); //$(example_navbar_collapse.current).removeClass("show");
+                // $("#example-navbar-collapse").hide(); //$(example_navbar_collapse.current).removeClass("show");
                 // console.log(<Apphome />);
             }
             refreshall();
