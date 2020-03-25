@@ -38,6 +38,7 @@
     },
     "dependencies": {},
     "devDependencies": {
+        "@umijs/hooks": "^1.8.0",
         "@babel/core": "^7.9.0",
         "@babel/generator": "^7.9.4",
         "@babel/helper-define-map": "^7.8.3",
