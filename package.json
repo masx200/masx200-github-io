@@ -38,6 +38,7 @@
     },
     "dependencies": {},
     "devDependencies": {
+        "@types/node": "12.12.31",
         "@babel/core": "^7.6.4",
         "@babel/generator": "^7.5.5",
         "@babel/helper-define-map": "^7.5.5",
