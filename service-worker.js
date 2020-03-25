@@ -11,18 +11,16 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts(
-    "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js"
-);
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-    "https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@4.4.1/precache-manifest.962b7fe5126890aae318c383247249e3.js"
+  "./precache-manifest.f4d4b0eefbd1f89443457e79f2797c89.js"
 );
 
-self.addEventListener("message", (event) => {
-    if (event.data && event.data.type === "SKIP_WAITING") {
-        self.skipWaiting();
-    }
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
 
 workbox.core.clientsClaim();
@@ -35,26 +33,6 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(
-    /.*\.(?:js|html|\/)$/,
-    new workbox.strategies.NetworkFirst(),
-    "GET"
-);
-workbox.routing.registerRoute(
-    /.*\.(?:xml|json|md|css)$/,
-    new workbox.strategies.StaleWhileRevalidate(),
-    "GET"
-);
-workbox.routing.registerRoute(
-    /\.(?:png|jpg|jpeg|svg|gif)$/,
-    new workbox.strategies.CacheFirst({
-        cacheName: "image-cache",
-        plugins: [
-            new workbox.expiration.Plugin({
-                maxEntries: 10,
-                purgeOnQuotaError: false,
-            }),
-        ],
-    }),
-    "GET"
-);
+workbox.routing.registerRoute(/.*\.(?:js|html|\/)$/, new workbox.strategies.NetworkFirst(), 'GET');
+workbox.routing.registerRoute(/.*\.(?:xml|json|md|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/\.(?:png|jpg|jpeg|svg|gif)$/, new workbox.strategies.CacheFirst({ "cacheName":"image-cache", plugins: [new workbox.expiration.Plugin({ maxEntries: 10, purgeOnQuotaError: false })] }), 'GET');
