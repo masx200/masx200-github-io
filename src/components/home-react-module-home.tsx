@@ -2,22 +2,21 @@ import 首页推荐网址目录 from "./首页推荐网址目录";
 
 ("use strict");
 //@ts-ignore
-import tanchu弹出消息通用 from "@/utils/my弹出消息通用";
+// import tanchu弹出消息通用 from "@/utils/my弹出消息通用";
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index.tsx";
 
 import React from "react";
+import tanchu弹出消息通用 from "../utils/my弹出消息通用.ts";
 
 const location = window.location;
 var { useEffect } = React;
 
 export default function home() {
-    
     useEffect(() => {
         /* 组件第一次加载时和每次组件刷新时会加载这个函数 */
         location.hash = "#/";
         document.title = "masx200的github主页-" + "首页";
-      
     });
     return (
         <div>
@@ -55,7 +54,7 @@ export default function home() {
                         })}
                     </ul>
                 </div>
-              
+
                 <div>
                     <button
                         className="btn btn-outline-primary btn-lg"

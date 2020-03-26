@@ -1,39 +1,37 @@
 "use strict";
-// @ts-ignore
-import mui from "@/assetsjs/mui.精简.button";
-// @ts-ignore
-import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
+// import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
+import tanchu弹出消息通用 from "../utils/my弹出消息通用.ts";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
 }
-/*
-worker-loader
-查看原文|查看仓库|编辑此页
-This loader registers the script as Web Worker
+import mui from "@/assetsjs/mui.精简.button";
 
-安装
-npm i -D worker-loader
-用法
-##
-
-App.js
-
-import Worker from 'worker-loader!./Worker.js';
-
-
-import Worker from './file.worker.js';
-
-const worker = new Worker();
-
-worker.postMessage({ a: 1 });
-worker.onmessage = function (event) {};
-
-worker.addEventListener("message", function (event) {}); */
-import bigInt from "big-integer/BigInteger.js";
-
-// const bigintworker = "./service-worker-mythread1-bigint.worker.js";
-// @ts-ignore
-import bigintworker from "./service-worker-mythread1-bigint.worker.js";
+// // import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
+// /* 应该再卸载组件时关闭所有worker */
+// // (() => {
+// //   $(window).one("load",
+// import mui from "@/mui.js";
+// const decimalworker = "./service-worker-mythread1-decimal.worker.js";
+import decimalworker from "./service-worker-mythread1-decimal.worker.js";
+import Decimal from "@/assetsjs/decimal.min.js";
+// import mui from "../mui.min.js";
+// eslint-disable-next-line no-unused-vars
+import React, { useState, useEffect, useRef } from "react";
+// const IMPORTCJSAMDUMD = window.IMPORTCJSAMDUMD;
+// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+// var { useState, useEffect, useRef } = React;
+// var myworker = Array(16).fill();
+// // export
+// function 关闭所有worker() {
+//   myworker.forEach(function(currentValue, index, arr) {
+//     /* 可能worker的数量没有满,undefined的terminate函数不存在 */
+//     try {
+//       arr[index].terminate();
+//       /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
+//       arr[index] = undefined;
+//     } catch (error) {}
+//   });
+// }
 
 // import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 // import("../IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
@@ -42,25 +40,16 @@ import bigintworker from "./service-worker-mythread1-bigint.worker.js";
 // 自动开启严格模式
 /* 应该再卸载组件时关闭所有worker */
 // ("use strict");
-// import mui from "../mui.min.js";
-import React from "react";
 // const IMPORTCJSAMDUMD = window.IMPORTCJSAMDUMD;
+
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-var { useState, useEffect, useRef, useCallback } = React;
-function useBindtext(默认值) {
-    var [inputcode, setinputcode] = useState(默认值);
-    const inputonchange = useCallback(
-        (e) => {
-            setinputcode(e.target.value);
-        },
-        [inputcode]
-    );
-    return [inputcode, setinputcode, inputonchange];
-}
-// @ts-ignore
+// var { useState, useEffect, useRef, useCallback } = React;
+
 var myworker = Array(16).fill();
+
+//   );
+// })();
 function 关闭所有worker() {
-    // @ts-ignore
     myworker.forEach(function (currentValue, index) {
         /* 可能worker的数量没有满,undefined的terminate函数不存在 */
         try {
@@ -72,7 +61,7 @@ function 关闭所有worker() {
         }
     });
 }
-export default function bigcom() {
+export default function decimalcom() {
     const btnele = useRef();
     const outtext1 = useRef();
     const outtext2 = useRef();
@@ -84,6 +73,13 @@ export default function bigcom() {
             关闭所有worker();
         };
     }, []);
+    function useBindtext(text) {
+        const [inputcode, setinputcode] = useState(text);
+        const inputonchange = (e) => {
+            setinputcode(e.target.value);
+        };
+        return [inputcode, setinputcode, inputonchange];
+    }
     var p,
         piwei,
         strt,
@@ -96,9 +92,9 @@ export default function bigcom() {
     //   var id = guid();
     //   jQuery("#my导航栏").append(
     //     jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
-    //                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    //                     <strong>成功!</strong> 计算成功提示信息。
-    //                     </div>`).fadeTo(5000, 0.5, () => {
+    //                   <button type="button" class="close" data-dismiss="alert">&times;</button>
+    //                   <strong>成功!</strong> 计算成功提示信息。
+    //                   </div>`).fadeTo(5000, 0.5, () => {
     //       console.log(jQuery("#" + id));
     //       jQuery("#" + id).remove();
     //       $("#my主体").css("padding-top",  $("#my导航栏").height() || 0);
@@ -138,9 +134,9 @@ export default function bigcom() {
         "UserAgent: " +
             navigator.userAgent +
             "\n" +
-            (typeof BigInt === "function"
-                ? "你的浏览器能够支持原生BigInt!"
-                : "你的浏览器无法支持原生BigInt!") +
+            (typeof Decimal === "function"
+                ? "你的浏览器能够支持原生Decimal!"
+                : "你的浏览器无法支持原生Decimal!") +
             "\n开始圆周率多线程测试\n"
     );
 
@@ -156,42 +152,28 @@ export default function bigcom() {
         lashentextarea(outtext2.current);
         setoutputtext2old(t);
     }
-
     async function mystart(btnele) {
-        // const { default: bigInt } = await IMPORTCJSAMDUMD(
-        //   "https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js",
-        //   "big-integer"
+        // const { default: Decimal } = await IMPORTCJSAMDUMD(
+        //   "https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js",
+        //   "decimal"
         // );
         mui(btnele).button("loading");
-        // @ts-ignore
-        bigInt.abs = (n) => bigInt(n).abs();
-        // @ts-ignore
-        bigInt.mul = (n, m) => bigInt(n).multiply(m);
-        // @ts-ignore
-        bigInt.div = (n, m) => bigInt(n).divide(m);
-        // @ts-ignore
-        bigInt.add = (n, m) => bigInt(n).add(m);
-        // @ts-ignore
-        bigInt().__proto__.cmp = bigInt().__proto__.compare;
-        // @ts-ignore
-        bigInt().__proto__.div = bigInt().__proto__.divide;
-        // @ts-ignore
-        bigInt().__proto__.mul = bigInt().__proto__.multiply;
-        // @ts-ignore
-        bigInt("90071992547409920").__proto__.cmp = bigInt(
-            "90071992547409920"
-            // @ts-ignore
-        ).__proto__.compare;
-        // @ts-ignore
-        bigInt("90071992547409920").__proto__.div = bigInt(
-            "90071992547409920"
-            // @ts-ignore
-        ).__proto__.divide;
-        // @ts-ignore
-        bigInt("90071992547409920").__proto__.mul = bigInt(
-            "90071992547409920"
-            // @ts-ignore
-        ).__proto__.multiply;
+        // Decimal.abs = n => Decimal(n).abs();
+        // Decimal.mul = (n, m) => Decimal(n).multiply(m);
+        // Decimal.div = (n, m) => Decimal(n).divide(m);
+        // Decimal.add = (n, m) => Decimal(n).add(m);
+        // Decimal().__proto__.cmp = Decimal().__proto__.compare;
+        // Decimal().__proto__.div = Decimal().__proto__.divide;
+        // Decimal().__proto__.mul = Decimal().__proto__.multiply;
+        // Decimal("90071992547409920").__proto__.cmp = Decimal(
+        //   "90071992547409920"
+        // ).__proto__.compare;
+        // Decimal("90071992547409920").__proto__.div = Decimal(
+        //   "90071992547409920"
+        // ).__proto__.divide;
+        // Decimal("90071992547409920").__proto__.mul = Decimal(
+        //   "90071992547409920"
+        // ).__proto__.multiply;
 
         // var myinput1 = document.getElementById("thread-big");
         // var myinput2 = document.getElementById("pichangwei-big");
@@ -224,7 +206,6 @@ export default function bigcom() {
             /* react hooks 的state 刷新太慢? */
             setoutputtext1(
                 // outputtext1 +
-                // @ts-ignore
                 outtext1.current.value +
                     testname +
                     "线程数为" +
@@ -236,19 +217,19 @@ export default function bigcom() {
                     "计算圆周率中......" +
                     "  \n"
             );
+            Decimal.precision = piwei;
             //   debugger;
             //   console.log(outputtext1);
             console.log(testname);
             console.time(testname);
             strt = new Date().getTime();
-            // @ts-ignore
-            p = new bigInt(0);
+            p = new Decimal(0);
             //   myworker = [];
             //   myworker.length = threadgeshu;
             finishflag = [];
             finishflag.length = threadgeshu;
             //   if (typeof worker1 == "undefined") {
-            //     worker1 = new Worker("service-worker-mythread1-bigint.js");
+            //     worker1 = new Worker("service-worker-mythread1-Decimal.js");
             //   }
             // worker1=Array( threadgeshu)
             //   for (var i = 0, len = threadgeshu; i < len; i++) {
@@ -263,7 +244,6 @@ export default function bigcom() {
             /* myworker.forEach(function(currentValue, index, arr) { */
             /* 等待所有线程完成之后再下一步 */
             var 所有输出promise = await Promise.all(
-                // @ts-ignore
                 myworker
                     .slice(0, threadgeshu)
                     .map(function (currentValue, index) {
@@ -280,21 +260,21 @@ export default function bigcom() {
                             // if (!arr[index]) {
                             arr[index] =
                                 arr[index] ||
-                                //   new Worker("./service-worker-mythread1-bigint.worker.js");
+                                //   new Worker("./service-worker-mythread1-decimal.worker.js");
 
-                                bigintworker();
-                            //   new Worker("service-worker-mythread1-bigint.js");
+                                decimalworker();
+                            //   new Worker("service-worker-mythread1-decimal.js");
                             //   &&
                             //     console.log(
                             //       "创建了新webworker线程",
-                            //       "service-worker-mythread1-bigint.js" + "-" + index
+                            //       "service-worker-mythread1-Decimal.js" + "-" + index
                             //     ));
-                            //   ,{name:"service-worker-mythread1-bigint.js"+"-"+index}
+                            //   ,{name:"service-worker-mythread1-Decimal.js"+"-"+index}
 
                             // }
-                            // arr[index].name ="service-worker-mythread1-bigint.js"+ "-" + index;
+                            // arr[index].name ="service-worker-mythread1-Decimal.js"+ "-" + index;
                             // console.log(arr[index].name )
-                            // arr[index] = new Worker("service-worker-mythread1-bigint.js");
+                            // arr[index] = new Worker("service-worker-mythread1-Decimal.js");
                             arr[index].postMessage([piwei, threadgeshu, index]);
                             arr[index].onmessage = function (event) {
                                 console.log(
@@ -310,10 +290,8 @@ export default function bigcom() {
                                 //   "\n第二个参数",
                                 //   event.data[1]
                                 // );
-                                // @ts-ignore
-                                var p1 = new bigInt(event.data[0]);
-                                // @ts-ignore
-                                p = bigInt.add(p, p1);
+                                var p1 = new Decimal(event.data[0]);
+                                p = Decimal.add(p, p1);
                                 x = Math.max(x, parseInt(event.data[1]));
                                 finishflag[index] = 1;
                                 //   threadfinish(btnele);
@@ -359,16 +337,16 @@ export default function bigcom() {
                             piwei +
                             "位" +
                             p.toString()[0] +
-                            "." +
+                            //   "." +
                             p.toString().slice(1)
                     );
                     //   console.log(outputtext1 + eventdata);
                     /* UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36
-你的浏览器能够支持原生BigInt!
+你的浏览器能够支持原生Decimal!
 开始圆周率多线程测试
 计算完成,用时0.533秒第1334次 圆周率4000位 */
                     /* UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36
-你的浏览器能够支持原生BigInt!
+你的浏览器能够支持原生Decimal!
 开始圆周率多线程测试
 圆周率计算多线程-线程数为6-位数为4000线程数为6 圆周率计算4000位 计算圆周率中......  
 计算完成,用时0.533秒第1334次 圆周率4000位 */
@@ -377,7 +355,6 @@ export default function bigcom() {
                     /* 改变状态是异步的! 两个输出一样 */
                     //   debugger;
                     /* 等到下次刷新组件时,获取到的state才会改变 */
-                    // @ts-ignore
                     setoutputtext1(outtext1.current.value + eventdata);
                     //   console.log(outputtext1);
                     // debugger;
@@ -395,19 +372,17 @@ export default function bigcom() {
     }
     return (
         <div className="container">
-            <h3>BigInteger.js</h3>
+            <h3>Decimal.js</h3>
             <p>
-                BigInteger.js是Javascript的任意长度整数库，允许对无限大小的整数进行算术运算，尽管存在内存和时间限制。
-                更新（2018年12月2日）：BigInt被添加为JavaScript的本机功能。
-                此库现在可用作polyfill：如果环境支持本机BigInt，则此库充当本机实现的瘦包装器。
-                建议升级浏览器到chrome68以上,才可支持原生BigInt.
+                Decimal.js是JavaScript的任意精度Decimal类型。 特征:
+                整数和浮点数, 简单但功能齐全的API,
+                复制JavaScript的Number.prototype和Math对象的许多方法,
+                还处理十六进制，二进制和八进制值,
+                比Java的BigDecimal的JavaScript版本更快，更小，也许更容易使用,
+                没有依赖, 广泛的平台兼容性：仅使用JavaScript 1.5（ECMAScript
+                3）功能。 全面的文档和测试集。
             </p>
-            <h5>
-                <b>如果浏览器原生支持BigInt,则运行速度有巨大提升!</b>
-            </h5>
-
             <hr />
-
             <div>
                 <p>
                     <span>
@@ -445,7 +420,7 @@ export default function bigcom() {
                     className="mui-btn mui-btn-primary btn btn-info  btn btn-outline-primary mui-btn mui-btn-outline-primary"
                     id="start-big"
                     onClick={(e) => {
-                        // console.log(e.target);
+                        // console.log(e);
                         // mystart(btnele.current);
                         mystart(e.target);
                     }}
@@ -461,20 +436,16 @@ export default function bigcom() {
                     ref={outtext1}
                     value={outputtext1}
                     onChange={(e) => {
-                        // console.log(e);
                         onchangeoutputtext1(e);
                         lashentextarea(e.target);
                     }}
                     className="form-control"
-                    // @ts-ignore
                     cols="100"
-                    // @ts-ignore
                     rows="100"
                     style={{
                         width: "100%",
                         height: "100px",
                         margin: "0 0",
-                        // @ts-ignore
                         "text-align": "center",
                     }}
                     width="100%"
@@ -504,15 +475,12 @@ export default function bigcom() {
                                 lashentextarea(e.target);
                             }}
                             className="form-control"
-                            // @ts-ignore
                             cols="100"
-                            // @ts-ignore
                             rows="100"
                             style={{
                                 width: "100%",
                                 height: "100px",
                                 margin: "0 0",
-                                // @ts-ignore
                                 "text-align": "center",
                             }}
                             width="100%"
@@ -524,125 +492,3 @@ export default function bigcom() {
         </div>
     );
 }
-// export
-
-// const onmount = () => {
-//   "use strict";
-//   IMPORTCJSAMDUMD(
-//     "https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js",
-//     "big-integer"
-//   ).then(module => {
-//     const bigInt = module.default;
-//     var myptext,
-//       myshurukuangneirong,
-//       p,
-//       threadgeshu,
-//       x,
-//       piwei,
-//       //   myworker = Array(16).fill(),
-//       eventdata,
-//       strt,
-//       finishflag,
-//       durt,
-//       testname;
-//     mytestpi();
-
-//     //使用bigint测试
-//     //   window.onload = () => {
-//     //     mytestpi();
-//     //   };
-//     // $('window').load(mytestpi)
-//     //   $(document).ready(mytestpi);
-//     // mytestpi;
-//     // for (var key = 0; key < myworker.length; key++) {
-//     //   myworker[key] = undefined;
-//     // }
-//     //   console.log(myworker);
-
-//     function mytestpi() {
-//       var mystartid = "#start-big";
-//       // document.getElementById("start").onclick = mystart;
-//       $(mystartid).click(mystart);
-//       getConstpinewhighefficiency105();
-//     }
-//     function getConstpinewhighefficiency105() {
-//       var myeleid3 = "tp-big";
-//       var myinput1 = document.getElementById("thread-big");
-//       var myinput2 = document.getElementById("pichangwei-big");
-//       var mytextarea1 = document.getElementById(myeleid3);
-//       inputtext1 = 6;
-//       inputtext2 = 4;
-//       // jisuanfinishflag = 1;
-//       threadgeshu = 8;
-//       x = 0;
-//       // piwei = 3000;
-//       myptext = mytextarea1;
-//       myshurukuangneirong = " ";
-//       myshurukuangneirong =
-//         myshurukuangneirong + "UserAgent: " + navigator.userAgent + "\n";
-//       var isbigint =
-//         typeof BigInt === "function"
-//           ? "你的浏览器能够支持原生BigInt!"
-//           : "你的浏览器无法支持原生BigInt!";
-//       console.log(isbigint);
-//       myshurukuangneirong =
-//         myshurukuangneirong + isbigint + "\n开始圆周率多线程测试\n";
-//       myptext.value = myshurukuangneirong;
-//       // document.getElementById("start").onclick = mystart;
-//       //   lashentextarea(myeleid3, "tp2-big");
-//       // setTimeout(function() {
-//       //   myptext.style.height = myptext.scrollHeight + "px";
-//       // }, 0);
-//     }
-//   });
-// };
-// export { _default as default };
-
-//   );
-// })();
-// });
-
-//   function threadfinish(btnele) {
-//     // var myeleid3 = "tp-big";
-//     // var myeleid4 = "tp2-big";
-//     // var mytextarea1 = document.getElementById(myeleid3);
-//     // var mytextarea2 = document.getElementById(myeleid4);
-//     if (
-//       threadgeshu ==
-//       finishflag.filter(function(currentValue) {
-//         return currentValue == 1;
-//       }).length
-//     ) {
-//       console.timeEnd(testname);
-//       mui(btnele).button("reset");
-//       var endt = new Date().getTime();
-//       var durt = (endt - strt) / 1000;
-//       const eventdata =
-//         "计算完成,用时" + durt + "秒第" + x + "次 " + "圆周率" + piwei + "位\n";
-//       // +
-//       // "  \n" +
-//       // p +
-//       // "  \n"
-//       //   mytextarea2.value =
-//       setoutputtext2(
-//         "圆周率" + piwei + "位" + p.toString()[0] + "." + p.toString().slice(1)
-//       );
-
-//       //   var myptext = mytextarea1;
-//       //  var myshurukuangneirong += String(eventdata);
-//       //   myptext.value = myshurukuangneirong;
-//       setoutputtext1(outputtext1 + eventdata);
-//       tanchu弹出消息提示();
-//       // jisuanfinishflag = 1;
-//       // myworker.forEach(function(currentValue, index, arr) {
-//       //   // arr[index].terminate();
-//       // });
-//       x = 0;
-//       //alert("ok")
-//       //   setTimeout(function() {
-//       //     // myptext.style.height = myptext.scrollHeight + "px";
-//       //     lashentextarea(myeleid3, myeleid4);
-//       //   }, 0);
-//       //   document.body.onmousemove = document.body.onmouseover = document.body.onmousewheel = document.body.onscroll = document.body.onmousedown = null;
-//     }
-//   }

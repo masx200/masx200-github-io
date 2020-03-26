@@ -14,9 +14,6 @@ const urlmark =
 export default React.memo(component);
 
 function component() {
-    // const [urlmark, seturlmark] = useState(
-    //   "https://masx200.github.io/excellent-vscode-extensions-for-javascript/README.md"
-    // );
     useEffect(function () {
         document.title =
             "masx200的github主页-" +
@@ -24,11 +21,7 @@ function component() {
     }, []);
 
     return (
-        <div
-        // onClick={() => {
-        //   seturlmark("https://masx200.github.io/README.md");
-        // }}
-        >
+        <div>
             <Markdownreact src={urlmark} />
         </div>
     );

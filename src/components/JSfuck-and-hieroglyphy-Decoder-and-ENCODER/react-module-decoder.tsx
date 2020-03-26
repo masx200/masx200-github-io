@@ -1,10 +1,11 @@
 "use strict";
 
-import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
+// import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 /* eslint-disable no-useless-escape */
 import hieroglyphy from "@/assetsjs/./hieroglyphy";
 import JSFuck from "@/assetsjs/./jsfuck";
 import React from "react";
+import tanchu弹出消息通用 from "../utils/my弹出消息通用.ts";
 function tanchutanchuxiaoxishibai() {
     tanchu弹出消息通用("danger");
 }
