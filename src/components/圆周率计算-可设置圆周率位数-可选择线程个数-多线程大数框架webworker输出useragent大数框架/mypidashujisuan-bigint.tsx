@@ -6,7 +6,7 @@ import mui from "@/assetsjs/mui.精简.button";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
 }
-import tanchu弹出消息通用 from "../utils/my弹出消息通用.ts";
+import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 /*
 worker-loader
 查看原文|查看仓库|编辑此页

@@ -6,7 +6,7 @@
 import mui from "@/assetsjs/mui.精简.button";
 import React from "react";
 // import * as parser from "@/assetsjs/fast-xml-parser";
-import tanchu弹出消息通用 from "../utils/my弹出消息通用.ts";
+import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 //@ts-ignore
 import * as parser from "../../assetsjs/fast-xml-parser.js";
 import {

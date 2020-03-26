@@ -6,7 +6,7 @@ function tanchu弹出消息提示() {
 import mui from "@/assetsjs/mui.精简.button";
 import hieroglyphyworker from "./service-worker-hieroglyphy.worker";
 import React from "react";
-import tanchu弹出消息通用 from "../utils/my弹出消息通用.ts";
+import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 // const clipboard = new ClipboardJS(".btn");
 
 // clipboard.on("success", function(e) {
