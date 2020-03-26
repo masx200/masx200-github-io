@@ -116,110 +116,37 @@ function Apphome() {
                                     linkto="/picalc"
                                     text="圆周率计算多线程"
                                 />
-                                {/*{" "}
-                <li className="nav-item">
-                  <Link
-                    to="/picalc"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    圆周率计算多线程
-                  </Link>
-                </li>
-                */}
+
                                 <我的自定义导航链接
                                     linkto="/react-huami"
                                     text="花密网页版"
                                 />
-                                {/*{" "}
-                <li>
-                  <Link
-                    to="/react-huami"
-                    // href="./my-vue-router-project/index.html#/huami"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    花密网页版
-                  </Link>
-                </li>{" "}
-                */}
+
                                 <我的自定义导航链接
                                     linkto="/decoder"
                                     text="JSfuck-and-hieroglyphy-Decoder"
                                 />
-                                {/*{" "}
-                <li>
-                  <Link
-                    to="/decoder"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    JSfuck-and-hieroglyphy-Decoder
-                  </Link>
-                </li>{" "}
-                */}
+
                                 <我的自定义导航链接
                                     linkto="/jsfuck"
                                     text="JSfuck-ENCODER"
                                 />
-                                {/*{" "}
-                <li>
-                  <Link
-                    to="/jsfuck"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    JSfuck-ENCODER
-                  </Link>
-                </li>{" "}
-                */}
+
                                 <我的自定义导航链接
                                     linkto="/hieroglyphy"
                                     text="hieroglyphy-ENCODER"
                                 />
-                                {/*{" "}
-                <li>
-                  <Link
-                    to="/hieroglyphy"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    hieroglyphy-ENCODER
-                  </Link>
-                </li>{" "}
-                */}
+
                                 <我的自定义导航链接
                                     linkto="/webpack-react-vue-spa-awesome-config"
                                     text="webpack-react-vue- 极速零配置的单页面 web 应用打包工具"
                                 />
-                                {/*{" "}
-                <li>
-                  <Link
-                    to="/webpack-react-vue-spa-awesome-config"
-                    // href="./my-vue-router-project/index.html#/huami"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    webpack-react-vue- 极速零配置的单页面 web 应用打包工具
-                  </Link>
-                </li>{" "}
-                */}
+
                                 <我的自定义导航链接
                                     linkto="/IMPORTCJSAMDUMD动态异步加载"
                                     text=" 动态异步加载-commonjs和umd和amd模块库"
                                 />
-                                {/*{" "}
-                <li className="nav-item">
-                  <Link
-                    to="/IMPORTCJSAMDUMD动态异步加载"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    动态异步加载-commonjs和umd和amd模块库
-                  </Link>
-                </li>{" "}
-                */
-                                /*{" "}
-                <li className="nav-item">
-                  <Link
-                    to="/react-simple-global-state-store-hook"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  ></Link>
-                </li>{" "}
-                */}
+
                                 <我的自定义导航链接
                                     linkto="/react-simple-global-state-store-hook"
                                     text="适用于React的极简全局状态管理库"
@@ -228,26 +155,7 @@ function Apphome() {
                                     linkto="/excellent-vscode-extensions-for-javascript"
                                     text="VScode的优秀扩展推荐"
                                 />
-                                {/*{" "}
-                <li className="nav-item">
-                  <Link
-                    to="/excellent-vscode-extensions-for-javascript"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    VScode的优秀扩展推荐
-                  </Link>
-                </li>{" "}
-                */}
-                                {/*{" "}
-                <li className="nav-item">
-                  <Link
-                    to="/vue-simple-global-state-store-manager"
-                    className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                  >
-                    适用于Vue的极简全局状态管理库
-                  </Link>
-                </li>
-                */}
+
                                 <我的自定义导航链接
                                     linkto="/vue-simple-global-state-store-manager"
                                     text="适用于Vue的极简全局状态管理库"
@@ -287,7 +195,6 @@ function Apphome() {
                             <div>
                                 <h1>loading</h1>
                                 <span className="mui-spinner mui-spinner-custom" />
-                                {/*             //loading转圈图标 */}
                             </div>
                         }
                     >
