@@ -14,6 +14,23 @@ export default React.memo(Apphome);
 function Apphome() {
     const { state, toggle } = useToggle(true);
     useEffect(() => {
+        // @ts-ignore
+        $("#my主体").css(
+            "padding-top",
+            // @ts-ignore
+            $("#my导航栏").height() || 0
+        );
+        document.title = "masx200的github主页";
+        window.addEventListener("hashchange", () => {
+            toggle(false);
+            $("#my主体").css(
+                "padding-top",
+                // @ts-ignore
+                $("#my导航栏").height() || 0
+            );
+        });
+    }, []);
+    useEffect(() => {
         $("#my主体").css(
             "padding-top",
             // @ts-ignore
@@ -33,15 +50,7 @@ function Apphome() {
         // refreshall();
         scrollTo(0, 0);
     }
-    useEffect(() => {
-        // @ts-ignore
-        $("#my主体").css(
-            "padding-top",
-            // @ts-ignore
-            $("#my导航栏").height() || 0
-        );
-        document.title = "masx200的github主页";
-    }, []);
+
     // const example_navbar_collapse = useRef();
     return (
         <HashRouter>
