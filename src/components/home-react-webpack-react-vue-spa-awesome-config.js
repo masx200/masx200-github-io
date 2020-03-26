@@ -1,6 +1,6 @@
 "use strict";
 // eslint-disable-next-line no-unused-vars
-import Markdownreact from "./markdown-react/index";
+import Markdownreact from "./markdown-react/index.tsx";
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
 export default function component() {

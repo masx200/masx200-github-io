@@ -13,7 +13,7 @@ import React, { useEffect } from "react";
 // });
 // console.log(initaaaaaaaaaaaa);
 // eslint-disable-next-line no-unused-vars
-import Markdownreact from "./markdown-react/index";
+import Markdownreact from "./markdown-react/index.tsx";
 
 // var initaaaaaaaaaaaa =
 initGlobalState({

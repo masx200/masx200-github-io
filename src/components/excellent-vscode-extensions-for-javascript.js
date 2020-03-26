@@ -1,6 +1,6 @@
 "use strict";
 // eslint-disable-next-line no-unused-vars
-import Markdownreact from "./markdown-react/index";
+import Markdownreact from "./markdown-react/index.tsx";
 
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 import React from "react";
