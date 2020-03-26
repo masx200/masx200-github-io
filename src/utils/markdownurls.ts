@@ -8,4 +8,6 @@ export default {
         "https://masx200.github.io/excellent-vscode-extensions-for-javascript/README.md",
     "react-simple-global-state-store-hook":
         "https://masx200.github.io/react-simple-global-state-store-hook/README.md",
+    importcjsamdumd: "https://masx200.github.io/importcjsamdumd/README.md",
+    "masx200.github.io": "https://masx200.github.io/README.md",
 };
