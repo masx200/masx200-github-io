@@ -6,44 +6,12 @@ function tanchu弹出消息提示() {
 }
 import mui from "@/assetsjs/mui.精简.button";
 
-// // import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
-// /* 应该再卸载组件时关闭所有worker */
-// // (() => {
-// //   $(window).one("load",
-// import mui from "@/mui.js";
-// const decimalworker = "./service-worker-mythread1-decimal.worker.js";
+
 import decimalworker from "./service-worker-mythread1-decimal.worker.js";
 import Decimal from "@/assetsjs/decimal.min.js";
 // import mui from "../mui.min.js";
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useRef } from "react";
-// const IMPORTCJSAMDUMD = window.IMPORTCJSAMDUMD;
-// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-// var { useState, useEffect, useRef } = React;
-// var myworker = Array(16).fill();
-// // export
-// function 关闭所有worker() {
-//   myworker.forEach(function(currentValue, index, arr) {
-//     /* 可能worker的数量没有满,undefined的terminate函数不存在 */
-//     try {
-//       arr[index].terminate();
-//       /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
-//       arr[index] = undefined;
-//     } catch (error) {}
-//   });
-// }
-
-// import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
-// import("../IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
-// (() => {
-//   $(window).one("load",
-// 自动开启严格模式
-/* 应该再卸载组件时关闭所有worker */
-// ("use strict");
-// const IMPORTCJSAMDUMD = window.IMPORTCJSAMDUMD;
-
-// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-// var { useState, useEffect, useRef, useCallback } = React;
 
 var myworker = Array(16).fill();
 
