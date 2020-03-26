@@ -6,7 +6,7 @@ function tanchu弹出消息提示() {
 import mui from "@/assetsjs/mui.精简.button";
 import jsfuckworker from "./service-worker-jsfuck.worker.js";
 import React from "react";
-import tanchu弹出消息通用 from "../utils/my弹出消息通用.ts";
+import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 
 var { useState, useEffect, useRef, useCallback } = React;
 // import "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER.less"

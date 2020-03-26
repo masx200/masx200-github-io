@@ -23,7 +23,7 @@ function 路由() {
             lazy(() =>
                 import(
                     // @ts-ignore
-                    "./components/home-react-module-IMPORTCJSAMDUMD动态异步加载.js"
+                    "./components/home-react-module-IMPORTCJSAMDUMD动态异步加载.tsx"
                 )
             ),
         ],
@@ -43,7 +43,7 @@ function 路由() {
             lazy(() =>
                 // @ts-ignore
                 import(
-                    "./components/my-react-router-test/react-module-rssreader.js"
+                    "./components/my-react-router-test/react-module-rssreader.tsx"
                 )
             ),
         ],
@@ -52,7 +52,7 @@ function 路由() {
             lazy(() =>
                 // @ts-ignore
                 import(
-                    "./components/my-react-router-test/react-module-rssreader.js"
+                    "./components/my-react-router-test/react-module-rssreader.tsx"
                 )
             ),
         ],
@@ -79,7 +79,7 @@ function 路由() {
             lazy(() =>
                 // @ts-ignore
                 import(
-                    "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck"
+                    "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck.tsx"
                 )
             ),
         ],
@@ -102,7 +102,7 @@ function 路由() {
             lazy(() =>
                 // @ts-ignore
                 import(
-                    "./components/home-react-webpack-react-vue-spa-awesome-config.js"
+                    "./components/home-react-webpack-react-vue-spa-awesome-config.tsx"
                 )
             ),
         ],
@@ -120,7 +120,7 @@ function 路由() {
             lazy(() =>
                 // @ts-ignore
                 import(
-                    "./components/excellent-vscode-extensions-for-javascript"
+                    "./components/excellent-vscode-extensions-for-javascript.tsx"
                 )
             ),
         ],

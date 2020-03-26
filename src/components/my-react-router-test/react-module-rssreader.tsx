@@ -8,7 +8,7 @@ import React from "react";
 // import * as parser from "@/assetsjs/fast-xml-parser";
 import tanchu弹出消息通用 from "../utils/my弹出消息通用.ts";
 //@ts-ignore
-import parser from "../../assetsjs/fast-xml-parser.js";
+import * as parser from "../../assetsjs/fast-xml-parser.js";
 import {
     rssxml2,
     rssxml3,
