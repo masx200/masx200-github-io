@@ -16,14 +16,7 @@ function 路由() {
             // @ts-ignore
             lazy(() => import("./components/home-react-module-picalc")),
         ],
-        /* [
-      "/点击链接不跳转修改当前的网页地址动态加载网页内容不刷新",
-      lazy(() =>
-        import(
-          "./components/home-react-module-点击链接不跳转修改当前的网页地址动态加载网页内容不刷新.js"
-        )
-      )
-    ], */
+
         [
             "/IMPORTCJSAMDUMD动态异步加载",
             // @ts-ignore
@@ -77,7 +70,7 @@ function 路由() {
             lazy(() =>
                 // @ts-ignore
                 import(
-                    "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder"
+                    "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder.tsx"
                 )
             ),
         ],
@@ -95,7 +88,7 @@ function 路由() {
             lazy(() =>
                 // @ts-ignore
                 import(
-                    "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.js"
+                    "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.tsx"
                 )
             ),
         ],
@@ -149,123 +142,3 @@ function 路由() {
         </Switch>
     );
 }
-
-// var picalc = lazy(() => import("./home-react-module-picalc"));
-
-// var 点击链接不跳转修改当前的网页地址动态加载网页内容不刷新 = lazy(() =>
-//   import(
-//     "./home-react-module-点击链接不跳转修改当前的网页地址动态加载网页内容不刷新.js"
-//   )
-// );
-// var IMPORTCJSAMDUMD动态异步加载 = lazy(() =>
-//   import("./home-react-module-IMPORTCJSAMDUMD动态异步加载.js")
-// );
-
-// {
-//   /* <Route exact path="/" component={home} />
-//       <Route exact path="/picalc" component={picalc} />
-//       <Route
-//         exact
-//         path="/点击链接不跳转修改当前的网页地址动态加载网页内容不刷新"
-//         component={点击链接不跳转修改当前的网页地址动态加载网页内容不刷新}
-//       />
-//       <Route
-//         exact
-//         path="/IMPORTCJSAMDUMD动态异步加载"
-//         component={IMPORTCJSAMDUMD动态异步加载}
-//       />
-//       <Route
-//         exact
-//         path="/react-home"
-//         component={lazy(() =>
-//           import("./my-react-router-test/react-module-home.js")
-//         )}
-//       />
-//       <Route
-//         exact
-//         path="/react-rssreader"
-//         component={lazy(() =>
-//           import("./my-react-router-test/react-module-rssreader.js")
-//         )}
-//       />
-//       <Route
-//         exact
-//         path="/react-rssreader/:sitename"
-//         component={lazy(() =>
-//           import("./my-react-router-test/react-module-rssreader.js")
-//         )}
-//       />
-//       <Route
-//         exact
-//         path="/react-about"
-//         component={lazy(() =>
-//           import("./my-react-router-test/react-module-about.js")
-//         )}
-//       />
-//       <Route
-//         exact
-//         path="/decoder"
-//         component={lazy(() =>
-//           import(
-//             "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder"
-//           )
-//         )}
-//       />
-//       <Route
-//         exact
-//         path="/jsfuck"
-//         component={lazy(() =>
-//           import(
-//             "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck"
-//           )
-//         )}
-//       />
-//       <Route
-//         exact
-//         path="/hieroglyphy"
-//         component={lazy(() =>
-//           import(
-//             "./my-react-router-test/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.js"
-//           )
-//         )}
-//       />
-//       <Route
-//         exact
-//         path="/react-huami"
-//         component={lazy(() => import("./home-react-module-huami.js"))}
-//       />
-//       <Route
-//         exact
-//         path="/webpack-react-vue-spa-awesome-config"
-//         component={lazy(() =>
-//           import("./home-react-webpack-react-vue-spa-awesome-config.js")
-//         )}
-//       />
-
-//       {/* <Route
-//       //   exact
-//       path="/markdown/:url"
-//       component={lazy(() =>
-//         import("./component-react-动态路由markdown")
-//       )}
-//     /> */
-// }
-// {
-//   /* <Route
-//         exact
-//         path="/react-simple-global-state-store-hook"
-//         component={lazy(() =>
-//           import(
-//             "./home-react-使用react hooks实现的简单全局状态管理 react-simple-global-state-store-hook"
-//           )
-//         )}
-//       />
-//       <Route exact path="*" component={home} /> */
-// }
-// {
-//   (" ");
-// }
-// //*/
-// {
-//   /* //} */
-// }
