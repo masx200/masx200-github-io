@@ -1,8 +1,12 @@
-"use strict";
-// eslint-disable-next-line no-unused-vars
-import Markdownreact from "./markdown-react/index.tsx";
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
+import markdwonurls from "../utils/markdownurls.ts";
+// eslint-disable-next-line no-unused-vars
+import Markdownreact from "./markdown-react/index.tsx";
+
+"use strict";
+
+const markurl = markdwonurls["webpack-react-vue-spa-awesome-config"];
 export default function component() {
     useEffect(() => {
         document.title =
@@ -11,7 +15,7 @@ export default function component() {
     }, []);
     return (
         <div>
-            <Markdownreact src="https://masx200.github.io/webpack-react-vue-spa-awesome-config/README.md" />
+            <Markdownreact src={markurl} />
         </div>
     );
 }

@@ -1,16 +1,15 @@
 "use strict";
-// eslint-disable-next-line no-unused-vars
-import Markdownreact from "./markdown-react/index.tsx";
 
-// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 import React from "react";
+import markdwonurls from "../utils/markdownurls.ts";
+import Markdownreact from "./markdown-react/index.tsx";
 var {
     useEffect,
     // , useState
 } = React;
 /* 把class组件改成function组件 */
-const urlmark =
-    "https://masx200.github.io/excellent-vscode-extensions-for-javascript/README.md";
+const urlmark = markdwonurls["excellent-vscode-extensions-for-javascript"];
+
 export default React.memo(component);
 
 function component() {

@@ -1,12 +1,12 @@
-"use strict";
 import {
+    changeState,
     initGlobalState,
     useGlobalStore,
-    changeState,
 } from "@masx200/react-simple-global-state-store-hook";
 // console.log(initGlobalState, useGlobalStore, changeState);
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
+import markdwonurls from "../utils/markdownurls.ts";
 // initGlobalState({
 //   testnumber: String(2418 * 999),
 //   testname: "helloworl使s实现的简单全局状态管理"
@@ -14,6 +14,8 @@ import React, { useEffect } from "react";
 // console.log(initaaaaaaaaaaaa);
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index.tsx";
+"use strict";
+const urlmark = markdwonurls["react-simple-global-state-store-hook"];
 
 // var initaaaaaaaaaaaa =
 initGlobalState({
@@ -88,7 +90,7 @@ export default function 全局状态管理() {
             </div>
 
             <hr />
-            <Markdownreact src="https://masx200.github.io/react-simple-global-state-store-hook/README.md" />
+            <Markdownreact src={urlmark} />
         </div>
     );
 }

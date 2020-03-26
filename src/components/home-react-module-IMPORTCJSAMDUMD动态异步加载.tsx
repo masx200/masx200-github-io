@@ -1,9 +1,9 @@
-"use strict";
+import React from "react";
+import markdwonurls from "../utils/markdownurls.ts";
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index.tsx";
-
-// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-import React from "react";
+"use strict";
+const markurl = markdwonurls["importcjsamdumd"];
 var { useEffect } = React;
 /* 把class组件改成function组件 */
 export default function IMPORTCJSAMDUMD动态异步加载() {
@@ -16,7 +16,7 @@ export default function IMPORTCJSAMDUMD动态异步加载() {
 
     return (
         <div>
-            <Markdownreact src="https://masx200.github.io/importcjsamdumd/README.md" />
+            <Markdownreact src={markurl} />
         </div>
     );
 }

@@ -1,13 +1,13 @@
-import 首页推荐网址目录 from "./首页推荐网址目录";
-
-("use strict");
+import React from "react";
+import markdwonurls from "../utils/markdownurls.ts";
+import tanchu弹出消息通用 from "../utils/my弹出消息通用.ts";
 //@ts-ignore
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用";
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index.tsx";
-
-import React from "react";
-import tanchu弹出消息通用 from "../utils/my弹出消息通用.ts";
+import 首页推荐网址目录 from "./首页推荐网址目录";
+const markurl = markdwonurls["masx200-github-io"];
+("use strict");
 
 const location = window.location;
 var { useEffect } = React;
@@ -94,7 +94,7 @@ export default function home() {
                     </button>
                 </div>
             </div>
-            <Markdownreact src="https://masx200.github.io/README.md" />
+            <Markdownreact src={markurl} />
         </div>
     );
 }
