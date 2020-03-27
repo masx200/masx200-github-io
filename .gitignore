@@ -9,3 +9,4 @@ src/dist/
 debug.log
 *.log
 /dist/
+.now
