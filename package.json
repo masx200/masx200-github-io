@@ -49,7 +49,7 @@
         "@babel/preset-env": "^7.9.0",
         "@babel/preset-react": "^7.9.4",
         "@babel/runtime": "^7.9.2",
-        "@masx200/react-simple-global-state-store-hook": "^1.2.6",
+        "@masx200/react-simple-global-state-store-hook": "https://github.com/masx200/react-simple-global-state-store-hook",
         "@masx200/webpack-react-vue-spa-awesome-config": "^2.7.1",
         "@types/highlight.js": "^9.12.3",
         "@types/jquery": "^3.3.33",
