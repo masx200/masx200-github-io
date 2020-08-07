@@ -62,7 +62,7 @@ addEventListener("message", function (event) {
     //   ...event.data
     // );
     console.log(
-        "副线程" + (threadid + 1) + "从主线程接收" + "event.data\n",
+        "副线程" + (threadid + 1) + "从主线程接收" + "event.data\n"+
         /* 线程中的console.log不能输出对象,只能输出文本 */
         JSON.stringify(event.data)
     );
