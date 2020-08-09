@@ -1,3 +1,6 @@
+const myvurrouterprojecturl="https://my-vue-router-project.masx200.now.sh/"
+
+
 import { useToggle } from "@umijs/hooks";
 import $ from "jquery";
 import React from "react";
@@ -60,7 +63,7 @@ function Apphome() {
                         className="navbar navbar-default navbar navbar-expand-sm bg-light navbar-light"
                         role="navigation"
                     >
-                        {" "}
+                        
                         <button
                             style={{ display: "block" }}
                             className="navbar-toggler"
@@ -162,7 +165,7 @@ function Apphome() {
                                 />
                                 <li>
                                     <a
-                                        href="./my-vue-router-project/index.html"
+                                        href={myvurrouterprojecturl+"index.html"}
                                         className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                                     >
                                         基于vue的主页
@@ -170,7 +173,9 @@ function Apphome() {
                                 </li>
                                 <li>
                                     <a
-                                        href="./my-vue-router-project/index.html#/about"
+                                        href={myvurrouterprojecturl+"index.html"+"#/about"}
+
+
                                         className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                                     >
                                         关于Vue
@@ -178,7 +183,11 @@ function Apphome() {
                                 </li>
                                 <li>
                                     <a
-                                        href="./my-vue-router-project/index.html#/beautify-javascript"
+                                        href={myvurrouterprojecturl+"index.html"+"#/beautify-javascript"}
+                                        
+                                        
+                                        
+                                        
                                         className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
                                     >
                                         美化javascript代码
