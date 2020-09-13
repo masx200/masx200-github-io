@@ -1,3 +1,4 @@
+import "./error-alert.js";
 import React from "react";
 /* if (!React["memo"]) {
   React["memo"] = a => a;
