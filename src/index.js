@@ -1,3 +1,6 @@
+if ("development" === process.env.NODE_ENV) {
+    require("react-hot-loader/patch");
+}
 // console.log(React);
 /* import "./index.css";
 import "./markdown-react/github.css";
@@ -14,9 +17,6 @@ import "./error-alert.js";
 import "./juejin-highlight-markdown-0.c4305b077afc652cb76a.css";
 import "./pre-wrap.css";
 import "./样式.css";
-if ("development" === process.env.NODE_ENV) {
-    require("react-hot-loader/patch");
-}
 
 /* import {
   // useGlobalStore,
