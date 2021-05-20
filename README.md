@@ -298,7 +298,6 @@ parcel build entry.js
 
 <hr>
 
-
 <hr>
 
 # 网站结构介绍
@@ -312,7 +311,6 @@ css 中使用@import 实现全部模块化
 js 中使用 import 实现全部模块化
 
 按钮弹出式 Bootstrap4 信息提示框测试
-
 
 ## 包含 vue-router 和 react-router 的单页面应用测试
 

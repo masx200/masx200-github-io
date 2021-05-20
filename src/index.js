@@ -1,4 +1,3 @@
-
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker";
 import React from "react";
 import { render } from "react-dom";
@@ -7,8 +6,6 @@ import "./error-alert.js";
 import "./juejin-highlight-markdown-0.c4305b077afc652cb76a.css";
 import "./pre-wrap.css";
 import "./样式.css";
-
-
 
 React["__esModule"] = true;
 React["default"] = React;
@@ -56,6 +53,8 @@ import("./home-react-index-render.ts").then(({ default: Homeelement }) => {
         // @ts-ignore
         React.createElement(Homeelement),
         // React.createElement(React.memo(Apphome)),
-        document.getElementById("root")
+        document
+            .getElementById("root")
+            .appendChild(document.createElement("div"))
     );
 });

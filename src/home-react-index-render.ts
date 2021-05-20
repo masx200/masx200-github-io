@@ -61,7 +61,5 @@ window.addEventListener("resize", () => {
     }, 0);
 });
 
-const App =
-    
-        React.memo(Apphome);
+const App = React.memo(Apphome);
 export default App;
