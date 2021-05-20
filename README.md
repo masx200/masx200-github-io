@@ -207,7 +207,7 @@ The Effect Hook, useEffect, adds the ability to perform side effects from a func
         <br />1.原生BigInt最快,<br />2.BigInteger.js中速,<br />3.Decimal.js最慢。
         <hr>
         <br />
-        <details>
+        <details open>
         <summary>测试结果对比</summary>
 <h4> 线程数为4 圆周率计算6000位测试结果</h4>
         <br />
@@ -298,43 +298,6 @@ parcel build entry.js
 
 <hr>
 
-# 使用 cdn 加载依赖包,加快速度
-
-```
-https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css
-
-https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js
-
-https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js
-
-https://img.cdn.aliyun.dcloud.net.cn/mui/dist/css/mui.min.css
-
-https://img.cdn.aliyun.dcloud.net.cn/mui/dist/js/mui.min.js
-
-https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js
-
-https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap-theme.css
-
-https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css
-
-https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js
-
-https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js
-
-https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js
-
-https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js
-
-https://cdn.staticfile.org/react-router-dom/5.0.0/react-router-dom.min.js
-
-https://cdn.staticfile.org/babel-standalone/7.0.0-beta.3/babel.min.js
-
-https://cdn.staticfile.org/vue/2.6.10/vue.min.js
-
-https://cdn.staticfile.org/vue-router/3.0.6/vue-router.min.js
-
-https://cdn.staticfile.org/decimal.js/10.1.1/decimal.min.js
-```
 
 <hr>
 
@@ -350,9 +313,6 @@ js 中使用 import 实现全部模块化
 
 按钮弹出式 Bootstrap4 信息提示框测试
 
-## 花密网页版
-
-https://masx200.github.io/%E8%8A%B1%E5%AF%86%E7%BD%91%E9%A1%B5%E7%89%88-%E5%AE%8C%E5%96%84%E4%BF%AE%E6%94%B9%E7%89%88-%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E5%AF%BC%E8%88%AA%E6%A0%8F/index.html
 
 ## 包含 vue-router 和 react-router 的单页面应用测试
 
