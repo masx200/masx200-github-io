@@ -14,7 +14,7 @@ specifiers:
   '@babel/preset-react': ^7.13.13
   '@babel/runtime': ^7.14.0
   '@masx200/react-simple-global-state-store-hook': https://github.com/masx200/react-simple-global-state-store-hook
-  '@masx200/webpack-react-vue-spa-awesome-config': ^3.0.0
+  '@masx200/webpack-react-vue-spa-awesome-config': ^3.0.1
   '@types/highlight.js': ^10.1.0
   '@types/jquery': ^3.5.5
   '@types/node': 15.3.1
@@ -55,7 +55,6 @@ specifiers:
   react: ^17.0.2
   react-app-polyfill: ^2.0.0
   react-dom: ^17.0.2
-  react-hot-loader: ^4.13.0
   react-router-dom: ^5.2.0
   regenerator-runtime: ^0.13.7
   sass-loader: ^11.1.1
@@ -93,7 +92,7 @@ devDependencies:
   '@babel/preset-react': 7.13.13_@babel+core@7.14.3
   '@babel/runtime': 7.14.0
   '@masx200/react-simple-global-state-store-hook': github.com/masx200/react-simple-global-state-store-hook/487764c9c85897184f3bd64dcd752d55b7892fa7_@types+react@17.0.6+react@17.0.2
-  '@masx200/webpack-react-vue-spa-awesome-config': 3.0.0_1f5829dfa3e1a21c9ffa0fc580396cb9
+  '@masx200/webpack-react-vue-spa-awesome-config': 3.0.1_browserslist@4.16.6
   '@types/highlight.js': 10.1.0
   '@types/jquery': 3.5.5
   '@types/node': 15.3.1
@@ -133,7 +132,6 @@ devDependencies:
   react: 17.0.2
   react-app-polyfill: 2.0.0
   react-dom: 17.0.2_react@17.0.2
-  react-hot-loader: 4.13.0_7bb0cf46d12c3d24c714ae32f2413a3b
   react-router-dom: 5.2.0_react@17.0.2
   regenerator-runtime: 0.13.7
   sass-loader: 11.1.1_node-sass@6.0.0+webpack@5.37.1
@@ -2260,8 +2258,8 @@ packages:
       '@hapi/hoek': 8.5.1
     dev: true
 
-  /@masx200/webpack-react-vue-spa-awesome-config/3.0.0_1f5829dfa3e1a21c9ffa0fc580396cb9:
-    resolution: {integrity: sha512-/V6GmJA5ZN1GHzZ6pJqUUlXcntCYZvcJZVc3jhasgNJ4nUhAn64fydncdzc7Xy5yfnNZ6NucSxB+SPKP1zlrmw==}
+  /@masx200/webpack-react-vue-spa-awesome-config/3.0.1_browserslist@4.16.6:
+    resolution: {integrity: sha512-lCp6KCP6sUYqPO5FMCyKhjbWdQe6tE9BXpM/gq5nvJh6ebJqQme8tBxNk8RLFNimnXAKugaivuVWMxRgyC/+CQ==}
     hasBin: true
     dependencies:
       '@babel/core': 7.14.3
@@ -2307,7 +2305,6 @@ packages:
       purify-css: 1.2.5
       purifycss-webpack: 0.7.0_purify-css@1.2.5
       react-app-polyfill: 2.0.0
-      react-hot-loader: 4.13.0_7bb0cf46d12c3d24c714ae32f2413a3b
       regenerator-runtime: 0.13.7
       sass: 1.32.12
       style-loader: 2.0.0_webpack@5.37.1
@@ -2335,7 +2332,6 @@ packages:
       - '@webpack-cli/migrate'
       - browserslist
       - cache-loader
-      - react-dom
       - supports-color
       - webpack-bundle-analyzer
     dev: true
@@ -4432,10 +4428,6 @@ packages:
       entities: 2.2.0
     dev: true
 
-  /dom-walk/0.1.2:
-    resolution: {integrity: sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==}
-    dev: true
-
   /domelementtype/1.3.1:
     resolution: {integrity: sha512-BSKB+TSpMpFI/HOxCNr1O8aMOTZ8hT3pM3GQ0w/mWRmkhEDSFJkkyzz4XQsBV44BChwGkrDfMyjVD0eA2aFV3w==}
     dev: true
@@ -4850,10 +4842,6 @@ packages:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
     dev: true
 
-  /fast-levenshtein/2.0.6:
-    resolution: {integrity: sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=}
-    dev: true
-
   /fast-sass-loader/2.0.0_sass@1.32.12+webpack@5.37.1:
     resolution: {integrity: sha512-q9q59bL8XvforoQw+qpwiLPDWGMZ2MfrwuOjvFKyGvON9uawOaNc7QDHKxjfqRM/gs1htXywQVqxjcTMcHDesw==}
     peerDependencies:
@@ -5204,13 +5192,6 @@ packages:
       minimatch: 3.0.4
       once: 1.4.0
       path-is-absolute: 1.0.1
-    dev: true
-
-  /global/4.4.0:
-    resolution: {integrity: sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w==}
-    dependencies:
-      min-document: 2.19.0
-      process: 0.11.10
     dev: true
 
   /globals/11.12.0:
@@ -6569,12 +6550,6 @@ packages:
   /mimic-fn/2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
-    dev: true
-
-  /min-document/2.19.0:
-    resolution: {integrity: sha1-e9KC4/WELtKVu3SM3Z8f+iyCRoU=}
-    dependencies:
-      dom-walk: 0.1.2
     dev: true
 
   /mini-create-react-context/0.4.1_prop-types@15.7.2+react@17.0.2:
@@ -8315,11 +8290,6 @@ packages:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
     dev: true
 
-  /process/0.11.10:
-    resolution: {integrity: sha1-czIwDoQBYb2j5podHZGn1LwW8YI=}
-    engines: {node: '>= 0.6.0'}
-    dev: true
-
   /promise/8.1.0:
     resolution: {integrity: sha512-W04AqnILOL/sPRXziNicCjSNRruLAuIHEOVBazepu0545DDNGYHz7ar9ZgZ1fMU8/MA4mVxp5rkBWRi6OXIy3Q==}
     dependencies:
@@ -8498,36 +8468,8 @@ packages:
       scheduler: 0.20.2
     dev: true
 
-  /react-hot-loader/4.13.0_7bb0cf46d12c3d24c714ae32f2413a3b:
-    resolution: {integrity: sha512-JrLlvUPqh6wIkrK2hZDfOyq/Uh/WeVEr8nc7hkn2/3Ul0sx1Kr5y4kOGNacNRoj7RhwLNcQ3Udf1KJXrqc0ZtA==}
-    engines: {node: '>= 6'}
-    peerDependencies:
-      '@types/react': '^15.0.0 || ^16.0.0 || ^17.0.0 '
-      react: '^15.0.0 || ^16.0.0 || ^17.0.0 '
-      react-dom: '^15.0.0 || ^16.0.0 || ^17.0.0 '
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@types/react': 17.0.6
-      fast-levenshtein: 2.0.6
-      global: 4.4.0
-      hoist-non-react-statics: 3.3.2
-      loader-utils: 1.4.0
-      prop-types: 15.7.2
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-      react-lifecycles-compat: 3.0.4
-      shallowequal: 1.1.0
-      source-map: 0.7.3
-    dev: true
-
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: true
-
-  /react-lifecycles-compat/3.0.4:
-    resolution: {integrity: sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==}
     dev: true
 
   /react-router-dom/5.2.0_react@17.0.2:
@@ -9151,10 +9093,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       kind-of: 6.0.3
-    dev: true
-
-  /shallowequal/1.1.0:
-    resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==}
     dev: true
 
   /shebang-command/1.2.0:
