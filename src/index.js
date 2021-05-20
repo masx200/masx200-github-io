@@ -1,3 +1,7 @@
+if ("development" === process.env.NODE_ENV) {
+    await import("react-hot-loader/patch");
+}
+
 import "./error-alert.js";
 import React from "react";
 /* if (!React["memo"]) {
