@@ -25,16 +25,7 @@
     "description": "masx200-github-io",
     "author": "masx200 <masx200@qq.c60>",
     "license": "MIT",
-    "babel": {
-        "presets": [
-            "react-app",
-            "@babel/preset-env",
-            "@babel/preset-react"
-        ],
-        "plugins": [
-            "@babel/plugin-syntax-dynamic-import"
-        ]
-    },
+   
     "devDependencies": {
         "@babel/core": "^7.14.3",
         "@babel/generator": "^7.14.3",
