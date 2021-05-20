@@ -1,4 +1,4 @@
-const myvurrouterprojecturl = "https://my-vue-router-project.masx200.now.sh/";
+const myvurrouterprojecturl = "https://my-vue-router-project.masx200.vercel.app/";
 
 import { useToggle } from "@umijs/hooks";
 import $ from "jquery";
