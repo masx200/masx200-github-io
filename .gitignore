@@ -10,3 +10,4 @@ debug.log
 *.log
 /dist/
 .now
+yarn.lock
