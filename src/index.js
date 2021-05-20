@@ -1,14 +1,4 @@
-if ("development" === process.env.NODE_ENV) {
-    require("react-hot-loader/patch");
-}
-// console.log(React);
-/* import "./index.css";
-import "./markdown-react/github.css";
-import "./markdown-react/padding0.css";
-import "./hidewidthless500.css"; */
-// import "./github.css";
-// import "./新建文本文档.less";
-// import "./新建文本文档.scss";
+
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker";
 import React from "react";
 import { render } from "react-dom";
@@ -18,26 +8,13 @@ import "./juejin-highlight-markdown-0.c4305b077afc652cb76a.css";
 import "./pre-wrap.css";
 import "./样式.css";
 
-/* import {
-  // useGlobalStore,
-  initGlobalState
-} from "react-simple-global-state-store-hook";
 
-// var initaaaaaaaaaaaa =
-initGlobalState({
-  testnumber: String(22418 * 99999) + Math.random(),
-  testname: "使用React全局状态管理" + Math.random()
-}); */
-
-/* if (!React["memo"]) {
-  React["memo"] = a => a;
-} */
 
 React["__esModule"] = true;
 React["default"] = React;
 
 ("use strict");
-// import "webpack-react-vue-spa-awesome-config/ie11babelpolyfill";
+
 document.getElementById("root").innerHTML = `<div>
 <h1>loading</h1>
 <span class="mui-spinner mui-spinner-custom">

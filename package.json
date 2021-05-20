@@ -80,7 +80,7 @@
         "react": "^17.0.2",
         "react-app-polyfill": "^2.0.0",
         "react-dom": "^17.0.2",
-        "react-hot-loader": "^4.13.0",
+       
         "react-router-dom": "^5.2.0",
         "regenerator-runtime": "^0.13.7",
         "sass-loader": "^11.1.1",

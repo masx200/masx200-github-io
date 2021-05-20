@@ -1,6 +1,6 @@
 import $ from "jquery";
 import React from "react";
-import { hot } from "react-hot-loader";
+
 // @ts-ignore
 import Apphome from "./react-apphome.tsx";
 
@@ -61,8 +61,7 @@ window.addEventListener("resize", () => {
     }, 0);
 });
 
-const hotApp =
-    "development" === process.env.NODE_ENV
-        ? hot(module)(Apphome)
-        : React.memo(Apphome);
-export default hotApp;
+const App =
+    
+        React.memo(Apphome);
+export default App;
