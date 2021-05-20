@@ -1,7 +1,7 @@
 {
     "version": "4.6.2",
     "scripts": {
-        "start": "webpack-react-vue-spa-awesome-config start    --mode=development --react-hot-loader=true",
+        "start": "webpack-react-vue-spa-awesome-config start  --mode=development ",
         "build": "webpack-react-vue-spa-awesome-config build",
         "prettier": "prettier **/*.js --write **/*.ts *.json *.md **/*.jsx **/*.tsx "
     },
