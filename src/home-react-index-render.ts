@@ -1,9 +1,9 @@
 import $ from "jquery";
-
 import React from "react";
 import { hot } from "react-hot-loader";
 // @ts-ignore
 import Apphome from "./react-apphome.tsx";
+
 /* eslint-disable react/prop-types */
 ("use strict");
 

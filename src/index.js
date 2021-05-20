@@ -1,15 +1,3 @@
-if ("development" === process.env.NODE_ENV) {
-    await import("react-hot-loader/patch");
-}
-
-import "./error-alert.js";
-import React from "react";
-/* if (!React["memo"]) {
-  React["memo"] = a => a;
-} */
-
-React["__esModule"] = true;
-React["default"] = React;
 // console.log(React);
 /* import "./index.css";
 import "./markdown-react/github.css";
@@ -19,8 +7,17 @@ import "./hidewidthless500.css"; */
 // import "./新建文本文档.less";
 // import "./新建文本文档.scss";
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker";
+import React from "react";
 import { render } from "react-dom";
 import "./assetscss/masx200-main.0b9ca398071be6517552.css";
+import "./error-alert.js";
+import "./juejin-highlight-markdown-0.c4305b077afc652cb76a.css";
+import "./pre-wrap.css";
+import "./样式.css";
+if ("development" === process.env.NODE_ENV) {
+    await import("react-hot-loader/patch");
+}
+
 /* import {
   // useGlobalStore,
   initGlobalState
@@ -31,9 +28,13 @@ initGlobalState({
   testnumber: String(22418 * 99999) + Math.random(),
   testname: "使用React全局状态管理" + Math.random()
 }); */
-import "./juejin-highlight-markdown-0.c4305b077afc652cb76a.css";
-import "./pre-wrap.css";
-import "./样式.css";
+
+/* if (!React["memo"]) {
+  React["memo"] = a => a;
+} */
+
+React["__esModule"] = true;
+React["default"] = React;
 
 ("use strict");
 // import "webpack-react-vue-spa-awesome-config/ie11babelpolyfill";
