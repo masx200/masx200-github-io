@@ -11,3 +11,4 @@ debug.log
 /dist/
 .now
 yarn.lock
+package-lock.json
