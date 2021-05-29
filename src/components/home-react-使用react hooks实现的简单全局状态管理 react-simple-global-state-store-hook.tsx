@@ -14,7 +14,7 @@ import markdwonurls from "../utils/markdownurls.ts";
 // console.log(initaaaaaaaaaaaa);
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index.tsx";
-"use strict";
+("use strict");
 const urlmark = markdwonurls["react-simple-global-state-store-hook"];
 
 // var initaaaaaaaaaaaa =

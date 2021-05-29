@@ -554,8 +554,7 @@ var parser = (function (t) {
                         return {
                             err: {
                                 code: "InvalidXml",
-                                msg:
-                                    "XML declaration allowed only at the start of the document.",
+                                msg: "XML declaration allowed only at the start of the document.",
                             },
                         };
                     if ("?" == t[e] && ">" == t[e + 1]) {
@@ -821,7 +820,8 @@ var parser = (function (t) {
                         ? (this.isAttribute = function () {
                               return !1;
                           })
-                        : ((this.attrPrefixLen = this.options.attributeNamePrefix.length),
+                        : ((this.attrPrefixLen =
+                              this.options.attributeNamePrefix.length),
                           (this.isAttribute = p)),
                     this.options.cdataTagName
                         ? (this.isCDATA = g)

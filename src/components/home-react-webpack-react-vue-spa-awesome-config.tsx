@@ -4,7 +4,7 @@ import markdwonurls from "../utils/markdownurls.ts";
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index.tsx";
 
-"use strict";
+("use strict");
 
 const markurl = markdwonurls["webpack-react-vue-spa-awesome-config"];
 export default function component() {

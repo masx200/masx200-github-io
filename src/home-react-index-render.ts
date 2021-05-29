@@ -36,14 +36,6 @@ const scrollTo = window.scrollTo;
 
         function myonloadfunc() {
             function refreshall() {
-                try {
-                } catch (error) {
-                    console.error(error);
-                    //   setTimeout(() => {
-                    //     refreshall();
-                    //   }, 500);
-                }
-
                 scrollTo(0, 0);
             }
             refreshall();

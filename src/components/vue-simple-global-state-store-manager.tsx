@@ -1,5 +1,5 @@
 import markdwonurls from "../utils/markdownurls.ts";
-"use strict";
+("use strict");
 
 import React from "react";
 import Markdownreact from "./markdown-react/index.tsx";

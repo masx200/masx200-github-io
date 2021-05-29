@@ -2,7 +2,7 @@ import React from "react";
 import markdwonurls from "../utils/markdownurls.ts";
 // eslint-disable-next-line no-unused-vars
 import Markdownreact from "./markdown-react/index.tsx";
-"use strict";
+("use strict");
 const markurl = markdwonurls["importcjsamdumd"];
 var { useEffect } = React;
 /* 把class组件改成function组件 */

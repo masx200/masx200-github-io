@@ -11,5 +11,5 @@ export default {
     importcjsamdumd:
         "https://cdn.jsdelivr.net/gh/masx200/importcjsamdumd@latest/README.md",
     "masx200-github-io":
-        "https://cdn.jsdelivr.net/gh/masx200/masx200-github-io@latest/README.md"
+        "https://cdn.jsdelivr.net/gh/masx200/masx200-github-io@latest/README.md",
 };

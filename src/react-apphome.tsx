@@ -11,12 +11,22 @@ import 路由列表 from "./router-react-路由列表.tsx";
 import 可变路径的rssreader链接 from "./可变路径的rssreader链接.tsx";
 // @ts-ignore
 import 我的自定义导航链接 from "./我的自定义导航链接.tsx";
+
+import { initloadingid } from "./initloadingid.ts";
+
 var { Suspense } = React;
 var { useEffect } = React;
 export default React.memo(Apphome);
 function Apphome() {
     const { state, toggle } = useToggle(true);
     useEffect(() => {
+        console.log("onmounted");
+
+        if (document.body.clientWidth <= 500) {
+            shouqi收起折叠的导航栏菜单();
+        }
+        var initloadele = document.getElementById(initloadingid);
+        initloadele && (initloadele.style.display = "none");
         // @ts-ignore
         $("#my主体").css(
             "padding-top",
@@ -40,21 +50,20 @@ function Apphome() {
             $("#my导航栏").height() || 0
         );
     }, [state]);
-    // console.log(arguments);
+
     function shouqi收起折叠的导航栏菜单() {
         toggle(false);
-        // $(example_navbar_collapse.current).hide(); //$(example_navbar_collapse.current).removeClass("show");
+
         // @ts-ignore
         $("#my主体").css(
             "padding-top",
             // @ts-ignore
             $("#my导航栏").height() || 0
         );
-        // refreshall();
+
         scrollTo(0, 0);
     }
 
-    // const example_navbar_collapse = useRef();
     return (
         <HashRouter>
             <div>
@@ -68,10 +77,8 @@ function Apphome() {
                             className="navbar-toggler"
                             type="button"
                             data-toggle="collapse"
-                            // data-target=example_navbar_collapse.current
                             onClick={() => {
                                 toggle();
-                                // $(example_navbar_collapse.current).toggle();
                             }}
                         >
                             <span className="navbar-toggler-icon" />
@@ -82,20 +89,11 @@ function Apphome() {
                                 to="/"
                             >
                                 masx200的
-                                <hr
-                                    id="hidewidthless500"
-                                    // style={{ display: innerWidth > 500 ? "block" : "none" }}
-                                    /* 改为css媒体查询 */
-                                />
+                                <hr id="hidewidthless500" />
                                 github主页
                             </Link>
                         </div>
-                        <div
-                            style={{ display: state ? "block" : "none" }}
-                            // ref={example_navbar_collapse}
-                            // className="collapse navbar-collapse"
-                            // id="example-navbar-collapse"
-                        >
+                        <div style={{ display: state ? "block" : "none" }}>
                             <ul
                                 className="nav navbar-nav"
                                 id="allnavbar"
