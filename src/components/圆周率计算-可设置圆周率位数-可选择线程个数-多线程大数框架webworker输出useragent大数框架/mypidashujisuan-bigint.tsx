@@ -145,9 +145,8 @@ export default function bigcom() {
             "\n开始圆周率多线程测试\n"
     );
 
-    const [outputtext2, setoutputtext2old, onchangeoutputtext2] = useBindtext(
-        ""
-    );
+    const [outputtext2, setoutputtext2old, onchangeoutputtext2] =
+        useBindtext("");
 
     function setoutputtext1(t) {
         setoutputtext1old(t);

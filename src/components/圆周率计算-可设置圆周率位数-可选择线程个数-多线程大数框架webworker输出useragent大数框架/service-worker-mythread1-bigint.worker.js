@@ -42,15 +42,12 @@ addEventListener("message", function (event) {
     bigInt().__proto__.div = bigInt().__proto__.divide;
     bigInt().__proto__.mul = bigInt().__proto__.multiply;
 
-    bigInt("90071992547409920").__proto__.cmp = bigInt(
-        "90071992547409920"
-    ).__proto__.compare;
-    bigInt("90071992547409920").__proto__.div = bigInt(
-        "90071992547409920"
-    ).__proto__.divide;
-    bigInt("90071992547409920").__proto__.mul = bigInt(
-        "90071992547409920"
-    ).__proto__.multiply;
+    bigInt("90071992547409920").__proto__.cmp =
+        bigInt("90071992547409920").__proto__.compare;
+    bigInt("90071992547409920").__proto__.div =
+        bigInt("90071992547409920").__proto__.divide;
+    bigInt("90071992547409920").__proto__.mul =
+        bigInt("90071992547409920").__proto__.multiply;
     // bigInt.cmp=bigInt.prototype.cmp=(n)=>;
     var piwei;
     piwei = event.data[0];
@@ -62,9 +59,12 @@ addEventListener("message", function (event) {
     //   ...event.data
     // );
     console.log(
-        "副线程" + (threadid + 1) + "从主线程接收" + "event.data\n"+
-        /* 线程中的console.log不能输出对象,只能输出文本 */
-        JSON.stringify(event.data)
+        "副线程" +
+            (threadid + 1) +
+            "从主线程接收" +
+            "event.data\n" +
+            /* 线程中的console.log不能输出对象,只能输出文本 */
+            JSON.stringify(event.data)
     );
     //   console.log(...event.data);
 

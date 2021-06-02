@@ -1,4 +1,3 @@
-
 "use strict";
 
 import React, { useEffect, useState, useRef } from "react";
@@ -26,25 +25,15 @@ function markdown(props) {
         <div>
             <h1>loading</h1>
             <span className="mui-spinner mui-spinner-custom" />
-
         </div>
     );
 
-    const [加载完成, set加载完成] = useState(
-
-        cache加载完成
-    );
-    const [加载失败, set加载失败] = useState(
-
-        cache加载失败
-    );
-    const [markdown内容, setmarkdown内容] = useState(
-
-        markdowncache
-    );
+    const [加载完成, set加载完成] = useState(cache加载完成);
+    const [加载失败, set加载失败] = useState(cache加载失败);
+    const [markdown内容, setmarkdown内容] = useState(markdowncache);
 
     const ref = useRef();
-    
+
     useEffect(() => {
         if (props.src) {
             const marktext = cachemarkdown.get(props.src);
@@ -54,9 +43,7 @@ function markdown(props) {
                 return;
             }
             (async () => {
-
                 hljs.initHighlightingOnLoad();
-
 
                 let text;
                 try {
@@ -69,29 +56,23 @@ function markdown(props) {
 
                 const divele = document.createElement("div");
                 try {
-
-
                     divele.innerHTML = marked(text);
                 } catch (error) {
                     console.error(error);
                 }
 
-
-
-                Array.from(
-                    divele.querySelectorAll("pre code")
-                ).forEach((block) => {hljs.highlightBlock(block)});
+                Array.from(divele.querySelectorAll("pre code")).forEach(
+                    (block) => {
+                        hljs.highlightBlock(block);
+                    }
+                );
                 set加载完成(true);
                 try {
-
                     setmarkdown内容(divele.innerHTML);
                     cachemarkdown.set(props.src, divele.innerHTML);
                 } catch (error) {
                     console.error(error);
-
                 }
-
-
             })();
         }
     }, [props.src]);
@@ -119,16 +100,13 @@ function markdown(props) {
 
                         <span>{props.src}</span>
                     </h3>
-                    <div>
-                    
-                    </div>
+                    <div></div>
                 </div>
                 <div className="Box-body" style={{ padding: " 0px" }}>
                     <article
                         className="markdown-body entry-content p-5"
                         itemProp="text"
                         id="padding0"
-
                     >
                         <div className="article-content">
                             <div

@@ -5,7 +5,10 @@ export default [
         "https://space.bilibili.com/27919054",
         "一生忽得夏司掌好年华的哔哩哔哩个人空间",
     ],
-    ["https://masx200.github.io/typescript-book-chinese/", "深入理解 TypeScript,markdown阅读器"],
+    [
+        "https://masx200.github.io/typescript-book-chinese/",
+        "深入理解 TypeScript,markdown阅读器",
+    ],
     [
         "https://masx200.github.io/markdown-reader/",
         "masx200的 轻量级markdown文档系统阅读器",

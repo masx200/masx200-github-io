@@ -376,30 +376,34 @@ function Rssreader(props) {
                     <p>{rssstate.description}</p>
 
                     <ul className="mui-table-view">
-                        {// window.myrsscontent.map
-                        rssstate.map((e, index) => (
-                            <li
-                                className="mui-table-view-cell mui-media"
-                                key={index}
-                                /* style="width: 100%;" */
-                                /* 每个项目占一行,防止一行多个项目 */
-                                style={{ width: " 100%" }}
-                            >
-                                <div className="mui-media-body">
-                                    <b> {e.title}</b>
-                                    <a
-                                        href={e.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <p className="mui-ellipsis">{e.link}</p>
-                                    </a>
-                                    <p className="mui-ellipsis">
-                                        {e.description}
-                                    </p>
-                                </div>
-                            </li>
-                        ))}
+                        {
+                            // window.myrsscontent.map
+                            rssstate.map((e, index) => (
+                                <li
+                                    className="mui-table-view-cell mui-media"
+                                    key={index}
+                                    /* style="width: 100%;" */
+                                    /* 每个项目占一行,防止一行多个项目 */
+                                    style={{ width: " 100%" }}
+                                >
+                                    <div className="mui-media-body">
+                                        <b> {e.title}</b>
+                                        <a
+                                            href={e.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <p className="mui-ellipsis">
+                                                {e.link}
+                                            </p>
+                                        </a>
+                                        <p className="mui-ellipsis">
+                                            {e.description}
+                                        </p>
+                                    </div>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
             </header>

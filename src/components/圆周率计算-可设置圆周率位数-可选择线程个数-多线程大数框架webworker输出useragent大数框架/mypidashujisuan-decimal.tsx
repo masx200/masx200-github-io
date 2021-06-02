@@ -6,7 +6,6 @@ function tanchu弹出消息提示() {
 }
 import mui from "@/assetsjs/mui.精简.button";
 
-
 import decimalworker from "./service-worker-mythread1-decimal.worker.js";
 import Decimal from "@/assetsjs/decimal.min.js";
 // import mui from "../mui.min.js";
@@ -108,9 +107,8 @@ export default function decimalcom() {
             "\n开始圆周率多线程测试\n"
     );
 
-    const [outputtext2, setoutputtext2old, onchangeoutputtext2] = useBindtext(
-        ""
-    );
+    const [outputtext2, setoutputtext2old, onchangeoutputtext2] =
+        useBindtext("");
 
     function setoutputtext1(t) {
         setoutputtext1old(t);
