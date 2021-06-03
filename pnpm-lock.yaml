@@ -13,7 +13,7 @@ specifiers:
   '@babel/preset-env': ^7.14.2
   '@babel/preset-react': ^7.13.13
   '@masx200/react-simple-global-state-store-hook': https://github.com/masx200/react-simple-global-state-store-hook
-  '@masx200/webpack-react-vue-spa-awesome-config': 3.1.0
+  '@masx200/webpack-react-vue-spa-awesome-config': 3.1.2
   '@types/highlight.js': ^10.1.0
   '@types/jquery': ^3.5.5
   '@types/node': 15.6.1
@@ -89,7 +89,7 @@ dependencies:
   '@babel/preset-env': 7.14.2_@babel+core@7.14.3
   '@babel/preset-react': 7.13.13_@babel+core@7.14.3
   '@masx200/react-simple-global-state-store-hook': github.com/masx200/react-simple-global-state-store-hook/1017c6a11c4dca200739c0149a57a39a441691e8_@types+react@17.0.6+react@17.0.2
-  '@masx200/webpack-react-vue-spa-awesome-config': 3.1.0
+  '@masx200/webpack-react-vue-spa-awesome-config': 3.1.2
   '@types/highlight.js': 10.1.0
   '@types/jquery': 3.5.5
   '@types/node': 15.6.1
@@ -2258,8 +2258,8 @@ packages:
       '@hapi/hoek': 8.5.1
     dev: false
 
-  /@masx200/webpack-react-vue-spa-awesome-config/3.1.0:
-    resolution: {integrity: sha512-DOqvz235FmLT4DhoS/TJd9l3ZtRceeFBmA84Q9GYtQeaCKhBFgIC1DwbQdoxyynyqHkzNMKIm1sEHj8tIkQ/YA==}
+  /@masx200/webpack-react-vue-spa-awesome-config/3.1.2:
+    resolution: {integrity: sha512-RA0UiAi74udQTISzFHNxINVLtmX2CDqhYmmycYSgp/8LtXMRs2NN6ifJjXhe8dp4MTUaFVbMJ+OIZteH7gIjqw==}
     hasBin: true
     dependencies:
       '@babel/core': 7.14.3
@@ -2316,9 +2316,9 @@ packages:
       to-string-loader: 1.1.6
       unicode-loader: 1.0.7
       url-loader: 4.1.1_file-loader@6.2.0+webpack@5.37.1
-      vue-loader: 15.9.7_4c0ea427b232b0133f4249b5288cadf1
+      vue-loader: 15.9.7_bfedf29b5dea33be2a52990f057f4276
       vue-style-loader: 4.1.3
-      vue-template-compiler: 2.6.12
+      vue-template-compiler: 2.6.13
       webpack: 5.37.1_webpack-cli@4.7.0
       webpack-cli: 4.7.0_73b101d6e7258082846183368a5d0f22
       webpack-dev-server: 3.11.2_webpack-cli@4.7.0+webpack@5.37.1
@@ -4594,8 +4594,8 @@ packages:
       is-arrayish: 0.2.1
     dev: false
 
-  /es-abstract/1.18.0:
-    resolution: {integrity: sha512-LJzK7MrQa8TS0ja2w3YNLzUgJCGPdPOV1yVvezjNnS89D+VR08+Szt2mz3YB2Dck/+w5tfIq/RoUAFqJJGM2yw==}
+  /es-abstract/1.18.3:
+    resolution: {integrity: sha512-nQIr12dxV7SSxE6r6f1l3DtAeEYdsGpps13dR0TwJg1S8gyp4ZPgy3FZcHBgbiQqnoqSTb+oC+kO4UQ0C/J8vw==}
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.2
@@ -6964,7 +6964,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.3
-      es-abstract: 1.18.0
+      es-abstract: 1.18.3
     dev: false
 
   /object.pick/1.3.0:
@@ -6974,14 +6974,13 @@ packages:
       isobject: 3.0.1
     dev: false
 
-  /object.values/1.1.3:
-    resolution: {integrity: sha512-nkF6PfDB9alkOUxpf1HNm/QlkeW3SReqL5WXeBLpEJJnlPSvRaDQpW3gQTksTN3fgJX4hL42RzKyOin6ff3tyw==}
+  /object.values/1.1.4:
+    resolution: {integrity: sha512-TnGo7j4XSnKQoK3MfvkzqKCi0nVe/D9I9IjwTNYdb/fxYHpjrluHVOgw0AF6jrRFGMPHdfuidR09tIDiIvnaSg==}
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.3
-      es-abstract: 1.18.0
-      has: 1.0.3
+      es-abstract: 1.18.3
     dev: false
 
   /obuf/1.1.2:
@@ -9617,7 +9616,7 @@ packages:
       csso: 4.2.0
       js-yaml: 3.14.1
       mkdirp: 0.5.5
-      object.values: 1.1.3
+      object.values: 1.1.4
       sax: 1.2.4
       stable: 0.1.8
       unquote: 1.1.1
@@ -10003,7 +10002,7 @@ packages:
     resolution: {integrity: sha512-g9JpC/3He3bm38zsLupWryXHoEcS22YHthuPQSJdMy6KNrzIRzWqcsHzD/WUnqe45whVou4VIsPew37DoXWNrA==}
     dependencies:
       define-properties: 1.1.3
-      es-abstract: 1.18.0
+      es-abstract: 1.18.3
       has-symbols: 1.0.2
       object.getownpropertydescriptors: 2.1.2
     dev: false
@@ -10064,7 +10063,7 @@ packages:
     resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==}
     dev: false
 
-  /vue-loader/15.9.7_4c0ea427b232b0133f4249b5288cadf1:
+  /vue-loader/15.9.7_bfedf29b5dea33be2a52990f057f4276:
     resolution: {integrity: sha512-qzlsbLV1HKEMf19IqCJqdNvFJRCI58WNbS6XbPqK13MrLz65es75w392MSQ5TsARAfIjUw+ATm3vlCXUJSOH9Q==}
     peerDependencies:
       cache-loader: '*'
@@ -10083,7 +10082,7 @@ packages:
       loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.3
-      vue-template-compiler: 2.6.12
+      vue-template-compiler: 2.6.13
       webpack: 5.37.1_webpack-cli@4.7.0
     dev: false
 
@@ -10094,8 +10093,8 @@ packages:
       loader-utils: 1.4.0
     dev: false
 
-  /vue-template-compiler/2.6.12:
-    resolution: {integrity: sha512-OzzZ52zS41YUbkCBfdXShQTe69j1gQDZ9HIX8miuC9C3rBCk9wIRjLiZZLrmX9V+Ftq/YEyv1JaVr5Y/hNtByg==}
+  /vue-template-compiler/2.6.13:
+    resolution: {integrity: sha512-latKAqpUjCkovB8XppW5gnZbSdYQzkf8pavsMBZYZrQcG6lAnj0EH4Ty7jMwAwFw5Cf4mybKBHlp1UTjnLPOWw==}
     dependencies:
       de-indent: 1.0.2
       he: 1.2.0

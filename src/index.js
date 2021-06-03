@@ -1,48 +1,58 @@
-import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker";
-import React from "react";
+import "./index.css";
+alert("hello world");
+/*import "../registerserviceworker.js";
+
+ import React from "react";
 import { render } from "react-dom";
-import "./assetscss/masx200-main.0b9ca398071be6517552.css";
-import "./error-alert.js";
-import "./juejin-highlight-markdown-0.c4305b077afc652cb76a.css";
-import "./pre-wrap.css";
-import "./样式.css";
-import { initloadingid } from "./initloadingid.ts";
-React["__esModule"] = true;
-React["default"] = React;
 
-("use strict");
+function App() {
+  return <div>hello world</div>;
+}
 
-document.getElementById("root").innerHTML = `<div id=${initloadingid}>
-<h1>loading</h1>
-<span class="mui-spinner mui-spinner-custom">
+render(<App />, document.getElementById("root"));
+ 
 
-</span></div>`;
+import Vue from "vue/dist/vue.esm.browser";
+const App = Vue.extend({
+  template: `
+    <div>
+    {{msg}}
+    </div>
+    
+    `,
 
-window.addEventListener(
-    "load",
-    () => {
-        import("clipboard").then((module) => {
-            const ClipboardJS = module.default;
-
-            new ClipboardJS(".btn").on("success", function (e) {
-                console.log(e);
-                console.info("Text:", e.text);
-
-                e.clearSelection();
-            });
-        });
-    },
-    { once: true }
-);
-
-// @ts-ignore
-import("./home-react-index-render.ts").then(({ default: Homeelement }) => {
-    render(
-        // @ts-ignore
-        React.createElement(Homeelement),
-
-        document
-            .getElementById("root")
-            .appendChild(document.createElement("div"))
-    );
+  name: "App",
+  data() {
+    return {
+      msg: "Welcome to Your Vue.js App"
+    };
+  },
+  methods: {},
+  mounted() {}
 });
+
+new Vue({
+  el: "#root",
+  // router,
+  components: {
+    App
+  },
+  template: "<App/>",
+  data() {
+    return {};
+  }
+});
+ 
+var msg="htmlWelcome to Your Vue.js App"
+ function h(type, props, ...children) {
+  return { type, props, children };
+}
+console.log(html`
+  <a href="/">Hello!</a>
+  <App />
+  <div>hello world</div>
+  <div>
+    {{msg}}
+  </div>
+`);
+ */
