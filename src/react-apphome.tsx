@@ -1,5 +1,5 @@
 const myvurrouterprojecturl =
-    "https://my-vue-router-project.masx200.vercel.app/";
+    "https://my-vue-router-project-masx200.vercel.app/";
 
 import { useToggle } from "@umijs/hooks";
 import $ from "jquery";
