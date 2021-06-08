@@ -1,5 +1,5 @@
-const myvurrouterprojecturl =
-    "https://my-vue-router-project-masx200.vercel.app/";
+// const myvurrouterprojecturl =
+//     "https://my-vue-router-project-masx200.vercel.app/";
 
 import { useToggle } from "@umijs/hooks";
 import $ from "jquery";
@@ -160,7 +160,7 @@ function Apphome() {
                                     linkto="/vue-simple-global-state-store-manager"
                                     text="适用于Vue的极简全局状态管理库"
                                 />
-                                <li>
+                                {/* <li>
                                     <a
                                         href={
                                             myvurrouterprojecturl + "index.html"
@@ -169,8 +169,8 @@ function Apphome() {
                                     >
                                         基于vue的主页
                                     </a>
-                                </li>
-                                <li>
+                                </li> */}
+                                {/* <li>
                                     <a
                                         href={
                                             myvurrouterprojecturl +
@@ -181,8 +181,8 @@ function Apphome() {
                                     >
                                         关于Vue
                                     </a>
-                                </li>
-                                <li>
+                                </li> */}
+                                {/* <li>
                                     <a
                                         href={
                                             myvurrouterprojecturl +
@@ -193,7 +193,7 @@ function Apphome() {
                                     >
                                         美化javascript代码
                                     </a>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </nav>
