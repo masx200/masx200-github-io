@@ -22,9 +22,9 @@ function Apphome() {
     useEffect(() => {
         console.log("onmounted");
 
-        if (document.body.clientWidth <= 500) {
+        //if (document.body.clientWidth <= 500) {
             shouqi收起折叠的导航栏菜单();
-        }
+       // }
         var initloadele = document.getElementById(initloadingid);
         initloadele && (initloadele.style.display = "none");
         // @ts-ignore
