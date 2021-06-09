@@ -209,7 +209,8 @@ export default function Decoder() {
             document.title =
                 "React router App-" + "JSfuck Decoder and hieroglyphy decoder";
             // decoderrender();
-        }
+        },
+        []
     );
     return (
         <div className="jdahd">
@@ -217,7 +218,7 @@ export default function Decoder() {
             {/* The `style` prop expects a mapping from style properties to values, not a string. For example, style={{marginRight: spacing + 'em'}} when using JSX. */}
             <h1
                 style={{
-                    "font-size": "30px",
+                    fontSize: "30px",
                 }}
 
                 //   "

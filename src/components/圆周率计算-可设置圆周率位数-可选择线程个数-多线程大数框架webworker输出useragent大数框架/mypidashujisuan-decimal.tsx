@@ -1,12 +1,15 @@
 "use strict";
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
+// @ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
 }
+// @ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
-
+// @ts-ignore
 import decimalworker from "./service-worker-mythread1-decimal.worker.js";
+// @ts-ignore
 import Decimal from "@/assetsjs/decimal.min.js";
 // import mui from "../mui.min.js";
 // eslint-disable-next-line no-unused-vars
@@ -216,7 +219,7 @@ export default function decimalcom() {
                         const arr = myworker;
                         /* arr和myworker不是同一个对象了! */
                         //   console.log(arr === myworker);//false
-                        return new Promise((rs, rj) => {
+                        return new Promise<void>((rs, rj) => {
                             /* 不要开启多余的线程 */
                             if (index >= threadgeshu) {
                                 rs();
@@ -406,13 +409,15 @@ export default function decimalcom() {
                         lashentextarea(e.target);
                     }}
                     className="form-control"
+                    // @ts-ignore
                     cols="100"
+                    // @ts-ignore
                     rows="100"
                     style={{
                         width: "100%",
                         height: "100px",
                         margin: "0 0",
-                        "text-align": "center",
+                        textAlign: "center",
                     }}
                     width="100%"
                     id="tp-big"
@@ -441,13 +446,15 @@ export default function decimalcom() {
                                 lashentextarea(e.target);
                             }}
                             className="form-control"
+                            // @ts-ignore
                             cols="100"
+                            // @ts-ignore
                             rows="100"
                             style={{
                                 width: "100%",
                                 height: "100px",
                                 margin: "0 0",
-                                "text-align": "center",
+                                textAlign: "center",
                             }}
                             width="100%"
                             id="tp2-big"

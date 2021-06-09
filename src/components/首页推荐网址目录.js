@@ -1,6 +1,6 @@
 export default [
     ["https://github.com/masx200", "masx200的github仓库"],
-   
+
     [
         "https://masx200.github.io/my-vue-router-project/",
         "masx200的基于vue的首页",

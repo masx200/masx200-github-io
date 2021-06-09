@@ -6,6 +6,7 @@ import mui from "@/assetsjs/mui.精简.button";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
 }
+// @ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 /*
 worker-loader
@@ -270,7 +271,7 @@ export default function bigcom() {
                         const arr = myworker;
                         /* arr和myworker不是同一个对象了! */
                         //   console.log(arr === myworker);//false
-                        return new Promise((rs, rj) => {
+                        return new Promise<void>((rs, rj) => {
                             /* 不要开启多余的线程 */
                             if (index >= threadgeshu) {
                                 rs();
@@ -475,7 +476,7 @@ export default function bigcom() {
                         height: "100px",
                         margin: "0 0",
                         // @ts-ignore
-                        "text-align": "center",
+                        textAlign: "center",
                     }}
                     width="100%"
                     id="tp-big"
@@ -513,7 +514,7 @@ export default function bigcom() {
                                 height: "100px",
                                 margin: "0 0",
                                 // @ts-ignore
-                                "text-align": "center",
+                                textAlign: "center",
                             }}
                             width="100%"
                             id="tp2-big"

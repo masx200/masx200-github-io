@@ -5,15 +5,28 @@ function 获取当前时间() {
 // React=IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
-import React from "react";
+//@ts-ignore
 import picture1 from "@/pictures/babeljs.png";
-
-import picture2 from "@/pictures/parcel.jpg";
+//@ts-ignore
 import picture3 from "@/pictures/bootstrap.png";
+//@ts-ignore
 import picture4 from "@/pictures/logo-jquery.png";
+//@ts-ignore
+import picture2 from "@/pictures/parcel.jpg";
+//@ts-ignore
 import picture5 from "@/pictures/react.svg";
+//@ts-ignore
 import picture6 from "@/pictures/vue.png";
+//@ts-ignore
 import picture7 from "@/pictures/webpack.svg";
+import React from "react";
+// function refreshall() {
+//   $("#allnavbar").click();
+// }
+//@ts-ignore
+import tanchu弹出消息通用 from "@/utils/my弹出消息通用.ts";
+//@ts-ignore
+import 首页推荐网址目录 from "@/components/首页推荐网址目录";
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 const { useEffect, useState } = React;
 export default function home() {
@@ -34,29 +47,79 @@ export default function home() {
     return (
         <div className="App">
             <header className="">
-                <div className="container">
-                    <div className="jumbotron">
-                        <h1>欢迎登陆页面！</h1>
-                        <p>
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href="https://weibo.com/2174458781?"
-                            >
-                                一生忽而得一夏当司掌好年华的微博
-                            </a>
-                        </p>
-                        <p>
-                            <a
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                href="https://github.com/masx200"
-                            >
-                                masx200的github仓库
-                            </a>
-                        </p>
+                <div
+                    className="jumbotron"
+                    style={{
+                        padding: 0,
+                    }}
+                >
+                    <h1>欢迎登陆页面！</h1>
+
+                    <div>
+                        <ul>
+                            {首页推荐网址目录.map((t, i) => {
+                                return (
+                                    <li key={i}>
+                                        <p>
+                                            <b>
+                                                <a
+                                                    className={
+                                                        "mui-btn mui-btn-primary mui-btn-outlined"
+                                                    }
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    href={t[0]}
+                                                >
+                                                    {t[1]}
+                                                </a>
+                                            </b>
+                                        </p>
+                                    </li>
+                                );
+                            })}
+                        </ul>
                     </div>
-                </div>{" "}
+
+                    <div>
+                        <button
+                            className="btn btn-outline-primary btn-lg"
+                            //   ref={mybuttonidsbuttonid1}
+                            onClick={() => {
+                                tanchu弹出消息通用("primary");
+                            }}
+                        >
+                            弹出首选提示框
+                        </button>
+                        <button
+                            className="btn btn-outline-success btn-lg"
+                            //   ref={mybuttonidsbuttonid2}
+                            onClick={() => {
+                                tanchu弹出消息通用("success");
+                            }}
+                        >
+                            弹出成功提示框
+                        </button>
+                        <button
+                            className="btn btn-outline-danger btn-lg"
+                            //   ref={mybuttonidsbuttonid3}
+                            onClick={() => {
+                                tanchu弹出消息通用("danger");
+                            }}
+                        >
+                            弹出失败提示框
+                        </button>
+                        <button
+                            className="btn btn-outline-warning btn-lg"
+                            //   ref={mybuttonidsbuttonid4}
+                            onClick={() => {
+                                tanchu弹出消息通用("warning");
+                            }}
+                        >
+                            弹出警告提示框
+                        </button>
+                    </div>
+                </div>
+
                 <h2>现在是 {nowtime}</h2>
                 <p>
                     <a
@@ -117,6 +180,3 @@ export default function home() {
     );
     //   }
 }
-// function refreshall() {
-//   $("#allnavbar").click();
-// }

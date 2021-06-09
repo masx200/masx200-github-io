@@ -124,7 +124,7 @@ export default function huami() {
             <div
                 id="rong1"
                 className="container"
-                style={{ "text-align": " center" }}
+                style={{ textAlign: " center" }}
             >
                 <div id="rong2">
                     <h2>

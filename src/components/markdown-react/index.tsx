@@ -43,7 +43,7 @@ function markdown(props) {
                 return;
             }
             (async () => {
-                hljs.initHighlightingOnLoad();
+                hljs.highlightAll();
 
                 let text;
                 try {
@@ -63,7 +63,7 @@ function markdown(props) {
 
                 Array.from(divele.querySelectorAll("pre code")).forEach(
                     (block) => {
-                        hljs.highlightBlock(block);
+                        hljs.highlightElement(block);
                     }
                 );
                 set加载完成(true);

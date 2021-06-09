@@ -129,7 +129,7 @@ export default function Jsfuck() {
     return (
         <div className="jdahd">
             <h1
-                style={{ "font-size": "30px" }}
+                style={{ fontSize: "30px" }}
                 //       "
                 //     font-size: 30px;
                 // "

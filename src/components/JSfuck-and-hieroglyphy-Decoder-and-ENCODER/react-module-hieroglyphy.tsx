@@ -147,7 +147,7 @@ export default function Hieroglyphy() {
 
     return (
         <div className="jdahd">
-            <h1 style={{ "font-size": "30px" }}>
+            <h1 style={{ fontSize: "30px" }}>
                 编码hieroglyphy <br />
                 encode hieroglyphy
             </h1>

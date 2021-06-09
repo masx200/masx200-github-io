@@ -6,14 +6,14 @@ export default React.memo(路由);
 function 路由() {
     // @ts-ignore
     var myhome = lazy(() => import("./components/home-react-module-home.tsx"));
-    const reacthome=lazy(
-                () =>
-                    // @ts-ignore
-                    import(
-                        // @ts-ignore
-                        "./components/my-react-router-test/react-module-home.tsx"
-                    )
+    const reacthome = lazy(
+        () =>
+            // @ts-ignore
+            import(
+                // @ts-ignore
+                "./components/my-react-router-test/react-module-home.tsx"
             )
+    );
     var 路由list: [
         string,
         React.LazyExoticComponent<React.ComponentType<any>>
@@ -38,8 +38,9 @@ function 路由() {
         ],
         [
             "/react-home",
+
             // @ts-ignore
-            ,myhome
+            myhome,
         ],
         [
             "/react-rssreader",
@@ -47,6 +48,7 @@ function 路由() {
                 () =>
                     // @ts-ignore
                     import(
+                        // @ts-ignore
                         "./components/my-react-router-test/react-module-rssreader.tsx"
                     )
             ),
@@ -57,6 +59,7 @@ function 路由() {
                 () =>
                     // @ts-ignore
                     import(
+                        // @ts-ignore
                         "./components/my-react-router-test/react-module-rssreader.tsx"
                     )
             ),
@@ -67,6 +70,7 @@ function 路由() {
                 () =>
                     // @ts-ignore
                     import(
+                        // @ts-ignore
                         "./components/my-react-router-test/react-module-about.js"
                     )
             ),
@@ -77,6 +81,7 @@ function 路由() {
                 () =>
                     // @ts-ignore
                     import(
+                        // @ts-ignore
                         "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder.tsx"
                     )
             ),
@@ -87,6 +92,7 @@ function 路由() {
                 () =>
                     // @ts-ignore
                     import(
+                        // @ts-ignore
                         "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck.tsx"
                     )
             ),
@@ -97,6 +103,7 @@ function 路由() {
                 () =>
                     // @ts-ignore
                     import(
+                        // @ts-ignore
                         "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.tsx"
                     )
             ),
@@ -112,6 +119,7 @@ function 路由() {
                 () =>
                     // @ts-ignore
                     import(
+                        // @ts-ignore
                         "./components/home-react-webpack-react-vue-spa-awesome-config.tsx"
                     )
             ),
@@ -122,6 +130,7 @@ function 路由() {
                 () =>
                     // @ts-ignore
                     import(
+                        // @ts-ignore
                         "./components/home-react-使用react hooks实现的简单全局状态管理 react-simple-global-state-store-hook.tsx"
                     )
             ),
@@ -132,6 +141,7 @@ function 路由() {
                 () =>
                     // @ts-ignore
                     import(
+                        // @ts-ignore
                         "./components/excellent-vscode-extensions-for-javascript.tsx"
                     )
             ),
@@ -142,6 +152,7 @@ function 路由() {
                 () =>
                     // @ts-ignore
                     import(
+                        // @ts-ignore
                         "./components/vue-simple-global-state-store-manager.tsx"
                     )
             ),

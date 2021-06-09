@@ -11,7 +11,7 @@ import 路由列表 from "./router-react-路由列表.tsx";
 import 可变路径的rssreader链接 from "./可变路径的rssreader链接.tsx";
 // @ts-ignore
 import 我的自定义导航链接 from "./我的自定义导航链接.tsx";
-
+// @ts-ignore
 import { initloadingid } from "./initloadingid.ts";
 
 var { Suspense } = React;
@@ -23,8 +23,8 @@ function Apphome() {
         console.log("onmounted");
 
         //if (document.body.clientWidth <= 500) {
-            shouqi收起折叠的导航栏菜单();
-       // }
+        shouqi收起折叠的导航栏菜单();
+        // }
         var initloadele = document.getElementById(initloadingid);
         initloadele && (initloadele.style.display = "none");
         // @ts-ignore
