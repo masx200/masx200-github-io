@@ -2,10 +2,11 @@
 
 /* eslint-disable react/prop-types */
 ("use strict");
-
+//@ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
 import React from "react";
 // import * as parser from "@/assetsjs/fast-xml-parser";
+//@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 //@ts-ignore
 import * as parser from "../../assetsjs/fast-xml-parser.js";
@@ -18,31 +19,7 @@ import {
     rssxml1,
 } from "./rssfeedxml";
 import $ from "jquery";
-// import mui from "../mui.min.js";
-// const jQuery = $;
-// ("use strict");
-/* Hook是React 16.8中的新增功能。它们允许您在不编写类的情况下使用状态和其他React功能。
-https://reactjs.org/docs/hooks-overview.html#state-hook
-*/
-/* // var refreshallsetstate;
-// IMPORTCJSAMDUMD(
-//     "https://cdn.staticfile.org/react/16.9.0-alpha.0/umd/react.production.min.js",
-//     "react"
-//   ).then(
 
-//     reactmoduleload
-//   )
-
-// function reactmoduleload(module){
-// console.log(window)
-// React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
-
-// console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
- */
-/* https://reactjs.org/docs/hooks-reference.html#useref */
-// var mybuttonids = {};
-
-// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 var { useState, useEffect, useRef } = React;
 // var{ useState }=React
 
@@ -65,14 +42,9 @@ function Rssreader(props) {
     const mybuttonidsbuttonid6 = useRef();
     async function jiazaiload(xmlurl, element) {
         mui(element).button.loading();
-        // mui(element).button("loading");
-        // window.myrsscontent = []
+
         var myrsscontent = [];
-        // console.log(
-        //   "开始加载外部内容",
-        //   xmlurl
-        //   /* $(myselectorid).attr("src") */
-        // );
+
         if (typeof (/* $(myselectorid).attr("src")  */ xmlurl) == "undefined") {
             //   console.log("加载失败");
         } else {
@@ -90,11 +62,11 @@ function Rssreader(props) {
             (() => {
                 var str = xmlstring;
                 myxmlstrcontent.push(str);
-                //   console.log("xml", myxmlstrcontent);
+
                 var data = parser.parse(str);
-                // console.log("rssjson", data);
+
                 myrsscontent.title = data.rss.channel.title;
-                //   myrsscontent.description = $(data.rss.channel.description).text();
+
                 myrsscontent.description = data.rss.channel.description;
                 myrsscontent.push(
                     /* 提取e.description里面的文字 */
@@ -108,67 +80,24 @@ function Rssreader(props) {
                                     $("<div/>").append(e.description).text() ||
                                     e.description;
                             } catch (error) {
-                                // console.error(error);
-                                // e.description = e.description;
+                                console.error(error);
                             }
 
                             return e;
                         }
                     )
-                    // description: $(data.rss.channel.item.description).text()
                 );
-                // console.log("rsscontent", myrsscontent);
-
-                // mui(element).button("reset");
 
                 tanchu弹出消息通用("success");
-                //   refreshall();
-                //   this.forceUpdate();
+
                 setrssState(myrsscontent);
                 mui(element).button.reset();
             })();
-            // .then(s => {
-            //   var str = s;
-            //   myxmlstrcontent.push(str);
-            //   //   console.log("xml", myxmlstrcontent);
-            //   var data = parser.parse(str);
-            //   console.log("rssjson", data);
-            //   myrsscontent.title = data.rss.channel.title;
-            //   //   myrsscontent.description = $(data.rss.channel.description).text();
-            //   myrsscontent.description = data.rss.channel.description;
-            //   myrsscontent.push(
-            //     /* 提取e.description里面的文字 */
-            //     /* 不要修改原来的rssjson,改成深拷贝 */
-            //     ...JSON.parse(JSON.stringify(data.rss.channel.item)).map(e => {
-            //       //   console.log(e);
-            //       try {
-            //         /* 如果 e.description是以以文字开头则在外面包上一个div*/
-            //         e.description =
-            //           $("<div/>")
-            //             .append(e.description)
-            //             .text() || e.description;
-            //       } catch (error) {
-            //         console.error(error);
-            //         // e.description = e.description;
-            //       }
-
-            //       return e;
-            //     })
-            //     // description: $(data.rss.channel.item.description).text()
-            //   );
-            //   console.log("rsscontent", myrsscontent);
-
-            //   mui(element).button("reset");
-            //   tanchu弹出消息通用("success");
-            //   //   refreshall();
-            //   //   this.forceUpdate();
-            //   setrssState(myrsscontent);
-            // });
         }
     }
     useEffect(
         () => {
-            //   console.log(props);
+            console.log(props);
             try {
                 if ("undefined" !== typeof props.match.params.sitename) {
                     if (website !== props.match.params.sitename) {
@@ -239,8 +168,8 @@ function Rssreader(props) {
         /* 依赖项设置为props就会在上级传入的参数变化时生效 */
 
         [
-            // props.match.params.sitename
-            props,
+            props.match.params.sitename,
+            //props,
         ]
     );
     useEffect(() => {
@@ -253,14 +182,6 @@ function Rssreader(props) {
         } else {
             document.title = "React router App-" + "rssreader-";
         }
-        // document.title =
-        //   "React router App-" + "rssreader-" +
-        //     ? props.match.params.sitename
-        //     : "";
-        // return () => {
-        //   //   console.log("缓存rssstate");
-        //   //   myrsscontent = rssstate;
-        // };
     }, []);
     return (
         <div className="">
@@ -274,11 +195,6 @@ function Rssreader(props) {
                         data-loading-icon="mui-spinner mui-spinner-custom"
                         className="mui-btn mui-btn-royal mui-btn-outlined btn-lg"
                         onClick={() => {
-                            /* 使用箭头函数可以自动绑定this! */
-                            //   this.jiazairss1();
-                            //   jiazaiload(rssxml1, mybuttonidsbuttonid1.current);
-                            // location.hash = "#/react-rssreader/tmtpost";
-
                             props.history.replace("/react-rssreader/tmtpost");
                         }}
                     >
@@ -291,10 +207,6 @@ function Rssreader(props) {
                         className="mui-btn mui-btn-primary mui-btn-outlined btn-lg"
                         //   onClick={this.jiazairss2}
                         onClick={() => {
-                            /* 使用箭头函数可以自动绑定this! */
-                            //   this.jiazairss2();
-                            //   jiazaiload(rssxml2, mybuttonidsbuttonid2.current);
-                            // location.hash = "#/react-rssreader/iplaysoft";
                             props.history.replace("/react-rssreader/iplaysoft");
                         }}
                     >
@@ -307,10 +219,6 @@ function Rssreader(props) {
                         className="mui-btn mui-btn-warning mui-btn-outlined btn-lg"
                         //   onClick={this.jiazairss3}
                         onClick={() => {
-                            /* 使用箭头函数可以自动绑定this! */
-                            //   this.jiazairss3();
-                            //   jiazaiload(rssxml3, mybuttonidsbuttonid3.current);
-                            // location.hash = "#/react-rssreader/landiannews";
                             props.history.replace(
                                 "/react-rssreader/landiannews"
                             );
@@ -325,10 +233,6 @@ function Rssreader(props) {
                         className="mui-btn mui-btn-danger mui-btn-outlined btn-lg"
                         //   onClick={this.jiazairss4}
                         onClick={() => {
-                            /* 使用箭头函数可以自动绑定this! */
-                            //   this.jiazairss4();
-                            //   jiazaiload(rssxml4, mybuttonidsbuttonid4.current);
-                            // location.hash = "#/react-rssreader/ithome";
                             props.history.replace("/react-rssreader/ithome");
                         }}
                     >
@@ -341,10 +245,6 @@ function Rssreader(props) {
                         className="mui-btn mui-btn-success mui-btn-outlined btn-lg"
                         //   onClick={this.jiazairss5}
                         onClick={() => {
-                            /* 使用箭头函数可以自动绑定this! */
-                            //   this.jiazairss5();
-                            //   jiazaiload(rssxml5, mybuttonidsbuttonid5.current);
-                            // location.hash = "#/react-rssreader/ifanr";
                             props.history.replace("/react-rssreader/ifanr");
                         }}
                     >
@@ -357,10 +257,6 @@ function Rssreader(props) {
                         className="mui-btn mui-btn-primary mui-btn-outlined btn-lg"
                         //   onClick={this.jiazairss6}
                         onClick={() => {
-                            /* 使用箭头函数可以自动绑定this! */
-                            //   this.jiazairss6();
-                            //   jiazaiload(rssxml6, mybuttonidsbuttonid6.current);
-                            // location.hash = "#/react-rssreader/pingwest";
                             props.history.replace("/react-rssreader/pingwest");
                         }}
                     >
