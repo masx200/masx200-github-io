@@ -18,13 +18,17 @@ import {
     rssxml6,
     rssxml1,
 } from "./rssfeedxml";
-import $ from "jquery";
+// import $ from "jquery";
 
 var { useState, useEffect, useRef } = React;
 // var{ useState }=React
-
+const cachersscontent = new Map<
+    string,
+    { title: string; content: any[]; description: string }
+>();
 export default React.memo(Rssreader);
 function Rssreader(props) {
+    var unmounted = false;
     function setarssstatefun() {
         setwebsite(props.match.params.sitename);
     }
@@ -42,71 +46,87 @@ function Rssreader(props) {
     const mybuttonidsbuttonid4 = useRef();
     const mybuttonidsbuttonid5 = useRef();
     const mybuttonidsbuttonid6 = useRef();
-    async function jiazaiload(xmlurl, element) {
-        mui(element).button.loading();
+    async function jiazaiload(xmlurl: string, element: Element) {
+        mui(element).buttonloading();
+        const cachedobj = cachersscontent.get(xmlurl);
+        if (cachedobj) {
+            console.log(cachedobj, cachersscontent);
+            tanchu弹出消息通用("success");
 
+            unmounted || setrssState(cachedobj.content);
+            unmounted || setrssStatetitle(cachedobj.title);
+            unmounted || setrssStatedescription(cachedobj.description);
+            mui(element).buttonreset();
+            return;
+        }
         var myrsscontent = [];
 
-        if (typeof (/* $(myselectorid).attr("src")  */ xmlurl) == "undefined") {
-            //   console.log("加载失败");
-        } else {
-            //使用fetch函数代替$.get
-            //使用fast-xml-parser把xml转换为json
-            // var xmlurl = $(myselectorid).attr("src");
-            var xmlstring = await fetch(xmlurl).then((r) => {
-                if (r.ok) {
-                    //   console.log(r.statusText, r);
-                    return r.text();
-                } else {
-                    throw new Error("fetch failed");
-                }
-            });
-            (() => {
-                var str = xmlstring;
-                myxmlstrcontent.push(str);
+        // if (typeof (/* $(myselectorid).attr("src")  */ xmlurl) == "undefined") {
+        //     //   console.log("加载失败");
+        // } else {
+        //使用fetch函数代替$.get
+        //使用fast-xml-parser把xml转换为json
+        // var xmlurl = $(myselectorid).attr("src");
+        var xmlstring = await fetch(xmlurl).then((r) => {
+            if (r.ok) {
+                //   console.log(r.statusText, r);
+                return r.text();
+            } else {
+                throw new Error("fetch failed");
+            }
+        });
+        (() => {
+            var str = xmlstring;
+            myxmlstrcontent.push(str);
 
-                var data = parser.parse(str);
+            var data = parser.parse(str);
 
-                var title = data.rss.channel.title;
+            var title = data.rss.channel.title;
 
-                var description = data.rss.channel.description;
-                myrsscontent.push(
-                    /* 提取e.description里面的文字 */
-                    /* 不要修改原来的rssjson,改成深拷贝 */
-                    ...JSON.parse(JSON.stringify(data.rss.channel.item)).map(
-                        (e: { description: string }) => {
-                            //   console.log(e);
-                            try {
-                                /* 如果 e.description是以以文字开头则在外面包上一个div*/
+            var description = data.rss.channel.description;
+            myrsscontent.push(
+                /* 提取e.description里面的文字 */
+                /* 不要修改原来的rssjson,改成深拷贝 */
+                ...JSON.parse(JSON.stringify(data.rss.channel.item)).map(
+                    (e: { description: string }) => {
+                        //   console.log(e);
+                        try {
+                            /* 如果 e.description是以以文字开头则在外面包上一个div*/
 
-                                e.description =
-                                    ((description) => {
-                                        ///防止出现加载图片的情况
-                                        const body =
-                                            document.implementation.createHTMLDocument(
-                                                "title"
-                                            ).body;
-                                        body.innerHTML = description;
+                            e.description =
+                                ((description) => {
+                                    ///防止出现加载图片的情况
+                                    const body =
+                                        document.implementation.createHTMLDocument(
+                                            "title"
+                                        ).body;
+                                    body.innerHTML = description;
 
-                                        return body.innerText;
-                                    })(description) || e.description;
-                            } catch (error) {
-                                console.error(error);
-                            }
-
-                            return e;
+                                    return body.innerText;
+                                })(e.description) || e.description;
+                        } catch (error) {
+                            console.error(error);
                         }
-                    )
-                );
 
-                tanchu弹出消息通用("success");
+                        return e;
+                    }
+                )
+            );
 
-                setrssState(myrsscontent);
-                setrssStatetitle(title);
-                setrssStatedescription(description);
-                mui(element).button.reset();
-            })();
-        }
+            tanchu弹出消息通用("success");
+
+            unmounted || setrssState(myrsscontent);
+            unmounted || setrssStatetitle(title);
+            unmounted || setrssStatedescription(description);
+            mui(element).buttonreset();
+            cachersscontent.set(xmlurl, {
+                title,
+                description,
+                content: myrsscontent,
+            });
+            console.log(cachersscontent);
+        })();
+        // }
     }
     useEffect(
         () => {
@@ -195,6 +215,10 @@ function Rssreader(props) {
         } else {
             document.title = "React router App-" + "rssreader-";
         }
+        return () => {
+            unmounted = true;
+            //清除副作用
+        };
     }, []);
     return (
         <div className="">
@@ -278,7 +302,7 @@ function Rssreader(props) {
                 </ul>
             </nav>
             <header className="App-header">
-                <div>
+                <div style={{ maxWidth: "100%" }}>
                     <h3>
                         <b>{rssstatetitle}</b>
                     </h3>
