@@ -78,9 +78,18 @@ function Rssreader(props) {
                             //   console.log(e);
                             try {
                                 /* 如果 e.description是以以文字开头则在外面包上一个div*/
+
                                 e.description =
-                                    $("<div/>").append(e.description).text() ||
-                                    e.description;
+                                    ((description) => {
+                                        ///防止出现加载图片的情况
+                                        const body =
+                                            document.implementation.createHTMLDocument(
+                                                "title"
+                                            ).body;
+                                        body.innerHTML = description;
+
+                                        return body.innerText;
+                                    })(description) || e.description;
                             } catch (error) {
                                 console.error(error);
                             }

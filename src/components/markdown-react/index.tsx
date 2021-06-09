@@ -7,7 +7,7 @@ import marked from "marked";
 import hljs from "@/assetsjs/highlight.min.js";
 
 const cachemarkdown = new Map();
-async function fetchtext(url) {
+async function fetchtext(url: string) {
     var r = await fetch(new URL(url).href);
     if (r.ok) {
         return await r.text();

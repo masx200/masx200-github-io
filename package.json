@@ -47,6 +47,7 @@
         "@masx200/webpack-react-vue-spa-awesome-config": "3.2.0",
         "@types/highlight.js": "^10.1.0",
         "@types/jquery": "^3.5.5",
+        "@types/marked": "^2.0.3",
         "@types/node": "15.6.1",
         "@types/react": "^17.0.6",
         "@types/react-dom": "^17.0.5",

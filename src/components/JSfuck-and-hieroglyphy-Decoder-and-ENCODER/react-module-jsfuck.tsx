@@ -3,9 +3,12 @@
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
 }
+//@ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
+//@ts-ignore
 import jsfuckworker from "./service-worker-jsfuck.worker.js";
 import React from "react";
+//@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 
 var { useState, useEffect, useRef, useCallback } = React;
@@ -47,6 +50,7 @@ export default function Jsfuck() {
         myservice.postMessage([
             //   $2("input").value,
             inputcode,
+            //@ts-ignore
             evalcheckbox.current.checked,
             //   $2("eval").checked
 
@@ -154,7 +158,7 @@ export default function Jsfuck() {
             <br />
             <textarea
                 id="input"
-                type="text"
+                // type="text"
                 className="form-control"
                 value={inputcode}
                 onChange={inputonchange}
@@ -167,7 +171,7 @@ export default function Jsfuck() {
                 ref={btnencode}
                 className="btn btn-outline-primary btn-lg"
                 id="encode"
-                type="text"
+                // type="text"
                 data-loading-icon="mui-spinner mui-spinner-custom"
             >
                 Encode
@@ -212,6 +216,7 @@ export default function Jsfuck() {
                         // eval($2("output").value);
 
                         if (
+                            //@ts-ignore
                             evalcheckbox.current.checked
                             // !$2("eval").checked
                         ) {
