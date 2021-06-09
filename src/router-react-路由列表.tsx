@@ -146,7 +146,7 @@ function 路由() {
                     )
             ),
         ],
-        ["*", home],
+        ["*", reacthome],
     ];
 
     return (
