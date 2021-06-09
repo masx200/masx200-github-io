@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
 import marked from "marked";
+//@ts-ignore
 import hljs from "@/assetsjs/highlight.min.js";
 
 const cachemarkdown = new Map();
@@ -16,7 +17,7 @@ async function fetchtext(url) {
 }
 export default React.memo(markdown);
 
-function markdown(props) {
+function markdown(props: { src: string }) {
     console.log(cachemarkdown);
     let markdowncache = "";
     let cache加载完成 = false;
@@ -33,7 +34,8 @@ function markdown(props) {
     const [markdown内容, setmarkdown内容] = useState(markdowncache);
 
     const ref = useRef();
-
+    //已经卸载此组件
+    var unmounted = false;
     useEffect(() => {
         if (props.src) {
             const marktext = cachemarkdown.get(props.src);
@@ -50,7 +52,8 @@ function markdown(props) {
                     text = await fetchtext(props.src);
                 } catch (error) {
                     console.error(error);
-                    set加载失败(true);
+
+                    unmounted || set加载失败(true);
                     return;
                 }
 
@@ -66,9 +69,9 @@ function markdown(props) {
                         hljs.highlightElement(block);
                     }
                 );
-                set加载完成(true);
+                unmounted || set加载完成(true);
                 try {
-                    setmarkdown内容(divele.innerHTML);
+                    unmounted || setmarkdown内容(divele.innerHTML);
                     cachemarkdown.set(props.src, divele.innerHTML);
                 } catch (error) {
                     console.error(error);
@@ -76,6 +79,15 @@ function markdown(props) {
             })();
         }
     }, [props.src]);
+    useEffect(() => {
+        // setTimeout(() => {
+        //     location.hash='#/'
+        // },0)
+        return () => {
+            unmounted = true;
+            //清除副作用
+        };
+    });
     return (
         <div className="container">
             <div
