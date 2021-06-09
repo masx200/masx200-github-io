@@ -32,7 +32,9 @@ function Rssreader(props) {
     const [website, setwebsite] = useState("");
     var myxmlstrcontent = [];
     var myrsscontent = [];
+    const [rssstatetitle, setrssStatetitle] = useState("");
     const [rssstate, setrssState] = useState(myrsscontent);
+    const [rssstatedescription, setrssStatedescription] = useState("");
     //   console.log(setrssState);
     const mybuttonidsbuttonid1 = useRef();
     const mybuttonidsbuttonid2 = useRef();
@@ -65,14 +67,14 @@ function Rssreader(props) {
 
                 var data = parser.parse(str);
 
-                myrsscontent.title = data.rss.channel.title;
+                var title = data.rss.channel.title;
 
-                myrsscontent.description = data.rss.channel.description;
+                var description = data.rss.channel.description;
                 myrsscontent.push(
                     /* 提取e.description里面的文字 */
                     /* 不要修改原来的rssjson,改成深拷贝 */
                     ...JSON.parse(JSON.stringify(data.rss.channel.item)).map(
-                        (e) => {
+                        (e: { description: string }) => {
                             //   console.log(e);
                             try {
                                 /* 如果 e.description是以以文字开头则在外面包上一个div*/
@@ -91,6 +93,8 @@ function Rssreader(props) {
                 tanchu弹出消息通用("success");
 
                 setrssState(myrsscontent);
+                setrssStatetitle(title);
+                setrssStatedescription(description);
                 mui(element).button.reset();
             })();
         }
@@ -267,9 +271,9 @@ function Rssreader(props) {
             <header className="App-header">
                 <div>
                     <h3>
-                        <b>{rssstate.title}</b>
+                        <b>{rssstatetitle}</b>
                     </h3>
-                    <p>{rssstate.description}</p>
+                    <p>{rssstatedescription}</p>
 
                     <ul className="mui-table-view">
                         {
