@@ -5,12 +5,20 @@ var { lazy } = React;
 export default React.memo(路由);
 function 路由() {
     // @ts-ignore
-    var home = lazy(() => import("./components/home-react-module-home.tsx"));
+    var myhome = lazy(() => import("./components/home-react-module-home.tsx"));
+    const reacthome=lazy(
+                () =>
+                    // @ts-ignore
+                    import(
+                        // @ts-ignore
+                        "./components/my-react-router-test/react-module-home.tsx"
+                    )
+            )
     var 路由list: [
         string,
         React.LazyExoticComponent<React.ComponentType<any>>
     ][] = [
-        ["/", home],
+        ["/", reacthome],
         [
             "/picalc",
             // @ts-ignore
@@ -31,14 +39,7 @@ function 路由() {
         [
             "/react-home",
             // @ts-ignore
-            lazy(
-                () =>
-                    // @ts-ignore
-                    import(
-                        // @ts-ignore
-                        "./components/my-react-router-test/react-module-home.tsx"
-                    )
-            ),
+            ,myhome
         ],
         [
             "/react-rssreader",
