@@ -330,7 +330,14 @@ function Rssreader(props) {
                                                 {e.link}
                                             </p>
                                         </a>
-                                        <p className="mui-ellipsis">
+                                        <p
+                                            className="mui-ellipsis"
+                                            style={{
+                                                whiteSpace: "normal",
+                                                wordBreak: "break-all",
+                                                wordWrap: "break-word",
+                                            }}
+                                        >
                                             {e.description}
                                         </p>
                                     </div>
