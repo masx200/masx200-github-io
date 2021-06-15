@@ -139,7 +139,6 @@ export default function Decoder() {
         }
     }
 
-  
     function setDecoded(decodedCode) {
         //  eval(decodedCode);
         // console.log(

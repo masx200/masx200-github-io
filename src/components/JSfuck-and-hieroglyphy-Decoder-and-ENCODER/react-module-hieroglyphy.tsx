@@ -107,7 +107,7 @@ export default function Hieroglyphy() {
         };
     }
     var lastclick: string;
-   
+
     var [outputcode, setoutputcode] = useState("");
     var [inputcode, setinputcode] = useState(
         "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')"

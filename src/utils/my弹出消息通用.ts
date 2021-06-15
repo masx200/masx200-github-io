@@ -1,3 +1,5 @@
+//@ts-ignore
+import { 调整导航栏和主体的距离 } from "@/调整导航栏和主体的距离.js";
 import $ from "jquery";
 function guid() {
     return "xxxxxxxx-xxxx-yxxx-yxxx-xxxxxxxxxxxx".replace(
@@ -38,8 +40,7 @@ function tanchu弹出消息通用(infotype) {
     </div>`).fadeTo(5000, 0.5, () => {
             // console.log(jQuery("#" + id));
             jQuery("#" + id).remove();
-            $("#my主体").css("padding-top", $("#my导航栏").height() || 0);
-            //   refreshall();
+            调整导航栏和主体的距离();
         })
     );
 }

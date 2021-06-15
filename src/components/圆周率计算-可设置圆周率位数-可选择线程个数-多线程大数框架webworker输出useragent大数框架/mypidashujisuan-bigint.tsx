@@ -86,14 +86,14 @@ export default function bigcom() {
             关闭所有worker();
         };
     }, []);
-    var p: { toString: () => string | string[] },
+    var p: bigInt.BigInteger,
         piwei: string | number,
         strt: number,
         finishflag: any[],
         x = 0,
         threadgeshu: string | number,
         testname: string;
- 
+
     function lashentextarea(eles) {
         // console.log(eles.outerHTML);
         requestAnimationFrame(function () {

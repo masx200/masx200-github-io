@@ -57,7 +57,7 @@ export default function decimalcom() {
         x = 0,
         threadgeshu,
         testname;
-   
+
     function lashentextarea(eles) {
         // console.log(eles.outerHTML);
         requestAnimationFrame(function () {

@@ -1,10 +1,10 @@
 // const myvurrouterprojecturl =
 //     "https://my-vue-router-project-masx200.vercel.app/";
-
 import { useToggle } from "@umijs/hooks";
-import $ from "jquery";
 import React from "react";
 import { HashRouter, Link } from "react-router-dom";
+// @ts-ignore
+import { initloadingid } from "./initloadingid.ts";
 // @ts-ignore
 import 路由列表 from "./router-react-路由列表.tsx";
 // @ts-ignore
@@ -12,7 +12,7 @@ import 可变路径的rssreader链接 from "./可变路径的rssreader链接.tsx
 // @ts-ignore
 import 我的自定义导航链接 from "./我的自定义导航链接.tsx";
 // @ts-ignore
-import { initloadingid } from "./initloadingid.ts";
+import { 调整导航栏和主体的距离 } from "./调整导航栏和主体的距离.js";
 
 var { Suspense } = React;
 var { useEffect } = React;
@@ -28,39 +28,21 @@ function Apphome() {
         var initloadele = document.getElementById(initloadingid);
         initloadele && (initloadele.style.display = "none");
         // @ts-ignore
-        $("#my主体").css(
-            "padding-top",
-            // @ts-ignore
-            $("#my导航栏").height() || 0
-        );
+        调整导航栏和主体的距离();
         document.title = "masx200的github主页";
         window.addEventListener("hashchange", () => {
             toggle(false);
-            $("#my主体").css(
-                "padding-top",
-                // @ts-ignore
-                $("#my导航栏").height() || 0
-            );
+            调整导航栏和主体的距离();
         });
     }, []);
     useEffect(() => {
-        $("#my主体").css(
-            "padding-top",
-            // @ts-ignore
-            $("#my导航栏").height() || 0
-        );
+        调整导航栏和主体的距离();
     }, [state]);
 
     function shouqi收起折叠的导航栏菜单() {
         toggle(false);
 
-        // @ts-ignore
-        $("#my主体").css(
-            "padding-top",
-            // @ts-ignore
-            $("#my导航栏").height() || 0
-        );
-
+        调整导航栏和主体的距离();
         scrollTo(0, 0);
     }
 

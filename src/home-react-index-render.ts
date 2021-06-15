@@ -1,6 +1,7 @@
 import $ from "jquery";
 import React from "react";
-
+//@ts-ignore
+import { 调整导航栏和主体的距离 } from "@/调整导航栏和主体的距离.js";
 // @ts-ignore
 import Apphome from "./react-apphome.tsx";
 
@@ -17,7 +18,7 @@ const scrollTo = window.scrollTo;
             // $("#example-navbar-collapse").hide(); //$(example_navbar_collapse.current).removeClass("show");
             // $("#collapsibleNavbar").removeClass("show");
             setTimeout(() => {
-                $("#my主体").css("padding-top", $("#my导航栏").height() || 0);
+                调整导航栏和主体的距离();
             }, 50);
         }
         $(window).on("hashchange", onhashchange);
@@ -47,7 +48,7 @@ window.addEventListener("resize", () => {
     setTimeout(() => {
         requestAnimationFrame(() => {
             setTimeout(() => {
-                $("#my主体").css("padding-top", $("#my导航栏").height() || 0);
+                调整导航栏和主体的距离();
             }, 0);
         });
     }, 0);

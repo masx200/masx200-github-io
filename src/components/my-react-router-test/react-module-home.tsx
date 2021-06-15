@@ -1,5 +1,3 @@
-"use strict";
-
 // React=IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
@@ -20,25 +18,18 @@ import picture5 from "@/pictures/react.svg";
 import picture6 from "@/pictures/vue.png";
 //@ts-ignore
 import picture7 from "@/pictures/webpack.svg";
-// function refreshall() {
-//   $("#allnavbar").click();
-// }
-import $ from "jquery";
 //@ts-ignore
 import tanchu弹出消息通用 from "@/utils/my弹出消息通用.ts";
 import React from "react";
+import { 调整导航栏和主体的距离 } from "../../调整导航栏和主体的距离.js";
+("use strict");
+
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 const { useEffect, useState } = React;
 export default function home() {
     const [nowtime, setnowtime] = useState(获取当前时间());
     useEffect(() => {
-        $("#my主体").css(
-            "padding-top",
-            // @ts-ignore
-            $("#my导航栏").height() || 0
-        );
-        // window.location.hash = "#/";
-        // refreshall();
+        调整导航栏和主体的距离();
         document.title = "React router App-" + "home";
         let timer = setInterval(() => {
             setnowtime(获取当前时间());
@@ -147,14 +138,7 @@ export default function home() {
                 <h1>react-router测试</h1>
                 <h1>Hello, world!</h1>
                 <h2>欢迎来到主页</h2>
-                {
-                    // <p>
-                    //   Edit <code>src/App.js</code> and save to reload.
-                    // </p>}
-                }
-                {/* { <p className="App-intro">
-          你可以在 <code>src/App.js</code> 文件中修改。
-        </p>} */}
+
                 <a
                     className="App-link"
                     href="https://reactjs.org"
