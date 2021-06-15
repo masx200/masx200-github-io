@@ -1,10 +1,11 @@
 "use strict";
-function 获取当前时间() {
-    return new Date().toString().slice(0, new Date().toString().indexOf("GMT"));
-}
+
 // React=IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
 // console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
+//@ts-ignore
+//@ts-ignore
+import 首页推荐网址目录 from "@/components/首页推荐网址目录";
 //@ts-ignore
 import picture1 from "@/pictures/babeljs.png";
 //@ts-ignore
@@ -19,19 +20,23 @@ import picture5 from "@/pictures/react.svg";
 import picture6 from "@/pictures/vue.png";
 //@ts-ignore
 import picture7 from "@/pictures/webpack.svg";
-import React from "react";
 // function refreshall() {
 //   $("#allnavbar").click();
 // }
+import $ from "jquery";
 //@ts-ignore
 import tanchu弹出消息通用 from "@/utils/my弹出消息通用.ts";
-//@ts-ignore
-import 首页推荐网址目录 from "@/components/首页推荐网址目录";
+import React from "react";
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
 const { useEffect, useState } = React;
 export default function home() {
     const [nowtime, setnowtime] = useState(获取当前时间());
     useEffect(() => {
+        $("#my主体").css(
+            "padding-top",
+            // @ts-ignore
+            $("#my导航栏").height() || 0
+        );
         // window.location.hash = "#/";
         // refreshall();
         document.title = "React router App-" + "home";
@@ -179,4 +184,7 @@ export default function home() {
         </div>
     );
     //   }
+}
+function 获取当前时间() {
+    return new Date().toString().slice(0, new Date().toString().indexOf("GMT"));
 }

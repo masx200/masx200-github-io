@@ -1,14 +1,13 @@
+import "./styles.js";
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker";
 import React from "react";
 import { render } from "react-dom";
-import "./assetscss/masx200-main.0b9ca398071be6517552.css";
+
 import "./error-alert.js";
-import "./index.css";
+
 //@ts-ignore
 import { initloadingid } from "./initloadingid.ts";
-import "./juejin-highlight-markdown-0.c4305b077afc652cb76a.css";
-import "./pre-wrap.css";
-import "./样式.css";
+
 //@ts-ignore
 React["__esModule"] = true;
 //@ts-ignore
