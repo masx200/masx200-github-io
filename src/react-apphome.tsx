@@ -22,9 +22,9 @@ function Apphome() {
     useEffect(() => {
         console.log("onmounted");
 
-        //if (document.body.clientWidth <= 500) {
-        shouqi收起折叠的导航栏菜单();
-        // }
+        if (document.body.clientWidth <= 500) {
+            shouqi收起折叠的导航栏菜单();
+        }
         var initloadele = document.getElementById(initloadingid);
         initloadele && (initloadele.style.display = "none");
         // @ts-ignore
@@ -54,6 +54,16 @@ function Apphome() {
                         className="navbar navbar-default navbar navbar-expand-sm bg-light navbar-light"
                         role="navigation"
                     >
+                        <div>
+                            <Link
+                                className="navbar-brand mui-btn mui-btn-primary mui-btn-outlined"
+                                to="/"
+                            >
+                                masx200的
+                                <hr id="hidewidthless500" />
+                                github主页
+                            </Link>
+                        </div>
                         <button
                             style={{ display: "block" }}
                             className="navbar-toggler"
@@ -65,16 +75,7 @@ function Apphome() {
                         >
                             <span className="navbar-toggler-icon" />
                         </button>
-                        <div style={{ display: state ? "block" : "none" }}>
-                            <Link
-                                className="navbar-brand mui-btn mui-btn-primary mui-btn-outlined"
-                                to="/"
-                            >
-                                masx200的
-                                <hr id="hidewidthless500" />
-                                github主页
-                            </Link>
-                        </div>
+
                         <div style={{ display: state ? "block" : "none" }}>
                             <ul
                                 className="nav navbar-nav"
