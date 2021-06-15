@@ -198,20 +198,7 @@ export default function Hieroglyphy() {
                 <button
                     className="btn btn-outline-primary btn-lg"
                     id="run"
-                    onClick={function () {
-                        var codestring = outputcode;
-                        /* var value = */
-                        Function(`return ${codestring}`)();
-                        //终于找到了uglifyjs压缩混淆失败的原因了!严格模式不能使用eval!
-                        // var value = eval($2("output").value);
-
-                        // if (lastclick === "encodestring") {
-                        //     alert('"' + value + '"');
-                        // } else {
-                        //     /*  */
-                        // }
-                        // return false;
-                    }}
+                    onClick={runthiscode()}
                 >
                     Run This
                 </button>
@@ -244,4 +231,12 @@ export default function Hieroglyphy() {
             </p>
         </div>
     );
+
+    function runthiscode(): React.MouseEventHandler<HTMLButtonElement> {
+        return function () {
+            var codestring = outputcode;
+            /* var value = */
+            Function(`return ${codestring}`)();
+        };
+    }
 }

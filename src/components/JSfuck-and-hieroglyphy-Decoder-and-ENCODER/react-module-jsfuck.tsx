@@ -193,22 +193,7 @@ export default function Jsfuck() {
                 <button
                     className="btn btn-outline-primary btn-lg"
                     id="run"
-                    onClick={function () {
-                        // var codestring = $2("output").value;
-                        var codestring = outputcode;
-                        var value = Function(`return ${codestring}`)();
-                        //终于找到了uglifyjs压缩混淆失败的原因了!严格模式不能使用eval!
-                        // eval($2("output").value);
-
-                        if (
-                            //@ts-ignore
-                            evalcheckbox.current.checked
-                            // !$2("eval").checked
-                        ) {
-                            alert('"' + value + '"');
-                        }
-                        // return false;
-                    }}
+                    onClick={runthiscode()}
                 >
                     Run This
                 </button>
@@ -240,4 +225,12 @@ export default function Jsfuck() {
             </p>
         </div>
     );
+
+    function runthiscode(): React.MouseEventHandler<HTMLButtonElement> {
+        return function () {
+            var codestring = outputcode;
+            /*   var value = */
+            Function(`return ${codestring}`)();
+        };
+    }
 }
