@@ -54,7 +54,7 @@ export default function Hieroglyphy() {
     const [statstext, setstatstext] = useState(`0 chars`);
     const btnencodescript = useRef();
     const btnencodestring = useRef();
-    function encodeall(typename, btnele) {
+    function encodeall(typename: string, btnele: EventTarget) {
         console.time(typename);
         console.log(typename);
         // if (!myservice) {
