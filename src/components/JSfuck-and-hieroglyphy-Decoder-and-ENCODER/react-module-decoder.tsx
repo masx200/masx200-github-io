@@ -139,34 +139,7 @@ export default function Decoder() {
         }
     }
 
-    // function tanchutanchuxiaoxitishi() {
-    //   var id = guid();
-    //   jQuery("#my导航栏").append(
-    //     jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
-    //               <button type="button" class="close" data-dismiss="alert">&times;</button>
-    //               <strong>成功!</strong> 匹配成功提示信息。
-    //               </div>`).fadeTo(5000, 0.5, () => {
-    //       console.log(jQuery("#" + id));
-    //       jQuery("#" + id).remove();
-    //       $("#my主体").css("padding-top",  $("#my导航栏").height() || 0);
-    //     })
-    //   );
-    //   console.timeEnd("解码JSFUCK 和hieroglyphy");
-    // }
-
-    // function tanchutanchuxiaoxishibai() {
-    //   var id = guid();
-    //   jQuery("#my导航栏").append(
-    //     jQuery(`<div  id="${id}" class="alert alert-danger alert-dismissible fade show">
-    //               <button type="button" class="close" data-dismiss="alert">&times;</button>
-    //               <strong>失败!</strong> 匹配失败提示信息。
-    //               </div>`).fadeOut(5000, () => {
-    //       console.log(jQuery("#" + id));
-    //       jQuery("#" + id).remove();
-    //     })
-    //   );
-    //   console.timeEnd("解码JSFUCK 和hieroglyphy");
-    // }
+  
     function setDecoded(decodedCode) {
         //  eval(decodedCode);
         // console.log(

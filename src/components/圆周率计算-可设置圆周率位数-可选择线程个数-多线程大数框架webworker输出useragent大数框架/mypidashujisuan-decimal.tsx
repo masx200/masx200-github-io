@@ -57,21 +57,7 @@ export default function decimalcom() {
         x = 0,
         threadgeshu,
         testname;
-    // function tanchu弹出消息提示() {
-    //   // var id=Math.random()*100000000|0
-    //   var id = guid();
-    //   jQuery("#my导航栏").append(
-    //     jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
-    //                   <button type="button" class="close" data-dismiss="alert">&times;</button>
-    //                   <strong>成功!</strong> 计算成功提示信息。
-    //                   </div>`).fadeTo(5000, 0.5, () => {
-    //       console.log(jQuery("#" + id));
-    //       jQuery("#" + id).remove();
-    //       $("#my主体").css("padding-top",  $("#my导航栏").height() || 0);
-    //     })
-    //   );
-    //   // console.timeEnd('解码JSFUCK 和hieroglyphy')
-    // }
+   
     function lashentextarea(eles) {
         // console.log(eles.outerHTML);
         requestAnimationFrame(function () {

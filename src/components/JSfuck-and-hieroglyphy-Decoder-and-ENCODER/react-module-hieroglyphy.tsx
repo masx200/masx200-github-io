@@ -107,21 +107,7 @@ export default function Hieroglyphy() {
         };
     }
     var lastclick: string;
-    // function tanchu弹出消息提示() {
-    //   // var id=Math.random()*100000000|0
-    //   var id = guid();
-    //   jQuery("#my导航栏").append(
-    //     jQuery(`<div id="${id}" class="alert alert-success alert-dismissible fade show">
-    //                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    //                     <strong>成功!</strong> 编码成功提示信息。
-    //                     </div>`).fadeTo(10000, 0.5, () => {
-    //       console.log(jQuery("#" + id));
-    //       jQuery("#" + id).remove();
-    //       $("#my主体").css("padding-top",  $("#my导航栏").height() || 0);
-    //     })
-    //   );
-    //   // console.timeEnd('解码JSFUCK 和hieroglyphy')
-    // }
+   
     var [outputcode, setoutputcode] = useState("");
     var [inputcode, setinputcode] = useState(
         "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')"
