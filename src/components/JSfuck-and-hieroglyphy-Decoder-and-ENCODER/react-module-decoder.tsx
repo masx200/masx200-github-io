@@ -2,9 +2,12 @@
 
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 /* eslint-disable no-useless-escape */
+//@ts-ignore
 import hieroglyphy from "@/assetsjs/./hieroglyphy";
+//@ts-ignore
 import JSFuck from "@/assetsjs/./jsfuck";
 import React from "react";
+//@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 function tanchutanchuxiaoxishibai() {
     tanchu弹出消息通用("danger");
@@ -253,7 +256,7 @@ export default function Decoder() {
                 id="code"
                 style={{
                     width: "100%",
-                    "min-height": "250px",
+                    minHeight: "250px",
                 }}
                 //   style="width:100%;min-height:250px"
             />
@@ -275,7 +278,7 @@ export default function Decoder() {
                     onChange={outputonchange}
                     className="form-control"
                     id="code2"
-                    style={{ width: "100%", "min-height": "250px" }}
+                    style={{ width: "100%", minHeight: "250px" }}
                     // style="width:100%;min-height:250px"
                 />
             </div>

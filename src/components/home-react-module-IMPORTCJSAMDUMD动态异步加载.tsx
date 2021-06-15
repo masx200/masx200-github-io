@@ -1,6 +1,8 @@
 import React from "react";
+//@ts-ignore
 import markdwonurls from "../utils/markdownurls.ts";
 // eslint-disable-next-line no-unused-vars
+//@ts-ignore
 import Markdownreact from "./markdown-react/index.tsx";
 ("use strict");
 const markurl = markdwonurls["importcjsamdumd"];

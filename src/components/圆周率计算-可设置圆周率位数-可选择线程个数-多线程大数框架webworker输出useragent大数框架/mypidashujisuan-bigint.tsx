@@ -86,13 +86,13 @@ export default function bigcom() {
             关闭所有worker();
         };
     }, []);
-    var p,
-        piwei,
-        strt,
-        finishflag,
+    var p: { toString: () => string | string[] },
+        piwei: string | number,
+        strt: number,
+        finishflag: any[],
         x = 0,
-        threadgeshu,
-        testname;
+        threadgeshu: string | number,
+        testname: string;
     // function tanchu弹出消息提示() {
     //   // var id=Math.random()*100000000|0
     //   var id = guid();

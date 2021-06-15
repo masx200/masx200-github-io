@@ -6,6 +6,7 @@ import {
 // console.log(initGlobalState, useGlobalStore, changeState);
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
+//@ts-ignore
 import markdwonurls from "../utils/markdownurls.ts";
 // initGlobalState({
 //   testnumber: String(2418 * 999),
@@ -13,6 +14,7 @@ import markdwonurls from "../utils/markdownurls.ts";
 // });
 // console.log(initaaaaaaaaaaaa);
 // eslint-disable-next-line no-unused-vars
+//@ts-ignore
 import Markdownreact from "./markdown-react/index.tsx";
 ("use strict");
 const urlmark = markdwonurls["react-simple-global-state-store-hook"];

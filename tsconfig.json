@@ -28,6 +28,6 @@
         "allowSyntheticDefaultImports": true,
         "alwaysStrict": true
     },
-    "include": ["*.ts", "./src/*.ts", "*.tsx", "./src/*.tsx"],
+    "include": ["*.ts", "./src/*.ts", "*.tsx", "./src/*.tsx", "*/*/*.tsx"],
     "exclude": []
 }

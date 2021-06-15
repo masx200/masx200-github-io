@@ -15,7 +15,7 @@ import Decimal from "@/assetsjs/decimal.min.js";
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useRef } from "react";
 
-var myworker = Array(16).fill();
+var myworker = Array(16).fill(undefined);
 
 //   );
 // })();
@@ -175,6 +175,7 @@ export default function decimalcom() {
             /* react hooks 的state 刷新太慢? */
             setoutputtext1(
                 // outputtext1 +
+                //@ts-ignore
                 outtext1.current.value +
                     testname +
                     "线程数为" +
@@ -324,6 +325,7 @@ export default function decimalcom() {
                     /* 改变状态是异步的! 两个输出一样 */
                     //   debugger;
                     /* 等到下次刷新组件时,获取到的state才会改变 */
+                    //@ts-ignore
                     setoutputtext1(outtext1.current.value + eventdata);
                     //   console.log(outputtext1);
                     // debugger;

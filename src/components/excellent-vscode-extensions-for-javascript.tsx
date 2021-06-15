@@ -1,7 +1,9 @@
 "use strict";
 
 import React from "react";
+//@ts-ignore
 import markdwonurls from "../utils/markdownurls.ts";
+//@ts-ignore
 import Markdownreact from "./markdown-react/index.tsx";
 var {
     useEffect,

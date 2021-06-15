@@ -2,10 +2,12 @@
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
-}
+} //@ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
+//@ts-ignore
 import hieroglyphyworker from "./service-worker-hieroglyphy.worker";
 import React from "react";
+//@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 // const clipboard = new ClipboardJS(".btn");
 
@@ -104,7 +106,7 @@ export default function Hieroglyphy() {
             //   console.log("线程已关闭","service-worker-jsfuck.js")
         };
     }
-    var lastclick;
+    var lastclick: string;
     // function tanchu弹出消息提示() {
     //   // var id=Math.random()*100000000|0
     //   var id = guid();
@@ -164,7 +166,7 @@ export default function Hieroglyphy() {
             <textarea
                 className="form-control"
                 id="input"
-                type="text"
+                // type="text"
                 value={inputcode}
                 onChange={inputonchange}
             />
@@ -178,14 +180,14 @@ export default function Hieroglyphy() {
                         encodeall("encodescript", e.target);
                     }}
                     data-loading-icon="mui-spinner mui-spinner-custom"
-                    type="text"
+                    // type="text"
                 >
                     Encode script
                 </button>
                 <button
                     ref={btnencodestring}
                     id="encodestring"
-                    type="text"
+                    // type="text"
                     data-loading-icon="mui-spinner mui-spinner-custom"
                     className="btn btn-outline-info btn-lg"
                     onClick={(e) => {
