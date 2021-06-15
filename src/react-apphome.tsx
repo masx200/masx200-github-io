@@ -1,7 +1,7 @@
 // const myvurrouterprojecturl =
 //     "https://my-vue-router-project-masx200.vercel.app/";
 import { useToggle } from "@umijs/hooks";
-import React from "react";
+import React, { useState } from "react";
 import { HashRouter, Link } from "react-router-dom";
 // @ts-ignore
 import { initloadingid } from "./initloadingid.ts";
@@ -18,7 +18,21 @@ var { Suspense } = React;
 var { useEffect } = React;
 export default React.memo(Apphome);
 function Apphome() {
+    const [showhr, setshowhr] = useState(true);
+    const [clientWidth, setclientWidth] = useState(document.body.clientWidth);
     const { state, toggle } = useToggle(true);
+    function showhrhandler() {
+        // console.log(document.body.clientWidth,state);
+        if (document.body.clientWidth <= 500) {
+            setshowhr(false);
+        } else {
+            // if (state) {
+            setshowhr(state);
+            // } else {
+            //     setshowhr(false);
+            // }
+        }
+    }
     useEffect(() => {
         console.log("onmounted");
 
@@ -34,10 +48,18 @@ function Apphome() {
             toggle(false);
             调整导航栏和主体的距离();
         });
+
+        window.addEventListener("resize", () => {
+            requestAnimationFrame(() => {
+                setclientWidth(document.body.clientWidth);
+                // showhrhandler();
+            });
+        });
     }, []);
     useEffect(() => {
         调整导航栏和主体的距离();
-    }, [state]);
+        showhrhandler();
+    }, [state, clientWidth]);
 
     function shouqi收起折叠的导航栏菜单() {
         toggle(false);
@@ -60,7 +82,12 @@ function Apphome() {
                                 to="/"
                             >
                                 masx200的
-                                <hr id="hidewidthless500" />
+                                <hr
+                                    id="hidewidthless500"
+                                    style={{
+                                        display: showhr ? "block" : "none",
+                                    }}
+                                />
                                 github主页
                             </Link>
                         </div>
@@ -143,40 +170,6 @@ function Apphome() {
                                     linkto="/vue-simple-global-state-store-manager"
                                     text="适用于Vue的极简全局状态管理库"
                                 />
-                                {/* <li>
-                                    <a
-                                        href={
-                                            myvurrouterprojecturl + "index.html"
-                                        }
-                                        className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                                    >
-                                        基于vue的主页
-                                    </a>
-                                </li> */}
-                                {/* <li>
-                                    <a
-                                        href={
-                                            myvurrouterprojecturl +
-                                            "index.html" +
-                                            "#/about"
-                                        }
-                                        className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                                    >
-                                        关于Vue
-                                    </a>
-                                </li> */}
-                                {/* <li>
-                                    <a
-                                        href={
-                                            myvurrouterprojecturl +
-                                            "index.html" +
-                                            "#/beautify-javascript"
-                                        }
-                                        className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
-                                    >
-                                        美化javascript代码
-                                    </a>
-                                </li> */}
                             </ul>
                         </div>
                     </nav>
