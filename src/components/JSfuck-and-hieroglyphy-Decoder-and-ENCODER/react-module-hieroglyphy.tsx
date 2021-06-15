@@ -40,7 +40,7 @@ function guid() {
         }
     );
 }
-var myservice;
+var myservice: Worker | undefined;
 function 关闭所有worker() {
     try {
         myservice.terminate();
@@ -214,15 +214,16 @@ export default function Hieroglyphy() {
                     id="run"
                     onClick={function () {
                         var codestring = outputcode;
-                        var value = Function(`return ${codestring}`)();
+                        /* var value = */
+                        Function(`return ${codestring}`)();
                         //终于找到了uglifyjs压缩混淆失败的原因了!严格模式不能使用eval!
                         // var value = eval($2("output").value);
 
-                        if (lastclick === "encodestring") {
-                            alert('"' + value + '"');
-                        } else {
-                            /*  */
-                        }
+                        // if (lastclick === "encodestring") {
+                        //     alert('"' + value + '"');
+                        // } else {
+                        //     /*  */
+                        // }
                         // return false;
                     }}
                 >
