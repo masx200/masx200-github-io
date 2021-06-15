@@ -1,6 +1,12 @@
 import { Link /*  HashRouter */ } from "react-router-dom";
 import React /* , { useRef } */ from "react";
-export default function 我的自定义导航链接({ linkto, text }) {
+export default function 我的自定义导航链接({
+    linkto,
+    text,
+}: {
+    linkto: string;
+    text: string;
+}) {
     return (
         <li className="nav-item">
             <Link
