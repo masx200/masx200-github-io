@@ -27,7 +27,7 @@ const cachersscontent = new Map<
     string,
     { title: string; content: any[]; description: string }
 >();
-function htmltotext(description) {
+function htmltotext(description: string) {
     const body = document.implementation.createHTMLDocument("title").body;
     body.innerHTML = description;
 
