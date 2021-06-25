@@ -336,7 +336,13 @@ function Rssreader(props: {
                                     style={{ width: " 100%" }}
                                 >
                                     <div className="mui-media-body">
-                                        <b> {e.title}</b>
+                                        <a
+                                            href={e.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <b> {e.title}</b>
+                                        </a>
                                         <a
                                             href={e.link}
                                             target="_blank"
