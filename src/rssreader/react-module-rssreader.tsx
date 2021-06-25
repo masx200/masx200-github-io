@@ -27,11 +27,21 @@ const cachersscontent = new Map<
     string,
     { title: string; content: any[]; description: string }
 >();
+function htmltotext(description) {
+    const body = document.implementation.createHTMLDocument("title").body;
+    body.innerHTML = description;
+
+    const text = body.innerText;
+
+    console.log("text", text);
+    return text;
+}
 export default React.memo(Rssreader);
 function Rssreader(props: {
     match: { params: { sitename: React.SetStateAction<string> } };
     history: { replace: (arg0: string) => void };
 }) {
+    const [rssfeedurl, setrssfeedurl] = useState("");
     var unmounted = false;
     function setarssstatefun() {
         setwebsite(props.match.params.sitename);
@@ -52,6 +62,7 @@ function Rssreader(props: {
     const mybuttonidsbuttonid6 = useRef<Element | undefined>();
     async function jiazaiload(xmlurl: string, element: Element) {
         mui(element).buttonloading();
+        setrssfeedurl(xmlurl);
         const cachedobj = cachersscontent.get(xmlurl);
         if (cachedobj) {
             console.log(cachedobj, cachersscontent);
@@ -79,57 +90,50 @@ function Rssreader(props: {
                 throw new Error("fetch failed");
             }
         });
-        (() => {
-            var str = xmlstring;
-            // myxmlstrcontent.push(str);
+        //  (() => {
+        var str = xmlstring;
+        // myxmlstrcontent.push(str);
 
-            var data = parser.parse(str);
+        var data = parser.parse(str);
 
-            var title = data.rss.channel.title;
+        var title = data.rss.channel.title;
 
-            var description = data.rss.channel.description;
-            myrsscontent.push(
-                /* 提取e.description里面的文字 */
-                /* 不要修改原来的rssjson,改成深拷贝 */
-                ...JSON.parse(JSON.stringify(data.rss.channel.item)).map(
-                    (e: { description: string }) => {
-                        //   console.log(e);
-                        try {
-                            /* 如果 e.description是以以文字开头则在外面包上一个div*/
+        var description = data.rss.channel.description;
+        myrsscontent.push(
+            /* 提取e.description里面的文字 */
+            /* 不要修改原来的rssjson,改成深拷贝 */
+            ...JSON.parse(JSON.stringify(data.rss.channel.item)).map(
+                (e: { description: string }) => {
+                    //   console.log(e);
+                    try {
+                        /* 如果 e.description是以以文字开头则在外面包上一个div*/
 
-                            e.description =
-                                ((description) => {
-                                    ///防止出现加载图片的情况
-                                    const body =
-                                        document.implementation.createHTMLDocument(
-                                            "title"
-                                        ).body;
-                                    body.innerHTML = description;
-
-                                    return body.innerText;
-                                })(e.description) || e.description;
-                        } catch (error) {
-                            console.error(error);
-                        }
-
-                        return e;
+                        e.description =
+                            htmltotext(e.description) || e.description;
+                        e.description =
+                            htmltotext(e.description) || e.description;
+                    } catch (error) {
+                        console.error(error);
                     }
-                )
-            );
 
-            tanchu弹出消息通用("success");
+                    return e;
+                }
+            )
+        );
 
-            unmounted || setrssState(myrsscontent);
-            unmounted || setrssStatetitle(title);
-            unmounted || setrssStatedescription(description);
-            mui(element).buttonreset();
-            cachersscontent.set(xmlurl, {
-                title,
-                description,
-                content: myrsscontent,
-            });
-            console.log(cachersscontent);
-        })();
+        tanchu弹出消息通用("success");
+
+        unmounted || setrssState(myrsscontent);
+        unmounted || setrssStatetitle(title);
+        unmounted || setrssStatedescription(description);
+        mui(element).buttonreset();
+        cachersscontent.set(xmlurl, {
+            title,
+            description,
+            content: myrsscontent,
+        });
+        console.log(cachersscontent);
+        //  })();
         // }
     }
     useEffect(
@@ -318,6 +322,7 @@ function Rssreader(props: {
                 </ul>
             </nav>
             <header className="App-header">
+                <h3>{rssfeedurl}</h3>
                 <div style={{ maxWidth: "100%" }}>
                     <h3>
                         <b>{rssstatetitle}</b>
