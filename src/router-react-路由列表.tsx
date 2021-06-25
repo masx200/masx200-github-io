@@ -6,6 +6,10 @@ export default React.memo(路由);
 function 路由() {
     // @ts-ignore
     var myhome = lazy(() => import("./components/home-react-module-home.tsx"));
+    var rsscomponent = lazy(
+        // @ts-ignore
+        () => import("./rssreader/react-module-rssreader.tsx")
+    );
     const reacthome = lazy(
         () =>
             // @ts-ignore
@@ -42,28 +46,8 @@ function 路由() {
             // @ts-ignore
             myhome,
         ],
-        [
-            "/react-rssreader",
-            lazy(
-                () =>
-                    // @ts-ignore
-                    import(
-                        // @ts-ignore
-                        "./components/my-react-router-test/react-module-rssreader.tsx"
-                    )
-            ),
-        ],
-        [
-            "/react-rssreader/:sitename",
-            lazy(
-                () =>
-                    // @ts-ignore
-                    import(
-                        // @ts-ignore
-                        "./components/my-react-router-test/react-module-rssreader.tsx"
-                    )
-            ),
-        ],
+        ["/react-rssreader", rsscomponent],
+        ["/react-rssreader/:sitename", rsscomponent],
         [
             "/react-about",
             lazy(
