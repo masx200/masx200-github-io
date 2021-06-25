@@ -28,12 +28,14 @@ const cachersscontent = new Map<
     { title: string; content: any[]; description: string }
 >();
 function htmltotext(description: string) {
+    //alert(description)
     const body = document.implementation.createHTMLDocument("title").body;
     body.innerHTML = description;
 
     const text = body.innerText;
 
     console.log("text", text);
+    //alert(text);
     return text;
 }
 export default React.memo(Rssreader);
@@ -103,20 +105,29 @@ function Rssreader(props: {
             /* 提取e.description里面的文字 */
             /* 不要修改原来的rssjson,改成深拷贝 */
             ...JSON.parse(JSON.stringify(data.rss.channel.item)).map(
-                (e: { description: string }) => {
+                (e: { description: string; link: string; title: string }) => {
+                    let des = e.description;
+                    const { link, title } = e;
+                    if (Reflect.has(e, "content:encoded")) {
+                        des += Reflect.get(e, "content:encoded");
+                    }
                     //   console.log(e);
                     try {
                         /* 如果 e.description是以以文字开头则在外面包上一个div*/
+                        //@ts-ignore
+                        //     if (e["content:encoded"]) {
+                        //@ts-ignore
+                        //        alert(e["content:encoded"]);
+                        //      }
 
-                        e.description =
-                            htmltotext(e.description) || e.description;
-                        e.description =
-                            htmltotext(e.description) || e.description;
+                        des = htmltotext(des);
+
+                        des = htmltotext(des);
                     } catch (error) {
                         console.error(error);
                     }
 
-                    return e;
+                    return { link, title, description: des };
                 }
             )
         );
@@ -149,7 +160,6 @@ function Rssreader(props: {
                         // console.log(props.match.params.sitename);
                         switch (props.match.params.sitename) {
                             case "tmtpost":
-                                // setwebsite(props.match.params.sitename);
                                 setarssstatefun();
                                 jiazaiload(
                                     rssxml1,
@@ -158,7 +168,6 @@ function Rssreader(props: {
                                 );
                                 break;
                             case "iplaysoft":
-                                // setwebsite(props.match.params.sitename);
                                 setarssstatefun();
                                 jiazaiload(
                                     rssxml2,
@@ -167,7 +176,6 @@ function Rssreader(props: {
                                 );
                                 break;
                             case "landiannews":
-                                // setwebsite(props.match.params.sitename);
                                 setarssstatefun();
                                 jiazaiload(
                                     rssxml3,
@@ -176,7 +184,6 @@ function Rssreader(props: {
                                 );
                                 break;
                             case "ithome":
-                                // setwebsite(props.match.params.sitename);
                                 setarssstatefun();
                                 jiazaiload(
                                     rssxml4,
@@ -185,7 +192,6 @@ function Rssreader(props: {
                                 );
                                 break;
                             case "ifanr":
-                                // setwebsite(props.match.params.sitename);
                                 setarssstatefun();
                                 jiazaiload(
                                     rssxml5,
@@ -194,7 +200,6 @@ function Rssreader(props: {
                                 );
                                 break;
                             case "pingwest":
-                                // setwebsite(props.match.params.sitename);
                                 setarssstatefun();
                                 jiazaiload(
                                     rssxml6,
