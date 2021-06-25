@@ -7,9 +7,9 @@ import mui from "@/assetsjs/mui.精简.button";
 import React from "react";
 // import * as parser from "@/assetsjs/fast-xml-parser";
 //@ts-ignore
-import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
+import tanchu弹出消息通用 from "@/utils/my弹出消息通用.ts";
 //@ts-ignore
-import * as parser from "../../assetsjs/fast-xml-parser.js";
+import * as parser from "@/assetsjs/fast-xml-parser.js";
 import {
     rssxml2,
     rssxml3,
@@ -17,7 +17,8 @@ import {
     rssxml5,
     rssxml6,
     rssxml1,
-} from "./rssfeedxml";
+    //@ts-ignore
+} from "./rssfeedxml.js";
 // import $ from "jquery";
 
 var { useState, useEffect, useRef } = React;
@@ -27,7 +28,10 @@ const cachersscontent = new Map<
     { title: string; content: any[]; description: string }
 >();
 export default React.memo(Rssreader);
-function Rssreader(props) {
+function Rssreader(props: {
+    match: { params: { sitename: React.SetStateAction<string> } };
+    history: { replace: (arg0: string) => void };
+}) {
     var unmounted = false;
     function setarssstatefun() {
         setwebsite(props.match.params.sitename);
@@ -35,17 +39,17 @@ function Rssreader(props) {
     // console.log(arguments);
     const [website, setwebsite] = useState("");
     var myxmlstrcontent = [];
-    var myrsscontent = [];
+    var myrsscontent: any[] = [];
     const [rssstatetitle, setrssStatetitle] = useState("");
     const [rssstate, setrssState] = useState(myrsscontent);
     const [rssstatedescription, setrssStatedescription] = useState("");
     //   console.log(setrssState);
-    const mybuttonidsbuttonid1 = useRef();
-    const mybuttonidsbuttonid2 = useRef();
-    const mybuttonidsbuttonid3 = useRef();
-    const mybuttonidsbuttonid4 = useRef();
-    const mybuttonidsbuttonid5 = useRef();
-    const mybuttonidsbuttonid6 = useRef();
+    const mybuttonidsbuttonid1 = useRef<Element | undefined>();
+    const mybuttonidsbuttonid2 = useRef<Element | undefined>();
+    const mybuttonidsbuttonid3 = useRef<Element | undefined>();
+    const mybuttonidsbuttonid4 = useRef<Element | undefined>();
+    const mybuttonidsbuttonid5 = useRef<Element | undefined>();
+    const mybuttonidsbuttonid6 = useRef<Element | undefined>();
     async function jiazaiload(xmlurl: string, element: Element) {
         mui(element).buttonloading();
         const cachedobj = cachersscontent.get(xmlurl);
@@ -145,6 +149,7 @@ function Rssreader(props) {
                                 setarssstatefun();
                                 jiazaiload(
                                     rssxml1,
+                                    //@ts-ignore
                                     mybuttonidsbuttonid1.current
                                 );
                                 break;
@@ -153,6 +158,7 @@ function Rssreader(props) {
                                 setarssstatefun();
                                 jiazaiload(
                                     rssxml2,
+                                    //@ts-ignore
                                     mybuttonidsbuttonid2.current
                                 );
                                 break;
@@ -161,6 +167,7 @@ function Rssreader(props) {
                                 setarssstatefun();
                                 jiazaiload(
                                     rssxml3,
+                                    //@ts-ignore
                                     mybuttonidsbuttonid3.current
                                 );
                                 break;
@@ -169,6 +176,7 @@ function Rssreader(props) {
                                 setarssstatefun();
                                 jiazaiload(
                                     rssxml4,
+                                    //@ts-ignore
                                     mybuttonidsbuttonid4.current
                                 );
                                 break;
@@ -177,6 +185,7 @@ function Rssreader(props) {
                                 setarssstatefun();
                                 jiazaiload(
                                     rssxml5,
+                                    //@ts-ignore
                                     mybuttonidsbuttonid5.current
                                 );
                                 break;
@@ -185,6 +194,7 @@ function Rssreader(props) {
                                 setarssstatefun();
                                 jiazaiload(
                                     rssxml6,
+                                    //@ts-ignore
                                     mybuttonidsbuttonid6.current
                                 );
                                 break;
@@ -228,6 +238,7 @@ function Rssreader(props) {
                 <ul className="demo">
                     <button
                         // id={mybuttonids.buttonid1}
+                        //@ts-ignore
                         ref={mybuttonidsbuttonid1}
                         data-loading-icon="mui-spinner mui-spinner-custom"
                         className="mui-btn mui-btn-royal mui-btn-outlined btn-lg"
@@ -239,6 +250,7 @@ function Rssreader(props) {
                     </button>
                     <button
                         // id={mybuttonids.buttonid2}
+                        //@ts-ignore
                         ref={mybuttonidsbuttonid2}
                         data-loading-icon="mui-spinner mui-spinner-custom"
                         className="mui-btn mui-btn-primary mui-btn-outlined btn-lg"
@@ -251,6 +263,7 @@ function Rssreader(props) {
                     </button>
                     <button
                         // id={mybuttonids.buttonid3}
+                        //@ts-ignore
                         ref={mybuttonidsbuttonid3}
                         data-loading-icon="mui-spinner mui-spinner-custom"
                         className="mui-btn mui-btn-warning mui-btn-outlined btn-lg"
@@ -265,6 +278,7 @@ function Rssreader(props) {
                     </button>
                     <button
                         // id={mybuttonids.buttonid4}
+                        //@ts-ignore
                         ref={mybuttonidsbuttonid4}
                         data-loading-icon="mui-spinner mui-spinner-custom"
                         className="mui-btn mui-btn-danger mui-btn-outlined btn-lg"
@@ -277,6 +291,7 @@ function Rssreader(props) {
                     </button>
                     <button
                         // id={mybuttonids.buttonid5}
+                        //@ts-ignore
                         ref={mybuttonidsbuttonid5}
                         data-loading-icon="mui-spinner mui-spinner-custom"
                         className="mui-btn mui-btn-success mui-btn-outlined btn-lg"
@@ -289,6 +304,7 @@ function Rssreader(props) {
                     </button>
                     <button
                         // id={mybuttonids.buttonid6}
+                        //@ts-ignore
                         ref={mybuttonidsbuttonid6}
                         data-loading-icon="mui-spinner mui-spinner-custom"
                         className="mui-btn mui-btn-primary mui-btn-outlined btn-lg"
