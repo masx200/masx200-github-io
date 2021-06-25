@@ -10,7 +10,7 @@ import mui from "@/assetsjs/mui.精简.button";
 // @ts-ignore
 import decimalworker from "./service-worker-mythread1-decimal.worker.js";
 // @ts-ignore
-import Decimal from "@/assetsjs/decimal.min.js";
+import Decimal from "decimal.js";
 // import mui from "../mui.min.js";
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect, useRef } from "react";

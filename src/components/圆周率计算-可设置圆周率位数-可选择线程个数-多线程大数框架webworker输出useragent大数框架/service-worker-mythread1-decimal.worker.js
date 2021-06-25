@@ -1,5 +1,5 @@
 "use strict";
-import Decimal from "@/assetsjs/decimal.min.js";
+import Decimal from "decimal.js";
 // (() => {
 // console.log(self.name)
 // importScripts("https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js");
