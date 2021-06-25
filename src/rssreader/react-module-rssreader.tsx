@@ -322,7 +322,9 @@ function Rssreader(props: {
                 </ul>
             </nav>
             <header className="App-header">
-                <h3>{rssfeedurl}</h3>
+                <div>
+                    <h5>{rssfeedurl}</h5>
+                </div>
                 <div style={{ maxWidth: "100%" }}>
                     <h3>
                         <b>{rssstatetitle}</b>
