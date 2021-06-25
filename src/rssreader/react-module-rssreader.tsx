@@ -38,7 +38,7 @@ function Rssreader(props: {
     }
     // console.log(arguments);
     const [website, setwebsite] = useState("");
-    var myxmlstrcontent = [];
+    // var myxmlstrcontent = [];
     var myrsscontent: any[] = [];
     const [rssstatetitle, setrssStatetitle] = useState("");
     const [rssstate, setrssState] = useState(myrsscontent);
@@ -81,7 +81,7 @@ function Rssreader(props: {
         });
         (() => {
             var str = xmlstring;
-            myxmlstrcontent.push(str);
+            // myxmlstrcontent.push(str);
 
             var data = parser.parse(str);
 
