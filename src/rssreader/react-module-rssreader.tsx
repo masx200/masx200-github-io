@@ -364,16 +364,21 @@ function Rssreader(props: {
                                                 {e.link}
                                             </p>
                                         </a>
-                                        <p
-                                            className="mui-ellipsis"
-                                            style={{
-                                                whiteSpace: "normal",
-                                                wordBreak: "break-all",
-                                                wordWrap: "break-word",
-                                            }}
-                                        >
-                                            {e.description}
-                                        </p>
+
+                                        <details>
+                                            {" "}
+                                            <summary>详情</summary>
+                                            <p
+                                                className="mui-ellipsis"
+                                                style={{
+                                                    whiteSpace: "normal",
+                                                    wordBreak: "break-all",
+                                                    wordWrap: "break-word",
+                                                }}
+                                            >
+                                                {e.description}
+                                            </p>
+                                        </details>
                                     </div>
                                 </li>
                             ))
