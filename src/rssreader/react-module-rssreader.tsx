@@ -150,73 +150,70 @@ function Rssreader(props: {
     useEffect(
         () => {
             console.log(props);
-            try {
-                if ("undefined" !== typeof props.match.params.sitename) {
-                    if (website !== props.match.params.sitename) {
-                        document.title =
-                            "React router App-" +
-                            "rssreader-" +
-                            props.match.params.sitename;
-                        // console.log(props.match.params.sitename);
-                        switch (props.match.params.sitename) {
-                            case "tmtpost":
-                                setarssstatefun();
-                                jiazaiload(
-                                    rssxml1,
-                                    //@ts-ignore
-                                    mybuttonidsbuttonid1.current
-                                );
-                                break;
-                            case "iplaysoft":
-                                setarssstatefun();
-                                jiazaiload(
-                                    rssxml2,
-                                    //@ts-ignore
-                                    mybuttonidsbuttonid2.current
-                                );
-                                break;
-                            case "landiannews":
-                                setarssstatefun();
-                                jiazaiload(
-                                    rssxml3,
-                                    //@ts-ignore
-                                    mybuttonidsbuttonid3.current
-                                );
-                                break;
-                            case "ithome":
-                                setarssstatefun();
-                                jiazaiload(
-                                    rssxml4,
-                                    //@ts-ignore
-                                    mybuttonidsbuttonid4.current
-                                );
-                                break;
-                            case "ifanr":
-                                setarssstatefun();
-                                jiazaiload(
-                                    rssxml5,
-                                    //@ts-ignore
-                                    mybuttonidsbuttonid5.current
-                                );
-                                break;
-                            case "pingwest":
-                                setarssstatefun();
-                                jiazaiload(
-                                    rssxml6,
-                                    //@ts-ignore
-                                    mybuttonidsbuttonid6.current
-                                );
-                                break;
+            (async () => {
+                try {
+                    if ("undefined" !== typeof props.match.params.sitename) {
+                        if (website !== props.match.params.sitename) {
+                            document.title =
+                                "React router App-" +
+                                "rssreader-" +
+                                props.match.params.sitename;
+                            // console.log(props.match.params.sitename);
+                            switch (props.match.params.sitename) {
+                                case "tmtpost":
+                                    setarssstatefun();
+                                    return jiazaiload(
+                                        rssxml1,
+                                        //@ts-ignore
+                                        mybuttonidsbuttonid1.current
+                                    );
+                                case "iplaysoft":
+                                    setarssstatefun();
+                                    return jiazaiload(
+                                        rssxml2,
+                                        //@ts-ignore
+                                        mybuttonidsbuttonid2.current
+                                    );
+                                case "landiannews":
+                                    setarssstatefun();
+                                    return jiazaiload(
+                                        rssxml3,
+                                        //@ts-ignore
+                                        mybuttonidsbuttonid3.current
+                                    );
+                                case "ithome":
+                                    setarssstatefun();
+                                    return jiazaiload(
+                                        rssxml4,
+                                        //@ts-ignore
+                                        mybuttonidsbuttonid4.current
+                                    );
+                                case "ifanr":
+                                    setarssstatefun();
+                                    jiazaiload(
+                                        rssxml5,
+                                        //@ts-ignore
+                                        mybuttonidsbuttonid5.current
+                                    );
+                                    break;
+                                case "pingwest":
+                                    setarssstatefun();
+                                    return jiazaiload(
+                                        rssxml6,
+                                        //@ts-ignore
+                                        mybuttonidsbuttonid6.current
+                                    );
 
-                            default:
-                                break;
+                                default:
+                                    break;
+                            }
                         }
                     }
+                } catch (error) {
+                    throw error;
+                    //
                 }
-            } catch (error) {
-                throw error;
-                //
-            }
+            })();
         },
         /* 依赖项设置为props就会在上级传入的参数变化时生效 */
 
