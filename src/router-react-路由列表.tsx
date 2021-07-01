@@ -29,17 +29,17 @@ function 路由() {
             lazy(() => import("./components/home-react-module-picalc")),
         ],
 
-        [
-            "/IMPORTCJSAMDUMD动态异步加载",
-            // @ts-ignore
-            lazy(
-                () =>
-                    import(
-                        // @ts-ignore
-                        "./components/home-react-module-IMPORTCJSAMDUMD动态异步加载.tsx"
-                    )
-            ),
-        ],
+        // [
+        //     "/IMPORTCJSAMDUMD动态异步加载",
+        //     // @ts-ignore
+        //     lazy(
+        //         () =>
+        //             import(
+        //                 // @ts-ignore
+        //                 "./components/home-react-module-IMPORTCJSAMDUMD动态异步加载.tsx"
+        //             )
+        //     ),
+        // ],
         [
             "/react-home",
 
@@ -108,17 +108,17 @@ function 路由() {
                     )
             ),
         ],
-        [
-            "/react-simple-global-state-store-hook",
-            lazy(
-                () =>
-                    // @ts-ignore
-                    import(
-                        // @ts-ignore
-                        "./components/home-react-使用react hooks实现的简单全局状态管理 react-simple-global-state-store-hook.tsx"
-                    )
-            ),
-        ],
+        // [
+        //     "/react-simple-global-state-store-hook",
+        //     lazy(
+        //         () =>
+        //             // @ts-ignore
+        //             import(
+        //                 // @ts-ignore
+        //                 "./components/home-react-使用react hooks实现的简单全局状态管理 react-simple-global-state-store-hook.tsx"
+        //             )
+        //     ),
+        // ],
         [
             "/excellent-vscode-extensions-for-javascript",
             lazy(
@@ -130,17 +130,17 @@ function 路由() {
                     )
             ),
         ],
-        [
-            "/vue-simple-global-state-store-manager",
-            lazy(
-                () =>
-                    // @ts-ignore
-                    import(
-                        // @ts-ignore
-                        "./components/vue-simple-global-state-store-manager.tsx"
-                    )
-            ),
-        ],
+        // [
+        //     "/vue-simple-global-state-store-manager",
+        //     lazy(
+        //         () =>
+        //             // @ts-ignore
+        //             import(
+        //                 // @ts-ignore
+        //                 "./components/vue-simple-global-state-store-manager.tsx"
+        //             )
+        //     ),
+        // ],
         ["*", reacthome],
     ];
 

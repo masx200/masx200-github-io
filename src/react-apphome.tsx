@@ -152,24 +152,24 @@ function Apphome() {
                                     text="webpack-react-vue- 极速零配置的单页面 web 应用打包工具"
                                 />
 
-                                <我的自定义导航链接
+                                {/* <我的自定义导航链接
                                     linkto="/IMPORTCJSAMDUMD动态异步加载"
                                     text=" 动态异步加载-commonjs和umd和amd模块库"
-                                />
+                                /> */}
 
-                                <我的自定义导航链接
+                                {/* <我的自定义导航链接
                                     linkto="/react-simple-global-state-store-hook"
                                     text="适用于React的极简全局状态管理库"
-                                />
+                                /> */}
                                 <我的自定义导航链接
                                     linkto="/excellent-vscode-extensions-for-javascript"
                                     text="VScode的优秀扩展推荐"
                                 />
 
-                                <我的自定义导航链接
+                                {/* <我的自定义导航链接
                                     linkto="/vue-simple-global-state-store-manager"
                                     text="适用于Vue的极简全局状态管理库"
-                                />
+                                /> */}
                             </ul>
                         </div>
                     </nav>
