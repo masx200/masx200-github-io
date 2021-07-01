@@ -1,1 +1,2 @@
-yarn build-custom
+yarn build
+

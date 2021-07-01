@@ -214,6 +214,7 @@ function Rssreader(props: {
                     }
                 }
             } catch (error) {
+                throw error;
                 //
             }
         },

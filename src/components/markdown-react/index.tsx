@@ -54,7 +54,8 @@ function markdown(props: { src: string }) {
                     console.error(error);
 
                     unmounted || set加载失败(true);
-                    return;
+                    throw error;
+                    // return;
                 }
 
                 const divele = document.createElement("div");
