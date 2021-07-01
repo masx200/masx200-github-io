@@ -14,14 +14,18 @@ React["__esModule"] = true;
 React["default"] = React;
 
 ("use strict");
-const rootele = document.getElementById("root");
-rootele &&
-    (rootele.innerHTML = `<div id=${initloadingid}>
+const rootele =
+    document.getElementById("root") ||
+    document.body.appendChild(document.createElement("div"));
+Object.assign(rootele, { id: "root" });
+if (!document.getElementById("app")) {
+    rootele &&
+        (rootele.innerHTML = `<div id=${initloadingid}>
 <h1>loading</h1>
 <span class="mui-spinner mui-spinner-custom">
 
 </span></div>`);
-
+}
 window.addEventListener(
     "load",
     () => {
@@ -41,11 +45,14 @@ window.addEventListener(
 
 // @ts-ignore
 import("./home-react-index-render.ts").then(({ default: Homeelement }) => {
+    const container =
+        document.getElementById("app") ||
+        rootele.appendChild(document.createElement("div"));
+    Object.assign(container, { id: "app" });
     rootele &&
         render(
             // @ts-ignore
             React.createElement(Homeelement),
-
-            rootele.appendChild(document.createElement("div"))
+            container
         );
 });
