@@ -1,8 +1,8 @@
 {
-    "version": "4.8.2",
+    "version": "4.8.3",
     "scripts": {
-        "start": "webpack-react-vue-spa-awesome-config start --port=11111",
-        "build": "webpack-react-vue-spa-awesome-config build",
+        "start": "webpack-react-vue-spa-awesome-config start --port=11111 --config=./webpack.config.js",
+        "build": "webpack-react-vue-spa-awesome-config build --config=./webpack.config.js",
         "format": "prettier **/*.js */*/*.js --write **/*.ts *.json *.md  **/*.tsx */*/*.ts */*/*.tsx */*/*.css */*.css"
     },
     "browserslist": {
@@ -43,7 +43,8 @@
         "@babel/plugin-transform-runtime": "^7.14.3",
         "@babel/preset-env": "^7.14.2",
         "@babel/preset-react": "^7.13.13",
-        "@masx200/webpack-react-vue-spa-awesome-config": "3.3.2",
+        "@masx200/ie11-usual-ployfills": "^1.0.2",
+        "@masx200/webpack-react-vue-spa-awesome-config": "3.3.6",
         "@types/highlight.js": "^10.1.0",
         "@types/jquery": "^3.5.5",
         "@types/marked": "^2.0.3",
