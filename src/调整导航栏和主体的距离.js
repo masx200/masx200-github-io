@@ -12,5 +12,5 @@ export function 调整导航栏和主体的距离() {
         $("#my主体").css("padding-top", $("#my导航栏").height());
         //console.log($("#my导航栏").height());
         clearInterval(timer);
-    }, 1000);
+    }, 500);
 }
