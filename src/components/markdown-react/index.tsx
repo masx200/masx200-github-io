@@ -7,8 +7,8 @@ import marked from "marked";
 import hljs from "@/assetsjs/highlight.min.js";
 
 const cachemarkdown = new Map();
-async function fetchtext(url: string) {
-    var r = await fetch(new URL(url).href);
+async function fetchtext(url: string, opts: RequestInit = {}) {
+    var r = await fetch(new URL(url).href, opts);
     if (r.ok) {
         return await r.text();
     } else {
@@ -18,6 +18,7 @@ async function fetchtext(url: string) {
 export default React.memo(markdown);
 
 function markdown(props: { src: string }) {
+    const abortref = useRef(new AbortController());
     // console.log(cachemarkdown);
     let markdowncache = "";
     let cache加载完成 = false;
@@ -35,7 +36,7 @@ function markdown(props: { src: string }) {
 
     const ref = useRef();
     //已经卸载此组件
-    const unmounted =useRef( false);
+    const unmounted = useRef(false);
     useEffect(() => {
         if (props.src) {
             const marktext = cachemarkdown.get(props.src);
@@ -47,10 +48,19 @@ function markdown(props: { src: string }) {
             (async () => {
                 hljs.highlightAll();
 
-                let text;
+                let text: string;
                 try {
-                    text = await fetchtext(props.src);
+                    text = await fetchtext(props.src, {
+                        signal: abortref.current.signal,
+                    });
                 } catch (error) {
+                    if (
+                        error instanceof DOMException &&
+                        error?.name === "AbortError"
+                    ) {
+                        console.dir(error);
+                        return;
+                    }
                     console.error(error);
 
                     unmounted.current || set加载失败(true);
@@ -59,11 +69,8 @@ function markdown(props: { src: string }) {
                 }
 
                 const divele = document.createElement("div");
-                try {
-                    divele.innerHTML = marked(text);
-                } catch (error) {
-                    console.error(error);
-                }
+
+                divele.innerHTML = marked(text);
 
                 Array.from(divele.querySelectorAll("pre code")).forEach(
                     (block) => {
@@ -71,21 +78,16 @@ function markdown(props: { src: string }) {
                     }
                 );
                 unmounted.current || set加载完成(true);
-                try {
-                    unmounted.current || setmarkdown内容(divele.innerHTML);
-                    cachemarkdown.set(props.src, divele.innerHTML);
-                } catch (error) {
-                    console.error(error);
-                }
+
+                unmounted.current || setmarkdown内容(divele.innerHTML);
+                cachemarkdown.set(props.src, divele.innerHTML);
             })();
         }
     }, [props.src]);
     useEffect(() => {
-        // setTimeout(() => {
-        //     location.hash='#/'
-        // },0)
         return () => {
-            unmounted .current= true;
+            unmounted.current = true;
+            abortref.current.abort();
             //清除副作用
         };
     });

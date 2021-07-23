@@ -67,12 +67,6 @@ function Rssreader(props: { params: Record<string, string> }) {
         }
         var myrsscontent = [];
 
-        // if (typeof (/* $(myselectorid).attr("src")  */ xmlurl) == "undefined") {
-        //     //   console.log("加载失败");
-        // } else {
-        //使用fetch函数代替$.get
-        //使用fast-xml-parser把xml转换为json
-        // var xmlurl = $(myselectorid).attr("src");
         var xmlstring = await fetch(xmlurl, {
             signal: abortref.current.signal,
         }).then((r) => {
@@ -104,20 +98,17 @@ function Rssreader(props: { params: Record<string, string> }) {
                         des += Reflect.get(e, "content:encoded");
                     }
                     //   console.log(e);
-                    try {
-                        /* 如果 e.description是以以文字开头则在外面包上一个div*/
-                        //@ts-ignore
-                        //     if (e["content:encoded"]) {
-                        //@ts-ignore
-                        //        alert(e["content:encoded"]);
-                        //      }
 
-                        des = htmltotext(des);
+                    /* 如果 e.description是以以文字开头则在外面包上一个div*/
+                    //@ts-ignore
+                    //     if (e["content:encoded"]) {
+                    //@ts-ignore
+                    //        alert(e["content:encoded"]);
+                    //      }
 
-                        des = htmltotext(des);
-                    } catch (error) {
-                        console.error(error);
-                    }
+                    des = htmltotext(des);
+
+                    des = htmltotext(des);
 
                     return { link, title, description: des };
                 }
