@@ -29,6 +29,7 @@ const { useEffect, useState } = React;
 export default function home() {
     const [nowtime, setnowtime] = useState(获取当前时间());
     useEffect(() => {
+        location.hash=''
         调整导航栏和主体的距离();
         document.title = "React router App-" + "home";
         let timer = setInterval(() => {

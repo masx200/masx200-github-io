@@ -15,39 +15,33 @@ import React from "react";
 import {
     // vuehuamirender,
     md5,
+    //@ts-ignore
 } from "@/assetsjs/md5";
 import $ from "jquery";
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-var { useState, useEffect, useCallback, useRef } = React;
-function useBindtext(默认值) {
+var { useState, useEffect, useCallback } = React;
+export function useBindtext(
+    默认值: string | number
+): [
+    string | number,
+    React.Dispatch<React.SetStateAction<string | number>>,
+    (e: { target: { value: string } }) => void
+] {
     var [inputcode, setinputcode] = useState(默认值);
-    const inputonchange = useCallback(
-        (e) => {
-            setinputcode(e.target.value);
-        },
-        [inputcode]
-    );
+    const inputonchange = (e: { target: { value: string } }) => {
+        //@ts-ignore
+        setinputcode(e.target?.value);
+    };
     return [inputcode, setinputcode, inputonchange];
 }
 export default function huami() {
     useEffect(() => {
         document.title = "masx200的github主页-" + "花密  不一样的密码管理工具";
-        // import("./clipboard.min.js").then(module => {
-        //   const ClipboardJS = module.default;
-        //   new ClipboardJS("button").on("success", function(e) {
-        //     console.info("Text:", e.text);
-        //     e.clearSelection();
-        //   });
-        // });
-        // vuehuamirender();
-        // return () => {};
     }, []);
     const [inputtext1, , onchangeinputtext1] = useBindtext("");
     const [inputtext2, , onchangeinputtext2] = useBindtext("");
     const [inputtext3, setinputtext3, onchangeinputtext3] = useBindtext("");
 
-    const input1ref = useRef();
-    const input2ref = useRef();
     const handlechange = useCallback(
         function handlechang1e(inputtext1, inputtext2) {
             // inputtext1, inputtext2
@@ -92,7 +86,7 @@ export default function huami() {
         [inputtext1, inputtext2]
     );
 
-    const functioncopy = function functionc1opy(inputtext3) {
+    const functioncopy = function functionc1opy(inputtext3: any) {
         if (
             inputtext3
             // $("#code16").val()
@@ -102,7 +96,7 @@ export default function huami() {
                 .fadeTo(0, 0)
                 .css("border-color", "#22B614")
                 .css("background-color", "#22B614")
-                .fadeTo("normal", 1)
+                .fadeTo("fast", 1)
                 .fadeTo(2000, 1)
                 .fadeTo(3000, 0, function () {
                     $("#copyOK").hide();
@@ -124,7 +118,7 @@ export default function huami() {
             <div
                 id="rong1"
                 className="container"
-                style={{ textAlign: " center" }}
+                style={{ textAlign: "center" }}
             >
                 <div id="rong2">
                     <h2>
@@ -132,10 +126,9 @@ export default function huami() {
                         输入
                     </h2>
                     <div id="input">
-                        <p /> <h3>记忆密码</h3> <p />{" "}
+                        <p /> <h3>记忆密码</h3> <p />
                         <p>
                             <input
-                                ref={input1ref}
                                 value={inputtext1}
                                 onChange={(e) => {
                                     onchangeinputtext1(e);
@@ -147,69 +140,45 @@ export default function huami() {
                                 placeholder="输入密码"
                                 name="password"
                                 type="password"
-                                // value=""
-                                tabIndex="1"
                                 className="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control"
                             />
-                        </p>{" "}
-                        <p /> <span>+</span> <h3>区分代号</h3> <p />{" "}
+                        </p>
+                        <p /> <span>+</span> <h3>区分代号</h3> <p />
                         <p>
                             <input
-                                ref={input2ref}
                                 value={inputtext2}
                                 onChange={(e) => {
                                     onchangeinputtext2(e);
-
-                                    /* 不能在这个时候使用 inputtext1, inputtext2,
-                  
-                  因为inputtext1, inputtext2要等待下次组件刷新才会改变!
-                  
-                  应该使用useeffect在component did update的之后使用这个函数!*/
-                                    //   handlechange(inputtext1, inputtext2);
-                                    // input1ref.current.value,
-                                    // input2ref.current.value
                                 }}
                                 id="key"
                                 placeholder="输入代号"
                                 name="key"
                                 type="text"
                                 // value=""
-                                tabIndex="2"
+
                                 className="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-control"
                             />
                         </p>
-                    </div>{" "}
-                    <br /> <p />{" "}
+                    </div>
+                    <br /> <p />
                     <h2>
                         <span>2</span>
                         获取
-                    </h2>{" "}
+                    </h2>
                     <p />
                     <div id="get">
-                        <p id="tuijian" /> <p /> <h3>最终密码</h3> <p />{" "}
+                        <p id="tuijian" /> <p /> <h3>最终密码</h3> <p />
                         <span id="myhezi">
                             <p>
                                 <input
                                     value={inputtext3}
                                     onChange={onchangeinputtext3}
                                     id="code16"
-                                    readOnly="readonly"
+                                    readOnly={true}
                                     className="col-lg-12 col-md-12 col-sm-12 col-xs-12 snippet code16d form-control"
-
-                                    /*      使用css的:hover实现样式!
-     
-.flowerpassword .code16d:hover {
-  border: 2px solid #ff881c;
-}
-
-
-.flowerpassword .copycode16d:hover {
-  background-color: #ff881c;
-  border: 2px solid #ff881c;
-} */
                                 />
-                            </p>{" "}
-                            <br />{" "}
+                            </p>
+                            <br />
                             <p>
                                 <button
                                     onClick={() => {
@@ -225,7 +194,7 @@ export default function huami() {
                                     点击复制
                                 </button>
                             </p>
-                        </span>{" "}
+                        </span>
                         <p>
                             <span
                                 id="copyOK"
@@ -236,7 +205,7 @@ export default function huami() {
                             >
                                 √复制成功
                             </span>
-                        </p>{" "}
+                        </p>
                         <p />
                     </div>
                 </div>

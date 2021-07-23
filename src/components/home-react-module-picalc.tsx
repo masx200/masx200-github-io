@@ -1,11 +1,8 @@
 "use strict";
 import React from "react";
-// import extendmytextarea from "./圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/extendmytextarea.js";
-// eslint-disable-next-line no-unused-vars
-import Mypidashujisuanbigint from "./圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/mypidashujisuan-bigint.tsx"; // } //   关闭所有worker as 关闭所有worker1 // , {
-// eslint-disable-next-line no-unused-vars
-import Mypidashujisuandecimal from "./圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/mypidashujisuan-decimal.tsx"; // } //   关闭所有worker as 关闭所有worker2 //  {
-// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
+
+import Mypidashujisuanbigint from "./圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/mypidashujisuan-bigint";
+import Mypidashujisuandecimal from "./圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架/mypidashujisuan-decimal";
 var { useEffect } = React;
 /* 应该再卸载组件时关闭所有worker */
 export default function Picalc() {
@@ -39,14 +36,7 @@ export default function Picalc() {
 
                 <details>
                     <summary className=" btn btn-outline-primary mui-btn mui-btn-outline-primary">
-                        {/* <button
-                  class=" btn btn-outline-primary"
-                  // type="button"
-                  // data-toggle="collapse"
-                  // data-target="#collapsiblecontainer1"
-                > */}
                         展开收起测试结果对比
-                        {/* </button> */}
                     </summary>
 
                     <br />

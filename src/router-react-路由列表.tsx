@@ -1,154 +1,115 @@
 "use strict";
-import { Switch, Route } from "react-router-dom";
-import React from "react";
+
+import React, { ComponentType } from "react";
+import { View } from "./router";
 var { lazy } = React;
 export default React.memo(路由);
-function 路由() {
+const picalc = lazy(() => import("./components/home-react-module-picalc"));
+// @ts-ignore
+var myhome = lazy(() => import("./components/home-react-module-home.tsx"));
+var rsscomponent = lazy(
     // @ts-ignore
-    var myhome = lazy(() => import("./components/home-react-module-home.tsx"));
-    var rsscomponent = lazy(
+    () => import("./rssreader/react-module-rssreader.tsx")
+);
+const reacthome = lazy(
+    () =>
         // @ts-ignore
-        () => import("./rssreader/react-module-rssreader.tsx")
-    );
-    const reacthome = lazy(
-        () =>
+        import(
             // @ts-ignore
-            import(
-                // @ts-ignore
-                "./components/my-react-router-test/react-module-home.tsx"
-            )
-    );
-    var 路由list: [
-        string,
-        React.LazyExoticComponent<React.ComponentType<any>>
-    ][] = [
-        ["/", reacthome],
-        [
-            "/picalc",
+            "./components/my-react-router-test/react-module-home.tsx"
+        )
+);
+const reactabout = lazy(
+    () =>
+        // @ts-ignore
+        import(
             // @ts-ignore
-            lazy(() => import("./components/home-react-module-picalc")),
-        ],
+            "./components/my-react-router-test/react-module-about.js"
+        )
+);
+const decoder = lazy(
+    () =>
+        // @ts-ignore
+        import(
+            // @ts-ignore
+            "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder.tsx"
+        )
+);
+const jsfuck = lazy(
+    () =>
+        // @ts-ignore
+        import(
+            // @ts-ignore
+            "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck.tsx"
+        )
+);
+const hieroglyphy = lazy(
+    () =>
+        // @ts-ignore
+        import(
+            // @ts-ignore
+            "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.tsx"
+        )
+);
+const reacthuami = lazy(() => import("./components/home-react-module-huami"));
+const webpackawesomeconfig = lazy(
+    () =>
+        // @ts-ignore
+        import(
+            // @ts-ignore
+            "./components/home-react-webpack-react-vue-spa-awesome-config.tsx"
+        )
+);
+const excellentvscodeextensions = lazy(
+    () =>
+        // @ts-ignore
+        import(
+            // @ts-ignore
+            "./components/excellent-vscode-extensions-for-javascript.tsx"
+        )
+);
+const myroutes: [string | ((o: any) => boolean), ComponentType<any>][] = [
+    [(o: any) => Object.keys(o).length === 0, reacthome],
+    [
+        "/picalc",
+        // @ts-ignore
+        picalc,
+    ],
 
-        // [
-        //     "/IMPORTCJSAMDUMD动态异步加载",
-        //     // @ts-ignore
-        //     lazy(
-        //         () =>
-        //             import(
-        //                 // @ts-ignore
-        //                 "./components/home-react-module-IMPORTCJSAMDUMD动态异步加载.tsx"
-        //             )
-        //     ),
-        // ],
-        [
-            "/react-home",
+    [
+        "/react-home",
 
-            // @ts-ignore
-            myhome,
-        ],
-        ["/react-rssreader", rsscomponent],
-        ["/react-rssreader/:sitename", rsscomponent],
-        [
-            "/react-about",
-            lazy(
-                () =>
-                    // @ts-ignore
-                    import(
-                        // @ts-ignore
-                        "./components/my-react-router-test/react-module-about.js"
-                    )
-            ),
-        ],
-        [
-            "/decoder",
-            lazy(
-                () =>
-                    // @ts-ignore
-                    import(
-                        // @ts-ignore
-                        "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder.tsx"
-                    )
-            ),
-        ],
-        [
-            "/jsfuck",
-            lazy(
-                () =>
-                    // @ts-ignore
-                    import(
-                        // @ts-ignore
-                        "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck.tsx"
-                    )
-            ),
-        ],
-        [
-            "/hieroglyphy",
-            lazy(
-                () =>
-                    // @ts-ignore
-                    import(
-                        // @ts-ignore
-                        "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.tsx"
-                    )
-            ),
-        ],
-        [
-            "/react-huami",
-            // @ts-ignore
-            lazy(() => import("./components/home-react-module-huami.js")),
-        ],
-        [
-            "/webpack-react-vue-spa-awesome-config",
-            lazy(
-                () =>
-                    // @ts-ignore
-                    import(
-                        // @ts-ignore
-                        "./components/home-react-webpack-react-vue-spa-awesome-config.tsx"
-                    )
-            ),
-        ],
-        // [
-        //     "/react-simple-global-state-store-hook",
-        //     lazy(
-        //         () =>
-        //             // @ts-ignore
-        //             import(
-        //                 // @ts-ignore
-        //                 "./components/home-react-使用react hooks实现的简单全局状态管理 react-simple-global-state-store-hook.tsx"
-        //             )
-        //     ),
-        // ],
-        [
-            "/excellent-vscode-extensions-for-javascript",
-            lazy(
-                () =>
-                    // @ts-ignore
-                    import(
-                        // @ts-ignore
-                        "./components/excellent-vscode-extensions-for-javascript.tsx"
-                    )
-            ),
-        ],
-        // [
-        //     "/vue-simple-global-state-store-manager",
-        //     lazy(
-        //         () =>
-        //             // @ts-ignore
-        //             import(
-        //                 // @ts-ignore
-        //                 "./components/vue-simple-global-state-store-manager.tsx"
-        //             )
-        //     ),
-        // ],
-        ["*", reacthome],
-    ];
+        // @ts-ignore
+        myhome,
+    ],
+    ["/react-rssreader", rsscomponent],
 
-    return (
-        <Switch>
-            {路由list.map((a, i) => (
-                <Route exact path={a[0]} component={React.memo(a[1])} key={i} />
-            ))}
-        </Switch>
-    );
+    ["/react-about", reactabout],
+    ["/decoder", decoder],
+    ["/jsfuck", jsfuck],
+    ["/hieroglyphy", hieroglyphy],
+    [
+        "/react-huami",
+        // @ts-ignore
+        reacthuami,
+    ],
+    ["/webpack-react-vue-spa-awesome-config", webpackawesomeconfig],
+
+    ["/excellent-vscode-extensions-for-javascript", excellentvscodeextensions],
+
+    [() => true, reacthome],
+];
+var 路由list: { params: (o: any) => boolean; component: ComponentType<any> }[] =
+    myroutes.map(({ 0: params, 1: component }) => {
+        return {
+            component,
+            params:
+                "function" === typeof params
+                    ? params
+                    : (o: any) => o.p === params,
+        };
+    }) as { params: (o: any) => boolean; component: ComponentType<any> }[];
+// console.log(路由list)
+function 路由() {
+    return <View routes={路由list} />;
 }

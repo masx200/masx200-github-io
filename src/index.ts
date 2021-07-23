@@ -33,8 +33,8 @@ window.addEventListener(
             const ClipboardJS = module.default;
 
             new ClipboardJS(".btn").on("success", function (e) {
-                console.log(e);
-                console.info("Text:", e.text);
+                // console.log(e);
+                // console.info("Text:", e.text);
 
                 e.clearSelection();
             });

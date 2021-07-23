@@ -18,7 +18,7 @@ async function fetchtext(url: string) {
 export default React.memo(markdown);
 
 function markdown(props: { src: string }) {
-    console.log(cachemarkdown);
+    // console.log(cachemarkdown);
     let markdowncache = "";
     let cache加载完成 = false;
     let cache加载失败 = false;
@@ -35,7 +35,7 @@ function markdown(props: { src: string }) {
 
     const ref = useRef();
     //已经卸载此组件
-    var unmounted = false;
+    const unmounted =useRef( false);
     useEffect(() => {
         if (props.src) {
             const marktext = cachemarkdown.get(props.src);
@@ -53,7 +53,7 @@ function markdown(props: { src: string }) {
                 } catch (error) {
                     console.error(error);
 
-                    unmounted || set加载失败(true);
+                    unmounted.current || set加载失败(true);
                     throw error;
                     // return;
                 }
@@ -70,9 +70,9 @@ function markdown(props: { src: string }) {
                         hljs.highlightElement(block);
                     }
                 );
-                unmounted || set加载完成(true);
+                unmounted.current || set加载完成(true);
                 try {
-                    unmounted || setmarkdown内容(divele.innerHTML);
+                    unmounted.current || setmarkdown内容(divele.innerHTML);
                     cachemarkdown.set(props.src, divele.innerHTML);
                 } catch (error) {
                     console.error(error);
@@ -85,7 +85,7 @@ function markdown(props: { src: string }) {
         //     location.hash='#/'
         // },0)
         return () => {
-            unmounted = true;
+            unmounted .current= true;
             //清除副作用
         };
     });

@@ -1,58 +1,33 @@
-import React from "react";
-// console.log(React);
-import { Link } from "react-router-dom";
-// var { useEffect } = React;
-var { useEffect, useState } = React;
+import React, { useEffect } from "react";
+import { Link, useParams } from "./router";
+
+var { useState } = React;
 export default React.memo(可变路径的rssreader链接);
-
+export const rsssitenames = [
+    "pingwest",
+    "ifanr",
+    "ithome",
+    "landiannews",
+    "iplaysoft",
+    "tmtpost",
+];
 function 可变路径的rssreader链接() {
-    // console.log(arguments);
     const [rsssitename, setrsssitename] = useState("");
+    const params = useParams();
     useEffect(() => {
-        window.addEventListener(
-            "hashchange",
+        if (rsssitenames.includes(params.sitename)) {
+            setrsssitename(params.sitename);
+        }
 
-            () => {
-                switch (location.hash) {
-                    case "#/react-rssreader/iplaysoft":
-                    case "#/react-rssreader/tmtpost":
-                    case "#/react-rssreader/landiannews":
-                    case "#/react-rssreader/ithome":
-                    case "#/react-rssreader/ifanr":
-                    case "#/react-rssreader/pingwest":
-                        setrsssitename(
-                            location.hash.slice("#/react-rssreader".length)
-                        );
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-        );
-    }, []);
-
-    /* $(window).on("hashchange", () => {
-    switch (location.hash) {
-      case "#/react-rssreader/iplaysoft":
-      case "#/react-rssreader/tmtpost":
-      case "#/react-rssreader/landiannews":
-      case "#/react-rssreader/ithome":
-      case "#/react-rssreader/ifanr":
-      case "#/react-rssreader/pingwest":
-        setrsssitename(location.hash.slice("#/react-rssreader".length));
-        break;
-
-      default:
-        break;
-    }
-  //  /*  */
-    // }
-
-    //);*/
+        return () => {};
+    }, [params.sitename]);
     return (
         <Link
-            to={"/react-rssreader" + rsssitename}
+            to={
+                rsssitename
+                    ? { p: "/react-rssreader", sitename: rsssitename }
+                    : { p: "/react-rssreader" }
+            }
             className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
         >
             rss阅读

@@ -11,7 +11,7 @@ function guid() {
         }
     );
 }
-function tanchu弹出消息通用(infotype) {
+function tanchu弹出消息通用(infotype: string) {
     // var id=Math.random()*100000000|0
     var textinfo;
     switch (infotype) {

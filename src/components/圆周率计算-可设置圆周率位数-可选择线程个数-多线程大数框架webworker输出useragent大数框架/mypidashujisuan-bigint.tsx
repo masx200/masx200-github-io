@@ -1,13 +1,6 @@
 "use strict";
 // @ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
-// @ts-ignore
-// import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
-function tanchu弹出消息提示() {
-    tanchu弹出消息通用("success");
-}
-// @ts-ignore
-import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 /*
 worker-loader
 查看原文|查看仓库|编辑此页
@@ -32,11 +25,6 @@ worker.onmessage = function (event) {};
 
 worker.addEventListener("message", function (event) {}); */
 import bigInt from "big-integer/BigInteger.js";
-
-// const bigintworker = "./service-worker-mythread1-bigint.worker.js";
-// @ts-ignore
-import bigintworker from "./service-worker-mythread1-bigint.worker.js";
-
 // import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 // import("../IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
 // (() => {
@@ -46,19 +34,22 @@ import bigintworker from "./service-worker-mythread1-bigint.worker.js";
 // ("use strict");
 // import mui from "../mui.min.js";
 import React from "react";
+// @ts-ignore
+import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
+import { useBindtext } from "../home-react-module-huami";
+// const bigintworker = "./service-worker-mythread1-bigint.worker.js";
+// @ts-ignore
+import bigintworker from "./service-worker-mythread1-bigint.worker.js";
+// @ts-ignore
+// import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
+function tanchu弹出消息提示() {
+    tanchu弹出消息通用("success");
+}
+
 // const IMPORTCJSAMDUMD = window.IMPORTCJSAMDUMD;
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-var { useState, useEffect, useRef, useCallback } = React;
-function useBindtext(默认值) {
-    var [inputcode, setinputcode] = useState(默认值);
-    const inputonchange = useCallback(
-        (e) => {
-            setinputcode(e.target.value);
-        },
-        [inputcode]
-    );
-    return [inputcode, setinputcode, inputonchange];
-}
+var { useEffect, useRef } = React;
+
 // @ts-ignore
 var myworker = Array(16).fill();
 function 关闭所有worker() {
@@ -66,7 +57,7 @@ function 关闭所有worker() {
     myworker.forEach(function (currentValue, index) {
         /* 可能worker的数量没有满,undefined的terminate函数不存在 */
         try {
-            myworker[index].terminate();
+            currentValue.terminate();
             /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
             myworker[index] = undefined;
         } catch (error) {
@@ -75,12 +66,12 @@ function 关闭所有worker() {
     });
 }
 export default function bigcom() {
-    const btnele = useRef();
-    const outtext1 = useRef();
-    const outtext2 = useRef();
+    const btnele = useRef<HTMLElement>();
+    const outtext1 = useRef<HTMLTextAreaElement>();
+    const outtext2 = useRef<HTMLTextAreaElement>();
     useEffect(() => {
-        lashentextarea(outtext1.current);
-        lashentextarea(outtext2.current);
+        outtext1.current && lashentextarea(outtext1.current);
+        outtext2.current && lashentextarea(outtext2.current);
         // onmount();
         return () => {
             关闭所有worker();
@@ -93,8 +84,8 @@ export default function bigcom() {
         x = 0,
         threadgeshu: string | number,
         testname: string;
-
-    function lashentextarea(eles) {
+        threadgeshu = 6;
+    function lashentextarea(eles: HTMLTextAreaElement) {
         // console.log(eles.outerHTML);
         requestAnimationFrame(function () {
             //   for (var value of eles) {
@@ -135,16 +126,16 @@ export default function bigcom() {
     const [outputtext2, setoutputtext2old, onchangeoutputtext2] =
         useBindtext("");
 
-    function setoutputtext1(t) {
+    function setoutputtext1(t: string) {
         setoutputtext1old(t);
-        lashentextarea(outtext1.current);
+        outtext1.current && lashentextarea(outtext1.current);
     }
-    function setoutputtext2(t) {
-        lashentextarea(outtext2.current);
+    function setoutputtext2(t: string) {
+        outtext2.current && lashentextarea(outtext2.current);
         setoutputtext2old(t);
     }
 
-    async function mystart(btnele) {
+    async function mystart(btnele: EventTarget) {
         // const { default: bigInt } = await IMPORTCJSAMDUMD(
         //   "https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js",
         //   "big-integer"
@@ -188,9 +179,9 @@ export default function bigcom() {
             inputtext2 >= 1 &&
             inputtext2 <= 100
         ) {
-            piwei = 1000 * Math.floor(inputtext2);
+            piwei = 1000 * Math.floor(Number(inputtext2));
             //   let inputtext2f = Math.floor(inputtext2);
-            let inputtext1f = Math.floor(inputtext1);
+            let inputtext1f = Math.floor(Number(inputtext1));
             threadgeshu = inputtext1f;
             //   inputtext1 = threadgeshu;
             testname =
@@ -249,7 +240,7 @@ export default function bigcom() {
             //   myworker.length = threadgeshu;
             /* myworker.forEach(function(currentValue, index, arr) { */
             /* 等待所有线程完成之后再下一步 */
-            var 所有输出promise = await Promise.all(
+            await Promise.all(
                 // @ts-ignore
                 myworker
                     .slice(0, threadgeshu)
@@ -283,7 +274,9 @@ export default function bigcom() {
                             // console.log(arr[index].name )
                             // arr[index] = new Worker("service-worker-mythread1-bigint.js");
                             arr[index].postMessage([piwei, threadgeshu, index]);
-                            arr[index].onmessage = function (event) {
+                            arr[index].onmessage = function (event: {
+                                data: string[];
+                            }) {
                                 console.log(
                                     "主线程从副线程" +
                                         (index + 1) +
@@ -305,9 +298,12 @@ export default function bigcom() {
                                 finishflag[index] = 1;
                                 //   threadfinish(btnele);
                                 //   currentValue.terminate()
-                                rs(event.data);
+                                rs();
                             };
-                            arr[index].onerror = (e) => {
+                            arr[index].onerror = (e: {
+                                message: string;
+                                filename: string;
+                            }) => {
                                 // for (var key in e) {
                                 //     console.error(key, e[key])
                                 // }
@@ -323,7 +319,7 @@ export default function bigcom() {
                         // console.log(arr);
                     })
             );
-            console.log("所有输出promise的返回值", 所有输出promise);
+            // console.log("所有输出promise的返回值", 所有输出promise);
             /* 所有线程已经完成,输出结果 */
             requestAnimationFrame(() => {
                 (function (btnele) {
@@ -427,6 +423,7 @@ export default function bigcom() {
                     </span>
                 </p>
                 <button
+                    //@ts-ignore
                     ref={btnele}
                     data-loading-icon="mui-spinner mui-spinner-custom"
                     className="mui-btn mui-btn-primary btn btn-info  btn btn-outline-primary mui-btn mui-btn-outline-primary"
@@ -445,6 +442,7 @@ export default function bigcom() {
             <br />
             <div>
                 <textarea
+                    //@ts-ignore
                     ref={outtext1}
                     value={outputtext1}
                     onChange={(e) => {
@@ -483,6 +481,7 @@ export default function bigcom() {
                     <br />
                     <div id="collapsiblecontainer2" className="collapse show">
                         <textarea
+                            //@ts-ignore
                             ref={outtext2}
                             value={outputtext2}
                             //   onChange={onchangeoutputtext2}
