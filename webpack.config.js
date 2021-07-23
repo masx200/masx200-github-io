@@ -6,9 +6,8 @@ const webpackconfig = Object.assign(
 
 if ("production" === process.env.NODE_ENV) {
     webpackconfig.entry = [
-        require.resolve("@masx200/ie11-usual-polyfills"),
-
         path.join(__dirname, "./src", "polyfill.js"),
+        require.resolve("@masx200/ie11-usual-polyfills"),
 
         ...webpackconfig.entry,
     ];
