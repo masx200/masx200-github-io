@@ -7,7 +7,7 @@ export function 调整导航栏和主体的距离() {
     let timer = setInterval(() => {
         $("#my主体").css("padding-top", $("#my导航栏").height());
         //console.log($("#my导航栏").height());
-    }, 0);
+    }, 10);
     setTimeout(() => {
         $("#my主体").css("padding-top", $("#my导航栏").height());
         //console.log($("#my导航栏").height());
