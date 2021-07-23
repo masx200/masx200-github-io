@@ -1,4 +1,5 @@
-const path = require("path");const webpackconfig = Object.assign(
+const path = require("path");
+const webpackconfig = Object.assign(
     {},
     require("@masx200/webpack-react-vue-spa-awesome-config")
 );
