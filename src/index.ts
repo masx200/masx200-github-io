@@ -1,4 +1,3 @@
-import "./polyfill";
 import "./styles.js";
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker";
 import React from "react";
