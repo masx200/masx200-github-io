@@ -47,7 +47,6 @@ specifiers:
   marked: ^2.0.6
   mini-css-extract-plugin: ^1.6.0
   minimist: ^1.2.5
-  node-fetch: 2.6.1
   optimize-css-assets-webpack-plugin: ^6.0.0
   postcss-safe-parser: ^5.0.2
   prettier: ^2.3.0
@@ -121,7 +120,6 @@ dependencies:
   marked: 2.0.6
   mini-css-extract-plugin: 1.6.0_webpack@5.37.1
   minimist: 1.2.5
-  node-fetch: 2.6.1
   optimize-css-assets-webpack-plugin: 6.0.0_webpack@5.37.1
   postcss-safe-parser: 5.0.2
   prettier: 2.3.0
@@ -8130,11 +8128,6 @@ packages:
     dependencies:
       encoding: 0.1.13
       is-stream: 1.1.0
-    dev: false
-
-  /node-fetch/2.6.1:
-    resolution: {integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==}
-    engines: {node: 4.x || >=6.0.0}
     dev: false
 
   /node-forge/0.10.0:
