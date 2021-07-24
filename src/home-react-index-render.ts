@@ -23,24 +23,24 @@ const scrollTo = window.scrollTo;
         }
         $(window).on("hashchange", onhashchange);
 
-        var haverun = 0;
-        herewindowonload();
-        function herewindowonload() {
-            if (haverun == 0) {
-                haverun = 1;
+        // var haverun = 0;
+        // herewindowonload();
+        // function herewindowonload() {
+        //     if (haverun == 0) {
+        //         haverun = 1;
 
-                myonloadfunc();
-            } else {
-                console.log("不要重复运行此onload函数");
-            }
-        }
+        //         myonloadfunc();
+        //     } else {
+        //         console.log("不要重复运行此onload函数");
+        //     }
+        // }
 
-        function myonloadfunc() {
-            function refreshall() {
-                scrollTo(0, 0);
-            }
-            refreshall();
-        }
+        // function myonloadfunc() {
+        //     function refreshall() {
+        //         scrollTo(0, 0);
+        //     }
+        //     refreshall();
+        // }
     });
 })();
 // });
