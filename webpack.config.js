@@ -11,6 +11,7 @@ if ("production" === process.env.NODE_ENV) {
 
         ...webpackconfig.entry,
     ];
+    webpackconfig.devtool = "source-map";
 }
 
 console.log(webpackconfig);
