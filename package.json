@@ -53,7 +53,7 @@
         "@types/node": "15.6.1",
         "@types/react": "^17.0.6",
         "@types/react-dom": "^17.0.5",
-        "@umijs/hooks": "^1.9.3",
+        "ahooks": "2.10.9",
         "acorn": "^8.2.4",
         "babel-loader": "^8.2.2",
         "babel-plugin-named-asset-import": "^0.3.7",

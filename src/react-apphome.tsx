@@ -1,6 +1,6 @@
 // const myvurrouterprojecturl =
 //     "https://my-vue-router-project-masx200.vercel.app/";
-import { useToggle } from "@umijs/hooks";
+import { useToggle } from "ahooks";
 import React, { useState } from "react";
 // @ts-ignore
 import { initloadingid } from "./initloadingid.ts";
@@ -22,7 +22,7 @@ export default React.memo(Apphome);
 function Apphome() {
     const [showhr, setshowhr] = useState(true);
     const [clientWidth, setclientWidth] = useState(document.body.clientWidth);
-    const { state, toggle } = useToggle(true);
+    const [state, { toggle }] = useToggle(true);
     function showhrhandler() {
         // console.log(document.body.clientWidth,state);
         if (document.body.clientWidth <= 500) {
