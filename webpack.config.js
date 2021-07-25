@@ -12,6 +12,11 @@ if ("production" === process.env.NODE_ENV) {
         ...webpackconfig.entry,
     ];
     webpackconfig.devtool = "source-map";
+    webpackconfig.optimization = {
+        ...webpackconfig.optimization,
+        chunkIds: "named",
+        moduleIds: "named",
+    };
 }
 
 console.log(webpackconfig);
