@@ -1,22 +1,10 @@
 "use strict";
-// import("./clipboard.min.js").then(
-//   //   console.log
-
-//   module => {
-//     const ClipboardJS = module.default;
-//     new ClipboardJS(".btn").on("success", function(e) {
-//       e.clearSelection();
-//     });
-//     // new ClipboardJS(".btn");
-//   }
-// );
-
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 import $ from "jquery";
 import { generatehuami } from "./generatehuami";
 import { useBindtext } from "./useBindtext";
-// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-var { useEffect, useCallback } = React;
+import { huamistyle } from "./huamistyle";
+
 export default function huami() {
     useEffect(() => {
         document.title = "masx200的github主页-" + "花密  不一样的密码管理工具";
@@ -75,6 +63,7 @@ export default function huami() {
 
     return (
         <div className="hello flowerpassword">
+            <style jsx>{huamistyle}</style>
             <h1>{"花密  不一样的密码管理工具"}</h1>
 
             <div
