@@ -36,7 +36,7 @@ import bigInt from "big-integer/BigInteger.js";
 import React from "react";
 // @ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
-import { useBindtext } from "../../huami/home-react-module-huami";
+import { useBindtext } from "../../huami/useBindtext";
 // const bigintworker = "./service-worker-mythread1-bigint.worker.js";
 // @ts-ignore
 import bigintworker from "./service-worker-mythread1-bigint.worker.js";

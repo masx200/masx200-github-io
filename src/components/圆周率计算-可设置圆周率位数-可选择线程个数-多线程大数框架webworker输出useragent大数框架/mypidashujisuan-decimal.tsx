@@ -9,7 +9,7 @@ import Decimal from "decimal.js";
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useRef } from "react";
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
-import { useBindtext } from "../../huami/home-react-module-huami";
+import { useBindtext } from "../../huami/useBindtext";
 // @ts-ignore
 import decimalworker from "./service-worker-mythread1-decimal.worker.js";
 function tanchu弹出消息提示() {

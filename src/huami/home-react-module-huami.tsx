@@ -14,22 +14,9 @@
 import React from "react";
 import $ from "jquery";
 import { generatehuami } from "./generatehuami";
+import { useBindtext } from "./useBindtext";
 // var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-var { useState, useEffect, useCallback } = React;
-export function useBindtext(
-    默认值: string | number
-): [
-    string | number,
-    React.Dispatch<React.SetStateAction<string | number>>,
-    (e: { target: { value: string } }) => void
-] {
-    var [inputcode, setinputcode] = useState(默认值);
-    const inputonchange = (e: { target: { value: string } }) => {
-        //@ts-ignore
-        setinputcode(e.target?.value);
-    };
-    return [inputcode, setinputcode, inputonchange];
-}
+var { useEffect, useCallback } = React;
 export default function huami() {
     useEffect(() => {
         document.title = "masx200的github主页-" + "花密  不一样的密码管理工具";
