@@ -51,7 +51,7 @@ const hieroglyphy = lazy(
             "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.tsx"
         )
 );
-const reacthuami = lazy(() => import("./components/home-react-module-huami"));
+const reacthuami = lazy(() => import("./huami/home-react-module-huami"));
 const webpackawesomeconfig = lazy(
     () =>
         // @ts-ignore

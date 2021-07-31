@@ -9,7 +9,7 @@ import Decimal from "decimal.js";
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useRef } from "react";
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
-import { useBindtext } from "../home-react-module-huami";
+import { useBindtext } from "../../huami/home-react-module-huami";
 // @ts-ignore
 import decimalworker from "./service-worker-mythread1-decimal.worker.js";
 function tanchu弹出消息提示() {
@@ -372,7 +372,7 @@ export default function decimalcom() {
                     </span>
                 </p>
                 <button
-                 //@ts-ignore
+                    //@ts-ignore
                     ref={btnele}
                     data-loading-icon="mui-spinner mui-spinner-custom"
                     className="mui-btn mui-btn-primary btn btn-info  btn btn-outline-primary mui-btn mui-btn-outline-primary"
@@ -391,7 +391,7 @@ export default function decimalcom() {
             <br />
             <div>
                 <textarea
-                 //@ts-ignore
+                    //@ts-ignore
                     ref={outtext1}
                     value={outputtext1}
                     onChange={(e) => {
@@ -428,7 +428,7 @@ export default function decimalcom() {
                     <br />
                     <div id="collapsiblecontainer2" className="collapse show">
                         <textarea
-                        //@ts-ignore
+                            //@ts-ignore
                             ref={outtext2}
                             value={outputtext2}
                             //   onChange={onchangeoutputtext2}
