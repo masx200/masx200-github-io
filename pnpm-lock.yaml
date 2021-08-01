@@ -38,6 +38,7 @@ specifiers:
   clean-webpack-plugin: ^4.0.0-alpha.0
   clipboard: ^2.0.8
   css-loader: ^5.2.6
+  cssnano: ^5.0.7
   decimal.js: ^10.3.0
   fast-xml-parser: ^3.19.0
   file-loader: ^6.2.0
@@ -116,6 +117,7 @@ dependencies:
   clean-webpack-plugin: 4.0.0-alpha.0_webpack@5.37.1
   clipboard: 2.0.8
   css-loader: 5.2.6_webpack@5.37.1
+  cssnano: 5.0.7_postcss@8.3.6
   decimal.js: 10.3.0
   fast-xml-parser: 3.19.0
   file-loader: 6.2.0_webpack@5.37.1
@@ -5884,17 +5886,13 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.16.6
-      caniuse-lite: 1.0.30001246
+      caniuse-lite: 1.0.30001248
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: false
 
   /caniuse-lite/1.0.30001228:
     resolution: {integrity: sha512-QQmLOGJ3DEgokHbMSA8cj2a+geXqmnpyOFT0lhQV6P3/YOJvGDEwoedcwxEQ30gJIwIIunHIicunJ2rzK5gB2A==}
-    dev: false
-
-  /caniuse-lite/1.0.30001246:
-    resolution: {integrity: sha512-Tc+ff0Co/nFNbLOrziBXmMVtpt9S2c2Y+Z9Nk9Khj09J+0zR9ejvIW5qkZAErCbOrVODCx/MN+GpB5FNBs5GFA==}
     dev: false
 
   /caniuse-lite/1.0.30001248:
