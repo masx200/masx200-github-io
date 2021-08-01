@@ -5,13 +5,12 @@ function tanchu弹出消息提示() {
 }
 //@ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
-//@ts-ignore
-import jsfuckworker from "./worker-jsfuck.worker.js";
-import React from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
+//@ts-ignore
+import jsfuckworker from "./worker-jsfuck.worker.js";
 
-var { useState, useEffect, useRef, useCallback } = React;
 // import "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER.less"
 var outputdivid = "clip" + guid();
 function guid() {
@@ -24,10 +23,10 @@ function guid() {
         }
     );
 }
-var myservice;
+var myservice: Worker | undefined;
 function 关闭所有worker() {
     try {
-        myservice.terminate();
+        myservice?.terminate();
         /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
         myservice = undefined;
     } catch (error) {
@@ -36,18 +35,19 @@ function 关闭所有worker() {
 }
 export default function Jsfuck() {
     const evalcheckbox = useRef();
-    function encode(btnencode) {
+    function encode(btnencode: EventTarget) {
         console.time("encodescript");
         console.log("encodescript");
         mui(btnencode).button("loading");
 
-        // if (!myservice) {
-        myservice = myservice || jsfuckworker();
+        if (!myservice) {
+            myservice = jsfuckworker();
+        }
         // new Worker("./service-worker-jsfuck.worker.js");
         //   console.log("创建新线程", "service-worker-jsfuck.js");
         // }
 
-        myservice.postMessage([
+        myservice?.postMessage([
             //   $2("input").value,
             inputcode,
             //@ts-ignore
