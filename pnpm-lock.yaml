@@ -19,7 +19,7 @@ specifiers:
   '@masx200/event-emitter-target': ^1.1.9
   '@masx200/ie11-usual-polyfills': ^1.0.5
   '@masx200/search-hash-params-router': ^1.4.0
-  '@masx200/webpack-react-vue-spa-awesome-config': ^4.0.1
+  '@masx200/webpack-react-vue-spa-awesome-config': ^4.0.2
   '@types/jquery': ^3.5.5
   '@types/marked': ^2.0.3
   '@types/node': 15.6.1
@@ -97,7 +97,7 @@ dependencies:
   '@masx200/event-emitter-target': 1.1.9
   '@masx200/ie11-usual-polyfills': 1.0.5
   '@masx200/search-hash-params-router': 1.4.0_d102bc54a92acc26cf3f98a38d325c38
-  '@masx200/webpack-react-vue-spa-awesome-config': 4.0.1_react@17.0.2+typescript@4.3.5
+  '@masx200/webpack-react-vue-spa-awesome-config': 4.0.2_react@17.0.2+typescript@4.3.5
   '@types/jquery': 3.5.5
   '@types/marked': 2.0.3
   '@types/node': 15.6.1
@@ -4328,8 +4328,8 @@ packages:
       '@types/react-dom': 17.0.5
     dev: false
 
-  /@masx200/webpack-react-vue-spa-awesome-config/4.0.1_react@17.0.2+typescript@4.3.5:
-    resolution: {integrity: sha512-dhEq83yUfvPxFXM1wzrN/94/++26VOd41ExiXL+o4c1aOCJ1g9YABux2Sj5NBBbbiXsAnFjZlkC3+5mSWhCQZg==}
+  /@masx200/webpack-react-vue-spa-awesome-config/4.0.2_react@17.0.2+typescript@4.3.5:
+    resolution: {integrity: sha512-7wFegklOYVKVbUzh+gQA37jS5Lag8nw6bgMr7tao8LioYOIhZA9V1oH+NW679GTKrfpYm1TiZXvEtqEm0islng==}
     hasBin: true
     peerDependencies:
       react: 17.0.2
