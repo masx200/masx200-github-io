@@ -6,6 +6,7 @@ const {
 
 module.exports = (env, argv) => {
     const webpackconfig = createconfig(env, argv);
+    const config = webpackconfig;
     if ("production" === process.env.NODE_ENV) {
         webpackconfig.entry = [
             path.join(__dirname, "./src", "polyfill.js"),
@@ -13,8 +14,8 @@ module.exports = (env, argv) => {
 
             ...webpackconfig.entry,
         ];
+        config.devtool = "source-map";
     }
-    const config = webpackconfig;
 
     console.log(config);
 
