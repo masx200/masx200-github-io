@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        // "paths": { "@": ["./src"] },
+        "skipLibCheck": true,
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "allowUnreachableCode": false,
@@ -28,6 +28,6 @@
         "allowSyntheticDefaultImports": true,
         "alwaysStrict": true
     },
-    "include": ["*.ts", "./src/*.ts", "*.tsx", "./src/*.tsx", "*/*/*.tsx"],
+    "include": ["src/"],
     "exclude": []
 }
