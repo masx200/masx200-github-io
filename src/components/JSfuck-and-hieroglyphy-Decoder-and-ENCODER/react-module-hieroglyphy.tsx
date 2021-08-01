@@ -5,7 +5,7 @@ function tanchu弹出消息提示() {
 } //@ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
 //@ts-ignore
-import hieroglyphyworker from "./service-worker-hieroglyphy.worker";
+import hieroglyphyworker from "./worker-hieroglyphy.worker";
 import React from "react";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";

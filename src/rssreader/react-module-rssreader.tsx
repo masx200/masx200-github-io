@@ -74,7 +74,7 @@ function Rssreader(props: { params: Record<string, string> }) {
                 //   console.log(r.statusText, r);
                 return r.text();
             } else {
-                throw new Error("fetch failed");
+                throw new Error("fetch failed:" + xmlurl);
             }
         });
         // console.log(xmlstring);

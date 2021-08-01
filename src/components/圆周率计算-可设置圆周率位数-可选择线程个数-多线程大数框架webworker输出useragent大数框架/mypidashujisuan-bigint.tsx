@@ -1,29 +1,7 @@
 "use strict";
 // @ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
-/*
-worker-loader
-查看原文|查看仓库|编辑此页
-This loader registers the script as Web Worker
 
-安装
-npm i -D worker-loader
-用法
-##
-
-App.js
-
-import Worker from 'worker-loader!./Worker.js';
-
-
-import Worker from './file.worker.js';
-
-const worker = new Worker();
-
-worker.postMessage({ a: 1 });
-worker.onmessage = function (event) {};
-
-worker.addEventListener("message", function (event) {}); */
 import bigInt from "big-integer/BigInteger.js";
 // import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
 // import("../IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
@@ -37,9 +15,9 @@ import React from "react";
 // @ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
 import { useBindtext } from "../../huami/useBindtext";
-// const bigintworker = "./service-worker-mythread1-bigint.worker.js";
+
 // @ts-ignore
-import bigintworker from "./service-worker-mythread1-bigint.worker.js";
+import bigintworker from "./worker-mythread1-bigint.worker.js";
 // @ts-ignore
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {

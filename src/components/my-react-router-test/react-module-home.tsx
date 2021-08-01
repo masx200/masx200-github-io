@@ -1,9 +1,7 @@
-// React=IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
-// React=window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react")
-// console.log(window.IMPORTCJSAMDUMD.GLOBALPACKAGESTORE.react)
+
 //@ts-ignore
 //@ts-ignore
-import 首页推荐网址目录 from "@/components/首页推荐网址目录";
+import 首页推荐网址目录 from "../首页推荐网址目录";
 //@ts-ignore
 import picture1 from "@/pictures/babeljs.png";
 //@ts-ignore
@@ -21,6 +19,7 @@ import picture7 from "@/pictures/webpack.svg";
 //@ts-ignore
 import tanchu弹出消息通用 from "@/utils/my弹出消息通用.ts";
 import React from "react";
+//@ts-ignore
 import { 调整导航栏和主体的距离 } from "../../调整导航栏和主体的距离.js";
 ("use strict");
 
@@ -54,7 +53,7 @@ export default function home() {
 
                     <div>
                         <ul>
-                            {首页推荐网址目录.map((t, i) => {
+                            {首页推荐网址目录.map((t:string[], i:number) => {
                                 return (
                                     <li key={i}>
                                         <p>

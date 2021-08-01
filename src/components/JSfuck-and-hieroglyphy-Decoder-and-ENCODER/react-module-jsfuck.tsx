@@ -6,7 +6,7 @@ function tanchu弹出消息提示() {
 //@ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
 //@ts-ignore
-import jsfuckworker from "./service-worker-jsfuck.worker.js";
+import jsfuckworker from "./worker-jsfuck.worker.js";
 import React from "react";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
@@ -153,6 +153,7 @@ export default function Jsfuck() {
                 onClick={(e) => {
                     encode(e.target);
                 }}
+//@ts-ignore
                 ref={btnencode}
                 className="btn btn-outline-primary btn-lg"
                 id="encode"
@@ -170,6 +171,7 @@ export default function Jsfuck() {
                 <input
                     id="eval"
                     type="checkbox"
+//@ts-ignore
                     ref={evalcheckbox}
                     onChange={() => {
                         encode(btnencode.current);
