@@ -5,7 +5,7 @@ function tanchu弹出消息提示() {
 } //@ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
 //@ts-ignore
-import hieroglyphyworker from "./worker-hieroglyphy.worker";
+import hieroglyphyworker from "./worker-hieroglyphy.worker.js";
 import React from "react";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
@@ -43,7 +43,7 @@ function guid() {
 var myservice: Worker | undefined;
 function 关闭所有worker() {
     try {
-        myservice.terminate();
+        myservice?.terminate();
         /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
         myservice = undefined;
     } catch (error) {
@@ -57,8 +57,8 @@ export default function Hieroglyphy() {
     function encodeall(typename: string, btnele: EventTarget) {
         console.time(typename);
         console.log(typename);
-        // if (!myservice) {
-        myservice = myservice || hieroglyphyworker();
+         if (!myservice) {
+        myservice =   hieroglyphyworker();}
         // new Worker("./service-worker-hieroglyphy.worker.js");
         //   console.log("创建新线程", "service-worker-hieroglyphy.js");
         // }
