@@ -47,9 +47,9 @@ function guid() {
     );
 }
 var outputdivid = "clip" + guid();
-var preandpost;
+var preandpost: { prefix: string; postfix: string }[];
 export default function Decoder() {
-    const decode = (inputcode) => {
+    const decode = (inputcode: string) => {
         preandpost = preandpost || [
             /* jsfuck的初始化导致卡顿 */
             {
@@ -101,6 +101,7 @@ export default function Decoder() {
             // }
         }
         tpipeichunzifuchuan(codevalue);
+        return;
     };
     var [outputcode, setoutputcode] = useState("");
     var [inputcode, setinputcode] = useState("");
@@ -117,7 +118,7 @@ export default function Decoder() {
         [outputcode]
     );
 
-    function tpipeichunzifuchuan(codestring) {
+    function tpipeichunzifuchuan(codestring: any) {
         try {
             //   console.log(
 
@@ -139,25 +140,25 @@ export default function Decoder() {
         }
     }
 
-    function setDecoded(decodedCode) {
+    function setDecoded(decodedCode: any) {
         //  eval(decodedCode);
         // console.log(
         setoutputcode(Function(`return ${decodedCode}`)().toString());
         // );
     }
-    function isMatching(string, pattern) {
+    function isMatching(string: string, pattern: string | RegExp) {
         var result = string.match(new RegExp(pattern));
         if (result) return result[1];
 
         return null;
     }
-    function patternCreator(prefix, postfix) {
+    function patternCreator(prefix: string, postfix: string) {
         var replacedPrefix = prefix.replace(/[\[\]\(\)\+\!]/g, "\\$&");
         var replacedPostfix = postfix.replace(/[\[\]\(\)\+\!]/g, "\\$&");
 
         return replacedPrefix + "(.*)" + replacedPostfix;
     }
-    function pipeizifu(pre, post) {
+    function pipeizifu(pre: string, post: string) {
         var codevalue = inputcode;
         var prefix = pre,
             postfix = post;
@@ -174,6 +175,7 @@ export default function Decoder() {
                 /*  */
             }
         }
+        return;
     }
 
     //   var inputtext = useRef();

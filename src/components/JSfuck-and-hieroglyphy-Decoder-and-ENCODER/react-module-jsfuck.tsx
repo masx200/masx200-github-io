@@ -35,9 +35,10 @@ function 关闭所有worker() {
 }
 export default function Jsfuck() {
     const evalcheckbox = useRef();
-    const [evalcheck, setevalcheck] = useState(true);
-    async function encode() {
-        const button = btnencode.current;
+
+    async function encode(typename: string, btnele: EventTarget) {
+        const evalcheck = typename === "encodescript";
+        const button = btnele;
         if (!button) {
             return;
         }
@@ -163,7 +164,7 @@ export default function Jsfuck() {
             <br />
             <button
                 onClick={(e) => {
-                    encode();
+                    encode("encodestring", e.target);
                 }}
                 //@ts-ignore
                 ref={btnencode}
@@ -172,26 +173,22 @@ export default function Jsfuck() {
                 // type="text"
                 data-loading-icon="mui-spinner mui-spinner-custom"
             >
-                Encode
+                Encode string
             </button>
-            <div
-                className="checkbox"
-                // onClick={() => {
-                //   encode(btnencode.current);
-                // }}
+            <button
+                onClick={(e) => {
+                    encode("encodescript", e.target);
+                }}
+                //@ts-ignore
+                ref={evalcheckbox}
+                className="btn btn-outline-primary btn-lg"
+                id="encode"
+                // type="text"
+                data-loading-icon="mui-spinner mui-spinner-custom"
             >
-                <input
-                    id="eval"
-                    type="checkbox"
-                    //@ts-ignore
-                    ref={evalcheckbox}
-                    onChange={(e) => {
-                        setevalcheck(e.target.checked);
-                    }}
-                    defaultChecked={true}
-                />
-                <label htmlFor={"eval"}>Eval Source</label>
-            </div>
+                Encode script
+            </button>
+
             <div id={"clip" + outputdivid}>
                 <textarea
                     id="output"
