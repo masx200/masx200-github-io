@@ -1,8 +1,13 @@
-module.exports = {
-    plugins: [
-        [
-            "styled-jsx/babel",
-            { sourceMaps: true, plugins: ["styled-jsx-plugin-postcss"] },
+module.exports = function (api) {
+    return {
+        plugins: [
+            [
+                "styled-jsx/babel",
+                {
+                    sourceMaps: api.env("development"),
+                    plugins: ["styled-jsx-plugin-postcss"],
+                },
+            ],
         ],
-    ],
+    };
 };
