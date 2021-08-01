@@ -27,6 +27,7 @@ specifiers:
   '@types/react-dom': ^17.0.5
   acorn: ^8.2.4
   ahooks: 2.10.9
+  autoprefixer: ^10.3.1
   babel-loader: ^8.2.2
   babel-plugin-named-asset-import: ^0.3.7
   babel-plugin-transform-runtime: ^6.23.0
@@ -52,6 +53,7 @@ specifiers:
   minimist: ^1.2.5
   optimize-css-assets-webpack-plugin: ^6.0.0
   postcss: ^8.3.6
+  postcss-preset-env: ^6.7.0
   postcss-safe-parser: ^5.0.2
   prettier: ^2.3.0
   react: ^17.0.2
@@ -102,6 +104,7 @@ dependencies:
   '@types/react-dom': 17.0.5
   acorn: 8.2.4
   ahooks: 2.10.9_react@17.0.2
+  autoprefixer: 10.3.1_postcss@8.3.6
   babel-loader: 8.2.2_5c272801d9ea5d5849fb6a697c6af9a8
   babel-plugin-named-asset-import: 0.3.7_@babel+core@7.14.8
   babel-plugin-transform-runtime: 6.23.0
@@ -127,6 +130,7 @@ dependencies:
   minimist: 1.2.5
   optimize-css-assets-webpack-plugin: 6.0.0_webpack@5.37.1
   postcss: 8.3.6
+  postcss-preset-env: 6.7.0
   postcss-safe-parser: 5.0.2
   prettier: 2.3.0
   react: 17.0.2
@@ -5416,6 +5420,22 @@ packages:
     hasBin: true
     dev: false
 
+  /autoprefixer/10.3.1_postcss@8.3.6:
+    resolution: {integrity: sha512-L8AmtKzdiRyYg7BUXJTzigmhbQRCXFKz6SA1Lqo0+AR2FBbQ4aTAPFSDlOutnFkjhiz8my4agGXog1xlMjPJ6A==}
+    engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      browserslist: 4.16.6
+      caniuse-lite: 1.0.30001248
+      colorette: 1.2.2
+      fraction.js: 4.1.1
+      normalize-range: 0.1.2
+      postcss: 8.3.6
+      postcss-value-parser: 4.1.0
+    dev: false
+
   /autoprefixer/9.8.6:
     resolution: {integrity: sha512-XrvP4VVHdRBCdX1S3WXVD8+RyG9qeb1D5Sn1DeLiG2xfSpzellk5k54xbUERJ3M5DggQxes39UGOTP8CFrEGbg==}
     hasBin: true
@@ -7495,6 +7515,10 @@ packages:
   /forwarded/0.1.2:
     resolution: {integrity: sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ=}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /fraction.js/4.1.1:
+    resolution: {integrity: sha512-MHOhvvxHTfRFpF1geTK9czMIZ6xclsEor2wkIGYYq+PxcQqT7vStJqjhe6S1TenZrMZzo+wlqOufBDVepUEgPg==}
     dev: false
 
   /fragment-cache/0.2.1:
