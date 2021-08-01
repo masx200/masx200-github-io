@@ -6,29 +6,10 @@ function tanchu弹出消息提示() {
 import mui from "@/assetsjs/mui.精简.button";
 //@ts-ignore
 import hieroglyphyworker from "./worker-hieroglyphy.worker.js";
-import React from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
-// const clipboard = new ClipboardJS(".btn");
 
-// clipboard.on("success", function(e) {
-//   if (!e.text) {
-//     console.log("复制内容空");
-//   } else {
-//     //   console.info("Action:", e.action);
-//     //   console.info("Text:", e.text);
-//   }
-//   /* 不显示选择的区域形式 */
-//   e.clearSelection();
-// });
-
-// new ClipboardJS(".btn");
-// import hieroglyphyencoderender, {
-//   关闭所有worker
-// } from "./hieroglyphy-encode-render";
-// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-// import "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER.less"
-var { useState, useEffect, useRef, useCallback } = React;
 var outputdivid = "clip" + guid();
 function guid() {
     return "xxxxxxxx-xxxx-yxxx-yxxx-xxxxxxxxxxxx".replace(
@@ -54,57 +35,64 @@ export default function Hieroglyphy() {
     const [statstext, setstatstext] = useState(`0 chars`);
     const btnencodescript = useRef();
     const btnencodestring = useRef();
-    function encodeall(typename: string, btnele: EventTarget) {
-        console.time(typename);
-        console.log(typename);
-         if (!myservice) {
-        myservice =   hieroglyphyworker();}
-        // new Worker("./service-worker-hieroglyphy.worker.js");
-        //   console.log("创建新线程", "service-worker-hieroglyphy.js");
-        // }
-        mui(btnele).button("loading");
-        lastclick = typename;
-        // debugger;
-        // var output = hieroglyphy.hieroglyphyString(($2("input").value))
-        myservice.postMessage([
-            inputcode,
-            lastclick,
-            //   hieroglyphy.toString()
-            //   $("#hieroglyphy").attr("src")
-        ]);
-        // debugger;
-        myservice.onmessage = (e) => {
-            var output = e.data;
-            console.log("主线程从副线程" + "接收" + "event.data\n");
-            console.log(output);
+    async function encodeall(typename: string, btnele: EventTarget) {
+        return new Promise<void>((res, rej) => {
+            console.time(typename);
+            console.log(typename);
+            if (!myservice) {
+                myservice = hieroglyphyworker();
+            }
+            // new Worker("./service-worker-hieroglyphy.worker.js");
+            //   console.log("创建新线程", "service-worker-hieroglyphy.js");
+            // }
+            mui(btnele).button("loading");
+            lastclick = typename;
+            // debugger;
+            // var output = hieroglyphy.hieroglyphyString(($2("input").value))
+            myservice.postMessage([
+                inputcode,
+                lastclick,
+                //   hieroglyphy.toString()
+                //   $("#hieroglyphy").attr("src")
+            ]);
+            // debugger;
+            myservice.onmessage = (e) => {
+                var output = e.data;
+                console.log("主线程从副线程" + "接收" + "event.data\n");
+                console.log(output);
 
-            // $2("output").value = output;
-            console.timeEnd(typename);
-            console.time("requestAnimationFrame");
-            //   jQuery("#output").val(output);
-            setoutputcode(output);
-            setstatstext(output.length + " chars");
-            //   $2("stats").innerHTML = output.length + " chars";
+                // $2("output").value = output;
+                console.timeEnd(typename);
+                console.time("requestAnimationFrame");
+                //   jQuery("#output").val(output);
+                setoutputcode(output);
+                setstatstext(output.length + " chars");
+                //   $2("stats").innerHTML = output.length + " chars";
 
-            //   $2("output").value = output;
-            //   $2("stats").innerHTML = output.length + " chars";
+                //   $2("output").value = output;
+                //   $2("stats").innerHTML = output.length + " chars";
 
-            //   myservice.terminate();
-            //   console.log("线程已关闭","service-worker-jsfuck.js")
-            // console.timeEnd("encodestring");
-            requestAnimationFrame(() => {
-                console.log("弹出消息提示");
-                tanchu弹出消息提示();
-                console.timeEnd("requestAnimationFrame");
-            });
+                //   myservice.terminate();
+                //   console.log("线程已关闭","service-worker-jsfuck.js")
+                // console.timeEnd("encodestring");
+                requestAnimationFrame(() => {
+                    console.log("弹出消息提示");
+                    tanchu弹出消息提示();
+                    console.timeEnd("requestAnimationFrame");
+                });
+                mui(btnele).button("reset");
+                res();
+                // tanchu弹出消息提示();
+            };
+            myservice.onerror = (e) => {
+                console.error(new Error(e.message + " " + e.filename));
+                rej(new Error(e.message + " " + e.filename));
+                //   myservice.terminate();
+                //   console.log("线程已关闭","service-worker-jsfuck.js")
+            };
+        }).finally(() => {
             mui(btnele).button("reset");
-            // tanchu弹出消息提示();
-        };
-        myservice.onerror = (e) => {
-            throw new Error(e.message + " " + e.filename);
-            //   myservice.terminate();
-            //   console.log("线程已关闭","service-worker-jsfuck.js")
-        };
+        });
     }
     var lastclick: string;
 
@@ -159,6 +147,7 @@ export default function Hieroglyphy() {
             <br />
             <p>
                 <button
+                    //@ts-ignore
                     ref={btnencodescript}
                     className="btn btn-outline-success btn-lg"
                     id="encodescript"
@@ -171,6 +160,7 @@ export default function Hieroglyphy() {
                     Encode script
                 </button>
                 <button
+                    //@ts-ignore
                     ref={btnencodestring}
                     id="encodestring"
                     // type="text"

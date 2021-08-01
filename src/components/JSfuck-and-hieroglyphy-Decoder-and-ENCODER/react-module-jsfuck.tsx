@@ -35,55 +35,67 @@ function 关闭所有worker() {
 }
 export default function Jsfuck() {
     const evalcheckbox = useRef();
-    function encode(btnencode: EventTarget) {
-        console.time("encodescript");
-        console.log("encodescript");
-        mui(btnencode).button("loading");
-
-        if (!myservice) {
-            myservice = jsfuckworker();
+    const [evalcheck, setevalcheck] = useState(true);
+    async function encode() {
+        const button = btnencode.current;
+        if (!button) {
+            return;
         }
-        // new Worker("./service-worker-jsfuck.worker.js");
-        //   console.log("创建新线程", "service-worker-jsfuck.js");
-        // }
+        return new Promise<void>((res, rej) => {
+            console.time("encodescript");
+            console.log("encodescript");
+            mui(button).button("loading");
 
-        myservice?.postMessage([
-            //   $2("input").value,
-            inputcode,
-            //@ts-ignore
-            evalcheckbox.current.checked,
-            //   $2("eval").checked
+            if (!myservice) {
+                myservice = jsfuckworker();
+            }
+            // new Worker("./service-worker-jsfuck.worker.js");
+            //   console.log("创建新线程", "service-worker-jsfuck.js");
+            // }
 
-            // $("#jsfuckscript").attr("src")
-        ]);
-        myservice.onmessage = (e) => {
-            var output = e.data;
-            console.log("主线程从副线程" + "接收" + "event.data\n");
-            console.log(output);
-            // $2("output").value = output;
-            console.timeEnd("encodescript");
-            console.time("requestAnimationFrame");
-            setoutputcode(output);
-            //   jQuery("#output").val(output);
-            setstatstext(output.length + " chars");
-            //   $2("stats").innerHTML = output.length + " chars";
-            mui(btnencode).button("reset");
-            //   myservice.terminate();
-            //   console.log("线程已关闭","service-worker-jsfuck.js")
+            myservice?.postMessage([
+                //   $2("input").value,
+                inputcode,
+                //@ts-ignore
+                evalcheck,
+                //   $2("eval").checked
 
-            requestAnimationFrame(() => {
-                console.log("弹出消息提示");
-                tanchu弹出消息提示();
-                console.timeEnd("requestAnimationFrame");
-            });
-            // tanchu弹出消息提示();
-        };
-        myservice.onerror = (e) => {
-            //   console.error("Error:", e.message, e.filename);
-            throw new Error(e.message + " " + e.filename);
-            //   myservice.terminate();
-            //   console.log("线程已关闭","service-worker-jsfuck.js")
-        };
+                // $("#jsfuckscript").attr("src")
+            ]);
+            myservice.onmessage = (e) => {
+                var output = e.data;
+                console.log("主线程从副线程" + "接收" + "event.data\n");
+                console.log(output);
+                // $2("output").value = output;
+                console.timeEnd("encodescript");
+                console.time("requestAnimationFrame");
+                setoutputcode(output);
+                //   jQuery("#output").val(output);
+                setstatstext(output.length + " chars");
+                //   $2("stats").innerHTML = output.length + " chars";
+                mui(button).button("reset");
+                //   myservice.terminate();
+                //   console.log("线程已关闭","service-worker-jsfuck.js")
+
+                requestAnimationFrame(() => {
+                    console.log("弹出消息提示");
+                    tanchu弹出消息提示();
+                    console.timeEnd("requestAnimationFrame");
+
+                    res();
+                });
+                // tanchu弹出消息提示();
+            };
+            myservice.onerror = (e) => {
+                console.error("Error:", e.message, e.filename);
+                rej(new Error(e.message + " " + e.filename));
+
+                //   myservice.terminate();
+                //   console.log("线程已关闭","service-worker-jsfuck.js")
+            };
+        }).finally(() => {
+            mui(button).button("reset");
+        });
     }
 
     const [statstext, setstatstext] = useState(`0 chars`);
@@ -151,7 +163,7 @@ export default function Jsfuck() {
             <br />
             <button
                 onClick={(e) => {
-                    encode(e.target);
+                    encode();
                 }}
                 //@ts-ignore
                 ref={btnencode}
@@ -173,8 +185,8 @@ export default function Jsfuck() {
                     type="checkbox"
                     //@ts-ignore
                     ref={evalcheckbox}
-                    onChange={() => {
-                        encode(btnencode.current);
+                    onChange={(e) => {
+                        setevalcheck(e.target.checked);
                     }}
                     defaultChecked={true}
                 />
