@@ -153,7 +153,7 @@ export default function Jsfuck() {
                 onClick={(e) => {
                     encode(e.target);
                 }}
-//@ts-ignore
+                //@ts-ignore
                 ref={btnencode}
                 className="btn btn-outline-primary btn-lg"
                 id="encode"
@@ -171,7 +171,7 @@ export default function Jsfuck() {
                 <input
                     id="eval"
                     type="checkbox"
-//@ts-ignore
+                    //@ts-ignore
                     ref={evalcheckbox}
                     onChange={() => {
                         encode(btnencode.current);

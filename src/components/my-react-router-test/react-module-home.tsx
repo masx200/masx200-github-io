@@ -1,4 +1,3 @@
-
 //@ts-ignore
 //@ts-ignore
 import 首页推荐网址目录 from "../首页推荐网址目录";
@@ -53,7 +52,7 @@ export default function home() {
 
                     <div>
                         <ul>
-                            {首页推荐网址目录.map((t:string[], i:number) => {
+                            {首页推荐网址目录.map((t: string[], i: number) => {
                                 return (
                                     <li key={i}>
                                         <p>

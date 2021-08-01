@@ -12,7 +12,7 @@ async function fetchtext(url: string, opts: RequestInit = {}) {
     if (r.ok) {
         return await r.text();
     } else {
-        throw new Error("fetch failed:"+url);
+        throw new Error("fetch failed:" + url);
     }
 }
 export default React.memo(markdown);
@@ -34,7 +34,6 @@ function markdown(props: { src: string }) {
     const [加载失败, set加载失败] = useState(cache加载失败);
     const [markdown内容, setmarkdown内容] = useState(markdowncache);
 
-    
     //已经卸载此组件
     const unmounted = useRef(false);
     useEffect(() => {
@@ -125,8 +124,6 @@ function markdown(props: { src: string }) {
                     >
                         <div className="article-content">
                             <div
-
-                                
                                 style={{ display: 加载完成 ? "block" : "none" }}
                                 className="container"
                                 dangerouslySetInnerHTML={{
