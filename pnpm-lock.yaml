@@ -64,6 +64,7 @@ specifiers:
   serialize-javascript: 5.0.1
   style-loader: ^2.0.0
   styled-jsx: ^3.4.4
+  styled-jsx-plugin-postcss: ^4.0.1
   terser: ^5.7.0
   terser-webpack-plugin: ^5.1.2
   typescript: ^4.3.5
@@ -141,6 +142,7 @@ dependencies:
   serialize-javascript: 5.0.1
   style-loader: 2.0.0_webpack@5.37.1
   styled-jsx: 3.4.4_react@17.0.2
+  styled-jsx-plugin-postcss: 4.0.1_postcss@8.3.6
   terser: 5.7.0
   terser-webpack-plugin: 5.1.2_webpack@5.37.1
   typescript: 4.3.5
@@ -8036,6 +8038,13 @@ packages:
     dev: false
     optional: true
 
+  /import-cwd/2.1.0:
+    resolution: {integrity: sha1-qmzzbnInYShcs3HsZRn1PiQ1sKk=}
+    engines: {node: '>=4'}
+    dependencies:
+      import-from: 2.1.0
+    dev: false
+
   /import-fresh/2.0.0:
     resolution: {integrity: sha1-2BNVwVYS04bGH53dOSLUMEgipUY=}
     engines: {node: '>=4'}
@@ -8050,6 +8059,13 @@ packages:
     dependencies:
       parent-module: 1.0.1
       resolve-from: 4.0.0
+    dev: false
+
+  /import-from/2.1.0:
+    resolution: {integrity: sha1-M1238qev/VOqpHHUuAId7ja387E=}
+    engines: {node: '>=4'}
+    dependencies:
+      resolve-from: 3.0.0
     dev: false
 
   /import-local/2.0.0:
@@ -9865,6 +9881,14 @@ packages:
       '@csstools/convert-colors': 1.4.0
       postcss: 7.0.36
       postcss-values-parser: 2.0.1
+    dev: false
+
+  /postcss-load-config/2.1.2:
+    resolution: {integrity: sha512-/rDeGV6vMUo3mwJZmeHfEDvwnTKKqQ0S7OHUi/kJvvtx3aWtyWG2/0ZWnzCt2keEclwN6Tf0DST2v9kITdOKYw==}
+    engines: {node: '>= 4'}
+    dependencies:
+      cosmiconfig: 5.2.1
+      import-cwd: 2.1.0
     dev: false
 
   /postcss-loader/6.1.1_postcss@8.3.6+webpack@5.47.1:
@@ -11823,6 +11847,15 @@ packages:
       loader-utils: 2.0.0
       schema-utils: 3.0.0
       webpack: 5.47.1_webpack-cli@4.7.2
+    dev: false
+
+  /styled-jsx-plugin-postcss/4.0.1_postcss@8.3.6:
+    resolution: {integrity: sha512-Qy3OnewWZYykT0ESWRqqC7KhYSghXpel+cnY3/MOnmatEwvJl1+RB5YwJRjqhcODDoY/D+dKH97PZFuF3/rCBg==}
+    peerDependencies:
+      postcss: ^7.0.2 || ^8.1.0
+    dependencies:
+      postcss: 8.3.6
+      postcss-load-config: 2.1.2
     dev: false
 
   /styled-jsx/3.4.4_react@17.0.2:
