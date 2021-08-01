@@ -1,13 +1,25 @@
 module.exports = function (api) {
     return {
-        plugins: [
+        presets: [
             [
-                "styled-jsx/babel",
+                "next/babel",
                 {
-                    sourceMaps: api.env("development"),
-                    plugins: ["styled-jsx-plugin-postcss"],
+                    "styled-jsx": {
+                        sourceMaps: api.env("development"),
+                        plugins: ["styled-jsx-plugin-postcss"],
+                    },
                 },
             ],
         ],
+        plugins: [
+            // [
+            //     "styled-jsx/babel",
+            //     {
+            //         sourceMaps: api.env("development"),
+            //         plugins: ["styled-jsx-plugin-postcss"],
+            //     },
+            // ],
+        ],
     };
 };
+//https://github.com/vercel/styled-jsx/issues/711#issuecomment-806852789
