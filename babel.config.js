@@ -1,7 +1,8 @@
 module.exports = function (api) {
     return {
         presets: [
-            [
+            /*   
+   [
                 "next/babel",
                 {
                     "styled-jsx": {
@@ -10,15 +11,16 @@ module.exports = function (api) {
                     },
                 },
             ],
+*/
         ],
         plugins: [
-            // [
-            //     "styled-jsx/babel",
-            //     {
-            //         sourceMaps: api.env("development"),
-            //         plugins: ["styled-jsx-plugin-postcss"],
-            //     },
-            // ],
+            [
+                "styled-jsx/babel",
+                {
+                    sourceMaps: api.env("development"),
+                    plugins: ["styled-jsx-plugin-postcss"],
+                },
+            ],
         ],
     };
 };

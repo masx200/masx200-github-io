@@ -47,7 +47,9 @@ function Apphome() {
         调整导航栏和主体的距离();
         document.title = "masx200的github主页";
         window.addEventListener("hashchange", () => {
-            toggle(false);
+            if (window.innerWidth <= 500) {
+                toggle(false);
+            }
             调整导航栏和主体的距离();
         });
 
@@ -66,8 +68,9 @@ function Apphome() {
     }, [state, clientWidth]);
 
     function shouqi收起折叠的导航栏菜单() {
-        toggle(false);
-
+        if (window.innerWidth <= 500) {
+            toggle(false);
+        }
         调整导航栏和主体的距离();
         scrollTo(0, 0);
     }
