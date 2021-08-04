@@ -1,5 +1,5 @@
 "use strict";
-
+import "highlight.js/styles/github.css";
 import React, { useEffect, useState, useRef } from "react";
 
 import marked from "marked";
@@ -36,6 +36,7 @@ function markdown(props: { src: string }) {
 
     //已经卸载此组件
     const unmounted = useRef(false);
+    const { src } = props;
     useEffect(() => {
         if (props.src) {
             const marktext = cachemarkdown.get(props.src);
@@ -69,7 +70,7 @@ function markdown(props: { src: string }) {
 
                 const divele = document.createElement("div");
 
-                divele.innerHTML = marked(text);
+                divele.innerHTML = marked(text, { baseUrl: src });
 
                 Array.from(divele.querySelectorAll("pre code")).forEach(
                     (block) => {
