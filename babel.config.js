@@ -1,18 +1,6 @@
 module.exports = function (api) {
     return {
-        presets: [
-            /*   
-   [
-                "next/babel",
-                {
-                    "styled-jsx": {
-                        sourceMaps: api.env("development"),
-                        plugins: ["styled-jsx-plugin-postcss"],
-                    },
-                },
-            ],
-*/
-        ],
+        presets: [],
         plugins: [
             [
                 "styled-jsx/babel",

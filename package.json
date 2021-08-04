@@ -1,9 +1,11 @@
 {
-    "version": "5.0.2",
+    "version": "5.0.3",
     "scripts": {
+        "precommit": "npm run format ||node -v",
         "start": "webpack-react-vue-spa-awesome-config start --port=11111 --config=./webpack.config.js",
         "build": "npx webpack-react-vue-spa-awesome-config build --config=./webpack.config.js",
-        "format": "prettier **/*.js */*/*.js --write **/*.ts *.json *.md  **/*.tsx */*/*.ts */*/*.tsx */*/*.css */*.css *.js */*/*/*.tsx"
+        "format": "prettier **/*.js */*/*.js --write **/*.ts *.json *.md  **/*.tsx */*/*.ts */*/*.tsx */*/*.css */*.css *.js */*/*/*.tsx",
+        "prepare": "husky install"
     },
     "browserslist": {
         "production": [
@@ -98,7 +100,6 @@
         "terser-webpack-plugin": "^5.1.2",
         "typescript": "^4.3.5",
         "url-loader": "^4.1.1",
-        "vue-loader": "15",
         "webpack": "^5.37.1",
         "webpack-cli": "^4.7.0",
         "webpack-copyfiles-plugin": "^1.0.9",
@@ -112,5 +113,8 @@
     },
     "resolutions": {
         "glob-parent": "5.1.2"
+    },
+    "devDependencies": {
+        "husky": "^7.0.1"
     }
 }
