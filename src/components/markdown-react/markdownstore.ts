@@ -5,7 +5,7 @@ const markdownstore = reactive({
     data: new Map<string, string>(),
 });
 export { markdownstore };
-if(process.env.NODE_ENV==='development'){
+if (process.env.NODE_ENV === "development") {
     watch(
         () => {
             const { data, error } = markdownstore;
@@ -16,5 +16,4 @@ if(process.env.NODE_ENV==='development'){
         },
         (value) => console.log(value)
     );
-    
 }

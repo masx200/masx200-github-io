@@ -16,7 +16,7 @@ export const getrenderedmarkdown = cachepromise(async function (src: string) {
             const language = hljs.getLanguage(lang);
             // console.log(language)
             return language
-                ? hljs.highlight(code, { language:lang }).value
+                ? hljs.highlight(code, { language: lang }).value
                 : hljs.highlightAuto(code).value;
         },
     });

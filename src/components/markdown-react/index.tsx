@@ -13,10 +13,10 @@ function markdown(props: { src: string }) {
         return !error && !data;
     }, [data, error]);
     useEffect(() => {
-        data && console.info({data});
+        data && console.info({ data });
     }, [data]);
     useEffect(() => {
-        error && console.error({error});
+        error && console.error({ error });
     }, [error]);
     const 加载失败 = !!error;
     const 加载完成 = !!data;
