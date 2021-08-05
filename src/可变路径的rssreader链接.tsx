@@ -1,16 +1,9 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "./router";
+import { rsssitenames } from "./rsssitenames";
 
 var { useState } = React;
 export default React.memo(可变路径的rssreader链接);
-export const rsssitenames = [
-    "pingwest",
-    "ifanr",
-    "ithome",
-    "landiannews",
-    "iplaysoft",
-    "tmtpost",
-];
 function 可变路径的rssreader链接() {
     const [rsssitename, setrsssitename] = useState("");
     const params = useParams();

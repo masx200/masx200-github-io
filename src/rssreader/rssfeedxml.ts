@@ -11,6 +11,7 @@ const rssxml4 = rssbase + "www.ithome.com/feed/";
 const rssxml5 = rssbase + "www.ifanr.com/feed/";
 // "https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@4.2.2/src/my-react-router-test/ifanr.com.feed.xml";
 const rssxml6 = rssbase + "www.pingwest.com/feed/";
+// const rssxml6 = rssbase + "www.pingwest.com/feed/4feszew";
 // "https://cdn.jsdelivr.net/gh/masx200/masx200.github.io@4.2.2/src/my-react-router-test/pingwest.com.feed.xml";
 export default {
     tmtpost: rssxml1,

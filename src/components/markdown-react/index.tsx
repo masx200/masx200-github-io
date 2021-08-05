@@ -4,7 +4,12 @@ import React, { useEffect, useMemo } from "react";
 import { usemarkdown } from "./usemarkdown";
 
 export default React.memo(markdown);
-
+const Fallback = () => (
+    <div>
+        <h1>loading</h1>
+        <span className="mui-spinner mui-spinner-custom" />
+    </div>
+);
 function markdown(props: { src: string }) {
     const { src } = props;
     const { data, error } = usemarkdown(src);
@@ -20,12 +25,7 @@ function markdown(props: { src: string }) {
     }, [error]);
     const 加载失败 = !!error;
     const 加载完成 = !!data;
-    const Fallback = () => (
-        <div>
-            <h1>loading</h1>
-            <span className="mui-spinner mui-spinner-custom" />
-        </div>
-    );
+
     const markdown内容 = data || "";
     return (
         <div className="container">

@@ -1,14 +1,19 @@
-import { usereactive } from "./usereactive";
-import { markdownstore } from "./markdownstore";
-import { getmarkdownandsave } from "./getmarkdownandsave";
 import { readonly } from "@vue/reactivity";
-const readonlymarkdownstore = readonly(markdownstore);
+import { getmarkdownandsave } from "./getmarkdownandsave";
+import { markdownstore } from "./markdownstore";
+import { usereactive } from "./usereactive";
+
 export function usemarkdown(src: string) {
     getmarkdownandsave(src);
 
-    return usereactive(() => {
-        const data = readonlymarkdownstore.data.get(src);
-        const error = readonlymarkdownstore.error.get(src);
+    return readonly(usereactive(getmarkdownresult(src), [src]));
+}
+function getmarkdownresult(
+    src: string
+): () => { data: string | undefined; error: any } {
+    return () => {
+        const data = markdownstore.data.get(src);
+        const error = markdownstore.error.get(src);
         return { data, error };
-    });
+    };
 }
