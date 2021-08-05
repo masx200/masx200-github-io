@@ -20,6 +20,7 @@ specifiers:
   '@masx200/ie11-usual-polyfills': ^1.0.5
   '@masx200/search-hash-params-router': ^1.4.0
   '@masx200/webpack-react-vue-spa-awesome-config': ^4.0.2
+  '@types/dompurify': ^2.2.3
   '@types/jquery': ^3.5.5
   '@types/marked': ^2.0.3
   '@types/node': 15.6.1
@@ -42,6 +43,7 @@ specifiers:
   css-loader: ^5.2.6
   cssnano: ^5.0.7
   decimal.js: ^10.3.0
+  dompurify: ^2.3.0
   fast-xml-parser: ^3.19.0
   file-loader: ^6.2.0
   highlight.js: ^11.2.0
@@ -101,6 +103,7 @@ dependencies:
   '@masx200/ie11-usual-polyfills': 1.0.5
   '@masx200/search-hash-params-router': 1.4.0_3e967db2e6fc32cea8a8c697b130e060
   '@masx200/webpack-react-vue-spa-awesome-config': 4.0.2_react@17.0.2+typescript@4.3.5
+  '@types/dompurify': 2.2.3
   '@types/jquery': 3.5.5
   '@types/marked': 2.0.3
   '@types/node': 15.6.1
@@ -123,6 +126,7 @@ dependencies:
   css-loader: 5.2.6_webpack@5.37.1
   cssnano: 5.0.7_postcss@8.3.6
   decimal.js: 10.3.0
+  dompurify: 2.3.0
   fast-xml-parser: 3.19.0
   file-loader: 6.2.0_webpack@5.37.1
   highlight.js: 11.2.0
@@ -4565,6 +4569,12 @@ packages:
       '@types/node': 15.6.1
     dev: false
 
+  /@types/dompurify/2.2.3:
+    resolution: {integrity: sha512-CLtc2mZK8+axmrz1JqtpklO/Kvn38arGc8o1l3UVopZaXXuer9ONdZwJ/9f226GrhRLtUmLr9WrvZsRSNpS8og==}
+    dependencies:
+      '@types/trusted-types': 2.0.2
+    dev: false
+
   /@types/eslint-scope/3.7.0:
     resolution: {integrity: sha512-O/ql2+rrCUe2W2rs7wMR+GqPRcgB6UiqN5RhrR5xruFlY7l9YLMn0ZkDzjoHLeiFkR8MCQZVudUuuvQ2BLC9Qw==}
     dependencies:
@@ -4799,6 +4809,10 @@ packages:
       webpack: 5.47.1_webpack-cli@4.7.2
     transitivePeerDependencies:
       - webpack-cli
+    dev: false
+
+  /@types/trusted-types/2.0.2:
+    resolution: {integrity: sha512-F5DIZ36YVLE+PN+Zwws4kJogq47hNgX3Nx6WyDJ3kcplxyke3XIzB8uK5n/Lpm1HBsbGzd6nmGehL8cPekP+Tg==}
     dev: false
 
   /@types/uglify-js/3.13.1:
@@ -6976,6 +6990,10 @@ packages:
     engines: {node: '>= 4'}
     dependencies:
       domelementtype: 2.2.0
+    dev: false
+
+  /dompurify/2.3.0:
+    resolution: {integrity: sha512-VV5C6Kr53YVHGOBKO/F86OYX6/iLTw2yVSI721gKetxpHCK/V5TaLEf9ODjRgl1KLSWRMY6cUhAbv/c+IUnwQw==}
     dev: false
 
   /domutils/1.7.0:

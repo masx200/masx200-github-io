@@ -22,30 +22,6 @@ export default function home() {
     }, []);
     return (
         <div>
-            {/* The tag <markdownreact> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter. */}
-            <div className="container">
-                <div className="jumbotron">
-                    <h1>欢迎登陆页面！</h1>
-                    <p>
-                        <a
-                            rel="noopener noreferrer"
-                            target="_blank"
-                            href="https://weibo.com/2174458781?"
-                        >
-                            一生忽而得一夏当司掌好年华的微博
-                        </a>
-                    </p>
-                    <p>
-                        <a
-                            rel="noopener noreferrer"
-                            target="_blank"
-                            href="https://github.com/masx200"
-                        >
-                            masx200的github仓库
-                        </a>
-                    </p>
-                </div>
-            </div>
             <Markdownreact src={markurl} />
         </div>
     );

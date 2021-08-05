@@ -49,7 +49,26 @@ export default function home() {
                     }}
                 >
                     <h1>欢迎登陆页面！</h1>
-
+                    <p>
+                        <a
+                            className="mui-btn mui-btn-primary mui-btn-outlined"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            href="https://weibo.com/2174458781?"
+                        >
+                            一生忽而得一夏当司掌好年华的微博
+                        </a>
+                    </p>
+                    <p>
+                        <a
+                            className="mui-btn mui-btn-primary mui-btn-outlined"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            href="https://github.com/masx200"
+                        >
+                            masx200的github仓库
+                        </a>
+                    </p>
                     <div>
                         <ul>
                             {首页推荐网址目录.map((t: string[], i: number) => {
@@ -148,7 +167,7 @@ export default function home() {
                 </a>
                 <h1>Hello, world!</h1>
             </header>
-            <div id="图片列表200">
+            <div className="图片列表200">
                 <hr />
                 <img loading="lazy" src={picture1} />
                 <hr />
