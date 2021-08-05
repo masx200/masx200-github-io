@@ -1,96 +1,32 @@
 "use strict";
 import "highlight.js/styles/github.css";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useMemo } from "react";
+import { usemarkdown } from "./usemarkdown";
 
-import marked from "marked";
-//@ts-ignore
-import hljs from "@/assetsjs/highlight.min.js";
-
-const cachemarkdown = new Map();
-async function fetchtext(url: string, opts: RequestInit = {}) {
-    var r = await fetch(new URL(url).href, opts);
-    if (r.ok) {
-        return await r.text();
-    } else {
-        throw new Error("fetch failed:" + url);
-    }
-}
 export default React.memo(markdown);
 
 function markdown(props: { src: string }) {
-    const abortref = useRef(new AbortController());
-    // console.log(cachemarkdown);
-    let markdowncache = "";
-    let cache加载完成 = false;
-    let cache加载失败 = false;
+    const { src } = props;
+    const { data, error } = usemarkdown(src);
+
+    const loading = useMemo(() => {
+        return !error && !data;
+    }, [data, error]);
+    useEffect(() => {
+        data && console.info({data});
+    }, [data]);
+    useEffect(() => {
+        error && console.error({error});
+    }, [error]);
+    const 加载失败 = !!error;
+    const 加载完成 = !!data;
     const Fallback = () => (
         <div>
             <h1>loading</h1>
             <span className="mui-spinner mui-spinner-custom" />
         </div>
     );
-
-    const [加载完成, set加载完成] = useState(cache加载完成);
-    const [加载失败, set加载失败] = useState(cache加载失败);
-    const [markdown内容, setmarkdown内容] = useState(markdowncache);
-
-    //已经卸载此组件
-    const unmounted = useRef(false);
-    const { src } = props;
-    useEffect(() => {
-        if (props.src) {
-            const marktext = cachemarkdown.get(props.src);
-            if (marktext) {
-                set加载完成(true);
-                setmarkdown内容(marktext);
-                return;
-            }
-            (async () => {
-                hljs.highlightAll();
-
-                let text: string;
-                try {
-                    text = await fetchtext(props.src, {
-                        signal: abortref.current.signal,
-                    });
-                } catch (error) {
-                    if (
-                        error instanceof DOMException &&
-                        error?.name === "AbortError"
-                    ) {
-                        console.dir(error);
-                        return;
-                    }
-                    console.error(error);
-
-                    unmounted.current || set加载失败(true);
-                    throw error;
-                    // return;
-                }
-
-                const divele = document.createElement("div");
-
-                divele.innerHTML = marked(text, { baseUrl: src });
-
-                Array.from(divele.querySelectorAll("pre code")).forEach(
-                    (block) => {
-                        hljs.highlightElement(block);
-                    }
-                );
-                unmounted.current || set加载完成(true);
-
-                unmounted.current || setmarkdown内容(divele.innerHTML);
-                cachemarkdown.set(props.src, divele.innerHTML);
-            })();
-        }
-    }, [props.src]);
-    useEffect(() => {
-        return () => {
-            unmounted.current = true;
-            abortref.current.abort();
-            //清除副作用
-        };
-    });
+    const markdown内容 = data || "";
     return (
         <div className="container">
             <div
@@ -131,11 +67,12 @@ function markdown(props: { src: string }) {
                                     __html: markdown内容,
                                 }}
                             />
-                            {!加载完成 ? <Fallback /> : <React.Fragment />}
+                            {loading ? <Fallback /> : <React.Fragment />}
 
                             {加载失败 ? (
                                 <div>
                                     <h1>Error!</h1>
+                                    <h2>{String(error)}</h2>
                                 </div>
                             ) : (
                                 <React.Fragment />
