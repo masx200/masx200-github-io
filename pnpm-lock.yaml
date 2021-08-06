@@ -19,7 +19,7 @@ specifiers:
   '@masx200/event-emitter-target': ^1.1.9
   '@masx200/ie11-usual-polyfills': ^1.0.5
   '@masx200/search-hash-params-router': ^1.4.0
-  '@masx200/webpack-react-vue-spa-awesome-config': ^4.1.1
+  '@masx200/webpack-react-vue-spa-awesome-config': ^4.1.2
   '@types/dompurify': ^2.2.3
   '@types/jquery': ^3.5.5
   '@types/marked': ^2.0.3
@@ -69,7 +69,7 @@ specifiers:
   sass-loader: ^11.1.1
   serialize-javascript: 5.0.1
   style-loader: ^2.0.0
-  styled-jsx: ^3.4.5
+  styled-jsx: ^3.4.7
   styled-jsx-plugin-postcss: ^4.0.1
   terser: ^5.7.0
   terser-webpack-plugin: ^5.1.2
@@ -102,7 +102,7 @@ dependencies:
   '@masx200/event-emitter-target': 1.1.9
   '@masx200/ie11-usual-polyfills': 1.0.5
   '@masx200/search-hash-params-router': 1.4.0_3e967db2e6fc32cea8a8c697b130e060
-  '@masx200/webpack-react-vue-spa-awesome-config': 4.1.1_react@17.0.2+typescript@4.3.5
+  '@masx200/webpack-react-vue-spa-awesome-config': 4.1.2_react@17.0.2+typescript@4.3.5
   '@types/dompurify': 2.2.3
   '@types/jquery': 3.5.5
   '@types/marked': 2.0.3
@@ -151,7 +151,7 @@ dependencies:
   sass-loader: 11.1.1_webpack@5.37.1
   serialize-javascript: 5.0.1
   style-loader: 2.0.0_webpack@5.37.1
-  styled-jsx: 3.4.5_react@17.0.2
+  styled-jsx: 3.4.7_react@17.0.2
   styled-jsx-plugin-postcss: 4.0.1_postcss@8.3.6
   terser: 5.7.0
   terser-webpack-plugin: 5.1.2_webpack@5.37.1
@@ -666,12 +666,6 @@ packages:
   /@babel/helper-member-expression-to-functions/7.14.7:
     resolution: {integrity: sha512-TMUt4xKxJn6ccjcOW7c4hlwyJArizskAhoSTOCkA0uZ+KghIaci0Qg9R043kUMWI9mtQfgny+NQ5QATnZ+paaA==}
     engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/types': 7.14.8
-    dev: false
-
-  /@babel/helper-module-imports/7.12.5:
-    resolution: {integrity: sha512-SR713Ogqg6++uexFRORf/+nPXMmWIn80TALu0uaFb+iQIUoR7bOC7zBWyzBs5b3tBBJXuyD0cRu1F15GyzjOWA==}
     dependencies:
       '@babel/types': 7.14.8
     dev: false
@@ -4341,8 +4335,8 @@ packages:
       '@vue/runtime-core': 3.1.5
     dev: false
 
-  /@masx200/webpack-react-vue-spa-awesome-config/4.1.1_react@17.0.2+typescript@4.3.5:
-    resolution: {integrity: sha512-twAp1WOrrkW6iZ5Rj6yDrL1uZ2C2nKpWPmsxZqHP1po59ScNiCOnXZiIvbxpnnOoguBHLoX6k8EPq4GvmC01sQ==}
+  /@masx200/webpack-react-vue-spa-awesome-config/4.1.2_react@17.0.2+typescript@4.3.5:
+    resolution: {integrity: sha512-TmLxX3WXMTdcJgaZQ6+9tK2HNikHbICMHVxBiYUCgRY98RSSuWl9Wf6wfYsg4QI9iAdmMYA58w/b1v/PM77P1g==}
     hasBin: true
     peerDependencies:
       react: 17.0.2
@@ -11901,12 +11895,11 @@ packages:
       postcss-load-config: 2.1.2
     dev: false
 
-  /styled-jsx/3.4.5_react@17.0.2:
-    resolution: {integrity: sha512-I+IET7OO4MKI710Ez3FesauZkqRIpZFQuePru3+BiGbzksJiWaB1Jew4T/+3vHoMJ1RsTxlO1T+IGOMLaoGcrQ==}
+  /styled-jsx/3.4.7_react@17.0.2:
+    resolution: {integrity: sha512-PkImcCsovR39byv4Tz83tAPsYs2CiTPOmDSplhe0lsIFVYJyd7rzJ7fbm41vSNsF/lnO+Ob5n/jgMookwY0pww==}
     peerDependencies:
       react: 15.x.x || 16.x.x || 17.x.x
     dependencies:
-      '@babel/helper-module-imports': 7.12.5
       '@babel/types': 7.8.3
       babel-plugin-syntax-jsx: 6.18.0
       convert-source-map: 1.7.0
