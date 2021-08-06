@@ -1,6 +1,6 @@
 //@ts-ignore
 import React, { useEffect } from "react";
-import  Link  from "../CustomLink";
+import Link from "../CustomLink";
 import rssfeedxml from "./rssfeedxml";
 import { Rssviewer } from "./Rssviewer";
 

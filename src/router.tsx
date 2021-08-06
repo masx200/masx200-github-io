@@ -4,7 +4,7 @@ import {
     createReactView,
 } from "@masx200/search-hash-params-router";
 import { createElement, useEffect, useState } from "react";
-import  CustomLink  from "./CustomLink";
+import CustomLink from "./CustomLink";
 export const hashrouter = createHashRouter();
 const useParams = createReactParamsHook({
     router: hashrouter,
