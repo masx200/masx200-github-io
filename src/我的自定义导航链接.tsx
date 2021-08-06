@@ -1,5 +1,5 @@
 import React /* , { useRef } */ from "react";
-import { Link } from "./router";
+import Link from "./CustomLink";
 export default function 我的自定义导航链接({
     to,
     text,

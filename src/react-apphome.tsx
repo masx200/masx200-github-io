@@ -5,7 +5,7 @@ import React, { useState } from "react";
 // @ts-ignore
 import { initloadingid } from "./initloadingid.ts";
 import Loading from "./Loading";
-import { Link } from "./router";
+import Link from "./CustomLink";
 // @ts-ignore
 import 路由列表 from "./router-react-路由列表.tsx";
 // @ts-ignore

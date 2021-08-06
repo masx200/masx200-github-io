@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { Link, useParams } from "./router";
+import { useParams } from "./router";
+import Link from "./CustomLink";
 import { rsssitenames } from "./rsssitenames";
 
 var { useState } = React;
