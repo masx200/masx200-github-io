@@ -85,7 +85,7 @@ export default function Decoder() {
         var codevalue = inputcode;
         // var code = document.querySelector("#code");
         if (codevalue.length === 0) {
-            alert("输入框不能为空");
+            console.warn("输入框不能为空");
             return;
         }
         console.time("解码JSFUCK 和hieroglyphy");
