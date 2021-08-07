@@ -1,7 +1,7 @@
 // const myvurrouterprojecturl =
 //     "https://my-vue-router-project-masx200.vercel.app/";
 import { useToggle } from "ahooks";
-import React, { useState ,Suspense,useEffect} from "react";
+import React, { useState, Suspense, useEffect } from "react";
 // @ts-ignore
 import { initloadingid } from "./initloadingid.ts";
 import Loading from "./Loading";
