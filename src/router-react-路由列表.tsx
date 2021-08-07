@@ -24,7 +24,7 @@ const reactabout = lazy(
         // @ts-ignore
         import(
             // @ts-ignore
-            "./components/my-react-router-test/react-module-about.js"
+            "./components/my-react-router-test/react-module-about"
         )
 );
 const decoder = lazy(
