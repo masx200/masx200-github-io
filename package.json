@@ -49,7 +49,7 @@
         "@masx200/event-emitter-target": "^1.1.9",
         "@masx200/ie11-usual-polyfills": "^1.0.5",
         "@masx200/search-hash-params-router": "^1.4.0",
-        "@masx200/webpack-react-vue-spa-awesome-config": "^4.1.2",
+        "@masx200/webpack-react-vue-spa-awesome-config": "4.2.0",
         "@types/dompurify": "^2.2.3",
         "@types/jquery": "^3.5.5",
         "@types/marked": "^2.0.3",
