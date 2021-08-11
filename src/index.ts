@@ -44,7 +44,7 @@ window.addEventListener(
 );
 
 // @ts-ignore
-import("./home-react-index-render.ts").then(({ default: Homeelement }) => {
+import("./home-react-index-render").then(({ default: Homeelement }) => {
     const container =
         document.getElementById("app") ||
         rootele.appendChild(document.createElement("div"));

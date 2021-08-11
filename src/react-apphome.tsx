@@ -1,13 +1,13 @@
 // const myvurrouterprojecturl =
 //     "https://my-vue-router-project-masx200.vercel.app/";
 import { useToggle } from "ahooks";
-import React, { useState, Suspense, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // @ts-ignore
 import { initloadingid } from "./initloadingid.ts";
-import Loading from "./Loading";
+
 import Link from "./CustomLink";
 // @ts-ignore
-import 路由列表 from "./router-react-路由列表";
+
 // @ts-ignore
 import 可变路径的rssreader链接 from "./可变路径的rssreader链接.tsx";
 //@ts-ignore
@@ -15,9 +15,9 @@ import { initloadingid } from "./initloadingid.ts";
 import 我的自定义导航链接 from "./我的自定义导航链接";
 // @ts-ignore
 import { 调整导航栏和主体的距离 } from "./调整导航栏和主体的距离.js";
-
+import { PropsWithChildren } from "react";
 export default React.memo(Apphome);
-function Apphome() {
+function Apphome({ children }: PropsWithChildren<{}>) {
     const [clientWidth, setclientWidth] = useState(window.innerWidth);
     const [state, { toggle }] = useToggle(true);
 
@@ -102,9 +102,7 @@ function Apphome() {
             </div>
 
             <div className="container" id="my主体">
-                <Suspense fallback={<Loading></Loading>}>
-                    <路由列表 />
-                </Suspense>
+                {children}
             </div>
         </div>
     );

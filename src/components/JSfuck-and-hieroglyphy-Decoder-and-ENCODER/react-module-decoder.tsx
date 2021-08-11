@@ -6,7 +6,7 @@
 import hieroglyphy from "@/assetsjs/./hieroglyphy";
 //@ts-ignore
 import JSFuck from "@/assetsjs/./jsfuck";
-import React from "react";
+import React, { useEffect, useCallback, useState, memo } from "react";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 function tanchutanchuxiaoxishibai() {
@@ -15,27 +15,7 @@ function tanchutanchuxiaoxishibai() {
 function tanchutanchuxiaoxitishi() {
     tanchu弹出消息通用("success");
 }
-// const clipboard = new ClipboardJS(".btn");
 
-// clipboard.on("success", function(e) {
-//   if (!e.text) {
-//     console.log("复制内容空");
-//   } else {
-//     //   console.info("Action:", e.action);
-//     //   console.info("Text:", e.text);
-//   }
-
-//   e.clearSelection();
-// });
-
-// var JSFuck = require("./jsfuck"),
-//   hieroglyphy = require("./hieroglyphy");
-// import decoderrender from "./decoder-render";
-// import "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER.less"
-// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-var useState = React.useState,
-    useEffect = React.useEffect;
-var { useCallback } = React;
 function guid() {
     return "xxxxxxxx-xxxx-yxxx-yxxx-xxxxxxxxxxxx".replace(
         /[xy]/g,
@@ -48,7 +28,7 @@ function guid() {
 }
 var outputdivid = "clip" + guid();
 var preandpost: { prefix: string; postfix: string }[];
-export default function Decoder() {
+export default memo(function Decoder() {
     const decode = (inputcode: string) => {
         preandpost = preandpost || [
             /* jsfuck的初始化导致卡顿 */
@@ -302,4 +282,4 @@ export default function Decoder() {
             </a>
         </div>
     );
-}
+});
