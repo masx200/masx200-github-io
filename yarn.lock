@@ -1523,10 +1523,10 @@
   resolved "https://registry.nlark.com/@masx200/search-hash-params-router/download/@masx200/search-hash-params-router-1.4.0.tgz#bb15ed734bc73ea061ad86b4487dada7752a6f44"
   integrity sha1-uxXtc0vHPqBhrYa0SH2tp3Uqb0Q=
 
-"@masx200/webpack-react-vue-spa-awesome-config@4.2.0":
-  version "4.2.0"
-  resolved "https://registry.nlark.com/@masx200/webpack-react-vue-spa-awesome-config/download/@masx200/webpack-react-vue-spa-awesome-config-4.2.0.tgz#e5bfb0ec8d4f98cd8adf4ea53c6705099a67af84"
-  integrity sha1-5b+w7I1PmM2K306lPGcFCZpnr4Q=
+"@masx200/webpack-react-vue-spa-awesome-config@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.nlark.com/@masx200/webpack-react-vue-spa-awesome-config/download/@masx200/webpack-react-vue-spa-awesome-config-4.2.1.tgz#60ea9c8b27f8ffe77cae44293bb86903ea7ee520"
+  integrity sha1-YOqciyf4/+d8rkQpO7hpA+p+5SA=
   dependencies:
     "@babel/core" "^7.14.6"
     "@babel/plugin-proposal-class-properties" "^7.14.5"

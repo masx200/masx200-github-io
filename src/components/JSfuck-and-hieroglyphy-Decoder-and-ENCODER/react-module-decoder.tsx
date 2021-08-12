@@ -1,5 +1,16 @@
 "use strict";
+function isMatching(string: string, pattern: string | RegExp) {
+    var result = string.match(new RegExp(pattern));
+    if (result) return result[1];
 
+    return null;
+}
+function patternCreator(prefix: string, postfix: string) {
+    var replacedPrefix = prefix.replace(/[\[\]\(\)\+\!]/g, "\\$&");
+    var replacedPostfix = postfix.replace(/[\[\]\(\)\+\!]/g, "\\$&");
+
+    return replacedPrefix + "(.*)" + replacedPostfix;
+}
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 /* eslint-disable no-useless-escape */
 //@ts-ignore
@@ -126,18 +137,7 @@ export default memo(function Decoder() {
         setoutputcode(Function(`return ${decodedCode}`)().toString());
         // );
     }
-    function isMatching(string: string, pattern: string | RegExp) {
-        var result = string.match(new RegExp(pattern));
-        if (result) return result[1];
 
-        return null;
-    }
-    function patternCreator(prefix: string, postfix: string) {
-        var replacedPrefix = prefix.replace(/[\[\]\(\)\+\!]/g, "\\$&");
-        var replacedPostfix = postfix.replace(/[\[\]\(\)\+\!]/g, "\\$&");
-
-        return replacedPrefix + "(.*)" + replacedPostfix;
-    }
     function pipeizifu(pre: string, post: string) {
         var codevalue = inputcode;
         var prefix = pre,
@@ -171,15 +171,10 @@ export default memo(function Decoder() {
     );
     return (
         <div className="jdahd">
-            {/* <>5ddddddd</> */}
-            {/* The `style` prop expects a mapping from style properties to values, not a string. For example, style={{marginRight: spacing + 'em'}} when using JSX. */}
             <h1
                 style={{
                     fontSize: "30px",
                 }}
-
-                //   "
-                // font-size: 30px;"
             >
                 解码JSFUCK 和hieroglyphy
                 <br />

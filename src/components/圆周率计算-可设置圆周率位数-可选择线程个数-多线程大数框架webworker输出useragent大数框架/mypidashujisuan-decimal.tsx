@@ -7,9 +7,9 @@ import mui from "@/assetsjs/mui.精简.button";
 import Decimal from "decimal.js";
 // import mui from "../mui.min.js";
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useRef } from "react";
-import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
+import React, { memo, useEffect, useRef } from "react";
 import { useBindtext } from "../../huami/useBindtext";
+import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
 // @ts-ignore
 import decimalworker from "./worker-mythread1-decimal.worker.js";
 function tanchu弹出消息提示() {
@@ -32,7 +32,7 @@ function 关闭所有worker() {
         }
     });
 }
-export default function decimalcom() {
+export default memo(function decimalcom() {
     const btnele = useRef<HTMLElement>();
     const outtext1 = useRef<HTMLElement>();
     const outtext2 = useRef<HTMLElement>();
@@ -103,10 +103,6 @@ export default function decimalcom() {
         setoutputtext2old(t);
     }
     async function mystart(btnele: EventTarget) {
-        // const { default: Decimal } = await IMPORTCJSAMDUMD(
-        //   "https://cdn.staticfile.org/decimal.js/10.2.0/decimal.min.js",
-        //   "decimal"
-        // );
         mui(btnele).button("loading");
         // Decimal.abs = n => Decimal(n).abs();
         // Decimal.mul = (n, m) => Decimal(n).multiply(m);
@@ -455,4 +451,4 @@ export default function decimalcom() {
             </div>
         </div>
     );
-}
+});

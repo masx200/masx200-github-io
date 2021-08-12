@@ -5,7 +5,7 @@ function tanchu弹出消息提示() {
 }
 //@ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 //@ts-ignore
@@ -33,7 +33,7 @@ function 关闭所有worker() {
         /*  */
     }
 }
-export default function Jsfuck() {
+export default memo(function Jsfuck() {
     const evalcheckbox = useRef();
 
     async function encode(typename: string, btnele: EventTarget) {
@@ -204,7 +204,7 @@ export default function Jsfuck() {
                 <button
                     className="btn btn-outline-primary btn-lg"
                     id="run"
-                    onClick={runthiscode()}
+                    onClick={runthiscode}
                 >
                     Run This
                 </button>
@@ -237,11 +237,9 @@ export default function Jsfuck() {
         </div>
     );
 
-    function runthiscode(): React.MouseEventHandler<HTMLButtonElement> {
-        return function () {
-            var codestring = outputcode;
-            /*   var value = */
-            Function(`return ${codestring}`)();
-        };
+    function runthiscode() {
+        var codestring = outputcode;
+        /*   var value = */
+        Function(`return ${codestring}`)();
     }
-}
+});

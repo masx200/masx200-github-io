@@ -1,32 +1,19 @@
 "use strict";
 // @ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
-
 import bigInt from "big-integer/BigInteger.js";
-// import IMPORTCJSAMDUMD from "../IMPORTCJSAMDUMD";
-// import("../IMPORTCJSAMDUMD").then(IMPORTCJSAMDUMD => {
-// (() => {
-//   $(window).one("load",
-// 自动开启严格模式
-/* 应该再卸载组件时关闭所有worker */
-// ("use strict");
-// import mui from "../mui.min.js";
-import React from "react";
+import React, { useEffect, useRef, memo } from "react";
+import { useBindtext } from "../../huami/useBindtext";
 // @ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
-import { useBindtext } from "../../huami/useBindtext";
-
 // @ts-ignore
 import bigintworker from "./worker-mythread1-bigint.worker.js";
+
 // @ts-ignore
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
 }
-
-// const IMPORTCJSAMDUMD = window.IMPORTCJSAMDUMD;
-// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-var { useEffect, useRef } = React;
 
 // @ts-ignore
 var myworker = Array(16).fill();
@@ -43,7 +30,7 @@ function 关闭所有worker() {
         }
     });
 }
-export default function bigcom() {
+export default memo(function bigcom() {
     const btnele = useRef<HTMLElement>();
     const outtext1 = useRef<HTMLTextAreaElement>();
     const outtext2 = useRef<HTMLTextAreaElement>();
@@ -114,10 +101,6 @@ export default function bigcom() {
     }
 
     async function mystart(btnele: EventTarget) {
-        // const { default: bigInt } = await IMPORTCJSAMDUMD(
-        //   "https://cdn.staticfile.org/big-integer/1.6.43/BigInteger.min.js",
-        //   "big-integer"
-        // );
         mui(btnele).button("loading");
         // @ts-ignore
         bigInt.abs = (n) => bigInt(n).abs();
@@ -487,4 +470,4 @@ export default function bigcom() {
             </div>
         </div>
     );
-}
+});

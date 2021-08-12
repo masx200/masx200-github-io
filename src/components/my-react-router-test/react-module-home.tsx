@@ -17,14 +17,12 @@ import picture6 from "@/pictures/vue.png";
 import picture7 from "@/pictures/webpack.svg";
 //@ts-ignore
 import tanchu弹出消息通用 from "@/utils/my弹出消息通用.ts";
-import React from "react";
+import React, { useEffect, useState, memo } from "react";
 //@ts-ignore
 import { 调整导航栏和主体的距离 } from "../../调整导航栏和主体的距离.js";
 ("use strict");
 
-// var React = window.IMPORTCJSAMDUMD.REQUIREPACKAGE("react");
-const { useEffect, useState } = React;
-export default function home() {
+export default memo(function home() {
     useEffect(() => {
         location.hash = "";
         调整导航栏和主体的距离();
@@ -33,9 +31,9 @@ export default function home() {
 
     return homeeles;
     //   }
-}
+});
 
-export function Showtime() {
+export const Showtime = memo(function Showtime() {
     const [nowtime, setnowtime] = useState(获取当前时间());
     useEffect(() => {
         let timer = setInterval(() => {
@@ -47,7 +45,7 @@ export function Showtime() {
         };
     }, []);
     return <h2>现在是 {nowtime}</h2>;
-}
+});
 
 function 获取当前时间() {
     return new Date().toString().slice(0, new Date().toString().indexOf("GMT"));

@@ -6,7 +6,7 @@ function tanchu弹出消息提示() {
 import mui from "@/assetsjs/mui.精简.button";
 //@ts-ignore
 import hieroglyphyworker from "./worker-hieroglyphy.worker.js";
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, memo } from "react";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 
@@ -31,7 +31,7 @@ function 关闭所有worker() {
         /*  */
     }
 }
-export default function Hieroglyphy() {
+export default memo(function Hieroglyphy() {
     const [statstext, setstatstext] = useState(`0 chars`);
     const btnencodescript = useRef();
     const btnencodestring = useRef();
@@ -188,7 +188,7 @@ export default function Hieroglyphy() {
                 <button
                     className="btn btn-outline-primary btn-lg"
                     id="run"
-                    onClick={runthiscode()}
+                    onClick={runthiscode}
                 >
                     Run This
                 </button>
@@ -222,11 +222,9 @@ export default function Hieroglyphy() {
         </div>
     );
 
-    function runthiscode(): React.MouseEventHandler<HTMLButtonElement> {
-        return function () {
-            var codestring = outputcode;
-            /* var value = */
-            Function(`return ${codestring}`)();
-        };
+    function runthiscode() {
+        var codestring = outputcode;
+        /* var value = */
+        Function(`return ${codestring}`)();
     }
-}
+});
