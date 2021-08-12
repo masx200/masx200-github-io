@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect } from "react";
+import React, { memo, useEffect } from "react";
 //@ts-ignore
 import markdwonurls from "../utils/markdownurls.ts";
 // eslint-disable-next-line no-unused-vars
@@ -9,7 +9,7 @@ import Markdownreact from "./markdown-react/index.tsx";
 ("use strict");
 
 const markurl = markdwonurls["webpack-react-vue-spa-awesome-config"];
-export default function component() {
+export default memo(function component() {
     useEffect(() => {
         document.title =
             "masx200的github主页-" +
@@ -20,4 +20,4 @@ export default function component() {
             <Markdownreact src={markurl} />
         </div>
     );
-}
+});

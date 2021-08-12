@@ -1,15 +1,15 @@
 "use strict";
 import "highlight.js/styles/github.css";
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, memo } from "react";
 import { usemarkdown } from "./usemarkdown";
 
 export default React.memo(markdown);
-const Fallback = () => (
+const Fallback = memo(() => (
     <div>
         <h1>loading</h1>
         <span className="mui-spinner mui-spinner-custom" />
     </div>
-);
+));
 function markdown(props: { src: string }) {
     const { src } = props;
     const { data, error } = usemarkdown(src);

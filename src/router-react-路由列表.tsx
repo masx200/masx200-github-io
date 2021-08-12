@@ -1,8 +1,8 @@
 "use strict";
 
-import React, { ComponentType } from "react";
+import React, { ComponentType, lazy } from "react";
 import { View } from "./router";
-var { lazy } = React;
+
 export default React.memo(路由);
 const picalc = lazy(() => import("./components/home-react-module-picalc"));
 // @ts-ignore
@@ -99,16 +99,16 @@ const myroutes: [string | ((o: any) => boolean), ComponentType<any>][] = [
 
     [() => true, reacthome],
 ];
-var 路由list: { params: (o: any) => boolean; component: ComponentType<any> }[] =
-    myroutes.map(({ 0: params, 1: component }) => {
-        return {
-            component,
-            params:
-                "function" === typeof params
-                    ? params
-                    : (o: any) => o.p === params,
-        };
-    }) as { params: (o: any) => boolean; component: ComponentType<any> }[];
+const 路由list: {
+    params: (o: any) => boolean;
+    component: ComponentType<any>;
+}[] = myroutes.map(({ 0: params, 1: component }) => {
+    return {
+        component,
+        params:
+            "function" === typeof params ? params : (o: any) => o.p === params,
+    };
+}) as { params: (o: any) => boolean; component: ComponentType<any> }[];
 // console.log(路由list)
 function 路由() {
     return <View routes={路由list} />;

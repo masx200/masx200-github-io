@@ -17,9 +17,10 @@ import picture6 from "@/pictures/vue.png";
 import picture7 from "@/pictures/webpack.svg";
 //@ts-ignore
 import tanchu弹出消息通用 from "@/utils/my弹出消息通用.ts";
-import React, { useEffect, useState, memo } from "react";
+import React, { useEffect, memo } from "react";
 //@ts-ignore
 import { 调整导航栏和主体的距离 } from "../../调整导航栏和主体的距离.js";
+import { Showtime } from "./Showtime";
 ("use strict");
 
 export default memo(function home() {
@@ -32,24 +33,6 @@ export default memo(function home() {
     return homeeles;
     //   }
 });
-
-export const Showtime = memo(function Showtime() {
-    const [nowtime, setnowtime] = useState(获取当前时间());
-    useEffect(() => {
-        let timer = setInterval(() => {
-            setnowtime(获取当前时间());
-        }, 1100);
-
-        return () => {
-            clearInterval(timer);
-        };
-    }, []);
-    return <h2>现在是 {nowtime}</h2>;
-});
-
-function 获取当前时间() {
-    return new Date().toString().slice(0, new Date().toString().indexOf("GMT"));
-}
 
 const homeeles = (
     <div className="App">

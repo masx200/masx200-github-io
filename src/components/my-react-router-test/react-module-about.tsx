@@ -1,16 +1,16 @@
 "use strict";
 
-import React from "react";
-import { Showtime } from "./react-module-home";
-const { useEffect } = React;
-export default function about() {
+import React, { useEffect, memo } from "react";
+import { Showtime } from "./Showtime";
+
+export default memo(function about() {
     useEffect(() => {
         document.title = "React router App-" + "about";
     }, []);
 
     return abouteles;
     //   }
-}
+});
 const abouteles = (
     <div className="App">
         <header className="App-header">

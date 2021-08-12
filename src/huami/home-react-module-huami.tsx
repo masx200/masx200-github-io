@@ -1,10 +1,11 @@
 "use strict";
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, memo, useRef } from "react";
 import $ from "jquery";
 import { generatehuami } from "./generatehuami";
 import { useBindtext } from "./useBindtext";
 
-export default function huami() {
+export default memo(function huami() {
+    const copyOKref = useRef<HTMLElement>();
     useEffect(() => {
         document.title = "masx200的github主页-" + "花密  不一样的密码管理工具";
     }, []);
@@ -35,23 +36,30 @@ export default function huami() {
         [inputtext1, inputtext2]
     );
 
-    const functioncopy = function functionc1opy(inputtext3: any) {
-        if (
-            inputtext3
-            // $("#code16").val()
-        ) {
-            $("#copyOK").show();
-            $("#copyOK")
-                .fadeTo(0, 0)
-                .css("border-color", "#22B614")
-                .css("background-color", "#22B614")
-                .fadeTo("fast", 1)
-                .fadeTo(2000, 1)
-                .fadeTo(3000, 0, function () {
-                    $("#copyOK").hide();
-                });
-        }
-    };
+    const functioncopy = useCallback(
+        function functionc1opy(inputtext3: any) {
+            const ele = copyOKref.current;
+            if (!ele) {
+                return;
+            }
+            if (
+                inputtext3
+                // $("#code16").val()
+            ) {
+                $(ele).show();
+                $(ele)
+                    .fadeTo(0, 0)
+                    .css("border-color", "#22B614")
+                    .css("background-color", "#22B614")
+                    .fadeTo("fast", 1)
+                    .fadeTo(2000, 1)
+                    .fadeTo(3000, 0, function () {
+                        $(ele).hide();
+                    });
+            }
+        },
+        [inputtext3]
+    );
     // [inputtext3]
     useEffect(() => {
         /*
@@ -60,6 +68,18 @@ export default function huami() {
         handlechange(inputtext1, inputtext2);
     }, [inputtext1, inputtext2]);
 
+    const onchange1 = useCallback(
+        (e: React.ChangeEvent<HTMLInputElement>): void => {
+            onchangeinputtext1(e);
+        },
+        []
+    );
+    const onchange2 = useCallback((e: { target: { value: string } }) => {
+        onchangeinputtext2(e);
+    }, []);
+    const oncopyclick = useCallback(() => {
+        functioncopy(inputtext3);
+    }, [inputtext3]);
     return (
         <div className="hello flowerpassword">
             <h1>{"花密  不一样的密码管理工具"}</h1>
@@ -79,12 +99,7 @@ export default function huami() {
                         <p>
                             <input
                                 value={inputtext1}
-                                onChange={(e) => {
-                                    onchangeinputtext1(e);
-                                    //   handlechange(inputtext1, inputtext2);
-                                    // input1ref.current.value,
-                                    // input2ref.current.value
-                                }}
+                                onChange={onchange1}
                                 id="password"
                                 placeholder="输入密码"
                                 name="password"
@@ -96,9 +111,7 @@ export default function huami() {
                         <p>
                             <input
                                 value={inputtext2}
-                                onChange={(e) => {
-                                    onchangeinputtext2(e);
-                                }}
+                                onChange={onchange2}
                                 id="key"
                                 placeholder="输入代号"
                                 name="key"
@@ -130,9 +143,7 @@ export default function huami() {
                             <br />
                             <p>
                                 <button
-                                    onClick={() => {
-                                        functioncopy(inputtext3);
-                                    }}
+                                    onClick={oncopyclick}
                                     id="copycode16"
                                     data-clipboard-target="#code16"
                                     className="btn btn-lg btn copycode16d btn-info"
@@ -146,6 +157,8 @@ export default function huami() {
                         </span>
                         <p>
                             <span
+                                //@ts-ignore
+                                ref={copyOKref}
                                 id="copyOK"
                                 style={{
                                     display: "none",
@@ -863,4 +876,4 @@ export default function huami() {
             `}</style>
         </div>
     );
-}
+});

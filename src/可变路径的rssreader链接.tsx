@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "./router";
 import Link from "./CustomLink";
 import { rsssitenames } from "./rsssitenames";
 
-var { useState } = React;
 export default React.memo(可变路径的rssreader链接);
 function 可变路径的rssreader链接() {
     const [rsssitename, setrsssitename] = useState("");
@@ -12,8 +11,6 @@ function 可变路径的rssreader链接() {
         if (rsssitenames.includes(params.sitename)) {
             setrsssitename(params.sitename);
         }
-
-        return () => {};
     }, [params.sitename]);
     return (
         <Link

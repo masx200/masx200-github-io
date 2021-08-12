@@ -1,14 +1,11 @@
 "use strict";
 
-import React from "react";
+import React, { useEffect } from "react";
 //@ts-ignore
 import markdwonurls from "../utils/markdownurls.ts";
 //@ts-ignore
 import Markdownreact from "./markdown-react/index.tsx";
-var {
-    useEffect,
-    // , useState
-} = React;
+
 /* 把class组件改成function组件 */
 const urlmark = markdwonurls["excellent-vscode-extensions-for-javascript"];
 
