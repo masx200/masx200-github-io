@@ -116,7 +116,8 @@
         "yargs-parser": "20.2.7"
     },
     "resolutions": {
-        "glob-parent": "5.1.2"
+        "glob-parent": "5.1.2",
+        "url-parse": "1.5.3"
     },
     "devDependencies": {
         "husky": "^7.0.1"
