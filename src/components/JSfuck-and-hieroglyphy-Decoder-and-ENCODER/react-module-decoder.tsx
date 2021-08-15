@@ -41,7 +41,7 @@ var outputdivid = "clip" + guid();
 var preandpost: { prefix: string; postfix: string }[];
 export default memo(function Decoder() {
     const decode = (inputcode: string) => {
-        inputcode=inputcode.trim()
+        inputcode = inputcode.trim();
         preandpost = preandpost || [
             /* jsfuck的初始化导致卡顿 */
             {
