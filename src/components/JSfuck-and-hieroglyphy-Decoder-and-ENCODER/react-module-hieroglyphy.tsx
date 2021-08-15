@@ -46,12 +46,12 @@ export default memo(function Hieroglyphy() {
             //   console.log("创建新线程", "service-worker-hieroglyphy.js");
             // }
             mui(btnele).button("loading");
-            lastclick = typename;
+            // lastclick = typename;
             // debugger;
             // var output = hieroglyphy.hieroglyphyString(($2("input").value))
             myservice.postMessage([
                 inputcode,
-                lastclick,
+                typename,
                 //   hieroglyphy.toString()
                 //   $("#hieroglyphy").attr("src")
             ]);
@@ -94,7 +94,7 @@ export default memo(function Hieroglyphy() {
             mui(btnele).button("reset");
         });
     }
-    var lastclick: string;
+    // var lastclick: string;
 
     var [outputcode, setoutputcode] = useState("");
     var [inputcode, setinputcode] = useState(
