@@ -41,6 +41,7 @@ var outputdivid = "clip" + guid();
 var preandpost: { prefix: string; postfix: string }[];
 export default memo(function Decoder() {
     const decode = (inputcode: string) => {
+        inputcode=inputcode.trim()
         preandpost = preandpost || [
             /* jsfuck的初始化导致卡顿 */
             {
@@ -82,7 +83,7 @@ export default memo(function Decoder() {
         console.time("解码JSFUCK 和hieroglyphy");
         console.log("解码JSFUCK 和hieroglyphy");
 
-        for (var e = 0; e < preandpost.length; e++) {
+        for (let e = 0; e < preandpost.length; e++) {
             if (pipeizifu(preandpost[e].prefix, preandpost[e].postfix)) {
                 console.log("使用匹配模版" + (e + 1) + "成功");
                 tanchutanchuxiaoxitishi();
@@ -109,7 +110,7 @@ export default memo(function Decoder() {
         [outputcode]
     );
 
-    function tpipeichunzifuchuan(codestring: any) {
+    function tpipeichunzifuchuan(codestring: string) {
         try {
             //   console.log(
 
@@ -131,7 +132,7 @@ export default memo(function Decoder() {
         }
     }
 
-    function setDecoded(decodedCode: any) {
+    function setDecoded(decodedCode: string) {
         //  eval(decodedCode);
         // console.log(
         setoutputcode(Function(`return ${decodedCode}`)().toString());
