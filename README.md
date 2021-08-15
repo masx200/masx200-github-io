@@ -182,36 +182,6 @@ const about = lazy(() => import("./module-about"));
 
 <hr>
 
-## JSfuck-and-hieroglyphy-Decoder-and-ENCODER
-
-JSfuck and hieroglyphy Decoder and ENCODER
-
-JSFuck 是一种基于 JavaScript 原子部分的深奥教育编程风格。它只使用六个不同的字符来编写和执行代码
-
-hieroglyphy 是一个工具和 javascript 库，用于将字符串，数字和脚本转换为 的等效序列！在浏览器中运行的字符
-
-<code>
-    ()+[]!
-</code>
-    和
-<code>
-()[]{}+!
-</code>
-
-在 JSfuck and hieroglyphy ENCODER 中使用 service-worker,避免编码时的网页卡顿,也解决了 web-worker 中加载依赖包的问题,速度提升
-
-在编码完成后,输出到文本框里面的内容过长,消耗的时间比较长,这段时间网页处于卡顿状态,使用 requestAnimationFrame 的方法,在网页卡顿结束后,弹出成功消息通知框
-
-https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/index.html
-
-https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/hieroglyphy-encoder.html
-
-https://masx200.github.io/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/JSFuck---Write-any-JavaScript-with-6-Characters_-[]()!+.html
-
-<hr>
-
-<hr>
-
 # 在 vscode 中安装 npm-scripts 插件即可轻松调试
 
 ```
