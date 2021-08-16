@@ -1518,6 +1518,11 @@
   resolved "https://registry.nlark.com/@masx200/ie11-usual-polyfills/download/@masx200/ie11-usual-polyfills-1.0.5.tgz#fafa4ed3d422fc273234bd15d3d3249ed6761621"
   integrity sha1-+vpO09Qi/CcyNL0V09MkntZ2FiE=
 
+"@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.nlark.com/@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder/download/@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder-2.0.1.tgz#7c1f1fad37dd69aff6eff97b5842b064ade36442"
+  integrity sha1-fB8frTfdaa/27/l7WEKwZK3jZEI=
+
 "@masx200/search-hash-params-router@^1.4.0":
   version "1.4.0"
   resolved "https://registry.nlark.com/@masx200/search-hash-params-router/download/@masx200/search-hash-params-router-1.4.0.tgz#bb15ed734bc73ea061ad86b4487dada7752a6f44"

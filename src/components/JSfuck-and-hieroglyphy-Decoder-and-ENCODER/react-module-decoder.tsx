@@ -1,22 +1,7 @@
-"use strict";
-function isMatching(string: string, pattern: string | RegExp) {
-    var result = string.match(new RegExp(pattern));
-    if (result) return result[1];
-
-    return null;
-}
-function patternCreator(prefix: string, postfix: string) {
-    var replacedPrefix = prefix.replace(/[\[\]\(\)\+\!]/g, "\\$&");
-    var replacedPostfix = postfix.replace(/[\[\]\(\)\+\!]/g, "\\$&");
-
-    return replacedPrefix + "(.*)" + replacedPostfix;
-}
-// import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
-/* eslint-disable no-useless-escape */
 //@ts-ignore
-import hieroglyphy from "@/assetsjs/./hieroglyphy";
-//@ts-ignore
-import JSFuck from "@/assetsjs/./jsfuck";
+import { decode } from "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder";
+("use strict");
+
 import React, { useEffect, useCallback, useState, memo } from "react";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
@@ -38,65 +23,21 @@ function guid() {
     );
 }
 var outputdivid = "clip" + guid();
-var preandpost: { prefix: string; postfix: string }[];
+
 export default memo(function Decoder() {
-    const decode = (inputcode: string) => {
-        inputcode = inputcode.trim();
-        preandpost = preandpost || [
-            /* jsfuck的初始化导致卡顿 */
-            {
-                prefix: "[][(![]+[])[!+[]+!![]+!![]]+([]+{})[+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]][([]+{})[!+[]+!![]+!![]+!![]+!![]]+([]+{})[+!![]]+([][[]]+[])[+!![]]+(![]+[])[!+[]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!![]]+([][[]]+[])[+[]]+([]+{})[!+[]+!![]+!![]+!![]+!![]]+(!![]+[])[+[]]+([]+{})[+!![]]+(!![]+[])[+!![]]](",
-                postfix: ")()",
-            },
-            {
-                prefix: "[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]](",
-                postfix: ")()",
-            },
-            {
-                prefix:
-                    "[][" +
-                    hieroglyphy.hieroglyphyString("sort") +
-                    "][" +
-                    hieroglyphy.hieroglyphyString("constructor") +
-                    "]" +
-                    "(",
-                postfix: ")()",
-            },
-            {
-                prefix:
-                    "[][" +
-                    JSFuck.encode("filter") +
-                    "]" +
-                    "[" +
-                    JSFuck.encode("constructor") +
-                    "](",
-                postfix: ")()",
-            },
-        ];
-
-        var codevalue = inputcode;
-        // var code = document.querySelector("#code");
-        if (codevalue.length === 0) {
-            console.warn("输入框不能为空");
-            return;
+    const [inputcode, setinputcode] = useState("");
+    const decodehandler = useCallback(() => {
+        console.log(inputcode);
+        try {
+            setoutputcode(decode(inputcode));
+            tanchutanchuxiaoxitishi();
+        } catch (error) {
+            tanchutanchuxiaoxishibai();
+            throw error;
         }
-        console.time("解码JSFUCK 和hieroglyphy");
-        console.log("解码JSFUCK 和hieroglyphy");
-
-        for (let e = 0; e < preandpost.length; e++) {
-            if (pipeizifu(preandpost[e].prefix, preandpost[e].postfix)) {
-                console.log("使用匹配模版" + (e + 1) + "成功");
-                tanchutanchuxiaoxitishi();
-                return 1;
-            }
-            // else {
-            // }
-        }
-        tpipeichunzifuchuan(codevalue);
-        return;
-    };
+    }, [inputcode]);
     var [outputcode, setoutputcode] = useState("");
-    var [inputcode, setinputcode] = useState("");
+
     const inputonchange = useCallback(
         (e) => {
             setinputcode(e.target.value);
@@ -110,66 +51,19 @@ export default memo(function Decoder() {
         [outputcode]
     );
 
-    function tpipeichunzifuchuan(codestring: string) {
-        try {
-            //   console.log(
-
-            setoutputcode(
-                /* 如果这里传入一个函数则可能会被识别成使用函数的返回值 */
-
-                Function(`return ${codestring}`)().toString()
-            );
-            //   eval(codestring)
-            //   );
-            console.log("匹配字符模式成功");
-            tanchutanchuxiaoxitishi();
-            return 1;
-        } catch (e) {
-            console.log("匹配错误");
-
-            tanchutanchuxiaoxishibai();
-            return 0;
-        }
-    }
-
-    function setDecoded(decodedCode: string) {
-        //  eval(decodedCode);
-        // console.log(
-        setoutputcode(Function(`return ${decodedCode}`)().toString());
-        // );
-    }
-
-    function pipeizifu(pre: string, post: string) {
-        var codevalue = inputcode;
-        var prefix = pre,
-            postfix = post;
-
-        var result = isMatching(codevalue, patternCreator(prefix, postfix));
-
-        if (result) {
-            try {
-                setDecoded(result);
-                console.log("匹配成功");
-
-                return 1;
-            } catch (e) {
-                /*  */
-            }
-        }
-        return;
-    }
-
     //   var inputtext = useRef();
     useEffect(
         /* 组件第一次加载时和每次组件刷新时会加载这个函数 */
 
         function () {
-            document.title =
-                "React router App-" + "JSfuck Decoder and hieroglyphy decoder";
+            document.title = "JSfuck Decoder and hieroglyphy decoder";
             // decoderrender();
         },
         []
     );
+    // useEffect(() => {
+    //     console.log(inputcode);
+    // }, [inputcode]);
     return (
         <div className="jdahd">
             <h1
@@ -211,9 +105,7 @@ export default memo(function Decoder() {
                 //   style="width:100%;min-height:250px"
             />
             <button
-                onClick={() => {
-                    decode(inputcode);
-                }}
+                onClick={decodehandler}
                 type="button"
                 id="decode"
                 value="Decode"

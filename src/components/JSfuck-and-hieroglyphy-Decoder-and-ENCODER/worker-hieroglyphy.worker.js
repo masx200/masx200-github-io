@@ -1,22 +1,8 @@
 "use strict";
-/* var sum = 0
-for (var i = 0; i < 128; i++) {
-    var c = String.fromCharCode(i);
-    var out = hieroglyphy.hieroglyphyScript(c)
-    sum += out.length
-    console.log(i, c, out.length)
-}
-console.log(sum, sum / 128) */
-// var document={}
-// import("./hieroglyphy.js").then(m=>(WorkerGlobalScope.hieroglyphy=m))
-import hieroglyphy from "@/assetsjs/./hieroglyphy.js";
-// console.log(hieroglyphy,WorkerGlobalScope.hieroglyphy)
-// var hieroglyphy=import("./hieroglyphy.js")
-/* console.log( (WorkerGlobalScope !== undefined ? WorkerGlobalScope : false))
-//(() => {
-    console.log(( undefined!==window ? window : false)); */
-//   var hieroglyphy = import("hieroglyphy.js");
-// console.log(this,)
+import {
+    hieroglyphyString,
+    hieroglyphyScript,
+} from "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder";
 addEventListener("message", (e) => {
     // var hieroglyphy = WorkerGlobalScope.hieroglyphy;
     //   console.log( (typeof window !== 'undefined' ? window : false) ||
@@ -25,6 +11,7 @@ addEventListener("message", (e) => {
 
     console.log("副线程" + "从主线程接收" + "event.data\n");
     console.log(JSON.stringify(d));
+    const [code, method] = d;
     //   if (typeof hieroglyphy === "undefined") {
     //     var hieroglyphy = d[2];
     //   }
@@ -34,15 +21,18 @@ addEventListener("message", (e) => {
     // var hieroglyphy= import(d[2]);
     // mui(document.getElementById("encode")).button("loading");
     let output;
-    if ("encodescript" === d[1]) {
-        output = hieroglyphy.hieroglyphyScript(d[0]);
-    } else if ("encodestring" === d[1]) {
-        output = hieroglyphy.hieroglyphyString(d[0]);
+    if ("encodescript" === method) {
+        output = hieroglyphyScript(code);
+        postMessage(output);
+        return;
+    } else if ("encodestring" === method) {
+        output = hieroglyphyString(code);
+        postMessage(output);
+        return;
     }
     //   var output = JSFuck.encode(d[0], d[1]);
     // $2("output").value = output;
     // $2("stats").innerHTML = output.length + " chars";
     // mui(document.getElementById("encode")).button("reset");
-    postMessage(output);
 });
 //})();

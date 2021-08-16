@@ -37,7 +37,7 @@ export default memo(function Jsfuck() {
     const evalcheckbox = useRef();
 
     async function encode(typename: string, btnele: EventTarget) {
-        const evalcheck = typename === "encodescript";
+        // const evalcheck = typename === "encodescript";
         const button = btnele;
         if (!button) {
             return;
@@ -57,8 +57,9 @@ export default memo(function Jsfuck() {
             myservice?.postMessage([
                 //   $2("input").value,
                 inputcode,
-                //@ts-ignore
-                evalcheck,
+                typename,
+                // //@ts-ignore
+                // evalcheck,
                 //   $2("eval").checked
 
                 // $("#jsfuckscript").attr("src")

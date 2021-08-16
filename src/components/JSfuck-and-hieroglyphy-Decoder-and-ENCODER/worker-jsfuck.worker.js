@@ -1,16 +1,8 @@
 "use strict";
-/* var sum = 0
-for (var i = 0; i < 128; i++) {
-    var c = String.fromCharCode(i);
-    var out = JSFuck.encode(c, true)
-    sum += out.length
-    console.log(i, c, out.length)
-}
-console.log(sum, sum / 128) */
-/** 旧版:测试结果表明使用webworker进行jsfuck反而更慢*/
-import JSFuck from "@/assetsjs/./jsfuck.js";
-/** 新版:使用import JSFuck from "./jsfuck.js";后,测试结果表明使用webworker进行jsfuck速度更快*/
-// (() => {
+import {
+    jsfuckScript,
+    jsfuckString,
+} from "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder";
 var mymessagehandler = (e) => {
     //   try {
     //     console.log(JSFuck);
@@ -27,13 +19,18 @@ var mymessagehandler = (e) => {
     //   console.log(...d);
     console.log(JSON.stringify(d));
     // globalimport(d[2]);
-
+    const [code, method] = d;
+    var output;
     // mui(document.getElementById("encode")).button("loading");
-    var output = JSFuck.encode(d[0], d[1]);
-    // $2("output").value = output;
-    // $2("stats").innerHTML = output.length + " chars";
-    // mui(document.getElementById("encode")).button("reset");
-    postMessage(output);
+    if (method === "encodestring") {
+        output = jsfuckString(code);
+        postMessage(output);
+        return;
+    } else if (method === "encodescript") {
+        output = jsfuckScript(code);
+        postMessage(output);
+        return;
+    }
 };
 addEventListener("message", mymessagehandler);
 // })();
