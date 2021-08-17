@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 
 export function useobservehight(
-    initial: number=0
+    initial: number = 0
 ): [number, (e?: Element | null | undefined) => void] {
     const navele = useRef<Element>();
     const observer = useRef<ResizeObserver>();
