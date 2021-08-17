@@ -4,7 +4,7 @@ import { render } from "react-dom";
 import "./error-alert.js";
 //@ts-ignore
 import { initloadingid } from "./initloadingid.ts";
-import Loading from "./Loading.jsx";
+import Loading from "./Loading";
 import "./styles.js";
 
 //@ts-ignore
