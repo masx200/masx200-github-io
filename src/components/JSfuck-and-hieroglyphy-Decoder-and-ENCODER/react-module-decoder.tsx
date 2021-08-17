@@ -107,7 +107,9 @@ export default memo(function Decoder() {
             />
             <button
                 onClick={decodehandler}
-                style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
+                style={getStylePropValue(
+                    "font-size: 1.5em; padding: 0.5rem 1rem"
+                )}
                 type="button"
                 id="decode"
                 value="Decode"
@@ -128,7 +130,9 @@ export default memo(function Decoder() {
             </div>
 
             <button
-                style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
+                style={getStylePropValue(
+                    "font-size: 1.5em; padding: 0.5rem 1rem"
+                )}
                 className="btn btn-outline-primary btn-lg"
                 id="run"
                 onClick={() => {
@@ -139,7 +143,9 @@ export default memo(function Decoder() {
             </button>
 
             <button
-                style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
+                style={getStylePropValue(
+                    "font-size: 1.5em; padding: 0.5rem 1rem"
+                )}
                 className="btn btn-outline-success btn-lg"
                 data-clipboard-target={"#" + "clip" + outputdivid}
             >

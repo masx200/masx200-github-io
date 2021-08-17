@@ -6,7 +6,7 @@ import { getStylePropValue } from "../../getStylePropValue";
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 //@ts-ignore
 import hieroglyphyworker from "./worker-hieroglyphy.worker.js";
-"use strict";
+("use strict");
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
@@ -149,7 +149,9 @@ export default memo(function Hieroglyphy() {
             <br />
             <p>
                 <button
-                    style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
+                    style={getStylePropValue(
+                        "font-size: 1.5em; padding: 0.5rem 1rem"
+                    )}
                     //@ts-ignore
                     ref={btnencodescript}
                     className="btn btn-outline-success btn-lg"
@@ -163,7 +165,9 @@ export default memo(function Hieroglyphy() {
                     Encode script
                 </button>
                 <button
-                    style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
+                    style={getStylePropValue(
+                        "font-size: 1.5em; padding: 0.5rem 1rem"
+                    )}
                     //@ts-ignore
                     ref={btnencodestring}
                     id="encodestring"
@@ -190,7 +194,9 @@ export default memo(function Hieroglyphy() {
             <div className="actions">
                 <span id="stats">{statstext}</span>
                 <button
-                    style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
+                    style={getStylePropValue(
+                        "font-size: 1.5em; padding: 0.5rem 1rem"
+                    )}
                     className="btn btn-outline-primary btn-lg"
                     id="run"
                     onClick={runthiscode}
@@ -198,7 +204,9 @@ export default memo(function Hieroglyphy() {
                     Run This
                 </button>
                 <button
-                    style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
+                    style={getStylePropValue(
+                        "font-size: 1.5em; padding: 0.5rem 1rem"
+                    )}
                     className="btn btn-outline-success btn-lg"
                     data-clipboard-target={"#" + "clip" + outputdivid}
                 >
