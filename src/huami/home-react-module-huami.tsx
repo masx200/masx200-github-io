@@ -135,7 +135,7 @@ export default memo(function huami() {
                                 <input
                                     value={inputtext3}
                                     onChange={onchangeinputtext3}
-                                    id="code16"
+                                    id="code16F7915132-B0F4-8AEA-6B78-0EB36CD682B4"
                                     readOnly={true}
                                     className="col-lg-12 col-md-12 col-sm-12 col-xs-12 snippet code16d form-control"
                                 />
@@ -145,7 +145,7 @@ export default memo(function huami() {
                                 <button
                                     onClick={oncopyclick}
                                     id="copycode16"
-                                    data-clipboard-target="#code16"
+                                    data-clipboard-target="#code16F7915132-B0F4-8AEA-6B78-0EB36CD682B4"
                                     className="btn btn-lg btn copycode16d btn-info"
                                     style={{ width: " 100%" }}
 
