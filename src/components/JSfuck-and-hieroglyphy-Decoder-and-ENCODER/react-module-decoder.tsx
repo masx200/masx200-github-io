@@ -105,7 +105,8 @@ export default memo(function Decoder() {
                 //   style="width:100%;min-height:250px"
             />
             <button
-                onClick={decodehandler}  style="font-size: 1.5em; padding: 0.5rem 1rem"
+                onClick={decodehandler}
+                style="font-size: 1.5em; padding: 0.5rem 1rem"
                 type="button"
                 id="decode"
                 value="Decode"
@@ -125,7 +126,8 @@ export default memo(function Decoder() {
                 />
             </div>
 
-            <button  style="font-size: 1.5em; padding: 0.5rem 1rem"
+            <button
+                style="font-size: 1.5em; padding: 0.5rem 1rem"
                 className="btn btn-outline-primary btn-lg"
                 id="run"
                 onClick={() => {
@@ -135,7 +137,8 @@ export default memo(function Decoder() {
                 Run This
             </button>
 
-            <button  style="font-size: 1.5em; padding: 0.5rem 1rem"
+            <button
+                style="font-size: 1.5em; padding: 0.5rem 1rem"
                 className="btn btn-outline-success btn-lg"
                 data-clipboard-target={"#" + "clip" + outputdivid}
             >

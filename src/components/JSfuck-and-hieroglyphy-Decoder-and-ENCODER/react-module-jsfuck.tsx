@@ -163,7 +163,8 @@ export default memo(function Jsfuck() {
                 onChange={inputonchange}
             />
             <br />
-            <button  style="font-size: 1.5em; padding: 0.5rem 1rem"
+            <button
+                style="font-size: 1.5em; padding: 0.5rem 1rem"
                 onClick={(e) => {
                     encode("encodestring", e.target);
                 }}
@@ -176,7 +177,8 @@ export default memo(function Jsfuck() {
             >
                 Encode string
             </button>
-            <button  style="font-size: 1.5em; padding: 0.5rem 1rem"
+            <button
+                style="font-size: 1.5em; padding: 0.5rem 1rem"
                 onClick={(e) => {
                     encode("encodescript", e.target);
                 }}
@@ -202,14 +204,16 @@ export default memo(function Jsfuck() {
             <div className="actions">
                 <span id="stats">{statstext}</span>
                 {/* <span id="stats">0 chars</span> */}
-                <button  style="font-size: 1.5em; padding: 0.5rem 1rem"
+                <button
+                    style="font-size: 1.5em; padding: 0.5rem 1rem"
                     className="btn btn-outline-primary btn-lg"
                     id="run"
                     onClick={runthiscode}
                 >
                     Run This
                 </button>
-                <button  style="font-size: 1.5em; padding: 0.5rem 1rem"
+                <button
+                    style="font-size: 1.5em; padding: 0.5rem 1rem"
                     className="btn btn-outline-success btn-lg"
                     data-clipboard-target={"#" + "clip" + outputdivid}
                 >

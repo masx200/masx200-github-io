@@ -146,7 +146,8 @@ export default memo(function Hieroglyphy() {
             />
             <br />
             <p>
-                <button  style="font-size: 1.5em; padding: 0.5rem 1rem"
+                <button
+                    style="font-size: 1.5em; padding: 0.5rem 1rem"
                     //@ts-ignore
                     ref={btnencodescript}
                     className="btn btn-outline-success btn-lg"
@@ -159,7 +160,8 @@ export default memo(function Hieroglyphy() {
                 >
                     Encode script
                 </button>
-                <button  style="font-size: 1.5em; padding: 0.5rem 1rem"
+                <button
+                    style="font-size: 1.5em; padding: 0.5rem 1rem"
                     //@ts-ignore
                     ref={btnencodestring}
                     id="encodestring"
@@ -185,14 +187,16 @@ export default memo(function Hieroglyphy() {
 
             <div className="actions">
                 <span id="stats">{statstext}</span>
-                <button  style="font-size: 1.5em; padding: 0.5rem 1rem"
+                <button
+                    style="font-size: 1.5em; padding: 0.5rem 1rem"
                     className="btn btn-outline-primary btn-lg"
                     id="run"
                     onClick={runthiscode}
                 >
                     Run This
                 </button>
-                <button  style="font-size: 1.5em; padding: 0.5rem 1rem"
+                <button
+                    style="font-size: 1.5em; padding: 0.5rem 1rem"
                     className="btn btn-outline-success btn-lg"
                     data-clipboard-target={"#" + "clip" + outputdivid}
                 >
