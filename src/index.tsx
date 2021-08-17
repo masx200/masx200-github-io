@@ -1,12 +1,11 @@
-import "./styles.js";
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker";
-import React from "react";
+import React, { createElement, lazy, Suspense } from "react";
 import { render } from "react-dom";
-
 import "./error-alert.js";
-
 //@ts-ignore
 import { initloadingid } from "./initloadingid.ts";
+import Loading from "./Loading.jsx";
+import "./styles.js";
 
 //@ts-ignore
 React["__esModule"] = true;
@@ -44,15 +43,19 @@ window.addEventListener(
 );
 
 // @ts-ignore
-import("./home-react-index-render").then(({ default: Homeelement }) => {
-    const container =
-        document.getElementById("app") ||
-        rootele.appendChild(document.createElement("div"));
-    Object.assign(container, { id: "app" });
-    rootele &&
-        render(
-            // @ts-ignore
-            React.createElement(Homeelement),
-            container
-        );
-});
+const Homeelement = lazy(() => import("./home-react-index-render"));
+
+const container =
+    document.getElementById("app") ||
+    rootele.appendChild(document.createElement("div"));
+Object.assign(container, { id: "app" });
+rootele &&
+    render(
+        // @ts-ignore
+        React.createElement(
+            Suspense,
+            { fallback: <Loading></Loading> },
+            createElement(Homeelement)
+        ),
+        container
+    );

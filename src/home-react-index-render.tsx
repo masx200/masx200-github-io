@@ -3,7 +3,7 @@ import React, { useEffect, Suspense } from "react";
 //@ts-ignore
 import { 调整导航栏和主体的距离 } from "@/调整导航栏和主体的距离.js";
 // @ts-ignore
-import Apphome from "./react-apphome.tsx";
+import Apphome from "./react-layout.tsx";
 import 路由列表 from "./router-react-路由列表";
 import Loading from "./Loading";
 /* eslint-disable react/prop-types */

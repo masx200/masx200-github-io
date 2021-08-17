@@ -1,21 +1,16 @@
 // const myvurrouterprojecturl =
 //     "https://my-vue-router-project-masx200.vercel.app/";
 import { useToggle } from "ahooks";
-import React, { useState, useEffect } from "react";
-// @ts-ignore
-import { initloadingid } from "./initloadingid.ts";
-
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import Link from "./CustomLink";
 // @ts-ignore
-
-// @ts-ignore
-import 可变路径的rssreader链接 from "./可变路径的rssreader链接.tsx";
-//@ts-ignore
 import { initloadingid } from "./initloadingid.ts";
-import 我的自定义导航链接 from "./我的自定义导航链接";
+import { navlinkeles } from "./navlinkeles";
+// @ts-ignore
+// @ts-ignore
 // @ts-ignore
 import { 调整导航栏和主体的距离 } from "./调整导航栏和主体的距离.js";
-import { PropsWithChildren } from "react";
+
 export default React.memo(Apphome);
 function Apphome({ children }: PropsWithChildren<{}>) {
     const [clientWidth, setclientWidth] = useState(window.innerWidth);
@@ -107,44 +102,3 @@ function Apphome({ children }: PropsWithChildren<{}>) {
         </div>
     );
 }
-const navlinkeles = (
-    <>
-        <我的自定义导航链接
-            to={{ p: "/react-home" }}
-            text={"基于REACT的主页"}
-        />
-        <li>
-            <可变路径的rssreader链接 />
-        </li>
-        <我的自定义导航链接 to={{ p: "/react-about" }} text="关于REACT" />
-        <我的自定义导航链接 to={{ p: "/picalc" }} text="圆周率计算多线程" />
-
-        <我的自定义导航链接 to={{ p: "/react-huami" }} text="花密网页版" />
-
-        <我的自定义导航链接
-            to={{ p: "/decoder" }}
-            text="JSfuck-and-hieroglyphy-Decoder"
-        />
-
-        <我的自定义导航链接 to={{ p: "/jsfuck" }} text="JSfuck-ENCODER" />
-
-        <我的自定义导航链接
-            to={{ p: "/hieroglyphy" }}
-            text="hieroglyphy-ENCODER"
-        />
-
-        <我的自定义导航链接
-            to={{
-                p: "/webpack-react-vue-spa-awesome-config",
-            }}
-            text="webpack-react-vue- 极速零配置的单页面 web 应用打包工具"
-        />
-
-        <我的自定义导航链接
-            to={{
-                p: "/excellent-vscode-extensions-for-javascript",
-            }}
-            text="VScode的优秀扩展推荐"
-        />
-    </>
-);
