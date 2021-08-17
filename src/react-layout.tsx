@@ -1,7 +1,7 @@
 // const myvurrouterprojecturl =
 //     "https://my-vue-router-project-masx200.vercel.app/";
 import { useToggle } from "ahooks";
-import React, { PropsWithChildren, useEffect, useState } from "react";
+import React, { PropsWithChildren, useEffect } from "react";
 import Link from "./CustomLink";
 // @ts-ignore
 import { initloadingid } from "./initloadingid.ts";
@@ -15,7 +15,7 @@ import { useobservehight } from "./useobservehight";
 export default React.memo(Apphome);
 function Apphome({ children }: PropsWithChildren<{}>) {
     const [navheight, navbarref] = useobservehight(142);
-    const [clientWidth, setclientWidth] = useState(window.innerWidth);
+    // const [clientWidth, setclientWidth] = useState(window.innerWidth);
     const [state, { toggle }] = useToggle(true);
 
     useEffect(() => {
@@ -36,12 +36,12 @@ function Apphome({ children }: PropsWithChildren<{}>) {
             // 调整导航栏和主体的距离();
         });
 
-        window.addEventListener("resize", () => {
-            requestAnimationFrame(() => {
-                setclientWidth(window.innerWidth);
-                // showhrhandler();
-            });
-        });
+        // window.addEventListener("resize", () => {
+        //     requestAnimationFrame(() => {
+        //         setclientWidth(window.innerWidth);
+        //         // showhrhandler();
+        //     });
+        // });
 
         document.getElementById(initloadingid)?.remove();
     }, []);
