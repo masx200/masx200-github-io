@@ -15,7 +15,8 @@ export function useobservehight(
             });
     }, []);
     useEffect(() => {
-        createobserver(); return () => {
+        createobserver();
+        return () => {
             observer.current?.disconnect();
         };
     }, []);
