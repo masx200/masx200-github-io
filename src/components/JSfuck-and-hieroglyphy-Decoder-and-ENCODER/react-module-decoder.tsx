@@ -1,10 +1,11 @@
 //@ts-ignore
 import { decode } from "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder";
-("use strict");
-
-import React, { useEffect, useCallback, useState, memo } from "react";
+import React, { memo, useCallback, useEffect, useState } from "react";
+import { getStylePropValue } from "../../getStylePropValue";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
+("use strict");
+
 function tanchutanchuxiaoxishibai() {
     tanchu弹出消息通用("danger");
 }
@@ -106,7 +107,7 @@ export default memo(function Decoder() {
             />
             <button
                 onClick={decodehandler}
-                style="font-size: 1.5em; padding: 0.5rem 1rem"
+                style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
                 type="button"
                 id="decode"
                 value="Decode"
@@ -127,7 +128,7 @@ export default memo(function Decoder() {
             </div>
 
             <button
-                style="font-size: 1.5em; padding: 0.5rem 1rem"
+                style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
                 className="btn btn-outline-primary btn-lg"
                 id="run"
                 onClick={() => {
@@ -138,7 +139,7 @@ export default memo(function Decoder() {
             </button>
 
             <button
-                style="font-size: 1.5em; padding: 0.5rem 1rem"
+                style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
                 className="btn btn-outline-success btn-lg"
                 data-clipboard-target={"#" + "clip" + outputdivid}
             >

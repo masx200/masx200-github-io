@@ -1,15 +1,16 @@
+//@ts-ignore
+import mui from "@/assetsjs/mui.精简.button";
+import React, { memo, useCallback, useEffect, useRef, useState } from "react";
+import { getStylePropValue } from "../../getStylePropValue";
+//@ts-ignore
+import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
+//@ts-ignore
+import jsfuckworker from "./worker-jsfuck.worker.js";
 "use strict";
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
 }
-//@ts-ignore
-import mui from "@/assetsjs/mui.精简.button";
-import React, { memo, useCallback, useEffect, useRef, useState } from "react";
-//@ts-ignore
-import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
-//@ts-ignore
-import jsfuckworker from "./worker-jsfuck.worker.js";
 
 // import "./JSfuck-and-hieroglyphy-Decoder-and-ENCODER.less"
 var outputdivid = "clip" + guid();
@@ -164,7 +165,7 @@ export default memo(function Jsfuck() {
             />
             <br />
             <button
-                style="font-size: 1.5em; padding: 0.5rem 1rem"
+                style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
                 onClick={(e) => {
                     encode("encodestring", e.target);
                 }}
@@ -178,7 +179,7 @@ export default memo(function Jsfuck() {
                 Encode string
             </button>
             <button
-                style="font-size: 1.5em; padding: 0.5rem 1rem"
+                style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
                 onClick={(e) => {
                     encode("encodescript", e.target);
                 }}
@@ -205,7 +206,7 @@ export default memo(function Jsfuck() {
                 <span id="stats">{statstext}</span>
                 {/* <span id="stats">0 chars</span> */}
                 <button
-                    style="font-size: 1.5em; padding: 0.5rem 1rem"
+                    style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
                     className="btn btn-outline-primary btn-lg"
                     id="run"
                     onClick={runthiscode}
@@ -213,7 +214,7 @@ export default memo(function Jsfuck() {
                     Run This
                 </button>
                 <button
-                    style="font-size: 1.5em; padding: 0.5rem 1rem"
+                    style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
                     className="btn btn-outline-success btn-lg"
                     data-clipboard-target={"#" + "clip" + outputdivid}
                 >

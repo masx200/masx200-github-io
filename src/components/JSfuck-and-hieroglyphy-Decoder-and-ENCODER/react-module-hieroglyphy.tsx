@@ -1,14 +1,16 @@
+//@ts-ignore
+import mui from "@/assetsjs/mui.精简.button";
+import React, { memo, useCallback, useEffect, useRef, useState } from "react";
+import { getStylePropValue } from "../../getStylePropValue";
+//@ts-ignore
+import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
+//@ts-ignore
+import hieroglyphyworker from "./worker-hieroglyphy.worker.js";
 "use strict";
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
 } //@ts-ignore
-import mui from "@/assetsjs/mui.精简.button";
-//@ts-ignore
-import hieroglyphyworker from "./worker-hieroglyphy.worker.js";
-import React, { useState, useEffect, useRef, useCallback, memo } from "react";
-//@ts-ignore
-import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 
 var outputdivid = "clip" + guid();
 function guid() {
@@ -147,7 +149,7 @@ export default memo(function Hieroglyphy() {
             <br />
             <p>
                 <button
-                    style="font-size: 1.5em; padding: 0.5rem 1rem"
+                    style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
                     //@ts-ignore
                     ref={btnencodescript}
                     className="btn btn-outline-success btn-lg"
@@ -161,7 +163,7 @@ export default memo(function Hieroglyphy() {
                     Encode script
                 </button>
                 <button
-                    style="font-size: 1.5em; padding: 0.5rem 1rem"
+                    style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
                     //@ts-ignore
                     ref={btnencodestring}
                     id="encodestring"
@@ -188,7 +190,7 @@ export default memo(function Hieroglyphy() {
             <div className="actions">
                 <span id="stats">{statstext}</span>
                 <button
-                    style="font-size: 1.5em; padding: 0.5rem 1rem"
+                    style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
                     className="btn btn-outline-primary btn-lg"
                     id="run"
                     onClick={runthiscode}
@@ -196,7 +198,7 @@ export default memo(function Hieroglyphy() {
                     Run This
                 </button>
                 <button
-                    style="font-size: 1.5em; padding: 0.5rem 1rem"
+                    style={getStylePropValue("font-size: 1.5em; padding: 0.5rem 1rem")}
                     className="btn btn-outline-success btn-lg"
                     data-clipboard-target={"#" + "clip" + outputdivid}
                 >
