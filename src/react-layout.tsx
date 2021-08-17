@@ -10,7 +10,7 @@ import { useobservehight } from "./useobservehight";
 // @ts-ignore
 // @ts-ignore
 // @ts-ignore
-import { 调整导航栏和主体的距离 } from "./调整导航栏和主体的距离.js";
+// import { 调整导航栏和主体的距离 } from "./调整导航栏和主体的距离.js";
 
 export default React.memo(Apphome);
 function Apphome({ children }: PropsWithChildren<{}>) {
@@ -27,13 +27,13 @@ function Apphome({ children }: PropsWithChildren<{}>) {
         var initloadele = document.getElementById(initloadingid);
         initloadele && (initloadele.style.display = "none");
         // @ts-ignore
-        调整导航栏和主体的距离();
+        // 调整导航栏和主体的距离();
         document.title = "masx200的github主页";
         window.addEventListener("hashchange", () => {
             if (window.innerWidth <= 500) {
                 toggle(false);
             }
-            调整导航栏和主体的距离();
+            // 调整导航栏和主体的距离();
         });
 
         window.addEventListener("resize", () => {
@@ -45,15 +45,15 @@ function Apphome({ children }: PropsWithChildren<{}>) {
 
         document.getElementById(initloadingid)?.remove();
     }, []);
-    useEffect(() => {
-        调整导航栏和主体的距离();
-    }, [state, clientWidth]);
+    // useEffect(() => {
+    //     调整导航栏和主体的距离();
+    // }, [state, clientWidth]);
 
     function shouqi收起折叠的导航栏菜单() {
         if (window.innerWidth <= 500) {
             toggle(false);
         }
-        调整导航栏和主体的距离();
+        // 调整导航栏和主体的距离();
         scrollTo(0, 0);
     }
 

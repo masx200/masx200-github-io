@@ -19,14 +19,14 @@ import picture7 from "@/pictures/webpack.svg";
 import tanchu弹出消息通用 from "@/utils/my弹出消息通用.ts";
 import React, { useEffect, memo } from "react";
 //@ts-ignore
-import { 调整导航栏和主体的距离 } from "../../调整导航栏和主体的距离.js";
+// import { 调整导航栏和主体的距离 } from "../../调整导航栏和主体的距离.js";
 import { Showtime } from "./Showtime";
 ("use strict");
 
 export default memo(function home() {
     useEffect(() => {
         location.hash = "";
-        调整导航栏和主体的距离();
+        // 调整导航栏和主体的距离();
         document.title = "React router App-" + "home";
     }, []);
 

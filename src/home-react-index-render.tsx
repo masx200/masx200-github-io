@@ -1,7 +1,7 @@
 import $ from "jquery";
 import React, { useEffect, Suspense } from "react";
 //@ts-ignore
-import { 调整导航栏和主体的距离 } from "@/调整导航栏和主体的距离.js";
+// import { 调整导航栏和主体的距离 } from "@/调整导航栏和主体的距离.js";
 // @ts-ignore
 import Apphome from "./react-layout.tsx";
 import 路由列表 from "./router-react-路由列表";
@@ -15,19 +15,19 @@ const scrollTo = window.scrollTo;
 
 function onhashchange() {
     scrollTo(0, 0);
-    setTimeout(() => {
-        调整导航栏和主体的距离();
-    }, 50);
+    // setTimeout(() => {
+    //     // 调整导航栏和主体的距离();
+    // }, 50);
 }
 
 const resizehandler = () => {
-    setTimeout(() => {
-        requestAnimationFrame(() => {
-            setTimeout(() => {
-                调整导航栏和主体的距离();
-            }, 0);
-        });
-    }, 0);
+    // setTimeout(() => {
+    //     requestAnimationFrame(() => {
+    //         // setTimeout(() => {
+    //         //     调整导航栏和主体的距离();
+    //         // }, 0);
+    //     });
+    // }, 0);
 };
 const App = React.memo(() => {
     useEffect(() => {
