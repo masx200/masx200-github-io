@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 
-export function observehight(
+export function useobservehight(
     initial: number
 ): [number, (e?: Element | null | undefined) => void] {
     const navele = useRef<Element>();

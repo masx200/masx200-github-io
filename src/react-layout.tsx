@@ -6,7 +6,7 @@ import Link from "./CustomLink";
 // @ts-ignore
 import { initloadingid } from "./initloadingid.ts";
 import { navlinkeles } from "./navlinkeles";
-import { observehight } from "./observehight";
+import { useobservehight } from "./useobservehight";
 // @ts-ignore
 // @ts-ignore
 // @ts-ignore
@@ -14,7 +14,7 @@ import { 调整导航栏和主体的距离 } from "./调整导航栏和主体的
 
 export default React.memo(Apphome);
 function Apphome({ children }: PropsWithChildren<{}>) {
-    const [navheight, navbarref] = observehight(142);
+    const [navheight, navbarref] = useobservehight(142);
     const [clientWidth, setclientWidth] = useState(window.innerWidth);
     const [state, { toggle }] = useToggle(true);
 
