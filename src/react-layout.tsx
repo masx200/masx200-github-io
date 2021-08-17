@@ -1,7 +1,7 @@
 // const myvurrouterprojecturl =
 //     "https://my-vue-router-project-masx200.vercel.app/";
 import { useToggle } from "ahooks";
-import React, { PropsWithChildren, useEffect, useState } from "react";
+import React, { PropsWithChildren, useEffect, useRef, useState } from "react";
 import Link from "./CustomLink";
 // @ts-ignore
 import { initloadingid } from "./initloadingid.ts";
@@ -13,9 +13,29 @@ import { 调整导航栏和主体的距离 } from "./调整导航栏和主体的
 
 export default React.memo(Apphome);
 function Apphome({ children }: PropsWithChildren<{}>) {
+    const navele = useRef<Element>();
+    const observer = useRef<ResizeObserver>();
+    function createobserver() {
+        observer.current =
+            observer.current ||
+            new ResizeObserver((entry) => {
+                // console.log(entry);
+                const height = navele.current?.clientHeight;
+                height && setnavheight(height);
+            });
+    }
+    useEffect(() => {
+        createobserver();
+    }, []);
     const [clientWidth, setclientWidth] = useState(window.innerWidth);
     const [state, { toggle }] = useToggle(true);
-
+    function navbarref(e?: Element | null) {
+        if (e) {
+            createobserver();
+            observer.current?.observe(e);
+            navele.current = e;
+        }
+    }
     useEffect(() => {
         // console.log("onmounted");
 
@@ -54,10 +74,10 @@ function Apphome({ children }: PropsWithChildren<{}>) {
         调整导航栏和主体的距离();
         scrollTo(0, 0);
     }
-
+    const [navheight, setnavheight] = useState(142);
     return (
         <div>
-            <div className="container-fluid fixed-top" id="my导航栏">
+            <div className="container-fluid fixed-top" id="my导航栏"  ref={navbarref}>
                 <nav
                     className="navbar navbar-default navbar navbar-expand-sm bg-light navbar-light"
                     role="navigation"
@@ -96,7 +116,11 @@ function Apphome({ children }: PropsWithChildren<{}>) {
                 </nav>
             </div>
 
-            <div className="container" id="my主体">
+            <div
+                className="container"
+                id="my主体"
+                style={{ paddingTop: navheight + "px" }}
+            >
                 {children}
             </div>
         </div>
