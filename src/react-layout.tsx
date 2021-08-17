@@ -77,7 +77,11 @@ function Apphome({ children }: PropsWithChildren<{}>) {
     const [navheight, setnavheight] = useState(142);
     return (
         <div>
-            <div className="container-fluid fixed-top" id="my导航栏"  ref={navbarref}>
+            <div
+                className="container-fluid fixed-top"
+                id="my导航栏"
+                ref={navbarref}
+            >
                 <nav
                     className="navbar navbar-default navbar navbar-expand-sm bg-light navbar-light"
                     role="navigation"
