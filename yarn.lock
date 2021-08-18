@@ -648,7 +648,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.0"
 
-"@babel/plugin-syntax-jsx@^7.14.5":
+"@babel/plugin-syntax-jsx@7.14.5", "@babel/plugin-syntax-jsx@^7.14.5":
   version "7.14.5"
   resolved "https://registry.nlark.com/@babel/plugin-syntax-jsx/download/@babel/plugin-syntax-jsx-7.14.5.tgz#000e2e25d8673cce49300517a3eda44c263e4201"
   integrity sha1-AA4uJdhnPM5JMAUXo+2kTCY+QgE=
@@ -1425,13 +1425,12 @@
     debug "^4.1.0"
     globals "^11.1.0"
 
-"@babel/types@7.8.3":
-  version "7.8.3"
-  resolved "https://registry.nlark.com/@babel/types/download/@babel/types-7.8.3.tgz#5a383dffa5416db1b73dedffd311ffd0788fb31c"
-  integrity sha1-Wjg9/6VBbbG3Pe3/0xH/0HiPsxw=
+"@babel/types@7.15.0", "@babel/types@^7.15.0":
+  version "7.15.0"
+  resolved "https://registry.nlark.com/@babel/types/download/@babel/types-7.15.0.tgz#61af11f2286c4e9c69ca8deb5f4375a73c72dcbd"
+  integrity sha1-Ya8R8ihsTpxpyo3rX0N1pzxy3L0=
   dependencies:
-    esutils "^2.0.2"
-    lodash "^4.17.13"
+    "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
 "@babel/types@^7.12.1", "@babel/types@^7.14.5", "@babel/types@^7.14.8", "@babel/types@^7.4.4":
@@ -1440,14 +1439,6 @@
   integrity sha1-OBCd6PytwGQV+9m3TfAGXU1Bxyg=
   dependencies:
     "@babel/helper-validator-identifier" "^7.14.8"
-    to-fast-properties "^2.0.0"
-
-"@babel/types@^7.15.0":
-  version "7.15.0"
-  resolved "https://registry.nlark.com/@babel/types/download/@babel/types-7.15.0.tgz#61af11f2286c4e9c69ca8deb5f4375a73c72dcbd"
-  integrity sha1-Ya8R8ihsTpxpyo3rX0N1pzxy3L0=
-  dependencies:
-    "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
 "@csstools/convert-colors@^1.4.0":
@@ -2507,11 +2498,6 @@ babel-plugin-polyfill-regenerator@^0.2.2:
   integrity sha1-sxDI1kKsraNIwfo7Pmzg6FG+4Hc=
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.2.2"
-
-babel-plugin-syntax-jsx@6.18.0:
-  version "6.18.0"
-  resolved "https://registry.npm.taobao.org/babel-plugin-syntax-jsx/download/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
-  integrity sha1-CvMqmm4Tyno/1QaeYtew9Y0NiUY=
 
 babel-plugin-transform-react-remove-prop-types@0.4.24:
   version "0.4.24"
@@ -5441,7 +5427,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.nlark.com/lodash.uniq/download/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.5:
+lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.5:
   version "4.17.21"
   resolved "https://registry.nlark.com/lodash/download/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=
@@ -8063,13 +8049,13 @@ styled-jsx-plugin-postcss@^4.0.1:
   dependencies:
     postcss-load-config "^2.1.2"
 
-styled-jsx@^3.4.7:
-  version "3.4.7"
-  resolved "https://registry.nlark.com/styled-jsx/download/styled-jsx-3.4.7.tgz#803bc8a36f1c359cc99691b6db6e0791ea3e1e31"
-  integrity sha1-gDvIo28cNZzJlpG2224Hkeo+HjE=
+styled-jsx@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.nlark.com/styled-jsx/download/styled-jsx-4.0.0.tgz#f7b90e7889d0a4f4635f8d1ae9ac32f3acaedc57"
+  integrity sha1-97kOeInQpPRjX40a6awy86yu3Fc=
   dependencies:
-    "@babel/types" "7.8.3"
-    babel-plugin-syntax-jsx "6.18.0"
+    "@babel/plugin-syntax-jsx" "7.14.5"
+    "@babel/types" "7.15.0"
     convert-source-map "1.7.0"
     loader-utils "1.2.3"
     source-map "0.7.3"
