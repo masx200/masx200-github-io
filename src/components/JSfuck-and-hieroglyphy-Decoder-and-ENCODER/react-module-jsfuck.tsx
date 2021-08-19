@@ -96,9 +96,14 @@ export default memo(function Jsfuck() {
                 //   myservice.terminate();
                 //   console.log("线程已关闭","service-worker-jsfuck.js")
             };
-        }).finally(() => {
-            mui(button).button("reset");
-        });
+        })
+            .catch((e) => {
+                console.error(e);
+                throw e;
+            })
+            .finally(() => {
+                mui(button).button("reset");
+            });
     }
 
     const [statstext, setstatstext] = useState(`0 chars`);

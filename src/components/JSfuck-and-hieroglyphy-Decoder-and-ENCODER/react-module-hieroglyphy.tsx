@@ -92,9 +92,14 @@ export default memo(function Hieroglyphy() {
                 //   myservice.terminate();
                 //   console.log("线程已关闭","service-worker-jsfuck.js")
             };
-        }).finally(() => {
-            mui(btnele).button("reset");
-        });
+        })
+            .catch((e) => {
+                console.error(e);
+                throw e;
+            })
+            .finally(() => {
+                mui(btnele).button("reset");
+            });
     }
     // var lastclick: string;
 
