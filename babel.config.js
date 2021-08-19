@@ -9,6 +9,7 @@ module.exports = function (api) {
                     plugins: ["styled-jsx-plugin-postcss"],
                 },
             ],
+            "@babel/plugin-transform-react-constant-elements",
         ],
     };
 };
