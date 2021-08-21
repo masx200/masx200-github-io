@@ -15,8 +15,8 @@ var getGlobal = function (): any {
 };
 
 if (typeof fetch !== "function") {
-    var global = getGlobal();
-    global.fetch = require("node-fetch").default;
+    var globalthis = getGlobal();
+    globalthis.fetch = require("node-fetch").default;
 }
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import koa from "koa";
