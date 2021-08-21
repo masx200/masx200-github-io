@@ -15,8 +15,8 @@ var getGlobal = function (): any {
 };
 
 if (typeof fetch !== "function") {
-    var globalthis = getGlobal();
-    globalthis.fetch = require("node-fetch").default;
+
+    addfetch();
 }
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import koa from "koa";
@@ -42,3 +42,8 @@ const handler = app.callback();
 export default (request: VercelRequest, response: VercelResponse) => {
     handler(request, response);
 };
+function addfetch() {
+    var globalthis = getGlobal();
+    globalthis.fetch = require("node-fetch").default;
+}
+
