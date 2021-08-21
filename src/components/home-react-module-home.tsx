@@ -3,7 +3,7 @@ import React, { useEffect, memo } from "react";
 import markdwonurls from "../utils/markdownurls.ts";
 
 import Markdownreact from "./markdown-react/index";
-
+const name = "masx200-github-io";
 const markurl = markdwonurls["masx200-github-io"];
 ("use strict");
 
@@ -15,7 +15,7 @@ export default memo(function home() {
     }, []);
     return (
         <div>
-            <Markdownreact src={markurl} />
+            <Markdownreact src={markurl} name={name} />
         </div>
     );
 });

@@ -10,9 +10,9 @@ const Fallback = memo(() => (
         <span className="mui-spinner mui-spinner-custom" />
     </div>
 ));
-function markdown(props: { src: string }) {
-    const { src } = props;
-    const { data, error } = usemarkdown(src);
+function markdown(props: { src: string; name: string }) {
+    const { src, name } = props;
+    const { data, error } = usemarkdown(name);
 
     const loading = useMemo(() => {
         return !error && !data;
@@ -49,7 +49,7 @@ function markdown(props: { src: string }) {
                             />
                         </svg>
 
-                        <span>{props.src}</span>
+                        <span>{src}</span>
                     </h3>
                     <div></div>
                 </div>

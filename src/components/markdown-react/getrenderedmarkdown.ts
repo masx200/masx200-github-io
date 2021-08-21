@@ -1,19 +1,24 @@
 "use strict";
+import createDOMPurify from "dompurify";
+import jsdom from "jsdom";
 import marked from "marked";
 // @ts-ignore
 import hljs from "../../assetsjs/highlight.min.js";
-import { fetchsource } from "../../fetchsource";
 import { cachepromise } from "../../cachepromise";
-import createDOMPurify from "dompurify";
+import { fetchsource } from "../../fetchsource";
+const { JSDOM } = jsdom;
+const { window } = new JSDOM(``);
+//serversidedompurify
+//@ts-ignore
 const DOMPurify = createDOMPurify(window);
 // cachepromise
 // console.log(hljs)
 const { Renderer } = marked;
 class myrenderer extends Renderer {
     image(href: string | null, title: string | null, text: string): string {
-        console.log(href, title, text);
+        // console.log(href, title, text);
         var result = super.image(href, title, text);
-        console.log(result);
+        // console.log(result);
         if (result.startsWith("<img src=")) {
             result = result.replace("<img src=", "<img loading='lazy' src=");
         }

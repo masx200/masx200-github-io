@@ -1,6 +1,7 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import koa from "koa";
 import cors from "koa-cors";
+import { getrenderedmarkdown } from "../../src/components/markdown-react/getrenderedmarkdown";
 import markdownurls from "../../src/utils/markdownurls";
 const app = new koa();
 app.use(cors());
@@ -12,7 +13,9 @@ app.use(async (ctx, next) => {
     if (!Object.keys(markdownurls).includes(name)) {
         return next();
     }
-    ctx.body = Reflect.get(markdownurls, name);
+    const src = Reflect.get(markdownurls, name);
+    ctx.response.set("cache-control", " s-maxage=86400,max-age=86400, public");
+    ctx.body = await getrenderedmarkdown(src);
     return;
 });
 const handler = app.callback();
