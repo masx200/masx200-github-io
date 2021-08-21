@@ -32,7 +32,11 @@ function Rssreader(props: {
     return (
         <div className="">
             {rssmain}
-            {rssfeedurl ? <Rssviewer src={rssfeedurl} /> : <React.Fragment />}
+            {rssfeedurl && sitename ? (
+                <Rssviewer src={rssfeedurl} name={sitename} />
+            ) : (
+                <React.Fragment />
+            )}
         </div>
     );
 }

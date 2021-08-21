@@ -2,17 +2,17 @@ import React, { memo, useEffect, useMemo } from "react";
 import Loading from "../Loading";
 import { userss } from "./userss";
 
-export const Rssviewer = memo(function Rssviewer({ src }: { src: string }) {
-    useEffect(() => {
-        console.log(src);
-    }, [src]);
+export const Rssviewer = memo(function Rssviewer({ src ,name}: { src: string,name:string }) {
+    // useEffect(() => {
+    //     console.log(src);
+    // }, [src]);
     const rssfeedurl = src;
-    const { data, error } = userss(src);
-    console.log({ src, data, error });
+    const { data, error } = userss(name);
+    // console.log({ src, data, error });
     const loaded = !!data;
-    useEffect(() => {
-        data && console.info({ data });
-    }, [data]);
+    // useEffect(() => {
+    //     data && console.info({ data });
+    // }, [data]);
     useEffect(() => {
         error && console.error({ error });
     }, [error]);

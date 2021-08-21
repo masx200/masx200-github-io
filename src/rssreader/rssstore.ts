@@ -1,18 +1,20 @@
 import { reactive } from "@vue/reactivity";
 import { watch } from "@vue/runtime-core";
+type RSSDATA = {
+    title: string;
+    content: {
+        link: string;
+        title: string;
+        description: string;
+    }[];
+    description: string;
+};
+
 const rssstore = reactive({
     error: new Map<string, any>(),
     data: new Map<
         string,
-        {
-            title: string;
-            content: {
-                link: string;
-                title: string;
-                description: string;
-            }[];
-            description: string;
-        }
+        RSSDATA
     >(),
 });
 export { rssstore };

@@ -10,16 +10,16 @@ const Fallback = memo(() => (
         <span className="mui-spinner mui-spinner-custom" />
     </div>
 ));
-function markdown(props: { src: string; name: string }) {
-    const { src, name } = props;
+function markdown( { src, name } : { src: string; name: string }) {
+ 
     const { data, error } = usemarkdown(name);
 
     const loading = useMemo(() => {
         return !error && !data;
     }, [data, error]);
-    useEffect(() => {
-        data && console.info({ data });
-    }, [data]);
+    // useEffect(() => {
+    //     data && console.info({ data });
+    // }, [data]);
     useEffect(() => {
         error && console.error({ error });
     }, [error]);
