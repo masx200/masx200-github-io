@@ -1,27 +1,13 @@
-var getGlobal = function (): any {
-    // the only reliable means to get the global object is
-    // `Function('return this')()`
-    // However, this causes CSP violations in Chrome apps.
-    if (typeof self !== "undefined") {
-        return self;
-    }
-    if (typeof window !== "undefined") {
-        return window;
-    }
-    if (typeof global !== "undefined") {
-        return global;
-    }
-    throw new Error("unable to locate global object");
-};
-
-if (typeof fetch !== "function") {
-    addfetch();
-}
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import koa from "koa";
 import cors from "koa-cors";
 import { getrenderedmarkdown } from "../../src/components/markdown-react/getrenderedmarkdown";
 import markdownurls from "../../src/utils/markdownurls";
+import { addfetch } from "../../src/addfetch";
+if (typeof fetch !== "function") {
+    addfetch();
+}
+
 const app = new koa();
 app.use(cors({ origin: "*" }));
 app.use(async (ctx, next) => {
@@ -41,7 +27,4 @@ const handler = app.callback();
 export default (request: VercelRequest, response: VercelResponse) => {
     handler(request, response);
 };
-function addfetch() {
-    var globalthis = getGlobal();
-    globalthis.fetch = require("node-fetch").default;
-}
+

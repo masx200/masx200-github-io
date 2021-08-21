@@ -6,11 +6,7 @@ import marked from "marked";
 import hljs from "../../assetsjs/highlight.min.js";
 import { cachepromise } from "../../cachepromise";
 import { fetchsource } from "../../fetchsource";
-const { JSDOM } = jsdom;
-const { window } = new JSDOM(``);
-//serversidedompurify
-//@ts-ignore
-const DOMPurify = createDOMPurify(window);
+const DOMPurify = createpurify();
 // cachepromise
 // console.log(hljs)
 const { Renderer } = marked;
@@ -43,3 +39,12 @@ export const getrenderedmarkdown = cachepromise(async function (src: string) {
     const clean = DOMPurify.sanitize(dirty);
     return clean;
 });
+function createpurify() {
+    const { JSDOM } = jsdom;
+    const { window } = new JSDOM(``);
+    //serversidedompurify
+    //@ts-ignore
+    const DOMPurify = createDOMPurify(window);
+    return DOMPurify;
+}
+
