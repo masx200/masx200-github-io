@@ -1,6 +1,7 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import koa from "koa";
 import cors from "koa-cors";
+const etag = require("@masx200/koa-stream-etag");
 import { getrenderedmarkdown } from "../../src/components/markdown-react/getrenderedmarkdown";
 import markdownurls from "../../src/utils/markdownurls";
 import { addfetch } from "../../src/addfetch";
@@ -8,7 +9,7 @@ if (typeof fetch !== "function") {
     addfetch();
 }
 
-const app = new koa();
+const app = new koa();app.use(etag({}));
 app.use(cors({ origin: "*" }));
 app.use(async (ctx, next) => {
     const { name } = ctx.request.query;

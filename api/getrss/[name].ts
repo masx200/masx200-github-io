@@ -3,12 +3,12 @@ import koa from "koa";
 import cors from "koa-cors";
 import { getrss } from "../../src/rssreader/getrss";
 import rssfeedxml from "../../src/rssreader/rssfeedxml";
-import { addfetch } from "../../src/addfetch";
+import { addfetch } from "../../src/addfetch";const etag = require("@masx200/koa-stream-etag");
 if (typeof fetch !== "function") {
     addfetch();
 }
 
-const app = new koa();
+const app = new koa();app.use(etag({}));
 app.use(cors({ origin: "*" }));
 app.use(async (ctx, next) => {
     const { name } = ctx.request.query;
