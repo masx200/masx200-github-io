@@ -15,7 +15,6 @@ var getGlobal = function (): any {
 };
 
 if (typeof fetch !== "function") {
-
     addfetch();
 }
 import { VercelRequest, VercelResponse } from "@vercel/node";
@@ -46,4 +45,3 @@ function addfetch() {
     var globalthis = getGlobal();
     globalthis.fetch = require("node-fetch").default;
 }
-
