@@ -12,10 +12,7 @@ type RSSDATA = {
 
 const rssstore = reactive({
     error: new Map<string, any>(),
-    data: new Map<
-        string,
-        RSSDATA
-    >(),
+    data: new Map<string, RSSDATA>(),
 });
 export { rssstore };
 if (process.env.NODE_ENV === "development") {

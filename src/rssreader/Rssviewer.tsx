@@ -2,7 +2,13 @@ import React, { memo, useEffect, useMemo } from "react";
 import Loading from "../Loading";
 import { userss } from "./userss";
 
-export const Rssviewer = memo(function Rssviewer({ src ,name}: { src: string,name:string }) {
+export const Rssviewer = memo(function Rssviewer({
+    src,
+    name,
+}: {
+    src: string;
+    name: string;
+}) {
     // useEffect(() => {
     //     console.log(src);
     // }, [src]);

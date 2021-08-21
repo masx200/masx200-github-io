@@ -10,8 +10,7 @@ const Fallback = memo(() => (
         <span className="mui-spinner mui-spinner-custom" />
     </div>
 ));
-function markdown( { src, name } : { src: string; name: string }) {
- 
+function markdown({ src, name }: { src: string; name: string }) {
     const { data, error } = usemarkdown(name);
 
     const loading = useMemo(() => {

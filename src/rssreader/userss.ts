@@ -18,9 +18,7 @@ type RSSDATA = {
 };
 
 function getrssresult(src: string): () => {
-    data:
-        | RSSDATA
-        | undefined;
+    data: RSSDATA | undefined;
     error: any;
 } {
     return () => {
