@@ -23,7 +23,7 @@ import cors from "koa-cors";
 import { getrenderedmarkdown } from "../../src/components/markdown-react/getrenderedmarkdown";
 import markdownurls from "../../src/utils/markdownurls";
 const app = new koa();
-app.use(cors({origin:"*"}));
+app.use(cors({ origin: "*" }));
 app.use(async (ctx, next) => {
     const { name } = ctx.request.query;
     if (typeof name !== "string") {

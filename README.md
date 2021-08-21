@@ -4,9 +4,6 @@ masx200 的 github 网页
 
 https://github.com/masx200/masx200-github-io
 
-添加了全局状态管理库,极简 react.js 全局状态管理库
-
-https://github.com/masx200/react-simple-global-state-store-hook/
 
 <hr>
 
