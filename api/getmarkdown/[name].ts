@@ -9,7 +9,8 @@ if (typeof fetch !== "function") {
     addfetch();
 }
 
-const app = new koa();app.use(etag({}));
+const app = new koa();
+app.use(etag({}));
 app.use(cors({ origin: "*" }));
 app.use(async (ctx, next) => {
     const { name } = ctx.request.query;
