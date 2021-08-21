@@ -1520,10 +1520,13 @@
   resolved "https://registry.nlark.com/@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder/download/@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder-2.0.2.tgz#cbf5ff5ba384bd4e51d0f4ced49522d4cbd667cb"
   integrity sha1-y/X/W6OEvU5R0PTO1JUi1MvWZ8s=
 
-"@masx200/search-hash-params-router@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.nlark.com/@masx200/search-hash-params-router/download/@masx200/search-hash-params-router-1.4.0.tgz#bb15ed734bc73ea061ad86b4487dada7752a6f44"
-  integrity sha1-uxXtc0vHPqBhrYa0SH2tp3Uqb0Q=
+"@masx200/search-hash-params-router@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.nlark.com/@masx200/search-hash-params-router/download/@masx200/search-hash-params-router-1.4.1.tgz#660318c7875852236b1fe3d7f88f782a44570aca"
+  integrity sha1-ZgMYx4dYUiNrH+PX+I94KkRXCso=
+  dependencies:
+    "@masx200/event-emitter-target" "^1.1.9"
+    lodash "^4.17.21"
 
 "@masx200/webpack-react-vue-spa-awesome-config@^4.2.1":
   version "4.2.1"
