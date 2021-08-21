@@ -12,3 +12,5 @@ debug.log
 .now
 #yarn.lock
 package-lock.json
+
+.vercel
