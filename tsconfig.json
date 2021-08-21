@@ -16,7 +16,7 @@
         "pretty": true,
         "strict": true,
         "outDir": "./dist",
-        "rootDir": "./src",
+
         "sourceMap": true,
         "strictNullChecks": true,
         "baseUrl": ".",
@@ -28,6 +28,6 @@
         "allowSyntheticDefaultImports": true,
         "alwaysStrict": true
     },
-    "include": ["src/"],
+    "include": ["src/", "api"],
     "exclude": []
 }
