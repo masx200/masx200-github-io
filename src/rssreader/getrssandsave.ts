@@ -13,7 +13,6 @@ export function getrssandsave(src: string) {
         }
     );
 }
-const getapirss=cachepromise(
-async function getapirss(name: string) {
+const getapirss = cachepromise(async function getapirss(name: string) {
     return JSON.parse(await fetchsource(rssapi + name));
-})
+});
