@@ -3,8 +3,11 @@ import { rssstore } from "./rssstore";
 import { readonly } from "@vue/reactivity";
 import { getrssandsave } from "./getrssandsave";
 export function userss(src: string) {
-    getrssandsave(src);
-    return readonly(usereactive(getrssresult(src), [src]));
+    const { data, error } = readonly(usereactive(getrssresult(src), [src]));
+    if (!data && !error) {
+        getrssandsave(src);
+    }
+    return { data, error };
 }
 
 type RSSDATA = {
@@ -17,7 +20,9 @@ type RSSDATA = {
     description: string;
 };
 
-function getrssresult(src: string): () => {
+function getrssresult(
+    src: string
+): () => {
     data: RSSDATA | undefined;
     error: any;
 } {
