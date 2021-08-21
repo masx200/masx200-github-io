@@ -129,6 +129,5 @@
     "devDependencies": {
         "@vercel/node": "^1.12.1",
         "husky": "^7.0.1"
-   
     }
 }
