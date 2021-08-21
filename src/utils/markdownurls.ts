@@ -6,5 +6,4 @@ export default {
 
     "masx200-github-io":
         "https://masx200.github.io/masx200-github-io/README.md",
-    
 };
