@@ -27,4 +27,3 @@ const handler = app.callback();
 export default (request: VercelRequest, response: VercelResponse) => {
     handler(request, response);
 };
-

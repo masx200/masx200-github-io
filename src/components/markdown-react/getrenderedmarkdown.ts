@@ -47,4 +47,3 @@ function createpurify() {
     const DOMPurify = createDOMPurify(window);
     return DOMPurify;
 }
-
