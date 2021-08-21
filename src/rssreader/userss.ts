@@ -20,9 +20,7 @@ type RSSDATA = {
     description: string;
 };
 
-function getrssresult(
-    src: string
-): () => {
+function getrssresult(src: string): () => {
     data: RSSDATA | undefined;
     error: any;
 } {

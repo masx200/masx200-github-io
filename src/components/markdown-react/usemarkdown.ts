@@ -4,15 +4,14 @@ import { markdownstore } from "./markdownstore";
 import { usereactive } from "./usereactive";
 
 export function usemarkdown(src: string) {
-    
+    const { data, error } = readonly(
+        usereactive(getmarkdownresult(src), [src])
+    );
+    if (!data && !error) {
+        getmarkdownandsave(src);
+    }
 
-    
-  const  {data,error}=readonly(usereactive(getmarkdownresult(src), [src]));
-  if (!data && !error) {
-    getmarkdownandsave(src);
-  }
-  
-  return {data,error}
+    return { data, error };
 }
 function getmarkdownresult(
     src: string
