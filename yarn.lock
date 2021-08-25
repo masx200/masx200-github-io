@@ -1535,10 +1535,10 @@
     "@masx200/event-emitter-target" "^1.1.9"
     lodash "^4.17.21"
 
-"@masx200/webpack-react-vue-spa-awesome-config@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.nlark.com/@masx200/webpack-react-vue-spa-awesome-config/download/@masx200/webpack-react-vue-spa-awesome-config-4.2.1.tgz#60ea9c8b27f8ffe77cae44293bb86903ea7ee520"
-  integrity sha1-YOqciyf4/+d8rkQpO7hpA+p+5SA=
+"@masx200/webpack-react-vue-spa-awesome-config@^4.2.3":
+  version "4.2.3"
+  resolved "https://registry.nlark.com/@masx200/webpack-react-vue-spa-awesome-config/download/@masx200/webpack-react-vue-spa-awesome-config-4.2.3.tgz#666cd25e2e42d0f3d2cef31e824e0ab21ba1d869"
+  integrity sha1-ZmzSXi5C0PPSzvMegk4Kshuh2Gk=
   dependencies:
     "@babel/core" "^7.14.6"
     "@babel/plugin-proposal-class-properties" "^7.14.5"
@@ -1607,7 +1607,7 @@
     webpack-cli "^4.7.2"
     webpack-dev-server "^3.11.2"
     workbox-webpack-plugin "^6.1.5"
-    worker-loader "3.0.8"
+    worker-loader "^3.0.8"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -9594,7 +9594,7 @@ workbox-window@^6.1.5:
   dependencies:
     workbox-core "^6.1.5"
 
-worker-loader@3.0.8, worker-loader@^3.0.8:
+worker-loader@^3.0.8:
   version "3.0.8"
   resolved "https://registry.nlark.com/worker-loader/download/worker-loader-3.0.8.tgz#5fc5cda4a3d3163d9c274a4e3a811ce8b60dbb37"
   integrity sha1-X8XNpKPTFj2cJ0pOOoEc6LYNuzc=

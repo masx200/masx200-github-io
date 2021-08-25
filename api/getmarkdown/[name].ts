@@ -1,10 +1,11 @@
+//@ts-ignore
+import etag from "@masx200/koa-stream-etag";
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import koa from "koa";
 import cors from "koa-cors";
-const etag = require("@masx200/koa-stream-etag");
+import { addfetch } from "../../src/addfetch";
 import { getrenderedmarkdown } from "../../src/components/markdown-react/getrenderedmarkdown";
 import markdownurls from "../../src/utils/markdownurls";
-import { addfetch } from "../../src/addfetch";
 if (typeof fetch !== "function") {
     addfetch();
 }
