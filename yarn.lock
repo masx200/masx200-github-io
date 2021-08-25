@@ -3784,14 +3784,6 @@ deep-is@~0.1.3:
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
   integrity sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=
 
-deep-scope-analyser@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.npm.taobao.org/deep-scope-analyser/download/deep-scope-analyser-1.7.0.tgz#23015b3a1d23181b1d9cebd25b783a7378ead8da"
-  integrity sha1-IwFbOh0jGBsdnOvSW3g6c3jq2No=
-  dependencies:
-    esrecurse "^4.2.1"
-    estraverse "^4.2.0"
-
 deepmerge@^4.2.2:
   version "4.2.2"
   resolved "https://registry.npm.taobao.org/deepmerge/download/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
@@ -4166,14 +4158,14 @@ esprima@^4.0.0, esprima@^4.0.1:
   resolved "https://registry.nlark.com/esprima/download/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
   integrity sha1-E7BM2z5sXRnfkatph6hpVhmwqnE=
 
-esrecurse@^4.2.1, esrecurse@^4.3.0:
+esrecurse@^4.3.0:
   version "4.3.0"
   resolved "https://registry.nlark.com/esrecurse/download/esrecurse-4.3.0.tgz#7ad7964d679abb28bee72cec63758b1c5d2c9921"
   integrity sha1-eteWTWeauyi+5yzsY3WLHF0smSE=
   dependencies:
     estraverse "^5.2.0"
 
-estraverse@^4.1.1, estraverse@^4.2.0:
+estraverse@^4.1.1:
   version "4.3.0"
   resolved "https://registry.nlark.com/estraverse/download/estraverse-4.3.0.tgz#398ad3f3c5a24948be7725e83d11a7de28cdbd1d"
   integrity sha1-OYrT88WiSUi+dyXoPRGn3ijNvR0=
@@ -9201,13 +9193,6 @@ webpack-copyfiles-plugin@^1.0.9:
     globby "8.0.1"
     hash-files "1.1.1"
     webpack-plugin-compat "^1.0.1"
-
-webpack-deep-scope-plugin@^1.6.2:
-  version "1.6.2"
-  resolved "https://registry.npm.taobao.org/webpack-deep-scope-plugin/download/webpack-deep-scope-plugin-1.6.2.tgz#131eac79739021e42ebc07066ea8869107f37b85"
-  integrity sha1-Ex6seXOQIeQuvAcGbqiGkQfze4U=
-  dependencies:
-    deep-scope-analyser "^1.7.0"
 
 webpack-dev-middleware@^3.7.2:
   version "3.7.3"
