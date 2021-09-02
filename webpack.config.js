@@ -17,7 +17,7 @@ module.exports = (env, argv) => {
         // config.devtool = "source-map";
     }
 
-    console.log(config);
+    // console.log(config);
 
     return webpackconfig;
 };

@@ -1527,10 +1527,10 @@
   dependencies:
     etag "^1.8.1"
 
-"@masx200/search-hash-params-router@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.nlark.com/@masx200/search-hash-params-router/download/@masx200/search-hash-params-router-1.4.1.tgz#660318c7875852236b1fe3d7f88f782a44570aca"
-  integrity sha1-ZgMYx4dYUiNrH+PX+I94KkRXCso=
+"@masx200/search-hash-params-router@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.nlark.com/@masx200/search-hash-params-router/download/@masx200/search-hash-params-router-2.0.6.tgz#9788a2651ea0232c492a78cafbfd7c3b0816cb6e"
+  integrity sha1-l4iiZR6gIyxJKnjK+/18OwgWy24=
   dependencies:
     "@masx200/event-emitter-target" "^1.1.9"
     lodash "^4.17.21"
