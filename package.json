@@ -1,5 +1,5 @@
 {
-    "version": "5.1.4",
+    "version": "5.1.5",
     "scripts": {
         "precommit": "npm run format ||node -v",
         "start": "webpack-react-vue-spa-awesome-config start --port=11111 --config=./webpack.config.js",
@@ -127,7 +127,7 @@
     },
     "resolutions": {
         "glob-parent": "5.1.2",
-        "url-parse": "1.5.3"
+        "url-parse": "1.5.3","object-path":"0.11.7"
     },
     "devDependencies": {
         "@vercel/node": "^1.12.1",
