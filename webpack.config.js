@@ -18,6 +18,8 @@ module.exports = (env, argv) => {
     }
 
     // console.log(config);
-
+    if (process.env.NODE_ENV == "development") {
+        config.experiments = { ...config.experiments, lazyCompilation: true };
+    }
     return webpackconfig;
 };
