@@ -129,7 +129,8 @@
         "glob-parent": "5.1.2",
         "url-parse": "1.5.3",
         "object-path": "0.11.7",
-        "webpack": "5.44.0",  "ansi-html": "npm:ansi-html-community"
+        "webpack": "5.44.0",
+        "ansi-html": "npm:ansi-html-community"
     },
     "devDependencies": {
         "@vercel/node": "^1.12.1",
