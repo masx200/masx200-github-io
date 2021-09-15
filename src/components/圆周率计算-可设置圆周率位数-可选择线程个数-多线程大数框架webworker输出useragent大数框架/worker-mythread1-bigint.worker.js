@@ -22,10 +22,10 @@ addEventListener("message", function (event) {
         bigInt("90071992547409920").__proto__.multiply;
     // bigInt.cmp=bigInt.prototype.cmp=(n)=>;
     var piwei;
-    piwei = event.data[0];//1000
+    piwei = event.data[0]; //1000
     // piwei /= 2;
-    var threadall = event.data[1];//1
-    var threadid = event.data[2];//0
+    var threadall = event.data[1]; //1
+    var threadid = event.data[2]; //0
     // console.log(
     //   "副线程" + (threadid + 1) + "从主线程接收" + "event.data\n",
     //   ...event.data
