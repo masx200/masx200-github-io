@@ -88,8 +88,9 @@ addEventListener("message", function (event) {
             a = bigInt.mul(a, 1024);
             x = x.plus(1);
         }
+        // console.log(["t", t.toString()].join(','))
     }
-    // console.log("t", t.toString())
+    
     // console.log("p", p.toString())
     postMessage([p.toString(), "" + x.plus(1)]);
 });
