@@ -22,10 +22,10 @@ addEventListener("message", function (event) {
         bigInt("90071992547409920").__proto__.multiply;
     // bigInt.cmp=bigInt.prototype.cmp=(n)=>;
     var piwei;
-    piwei = event.data[0];
+    piwei = event.data[0];//1000
     // piwei /= 2;
-    var threadall = event.data[1];
-    var threadid = event.data[2];
+    var threadall = event.data[1];//1
+    var threadid = event.data[2];//0
     // console.log(
     //   "副线程" + (threadid + 1) + "从主线程接收" + "event.data\n",
     //   ...event.data
@@ -59,7 +59,7 @@ addEventListener("message", function (event) {
         // console.log("a",a.toString())
         // console.log("x",x.toString())
         // console.log("p",p.toString())
-        /**除法小于零的结果直接变成0,所以分母要特别大才能精确除法 */
+        /**除法小于零的结果直接变成0,所以分子要特别大才能精确除法 */
         t = bigInt
             .mul(1, fu)
             .mul(
