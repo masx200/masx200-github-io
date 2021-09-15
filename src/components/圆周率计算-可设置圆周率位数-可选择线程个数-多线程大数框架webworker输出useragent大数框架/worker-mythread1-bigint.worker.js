@@ -90,7 +90,7 @@ addEventListener("message", function (event) {
         }
         // console.log(["t", t.toString()].join(','))
     }
-    
+
     // console.log("p", p.toString())
     postMessage([p.toString(), "" + x.plus(1)]);
 });
