@@ -69,7 +69,7 @@ export default memo(function bigcom() {
     var p: bigInt.BigInteger,
         piwei: string | number,
         strt: number,
-       // finishflag: any[],
+        // finishflag: any[],
         x = 0,
         threadgeshu: string | number,
         testname: string;
@@ -185,8 +185,8 @@ export default memo(function bigcom() {
                 p = new bigInt(0);
                 //   myworker = [];
                 //   myworker.length = threadgeshu;
-               // finishflag = [];
-               // finishflag.length = threadgeshu;
+                // finishflag = [];
+                // finishflag.length = threadgeshu;
                 //   if (typeof worker1 == "undefined") {
                 //     worker1 = new Worker("service-worker-mythread1-bigint.js");
                 //   }
@@ -261,7 +261,7 @@ export default memo(function bigcom() {
                                     // @ts-ignore
                                     p = bigInt.add(p, p1);
                                     x = Math.max(x, parseInt(event.data[1]));
-                                  //  finishflag[index] = 1;
+                                    //  finishflag[index] = 1;
                                     //   threadfinish(btnele);
                                     //   currentValue.terminate()
                                     rs();
