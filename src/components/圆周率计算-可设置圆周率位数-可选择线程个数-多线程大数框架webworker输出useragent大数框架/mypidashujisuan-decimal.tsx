@@ -72,7 +72,7 @@ export default memo(function decimalcom() {
     var p: Decimal.Value,
         piwei: string | number,
         strt: number,
-        finishflag,
+        // finishflag,
         x = 0,
         threadgeshu: number,
         testname: string | undefined;
@@ -175,8 +175,8 @@ export default memo(function decimalcom() {
                 p = new Decimal(0);
                 //   myworker = [];
                 //   myworker.length = threadgeshu;
-                finishflag = [];
-                finishflag.length = threadgeshu;
+                // finishflag = [];
+                // finishflag.length = threadgeshu;
                 //   if (typeof worker1 == "undefined") {
                 //     worker1 = new Worker("service-worker-mythread1-Decimal.js");
                 //   }
@@ -248,7 +248,7 @@ export default memo(function decimalcom() {
                                     var p1 = new Decimal(event.data[0]);
                                     p = Decimal.add(p, p1);
                                     x = Math.max(x, parseInt(event.data[1]));
-                                    finishflag[index] = 1;
+                                    // finishflag[index] = 1;
                                     //   threadfinish(btnele);
                                     //   currentValue.terminate()
                                     rs();
