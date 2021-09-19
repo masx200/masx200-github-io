@@ -1515,10 +1515,10 @@
   resolved "https://registry.nlark.com/@masx200/ie11-usual-polyfills/download/@masx200/ie11-usual-polyfills-1.0.5.tgz#fafa4ed3d422fc273234bd15d3d3249ed6761621"
   integrity sha1-+vpO09Qi/CcyNL0V09MkntZ2FiE=
 
-"@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.nlark.com/@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder/download/@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder-2.0.6.tgz#0bced699711d2a7fb176749dbac75b4423b8cc9c"
-  integrity sha1-C87WmXEdKn+xdnSdusdbRCO4zJw=
+"@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder@^2.0.7":
+  version "2.0.7"
+  resolved "https://registry.nlark.com/@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder/download/@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder-2.0.7.tgz#8f675284493b5c0fb6998621a6612acb861eff25"
+  integrity sha1-j2dShEk7XA+2mYYhpmEqy4Ye/yU=
 
 "@masx200/koa-stream-etag@^5.0.4":
   version "5.0.4"
