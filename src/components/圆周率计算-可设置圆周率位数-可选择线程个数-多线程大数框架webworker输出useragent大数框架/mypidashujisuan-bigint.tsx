@@ -1,7 +1,10 @@
 "use strict";
 // @ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
-import { bigintcleanup ,bigintCalculatePi} from "@masx200/pi-calculation-multithreading";
+import {
+    bigintcleanup,
+    bigintCalculatePi,
+} from "@masx200/pi-calculation-multithreading";
 import React, { memo, useEffect, useRef } from "react";
 import { useBindtext } from "../../huami/useBindtext";
 // @ts-ignore
@@ -150,7 +153,7 @@ export default memo(function bigcom() {
                 let inputtext1f = Math.floor(Number(inputtext1));
                 const threadgeshu = inputtext1f;
                 //   inputtext1 = threadgeshu;
-           let     testname =
+                let testname =
                     "圆周率计算多线程" +
                     "-" +
                     "线程数为" +
@@ -184,7 +187,7 @@ export default memo(function bigcom() {
                 //   console.log(outputtext1);
                 console.log(testname);
                 // console.time(testname);
-             let   strt = new Date().getTime();
+                let strt = new Date().getTime();
                 // @ts-ignore
                 // p = new bigInt(0);
                 //   myworker = [];
@@ -291,7 +294,11 @@ export default memo(function bigcom() {
                 // );
                 // console.log("所有输出promise的返回值", 所有输出promise);
                 /* 所有线程已经完成,输出结果 */
-                const [p,x]=await bigintCalculatePi(createworker,piwei,threadgeshu)
+                const [p, x] = await bigintCalculatePi(
+                    createworker,
+                    piwei,
+                    threadgeshu
+                );
                 await new Promise<void>((res, rej) => {
                     requestAnimationFrame(() => {
                         (function (btnele) {
@@ -309,12 +316,7 @@ export default memo(function bigcom() {
                                 "圆周率" +
                                 piwei +
                                 "位\n";
-                            setoutputtext2(
-                                "圆周率" +
-                                    piwei +
-                                    "位" +
-                                 p
-                            );
+                            setoutputtext2("圆周率" + piwei + "位" + p);
                             //   console.log(outputtext1 + eventdata);
                             /* UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36
 你的浏览器能够支持原生BigInt!

@@ -1,5 +1,5 @@
 import { bigintworkersetup } from "@masx200/pi-calculation-multithreading";
-bigintworkersetup()
+bigintworkersetup();
 // "use strict";
 // import bigInt from "big-integer/BigInteger.js";
 
