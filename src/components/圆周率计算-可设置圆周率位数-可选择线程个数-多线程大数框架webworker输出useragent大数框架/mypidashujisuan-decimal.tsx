@@ -3,34 +3,42 @@
 // @ts-ignore
 // @ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
+import {
+    decimalcleanup,
+    decimalCalculatePi,
+} from "@masx200/pi-calculation-multithreading";
 // @ts-ignore
-import Decimal from "decimal.js";
+// import Decimal from "decimal.js";
 // import mui from "../mui.min.js";
 // eslint-disable-next-line no-unused-vars
 import React, { memo, useEffect, useRef } from "react";
 import { useBindtext } from "../../huami/useBindtext";
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
 // @ts-ignore
-import decimalworker from "./worker-mythread1-decimal.worker.js";
+// import decimalworker from "./worker-mythread1-decimal.worker.js";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
 }
-
-var myworker = Array(16).fill(undefined);
+function createworker() {
+    return new Worker(
+        new URL("./worker-mythread1-decimal-worker.ts", import.meta.url)
+    );
+}
 
 //   );
 // })();
 function 关闭所有worker() {
-    myworker.forEach(function (currentValue, index) {
-        /* 可能worker的数量没有满,undefined的terminate函数不存在 */
-        try {
-            currentValue.terminate();
-            /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
-            myworker[index] = undefined;
-        } catch (error) {
-            /*  */
-        }
-    });
+    decimalcleanup();
+    // myworker.forEach(function (currentValue, index) {
+    //     /* 可能worker的数量没有满,undefined的terminate函数不存在 */
+    //     try {
+    //         currentValue.terminate();
+    //         /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
+    //         myworker[index] = undefined;
+    //     } catch (error) {
+    //         /*  */
+    //     }
+    // });
 }
 function lashentextarea(eles: HTMLElement) {
     // console.log(eles.outerHTML);
@@ -69,14 +77,14 @@ export default memo(function decimalcom() {
         };
     }, []);
 
-    var p: Decimal.Value,
-        piwei: string | number,
-        strt: number,
-        // finishflag,
-        x = 0,
-        threadgeshu: number,
-        testname: string | undefined;
-    threadgeshu = 6;
+    // var p: Decimal.Value,
+    //     piwei: string | number,
+    //     strt: number,
+    //     // finishflag,
+    //     x = 0,
+    //     threadgeshu: number,
+    //     testname: string | undefined;
+    // threadgeshu = 6;
 
     const [inputtext1, setinputtext1, onchangeinputtext1] = useBindtext(
         navigator.hardwareConcurrency || 6
@@ -85,10 +93,10 @@ export default memo(function decimalcom() {
     const [outputtext1, setoutputtext1old, onchangeoutputtext1] = useBindtext(
         "UserAgent: " +
             navigator.userAgent +
-            "\n" +
-            (typeof Decimal === "function"
-                ? "你的浏览器能够支持原生Decimal!"
-                : "你的浏览器无法支持原生Decimal!") +
+            // "\n" +
+            // (typeof Decimal === "function"
+            //     ? "你的浏览器能够支持原生Decimal!"
+            //     : "你的浏览器无法支持原生Decimal!") +
             "\n开始圆周率多线程测试\n"
     );
 
@@ -131,12 +139,12 @@ export default memo(function decimalcom() {
                 inputtext2 >= 1 &&
                 inputtext2 <= 100
             ) {
-                piwei = 1000 * Math.floor(Number(inputtext2));
+                const piwei = 1000 * Math.floor(Number(inputtext2));
                 //   let inputtext2f = Math.floor(inputtext2);
                 let inputtext1f = Math.floor(Number(inputtext1));
-                threadgeshu = inputtext1f;
+                const threadgeshu = inputtext1f;
                 //   inputtext1 = threadgeshu;
-                testname =
+                const testname =
                     "圆周率计算多线程" +
                     "-" +
                     "线程数为" +
@@ -166,13 +174,13 @@ export default memo(function decimalcom() {
                         "计算圆周率中......" +
                         "  \n"
                 );
-                Decimal.set({ precision: piwei });
+                // Decimal.set({ precision: piwei });
                 //   debugger;
                 //   console.log(outputtext1);
                 console.log(testname);
-                console.time(testname);
-                strt = new Date().getTime();
-                p = new Decimal(0);
+                // console.time(testname);
+                let strt = new Date().getTime();
+                // p = new Decimal(0);
                 //   myworker = [];
                 //   myworker.length = threadgeshu;
                 // finishflag = [];
@@ -192,93 +200,98 @@ export default memo(function decimalcom() {
                 //   myworker.length = threadgeshu;
                 /* myworker.forEach(function(currentValue, index, arr) { */
                 /* 等待所有线程完成之后再下一步 */
-                await Promise.all(
-                    myworker
-                        .slice(0, threadgeshu)
-                        .map(function (currentValue, index) {
-                            const arr = myworker;
-                            /* arr和myworker不是同一个对象了! */
-                            //   console.log(arr === myworker);//false
-                            return new Promise<void>((rs, rj) => {
-                                /* 不要开启多余的线程 */
-                                if (index >= threadgeshu) {
-                                    rs();
-                                    return;
-                                }
+                // await Promise.all(
+                //     myworker
+                //         .slice(0, threadgeshu)
+                //         .map(function (currentValue, index) {
+                //             const arr = myworker;
+                //             /* arr和myworker不是同一个对象了! */
+                //             //   console.log(arr === myworker);//false
+                //             return new Promise<void>((rs, rj) => {
+                //                 /* 不要开启多余的线程 */
+                //                 if (index >= threadgeshu) {
+                //                     rs();
+                //                     return;
+                //                 }
 
-                                // if (!arr[index]) {
-                                arr[index] =
-                                    arr[index] ||
-                                    //   new Worker("./service-worker-mythread1-decimal.worker.js");
+                //                 // if (!arr[index]) {
+                //                 arr[index] =
+                //                     arr[index] ||
+                //                     //   new Worker("./service-worker-mythread1-decimal.worker.js");
 
-                                    decimalworker();
-                                //   new Worker("service-worker-mythread1-decimal.js");
-                                //   &&
-                                //     console.log(
-                                //       "创建了新webworker线程",
-                                //       "service-worker-mythread1-Decimal.js" + "-" + index
-                                //     ));
-                                //   ,{name:"service-worker-mythread1-Decimal.js"+"-"+index}
+                //                     decimalworker();
+                //                 //   new Worker("service-worker-mythread1-decimal.js");
+                //                 //   &&
+                //                 //     console.log(
+                //                 //       "创建了新webworker线程",
+                //                 //       "service-worker-mythread1-Decimal.js" + "-" + index
+                //                 //     ));
+                //                 //   ,{name:"service-worker-mythread1-Decimal.js"+"-"+index}
 
-                                // }
-                                // arr[index].name ="service-worker-mythread1-Decimal.js"+ "-" + index;
-                                // console.log(arr[index].name )
-                                // arr[index] = new Worker("service-worker-mythread1-Decimal.js");
-                                arr[index].postMessage([
-                                    piwei,
-                                    threadgeshu,
-                                    index,
-                                ]);
-                                arr[index].onmessage = function (event: {
-                                    data: string[];
-                                }) {
-                                    console.log(
-                                        "主线程从副线程" +
-                                            (index + 1) +
-                                            "接收" +
-                                            "event.data\n",
-                                        event.data
-                                    );
-                                    // console.log(
-                                    //   "第一个参数",
-                                    //   event.data[0],
-                                    //   "\n第二个参数",
-                                    //   event.data[1]
-                                    // );
-                                    var p1 = new Decimal(event.data[0]);
-                                    p = Decimal.add(p, p1);
-                                    x = Math.max(x, parseInt(event.data[1]));
-                                    // finishflag[index] = 1;
-                                    //   threadfinish(btnele);
-                                    //   currentValue.terminate()
-                                    rs();
-                                };
-                                arr[index].onerror = (e: {
-                                    message: string;
-                                    filename: string;
-                                }) => {
-                                    // for (var key in e) {
-                                    //     console.error(key, e[key])
-                                    // }
-                                    // console.error(e.message)
-                                    //   console.error("Error:", e.message, e.filename);
-                                    //   arr[index].terminate();
-                                    //   $("#tp2-big").val("Error:" + e.message+" "+e.filename);
-                                    //   throw e;
-                                    rj(new Error(e.message + " " + e.filename));
-                                };
-                            });
-                            // console.log(arr[index]);
-                            // console.log(arr);
-                        })
-                );
+                //                 // }
+                //                 // arr[index].name ="service-worker-mythread1-Decimal.js"+ "-" + index;
+                //                 // console.log(arr[index].name )
+                //                 // arr[index] = new Worker("service-worker-mythread1-Decimal.js");
+                //                 arr[index].postMessage([
+                //                     piwei,
+                //                     threadgeshu,
+                //                     index,
+                //                 ]);
+                //                 arr[index].onmessage = function (event: {
+                //                     data: string[];
+                //                 }) {
+                //                     console.log(
+                //                         "主线程从副线程" +
+                //                             (index + 1) +
+                //                             "接收" +
+                //                             "event.data\n",
+                //                         event.data
+                //                     );
+                //                     // console.log(
+                //                     //   "第一个参数",
+                //                     //   event.data[0],
+                //                     //   "\n第二个参数",
+                //                     //   event.data[1]
+                //                     // );
+                //                     var p1 = new Decimal(event.data[0]);
+                //                     p = Decimal.add(p, p1);
+                //                     x = Math.max(x, parseInt(event.data[1]));
+                //                     // finishflag[index] = 1;
+                //                     //   threadfinish(btnele);
+                //                     //   currentValue.terminate()
+                //                     rs();
+                //                 };
+                //                 arr[index].onerror = (e: {
+                //                     message: string;
+                //                     filename: string;
+                //                 }) => {
+                //                     // for (var key in e) {
+                //                     //     console.error(key, e[key])
+                //                     // }
+                //                     // console.error(e.message)
+                //                     //   console.error("Error:", e.message, e.filename);
+                //                     //   arr[index].terminate();
+                //                     //   $("#tp2-big").val("Error:" + e.message+" "+e.filename);
+                //                     //   throw e;
+                //                     rj(new Error(e.message + " " + e.filename));
+                //                 };
+                //             });
+                //             // console.log(arr[index]);
+                //             // console.log(arr);
+                //         })
+                // );
                 // console.log("所有输出promise的返回值", 所有输出promise);
                 /* 所有线程已经完成,输出结果 */
+                const [p, x] = await decimalCalculatePi(
+                    createworker,
+                    piwei,
+                    threadgeshu
+                );
                 await new Promise<void>((res, rej) => {
                     requestAnimationFrame(() => {
                         (function (btnele) {
                             // debugger;
-                            console.timeEnd(testname);
+                            // console.timeEnd(testname);
                             mui(btnele).button("reset");
                             var endt = new Date().getTime();
                             var durt = (endt - strt) / 1000;
@@ -292,12 +305,10 @@ export default memo(function decimalcom() {
                                 piwei +
                                 "位\n";
                             setoutputtext2(
-                                "圆周率" +
-                                    piwei +
-                                    "位" +
-                                    p.toString()[0] +
-                                    //   "." +
-                                    p.toString().slice(1)
+                                "圆周率" + piwei + "位" + p
+                                // p.toString()[0] +
+                                // //   "." +
+                                // p.toString().slice(1)
                             );
                             //   console.log(outputtext1 + eventdata);
                             /* UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36

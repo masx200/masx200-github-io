@@ -39,7 +39,7 @@ export default memo(function Hieroglyphy() {
     const btnencodestring = useRef();
     async function encodeall(typename: string, btnele: EventTarget) {
         return new Promise<void>((res, rej) => {
-            console.time(typename);
+            // console.time(typename);
             console.log(typename);
             if (!myservice) {
                 myservice = hieroglyphyworker();
@@ -64,8 +64,8 @@ export default memo(function Hieroglyphy() {
                 console.log(output);
 
                 // $2("output").value = output;
-                console.timeEnd(typename);
-                console.time("requestAnimationFrame");
+                // console.timeEnd(typename);
+                // console.time("requestAnimationFrame");
                 //   jQuery("#output").val(output);
                 setoutputcode(output);
                 setstatstext(output.length + " chars");
@@ -80,7 +80,7 @@ export default memo(function Hieroglyphy() {
                 requestAnimationFrame(() => {
                     console.log("弹出消息提示");
                     tanchu弹出消息提示();
-                    console.timeEnd("requestAnimationFrame");
+                    // console.timeEnd("requestAnimationFrame");
                 });
                 mui(btnele).button("reset");
                 res();

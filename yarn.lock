@@ -1515,10 +1515,10 @@
   resolved "https://registry.nlark.com/@masx200/ie11-usual-polyfills/download/@masx200/ie11-usual-polyfills-1.0.5.tgz#fafa4ed3d422fc273234bd15d3d3249ed6761621"
   integrity sha1-+vpO09Qi/CcyNL0V09MkntZ2FiE=
 
-"@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder@^2.0.5":
-  version "2.0.5"
-  resolved "https://registry.nlark.com/@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder/download/@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder-2.0.5.tgz#99ddb8c5e90cdcdd446f3673ea96d51c87f9660f"
-  integrity sha1-md24xekM3N1EbzZz6pbVHIf5Zg8=
+"@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.nlark.com/@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder/download/@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder-2.0.6.tgz#0bced699711d2a7fb176749dbac75b4423b8cc9c"
+  integrity sha1-C87WmXEdKn+xdnSdusdbRCO4zJw=
 
 "@masx200/koa-stream-etag@^5.0.4":
   version "5.0.4"
@@ -1526,6 +1526,14 @@
   integrity sha1-faa55d869dALGlSA3QnaDNj3UMk=
   dependencies:
     etag "^1.8.1"
+
+"@masx200/pi-calculation-multithreading@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.nlark.com/@masx200/pi-calculation-multithreading/download/@masx200/pi-calculation-multithreading-1.0.2.tgz#069b055a1f60c0ff6da9746df629f1a806798ad6"
+  integrity sha1-BpsFWh9gwP9tqXRt9inxqAZ5itY=
+  dependencies:
+    big-integer "^1.6.48"
+    decimal.js "^10.3.0"
 
 "@masx200/search-hash-params-router@^2.1.0":
   version "2.1.0"
@@ -7411,10 +7419,10 @@ typescript@4.3.4:
   resolved "https://registry.nlark.com/typescript/download/typescript-4.3.4.tgz?cache=0&sync_timestamp=1629443921639&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftypescript%2Fdownload%2Ftypescript-4.3.4.tgz#3f85b986945bcf31071decdd96cf8bfa65f9dcbc"
   integrity sha1-P4W5hpRbzzEHHezdls+L+mX53Lw=
 
-typescript@^4.3.5:
-  version "4.3.5"
-  resolved "https://registry.nlark.com/typescript/download/typescript-4.3.5.tgz#4d1c37cc16e893973c45a06886b7113234f119f4"
-  integrity sha1-TRw3zBbok5c8RaBohrcRMjTxGfQ=
+typescript@^4.4.3:
+  version "4.4.3"
+  resolved "https://registry.nlark.com/typescript/download/typescript-4.4.3.tgz#bdc5407caa2b109efd4f82fe130656f977a29324"
+  integrity sha1-vcVAfKorEJ79T4L+EwZW+XeikyQ=
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"

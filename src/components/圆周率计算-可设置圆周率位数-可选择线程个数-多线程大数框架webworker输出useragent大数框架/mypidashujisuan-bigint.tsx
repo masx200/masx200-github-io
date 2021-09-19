@@ -1,34 +1,38 @@
 "use strict";
 // @ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
-import bigInt from "big-integer/BigInteger.js";
-import React, { useEffect, useRef, memo } from "react";
+import { bigintcleanup ,bigintCalculatePi} from "@masx200/pi-calculation-multithreading";
+import React, { memo, useEffect, useRef } from "react";
 import { useBindtext } from "../../huami/useBindtext";
 // @ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
 // @ts-ignore
-import bigintworker from "./worker-mythread1-bigint.worker.js";
+// import bigintworker from "./worker-mythread1-bigint.worker.js";
 
 // @ts-ignore
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
 }
+function createworker() {
+    return new Worker(
+        new URL("./worker-mythread1-bigint-worker.ts", import.meta.url)
+    );
+}
 
-// @ts-ignore
-var myworker = Array(16).fill();
 function 关闭所有worker() {
-    // @ts-ignore
-    myworker.forEach(function (currentValue, index) {
-        /* 可能worker的数量没有满,undefined的terminate函数不存在 */
-        try {
-            currentValue.terminate();
-            /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
-            myworker[index] = undefined;
-        } catch (error) {
-            /*  */
-        }
-    });
+    bigintcleanup();
+    // // @ts-ignore
+    // myworker.forEach(function (currentValue, index) {
+    //     /* 可能worker的数量没有满,undefined的terminate函数不存在 */
+    //     try {
+    //         currentValue.terminate();
+    //         /* 如果没有设为undefined,则下次再使用时不会开启新线程 */
+    //         myworker[index] = undefined;
+    //     } catch (error) {
+    //         /*  */
+    //     }
+    // });
 }
 function lashentextarea(eles: HTMLTextAreaElement) {
     // console.log(eles.outerHTML);
@@ -66,14 +70,14 @@ export default memo(function bigcom() {
             关闭所有worker();
         };
     }, []);
-    var p: bigInt.BigInteger,
-        piwei: string | number,
-        strt: number,
-        // finishflag: any[],
-        x = 0,
-        threadgeshu: string | number,
-        testname: string;
-    threadgeshu = 6;
+    // var p: bigInt.BigInteger,
+    //     piwei: string | number,
+    //     strt: number,
+    //     // finishflag: any[],
+    //     x = 0,
+    //     threadgeshu: string | number,
+    //     testname: string;
+    // threadgeshu = 6;
 
     const [inputtext1, setinputtext1, onchangeinputtext1] = useBindtext(
         navigator.hardwareConcurrency || 6
@@ -103,35 +107,35 @@ export default memo(function bigcom() {
 
     async function mystart(btnele: EventTarget) {
         mui(btnele).button("loading");
-        // @ts-ignore
-        bigInt.abs = (n) => bigInt(n).abs();
-        // @ts-ignore
-        bigInt.mul = (n, m) => bigInt(n).multiply(m);
-        // @ts-ignore
-        bigInt.div = (n, m) => bigInt(n).divide(m);
-        // @ts-ignore
-        bigInt.add = (n, m) => bigInt(n).add(m);
-        // @ts-ignore
-        bigInt().__proto__.cmp = bigInt().__proto__.compare;
-        // @ts-ignore
-        bigInt().__proto__.div = bigInt().__proto__.divide;
-        // @ts-ignore
-        bigInt().__proto__.mul = bigInt().__proto__.multiply;
-        // @ts-ignore
-        bigInt("90071992547409920").__proto__.cmp = bigInt(
-            "90071992547409920"
-            // @ts-ignore
-        ).__proto__.compare;
-        // @ts-ignore
-        bigInt("90071992547409920").__proto__.div = bigInt(
-            "90071992547409920"
-            // @ts-ignore
-        ).__proto__.divide;
-        // @ts-ignore
-        bigInt("90071992547409920").__proto__.mul = bigInt(
-            "90071992547409920"
-            // @ts-ignore
-        ).__proto__.multiply;
+        // // @ts-ignore
+        // bigInt.abs = (n) => bigInt(n).abs();
+        // // @ts-ignore
+        // bigInt.mul = (n, m) => bigInt(n).multiply(m);
+        // // @ts-ignore
+        // bigInt.div = (n, m) => bigInt(n).divide(m);
+        // // @ts-ignore
+        // bigInt.add = (n, m) => bigInt(n).add(m);
+        // // @ts-ignore
+        // bigInt().__proto__.cmp = bigInt().__proto__.compare;
+        // // @ts-ignore
+        // bigInt().__proto__.div = bigInt().__proto__.divide;
+        // // @ts-ignore
+        // bigInt().__proto__.mul = bigInt().__proto__.multiply;
+        // // @ts-ignore
+        // bigInt("90071992547409920").__proto__.cmp = bigInt(
+        //     "90071992547409920"
+        //     // @ts-ignore
+        // ).__proto__.compare;
+        // // @ts-ignore
+        // bigInt("90071992547409920").__proto__.div = bigInt(
+        //     "90071992547409920"
+        //     // @ts-ignore
+        // ).__proto__.divide;
+        // // @ts-ignore
+        // bigInt("90071992547409920").__proto__.mul = bigInt(
+        //     "90071992547409920"
+        //     // @ts-ignore
+        // ).__proto__.multiply;
         try {
             // var myinput1 = document.getElementById("thread-big");
             // var myinput2 = document.getElementById("pichangwei-big");
@@ -141,12 +145,12 @@ export default memo(function bigcom() {
                 inputtext2 >= 1 &&
                 inputtext2 <= 100
             ) {
-                piwei = 1000 * Math.floor(Number(inputtext2));
+                const piwei = 1000 * Math.floor(Number(inputtext2));
                 //   let inputtext2f = Math.floor(inputtext2);
                 let inputtext1f = Math.floor(Number(inputtext1));
-                threadgeshu = inputtext1f;
+                const threadgeshu = inputtext1f;
                 //   inputtext1 = threadgeshu;
-                testname =
+           let     testname =
                     "圆周率计算多线程" +
                     "-" +
                     "线程数为" +
@@ -179,10 +183,10 @@ export default memo(function bigcom() {
                 //   debugger;
                 //   console.log(outputtext1);
                 console.log(testname);
-                console.time(testname);
-                strt = new Date().getTime();
+                // console.time(testname);
+             let   strt = new Date().getTime();
                 // @ts-ignore
-                p = new bigInt(0);
+                // p = new bigInt(0);
                 //   myworker = [];
                 //   myworker.length = threadgeshu;
                 // finishflag = [];
@@ -202,96 +206,97 @@ export default memo(function bigcom() {
                 //   myworker.length = threadgeshu;
                 /* myworker.forEach(function(currentValue, index, arr) { */
                 /* 等待所有线程完成之后再下一步 */
-                await Promise.all(
-                    // @ts-ignore
-                    myworker
-                        .slice(0, threadgeshu)
-                        .map(function (currentValue, index) {
-                            const arr = myworker;
-                            /* arr和myworker不是同一个对象了! */
-                            //   console.log(arr === myworker);//false
-                            return new Promise<void>((rs, rj) => {
-                                /* 不要开启多余的线程 */
-                                if (index >= threadgeshu) {
-                                    rs();
-                                    return;
-                                }
+                // await Promise.all(
+                //     // @ts-ignore
+                //     myworker
+                //         .slice(0, threadgeshu)
+                //         .map(function (currentValue, index) {
+                //             const arr = myworker;
+                //             /* arr和myworker不是同一个对象了! */
+                //             //   console.log(arr === myworker);//false
+                //             return new Promise<void>((rs, rj) => {
+                //                 /* 不要开启多余的线程 */
+                //                 if (index >= threadgeshu) {
+                //                     rs();
+                //                     return;
+                //                 }
 
-                                // if (!arr[index]) {
-                                arr[index] =
-                                    arr[index] ||
-                                    //   new Worker("./service-worker-mythread1-bigint.worker.js");
+                //                 // if (!arr[index]) {
+                //                 arr[index] =
+                //                     arr[index] ||
+                //                     //   new Worker("./service-worker-mythread1-bigint.worker.js");
 
-                                    bigintworker();
-                                //   new Worker("service-worker-mythread1-bigint.js");
-                                //   &&
-                                //     console.log(
-                                //       "创建了新webworker线程",
-                                //       "service-worker-mythread1-bigint.js" + "-" + index
-                                //     ));
-                                //   ,{name:"service-worker-mythread1-bigint.js"+"-"+index}
+                //                     bigintworker();
+                //                 //   new Worker("service-worker-mythread1-bigint.js");
+                //                 //   &&
+                //                 //     console.log(
+                //                 //       "创建了新webworker线程",
+                //                 //       "service-worker-mythread1-bigint.js" + "-" + index
+                //                 //     ));
+                //                 //   ,{name:"service-worker-mythread1-bigint.js"+"-"+index}
 
-                                // }
-                                // arr[index].name ="service-worker-mythread1-bigint.js"+ "-" + index;
-                                // console.log(arr[index].name )
-                                // arr[index] = new Worker("service-worker-mythread1-bigint.js");
-                                arr[index].postMessage([
-                                    piwei,
-                                    threadgeshu,
-                                    index,
-                                ]);
-                                arr[index].onmessage = function (event: {
-                                    data: string[];
-                                }) {
-                                    console.log(
-                                        "主线程从副线程" +
-                                            (index + 1) +
-                                            "接收" +
-                                            "event.data\n",
-                                        event.data
-                                    );
-                                    // console.log(
-                                    //   "第一个参数",
-                                    //   event.data[0],
-                                    //   "\n第二个参数",
-                                    //   event.data[1]
-                                    // );
-                                    // @ts-ignore
-                                    var p1 = new bigInt(event.data[0]);
-                                    // @ts-ignore
-                                    p = bigInt.add(p, p1);
-                                    x = Math.max(x, parseInt(event.data[1]));
-                                    //  finishflag[index] = 1;
-                                    //   threadfinish(btnele);
-                                    //   currentValue.terminate()
-                                    rs();
-                                };
-                                arr[index].onerror = (e: {
-                                    message: string;
-                                    filename: string;
-                                }) => {
-                                    // for (var key in e) {
-                                    //     console.error(key, e[key])
-                                    // }
-                                    // console.error(e.message)
-                                    //   console.error("Error:", e.message, e.filename);
-                                    //   arr[index].terminate();
-                                    //   $("#tp2-big").val("Error:" + e.message+" "+e.filename);
-                                    //   throw e;
-                                    rj(new Error(e.message + " " + e.filename));
-                                };
-                            });
-                            // console.log(arr[index]);
-                            // console.log(arr);
-                        })
-                );
+                //                 // }
+                //                 // arr[index].name ="service-worker-mythread1-bigint.js"+ "-" + index;
+                //                 // console.log(arr[index].name )
+                //                 // arr[index] = new Worker("service-worker-mythread1-bigint.js");
+                //                 arr[index].postMessage([
+                //                     piwei,
+                //                     threadgeshu,
+                //                     index,
+                //                 ]);
+                //                 arr[index].onmessage = function (event: {
+                //                     data: string[];
+                //                 }) {
+                //                     console.log(
+                //                         "主线程从副线程" +
+                //                             (index + 1) +
+                //                             "接收" +
+                //                             "event.data\n",
+                //                         event.data
+                //                     );
+                //                     // console.log(
+                //                     //   "第一个参数",
+                //                     //   event.data[0],
+                //                     //   "\n第二个参数",
+                //                     //   event.data[1]
+                //                     // );
+                //                     // @ts-ignore
+                //                     var p1 = new bigInt(event.data[0]);
+                //                     // @ts-ignore
+                //                     p = bigInt.add(p, p1);
+                //                     x = Math.max(x, parseInt(event.data[1]));
+                //                     //  finishflag[index] = 1;
+                //                     //   threadfinish(btnele);
+                //                     //   currentValue.terminate()
+                //                     rs();
+                //                 };
+                //                 arr[index].onerror = (e: {
+                //                     message: string;
+                //                     filename: string;
+                //                 }) => {
+                //                     // for (var key in e) {
+                //                     //     console.error(key, e[key])
+                //                     // }
+                //                     // console.error(e.message)
+                //                     //   console.error("Error:", e.message, e.filename);
+                //                     //   arr[index].terminate();
+                //                     //   $("#tp2-big").val("Error:" + e.message+" "+e.filename);
+                //                     //   throw e;
+                //                     rj(new Error(e.message + " " + e.filename));
+                //                 };
+                //             });
+                //             // console.log(arr[index]);
+                //             // console.log(arr);
+                //         })
+                // );
                 // console.log("所有输出promise的返回值", 所有输出promise);
                 /* 所有线程已经完成,输出结果 */
+                const [p,x]=await bigintCalculatePi(createworker,piwei,threadgeshu)
                 await new Promise<void>((res, rej) => {
                     requestAnimationFrame(() => {
                         (function (btnele) {
                             // debugger;
-                            console.timeEnd(testname);
+                            // console.timeEnd(testname);
                             mui(btnele).button("reset");
                             var endt = new Date().getTime();
                             var durt = (endt - strt) / 1000;
@@ -308,9 +313,7 @@ export default memo(function bigcom() {
                                 "圆周率" +
                                     piwei +
                                     "位" +
-                                    p.toString()[0] +
-                                    "." +
-                                    p.toString().slice(1)
+                                 p
                             );
                             //   console.log(outputtext1 + eventdata);
                             /* UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36

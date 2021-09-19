@@ -44,7 +44,7 @@ export default memo(function Jsfuck() {
             return;
         }
         return new Promise<void>((res, rej) => {
-            console.time("encodescript");
+            // console.time("encodescript");
             console.log("encodescript");
             mui(button).button("loading");
 
@@ -70,8 +70,8 @@ export default memo(function Jsfuck() {
                 console.log("主线程从副线程" + "接收" + "event.data\n");
                 console.log(output);
                 // $2("output").value = output;
-                console.timeEnd("encodescript");
-                console.time("requestAnimationFrame");
+                // console.timeEnd("encodescript");
+                // console.time("requestAnimationFrame");
                 setoutputcode(output);
                 //   jQuery("#output").val(output);
                 setstatstext(output.length + " chars");
@@ -83,7 +83,7 @@ export default memo(function Jsfuck() {
                 requestAnimationFrame(() => {
                     console.log("弹出消息提示");
                     tanchu弹出消息提示();
-                    console.timeEnd("requestAnimationFrame");
+                    // console.timeEnd("requestAnimationFrame");
 
                     res();
                 });
