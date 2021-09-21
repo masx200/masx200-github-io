@@ -127,9 +127,11 @@
     "resolutions": {
         "glob-parent": "5.1.2",
         "url-parse": "1.5.3",
-        "object-path": "0.11.7",
+        "object-path": "0.11.8",
         "webpack": "5.47.0",
-        "ansi-html": "npm:ansi-html-community"
+        "ansi-html": "npm:ansi-html-community",
+        "nth-check": "2.0.1",
+        "ansi-regex": "6.0.1"
     },
     "devDependencies": {
         "@masx200/pi-calculation-multithreading": "^1.0.2",
