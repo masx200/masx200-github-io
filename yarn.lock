@@ -2430,7 +2430,12 @@ ansi-html@^0.0.7, "ansi-html@npm:ansi-html-community":
   resolved "https://registry.nlark.com/ansi-html-community/download/ansi-html-community-0.0.8.tgz#69fbc4d6ccbe383f9736934ae34c3f8290f1bf41"
   integrity sha1-afvE1sy+OD+XNpNK40w/gpDxv0E=
 
-ansi-regex@6.0.1, ansi-regex@^2.0.0, ansi-regex@^6.0.0:
+ansi-regex@^2.0.0:
+  version "2.1.1"
+  resolved "https://registry.nlark.com/ansi-regex/download/ansi-regex-2.1.1.tgz?cache=0&sync_timestamp=1631634988487&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fansi-regex%2Fdownload%2Fansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
+  integrity sha1-w7M6te42DYbg5ijwRorn7yfWVN8=
+
+ansi-regex@^6.0.1:
   version "6.0.1"
   resolved "https://registry.nlark.com/ansi-regex/download/ansi-regex-6.0.1.tgz?cache=0&sync_timestamp=1631634988487&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fansi-regex%2Fdownload%2Fansi-regex-6.0.1.tgz#3183e38fae9a65d7cb5e53945cd5897d0260a06a"
   integrity sha1-MYPjj66aZdfLXlOUXNWJfQJgoGo=
@@ -4323,7 +4328,7 @@ html-minifier-terser@^5.0.1:
     relateurl "^0.2.7"
     terser "^4.6.3"
 
-html-webpack-plugin@^5.3.1:
+html-webpack-plugin@5.3.2, html-webpack-plugin@^5.3.1, html-webpack-plugin@^5.3.2:
   version "5.3.2"
   resolved "https://registry.nlark.com/html-webpack-plugin/download/html-webpack-plugin-5.3.2.tgz#7b04bf80b1f6fe84a6d3f66c8b79d64739321b08"
   integrity sha1-ewS/gLH2/oSm0/Zsi3nWRzkyGwg=
@@ -7116,17 +7121,17 @@ stringify-object@^3.3.0:
 
 strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
-  resolved "https://registry.nlark.com/strip-ansi/download/strip-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
+  resolved "https://registry.nlark.com/strip-ansi/download/strip-ansi-3.0.1.tgz?cache=0&sync_timestamp=1631350330859&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fstrip-ansi%2Fdownload%2Fstrip-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
   integrity sha1-ajhfuIU9lS1f8F0Oiq+UJ43GPc8=
   dependencies:
     ansi-regex "^2.0.0"
 
 strip-ansi@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.nlark.com/strip-ansi/download/strip-ansi-7.0.0.tgz#1dc49b980c3a4100366617adac59327eefdefcb0"
-  integrity sha1-HcSbmAw6QQA2ZhetrFkyfu/e/LA=
+  version "7.0.1"
+  resolved "https://registry.nlark.com/strip-ansi/download/strip-ansi-7.0.1.tgz?cache=0&sync_timestamp=1631350330859&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fstrip-ansi%2Fdownload%2Fstrip-ansi-7.0.1.tgz#61740a08ce36b61e50e65653f07060d000975fb2"
+  integrity sha1-YXQKCM42th5Q5lZT8HBg0ACXX7I=
   dependencies:
-    ansi-regex "^6.0.0"
+    ansi-regex "^6.0.1"
 
 strip-comments@^2.0.1:
   version "2.0.1"

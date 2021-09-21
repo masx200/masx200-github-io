@@ -27,5 +27,14 @@ module.exports = (env, argv) => {
             lazyCompilation: { entries: false, imports: true },
         };
     }
+    config.optimization.splitChunks.cacheGroups = {
+        ...config.optimization.splitChunks.cacheGroups,
+
+        commons: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendors",
+            chunks: "initial",
+        },
+    };
     return webpackconfig;
 };
