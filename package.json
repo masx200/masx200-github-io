@@ -96,7 +96,7 @@
         "marked": "^4.0.10",
         "mini-css-extract-plugin": "^1.6.0",
         "minimist": "^1.2.5",
-        "node-fetch": "^2.6.1",
+        "node-fetch": "^3.1.1",
         "optimize-css-assets-webpack-plugin": "^6.0.0",
         "postcss": "^8.3.6",
         "postcss-preset-env": "^6.7.0",
