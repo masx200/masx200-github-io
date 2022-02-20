@@ -1,5 +1,5 @@
 {
-    "version": "5.2.3",
+    "version": "5.2.4",
     "scripts": {
         "precommit": "npm run format ||node -v",
         "start": "webpack-react-vue-spa-awesome-config start --port=11111 --config=./webpack.config.js",
@@ -128,7 +128,7 @@
         "yargs-parser": "20.2.7"
     },
     "resolutions": {
-"postcss": "^8.4.6",
+        "postcss": "^8.4.6",
         "nanoid": "3.3.1",
         "node-forge": "1.2.1",
         "follow-redirects": "1.14.9",
