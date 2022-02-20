@@ -1,5 +1,5 @@
 {
-    "version": "5.2.2",
+    "version": "5.2.3",
     "scripts": {
         "precommit": "npm run format ||node -v",
         "start": "webpack-react-vue-spa-awesome-config start --port=11111 --config=./webpack.config.js",
@@ -126,7 +126,7 @@
     },
     "resolutions": {
         "glob-parent": "5.1.2",
-        "url-parse": "1.5.3",
+        "url-parse": "1.5.8",
         "object-path": "0.11.8",
         "webpack": "5.47.0",
         "ansi-html": "npm:ansi-html-community",
