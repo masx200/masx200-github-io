@@ -1,6 +1,6 @@
 {
     "packageManager": "yarn@3.2.0",
-    "version": "5.2.6",
+    "version": "5.2.7",
     "scripts": {
         "precommit": "npm run format ||node -v",
         "start": "webpack-react-vue-spa-awesome-config start --port=11111 --config=./webpack.config.js",
@@ -97,7 +97,6 @@
         "lodash": "^4.17.21",
         "marked": "^4.0.10",
         "mini-css-extract-plugin": "^1.6.0",
-        "minimist": "^1.2.5",
         "node-fetch": "3.2.0",
         "optimize-css-assets-webpack-plugin": "^6.0.0",
         "postcss": "^8.3.6",
@@ -127,6 +126,7 @@
         "yargs-parser": "20.2.7"
     },
     "resolutions": {
+        "minimist": "^1.2.6",
         "nanoid": "3.3.1",
         "node-forge": "1.2.1",
         "follow-redirects": "1.14.9",
