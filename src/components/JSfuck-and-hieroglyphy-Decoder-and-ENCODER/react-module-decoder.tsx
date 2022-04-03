@@ -136,7 +136,7 @@ export default memo(function Decoder() {
                 className="btn btn-outline-primary btn-lg"
                 id="run"
                 onClick={() => {
-                    Function(`return ${outputcode}`)();
+                    Function(` ${outputcode}`)();
                 }}
             >
                 Run This

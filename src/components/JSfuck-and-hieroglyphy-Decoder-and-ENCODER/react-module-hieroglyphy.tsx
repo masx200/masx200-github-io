@@ -244,6 +244,6 @@ export default memo(function Hieroglyphy() {
     function runthiscode() {
         var codestring = outputcode;
         /* var value = */
-        Function(`return ${codestring}`)();
+        Function(` ${codestring}`)();
     }
 });
