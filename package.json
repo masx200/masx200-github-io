@@ -53,7 +53,7 @@
         "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder": "^2.0.9",
         "@masx200/koa-stream-etag": "^5.0.4",
         "@masx200/search-hash-params-router": "^3.0.0",
-        "@masx200/webpack-react-vue-spa-awesome-config": "^4.3.9",
+        "@masx200/webpack-react-vue-spa-awesome-config": "^4.4.1",
         "@types/dompurify": "^2.2.3",
         "@types/jquery": "^3.5.5",
         "@types/jsdom": "^16.2.13",
