@@ -1,7 +1,7 @@
 "use strict";
 import createDOMPurify from "dompurify";
 import jsdom from "jsdom";
-import marked from "marked";
+import marked, { Renderer } from "marked";
 // @ts-ignore
 import hljs from "../../assetsjs/highlight.min.js";
 import { cachepromise } from "../../cachepromise";
@@ -9,7 +9,7 @@ import { fetchsource } from "../../fetchsource";
 const DOMPurify = createpurify();
 // cachepromise
 // console.log(hljs)
-const { Renderer } = marked;
+// const { Renderer } = marked;
 class myrenderer extends Renderer {
     image(href: string | null, title: string | null, text: string): string {
         // console.log(href, title, text);
