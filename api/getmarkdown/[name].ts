@@ -6,11 +6,7 @@ import cors from "koa-cors";
 // import { addfetch } from "../../src/addfetch";
 import { getrenderedmarkdown } from "../../src/components/markdown-react/getrenderedmarkdown";
 import markdownurls from "../../src/utils/markdownurls";
-// if (typeof fetch !== "function") {
-//     addfetch();
-// }
-import undici from "undici";
-const { fetch } = undici;
+import fetch from 'cross-fetch';
 const app = new koa();
 app.use(etag({}));
 app.use(cors({ origin: "*" }));
