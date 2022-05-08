@@ -2,5 +2,5 @@ import { getGlobal } from "./getGlobal";
 
 export function addfetch() {
     var globalthis = getGlobal();
-    globalthis.fetch = require("undici").fetch;
+    globalthis.fetch = require("undici").fetch??require("undici").default.fetch;
 }
