@@ -9,7 +9,8 @@ import markdownurls from "../../src/utils/markdownurls";
 // if (typeof fetch !== "function") {
 //     addfetch();
 // }
-import { fetch } from "undici";
+import undici from "undici";
+const { fetch } = undici;
 const app = new koa();
 app.use(etag({}));
 app.use(cors({ origin: "*" }));
