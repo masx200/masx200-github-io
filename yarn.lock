@@ -1910,7 +1910,7 @@ __metadata:
     "@types/react": ^17.0.6
     "@types/react-dom": ^17.0.5
     "@vercel/build-utils": ^2.16.0
-    "@vercel/node": ^1.12.1
+    "@vercel/node": ^1.15.0
     "@vue/reactivity": ^3.1.5
     "@vue/runtime-core": ^3.1.5
     acorn: ^8.2.4
@@ -2821,14 +2821,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/node@npm:^1.12.1":
-  version: 1.13.0
-  resolution: "@vercel/node@npm:1.13.0"
+"@vercel/node-bridge@npm:2.2.1":
+  version: 2.2.1
+  resolution: "@vercel/node-bridge@npm:2.2.1"
+  checksum: f7301a1d4f9405bfc5863c18379aa97e415ebd14dbedd75a4435ba41026756b879082c60d61b6d7ce36d66acb645f1733dc190a44dc16a1cc7494050ae51f606
+  languageName: node
+  linkType: hard
+
+"@vercel/node@npm:^1.15.0":
+  version: 1.15.0
+  resolution: "@vercel/node@npm:1.15.0"
   dependencies:
     "@types/node": "*"
+    "@vercel/node-bridge": 2.2.1
     ts-node: 8.9.1
     typescript: 4.3.4
-  checksum: 54ee2f1b51f658d241b049e5c698d8fb1f70f9740bbbb0e4f83c44c11f5538eabcfdde767f6b1b2311a31c8242b1e1904bf2a2800f258c98faf013bad4425fe0
+  checksum: 41cc34953e29c1c4fb3ec265a183132b6593b503224556b6c0d5c87cfdf2be6cd6a640ed36512d97bec62a52f1048c68d3c8e5f292e16c70256079d17a366157
   languageName: node
   linkType: hard
 
