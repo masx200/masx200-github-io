@@ -1909,6 +1909,7 @@ __metadata:
     "@types/node": 15.6.1
     "@types/react": ^17.0.6
     "@types/react-dom": ^17.0.5
+    "@vercel/build-utils": ^2.16.0
     "@vercel/node": ^1.12.1
     "@vue/reactivity": ^3.1.5
     "@vue/runtime-core": ^3.1.5
@@ -2810,6 +2811,13 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 94e949ef66909334eb8d77079a28ce8fcea8780295eadab1bccdbb85adc0534d96d9a61910a80720769c6019e7bfaba90cea6f95f58e93de135b766074aa53cb
+  languageName: node
+  linkType: hard
+
+"@vercel/build-utils@npm:^2.16.0":
+  version: 2.16.0
+  resolution: "@vercel/build-utils@npm:2.16.0"
+  checksum: eb2ebfe6820796462eb830d10c1173f26271af11e04d36efc465e9200f6432b0e2c0cb997d10c3cc5f5eac92ae957d88a72eb43784e5450b6f3e8e7bae58f245
   languageName: node
   linkType: hard
 
