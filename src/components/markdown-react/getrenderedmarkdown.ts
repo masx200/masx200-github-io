@@ -1,28 +1,17 @@
 "use strict";
-import createDOMPurify from "dompurify";
-import jsdom from "jsdom";
-import marked, { Renderer } from "marked";
+import marked from "marked";
 // @ts-ignore
 import hljs from "../../assetsjs/highlight.min.js";
 import { cachepromise } from "../../cachepromise";
-import { fetchsource } from "../../fetchsource";
-const DOMPurify = createpurify();
-// cachepromise
-// console.log(hljs)
-// const { Renderer } = marked;
-class myrenderer extends Renderer {
-    image(href: string | null, title: string | null, text: string): string {
-        // console.log(href, title, text);
-        var result = super.image(href, title, text);
-        // console.log(result);
-        if (result.startsWith("<img src=")) {
-            result = result.replace("<img src=", "<img loading='lazy' src=");
-        }
-        return result;
-    }
-}
-export const getrenderedmarkdown = cachepromise(async function (src: string) {
-    const text = await fetchsource(src);
+
+import { DOMPurify } from "./DOMPurify";
+import { fetchtext } from "./fetchtext";
+import { myrenderer } from "./myrenderer";
+export const getrenderedmarkdown = cachepromise(async function (
+    src: string,
+    fetch: typeof globalThis.fetch
+) {
+    const text = await fetchtext(src, fetch);
     const dirty = marked(text, {
         renderer: new myrenderer(),
         baseUrl: src,
@@ -39,11 +28,3 @@ export const getrenderedmarkdown = cachepromise(async function (src: string) {
     const clean = DOMPurify.sanitize(dirty);
     return clean;
 });
-function createpurify() {
-    const { JSDOM } = jsdom;
-    const { window } = new JSDOM(``);
-    //serversidedompurify
-    //@ts-ignore
-    const DOMPurify = createDOMPurify(window);
-    return DOMPurify;
-}

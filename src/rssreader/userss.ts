@@ -2,7 +2,20 @@ import { usereactive } from "../components/markdown-react/usereactive";
 import { rssstore } from "./rssstore";
 import { readonly } from "@vue/reactivity";
 import { getrssandsave } from "./getrssandsave";
-export function userss(src: string) {
+export function userss(src: string): {
+    data:
+        | {
+              readonly title: string;
+              readonly content: readonly {
+                  readonly link: string;
+                  readonly title: string;
+                  readonly description: string;
+              }[];
+              readonly description: string;
+          }
+        | undefined;
+    error: any;
+} {
     const { data, error } = readonly(usereactive(getrssresult(src), [src]));
     if (!data && !error) {
         getrssandsave(src);
@@ -10,7 +23,7 @@ export function userss(src: string) {
     return { data, error };
 }
 
-type RSSDATA = {
+export type RSSDATA = {
     title: string;
     content: {
         link: string;
