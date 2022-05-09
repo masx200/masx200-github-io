@@ -1,5 +1,5 @@
 "use strict";
-import marked from "marked";
+import {parse} from "marked";
 // @ts-ignore
 import hljs from "../../assetsjs/highlight.min.js";
 import { cachepromise } from "../../cachepromise";
@@ -12,7 +12,7 @@ export const getrenderedmarkdown = cachepromise(async function (
     fetch: typeof globalThis.fetch
 ) {
     const text = await fetchtext(src, fetch);
-    const dirty = marked(text, {
+    const dirty = parse(text, {
         renderer: new myrenderer(),
         baseUrl: src,
         highlight(code, lang) {
