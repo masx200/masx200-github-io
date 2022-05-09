@@ -1,5 +1,5 @@
 "use strict";
-import {parse} from "marked";
+import { parse } from "marked";
 // @ts-ignore
 import hljs from "../../assetsjs/highlight.min.js";
 import { cachepromise } from "../../cachepromise";
