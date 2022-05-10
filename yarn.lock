@@ -1867,12 +1867,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@masx200/koa-stream-etag@npm:^5.0.5":
-  version: 5.0.5
-  resolution: "@masx200/koa-stream-etag@npm:5.0.5"
+"@masx200/koa-stream-etag@npm:5.0.6":
+  version: 5.0.6
+  resolution: "@masx200/koa-stream-etag@npm:5.0.6"
   dependencies:
     etag: ^1.8.1
-  checksum: 94cfb48c2d7b91542bfe47dd98fadbed891ef115d2daa1ac253ea715b6d44aa60fe1c49eea406c0ea7609b742630fa781031ae826c9bdbc3aca4dfb81b814e32
+  checksum: e5a07b0302cf702072b7943dc1429484ab32414146cd2a2e0bf6cdda19c4367ee937e50a261241c203f5601ccce8a7f91eb421185a28b74c838fd77026e24c2c
   languageName: node
   linkType: hard
 
@@ -1896,11 +1896,12 @@ __metadata:
     "@masx200/event-emitter-target": ^2.0.1
     "@masx200/ie11-usual-polyfills": ^1.0.5
     "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder": ^2.0.9
-    "@masx200/koa-stream-etag": ^5.0.5
+    "@masx200/koa-stream-etag": 5.0.6
     "@masx200/pi-calculation-multithreading": ^1.0.3
     "@masx200/search-hash-params-router": ^3.0.0
     "@masx200/webpack-react-vue-spa-awesome-config": ^4.4.1
     "@types/dompurify": ^2.2.3
+    "@types/etag": ^1.8.1
     "@types/jquery": ^3.5.5
     "@types/jsdom": ^16.2.13
     "@types/koa": ^2.13.4
@@ -2359,6 +2360,15 @@ __metadata:
   version: 0.0.50
   resolution: "@types/estree@npm:0.0.50"
   checksum: 9a2b6a4a8c117f34d08fbda5e8f69b1dfb109f7d149b60b00fd7a9fb6ac545c078bc590aa4ec2f0a256d680cf72c88b3b28b60c326ee38a7bc8ee1ee95624922
+  languageName: node
+  linkType: hard
+
+"@types/etag@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "@types/etag@npm:1.8.1"
+  dependencies:
+    "@types/node": "*"
+  checksum: 93ae9d2eeeee484b9a9edc46581c6d9f32163b61f3f9a8c3df3a9ef903d1efc9c8e5b9146b10c19f3d1f23d40419426cb85eea20cf42cfaa1af3abda2d405cee
   languageName: node
   linkType: hard
 
