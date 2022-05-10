@@ -7,7 +7,9 @@ import cors from "koa-cors";
 import { getrss } from "../../src/rssreader/getrss";
 import rssfeedxml from "../../src/rssreader/rssfeedxml";
 import fetch from "cross-fetch";
+import conditional from "koa-conditional-get";
 const app = new koa();
+app.use(conditional());
 app.use(etag({}));
 app.use(cors({ origin: "*" }));
 app.use(async (ctx, next) => {
