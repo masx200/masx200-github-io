@@ -1867,12 +1867,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@masx200/koa-stream-etag@npm:^5.0.4":
-  version: 5.0.4
-  resolution: "@masx200/koa-stream-etag@npm:5.0.4"
+"@masx200/koa-stream-etag@npm:^5.0.5":
+  version: 5.0.5
+  resolution: "@masx200/koa-stream-etag@npm:5.0.5"
   dependencies:
     etag: ^1.8.1
-  checksum: 8b4e030718f5f490fa0b634a7aca81c89e6caed573a800cd0aef0e844b2034a37c65d03d4307dd04388b703be2483803db2b3b199196b1e932928cbedb7a1a84
+  checksum: 94cfb48c2d7b91542bfe47dd98fadbed891ef115d2daa1ac253ea715b6d44aa60fe1c49eea406c0ea7609b742630fa781031ae826c9bdbc3aca4dfb81b814e32
   languageName: node
   linkType: hard
 
@@ -1896,7 +1896,7 @@ __metadata:
     "@masx200/event-emitter-target": ^2.0.1
     "@masx200/ie11-usual-polyfills": ^1.0.5
     "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder": ^2.0.9
-    "@masx200/koa-stream-etag": ^5.0.4
+    "@masx200/koa-stream-etag": ^5.0.5
     "@masx200/pi-calculation-multithreading": ^1.0.3
     "@masx200/search-hash-params-router": ^3.0.0
     "@masx200/webpack-react-vue-spa-awesome-config": ^4.4.1
