@@ -76,7 +76,7 @@
         "babel-plugin-transform-runtime": "^6.23.0",
         "babel-preset-react-app": "^10.0.0",
         "banner-content-loader": "^0.1.1",
-        "big-integer": "^1.6.48",
+        "big-integer": "^1.6.51",
         "browserslist": "^4.16.6",
         "caniuse-lite": "^1.0.30001319",
         "clean-webpack-plugin": "^4.0.0-alpha.0",
