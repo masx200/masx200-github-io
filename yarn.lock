@@ -1846,10 +1846,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@masx200/event-emitter-target@npm:^2.0.0, @masx200/event-emitter-target@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@masx200/event-emitter-target@npm:2.0.1"
-  checksum: 28014187a45baf15e21d8c892524c09aac5a76f492247bbb5750d9743495c6d4528ea9e4035fe2d3f2f2f30b20fbc8ec96f82055de8e96a7bfb2d9616b55d958
+"@masx200/event-emitter-target@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "@masx200/event-emitter-target@npm:2.0.4"
+  dependencies:
+    regenerator-runtime: ^0.13.9
+  checksum: e4d688b82a014f206ad352979cb70af97de80b2a469aa8dcc3a09045fe07d577571a42bf8862680bc955638a3855d930bf15d6ff754a4357a3920598ba3ddb58
   languageName: node
   linkType: hard
 
@@ -1867,12 +1869,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@masx200/koa-stream-etag@npm:5.0.6":
-  version: 5.0.6
-  resolution: "@masx200/koa-stream-etag@npm:5.0.6"
+"@masx200/koa-stream-etag@npm:^5.0.7":
+  version: 5.0.7
+  resolution: "@masx200/koa-stream-etag@npm:5.0.7"
   dependencies:
     etag: ^1.8.1
-  checksum: e5a07b0302cf702072b7943dc1429484ab32414146cd2a2e0bf6cdda19c4367ee937e50a261241c203f5601ccce8a7f91eb421185a28b74c838fd77026e24c2c
+  checksum: f1ee982497affcf76fd1e6c0b3f788cafcc1798d8b88d96ebfebf48fba692bd368f2ed7f7e0e21174b1f56fd3a0170ecc6c6c1144597209a803fc073428d83f2
   languageName: node
   linkType: hard
 
@@ -1893,12 +1895,12 @@ __metadata:
     "@babel/preset-env": ^7.15.0
     "@babel/preset-react": ^7.14.5
     "@highlightjs/cdn-assets": ^11.1.0
-    "@masx200/event-emitter-target": ^2.0.1
+    "@masx200/event-emitter-target": ^2.0.4
     "@masx200/ie11-usual-polyfills": ^1.0.5
     "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder": ^2.0.9
-    "@masx200/koa-stream-etag": 5.0.6
+    "@masx200/koa-stream-etag": ^5.0.7
     "@masx200/pi-calculation-multithreading": ^1.0.3
-    "@masx200/search-hash-params-router": ^3.0.0
+    "@masx200/search-hash-params-router": ^3.0.2
     "@masx200/webpack-react-vue-spa-awesome-config": ^4.4.1
     "@types/dompurify": ^2.2.3
     "@types/etag": ^1.8.1
@@ -1990,18 +1992,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@masx200/search-hash-params-router@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "@masx200/search-hash-params-router@npm:3.0.0"
+"@masx200/search-hash-params-router@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@masx200/search-hash-params-router@npm:3.0.2"
   dependencies:
-    "@masx200/event-emitter-target": ^2.0.0
+    "@masx200/event-emitter-target": ^2.0.4
     lodash: ^4.17.21
   peerDependencies:
     "@types/react": ^17.0.13
     "@types/react-dom": ^17.0.9
     "@vue/runtime-core": ^3.1.4
     "@vue/runtime-dom": ^3.1.4
-  checksum: 3e5dc3315ec2a9c7b169cd8bb68fad1fd84c1299c084a30798900068d123815e20444638433c6896f4f63d38656540d9b63751abb389941874176eddbcf3a372
+  checksum: 29cca2028e1b2ef95b464f565a7858adf0a19fc3fcaedc0ae6c18e5d8e2fae50038af8bb5a3183fcf296b5428713b55f0e0d46004e93a1261ac572999ff37883
   languageName: node
   linkType: hard
 
@@ -9390,7 +9392,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.13.4, regenerator-runtime@npm:^0.13.7":
+"regenerator-runtime@npm:^0.13.4, regenerator-runtime@npm:^0.13.7, regenerator-runtime@npm:^0.13.9":
   version: 0.13.9
   resolution: "regenerator-runtime@npm:0.13.9"
   checksum: 65ed455fe5afd799e2897baf691ca21c2772e1a969d19bb0c4695757c2d96249eb74ee3553ea34a91062b2a676beedf630b4c1551cc6299afb937be1426ec55e
