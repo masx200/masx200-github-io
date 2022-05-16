@@ -1923,7 +1923,7 @@ __metadata:
     babel-plugin-transform-runtime: ^6.23.0
     babel-preset-react-app: ^10.0.0
     banner-content-loader: ^0.1.1
-    big-integer: ^1.6.48
+    big-integer: ^1.6.51
     browserslist: ^4.16.6
     caniuse-lite: ^1.0.30001319
     clean-webpack-plugin: ^4.0.0-alpha.0
@@ -1931,7 +1931,7 @@ __metadata:
     cross-fetch: ^3.1.5
     css-loader: ^5.2.6
     cssnano: ^5.0.7
-    decimal.js: ^10.3.0
+    decimal.js: ^10.3.1
     dompurify: ^2.3.0
     fast-xml-parser: ^3.19.0
     file-loader: ^6.2.0
@@ -3670,6 +3670,13 @@ __metadata:
   version: 1.6.48
   resolution: "big-integer@npm:1.6.48"
   checksum: fc43ae12ebf2b2a58d6da92ef7069666d131fa993be4020cb1a11e384f6d8e7a69dced7f69d27b65a6aff2e6abb548fb823303bde138eab60b556100c17761f3
+  languageName: node
+  linkType: hard
+
+"big-integer@npm:^1.6.51":
+  version: 1.6.51
+  resolution: "big-integer@npm:1.6.51"
+  checksum: 3d444173d1b2e20747e2c175568bedeebd8315b0637ea95d75fd27830d3b8e8ba36c6af40374f36bdaea7b5de376dcada1b07587cb2a79a928fccdb6e6e3c518
   languageName: node
   linkType: hard
 
