@@ -63,7 +63,7 @@
         "@types/koa-cors": "^0.0.2",
         "@types/marked": "^2.0.3",
         "@types/node": "15.6.1",
-        "@types/react": "^17.0.6",
+        "@types/react": "^17.0.45",
         "@types/react-dom": "^17.0.5",
         "@vercel/build-utils": "^2.16.0",
         "@vue/reactivity": "^3.1.5",
