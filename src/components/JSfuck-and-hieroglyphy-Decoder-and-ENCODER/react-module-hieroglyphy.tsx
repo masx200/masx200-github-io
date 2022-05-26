@@ -108,13 +108,13 @@ export default memo(function Hieroglyphy() {
         "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')"
     );
     const inputonchange = useCallback(
-        (e) => {
+        (e: { target: { value: React.SetStateAction<string> } }) => {
             setinputcode(e.target.value);
         },
         [inputcode]
     );
     const outputonchange = useCallback(
-        (e) => {
+        (e: { target: { value: React.SetStateAction<string> } }) => {
             setoutputcode(e.target.value);
         },
         [outputcode]
