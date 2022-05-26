@@ -40,13 +40,13 @@ export default memo(function Decoder() {
     var [outputcode, setoutputcode] = useState("");
 
     const inputonchange = useCallback(
-        (e) => {
+        (e: { target: { value: React.SetStateAction<string> } }) => {
             setinputcode(e.target.value);
         },
         [inputcode]
     );
     const outputonchange = useCallback(
-        (e) => {
+        (e: { target: { value: React.SetStateAction<string> } }) => {
             setoutputcode(e.target.value);
         },
         [outputcode]

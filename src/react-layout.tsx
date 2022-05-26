@@ -16,7 +16,7 @@ export default React.memo(Apphome);
 function Apphome({ children }: PropsWithChildren<{}>) {
     const [navheight, navbarref] = useobservehight(142);
     // const [clientWidth, setclientWidth] = useState(window.innerWidth);
-    const [state, { toggle }] = useToggle(true);
+    const [state, { toggle, set }] = useToggle(true);
 
     useEffect(() => {
         // console.log("onmounted");
@@ -31,7 +31,7 @@ function Apphome({ children }: PropsWithChildren<{}>) {
         document.title = "masx200的github主页";
         window.addEventListener("hashchange", () => {
             if (window.innerWidth <= 500) {
-                toggle(false);
+                set(false);
             }
             // 调整导航栏和主体的距离();
         });
@@ -51,7 +51,7 @@ function Apphome({ children }: PropsWithChildren<{}>) {
 
     function shouqi收起折叠的导航栏菜单() {
         if (window.innerWidth <= 500) {
-            toggle(false);
+            set(false);
         }
         // 调整导航栏和主体的距离();
         scrollTo(0, 0);

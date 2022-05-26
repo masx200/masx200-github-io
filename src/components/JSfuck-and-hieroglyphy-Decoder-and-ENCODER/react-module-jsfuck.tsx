@@ -114,13 +114,13 @@ export default memo(function Jsfuck() {
     const btnencode = useRef();
     //   const btnencodestring = useRef();
     const inputonchange = useCallback(
-        (e) => {
+        (e: { target: { value: React.SetStateAction<string> } }) => {
             setinputcode(e.target.value);
         },
         [inputcode]
     );
     const outputonchange = useCallback(
-        (e) => {
+        (e: { target: { value: React.SetStateAction<string> } }) => {
             setoutputcode(e.target.value);
         },
         [outputcode]

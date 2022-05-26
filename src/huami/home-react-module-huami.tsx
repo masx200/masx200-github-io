@@ -14,14 +14,17 @@ export default memo(function huami() {
     const [inputtext3, setinputtext3, onchangeinputtext3] = useBindtext("");
 
     const handlechange = useCallback(
-        function handlechang1e(inputtext1, inputtext2) {
+        function handlechang1e(
+            inputtext1: string | number,
+            inputtext2: string | number
+        ) {
             // inputtext1, inputtext2
             //   console.log(this);
             //   countCode();
             //   (function countCode() {
-            var password = inputtext1;
+            var password = String(inputtext1);
             //  $("#password").val();
-            var key = inputtext2;
+            var key = String(inputtext2);
             //  $("#key").val();
             if (password && key) {
                 const code16 = generatehuami(password, key);
