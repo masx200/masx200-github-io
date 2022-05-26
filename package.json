@@ -5,7 +5,7 @@
         "precommit": "npm run format ||node -v",
         "start": "webpack-react-vue-spa-awesome-config start --port=11111 --config=./webpack.config.js",
         "build": "npx webpack-react-vue-spa-awesome-config build --config=./webpack.config.js",
-        "format": "prettier **/*.js */*/*.js --write **/*.ts *.json *.md  **/*.tsx */*/*.ts */*/*/*.ts  */*/*.tsx */*/*.css */*.css *.js */*/*/*.tsx",
+        "format": "prettier **/*.js */*/*.js --write **/*.ts *.json *.md  **/*.tsx */*/*.ts */*/*/*.ts  */*/*.tsx */*.css *.js */*/*/*.tsx",
         "prepare": "husky install",
         "check": "tsc --noEmit"
     },
@@ -132,6 +132,7 @@
         "yargs-parser": "^21.0.1"
     },
     "resolutions": {
+        "css-loader": "^6.7.1",
         "minimist": "^1.2.6",
         "nanoid": "3.3.1",
         "node-forge": "1.3.1",
