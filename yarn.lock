@@ -1938,7 +1938,7 @@ __metadata:
     fast-xml-parser: ^3.19.0
     file-loader: ^6.2.0
     flowerpassword.js: ^3.0.2
-    highlight.js: ^11.2.0
+    highlight.js: ^11.5.1
     html-webpack-plugin: ^5.3.2
     husky: ^7.0.1
     jquery: ^3.6.0
@@ -6033,10 +6033,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:^11.2.0":
-  version: 11.2.0
-  resolution: "highlight.js@npm:11.2.0"
-  checksum: 12bfd562899a6a70d20321460ec40a94456bd8a9cb7deedbb70630c1981b937690fa0c7cf056d8f12c3c39981b400fb1a4f8b784b97399b26bd812460809cc0e
+"highlight.js@npm:^11.5.1":
+  version: 11.5.1
+  resolution: "highlight.js@npm:11.5.1"
+  checksum: bff556101d7691c6275ad19318e368fc971cd0621ef3d86222f5373df7d8191a2fc1ffd47f118138cbcf85e5fe91cfeefaecd6184f49a3ec18090955efc9edef
   languageName: node
   linkType: hard
 
