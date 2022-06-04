@@ -16,3 +16,4 @@ package-lock.json
 .vercel
 *.zip
 .yarn/install-state.gz
+pnpm-lock.yaml
