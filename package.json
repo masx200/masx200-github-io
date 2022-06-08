@@ -150,7 +150,6 @@
     },
     "devDependencies": {
         "@masx200/pi-calculation-multithreading": "^1.0.3",
-        "@vercel/node": "^1.15.0",
-        "husky": "^7.0.1"
+        "@vercel/node": "^1.15.0"
     }
 }
