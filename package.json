@@ -156,6 +156,6 @@
     },
     "devDependencies": {
         "@masx200/pi-calculation-multithreading": "^1.0.3",
-        "@vercel/node": "^1.15.0"
+        "@vercel/node": "^2.5.3"
     }
 }
