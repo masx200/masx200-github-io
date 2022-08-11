@@ -131,6 +131,10 @@
         "worker-loader": "^3.0.8",
         "yargs-parser": "^21.0.1"
     },
+    "overrides": {
+        "@types/react": "18",
+        "@types/react-dom": "18"
+    },
     "resolutions": {
         "@types/react": "18",
         "@types/react-dom": "18",

@@ -31,5 +31,5 @@
         "alwaysStrict": true
     },
     "include": ["src/", "api"],
-    "exclude": []
+    "exclude": ["*.tsx","*/*.tsx"]
 }
