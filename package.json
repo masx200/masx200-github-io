@@ -115,7 +115,7 @@
         "sass-loader": "^11.1.1",
         "serialize-javascript": "5.0.1",
         "style-loader": "^2.0.0",
-        "styled-jsx": "^4.0.1",
+        "styled-jsx": "^5.0.3",
         "styled-jsx-plugin-postcss": "^4.0.1",
         "terser": "^5.14.2",
         "terser-webpack-plugin": "^5.3.3",
