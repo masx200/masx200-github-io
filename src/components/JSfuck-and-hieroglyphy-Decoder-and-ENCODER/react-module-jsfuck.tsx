@@ -5,7 +5,10 @@ import { getStylePropValue } from "../../getStylePropValue";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 //@ts-ignore
-import jsfuckworker from "./worker-jsfuck.worker.js";
+
+function jsfuckworker() {
+    return new Worker(new URL("./worker-jsfuck-worker.js", import.meta.url));
+}
 ("use strict");
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {

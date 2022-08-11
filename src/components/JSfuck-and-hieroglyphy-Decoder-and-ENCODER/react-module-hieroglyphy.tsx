@@ -5,7 +5,12 @@ import { getStylePropValue } from "../../getStylePropValue";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 //@ts-ignore
-import hieroglyphyworker from "./worker-hieroglyphy.worker.js";
+
+function hieroglyphyworker() {
+    return new Worker(
+        new URL("./worker-hieroglyphy-worker.js", import.meta.url)
+    );
+}
 ("use strict");
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {
