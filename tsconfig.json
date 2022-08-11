@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "allowJs": false,
+        "checkJs": false,
         "skipLibCheck": true,
         "resolveJsonModule": true,
         "esModuleInterop": true,
