@@ -9,6 +9,7 @@ export default memo(function CustomLink({
     ...rest
 }: PropsWithChildren<DefaultReactLinkProps>) {
     return (
+        // @ts-ignore
         <Link {...rest} component={mycustom}>
             {children}
         </Link>

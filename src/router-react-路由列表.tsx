@@ -111,5 +111,6 @@ const 路由list: {
 }) as { params: (o: any) => boolean; component: ComponentType<any> }[];
 // console.log(路由list)
 function 路由() {
+    // @ts-ignore
     return <View routes={路由list} />;
 }

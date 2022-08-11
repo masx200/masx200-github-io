@@ -13,6 +13,7 @@ function 可变路径的rssreader链接() {
         }
     }, [params.sitename]);
     return (
+        // @ts-ignore
         <Link
             to={
                 rsssitename
