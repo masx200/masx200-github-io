@@ -32,15 +32,16 @@ export const Rssviewer = memo(function Rssviewer({
     const 加载失败 = !!error;
     return (
         <>
-            {showloading ? <Loading></Loading> : null}
+            {showloading ? (
+                //@ts-ignore
+                <Loading></Loading>
+            ) : null}
             {加载失败 ? (
                 <div>
                     <h1>Error!</h1>
                     <h2>{String(error)}</h2>
                 </div>
-            ) : (
-                <React.Fragment />
-            )}
+            ) : null}
             {loaded && (
                 <header
                     className="App-header"

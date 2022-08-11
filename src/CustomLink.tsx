@@ -14,4 +14,4 @@ export default memo(function CustomLink({
             {children}
         </Link>
     );
-});
+}) as React.ComponentType<DefaultReactLinkProps>;
