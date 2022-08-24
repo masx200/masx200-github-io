@@ -1,4 +1,4 @@
-import * as parser from "fast-xml-parser";
+import { XMLParser } from "fast-xml-parser";
 import { fetchtext } from "../components/markdown-react/fetchtext";
 import { cachepromise } from "../cachepromise";
 // import { fetchsource } from "../fetchsource";
@@ -6,9 +6,10 @@ import { htmltotext } from "./htmltotext";
 
 // cachepromise
 // console.log(hljs)
-
+const parser = new XMLParser();
 export const getrss = cachepromise(async function (
     src: string,
+    //@ts-ignore
     fetch: typeof globalThis.fetch
 ) {
     const text = await fetchtext(src, fetch);
