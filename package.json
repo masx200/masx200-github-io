@@ -102,7 +102,7 @@
         "less-loader": "^11.0.0",
         "lodash": "^4.17.21",
         "marked": "^4.0.16",
-        "mini-css-extract-plugin": "^1.6.0",
+        "mini-css-extract-plugin": "^2.6.1",
         "optimize-css-assets-webpack-plugin": "^6.0.0",
         "postcss": "^8.4.14",
         "postcss-preset-env": "^7.7.2",
