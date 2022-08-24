@@ -117,7 +117,7 @@
         "style-loader": "^2.0.0",
         "styled-jsx": "^5.0.4",
         "styled-jsx-plugin-postcss": "^4.0.1",
-        "terser": "^5.14.2",
+        "terser": "^5.15.0",
         "terser-webpack-plugin": "^5.3.3",
         "typescript": "^4.7.4",
         "undici": "^5.8.0",
@@ -132,6 +132,7 @@
         "yargs-parser": "^21.0.1"
     },
     "overrides": {
+        "terser": "^5.15.0",
         "@types/react": "18",
         "@types/react-dom": "18"
     },
@@ -141,7 +142,7 @@
         "postcss": "^8.4.14",
         "postcss-preset-env": "^7.7.2",
         "webpack": "5.74.0",
-        "terser": "^5.14.2",
+        "terser": "^5.15.0",
         "undici": "^5.8.0",
         "terser-webpack-plugin": "^5.3.3",
         "postcss-safe-parser": "^6.0.0",
