@@ -112,7 +112,7 @@
         "react-app-polyfill": "^2.0.0",
         "react-dom": "18",
         "regenerator-runtime": "^0.13.7",
-        "sass-loader": "^11.1.1",
+        "sass-loader": "^13.0.2",
         "serialize-javascript": "6.0.0",
         "style-loader": "^2.0.0",
         "styled-jsx": "^5.0.4",
