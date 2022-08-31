@@ -131,11 +131,6 @@
         "worker-loader": "^3.0.8",
         "yargs-parser": "^21.0.1"
     },
-    "overrides": {
-        "terser": "^5.15.0",
-        "@types/react": "18",
-        "@types/react-dom": "18"
-    },
     "resolutions": {
         "@types/react": "18",
         "@types/react-dom": "18",
@@ -163,7 +158,11 @@
     "devDependencies": {
         "@masx200/pi-calculation-multithreading": "^1.0.3",
         "@vercel/node": "^2.5.7"
-    } ,"overrides": {
+    },
+    "overrides": {
+        "terser": "^5.15.0",
+        "@types/react-dom": "18",
+        "@types/react": "18",
         "webpack": "^5.74.0"
     }
 }
