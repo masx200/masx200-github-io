@@ -3,7 +3,7 @@ import esbuild from "rollup-plugin-esbuild";
 import alias from "@rollup/plugin-alias";
 import { httpResolve } from "@masx200/rollup-plugin-http-resolve";
 import fs from "fs";
-import { babel } from "@rollup/plugin-babel";
+import { getBabelOutputPlugin } from "@rollup/plugin-babel";
 import json from "@rollup/plugin-json";
 const plugins = [
     json(),
@@ -14,7 +14,7 @@ const plugins = [
         ).imports,
     }),
     httpResolve(),
-    babel({
+    getBabelOutputPlugin({
         plugins: ["@babel/plugin-proposal-logical-assignment-operators"],
     }),
     esbuild({
