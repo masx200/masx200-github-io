@@ -29,10 +29,10 @@ const app = handler<{}>(
     async (ctx, next) => {
         const { request } = ctx;
         const url = new URL(request.url);
-        if (!url.pathname.startsWith("/api/getrss/")) {
+        if ("getrss" !== url.searchParams.get("func")) {
             return next();
         }
-        const name = url.pathname.split("/").at(-1) || "";
+        const name = url.searchParams.get("name") || "";
 
         if (!Object.keys(rssfeedxml).includes(name)) {
             return next();
@@ -48,10 +48,11 @@ const app = handler<{}>(
     async (ctx, next) => {
         const { request } = ctx;
         const url = new URL(request.url);
-        if (!url.pathname.startsWith("/api/getmarkdown/")) {
+        if ("getmarkdown" !== url.searchParams.get("func")) {
             return next();
         }
-        const name = url.pathname.split("/").at(-1) || "";
+
+        const name = url.searchParams.get("name") || "";
         if (!Object.keys(markdownurls).includes(name)) {
             return next();
         }
@@ -66,5 +67,5 @@ const app = handler<{}>(
     }
 );
 export const config = {
-    matcher: ["/api/getrss/:path*", "/api/getmarkdown/:path*"],
+    runtime: "experimental-edge",
 };

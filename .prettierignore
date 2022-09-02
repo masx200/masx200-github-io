@@ -5,4 +5,7 @@ netlify/edge-functions/getrss[name].js
 netlify/edge-functions/getmarkdown[name].js
 netlify/edge-functions/*.js
 api/getrss/*.js
+api/*.js
 api/getmarkdown/*.js
+middleware.js
+middleware.js.map

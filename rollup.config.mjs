@@ -60,7 +60,7 @@ export default defineConfig([
     {
         input: "./vercel/src/middleware.ts",
         output: {
-            file: "./middleware.js",
+            file: "./api/middleware.js",
             format: "esm",
             sourcemap: true,
         },
