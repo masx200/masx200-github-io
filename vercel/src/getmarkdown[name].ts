@@ -1,5 +1,5 @@
 import markdownurls from "../../src/utils/markdownurls.ts";
-// import type { Context } from "https://edge.netlify.com";
+
 import { getrenderedmarkdown } from "../../src/components/markdown-react/getrenderedmarkdown.ts";
 import {
     handler,
@@ -7,10 +7,10 @@ import {
     conditional_get,
     etag_builder,
 } from "https://deno.land/x/masx200_deno_http_middleware@2.2.1/mod.ts";
-export default function (request: Request /* , context: Context */) {
-    return app(request /* , context */);
+export default function (request: Request) {
+    return app(request);
 }
-const app = handler</* Context */ {}>(
+const app = handler<{}>(
     etag_builder,
     conditional_get,
     cors(),
@@ -31,3 +31,6 @@ const app = handler</* Context */ {}>(
         return;
     }
 );
+export const config = {
+    runtime: "experimental-edge",
+};

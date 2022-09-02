@@ -56,4 +56,22 @@ export default defineConfig([
         },
         plugins,
     },
+    {
+        input: "./vercel/src/getmarkdown[name].ts",
+        output: {
+            file: "./api/getmarkdown/[name].js",
+            format: "esm",
+            sourcemap: true,
+        },
+        plugins,
+    },
+    {
+        input: "./vercel/src/getrss[name].ts",
+        output: {
+            file: "./api/getrss/[name].js",
+            format: "esm",
+            sourcemap: true,
+        },
+        plugins,
+    },
 ]);

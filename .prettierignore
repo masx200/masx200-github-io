@@ -4,3 +4,5 @@ public/github-frameworks-a2fba223d5af91496cac70d4ec3624df.min.css
 netlify/edge-functions/getrss[name].js
 netlify/edge-functions/getmarkdown[name].js
 netlify/edge-functions/*.js
+api/getrss/*.js
+api/getmarkdown/*.js

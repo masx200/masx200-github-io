@@ -1,4 +1,3 @@
-// import type { Context } from "https://edge.netlify.com";
 import { getrss } from "../../src/rssreader/getrss.ts";
 import rssfeedxml from "../../src/rssreader/rssfeedxml.ts";
 
@@ -9,10 +8,10 @@ import {
     conditional_get,
     etag_builder,
 } from "https://deno.land/x/masx200_deno_http_middleware@2.2.1/mod.ts";
-export default function (request: Request /* , context: Context */) {
-    return app(request /* , context */);
+export default function (request: Request) {
+    return app(request);
 }
-const app = handler</* Context */ {}>(
+const app = handler<{}>(
     async (_ctx, next) => {
         try {
             await next();
@@ -42,3 +41,6 @@ const app = handler</* Context */ {}>(
         return;
     }
 );
+export const config = {
+    runtime: "experimental-edge",
+};

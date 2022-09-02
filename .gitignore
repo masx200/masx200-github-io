@@ -27,3 +27,7 @@ netlify/edge-functions/getmarkdown\[name\].js
 netlify/edge-functions/getrss\[name\].js
 netlify/edge-functions/getmarkdown\[name\].js.map
 netlify/edge-functions/getrss\[name\].js.map
+api/getmarkdown/\[name\].js
+api/getmarkdown/\[name\].js.map
+api/getrss/\[name\].js
+api/getrss/\[name\].js.map
