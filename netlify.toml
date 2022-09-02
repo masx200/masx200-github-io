@@ -1,5 +1,3 @@
-[functions]
-directory = "functions"
 
 [[edge_functions]]
 path = "/test"
