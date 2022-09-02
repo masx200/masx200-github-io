@@ -44,7 +44,7 @@ const plugins = [
 ];
 export default defineConfig([
     {
-        input: "./netlify/edge-functions/getmarkdown[name].ts",
+        input: "./netlify/src/getmarkdown[name].ts",
         output: {
             file: "./netlify/edge-functions/getmarkdown[name].js",
             format: "esm",
@@ -52,7 +52,7 @@ export default defineConfig([
         plugins,
     },
     {
-        input: "./netlify/edge-functions/getrss[name].ts",
+        input: "./netlify/src/getrss[name].ts",
         output: {
             file: "./netlify/edge-functions/getrss[name].js",
             format: "esm",
