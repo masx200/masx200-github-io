@@ -1,5 +1,5 @@
 {
-    "version": "6.1.1",
+    "version": "6.2.0",
     "packageManager": "yarn@3.2.0",
     "scripts": {
         "edge": "rollup -c rollup.config.mjs",
