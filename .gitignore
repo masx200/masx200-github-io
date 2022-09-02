@@ -42,3 +42,5 @@ api/middleware.js.map
 middleware.js
 middleware.js.map
 api/get.js.map
+vercel/dist/get.js
+vercel/dist/get.js.map

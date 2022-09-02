@@ -63,7 +63,7 @@ export default defineConfig([
     {
         input: "./vercel/src/get.ts",
         output: {
-            file: "./api/get.js",
+            file: "./vercel/dist/get.js",
             format: "esm",
             sourcemap: true,
         },

@@ -66,6 +66,3 @@ const app = handler<{}>(
         return;
     }
 );
-export const config = {
-    runtime: "experimental-edge",
-};
