@@ -1,3 +1,4 @@
+//@ts-ignore
 import { JSDOM } from "../components/markdown-react/createpurify.ts";
 
 export function htmltotext(description: string): string {
