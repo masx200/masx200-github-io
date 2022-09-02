@@ -1,11 +1,14 @@
 import { defineConfig } from "rollup";
 import esbuild from "rollup-plugin-esbuild";
-import { rollupImportMapPlugin } from "rollup-plugin-import-map";
+import { importMapsPlugin } from "rollup-plugin-import-maps";
+import { httpResolve } from "rollup-plugin-http-resolve";
 const plugins = [
-    rollupImportMapPlugin("./import_map.json"),
+    httpResolve(),
+    importMapsPlugin({ srcPath: "./import_map.json" }),
+
     esbuild({
         // All options are optional
-        include: /\.[jt]sx?$/, // default, inferred from `loaders` option
+        include: [/\.[jt]sx?$/, /^https?:\/\//], // default, inferred from `loaders` option
         exclude: /node_modules/, // default
         sourceMap: true, // default
         minify: true,
