@@ -6,7 +6,11 @@ import fs from "fs";
 import json from "@rollup/plugin-json";
 const plugins = [
     json(),
-
+    {
+        async resolveId(id, importer) {
+            if (/^https?:\/\//.test(id))return id;
+        },
+    },
     alias({
         entries: JSON.parse(
             (await fs.promises.readFile("./import_map.json")).toString()
