@@ -1,4 +1,7 @@
+[[edge_functions]]
+path = "/api/getmarkdown/*"
+function = "getmarkdown[name]"
 
 [[edge_functions]]
-path = "/getmarkdown/test"
-function = "getmarkdown/test"
+path = "/api/getrss/*"
+function = "getrss[name]"
