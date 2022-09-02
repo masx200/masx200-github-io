@@ -41,3 +41,4 @@ api/middleware.js.map
 api/*.js
 middleware.js
 middleware.js.map
+api/get.js.map

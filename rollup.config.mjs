@@ -58,9 +58,9 @@ export default defineConfig([
     },
 
     {
-        input: "./vercel/src/middleware.ts",
+        input: "./vercel/src/get.ts",
         output: {
-            file: "./api/middleware.js",
+            file: "./api/get.js",
             format: "esm",
             sourcemap: true,
         },
