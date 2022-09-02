@@ -1,4 +1,4 @@
 
 [[edge_functions]]
-path = "/test"
-function = "test"
+path = "/getmarkdown/test"
+function = "getmarkdown-test"
