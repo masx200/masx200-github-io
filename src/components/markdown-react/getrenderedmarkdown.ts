@@ -7,11 +7,8 @@ import { cachepromise } from "../../cachepromise";
 import { DOMPurify } from "./DOMPurify";
 import { fetchtext } from "./fetchtext";
 import { myrenderer } from "./myrenderer";
-export const getrenderedmarkdown = cachepromise(async function (
-    src: string,
-    fetch: typeof globalThis.fetch
-) {
-    const text = await fetchtext(src, fetch);
+export const getrenderedmarkdown = cachepromise(async function (src: string) {
+    const text = await fetchtext(src);
     const dirty = parse(text, {
         renderer: new myrenderer(),
         baseUrl: src,

@@ -7,12 +7,8 @@ import { htmltotext } from "./htmltotext";
 // cachepromise
 // console.log(hljs)
 const parser = new XMLParser();
-export const getrss = cachepromise(async function (
-    src: string,
-    //@ts-ignore
-    fetch: typeof globalThis.fetch
-) {
-    const text = await fetchtext(src, fetch);
+export const getrss = cachepromise(async function (src: string) {
+    const text = await fetchtext(src);
     const xmlstring = text;
     var str = xmlstring;
 
