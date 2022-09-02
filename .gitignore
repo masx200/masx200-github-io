@@ -23,3 +23,5 @@ yarn.lock
 .netlify
 netlify/edge-functions/getrss[name].js
 netlify/edge-functions/getmarkdown[name].js
+netlify/edge-functions/getmarkdown\[name\].js
+netlify/edge-functions/getrss\[name\].js

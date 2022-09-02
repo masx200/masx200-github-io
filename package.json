@@ -2,7 +2,7 @@
     "version": "6.1.1",
     "packageManager": "yarn@3.2.0",
     "scripts": {
-        "precommit": "npm run format ||node -v",
+        "edge": "rollup -c rollup.config.js",
         "dev": "webpack-react-vue-spa-awesome-config start --port=11111 --config=./webpack.config.js",
         "build": "npx webpack-react-vue-spa-awesome-config build --config=./webpack.config.js",
         "format": "prettier **/*.js */*/*.js --write **/*.ts *.json *.md  **/*.tsx */*/*.ts */*/*/*.ts  */*/*.tsx */*.css *.js */*/*/*.tsx",
@@ -28,7 +28,6 @@
     "description": "masx200-github-io",
     "author": "masx200 <masx200@qq.c60>",
     "license": "MIT",
-    "main": "index.js",
     "bugs": {
         "url": "https://github.com/masx200/masx200-github-io/issues"
     },
