@@ -13,6 +13,14 @@ export default function (request: Request, context: Context) {
     return app(request, context);
 }
 const app = handler<Context>(
+    async (_ctx, next) => {
+        try {
+            await next();
+        } catch (error) {
+            console.log(error);
+            return new Response(error?.message, { status: 500 });
+        }
+    },
     etag_builder,
     json_builder,
     conditional_get,

@@ -48,6 +48,7 @@ export default defineConfig([
         output: {
             file: "./netlify/edge-functions/getmarkdown[name].js",
             format: "esm",
+            sourcemap: true,
         },
         plugins,
     },
@@ -56,6 +57,7 @@ export default defineConfig([
         output: {
             file: "./netlify/edge-functions/getrss[name].js",
             format: "esm",
+            sourcemap: true,
         },
         plugins,
     },
