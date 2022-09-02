@@ -60,13 +60,5 @@ export default defineConfig([
         plugins,
     },
 
-    {
-        input: "./vercel/src/get.ts",
-        output: {
-            file: "./vercel/dist/get.js",
-            format: "esm",
-            sourcemap: true,
-        },
-        plugins,
-    },
+ 
 ]);
