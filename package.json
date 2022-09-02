@@ -114,7 +114,7 @@
         "regenerator-runtime": "^0.13.7",
         "rollup": "^2.79.0",
         "rollup-plugin-esbuild": "^4.10.1",
-        "rollup-plugin-http-resolve": "^4.0.1-alpha.0",
+        "@masx200/rollup-plugin-http-resolve": "5.0.0",
         "sass-loader": "^13.0.2",
         "serialize-javascript": "6.0.0",
         "style-loader": "^3.3.1",
@@ -161,7 +161,8 @@
     "devDependencies": {
         "@masx200/pi-calculation-multithreading": "^1.0.3",
         "@rollup/plugin-alias": "^3.1.9",
-        "@vercel/node": "^2.5.7"
+        "@vercel/node": "^2.5.7",
+        "esbuild": "^0.15.6"
     },
     "overrides": {
         "terser": "^5.15.0",

@@ -1,18 +1,13 @@
 import { defineConfig } from "rollup";
 import esbuild from "rollup-plugin-esbuild";
 import alias from "@rollup/plugin-alias";
-import { httpResolve } from "rollup-plugin-http-resolve";
+import { httpResolve } from "@masx200/rollup-plugin-http-resolve";
 import fs from "fs";
-import installNodeFetch from "@hattip/polyfills/node-fetch";
-installNodeFetch();
+
 import json from "@rollup/plugin-json";
 const plugins = [
     json(),
-    {
-        async resolveId(id, importer) {
-            if (/^https?:\/\//.test(id)) return id;
-        },
-    },
+
     alias({
         entries: JSON.parse(
             (await fs.promises.readFile("./import_map.json")).toString()
