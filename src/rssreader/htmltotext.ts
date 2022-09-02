@@ -3,7 +3,8 @@ import { JSDOM } from "../components/markdown-react/createpurify.ts";
 
 export function htmltotext(description: string): string {
     //@ts-ignore
-    const document = JSDOM("").window.document;
+    const document = JSDOM(`<html>       <body>    </body>    </html>`).window
+        .document;
     //alert(description)
     const body = document.body;
     // const body = document.implementation.createHTMLDocument("").body;
