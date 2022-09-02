@@ -1,6 +1,6 @@
 {
     "importMap": "import_map.json",
-    "tasks":{
-        "build":" deno bundle --no-check ./netlify/edge-functions/getmarkdown[name].ts -- ./netlify/edge-functions/getmarkdown[name].js  &&  deno bundle --no-check ./netlify/edge-functions/getrss[name].ts -- ./netlify/edge-functions/getrss[name].js "
+    "tasks": {
+        "build": " deno bundle --no-check ./netlify/edge-functions/getmarkdown[name].ts -- ./netlify/edge-functions/getmarkdown[name].js  &&  deno bundle --no-check ./netlify/edge-functions/getrss[name].ts -- ./netlify/edge-functions/getrss[name].js "
     }
 }

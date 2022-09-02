@@ -5,6 +5,7 @@ import rssfeedxml from "../../src/rssreader/rssfeedxml.ts";
 import {
     handler,
     cors,
+    json_builder,
     conditional_get,
     etag_builder,
 } from "https://deno.land/x/masx200_deno_http_middleware@2.2.1/mod.ts";
@@ -13,6 +14,7 @@ export default function (request: Request, context: Context) {
 }
 const app = handler<Context>(
     etag_builder,
+    json_builder,
     conditional_get,
     cors(),
     async (ctx, next) => {
