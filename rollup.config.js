@@ -1,6 +1,8 @@
 import { defineConfig } from "rollup";
 import esbuild from "rollup-plugin-esbuild";
+import { rollupImportMapPlugin } from "rollup-plugin-import-map";
 const plugins = [
+    rollupImportMapPlugin("./import_map.json"),
     esbuild({
         // All options are optional
         include: /\.[jt]sx?$/, // default, inferred from `loaders` option
