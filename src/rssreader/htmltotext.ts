@@ -5,7 +5,8 @@ export function htmltotext(description: string): string {
     //@ts-ignore
     const document = JSDOM("").window.document;
     //alert(description)
-    const body = document.implementation.createHTMLDocument("").body;
+    const body = document.body;
+    // const body = document.implementation.createHTMLDocument("").body;
     body.innerHTML = description;
     if ("undefined" === typeof body.innerText) {
         Object.defineProperty(body, "innerText", {
