@@ -1,18 +1,8 @@
-// export function htmltotext(description: string) {
-//     //alert(description)
-//     const body = document.implementation.createHTMLDocument("").body;
-//     body.innerHTML = description;
+import { JSDOM } from "../components/markdown-react/createpurify.ts";
 
-//     const text = body.innerText;
-
-//     // console.log("text", text);
-//     //alert(text);
-//     return text;
-// }
-import { JSDOM } from "jsdom";
-
-const document = new JSDOM("").window.document;
 export function htmltotext(description: string): string {
+    //@ts-ignore
+    const document = JSDOM("").window.document;
     //alert(description)
     const body = document.implementation.createHTMLDocument("").body;
     body.innerHTML = description;
