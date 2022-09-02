@@ -1,6 +1,8 @@
 "use strict";
 import "highlight.js/styles/github.css";
-import React, { useEffect, useMemo, memo } from "react";
+
+import React, { memo, useEffect, useMemo } from "react";
+
 import { usemarkdown } from "./usemarkdown";
 
 export default React.memo(markdown);

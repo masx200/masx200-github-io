@@ -1,5 +1,7 @@
-import React, { memo /* , { useRef } */ } from "react";
+import React, { memo } from "react";
+
 import Link from "./CustomLink";
+
 export default memo(function 我的自定义导航链接({
     to,
     text,

@@ -1,11 +1,13 @@
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker";
+import "./error-alert.js";
+import "./styles.js";
+
 import React, { createElement, lazy, Suspense } from "react";
 import { render } from "react-dom";
-import "./error-alert.js";
+
 //@ts-ignore
 import { initloadingid } from "./initloadingid.ts";
 import Loading from "./Loading";
-import "./styles.js";
 
 //@ts-ignore
 React["__esModule"] = true;

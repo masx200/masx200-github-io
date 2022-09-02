@@ -1,6 +1,7 @@
 "use strict";
 
 import React, { ComponentType, lazy } from "react";
+
 import { View } from "./router";
 
 export default React.memo(路由);

@@ -1,6 +1,7 @@
 "use strict";
-import React, { useEffect, useCallback, memo, useRef } from "react";
 import $ from "jquery";
+import React, { memo, useCallback, useEffect, useRef } from "react";
+
 import { generatehuami } from "./generatehuami";
 import { useBindtext } from "./useBindtext";
 

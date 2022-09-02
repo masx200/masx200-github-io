@@ -1,6 +1,7 @@
 import { XMLParser } from "fast-xml-parser";
-import { fetchtext } from "../components/markdown-react/fetchtext";
+
 import { cachepromise } from "../cachepromise";
+import { fetchtext } from "../components/markdown-react/fetchtext";
 // import { fetchsource } from "../fetchsource";
 import { htmltotext } from "./htmltotext";
 

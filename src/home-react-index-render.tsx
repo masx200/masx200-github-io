@@ -1,11 +1,13 @@
 import $ from "jquery";
-import React, { useEffect, Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
+
+import Loading from "./Loading";
 //@ts-ignore
 // import { 调整导航栏和主体的距离 } from "@/调整导航栏和主体的距离.js";
 // @ts-ignore
 import Apphome from "./react-layout.tsx";
 import 路由列表 from "./router-react-路由列表";
-import Loading from "./Loading";
+
 /* eslint-disable react/prop-types */
 ("use strict");
 

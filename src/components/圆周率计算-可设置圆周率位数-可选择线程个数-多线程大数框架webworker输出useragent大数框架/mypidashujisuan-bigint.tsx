@@ -1,14 +1,17 @@
 "use strict";
+import React, { memo, useEffect, useRef } from "react";
+
 // @ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
 import {
-    bigintcleanup,
     bigintCalculatePi,
+    bigintcleanup,
 } from "@masx200/pi-calculation-multithreading";
-import React, { memo, useEffect, useRef } from "react";
+
 import { useBindtext } from "../../huami/useBindtext";
 // @ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
+
 // @ts-ignore
 // import bigintworker from "./worker-mythread1-bigint.worker.js";
 

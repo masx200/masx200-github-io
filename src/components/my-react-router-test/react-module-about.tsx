@@ -1,6 +1,7 @@
 "use strict";
 
-import React, { useEffect, memo } from "react";
+import React, { memo, useEffect } from "react";
+
 import { Showtime } from "./Showtime";
 
 export default memo(function about() {

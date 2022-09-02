@@ -1,9 +1,12 @@
+import React, { memo, useCallback, useEffect, useState } from "react";
+
 //@ts-ignore
 import { decode } from "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder";
-import React, { memo, useCallback, useEffect, useState } from "react";
+
 import { getStylePropValue } from "../../getStylePropValue";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
+
 ("use strict");
 
 function tanchutanchuxiaoxishibai() {

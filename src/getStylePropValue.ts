@@ -1,4 +1,5 @@
 import { CSSProperties } from "react";
+
 function getStylePropValue(attrValue: string): CSSProperties {
     const props = attrValue.split(";").filter((prop) => {
         return !!prop;

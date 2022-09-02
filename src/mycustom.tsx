@@ -1,6 +1,6 @@
+import React, { memo, PropsWithChildren } from "react";
+
 import { CustomReactLinkProps } from "@masx200/search-hash-params-router";
-import { memo, PropsWithChildren } from "react";
-import React from "react";
 
 export const mycustom = memo(function mycustom({
     children,

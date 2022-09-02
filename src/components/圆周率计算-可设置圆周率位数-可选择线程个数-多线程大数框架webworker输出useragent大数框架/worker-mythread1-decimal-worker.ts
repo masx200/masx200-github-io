@@ -1,4 +1,5 @@
 import { decimalworkersetup } from "@masx200/pi-calculation-multithreading";
+
 decimalworkersetup();
 // "use strict";
 // import Decimal from "decimal.js";

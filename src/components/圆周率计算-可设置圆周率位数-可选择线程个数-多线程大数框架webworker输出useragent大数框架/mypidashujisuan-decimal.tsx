@@ -2,18 +2,21 @@
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 // @ts-ignore
 // @ts-ignore
-import mui from "@/assetsjs/mui.精简.button";
-import {
-    decimalcleanup,
-    decimalCalculatePi,
-} from "@masx200/pi-calculation-multithreading";
-// @ts-ignore
 // import Decimal from "decimal.js";
 // import mui from "../mui.min.js";
 // eslint-disable-next-line no-unused-vars
 import React, { memo, useEffect, useRef } from "react";
+
+// @ts-ignore
+import mui from "@/assetsjs/mui.精简.button";
+import {
+    decimalCalculatePi,
+    decimalcleanup,
+} from "@masx200/pi-calculation-multithreading";
+
 import { useBindtext } from "../../huami/useBindtext";
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
+
 // @ts-ignore
 // import decimalworker from "./worker-mythread1-decimal.worker.js";
 function tanchu弹出消息提示() {
