@@ -21,3 +21,5 @@ yarn.lock
 
 # Local Netlify folder
 .netlify
+netlify/edge-functions/getrss[name].js
+netlify/edge-functions/getmarkdown[name].js
