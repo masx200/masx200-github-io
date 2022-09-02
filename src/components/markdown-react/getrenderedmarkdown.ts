@@ -3,10 +3,14 @@ import { marked as parse } from "marked";
 
 // @ts-ignore
 import hljs from "../../assetsjs/highlight.min.js";
-import { cachepromise } from "../../cachepromise";
-import { DOMPurify } from "./DOMPurify";
-import { fetchtext } from "./fetchtext";
-import { myrenderer } from "./myrenderer";
+//@ts-ignore
+import { cachepromise } from "../../cachepromise.ts";
+//@ts-ignore
+import { DOMPurify } from "./DOMPurify.ts";
+//@ts-ignore
+import { fetchtext } from "./fetchtext.ts";
+//@ts-ignore
+import { myrenderer } from "./myrenderer.ts";
 
 export const getrenderedmarkdown = cachepromise(async function (src: string) {
     const text = await fetchtext(src);

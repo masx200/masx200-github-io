@@ -1,9 +1,11 @@
 import { XMLParser } from "fast-xml-parser";
-
-import { cachepromise } from "../cachepromise";
-import { fetchtext } from "../components/markdown-react/fetchtext";
+//@ts-ignore
+import { cachepromise } from "../cachepromise.ts";
+//@ts-ignore
+import { fetchtext } from "../components/markdown-react/fetchtext.ts";
 // import { fetchsource } from "../fetchsource";
-import { htmltotext } from "./htmltotext";
+//@ts-ignore
+import { htmltotext } from "./htmltotext.ts";
 
 // cachepromise
 // console.log(hljs)

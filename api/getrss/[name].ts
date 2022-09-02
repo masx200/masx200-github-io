@@ -16,13 +16,11 @@ app.use(conditional());
 app.use(etag({}));
 app.use(cors({ origin: "*" }));
 app.use(async (ctx, next) => {
-    const { name } = ctx.request.query;
-    if (typeof name !== "string") {
-        return next();
-    }
+    const { name = "" } = ctx.request.query;
+    //@ts-ignore
     if (!Object.keys(rssfeedxml).includes(name)) {
         return next();
-    }
+    } //@ts-ignore
     const src = Reflect.get(rssfeedxml, name);
     ctx.response.set("cache-control", " s-maxage=3600,max-age=3600, public");
     ctx.body = await getrss(src);

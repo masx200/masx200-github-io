@@ -16,13 +16,12 @@ app.use(conditional());
 app.use(etag({}));
 app.use(cors({ origin: "*" }));
 app.use(async (ctx, next) => {
-    const { name } = ctx.request.query;
-    if (typeof name !== "string") {
-        return next();
-    }
+    const { name = "" } = ctx.request.query;
+    //@ts-ignore
     if (!Object.keys(markdownurls).includes(name)) {
         return next();
     }
+    //@ts-ignore
     const src = Reflect.get(markdownurls, name);
     ctx.response.set("cache-control", " s-maxage=86400,max-age=86400, public");
     ctx.body = await getrenderedmarkdown(src);

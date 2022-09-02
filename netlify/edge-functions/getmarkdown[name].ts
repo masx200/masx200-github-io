@@ -1,16 +1,33 @@
+import markdownurls from "../../src/utils/markdownurls.ts";
 import type { Context } from "https://edge.netlify.com";
+import { getrenderedmarkdown } from "../../src/components/markdown-react/getrenderedmarkdown.ts";
+import {
+    handler,
+    cors,
+    conditional_get,
+    etag_builder,
+} from "https://deno.land/x/masx200_deno_http_middleware@2.2.1/mod.ts";
 export default function (request: Request, context: Context) {
-    const url = new URL(request.url);
-    const path = url.pathname.split("/").at(-1) || "";
-    return context.json({
-        keys: Reflect.ownKeys(context),
-        site: context.site,
-        requestId: context.requestId,
-        geo: context.geo,
-        ip: context.ip,
-        path,
-        method: request.method,
-        headers: Object.fromEntries(request.headers),
-        url: request.url,
-    });
+    return app(request, context);
 }
+const app = handler<Context>(
+    etag_builder,
+    conditional_get,
+    cors(),
+    async (ctx, next) => {
+        const { request } = ctx;
+        const url = new URL(request.url);
+        const name = url.pathname.split("/").at(-1) || "";
+        if (!Object.keys(markdownurls).includes(name)) {
+            return next();
+        }
+        const src = Reflect.get(markdownurls, name);
+        ctx.response.headers.set(
+            "cache-control",
+            " s-maxage=86400,max-age=86400, public"
+        );
+        ctx.response.body = await getrenderedmarkdown(src);
+
+        return;
+    }
+);
