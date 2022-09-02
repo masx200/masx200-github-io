@@ -1,0 +1,16 @@
+{
+    "imports": {
+        "fast-xml-parser": "https://esm.sh/fast-xml-parser@4.0.9",
+        "jsdom": "https://esm.sh/jsdom@20.0.0",
+        "marked": "https://esm.sh/marked@4.1.0",
+        "dompurify": "https://esm.sh/dompurify@2.4.0",
+        "@highlightjs/cdn-assets/highlight": "https://esm.sh/@highlightjs/cdn-assets@11.6.0/highlight",
+        "highlight.js/lib/languages/css": "https://esm.sh/highlight.js@11.6.0/lib/languages/css",
+        "highlight.js/lib/languages/shell": "https://esm.sh/highlight.js@11.6.0/lib/languages/shell",
+        "highlight.js/lib/languages/powershell": "https://esm.sh/highlight.js@11.6.0/lib/languages/powershell",
+        "highlight.js/lib/languages/json": "https://esm.sh/highlight.js@11.6.0/lib/languages/json",
+        "highlight.js/lib/languages/typescript": "https://esm.sh/highlight.js@11.6.0/lib/languages/typescript",
+        "highlight.js/lib/languages/xml": "https://esm.sh/highlight.js@11.6.0/lib/languages/xml",
+        "highlight.js/lib/languages/javascript": "https://esm.sh/highlight.js@11.6.0/lib/languages/javascript"
+    }
+}

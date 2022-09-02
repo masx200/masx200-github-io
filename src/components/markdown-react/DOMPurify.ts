@@ -1,4 +1,5 @@
 "use strict";
-import { createpurify } from "./createpurify";
+//@ts-ignore
+import { createpurify } from "./createpurify.ts";
 
 export const DOMPurify = createpurify();
