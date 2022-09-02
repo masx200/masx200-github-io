@@ -2,7 +2,7 @@
     "version": "6.1.1",
     "packageManager": "yarn@3.2.0",
     "scripts": {
-        "edge": "rollup -c rollup.config.js",
+        "edge": "rollup -c rollup.config.mjs",
         "dev": "webpack-react-vue-spa-awesome-config start --port=11111 --config=./webpack.config.js",
         "build": "npx webpack-react-vue-spa-awesome-config build --config=./webpack.config.js",
         "format": "prettier **/*.js */*/*.js --write **/*.ts *.json *.md  **/*.tsx */*/*.ts */*/*/*.ts  */*/*.tsx */*.css *.js */*/*/*.tsx",
@@ -54,6 +54,7 @@
         "@masx200/koa-stream-etag": "^5.0.8",
         "@masx200/search-hash-params-router": "^3.0.2",
         "@masx200/webpack-react-vue-spa-awesome-config": "^5.1.0",
+        "@rollup/plugin-json": "^4.1.0",
         "@types/dompurify": "^2.3.3",
         "@types/etag": "^1.8.1",
         "@types/jquery": "^3.5.14",
@@ -115,7 +116,6 @@
         "rollup": "^2.79.0",
         "rollup-plugin-esbuild": "^4.10.1",
         "rollup-plugin-http-resolve": "^4.0.1-alpha.0",
-        "rollup-plugin-import-maps": "^0.2.4",
         "sass-loader": "^13.0.2",
         "serialize-javascript": "6.0.0",
         "style-loader": "^3.3.1",
@@ -161,6 +161,7 @@
     },
     "devDependencies": {
         "@masx200/pi-calculation-multithreading": "^1.0.3",
+        "@rollup/plugin-alias": "^3.1.9",
         "@vercel/node": "^2.5.7"
     },
     "overrides": {

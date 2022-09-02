@@ -1,7 +1,7 @@
 {
     "imports": {
         "fast-xml-parser": "https://esm.sh/fast-xml-parser@4.0.9",
-        "jsdom": "https://esm.sh/jsdom@20.0.0",
+        "jsdom": "https://cdn.skypack.dev/jsdom@20.0.0/?dts",
         "marked": "https://esm.sh/marked@4.1.0",
         "dompurify": "https://esm.sh/dompurify@2.4.0",
         "@highlightjs/cdn-assets/highlight": "https://esm.sh/@highlightjs/cdn-assets@11.6.0/highlight",

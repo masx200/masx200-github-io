@@ -1,11 +1,17 @@
 import { defineConfig } from "rollup";
 import esbuild from "rollup-plugin-esbuild";
-import { importMapsPlugin } from "rollup-plugin-import-maps";
+import alias from "@rollup/plugin-alias";
 import { httpResolve } from "rollup-plugin-http-resolve";
+import fs from "fs";import json from "@rollup/plugin-json";
 const plugins = [
+    json(),
     httpResolve(),
-    importMapsPlugin({ srcPath: "./import_map.json" }),
 
+    alias({
+        entries: JSON.parse(
+            (await fs.promises.readFile("./import_map.json")).toString()
+        ).imports,
+    }),
     esbuild({
         // All options are optional
         include: [/\.[jt]sx?$/, /^https?:\/\//], // default, inferred from `loaders` option
