@@ -176,6 +176,7 @@ export default memo(function huami() {
                     </div>
                 </div>
             </div>
+            {/* @ts-ignore */}
             <style jsx>{`
                 .flowerpassword a {
                     color: #42b983;
