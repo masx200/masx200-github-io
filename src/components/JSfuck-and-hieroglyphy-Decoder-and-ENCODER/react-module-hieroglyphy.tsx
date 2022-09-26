@@ -71,10 +71,6 @@ export default memo(function Hieroglyphy() {
                 console.log("主线程从副线程" + "接收" + "event.data\n");
                 console.log(output);
 
-                // $2("output").value = output;
-                // console.timeEnd(typename);
-                // console.time("requestAnimationFrame");
-                //   jQuery("#output").val(output);
                 setoutputcode(output);
                 setstatstext(output.length + " chars");
                 //   $2("stats").innerHTML = output.length + " chars";
