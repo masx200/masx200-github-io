@@ -59,6 +59,4 @@ export default defineConfig([
         },
         plugins,
     },
-
- 
 ]);
