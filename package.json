@@ -57,7 +57,7 @@
         "@masx200/search-hash-params-router": "^3.0.2",
         "@masx200/webpack-react-vue-spa-awesome-config": "^5.1.0",
         "@rollup/plugin-babel": "^6.0.2",
-        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-json": "^5.0.1",
         "@types/dompurify": "^2.3.3",
         "@types/etag": "^1.8.1",
         "@types/jquery": "^3.5.14",
