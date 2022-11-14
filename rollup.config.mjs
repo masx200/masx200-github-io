@@ -31,13 +31,7 @@ const plugins = [
         define: {},
         tsconfig: "tsconfig.json", // default
         // Add extra loaders
-        loaders: {
-            // Add .json files support
-            // require @rollup/plugin-commonjs
-            // ".json": "json",
-            // Enable JSX in .js files too
-            // ".js": "jsx",
-        },
+        loaders: {},
     }),
 ];
 export default defineConfig([
