@@ -1,6 +1,6 @@
 {
     "version": "6.2.0",
-    "packageManager": "yarn@3.2.0",
+
     "scripts": {
         "edge": "rollup -c rollup.config.mjs",
         "dev": "webpack-react-vue-spa-awesome-config start --port=11111 --config=./webpack.config.js",
