@@ -1,6 +1,5 @@
 {
     "version": "6.2.2",
-
     "scripts": {
         "edge": "rollup -c rollup.config.mjs",
         "dev": "webpack-react-vue-spa-awesome-config start --port=11111 --config=./webpack.config.js",
@@ -161,8 +160,8 @@
         "async": "3.2.3"
     },
     "devDependencies": {
-"vue-loader":"17.0.1",
-"vue":"3.2.45",
+        "vue-loader": "17.0.1",
+        "vue": "3.2.45",
         "@masx200/pi-calculation-multithreading": "^1.0.3",
         "@rollup/plugin-alias": "^4.0.2",
         "@vercel/node": "^2.5.7",
