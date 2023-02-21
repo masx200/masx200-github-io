@@ -46,7 +46,7 @@
         "@babel/plugin-transform-runtime": "^7.18.2",
         "@babel/preset-env": "^7.18.2",
         "@babel/preset-react": "^7.17.12",
-        "@hattip/polyfills": "^0.0.24",
+        "@hattip/polyfills": "^0.0.29",
         "@highlightjs/cdn-assets": "^11.1.0",
         "@masx200/event-emitter-target": "^2.0.5",
         "@masx200/ie11-usual-polyfills": "^1.0.5",
