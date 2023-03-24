@@ -165,7 +165,7 @@
         "@masx200/pi-calculation-multithreading": "^1.0.3",
         "@rollup/plugin-alias": "^4.0.2",
         "@vercel/node": "^2.5.7",
-        "esbuild": "^0.16.12"
+        "esbuild": "^0.17.13"
     },
     "overrides": {
         "terser": "^5.15.0",
