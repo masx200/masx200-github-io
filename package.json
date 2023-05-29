@@ -64,7 +64,7 @@
         "@types/koa-conditional-get": "^2.0.0",
         "@types/koa-cors": "^0.0.2",
         "@types/marked": "^4.0.3",
-        "@types/node": "^18.7.11",
+        "@types/node": "^20.2.5",
         "@types/react": "18",
         "@types/react-dom": "18",
         "@vercel/build-utils": "^5.3.1",
