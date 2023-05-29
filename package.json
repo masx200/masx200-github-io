@@ -117,7 +117,7 @@
         "rollup": "^3.9.0",
         "rollup-plugin-esbuild": "^5.0.0",
         "sass-loader": "^13.0.2",
-        "serialize-javascript": "6.0.0",
+        "serialize-javascript": "6.0.1",
         "style-loader": "^3.3.1",
         "styled-jsx": "^5.0.4",
         "styled-jsx-plugin-postcss": "^4.0.1",
