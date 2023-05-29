@@ -8,7 +8,7 @@ import { Rssviewer } from "./Rssviewer";
 
 //@ts-ignore
 /* eslint-disable react/prop-types */
-("use strict");
+"use strict";
 
 //@ts-ignore
 //@ts-ignore
@@ -26,8 +26,8 @@ function Rssreader(props: {
     useEffect(() => {
         // document.title = "React router App-" + "rssreader";
         if ("undefined" !== typeof props.params.sitename) {
-            document.title =
-                "React router App-" + "rssreader-" + props.params.sitename;
+            document.title = "React router App-" + "rssreader-" +
+                props.params.sitename;
         } else {
             document.title = "React router App-" + "rssreader";
         }
@@ -35,10 +35,12 @@ function Rssreader(props: {
     return (
         <div className="">
             {rssmain}
-            {rssfeedurl && sitename ? (
-                //@ts-ignore
-                <Rssviewer src={rssfeedurl} name={sitename} />
-            ) : null}
+            {rssfeedurl && sitename
+                ? (
+                    //@ts-ignore
+                    <Rssviewer src={rssfeedurl} name={sitename} />
+                )
+                : null}
         </div>
     );
 }

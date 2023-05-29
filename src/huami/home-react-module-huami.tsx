@@ -17,7 +17,7 @@ export default memo(function huami() {
     const handlechange = useCallback(
         function handlechang1e(
             inputtext1: string | number,
-            inputtext2: string | number
+            inputtext2: string | number,
         ) {
             // inputtext1, inputtext2
             //   console.log(this);
@@ -37,7 +37,7 @@ export default memo(function huami() {
             //   })();
             //
         },
-        [inputtext1, inputtext2]
+        [inputtext1, inputtext2],
     );
 
     const functioncopy = useCallback(
@@ -62,7 +62,7 @@ export default memo(function huami() {
                     });
             }
         },
-        [inputtext3]
+        [inputtext3],
     );
     // [inputtext3]
     useEffect(() => {
@@ -76,7 +76,7 @@ export default memo(function huami() {
         (e: React.ChangeEvent<HTMLInputElement>): void => {
             onchangeinputtext1(e);
         },
-        []
+        [],
     );
     const onchange2 = useCallback((e: { target: { value: string } }) => {
         onchangeinputtext2(e);
@@ -152,7 +152,6 @@ export default memo(function huami() {
                                     data-clipboard-target="#code16F7915132-B0F4-8AEA-6B78-0EB36CD682B4"
                                     className="btn btn-lg btn copycode16d btn-info"
                                     style={{ width: " 100%" }}
-
                                     //   "width: 100%;"
                                 >
                                     点击复制
@@ -177,7 +176,8 @@ export default memo(function huami() {
                 </div>
             </div>
             {/* @ts-ignore */}
-            <style jsx>{`
+            <style jsx>
+                {`
                 .flowerpassword a {
                     color: #42b983;
                 }
@@ -878,7 +878,8 @@ export default memo(function huami() {
                 .flowerpassword footer p a:hover {
                     color: #333;
                 }
-            `}</style>
+            `}
+            </style>
         </div>
     );
 });

@@ -22,4 +22,4 @@ const View = createReactView({
     useState,
 });
 
-export { useParams, View, CustomLink };
+export { CustomLink, useParams, View };

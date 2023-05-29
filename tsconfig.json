@@ -27,7 +27,8 @@
         "importHelpers": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
-        "alwaysStrict": true
+        "alwaysStrict": true,
+        "allowImportingTsExtensions": true
     },
     "include": ["src/", "api"],
     "exclude": ["*.tsx", "*/*.tsx", "*/*/*.tsx", "*/*/*/*.tsx"]

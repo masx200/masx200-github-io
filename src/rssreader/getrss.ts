@@ -50,7 +50,7 @@ export const getrss = cachepromise(async function (src: string) {
             des = htmltotext(des);
 
             return { link, title, description: des };
-        }
+        },
     );
     const content = myrsscontent;
     return { title, content, description };

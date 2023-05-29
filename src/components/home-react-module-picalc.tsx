@@ -7,8 +7,7 @@ import Mypidashujisuandecimal from "./圆周率计算-可设置圆周率位数-�
 /* 应该再卸载组件时关闭所有worker */
 export default memo(function Picalc() {
     useEffect(() => {
-        document.title =
-            "masx200的github主页-" +
+        document.title = "masx200的github主页-" +
             "圆周率计算-可设置圆周率位数-可选择线程个数-多线程大数框架webworker输出useragent大数框架";
         // extendmytextarea();
         // mypidashujisuandecimal();

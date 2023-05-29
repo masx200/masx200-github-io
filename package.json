@@ -123,7 +123,7 @@
         "styled-jsx-plugin-postcss": "^4.0.1",
         "terser": "^5.15.0",
         "terser-webpack-plugin": "^5.3.3",
-        "typescript": "^4.7.4",
+        "typescript": "^5.0.4",
         "undici": "^5.8.0",
         "url-loader": "^4.1.1",
         "webpack": "^5.74.0",

@@ -1,7 +1,7 @@
 "use strict";
 import {
-    hieroglyphyString,
     hieroglyphyScript,
+    hieroglyphyString,
 } from "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder";
 addEventListener("message", (e) => {
     // var hieroglyphy = WorkerGlobalScope.hieroglyphy;

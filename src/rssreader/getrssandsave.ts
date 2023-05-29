@@ -11,7 +11,7 @@ export function getrssandsave(src: string) {
         },
         (error) => {
             return rssstore.error.set(src, error);
-        }
+        },
     );
 }
 const getapirss = cachepromise(async function getapirss(name: string) {

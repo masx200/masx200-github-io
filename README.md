@@ -22,7 +22,8 @@ document.getElementById("root").innerHTML = `<div>
 
 # 使用 webpack-react-vue-spa-awesome-config 重构网页
 
-基于 webpack4.x, 同时支持 react 和 vue 的单页面应用 通用的 webpack 配置文件,提供开箱即用支持
+基于 webpack4.x, 同时支持 react 和 vue 的单页面应用 通用的 webpack
+配置文件,提供开箱即用支持
 
 您无需学习和配置许多构建工具。即时重新加载可帮助您专注于开发。在部署时，您的捆绑包会自动优化
 
@@ -44,9 +45,12 @@ https://github.com/masx200/excellent-vscode-extensions-for-javascript
 
 # 圆周率计算多线程,使用 BigInteger.js 和浏览器原生的 BigInt 之后速度得到巨大提升!
 
-优化了圆周率计算的多线程方式,开启一次 webworker 后,不再关闭它,每一个线程一个 webworker,也不重复创建过多 webweorker,并给按钮添加 mui 的 loading 效果,全局加上 mui 的支持
+优化了圆周率计算的多线程方式,开启一次 webworker 后,不再关闭它,每一个线程一个
+webworker,也不重复创建过多 webweorker,并给按钮添加 mui 的 loading 效果,全局加上
+mui 的支持
 
-优化了圆周率的界面显示效果,使用 bootstrap4 的折叠按钮效果,可以收起或展开某些特别占空间的组件
+优化了圆周率的界面显示效果,使用 bootstrap4
+的折叠按钮效果,可以收起或展开某些特别占空间的组件
 
 需要浏览器 chrome68 以上,才原生支持 BigInt
 
@@ -91,7 +95,7 @@ https://github.com/masx200/excellent-vscode-extensions-for-javascript
         <p></p>
         <hr>
 <h4> 线程数为8 圆周率计算10000位测试结果</h4>
-        
+
 <br />
         firefox 66 测试 BigInteger.js 达到1倍速度
         <br />
@@ -100,7 +104,7 @@ https://github.com/masx200/excellent-vscode-extensions-for-javascript
         chrome 74 测试 原生BigInt 达到49.710倍速度
         <p></p>
 <hr>
-        
+
 <h4> 线程数为8 圆周率计算15000位测试结果</h4>
 <br />
 chrome 62 测试 BigInteger.js  达到1倍速度
@@ -162,19 +166,23 @@ const about = lazy(() => import("./module-about"));
 </BrowserRouter>;
 ```
 
-新版:按照路由组件分包加载,不使用本地 node 模块,大大减小了生成的文件大小,依赖包从 cdn 加载
+新版:按照路由组件分包加载,不使用本地 node 模块,大大减小了生成的文件大小,依赖包从
+cdn 加载
 
-新版:升级到 bootsrtap4 的导航栏和使用 fetch 的 rss 阅读器演示的消息成功加载通知框效果
+新版:升级到 bootsrtap4 的导航栏和使用 fetch 的 rss
+阅读器演示的消息成功加载通知框效果
 
 旧版:把 react 相关所有代码都合并放在 index.jsx 文件中,除了 css 文件
 
 <hr>
 
-新版:按照路由组件分包加载,不使用本地 node 模块,大大减小了生成的文件大小,依赖包从 cdn 加载
+新版:按照路由组件分包加载,不使用本地 node 模块,大大减小了生成的文件大小,依赖包从
+cdn 加载
 
 旧版:vue 把所有组件全部放在 index.jsx 中,除了 css 文件
 
-旧版:不使用.vue 格式的文件,把 vue 相关的所有 vue 组件都合并放在一个 index.js 文件中,把 template 组件放在 template.html 文件中通过 ajax 加载,除了 css 文件
+旧版:不使用.vue 格式的文件,把 vue 相关的所有 vue 组件都合并放在一个 index.js
+文件中,把 template 组件放在 template.html 文件中通过 ajax 加载,除了 css 文件
 
 <hr>
 
