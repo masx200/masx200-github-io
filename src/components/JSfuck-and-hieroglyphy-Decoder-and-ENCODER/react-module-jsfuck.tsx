@@ -12,7 +12,7 @@ import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 function jsfuckworker() {
     return new Worker(new URL("./worker-jsfuck-worker.js", import.meta.url));
 }
-"use strict";
+("use strict");
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
@@ -27,7 +27,7 @@ function guid() {
             var r = (Math.random() * 16) | 0,
                 v = c == "x" ? r : (r & 0x3) | 0x8;
             return v.toString(16);
-        },
+        }
     );
 }
 var myservice: Worker | undefined;
@@ -113,7 +113,7 @@ export default memo(function Jsfuck() {
     const [statstext, setstatstext] = useState(`0 chars`);
     var [outputcode, setoutputcode] = useState("");
     var [inputcode, setinputcode] = useState(
-        "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')",
+        "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')"
     );
     const btnencode = useRef();
     //   const btnencodestring = useRef();
@@ -121,16 +121,17 @@ export default memo(function Jsfuck() {
         (e: { target: { value: React.SetStateAction<string> } }) => {
             setinputcode(e.target.value);
         },
-        [inputcode],
+        [inputcode]
     );
     const outputonchange = useCallback(
         (e: { target: { value: React.SetStateAction<string> } }) => {
             setoutputcode(e.target.value);
         },
-        [outputcode],
+        [outputcode]
     );
     useEffect(() => {
-        document.title = "React router App-" +
+        document.title =
+            "React router App-" +
             "JSFuck encoder- Write any JavaScript with 6 Characters: []()!+";
         // jsfuckencoderender();
         return () => {
@@ -174,7 +175,7 @@ export default memo(function Jsfuck() {
             <br />
             <button
                 style={getStylePropValue(
-                    "font-size: 1.5em; padding: 0.5rem 1rem",
+                    "font-size: 1.5em; padding: 0.5rem 1rem"
                 )}
                 onClick={(e) => {
                     encode("encodestring", e.target);
@@ -190,7 +191,7 @@ export default memo(function Jsfuck() {
             </button>
             <button
                 style={getStylePropValue(
-                    "font-size: 1.5em; padding: 0.5rem 1rem",
+                    "font-size: 1.5em; padding: 0.5rem 1rem"
                 )}
                 onClick={(e) => {
                     encode("encodescript", e.target);
@@ -219,7 +220,7 @@ export default memo(function Jsfuck() {
                 {/* <span id="stats">0 chars</span> */}
                 <button
                     style={getStylePropValue(
-                        "font-size: 1.5em; padding: 0.5rem 1rem",
+                        "font-size: 1.5em; padding: 0.5rem 1rem"
                     )}
                     className="btn btn-outline-primary btn-lg"
                     id="run"
@@ -229,7 +230,7 @@ export default memo(function Jsfuck() {
                 </button>
                 <button
                     style={getStylePropValue(
-                        "font-size: 1.5em; padding: 0.5rem 1rem",
+                        "font-size: 1.5em; padding: 0.5rem 1rem"
                     )}
                     className="btn btn-outline-success btn-lg"
                     data-clipboard-target={"#" + "clip" + outputdivid}

@@ -15,6 +15,6 @@ if (process.env.NODE_ENV === "development") {
                 error: Object.fromEntries(error),
             };
         },
-        (value) => console.log(value),
+        (value) => console.log(value)
     );
 }

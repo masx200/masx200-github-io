@@ -160,12 +160,13 @@
         "async": "3.2.3"
     },
     "devDependencies": {
-        "vue-loader": "17.0.1",
-        "vue": "3.2.45",
         "@masx200/pi-calculation-multithreading": "^1.0.3",
+        "@masx200/rollup-plugin-http-resolve": "^5.0.2",
         "@rollup/plugin-alias": "^4.0.2",
         "@vercel/node": "^2.5.7",
-        "esbuild": "^0.17.15"
+        "esbuild": "^0.17.15",
+        "vue": "3.2.45",
+        "vue-loader": "17.0.1"
     },
     "overrides": {
         "terser": "^5.15.0",

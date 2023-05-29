@@ -3,12 +3,7 @@
     "tasks": {},
     "fmt": {
         "files": {
-            "exclude": [
-                "target",
-                "x64",
-                "*.cxx.ifc.d.json",
-                "node_modules"
-            ]
+            "exclude": ["target", "x64", "*.cxx.ifc.d.json", "node_modules"]
         },
         "options": {
             "indentWidth": 4,

@@ -36,9 +36,9 @@ const app = handler</* Context */ {}>(
         const src = Reflect.get(rssfeedxml, name);
         ctx.response.headers.set(
             "cache-control",
-            " s-maxage=7200,max-age=7200, public",
+            " s-maxage=7200,max-age=7200, public"
         );
         ctx.response.body = await getrss(src);
         return;
-    },
+    }
 );

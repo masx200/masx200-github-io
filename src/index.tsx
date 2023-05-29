@@ -14,8 +14,9 @@ React["__esModule"] = true;
 //@ts-ignore
 React["default"] = React;
 
-"use strict";
-const rootele = document.getElementById("root") ||
+("use strict");
+const rootele =
+    document.getElementById("root") ||
     document.body.appendChild(document.createElement("div"));
 Object.assign(rootele, { id: "root" });
 if (!document.getElementById("app")) {
@@ -40,13 +41,14 @@ window.addEventListener(
             });
         });
     },
-    { once: true },
+    { once: true }
 );
 
 // @ts-ignore
 const Homeelement = lazy(() => import("./home-react-index-render"));
 
-const container = document.getElementById("app") ||
+const container =
+    document.getElementById("app") ||
     rootele.appendChild(document.createElement("div"));
 Object.assign(container, { id: "app" });
 rootele &&
@@ -55,7 +57,7 @@ rootele &&
         React.createElement(
             Suspense,
             { fallback: <Loading></Loading> },
-            createElement(Homeelement),
+            createElement(Homeelement)
         ),
-        container,
+        container
     );

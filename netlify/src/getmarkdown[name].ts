@@ -24,10 +24,10 @@ const app = handler</* Context */ {}>(
         const src = Reflect.get(markdownurls, name);
         ctx.response.headers.set(
             "cache-control",
-            " s-maxage=86400,max-age=86400, public",
+            " s-maxage=86400,max-age=86400, public"
         );
         ctx.response.body = await getrenderedmarkdown(src);
 
         return;
-    },
+    }
 );

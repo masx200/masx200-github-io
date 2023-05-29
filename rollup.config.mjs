@@ -1,19 +1,20 @@
+import alias from "@rollup/plugin-alias";
 import { defineConfig } from "rollup";
 import esbuild from "rollup-plugin-esbuild";
-import alias from "@rollup/plugin-alias";
-import { httpResolve } from "@masx200/rollup-plugin-http-resolve";
+import { fileCache } from "@masx200/rollup-plugin-http-resolve";
 import fs from "fs";
 import { getBabelOutputPlugin } from "@rollup/plugin-babel";
+import { httpResolve } from "@masx200/rollup-plugin-http-resolve";
 import json from "@rollup/plugin-json";
 const plugins = [
     json(),
 
     alias({
         entries: JSON.parse(
-            (await fs.promises.readFile("./import_map.json")).toString(),
+            (await fs.promises.readFile("./import_map.json")).toString()
         ).imports,
     }),
-    httpResolve(),
+    httpResolve({ cache: new fileCache() }),
     getBabelOutputPlugin({
         plugins: ["@babel/plugin-proposal-logical-assignment-operators"],
     }),
