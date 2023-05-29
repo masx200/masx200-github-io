@@ -165,7 +165,7 @@
         "@rollup/plugin-alias": "^4.0.2",
         "@vercel/node": "^2.5.7",
         "esbuild": "^0.17.15",
-        "vue": "3.2.45",
+        "vue": "3.3.4",
         "vue-loader": "17.0.1"
     },
     "overrides": {
