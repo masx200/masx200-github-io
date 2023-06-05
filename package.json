@@ -67,7 +67,7 @@
         "@types/node": "^18.7.11",
         "@types/react": "18",
         "@types/react-dom": "18",
-        "@vercel/build-utils": "^5.3.1",
+        "@vercel/build-utils": "^6.7.5",
         "@vue/reactivity": "3.2.45",
         "@vue/runtime-core": "3.2.45",
         "acorn": "^8.2.4",
