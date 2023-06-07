@@ -166,7 +166,7 @@
    
         "esbuild": "^0.17.15",
         "vue": "3.3.4",
-        "vue-loader": "17.0.1"
+        "vue-loader": "17.2.2"
     },
     "overrides": {
         "terser": "^5.15.0",
