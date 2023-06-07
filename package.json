@@ -46,7 +46,7 @@
         "@babel/plugin-transform-runtime": "^7.18.2",
         "@babel/preset-env": "^7.18.2",
         "@babel/preset-react": "^7.17.12",
-        "@hattip/polyfills": "^0.0.33",
+        "@hattip/polyfills": "^0.0.34",
         "@highlightjs/cdn-assets": "^11.1.0",
         "@masx200/event-emitter-target": "^2.0.5",
         "@masx200/ie11-usual-polyfills": "^1.0.5",
@@ -64,11 +64,11 @@
         "@types/koa-conditional-get": "^2.0.0",
         "@types/koa-cors": "^0.0.2",
         "@types/marked": "^4.0.3",
-        "@types/node": "^18.7.11",
+        "@types/node": "^20.2.5",
         "@types/react": "18",
         "@types/react-dom": "18",
         
-        "@vue/reactivity": "3.2.45",
+        "@vue/reactivity": "3.3.4",
         "@vue/runtime-core": "3.2.45",
         "acorn": "^8.2.4",
         "ahooks": "^3.4.0",
@@ -165,7 +165,7 @@
         "@rollup/plugin-alias": "^4.0.2",
    
         "esbuild": "^0.17.15",
-        "vue": "3.2.45",
+        "vue": "3.3.4",
         "vue-loader": "17.0.1"
     },
     "overrides": {
