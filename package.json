@@ -68,7 +68,7 @@
         "@types/react": "18",
         "@types/react-dom": "18",
         
-        "@vue/reactivity": "3.2.45",
+        "@vue/reactivity": "3.3.4",
         "@vue/runtime-core": "3.2.45",
         "acorn": "^8.2.4",
         "ahooks": "^3.4.0",
