@@ -67,7 +67,7 @@
         "@types/node": "^18.7.11",
         "@types/react": "18",
         "@types/react-dom": "18",
-        "@vercel/build-utils": "^5.3.1",
+        
         "@vue/reactivity": "3.2.45",
         "@vue/runtime-core": "3.2.45",
         "acorn": "^8.2.4",
@@ -163,7 +163,7 @@
         "@masx200/pi-calculation-multithreading": "^1.0.3",
         "@masx200/rollup-plugin-http-resolve": "^5.0.2",
         "@rollup/plugin-alias": "^4.0.2",
-        "@vercel/node": "^2.5.7",
+   
         "esbuild": "^0.17.15",
         "vue": "3.2.45",
         "vue-loader": "17.0.1"
