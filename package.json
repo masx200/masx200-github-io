@@ -85,7 +85,7 @@
         "clipboard": "^2.0.8",
         "cross-fetch": "^3.1.5",
         "css-loader": "^6.7.1",
-        "cssnano": "^5.0.7",
+        "cssnano": "^6.0.1",
         "decimal.js": "^10.3.1",
         "dompurify": "^2.3.0",
         "fast-xml-parser": "4.2.4",
