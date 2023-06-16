@@ -164,7 +164,7 @@
         "@masx200/rollup-plugin-http-resolve": "^5.0.2",
         "@rollup/plugin-alias": "^5.0.0",
    
-        "esbuild": "^0.17.15",
+        "esbuild": "^0.18.3",
         "vue": "3.3.4",
         "vue-loader": "17.2.2"
     },
