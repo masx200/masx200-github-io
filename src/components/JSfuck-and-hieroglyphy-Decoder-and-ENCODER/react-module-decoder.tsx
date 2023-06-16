@@ -2,7 +2,6 @@ import React, { memo, useCallback, useEffect, useState } from "react";
 
 //@ts-ignore
 import { decode } from "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder";
-
 import { getStylePropValue } from "../../getStylePropValue";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
@@ -31,7 +30,7 @@ var outputdivid = "clip" + guid();
 export default memo(function Decoder() {
     const [inputcode, setinputcode] = useState("");
     const decodehandler = useCallback(() => {
-        console.log(inputcode);
+        // console.log(inputcode);
         try {
             setoutputcode(decode(inputcode));
             tanchutanchuxiaoxitishi();

@@ -1,9 +1,8 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 
+import { getStylePropValue } from "../../getStylePropValue";
 //@ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
-
-import { getStylePropValue } from "../../getStylePropValue";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 
@@ -11,7 +10,8 @@ import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 
 function hieroglyphyworker() {
     return new Worker(
-        new URL("./worker-hieroglyphy-worker.js", import.meta.url)
+        new URL("./worker-hieroglyphy-worker.js", import.meta.url),
+        { type: "module" }
     );
 }
 ("use strict");
@@ -48,7 +48,7 @@ export default memo(function Hieroglyphy() {
     async function encodeall(typename: string, btnele: EventTarget) {
         return new Promise<void>((res, rej) => {
             // console.time(typename);
-            console.log(typename);
+            // console.log(typename);
             if (!myservice) {
                 myservice = hieroglyphyworker();
             }
@@ -68,8 +68,8 @@ export default memo(function Hieroglyphy() {
             // debugger;
             myservice.onmessage = (e) => {
                 var output = e.data;
-                console.log("主线程从副线程" + "接收" + "event.data\n");
-                console.log(output);
+                // console.log("主线程从副线程" + "接收" + "event.data\n");
+                // console.log(output);
 
                 setoutputcode(output);
                 setstatstext(output.length + " chars");
@@ -82,7 +82,7 @@ export default memo(function Hieroglyphy() {
                 //   console.log("线程已关闭","service-worker-jsfuck.js")
                 // console.timeEnd("encodestring");
                 requestAnimationFrame(() => {
-                    console.log("弹出消息提示");
+                    // console.log("弹出消息提示");
                     tanchu弹出消息提示();
                     // console.timeEnd("requestAnimationFrame");
                 });

@@ -1,16 +1,17 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 
+import { getStylePropValue } from "../../getStylePropValue";
 //@ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
-
-import { getStylePropValue } from "../../getStylePropValue";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 
 //@ts-ignore
 
 function jsfuckworker() {
-    return new Worker(new URL("./worker-jsfuck-worker.js", import.meta.url));
+    return new Worker(new URL("./worker-jsfuck-worker.js", import.meta.url), {
+        type: "module",
+    });
 }
 ("use strict");
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
@@ -51,7 +52,7 @@ export default memo(function Jsfuck() {
         }
         return new Promise<void>((res, rej) => {
             // console.time("encodescript");
-            console.log("encodescript");
+            // console.log("encodescript");
             mui(button).button("loading");
 
             if (!myservice) {
@@ -73,8 +74,8 @@ export default memo(function Jsfuck() {
             ]);
             myservice.onmessage = (e) => {
                 var output = e.data;
-                console.log("主线程从副线程" + "接收" + "event.data\n");
-                console.log(output);
+                // console.log("主线程从副线程" + "接收" + "event.data\n");
+                // console.log(output);
 
                 setoutputcode(output);
 
@@ -85,7 +86,7 @@ export default memo(function Jsfuck() {
                 //   console.log("线程已关闭","service-worker-jsfuck.js")
 
                 requestAnimationFrame(() => {
-                    console.log("弹出消息提示");
+                    // console.log("弹出消息提示");
                     tanchu弹出消息提示();
                     // console.timeEnd("requestAnimationFrame");
 

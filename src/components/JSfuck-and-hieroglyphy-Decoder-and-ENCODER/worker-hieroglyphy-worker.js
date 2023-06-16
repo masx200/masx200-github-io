@@ -1,4 +1,5 @@
 "use strict";
+
 import {
     hieroglyphyScript,
     hieroglyphyString,
@@ -9,8 +10,8 @@ addEventListener("message", (e) => {
     //   (typeof WorkerGlobalScope !== 'undefined' ? WorkerGlobalScope : false))
     var d = e.data;
 
-    console.log("副线程" + "从主线程接收" + "event.data\n");
-    console.log(JSON.stringify(d));
+    // console.log("副线程" + "从主线程接收" + "event.data\n");
+    // console.log(JSON.stringify(d));
     const [code, method] = d;
     //   if (typeof hieroglyphy === "undefined") {
     //     var hieroglyphy = d[2];

@@ -1,4 +1,5 @@
 "use strict";
+
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 // @ts-ignore
 // @ts-ignore
@@ -6,16 +7,15 @@
 // import mui from "../mui.min.js";
 // eslint-disable-next-line no-unused-vars
 import React, { memo, useEffect, useRef } from "react";
-
-// @ts-ignore
-import mui from "@/assetsjs/mui.精简.button";
 import {
     decimalCalculatePi,
     decimalcleanup,
 } from "@masx200/pi-calculation-multithreading";
 
-import { useBindtext } from "../../huami/useBindtext";
+// @ts-ignore
+import mui from "@/assetsjs/mui.精简.button";
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
+import { useBindtext } from "../../huami/useBindtext";
 
 // @ts-ignore
 // import decimalworker from "./worker-mythread1-decimal.worker.js";
@@ -24,7 +24,8 @@ function tanchu弹出消息提示() {
 }
 function createworker() {
     return new Worker(
-        new URL("./worker-mythread1-decimal-worker.ts", import.meta.url)
+        new URL("./worker-mythread1-decimal-worker.ts", import.meta.url),
+        { type: "module" }
     );
 }
 
@@ -58,11 +59,11 @@ function lashentextarea(eles: HTMLElement) {
         if (Math.abs(parseInt(el.style.height) - el.scrollHeight) > 5) {
             // console.log(parseInt(el.style.height), el.scrollHeight);
             myptext.style.height = myptext.scrollHeight + 2 + "px";
-            console.log("拉伸文本框", [
-                parseInt(el.style.height),
-                el.scrollHeight,
-                myptext.outerHTML,
-            ]);
+            // console.log("拉伸文本框", [
+            //     parseInt(el.style.height),
+            //     el.scrollHeight,
+            //     myptext.outerHTML,
+            // ]);
         }
         //   }
     });
@@ -180,7 +181,7 @@ export default memo(function decimalcom() {
                 // Decimal.set({ precision: piwei });
                 //   debugger;
                 //   console.log(outputtext1);
-                console.log(testname);
+                // console.log(testname);
                 // console.time(testname);
                 let strt = new Date().getTime();
                 // p = new Decimal(0);

@@ -19,7 +19,7 @@ const app = handler(
         try {
             await next();
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             return new Response(error?.message, { status: 500 });
         }
     },

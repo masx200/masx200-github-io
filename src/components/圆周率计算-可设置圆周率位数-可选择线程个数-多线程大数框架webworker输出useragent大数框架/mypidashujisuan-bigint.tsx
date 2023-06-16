@@ -1,16 +1,16 @@
 "use strict";
-import React, { memo, useEffect, useRef } from "react";
 
-// @ts-ignore
-import mui from "@/assetsjs/mui.精简.button";
+import React, { memo, useEffect, useRef } from "react";
 import {
     bigintCalculatePi,
     bigintcleanup,
 } from "@masx200/pi-calculation-multithreading";
 
-import { useBindtext } from "../../huami/useBindtext";
+// @ts-ignore
+import mui from "@/assetsjs/mui.精简.button";
 // @ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
+import { useBindtext } from "../../huami/useBindtext";
 
 // @ts-ignore
 // import bigintworker from "./worker-mythread1-bigint.worker.js";
@@ -22,7 +22,8 @@ function tanchu弹出消息提示() {
 }
 function createworker() {
     return new Worker(
-        new URL("./worker-mythread1-bigint-worker.ts", import.meta.url)
+        new URL("./worker-mythread1-bigint-worker.ts", import.meta.url),
+        { type: "module" }
     );
 }
 
@@ -55,11 +56,11 @@ function lashentextarea(eles: HTMLTextAreaElement) {
         if (Math.abs(parseInt(el.style.height) - el.scrollHeight) > 5) {
             // console.log(parseInt(el.style.height), el.scrollHeight);
             myptext.style.height = myptext.scrollHeight + 2 + "px";
-            console.log("拉伸文本框", [
-                parseInt(el.style.height),
-                el.scrollHeight,
-                myptext.outerHTML,
-            ]);
+            // console.log("拉伸文本框", [
+            //     parseInt(el.style.height),
+            //     el.scrollHeight,
+            //     myptext.outerHTML,
+            // ]);
         }
         //   }
     });
@@ -188,7 +189,7 @@ export default memo(function bigcom() {
                 );
                 //   debugger;
                 //   console.log(outputtext1);
-                console.log(testname);
+                // console.log(testname);
                 // console.time(testname);
                 let strt = new Date().getTime();
                 // @ts-ignore

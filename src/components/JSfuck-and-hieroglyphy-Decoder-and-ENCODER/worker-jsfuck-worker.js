@@ -1,4 +1,5 @@
 "use strict";
+
 import {
     jsfuckScript,
     jsfuckString,
@@ -15,9 +16,9 @@ var mymessagehandler = (e) => {
 
     var d = e.data;
 
-    console.log("副线程" + "从主线程接收" + "event.data\n");
-    //   console.log(...d);
-    console.log(JSON.stringify(d));
+    // console.log("副线程" + "从主线程接收" + "event.data\n");
+    // //   console.log(...d);
+    // console.log(JSON.stringify(d));
     // globalimport(d[2]);
     const [code, method] = d;
     var output;
