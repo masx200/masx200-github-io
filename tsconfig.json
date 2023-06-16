@@ -33,8 +33,8 @@
 
         "baseUrl": "./",
         "paths": {
-            "react": ["./node_modules/preact/compat/"],
-            "react-dom": ["./node_modules/preact/compat/"]
+            "react": ["@types/react"],
+            "react-dom": ["@types/react-dom"]
         }
     },
     "include": ["src/", "api"],
