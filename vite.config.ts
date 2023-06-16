@@ -2,6 +2,7 @@ import { babel } from "@rollup/plugin-babel";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { defineConfig } from "vite";
 import path from "path";
+import react from "@vitejs/plugin-react-swc";
 //@ts-ignore
 export default defineConfig((/* { mode } */) => {
     // 加载环境变量，因为 vite 中不会加载以 VUE 开头的，我们得自己指定下
@@ -27,6 +28,7 @@ export default defineConfig((/* { mode } */) => {
             },
         },
         plugins: [
+            react({ jsxImportSource: "preact" }),
             Object.assign(
                 babel({
                     presets: ["@babel/preset-typescript"],
