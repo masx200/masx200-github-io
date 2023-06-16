@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-    "noEmit":true,
+        "noEmit": true,
         "allowJs": false,
         "checkJs": false,
         "skipLibCheck": true,
@@ -21,7 +21,7 @@
         "outDir": "./dist",
         "sourceMap": true,
         "strictNullChecks": true,
-        "baseUrl": ".",
+
         "noFallthroughCasesInSwitch": true,
         "experimentalDecorators": true,
         "noImplicitAny": true,
@@ -29,7 +29,13 @@
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "alwaysStrict": true,
-        "allowImportingTsExtensions": true
+        "allowImportingTsExtensions": true,
+
+        "baseUrl": "./",
+        "paths": {
+            "react": ["@types/react"],
+            "react-dom": ["@types/react-dom"]
+        }
     },
     "include": ["src/", "api"],
     "exclude": ["*.tsx", "*/*.tsx", "*/*/*.tsx", "*/*/*/*.tsx"]
