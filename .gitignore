@@ -45,3 +45,4 @@ api/get.js.map
 vercel/dist/get.js
 vercel/dist/get.js.map
 checks.json
+*.lock
