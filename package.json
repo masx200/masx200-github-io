@@ -58,7 +58,7 @@
         "@rollup/plugin-babel": "^6.0.2",
         "@rollup/plugin-json": "^6.0.0",
         "@rollup/plugin-node-resolve": "^15.1.0",
-        "@types/dompurify": "^2.3.3",
+        "@types/dompurify": "^3.0.2",
         "@types/etag": "^1.8.1",
         "@types/jquery": "^3.5.14",
         "@types/marked": "^5.0.0",
