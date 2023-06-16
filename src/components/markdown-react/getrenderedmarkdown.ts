@@ -29,7 +29,7 @@ marked.use(
                 ? hljs.highlight(code, { language: lang }).value
                 : hljs.highlightAuto(code).value;
         },
-    })
+    }),
 );
 const options = {
     // prefix: "my-prefix-",
@@ -41,6 +41,7 @@ export const getrenderedmarkdown = cachepromise(async function (src: string) {
     marked.use(baseUrl(src));
     const text = await fetchtext(src);
     const dirty = marked(text, {
+        langPrefix: "hljs language-",
         renderer: new myrenderer(),
         // baseUrl: src,
         // highlight(code, lang) {
