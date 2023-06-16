@@ -1,16 +1,19 @@
-import markdownurls from "../../src/utils/markdownurls.ts";
-// import type { Context } from "https://edge.netlify.com";
-import { getrenderedmarkdown } from "../../src/components/markdown-react/getrenderedmarkdown.ts";
 import {
     conditional_get,
     cors,
     etag_builder,
     handler,
-} from "https://deno.land/x/masx200_deno_http_middleware@2.2.1/mod.ts";
+} from "masx200_deno_http_middleware";
+
+// import type { Context } from "https://edge.netlify.com";
+import { getrenderedmarkdown } from "../../src/components/markdown-react/getrenderedmarkdown.ts";
+import markdownurls from "../../src/utils/markdownurls.ts";
+
 export default function (request: Request /* , context: Context */) {
     return app(request /* , context */);
 }
-const app = handler</* Context */ {}>(
+const app = handler(
+    //</* Context */ {}>
     etag_builder,
     conditional_get,
     cors(),

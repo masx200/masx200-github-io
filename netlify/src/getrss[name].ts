@@ -1,18 +1,20 @@
-// import type { Context } from "https://edge.netlify.com";
-import { getrss } from "../../src/rssreader/getrss.ts";
-import rssfeedxml from "../../src/rssreader/rssfeedxml.ts";
-
 import {
     conditional_get,
     cors,
     etag_builder,
     handler,
     json_builder,
-} from "https://deno.land/x/masx200_deno_http_middleware@2.2.1/mod.ts";
+} from "masx200_deno_http_middleware";
+
+// import type { Context } from "https://edge.netlify.com";
+import { getrss } from "../../src/rssreader/getrss.ts";
+import rssfeedxml from "../../src/rssreader/rssfeedxml.ts";
+
 export default function (request: Request /* , context: Context */) {
     return app(request /* , context */);
 }
-const app = handler</* Context */ {}>(
+const app = handler(
+    ///* </* Context */ {}> */
     async (_ctx, next) => {
         try {
             await next();
