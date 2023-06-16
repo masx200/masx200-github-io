@@ -6,9 +6,10 @@ import fs from "fs";
 import { getBabelOutputPlugin } from "@rollup/plugin-babel";
 import { httpResolve } from "@masx200/rollup-plugin-http-resolve";
 import json from "@rollup/plugin-json";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 const plugins = [
     json(),
-
+    nodeResolve(),
     alias({
         entries: JSON.parse(
             (await fs.promises.readFile("./import_map.json")).toString()
