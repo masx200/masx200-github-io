@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
 import Link from "./CustomLink";
-import { useParams } from "./router";
 import { rsssitenames } from "./rsssitenames";
+import { useParams } from "./router";
 
 export default React.memo(可变路径的rssreader链接);
 function 可变路径的rssreader链接() {
@@ -23,7 +23,7 @@ function 可变路径的rssreader链接() {
             }
             className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
         >
-            rss阅读
+            rss阅读器
         </Link>
     );
 }
