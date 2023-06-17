@@ -37,6 +37,6 @@
             "react-dom": ["@types/react-dom"]
         }
     },
-    "include": ["src/", "api"],
-    "exclude": ["*.tsx", "*/*.tsx", "*/*/*.tsx", "*/*/*/*.tsx"]
+    "include": ["src", "api", "pages"],
+    "exclude": []
 }

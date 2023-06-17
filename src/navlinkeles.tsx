@@ -1,5 +1,4 @@
 import React from "react";
-
 import 可变路径的rssreader链接 from "./可变路径的rssreader链接";
 import 我的自定义导航链接 from "./我的自定义导航链接";
 
@@ -29,6 +28,12 @@ const navlinks = [
             p: "/excellent-vscode-extensions-for-javascript",
         },
         text: "VScode的优秀扩展推荐",
+    },
+    {
+        to: {
+            p: "/counter",
+        },
+        text: "计数器",
     },
 ];
 export const navlinkeles = (

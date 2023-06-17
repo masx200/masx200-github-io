@@ -97,7 +97,7 @@ const myroutes: [string | ((o: any) => boolean), ComponentType<any>][] = [
     ["/webpack-react-vue-spa-awesome-config", webpackawesomeconfig],
 
     ["/excellent-vscode-extensions-for-javascript", excellentvscodeextensions],
-
+    ["/counter", React.lazy(() => import("../pages/counter.tsx"))],
     [() => true, reacthome],
 ];
 const 路由list: {

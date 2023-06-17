@@ -114,43 +114,15 @@ export default memo(function bigcom() {
 
     async function mystart(btnele: EventTarget) {
         mui(btnele).button("loading");
-        // // @ts-ignore
-        // bigInt.abs = (n) => bigInt(n).abs();
-        // // @ts-ignore
-        // bigInt.mul = (n, m) => bigInt(n).multiply(m);
-        // // @ts-ignore
-        // bigInt.div = (n, m) => bigInt(n).divide(m);
-        // // @ts-ignore
-        // bigInt.add = (n, m) => bigInt(n).add(m);
-        // // @ts-ignore
-        // bigInt().__proto__.cmp = bigInt().__proto__.compare;
-        // // @ts-ignore
-        // bigInt().__proto__.div = bigInt().__proto__.divide;
-        // // @ts-ignore
-        // bigInt().__proto__.mul = bigInt().__proto__.multiply;
-        // // @ts-ignore
-        // bigInt("90071992547409920").__proto__.cmp = bigInt(
-        //     "90071992547409920"
-        //     // @ts-ignore
-        // ).__proto__.compare;
-        // // @ts-ignore
-        // bigInt("90071992547409920").__proto__.div = bigInt(
-        //     "90071992547409920"
-        //     // @ts-ignore
-        // ).__proto__.divide;
-        // // @ts-ignore
-        // bigInt("90071992547409920").__proto__.mul = bigInt(
-        //     "90071992547409920"
-        //     // @ts-ignore
-        // ).__proto__.multiply;
+
         try {
             // var myinput1 = document.getElementById("thread-big");
             // var myinput2 = document.getElementById("pichangwei-big");
             if (
-                inputtext1 >= 1 &&
-                inputtext1 <= 16 &&
-                inputtext2 >= 1 &&
-                inputtext2 <= 100
+                Number(inputtext1) >= 1 &&
+                Number(inputtext1) <= 16 &&
+                Number(inputtext2) >= 1 &&
+                Number(inputtext2) <= 100
             ) {
                 const piwei = 1000 * Math.floor(Number(inputtext2));
                 //   let inputtext2f = Math.floor(inputtext2);

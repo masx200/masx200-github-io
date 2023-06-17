@@ -138,10 +138,10 @@ export default memo(function decimalcom() {
         // var myinput2 = document.getElementById("pichangwei-big");
         try {
             if (
-                inputtext1 >= 1 &&
-                inputtext1 <= 16 &&
-                inputtext2 >= 1 &&
-                inputtext2 <= 100
+                Number(inputtext1) >= 1 &&
+                Number(inputtext1) <= 16 &&
+                Number(inputtext2) >= 1 &&
+                Number(inputtext2) <= 100
             ) {
                 const piwei = 1000 * Math.floor(Number(inputtext2));
                 //   let inputtext2f = Math.floor(inputtext2);
