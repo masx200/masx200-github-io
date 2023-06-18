@@ -11,7 +11,7 @@ export default function Counter() {
     const count = useSignal(0);
     useEffect(() => {
         document.title = "计数器";
-    });
+    },[]);
     const double = useComputed(() => count.value * 2);
     return (
         <div className="show-container">
