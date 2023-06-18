@@ -11,7 +11,7 @@ export default function Counter() {
     const count = useSignal(0);
     useEffect(() => {
         document.title = "计数器";
-    },[]);
+    }, []);
     const double = useComputed(() => count.value * 2);
     return (
         <div className="show-container">
@@ -48,9 +48,7 @@ export default function Counter() {
                                     value={double}
                                     style={{ height: "100%" }}
                                     onChange={(value) => {
-                                        count.value = Math.round(
-                                            Number(value) / 2
-                                        );
+                                        count.value = Number(value) / 2;
                                     }}
                                 />
                             </Row>

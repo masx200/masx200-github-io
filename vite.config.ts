@@ -2,8 +2,7 @@ import { babel } from "@rollup/plugin-babel";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { defineConfig } from "vite";
 import path from "path";
-import react from "@vitejs/plugin-react-swc";
-import preact from "@preact/preset-vite"; 
+import preact from "@preact/preset-vite";
 
 //@ts-ignore
 export default defineConfig((/* { mode } */) => {
@@ -29,8 +28,9 @@ export default defineConfig((/* { mode } */) => {
                 "react/jsx-runtime": "preact/jsx-runtime",
             },
         },
-        plugins: [preact(),
-            react({ jsxImportSource: "preact" }),
+        plugins: [
+            preact(),
+
             Object.assign(
                 babel({
                     presets: ["@babel/preset-typescript"],
