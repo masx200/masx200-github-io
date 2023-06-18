@@ -50,7 +50,6 @@
         "@hattip/polyfills": "^0.0.34",
         "@highlightjs/cdn-assets": "^11.1.0",
         "@masx200/event-emitter-target": "^2.0.5",
-        "@masx200/ie11-usual-polyfills": "^1.0.5",
         "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder": "^2.0.9",
         "@masx200/rollup-plugin-http-resolve": "^5.0.2",
         "@masx200/search-hash-params-router": "^3.0.2",
