@@ -34,7 +34,9 @@
         "baseUrl": "./",
         "paths": {
             "react": ["preact/compat"],
-            "react-dom": ["preact/compat"]
+            "react-dom": ["preact/compat"],
+            "@types/react": ["preact/compat"],
+            "@types/react-dom": ["preact/compat"]
         }
     },
     "include": ["src", "api", "pages"],
