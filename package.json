@@ -168,6 +168,7 @@
         "@babel/preset-typescript": "^7.22.5",
         "@masx200/pi-calculation-multithreading": "^1.0.3",
         "@masx200/rollup-plugin-http-resolve": "^5.0.2",
+        "@preact/preset-vite": "^2.5.0",
         "@rollup/plugin-alias": "^5.0.0",
         "@rollup/plugin-babel": "^6.0.3",
         "@types/babel__core": "^7.20.1",
