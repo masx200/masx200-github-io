@@ -15,6 +15,7 @@
         "module": "esnext",
         "target": "esnext",
         "jsx": "preserve",
+          "jsxImportSource": "preact",
         "removeComments": true,
         "pretty": true,
         "strict": true,
