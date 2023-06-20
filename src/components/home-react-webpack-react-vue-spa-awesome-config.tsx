@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { memo, useEffect } from "react";
-
+import { memo, useEffect } from "react";
 //@ts-ignore
 import markdwonurls from "../utils/markdownurls";
 // eslint-disable-next-line no-unused-vars

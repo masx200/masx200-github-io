@@ -1,5 +1,4 @@
-import React, { memo, useEffect } from "react";
-
+import { memo, useEffect } from "react";
 //@ts-ignore
 import markdwonurls from "../utils/markdownurls.ts";
 import Markdownreact from "./markdown-react/index";

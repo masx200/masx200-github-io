@@ -1,5 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
-
+import { memo, useEffect, useState } from "react";
 import { 获取当前时间 } from "./获取当前时间";
 
 export const Showtime = memo(function Showtime() {

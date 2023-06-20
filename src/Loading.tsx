@@ -6,4 +6,5 @@ export default memo(function () {
         </div>
     );
 });
-import React, { memo } from "react";
+
+import { memo } from "react";

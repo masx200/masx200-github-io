@@ -1,5 +1,4 @@
-import React, { memo } from "react";
-
+import { memo } from "react";
 import Link from "./CustomLink";
 
 export default memo(function 我的自定义导航链接({
