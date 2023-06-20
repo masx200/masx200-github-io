@@ -1,11 +1,9 @@
+import { useComputed, useSignal } from "@preact/signals";
+import { useEffect } from "preact/hooks";
 import { Container, Content, Header } from "rsuite";
 import { FlexboxGrid, Row } from "rsuite";
-import { useComputed, useSignal } from "@preact/signals";
-
 import Button from "rsuite/Button";
 import Input from "rsuite/Input";
-import React from "react";
-import { useEffect } from "preact/hooks";
 
 export default function Counter() {
     const count = useSignal(0);
