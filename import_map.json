@@ -2,7 +2,7 @@
     "imports": {
         "@hattip/response": "https://esm.sh/@hattip/response@0.0.34",
         "masx200_deno_http_middleware": "https://deno.land/x/masx200_deno_http_middleware@3.2.1/mod.ts",
-        "fast-xml-parser": "https://esm.sh/fast-xml-parser@4.2.4",
+        
         "linkedom": "https://esm.sh/linkedom@0.14.12/",
         "marked": "https://esm.sh/marked@5.1.0",
         "dompurify": "https://esm.sh/dompurify@2.4.0",
