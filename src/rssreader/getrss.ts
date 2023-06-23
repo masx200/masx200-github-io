@@ -1,5 +1,6 @@
-import { XMLParser } from "fast-xml-parser";
+import fxp  from "fast-xml-parser";
 //@ts-ignore
+const { XMLParser }=fxp
 import { cachepromise } from "../cachepromise.ts";
 //@ts-ignore
 import { fetchtext } from "../components/markdown-react/fetchtext.ts";
