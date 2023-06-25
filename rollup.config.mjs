@@ -1,5 +1,4 @@
-
-import commonjs from '@rollup/plugin-commonjs';
+import commonjs from "@rollup/plugin-commonjs";
 
 import alias from "@rollup/plugin-alias";
 import { defineConfig } from "rollup";
@@ -11,7 +10,7 @@ import { httpResolve } from "@masx200/rollup-plugin-http-resolve";
 import json from "@rollup/plugin-json";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 const plugins = [
-commonjs(),
+    commonjs(),
     json(),
     nodeResolve(),
     alias({

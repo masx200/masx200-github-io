@@ -1,4 +1,4 @@
-import { XMLParser }  from "fast-xml-parser";
+import { XMLParser } from "fast-xml-parser";
 //@ts-ignore
 
 import { cachepromise } from "../cachepromise.ts";

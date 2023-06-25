@@ -1,3 +1,4 @@
+import "rsuite/dist/rsuite.min.css";
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker";
 import "./error-alert.js";
 import "./styles.js";
