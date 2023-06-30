@@ -1,4 +1,4 @@
-import { babel } from "@rollup/plugin-babel";
+//import { babel } from "@rollup/plugin-babel";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { defineConfig } from "vite";
 import path from "path";
@@ -29,14 +29,8 @@ export default defineConfig((/* { mode } */) => {
             },
         },
         plugins: [
-            preact(),
-
-            Object.assign(
-                babel({
-                    presets: ["@babel/preset-typescript"],
-                    babelHelpers: "bundled",
-                    extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".tsx"],
-                    plugins: [
+            preact({
+plugins: [
                         [
                             "@babel/plugin-syntax-typescript",
                             { options: { isTSX: true } },
@@ -50,13 +44,13 @@ export default defineConfig((/* { mode } */) => {
                         ],
                         "@babel/plugin-transform-react-constant-elements",
                     ],
-                }),
-                { enforce: "pre" }
-            ),
+
+}),
+
             createHtmlPlugin({
                 minify: true,
                 template: "./public/index.html",
-                entry: "./src/index.tsx", // 这个会帮我们注入入口 js 文件
+                entry: path.join(__dirname, "./src/index.tsx"), // 这个会帮我们注入入口 js 文件
                 inject: {
                     // data: {
                     //     // 这是我们 index.html 用到的环境变量
