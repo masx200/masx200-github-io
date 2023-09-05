@@ -96,7 +96,7 @@
         "json-loader": "^0.5.7",
         "less": "^4.1.1",
         "less-loader": "^11.0.0",
-        "linkedom": "^0.14.12",
+        "linkedom": "^0.15.3",
         "lodash": "^4.17.21",
         "marked": "^5.1.0",
         "marked-base-url": "^1.0.1",
