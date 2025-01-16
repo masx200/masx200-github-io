@@ -7,7 +7,7 @@ import { fetchtext } from "../components/markdown-react/fetchtext.ts";
 // import { fetchsource } from "../fetchsource";
 //@ts-ignore
 import { htmltotext } from "./htmltotext.ts";
-import { RSSDATA } from "./userss.ts";
+import { RSSDATA } from "./RSSDATA.ts";
 
 // cachepromise
 // console.log(hljs)

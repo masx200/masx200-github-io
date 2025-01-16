@@ -1,7 +1,8 @@
-import { getrssandsave } from "./getrssandsave";
 import { readonly } from "@vue/reactivity";
-import { rssstore } from "./rssstore";
 import { usereactive } from "../components/markdown-react/usereactive";
+import { getrssandsave } from "./getrssandsave";
+import { RSSDATA } from "./RSSDATA";
+import { rssstore } from "./rssstore";
 
 export function userss(src: string): {
     data:
@@ -26,19 +27,6 @@ export function userss(src: string): {
     }
     return { data, error };
 }
-
-export type RSSDATA = Readonly<{
-    title: string;
-    lastBuildDate: string;
-    link: string;
-    content: {
-        link: string;
-        title: string;
-        description: string;
-        pubDate: string;
-    }[];
-    description: string;
-}>;
 
 function getrssresult(src: string): () => {
     data: RSSDATA | undefined;

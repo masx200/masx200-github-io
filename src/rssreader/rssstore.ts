@@ -1,5 +1,5 @@
 import { reactive } from "@vue/reactivity";
-import { RSSDATA } from "./userss";
+import { RSSDATA } from "./RSSDATA";
 //import { watch } from "@vue/runtime-core";
 
 const rssstore = reactive({
