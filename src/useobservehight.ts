@@ -3,8 +3,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 export function useobservehight(
     initial: number = 0
 ): [number, (e?: Element | null | undefined) => void] {
-    const navele = useRef<Element>();
-    const observer = useRef<ResizeObserver>();
+    const navele = useRef<Element | null>(null); // 修正此处
+    const observer = useRef<ResizeObserver | null>(null);
     const createobserver = useCallback(function createobserver() {
         observer.current =
             observer.current ||
