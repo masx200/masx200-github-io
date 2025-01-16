@@ -30,21 +30,23 @@ export default defineConfig((/* { mode } */) => {
         },
         plugins: [
             preact({
-                //@ts-ignore
-                plugins: [
-                    [
-                        "@babel/plugin-syntax-typescript",
-                        { options: { isTSX: true } },
+                babel: {
+                    //@ts-ignore
+                    plugins: [
+                        [
+                            "@babel/plugin-syntax-typescript",
+                            { options: { isTSX: true } },
+                        ],
+                        [
+                            "styled-jsx/babel",
+                            {
+                                sourceMaps: true,
+                                plugins: ["styled-jsx-plugin-postcss"],
+                            },
+                        ],
+                        "@babel/plugin-transform-react-constant-elements",
                     ],
-                    [
-                        "styled-jsx/babel",
-                        {
-                            sourceMaps: true,
-                            plugins: ["styled-jsx-plugin-postcss"],
-                        },
-                    ],
-                    "@babel/plugin-transform-react-constant-elements",
-                ],
+                },
             }),
 
             createHtmlPlugin({
