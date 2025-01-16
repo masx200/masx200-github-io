@@ -64,6 +64,7 @@ export const getrss = cachepromise(async function (
         content,
         description,
         link: data.rss.channel.link,
-        lastBuildDate: data.rss.channel.lastBuildDate,
+        lastBuildDate:
+            data.rss.channel.lastBuildDate ?? data.rss.channel.pubDate,
     } satisfies RSSDATA;
 });

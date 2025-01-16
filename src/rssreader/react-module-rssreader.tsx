@@ -50,7 +50,18 @@ function getrssmain() {
         <>
             <h2>异步fetch加载rss阅读器演示</h2>
             <p>使用fast-xml-parser把xml转换成json</p>
-            <nav className="navbar navbar-expand-sm bg-light navbar-light ">
+            <nav
+                className="navbar navbar-expand-sm bg-light navbar-light "
+                style={{
+                    display: "flex",
+                    //@ts-ignore
+                    "flex-direction": "column",
+                    "flex-wrap": "nowrap",
+                    "align-content": "center",
+                    "justify-content": "center",
+                    "align-items": "center",
+                }}
+            >
                 <details open>
                     <summary>订阅源列表</summary>
                     <ul
