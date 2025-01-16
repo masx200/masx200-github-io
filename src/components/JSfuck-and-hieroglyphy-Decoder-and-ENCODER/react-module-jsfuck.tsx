@@ -42,8 +42,7 @@ function 关闭所有worker() {
     }
 }
 export default memo(function Jsfuck() {
-    const evalcheckbox = useRef();
-
+    const evalcheckbox = useRef<HTMLButtonElement | null>(null);
     async function encode(typename: string, btnele: EventTarget) {
         // const evalcheck = typename === "encodescript";
         const button = btnele;
@@ -116,7 +115,7 @@ export default memo(function Jsfuck() {
     var [inputcode, setinputcode] = useState(
         "console.log('{你好吗zxcvbnmasdfghjklqwertyuiopQWERTYUIOPASDFGHJKLZXCVBNM}')"
     );
-    const btnencode = useRef();
+    const btnencode = useRef<HTMLButtonElement | null>(null);
     //   const btnencodestring = useRef();
     const inputonchange = useCallback(
         (e: { target: { value: React.SetStateAction<string> } }) => {

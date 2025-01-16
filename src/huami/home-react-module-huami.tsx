@@ -6,7 +6,7 @@ import { generatehuami } from "./generatehuami";
 import { useBindtext } from "./useBindtext";
 
 export default memo(function huami() {
-    const copyOKref = useRef<HTMLElement>();
+    const copyOKref = useRef<HTMLElement | null>(null);
     useEffect(() => {
         document.title = "masx200的github主页-" + "花密  不一样的密码管理工具";
     }, []);
