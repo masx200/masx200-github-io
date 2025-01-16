@@ -13,10 +13,11 @@ if (import.meta.main) {
             const req = new Request("http://localhost/api/getmarkdown/" + name);
             const response = await getmarkdown(req);
 
-            const text =
-                await ((await response.ok) ? response.text() : Promise.reject(
-                    "fetch failed\n" + req.url + "\n" + response.status,
-                ));
+            const text = await ((await response.ok)
+                ? response.text()
+                : Promise.reject(
+                      "fetch failed\n" + req.url + "\n" + response.status,
+                  ));
 
             const file = import.meta.resolve(
                 "../public/api/getmarkdown/" + name + ".html",
@@ -31,9 +32,11 @@ if (import.meta.main) {
         ...Object.keys(rssfeedxml).map(async (name) => {
             const req = new Request("http://localhost/api/getrss/" + name);
             const res = await getrss(req);
-            const text = await ((await res.ok) ? res.text() : Promise.reject(
-                "fetch failed\n" + req.url + "\n" + res.status,
-            ));
+            const text = await ((await res.ok)
+                ? res.text()
+                : Promise.reject(
+                      "fetch failed\n" + req.url + "\n" + res.status,
+                  ));
 
             const file = import.meta.resolve(
                 "../public/api/getrss/" + name + ".json",

@@ -13,7 +13,7 @@ function jsfuckworker() {
         type: "module",
     });
 }
-"use strict";
+("use strict");
 // import tanchu弹出消息通用 from "@/utils/my弹出消息通用.js";
 function tanchu弹出消息提示() {
     tanchu弹出消息通用("success");
@@ -130,7 +130,8 @@ export default memo(function Jsfuck() {
         [outputcode],
     );
     useEffect(() => {
-        document.title = "React router App-" +
+        document.title =
+            "React router App-" +
             "JSFuck encoder- Write any JavaScript with 6 Characters: []()!+";
         // jsfuckencoderender();
         return () => {

@@ -106,9 +106,8 @@ const 路由list: {
 }[] = myroutes.map(({ 0: params, 1: component }) => {
     return {
         component,
-        params: "function" === typeof params
-            ? params
-            : (o: any) => o.p === params,
+        params:
+            "function" === typeof params ? params : (o: any) => o.p === params,
     };
 }) as { params: (o: any) => boolean; component: ComponentType<any> }[];
 // console.log(路由list)

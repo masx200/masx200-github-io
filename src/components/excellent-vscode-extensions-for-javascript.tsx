@@ -15,8 +15,7 @@ export default React.memo(component);
 
 function component() {
     useEffect(function () {
-        document.title =
-            `   excellent-vscode-extensions-for-javascript  适合于javascript/html/css/vue/reqct编程的vscode的优秀扩展推荐和vscode 的推荐设置 `;
+        document.title = `   excellent-vscode-extensions-for-javascript  适合于javascript/html/css/vue/reqct编程的vscode的优秀扩展推荐和vscode 的推荐设置 `;
     }, []);
 
     return (

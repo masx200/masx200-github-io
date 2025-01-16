@@ -16,9 +16,11 @@ function 可变路径的rssreader链接() {
     return (
         // @ts-ignore
         <Link
-            to={rsssitename
-                ? { p: "/react-rssreader", sitename: rsssitename }
-                : { p: "/react-rssreader" }}
+            to={
+                rsssitename
+                    ? { p: "/react-rssreader", sitename: rsssitename }
+                    : { p: "/react-rssreader" }
+            }
             className="nav-link mui-btn mui-btn-primary mui-btn-outlined"
         >
             rss阅读器

@@ -99,9 +99,8 @@ export default memo(function bigcom() {
             "\n开始圆周率多线程测试\n",
     );
 
-    const [outputtext2, setoutputtext2old, onchangeoutputtext2] = useBindtext(
-        "",
-    );
+    const [outputtext2, setoutputtext2old, onchangeoutputtext2] =
+        useBindtext("");
 
     function setoutputtext1(t: string) {
         setoutputtext1old(t);
@@ -129,7 +128,8 @@ export default memo(function bigcom() {
                 let inputtext1f = Math.floor(Number(inputtext1));
                 const threadgeshu = inputtext1f;
                 //   inputtext1 = threadgeshu;
-                let testname = "圆周率计算多线程" +
+                let testname =
+                    "圆周率计算多线程" +
                     "-" +
                     "线程数为" +
                     threadgeshu +
@@ -282,7 +282,8 @@ export default memo(function bigcom() {
                             mui(btnele).button("reset");
                             var endt = new Date().getTime();
                             var durt = (endt - strt) / 1000;
-                            const eventdata = "计算完成,用时" +
+                            const eventdata =
+                                "计算完成,用时" +
                                 durt +
                                 "秒第" +
                                 x +
@@ -420,14 +421,12 @@ export default memo(function bigcom() {
                     id="tp-big"
                 />
                 <br />
-                {
-                    /* <button
+                {/* <button
             class=" btn btn-outline-primary"
             type="button"
             data-toggle="collapse"
             data-target="#collapsiblecontainer2"
-          > */
-                }
+          > */}
                 <details open>
                     <summary className=" btn btn-outline-primary mui-btn mui-btn-outline-primary">
                         展开收起圆周率结果

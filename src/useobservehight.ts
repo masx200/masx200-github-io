@@ -6,7 +6,8 @@ export function useobservehight(
     const navele = useRef<Element | null>(null); // 修正此处
     const observer = useRef<ResizeObserver | null>(null);
     const createobserver = useCallback(function createobserver() {
-        observer.current = observer.current ||
+        observer.current =
+            observer.current ||
             new ResizeObserver((entry) => {
                 // console.log(entry);
                 const height = navele.current?.clientHeight;

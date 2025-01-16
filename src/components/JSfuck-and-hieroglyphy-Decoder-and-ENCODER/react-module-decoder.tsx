@@ -6,7 +6,7 @@ import { getStylePropValue } from "../../getStylePropValue";
 //@ts-ignore
 import tanchu弹出消息通用 from "../../utils/my弹出消息通用.ts";
 
-"use strict";
+("use strict");
 
 function tanchutanchuxiaoxishibai() {
     tanchu弹出消息通用("danger");
