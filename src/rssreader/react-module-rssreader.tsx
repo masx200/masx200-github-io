@@ -1,7 +1,7 @@
 //@ts-ignore
 import React, { useEffect, useMemo } from "react";
 
-import Link from "../CustomLink";
+import Link from "../scripts/CustomLink";
 import rssfeedxml from "./rssfeedxml";
 import { Rssviewer } from "./Rssviewer";
 

@@ -1,6 +1,5 @@
-import "./scripts/index.tsx"
 // import "./index.css";
-// console.log("hello world");
+// alert("hello world");
 /*import "../registerserviceworker.js";
 
  import React from "react";
@@ -11,7 +10,7 @@ function App() {
 }
 
 render(<App />, document.getElementById("root"));
- 
+
 
 import Vue from "vue/dist/vue.esm.browser";
 const App = Vue.extend({
@@ -19,7 +18,7 @@ const App = Vue.extend({
     <div>
     {{msg}}
     </div>
-    
+
     `,
 
   name: "App",
@@ -43,7 +42,7 @@ new Vue({
     return {};
   }
 });
- 
+
 var msg="htmlWelcome to Your Vue.js App"
  function h(type, props, ...children) {
   return { type, props, children };

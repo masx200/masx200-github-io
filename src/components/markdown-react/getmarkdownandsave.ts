@@ -1,5 +1,5 @@
-import { cachepromise } from "../../cachepromise";
-import { fetchsource } from "../../fetchsource";
+import { cachepromise } from "../../scripts/cachepromise";
+import { fetchsource } from "../../scripts/fetchsource";
 import { markdownstore } from "./markdownstore";
 
 const markdownapi = new URL("/api/getmarkdown/", location.origin).toString();

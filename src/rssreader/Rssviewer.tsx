@@ -1,5 +1,5 @@
 import { memo, useEffect, useMemo } from "react";
-import Loading from "../Loading";
+import Loading from "../scripts/Loading";
 import { userss } from "./userss";
 
 export const Rssviewer = memo(function Rssviewer({

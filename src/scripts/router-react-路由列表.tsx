@@ -5,19 +5,19 @@ import React, { ComponentType, lazy } from "react";
 import { View } from "./router";
 
 export default React.memo(路由);
-const picalc = lazy(() => import("./components/home-react-module-picalc"));
+const picalc = lazy(() => import("../components/home-react-module-picalc"));
 // @ts-ignore
-var myhome = lazy(() => import("./components/home-react-module-home.tsx"));
+var myhome = lazy(() => import("../components/home-react-module-home.tsx"));
 var rsscomponent = lazy(
     // @ts-ignore
-    () => import("./rssreader/react-module-rssreader.tsx")
+    () => import("../rssreader/react-module-rssreader.tsx")
 );
 const reacthome = lazy(
     () =>
         // @ts-ignore
         import(
             // @ts-ignore
-            "./components/my-react-router-test/react-module-home.tsx"
+            "../components/my-react-router-test/react-module-home.tsx"
         )
 );
 const reactabout = lazy(
@@ -25,7 +25,7 @@ const reactabout = lazy(
         // @ts-ignore
         import(
             // @ts-ignore
-            "./components/my-react-router-test/react-module-about"
+            "../components/my-react-router-test/react-module-about"
         )
 );
 const decoder = lazy(
@@ -33,7 +33,7 @@ const decoder = lazy(
         // @ts-ignore
         import(
             // @ts-ignore
-            "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder.tsx"
+            "../components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder.tsx"
         )
 );
 const jsfuck = lazy(
@@ -41,7 +41,7 @@ const jsfuck = lazy(
         // @ts-ignore
         import(
             // @ts-ignore
-            "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck.tsx"
+            "../components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck.tsx"
         )
 );
 const hieroglyphy = lazy(
@@ -49,16 +49,16 @@ const hieroglyphy = lazy(
         // @ts-ignore
         import(
             // @ts-ignore
-            "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.tsx"
+            "../components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.tsx"
         )
 );
-const reacthuami = lazy(() => import("./huami/home-react-module-huami"));
+const reacthuami = lazy(() => import("../huami/home-react-module-huami"));
 const webpackawesomeconfig = lazy(
     () =>
         // @ts-ignore
         import(
             // @ts-ignore
-            "./components/home-react-webpack-react-vue-spa-awesome-config.tsx"
+            "../components/home-react-webpack-react-vue-spa-awesome-config.tsx"
         )
 );
 const excellentvscodeextensions = lazy(
@@ -66,7 +66,7 @@ const excellentvscodeextensions = lazy(
         // @ts-ignore
         import(
             // @ts-ignore
-            "./components/excellent-vscode-extensions-for-javascript.tsx"
+            "../components/excellent-vscode-extensions-for-javascript.tsx"
         )
 );
 const myroutes: [string | ((o: any) => boolean), ComponentType<any>][] = [
@@ -97,7 +97,7 @@ const myroutes: [string | ((o: any) => boolean), ComponentType<any>][] = [
     ["/webpack-react-vue-spa-awesome-config", webpackawesomeconfig],
 
     ["/excellent-vscode-extensions-for-javascript", excellentvscodeextensions],
-    ["/counter", React.lazy(() => import("../pages/counter.tsx"))],
+    ["/counter", React.lazy(() => import("../../pages/counter.tsx"))],
     [() => true, reacthome],
 ];
 const 路由list: {

@@ -1,7 +1,7 @@
 import { XMLParser } from "fast-xml-parser";
 //@ts-ignore
 
-import { cachepromise } from "../cachepromise.ts";
+import { cachepromise } from "../scripts/cachepromise.ts";
 //@ts-ignore
 import { fetchtext } from "../components/markdown-react/fetchtext.ts";
 // import { fetchsource } from "../fetchsource";

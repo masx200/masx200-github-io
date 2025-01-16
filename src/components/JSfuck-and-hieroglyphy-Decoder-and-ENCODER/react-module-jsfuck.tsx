@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 
-import { getStylePropValue } from "../../getStylePropValue";
+import { getStylePropValue } from "../../scripts/getStylePropValue";
 //@ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
 //@ts-ignore

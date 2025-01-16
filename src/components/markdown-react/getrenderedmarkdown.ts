@@ -5,7 +5,7 @@ import { DOMPurify } from "./DOMPurify.ts";
 // @ts-ignore
 import { baseUrl } from "marked-base-url";
 //@ts-ignore
-import { cachepromise } from "../../cachepromise.ts";
+import { cachepromise } from "../../scripts/cachepromise.ts";
 //@ts-ignore
 import { fetchtext } from "./fetchtext.ts";
 import { gfmHeadingId } from "marked-gfm-heading-id";

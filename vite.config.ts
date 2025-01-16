@@ -30,6 +30,7 @@ export default defineConfig((/* { mode } */) => {
         },
         plugins: [
             preact({
+                //@ts-ignore
                 plugins: [
                     [
                         "@babel/plugin-syntax-typescript",
@@ -49,7 +50,7 @@ export default defineConfig((/* { mode } */) => {
             createHtmlPlugin({
                 minify: true,
                 template: "./public/index.html",
-                entry: "/src/index.tsx", // 这个会帮我们注入入口 js 文件
+                entry: "/src/index.js", // 这个会帮我们注入入口 js 文件
                 inject: {
                     // data: {
                     //     // 这是我们 index.html 用到的环境变量

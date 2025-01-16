@@ -1,5 +1,5 @@
-import { cachepromise } from "../cachepromise";
-import { fetchsource } from "../fetchsource";
+import { cachepromise } from "../scripts/cachepromise";
+import { fetchsource } from "../scripts/fetchsource";
 import { rssstore } from "./rssstore";
 
 const rssapi = new URL("/api/getrss/", location.origin).toString();
