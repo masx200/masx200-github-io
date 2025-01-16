@@ -6,16 +6,16 @@
 // import Decimal from "decimal.js";
 // import mui from "../mui.min.js";
 // eslint-disable-next-line no-unused-vars
-import React, { memo, useEffect, useRef } from "react";
 import {
     decimalCalculatePi,
     decimalcleanup,
 } from "@masx200/pi-calculation-multithreading";
+import { memo, useEffect, useRef } from "react";
 
 // @ts-ignore
 import mui from "@/assetsjs/mui.精简.button";
-import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
 import { useBindtext } from "../../huami/useBindtext";
+import tanchu弹出消息通用 from "../../utils/my弹出消息通用";
 
 // @ts-ignore
 // import decimalworker from "./worker-mythread1-decimal.worker.js";
@@ -69,9 +69,9 @@ function lashentextarea(eles: HTMLElement) {
     });
 }
 export default memo(function decimalcom() {
-    const btnele = useRef<HTMLElement>();
-    const outtext1 = useRef<HTMLElement>();
-    const outtext2 = useRef<HTMLElement>();
+    const btnele = useRef<HTMLElement | null>(null);
+    const outtext1 = useRef<HTMLElement | null>(null);
+    const outtext2 = useRef<HTMLElement | null>(null);
     useEffect(() => {
         outtext1.current && lashentextarea(outtext1.current);
         outtext2.current && lashentextarea(outtext2.current);

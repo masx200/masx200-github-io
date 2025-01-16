@@ -65,9 +65,9 @@ function lashentextarea(eles: HTMLTextAreaElement) {
     });
 }
 export default memo(function bigcom() {
-    const btnele = useRef<HTMLElement>();
-    const outtext1 = useRef<HTMLTextAreaElement>();
-    const outtext2 = useRef<HTMLTextAreaElement>();
+    const btnele = useRef<HTMLElement | null>(null);
+    const outtext1 = useRef<HTMLTextAreaElement | null>(null);
+    const outtext2 = useRef<HTMLTextAreaElement | null>(null);
     useEffect(() => {
         outtext1.current && lashentextarea(outtext1.current);
         outtext2.current && lashentextarea(outtext2.current);
