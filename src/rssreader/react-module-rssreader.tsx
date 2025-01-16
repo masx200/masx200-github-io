@@ -4,7 +4,7 @@ import React, { useEffect, useMemo } from "react";
 import Link from "../scripts/CustomLink";
 import rssfeedxml from "./rssfeedxml";
 import { Rssviewer } from "./Rssviewer";
-import { getStylePropValue } from "src/scripts/getStylePropValue";
+import { getStylePropValue } from "../../src/scripts/getStylePropValue";
 
 //@ts-ignore
 /* eslint-disable react/prop-types */
