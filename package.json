@@ -65,7 +65,7 @@
         "@types/marked": "^5.0.0",
         "@types/node": "^20.2.5",
         "@types/react": "^19.0.7",
-        "@types/react-dom": "18",
+        "@types/react-dom": "19",
         "@vue/reactivity": "3.3.4",
         "@vue/runtime-core": "3.3.4",
         "acorn": "^8.2.4",
