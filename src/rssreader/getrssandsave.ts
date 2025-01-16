@@ -2,7 +2,7 @@ import { cachepromise } from "../cachepromise";
 import { fetchsource } from "../fetchsource";
 import { rssstore } from "./rssstore";
 
-const rssapi = "https://masx200-github-io-masx200.netlify.app/api/getrss/";
+const rssapi = new URL("/api/getrss/", location.origin).toString();
 
 export function getrssandsave(src: string) {
     getapirss(src).then(

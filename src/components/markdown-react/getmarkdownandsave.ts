@@ -2,8 +2,7 @@ import { cachepromise } from "../../cachepromise";
 import { fetchsource } from "../../fetchsource";
 import { markdownstore } from "./markdownstore";
 
-const markdownapi =
-    "https://masx200-github-io-masx200.netlify.app/api/getmarkdown/";
+const markdownapi = new URL("/api/getmarkdown/", location.origin).toString();
 export function getmarkdownandsave(name: string) {
     getapimarkdown(name).then(
         (data) => {
