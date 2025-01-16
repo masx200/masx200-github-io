@@ -7,11 +7,14 @@ import { fetchtext } from "../components/markdown-react/fetchtext.ts";
 // import { fetchsource } from "../fetchsource";
 //@ts-ignore
 import { htmltotext } from "./htmltotext.ts";
+import { RSSDATA } from "./userss.ts";
 
 // cachepromise
 // console.log(hljs)
 const parser = new XMLParser();
-export const getrss = cachepromise(async function (src: string) {
+export const getrss = cachepromise(async function (
+    src: string
+): Promise<Readonly<RSSDATA>> {
     const text = await fetchtext(src);
     const xmlstring = text;
     var str = xmlstring;
@@ -23,10 +26,12 @@ export const getrss = cachepromise(async function (src: string) {
     var description: string = data.rss.channel.description;
     var myrsscontent: {
         link: string;
+        pubDate: string;
         title: string;
         description: string;
     }[] = data.rss.channel.item.map(
         (e: {
+            pubDate: string;
             description: string;
             link: string;
             title: string;
@@ -50,9 +55,15 @@ export const getrss = cachepromise(async function (src: string) {
 
             des = htmltotext(des);
 
-            return { link, title, description: des };
-        },
+            return { link, title, description: des, pubDate: e.pubDate };
+        }
     );
     const content = myrsscontent;
-    return { title, content, description };
+    return {
+        title,
+        content,
+        description,
+        link: data.rss.channel.link,
+        lastBuildDate: data.rss.channel.lastBuildDate,
+    } satisfies RSSDATA;
 });

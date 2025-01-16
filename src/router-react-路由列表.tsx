@@ -10,7 +10,7 @@ const picalc = lazy(() => import("./components/home-react-module-picalc"));
 var myhome = lazy(() => import("./components/home-react-module-home.tsx"));
 var rsscomponent = lazy(
     // @ts-ignore
-    () => import("./rssreader/react-module-rssreader.tsx"),
+    () => import("./rssreader/react-module-rssreader.tsx")
 );
 const reacthome = lazy(
     () =>
@@ -18,7 +18,7 @@ const reacthome = lazy(
         import(
             // @ts-ignore
             "./components/my-react-router-test/react-module-home.tsx"
-        ),
+        )
 );
 const reactabout = lazy(
     () =>
@@ -26,7 +26,7 @@ const reactabout = lazy(
         import(
             // @ts-ignore
             "./components/my-react-router-test/react-module-about"
-        ),
+        )
 );
 const decoder = lazy(
     () =>
@@ -34,7 +34,7 @@ const decoder = lazy(
         import(
             // @ts-ignore
             "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-decoder.tsx"
-        ),
+        )
 );
 const jsfuck = lazy(
     () =>
@@ -42,7 +42,7 @@ const jsfuck = lazy(
         import(
             // @ts-ignore
             "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-jsfuck.tsx"
-        ),
+        )
 );
 const hieroglyphy = lazy(
     () =>
@@ -50,7 +50,7 @@ const hieroglyphy = lazy(
         import(
             // @ts-ignore
             "./components/JSfuck-and-hieroglyphy-Decoder-and-ENCODER/react-module-hieroglyphy.tsx"
-        ),
+        )
 );
 const reacthuami = lazy(() => import("./huami/home-react-module-huami"));
 const webpackawesomeconfig = lazy(
@@ -59,7 +59,7 @@ const webpackawesomeconfig = lazy(
         import(
             // @ts-ignore
             "./components/home-react-webpack-react-vue-spa-awesome-config.tsx"
-        ),
+        )
 );
 const excellentvscodeextensions = lazy(
     () =>
@@ -67,7 +67,7 @@ const excellentvscodeextensions = lazy(
         import(
             // @ts-ignore
             "./components/excellent-vscode-extensions-for-javascript.tsx"
-        ),
+        )
 );
 const myroutes: [string | ((o: any) => boolean), ComponentType<any>][] = [
     [(o: any) => Object.keys(o).length === 0, reacthome],

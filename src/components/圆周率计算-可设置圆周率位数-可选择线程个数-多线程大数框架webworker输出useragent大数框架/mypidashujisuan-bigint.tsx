@@ -22,7 +22,7 @@ function tanchu弹出消息提示() {
 function createworker() {
     return new Worker(
         new URL("./worker-mythread1-bigint-worker.ts", import.meta.url),
-        { type: "module" },
+        { type: "module" }
     );
 }
 
@@ -86,7 +86,7 @@ export default memo(function bigcom() {
     // threadgeshu = 6;
 
     const [inputtext1, setinputtext1, onchangeinputtext1] = useBindtext(
-        navigator.hardwareConcurrency || 6,
+        navigator.hardwareConcurrency || 6
     );
     const [inputtext2, setinputtext2, onchangeinputtext2] = useBindtext(6);
     const [outputtext1, setoutputtext1old, onchangeoutputtext1] = useBindtext(
@@ -96,7 +96,7 @@ export default memo(function bigcom() {
             (typeof BigInt === "function"
                 ? "你的浏览器能够支持原生BigInt!"
                 : "你的浏览器无法支持原生BigInt!") +
-            "\n开始圆周率多线程测试\n",
+            "\n开始圆周率多线程测试\n"
     );
 
     const [outputtext2, setoutputtext2old, onchangeoutputtext2] =
@@ -156,7 +156,7 @@ export default memo(function bigcom() {
                         piwei +
                         "位 " +
                         "计算圆周率中......" +
-                        "  \n",
+                        "  \n"
                 );
                 //   debugger;
                 //   console.log(outputtext1);
@@ -272,7 +272,7 @@ export default memo(function bigcom() {
                 const [p, x] = await bigintCalculatePi(
                     createworker,
                     piwei,
-                    threadgeshu,
+                    threadgeshu
                 );
                 await new Promise<void>((res, rej) => {
                     requestAnimationFrame(() => {

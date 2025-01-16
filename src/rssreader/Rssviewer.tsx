@@ -27,6 +27,7 @@ export const Rssviewer = memo(function Rssviewer({
     }, [data, error]);
 
     const rssstatetitle = data?.title;
+    const link = data?.link;
     const rssstatedescription = data?.description;
     const rssstate = data?.content;
     const 加载失败 = !!error;
@@ -50,14 +51,26 @@ export const Rssviewer = memo(function Rssviewer({
                     }}
                 >
                     <div>
-                        <h5>{rssfeedurl}</h5>
+                        <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <h5>{rssfeedurl}</h5>
+                        </a>
                     </div>
                     <div style={{ maxWidth: "100%" }}>
                         <h3>
-                            <b>{rssstatetitle}</b>
+                            <a
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <b>{rssstatetitle}</b>
+                            </a>
                         </h3>
                         <p>{rssstatedescription}</p>
-
+                        <p>构建时间:{data?.lastBuildDate}</p>
                         <ul className="mui-table-view">
                             {rssstate
                                 ? rssstate.map((e, index) => (
@@ -85,7 +98,9 @@ export const Rssviewer = memo(function Rssviewer({
                                                       {e.link}
                                                   </p>
                                               </a>
-
+                                              <p className="mui-ellipsis">
+                                                  发布时间:{e.pubDate}
+                                              </p>
                                               <details>
                                                   <summary>详情</summary>
                                                   <p

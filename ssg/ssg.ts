@@ -16,11 +16,11 @@ if (import.meta.main) {
             const text = await ((await response.ok)
                 ? response.text()
                 : Promise.reject(
-                      "fetch failed\n" + req.url + "\n" + response.status,
+                      "fetch failed\n" + req.url + "\n" + response.status
                   ));
 
             const file = import.meta.resolve(
-                "../public/api/getmarkdown/" + name + ".html",
+                "../public/api/getmarkdown/" + name + ".html"
             );
             console.log("文件生成成功:" + fromFileUrl(file));
             return {
@@ -35,11 +35,11 @@ if (import.meta.main) {
             const text = await ((await res.ok)
                 ? res.text()
                 : Promise.reject(
-                      "fetch failed\n" + req.url + "\n" + res.status,
+                      "fetch failed\n" + req.url + "\n" + res.status
                   ));
 
             const file = import.meta.resolve(
-                "../public/api/getrss/" + name + ".json",
+                "../public/api/getrss/" + name + ".json"
             );
             console.log("文件生成成功:" + fromFileUrl(file));
             return {

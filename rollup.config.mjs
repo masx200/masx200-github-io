@@ -15,7 +15,7 @@ const plugins = [
     nodeResolve(),
     alias({
         entries: JSON.parse(
-            (await fs.promises.readFile("./import_map.json")).toString(),
+            (await fs.promises.readFile("./import_map.json")).toString()
         ).imports,
     }),
     httpResolve({ cache: new fileCache() }),

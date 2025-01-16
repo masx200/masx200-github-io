@@ -49,7 +49,7 @@ export default defineConfig((/* { mode } */) => {
             createHtmlPlugin({
                 minify: true,
                 template: "./public/index.html",
-                entry: path.join(__dirname, "./src/index.tsx"), // 这个会帮我们注入入口 js 文件
+                entry: "/src/index.tsx", // 这个会帮我们注入入口 js 文件
                 inject: {
                     // data: {
                     //     // 这是我们 index.html 用到的环境变量

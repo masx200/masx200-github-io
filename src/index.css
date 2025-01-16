@@ -291,12 +291,7 @@ body {
 }
 
 code {
-    font-family:
-        source-code-pro,
-        Menlo,
-        Monaco,
-        Consolas,
-        Courier New,
+    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New,
         monospace;
 }
 
@@ -315,16 +310,8 @@ code {
 }
 
 * {
-    font-family:
-        Microsoft Yahei,
-        Helvetica,
-        Tahoma,
-        Arial,
-        PingFang SC,
-        Hiragino Sans GB,
-        Heiti SC,
-        MicrosoftYaHei,
-        WenQuanYi Micro Hei,
+    font-family: Microsoft Yahei, Helvetica, Tahoma, Arial, PingFang SC,
+        Hiragino Sans GB, Heiti SC, MicrosoftYaHei, WenQuanYi Micro Hei,
         sans-serif !important;
     -webkit-user-select: text !important;
     -moz-user-select: text;
@@ -458,16 +445,8 @@ html {
 }
 
 * {
-    font-family:
-        Microsoft Yahei,
-        Helvetica,
-        Tahoma,
-        Arial,
-        PingFang SC,
-        Hiragino Sans GB,
-        Heiti SC,
-        MicrosoftYaHei,
-        WenQuanYi Micro Hei,
+    font-family: Microsoft Yahei, Helvetica, Tahoma, Arial, PingFang SC,
+        Hiragino Sans GB, Heiti SC, MicrosoftYaHei, WenQuanYi Micro Hei,
         sans-serif !important;
 }
 

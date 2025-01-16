@@ -1,5 +1,5 @@
 export function cachepromise<T extends (arg: any, ...rgs: any) => Promise<any>>(
-    fn: T,
+    fn: T
 ): T {
     const sourcecache = new Map();
     return (async (key: any, ...rgs: any) => {

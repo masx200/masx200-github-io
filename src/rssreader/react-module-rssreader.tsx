@@ -51,34 +51,37 @@ function getrssmain() {
             <h2>异步fetch加载rss阅读器演示</h2>
             <p>使用fast-xml-parser把xml转换成json</p>
             <nav className="navbar navbar-expand-sm bg-light navbar-light ">
-                <ul
-                    className="demo"
-                    style={{
-                        width: "100%",
-                        display: "flex",
-                        flexDirection: "row",
-                        flexWrap: "wrap",
-                        alignContent: "center!important",
-                        justifyContent: "space-between",
-                        alignItems: "center!important",
-                    }}
-                >
-                    {Object.keys(rssfeedxml).map((key, index) => {
-                        return (
-                            <Link
-                                key={index}
-                                data-loading-icon="mui-spinner mui-spinner-custom"
-                                className="mui-btn mui-btn-primary mui-btn-outlined btn-lg"
-                                to={{
-                                    p: "/react-rssreader",
-                                    sitename: key,
-                                }}
-                            >
-                                加载{key}
-                            </Link>
-                        );
-                    })}
-                </ul>
+                <details open>
+                    <summary>订阅源列表</summary>
+                    <ul
+                        className="demo"
+                        style={{
+                            width: "100%",
+                            display: "flex",
+                            flexDirection: "row",
+                            flexWrap: "wrap",
+                            alignContent: "center!important",
+                            justifyContent: "space-between",
+                            alignItems: "center!important",
+                        }}
+                    >
+                        {Object.keys(rssfeedxml).map((key, index) => {
+                            return (
+                                <Link
+                                    key={index}
+                                    data-loading-icon="mui-spinner mui-spinner-custom"
+                                    className="mui-btn mui-btn-primary mui-btn-outlined btn-lg"
+                                    to={{
+                                        p: "/react-rssreader",
+                                        sitename: key,
+                                    }}
+                                >
+                                    加载{key}
+                                </Link>
+                            );
+                        })}
+                    </ul>
+                </details>
             </nav>
         </>
     );
