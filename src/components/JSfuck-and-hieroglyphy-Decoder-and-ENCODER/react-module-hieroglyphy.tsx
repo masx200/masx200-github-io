@@ -43,8 +43,8 @@ function 关闭所有worker() {
 }
 export default memo(function Hieroglyphy() {
     const [statstext, setstatstext] = useState(`0 chars`);
-    const btnencodescript = useRef();
-    const btnencodestring = useRef();
+    const btnencodescript = useRef<HTMLButtonElement | null>(null);
+    const btnencodestring = useRef<HTMLButtonElement | null>(null);
     async function encodeall(typename: string, btnele: EventTarget) {
         return new Promise<void>((res, rej) => {
             // console.time(typename);
