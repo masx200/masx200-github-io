@@ -1,6 +1,5 @@
-// @ts-nocheck
 //@ts-ignore
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 
 import Link from "../CustomLink";
 import rssfeedxml from "./rssfeedxml";
@@ -17,6 +16,9 @@ export default React.memo(Rssreader);
 function Rssreader(props: {
     params: Record<string, string> & { sitename?: string };
 }) {
+    const rssmain = useMemo(() => {
+        return getrssmain();
+    }, []);
     const { sitename } = props.params;
 
     const rssfeedurl: string | undefined = sitename
@@ -42,55 +44,43 @@ function Rssreader(props: {
         </div>
     );
 }
-const rssmain = (
-    <>
-        <h2>异步fetch加载rss阅读器演示</h2>
-        <p>使用fast-xml-parser把xml转换成json</p>
-        <nav className="navbar navbar-expand-sm bg-light navbar-light ">
-            <ul className="demo">
-                <Link
-                    data-loading-icon="mui-spinner mui-spinner-custom"
-                    className="mui-btn mui-btn-royal mui-btn-outlined btn-lg"
-                    to={{ p: "/react-rssreader", sitename: "tmtpost" }}
+
+function getrssmain() {
+    const rssmain = (
+        <>
+            <h2>异步fetch加载rss阅读器演示</h2>
+            <p>使用fast-xml-parser把xml转换成json</p>
+            <nav className="navbar navbar-expand-sm bg-light navbar-light ">
+                <ul
+                    className="demo"
+                    style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "row",
+                        flexWrap: "wrap",
+                        alignContent: "center!important",
+                        justifyContent: "space-between",
+                        alignItems: "center!important",
+                    }}
                 >
-                    加载tmtpost
-                </Link>
-                <Link
-                    data-loading-icon="mui-spinner mui-spinner-custom"
-                    className="mui-btn mui-btn-primary mui-btn-outlined btn-lg"
-                    to={{ p: "/react-rssreader", sitename: "iplaysoft" }}
-                >
-                    加载iplaysoft
-                </Link>
-                <Link
-                    data-loading-icon="mui-spinner mui-spinner-custom"
-                    className="mui-btn mui-btn-warning mui-btn-outlined btn-lg"
-                    to={{ p: "/react-rssreader", sitename: "landiannews" }}
-                >
-                    加载landiannews
-                </Link>
-                <Link
-                    data-loading-icon="mui-spinner mui-spinner-custom"
-                    className="mui-btn mui-btn-danger mui-btn-outlined btn-lg"
-                    to={{ p: "/react-rssreader", sitename: "ithome" }}
-                >
-                    加载ithome
-                </Link>
-                <Link
-                    to={{ p: "/react-rssreader", sitename: "ifanr" }}
-                    data-loading-icon="mui-spinner mui-spinner-custom"
-                    className="mui-btn mui-btn-success mui-btn-outlined btn-lg"
-                >
-                    加载ifanr
-                </Link>
-                <Link
-                    data-loading-icon="mui-spinner mui-spinner-custom"
-                    className="mui-btn mui-btn-primary mui-btn-outlined btn-lg"
-                    to={{ p: "/react-rssreader", sitename: "pingwest" }}
-                >
-                    加载pingwest
-                </Link>
-            </ul>
-        </nav>
-    </>
-);
+                    {Object.keys(rssfeedxml).map((key, index) => {
+                        return (
+                            <Link
+                                key={index}
+                                data-loading-icon="mui-spinner mui-spinner-custom"
+                                className="mui-btn mui-btn-primary mui-btn-outlined btn-lg"
+                                to={{
+                                    p: "/react-rssreader",
+                                    sitename: key,
+                                }}
+                            >
+                                加载{key}
+                            </Link>
+                        );
+                    })}
+                </ul>
+            </nav>
+        </>
+    );
+    return rssmain;
+}
