@@ -9,11 +9,11 @@ import Apphome from "./react-layout.tsx";
 import 路由列表 from "./router-react-路由列表";
 
 /* eslint-disable react/prop-types */
-("use strict");
+"use strict";
 
 const scrollTo = window.scrollTo;
 
-("use strict");
+"use strict";
 
 function onhashchange() {
     scrollTo(0, 0);

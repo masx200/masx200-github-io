@@ -25,7 +25,7 @@ function tanchu弹出消息提示() {
 function createworker() {
     return new Worker(
         new URL("./worker-mythread1-decimal-worker.ts", import.meta.url),
-        { type: "module" }
+        { type: "module" },
     );
 }
 
@@ -91,7 +91,7 @@ export default memo(function decimalcom() {
     // threadgeshu = 6;
 
     const [inputtext1, setinputtext1, onchangeinputtext1] = useBindtext(
-        navigator.hardwareConcurrency || 6
+        navigator.hardwareConcurrency || 6,
     );
     const [inputtext2, setinputtext2, onchangeinputtext2] = useBindtext(6);
     const [outputtext1, setoutputtext1old, onchangeoutputtext1] = useBindtext(
@@ -101,11 +101,12 @@ export default memo(function decimalcom() {
             // (typeof Decimal === "function"
             //     ? "你的浏览器能够支持原生Decimal!"
             //     : "你的浏览器无法支持原生Decimal!") +
-            "\n开始圆周率多线程测试\n"
+            "\n开始圆周率多线程测试\n",
     );
 
-    const [outputtext2, setoutputtext2old, onchangeoutputtext2] =
-        useBindtext("");
+    const [outputtext2, setoutputtext2old, onchangeoutputtext2] = useBindtext(
+        "",
+    );
 
     function setoutputtext1(t: string) {
         setoutputtext1old(t);
@@ -148,8 +149,7 @@ export default memo(function decimalcom() {
                 let inputtext1f = Math.floor(Number(inputtext1));
                 const threadgeshu = inputtext1f;
                 //   inputtext1 = threadgeshu;
-                const testname =
-                    "圆周率计算多线程" +
+                const testname = "圆周率计算多线程" +
                     "-" +
                     "线程数为" +
                     threadgeshu +
@@ -176,7 +176,7 @@ export default memo(function decimalcom() {
                         piwei +
                         "位 " +
                         "计算圆周率中......" +
-                        "  \n"
+                        "  \n",
                 );
                 // Decimal.set({ precision: piwei });
                 //   debugger;
@@ -289,7 +289,7 @@ export default memo(function decimalcom() {
                 const [p, x] = await decimalCalculatePi(
                     createworker,
                     piwei,
-                    threadgeshu
+                    threadgeshu,
                 );
                 await new Promise<void>((res, rej) => {
                     requestAnimationFrame(() => {
@@ -299,8 +299,7 @@ export default memo(function decimalcom() {
                             mui(btnele).button("reset");
                             var endt = new Date().getTime();
                             var durt = (endt - strt) / 1000;
-                            const eventdata =
-                                "计算完成,用时" +
+                            const eventdata = "计算完成,用时" +
                                 durt +
                                 "秒第" +
                                 x +
@@ -309,7 +308,7 @@ export default memo(function decimalcom() {
                                 piwei +
                                 "位\n";
                             setoutputtext2(
-                                "圆周率" + piwei + "位" + p
+                                "圆周率" + piwei + "位" + p,
                                 // p.toString()[0] +
                                 // //   "." +
                                 // p.toString().slice(1)
@@ -439,12 +438,14 @@ export default memo(function decimalcom() {
                     id="tp-big"
                 />
                 <br />
-                {/* <button
+                {
+                    /* <button
             class=" btn btn-outline-primary"
             type="button"
             data-toggle="collapse"
             data-target="#collapsiblecontainer2"
-          > */}
+          > */
+                }
                 <details open>
                     <summary className=" btn btn-outline-primary mui-btn mui-btn-outline-primary">
                         展开收起圆周率结果

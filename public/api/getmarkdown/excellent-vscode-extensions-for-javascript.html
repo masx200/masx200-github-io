@@ -1,0 +1,451 @@
+<h1>excellent-vscode-extensions-for-javascript</h1>
+<p>
+    <a
+        href="https://github.com/masx200/excellent-vscode-extensions-for-javascript"
+    >https://github.com/masx200/excellent-vscode-extensions-for-javascript</a>
+</p>
+<p>
+    适合于<code>javascript/html/css/vue/react</code>编程的 <code>vscode</code>
+    的优秀扩展推荐和 <code>vscode</code> 的推荐设置,以及<code>eslint</code
+    >配置文件
+</p>
+<h1>vscode 的推荐设置</h1>
+<p>设置 <code>settings.json</code></p>
+<pre
+>
+<code class="hljs language-json"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;workbench.iconTheme&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Material Color&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;workbench.colorTheme&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Material Color&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;editor.formatOnSave&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;editor.fontWeight&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;bold&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;editor.wordWrap&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;bounded&quot;</span>
+<span class="hljs-punctuation">}</span>
+</code></pre
+>
+<h1>开启 eslint</h1>
+<h2>设置<code>.eslintrc.js</code></h2>
+<pre
+>
+<code class="hljs language-javascript"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = {
+    <span class="hljs-attr">env</span>: {
+        <span class="hljs-attr">browser</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">es6</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">node</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">worker</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">commonjs</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">amd</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">extends</span>: <span class="hljs-string">&quot;eslint:recommended&quot;</span>,
+    <span class="hljs-attr">globals</span>: {
+        <span class="hljs-title class_">Atomics</span>: <span class="hljs-string">&quot;readonly&quot;</span>,
+        <span class="hljs-title class_">SharedArrayBuffer</span>: <span class="hljs-string">&quot;readonly&quot;</span>
+    },
+    <span class="hljs-attr">parserOptions</span>: {
+        <span class="hljs-attr">ecmaVersion</span>: <span class="hljs-number">2019</span>,
+        <span class="hljs-attr">sourceType</span>: <span class="hljs-string">&quot;module&quot;</span>,
+        <span class="hljs-attr">ecmaFeatures</span>: {
+            <span class="hljs-attr">jsx</span>: <span class="hljs-literal">true</span>
+        }
+    },
+    <span class="hljs-attr">rules</span>: {}
+};
+</code></pre
+>
+<h2>设置<code>.eslintrc.json</code></h2>
+<pre
+>
+<code class="hljs language-json"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;env&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">&quot;browser&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;es6&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;node&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;worker&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;commonjs&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;amd&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;extends&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;eslint:recommended&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;globals&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">&quot;Atomics&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;readonly&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;SharedArrayBuffer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;readonly&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;parserOptions&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">&quot;ecmaVersion&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">2019</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;sourceType&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;module&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;ecmaFeatures&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">&quot;jsx&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
+        <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;rules&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre
+>
+<h2>
+    适用于 <code>vue.js</code>的<code>ESlint</code>配置文件
+</h2>
+<p>
+    <a
+        href="https://github.com/masx200/excellent-vscode-extensions-for-javascript/blob/master/vue.eslintrc.json"
+    >https://github.com/masx200/excellent-vscode-extensions-for-javascript/blob/master/vue.eslintrc.json</a
+    >
+</p>
+<h2>
+    适用于 <code>react.js</code>的<code>ESlint</code>配置文件
+</h2>
+<p>
+    <a
+        href="https://github.com/masx200/excellent-vscode-extensions-for-javascript/blob/master/react.eslintrc.json"
+    >https://github.com/masx200/excellent-vscode-extensions-for-javascript/blob/master/react.eslintrc.json</a
+    >
+</p>
+<h2>
+    适用于 <code>typescript</code>的<code>ESlint</code>配置文件
+</h2>
+<p>
+    <a
+        href="https://github.com/masx200/excellent-vscode-extensions-for-javascript/blob/master/tsconfig.json"
+    >https://github.com/masx200/excellent-vscode-extensions-for-javascript/blob/master/tsconfig.json</a
+    >
+</p>
+<p>
+    <a
+        href="https://github.com/masx200/excellent-vscode-extensions-for-javascript/blob/master/typescript.eslintrc.json"
+    >https://github.com/masx200/excellent-vscode-extensions-for-javascript/blob/master/typescript.eslintrc.json</a
+    >
+</p>
+<p>
+    <a
+        href="https://github.com/masx200/excellent-vscode-extensions-for-javascript/blob/master/rollup.config.js"
+    >https://github.com/masx200/excellent-vscode-extensions-for-javascript/blob/master/rollup.config.js</a
+    >
+</p>
+<h1>
+    彻底解决 <code>yarn</code> 安装慢 <code>Building fresh packages</code>的问题
+</h1>
+<pre
+>
+<code class="hljs language-powershell">yarn config <span class="hljs-built_in">set</span> registry  https://registry.npm.taobao.org
+yarn config <span class="hljs-built_in">set</span> sass_binary_site https://npm.taobao.org/mirrors/node<span class="hljs-literal">-sass</span>/
+yarn config <span class="hljs-built_in">set</span> phantomjs_cdnurl http://cnpmjs.org/downloads
+yarn config <span class="hljs-built_in">set</span> electron_mirror https://npm.taobao.org/mirrors/electron/
+yarn config <span class="hljs-built_in">set</span> profiler_binary_host_mirror http://npm.taobao.org/mirrors/node<span class="hljs-literal">-inspector</span>/
+</code></pre
+>
+<h1>推荐的 rollup+typescript 配置文件</h1>
+<p>
+    <a
+        href="https://github.com/masx200/excellent-vscode-extensions-for-javascript/blob/master/rollup.config.js"
+    >https://github.com/masx200/excellent-vscode-extensions-for-javascript/blob/master/rollup.config.js</a
+    >
+</p>
+<h1>同步 vscode 设置</h1>
+<p>名称: Settings Sync</p>
+<p>id: shan.code-settings-sync</p>
+<p>
+    说明: Synchronize Settings, Snippets, Themes, File Icons, Launch,
+    Keybindings, Workspaces and Extensions Across Multiple Machines Using GitHub
+    Gist.
+</p>
+<p>版本: 3.3.1</p>
+<p>发布者: Shan Khan</p>
+<p>
+    VS Marketplace 链接: <a
+        href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync"
+    >https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync</a
+    >
+</p>
+<h1>适合于 javascript/html/css/vue/react 编程的 vscode 的优秀扩展推荐</h1>
+<p>名称: ESLint</p>
+<p>id: dbaeumer.vscode-eslint</p>
+<p>说明: Integrates ESLint JavaScript into VS Code.</p>
+<p>版本: 1.9.0</p>
+<p>发布者: Dirk Baeumer</p>
+<p>
+    VS Marketplace 链接: <a
+        href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint"
+    >https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint</a
+    >
+</p>
+<p>名称: Beautify</p>
+<p>id: hookyqr.beautify</p>
+<p>说明: Beautify code in place for VS Code</p>
+<p>版本: 1.5.0</p>
+<p>发布者: HookyQR</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify"
+    >https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify</a>
+</p>
+<p>名称: Bracket Pair Colorizer 2</p>
+<p>id: coenraads.bracket-pair-colorizer-2</p>
+<p>说明: A customizable extension for colorizing matching brackets</p>
+<p>版本: 0.0.28</p>
+<p>发布者: CoenraadS</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2"
+    >https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2</a
+    >
+</p>
+<p>名称: Chinese (Simplified) Language Pack for Visual Studio Code</p>
+<p>id: ms-ceintl.vscode-language-pack-zh-hans</p>
+<p>说明: Language pack extension for Chinese (Simplified)</p>
+<p>版本: 1.35.1</p>
+<p>发布者: Microsoft</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans"
+    >https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans</a
+    >
+</p>
+<p>名称: ES7 React/Redux/GraphQL/React-Native snippets</p>
+<p>id: dsznajder.es7-react-js-snippets</p>
+<p>
+    说明: Simple extensions for React, Redux and Graphql in JS/TS with ES7
+    syntax
+</p>
+<p>版本: 2.3.0</p>
+<p>发布者: dsznajder</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets"
+    >https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets</a
+    >
+</p>
+<p>名称: Material Color</p>
+<p>id: guobing.material-color</p>
+<p>说明: material syntax highlighting</p>
+<p>版本: 1.1.0</p>
+<p>发布者: guobing</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=guobing.material-color"
+    >https://marketplace.visualstudio.com/items?itemName=guobing.material-color</a
+    >
+</p>
+<p>名称: Minify</p>
+<p>id: hookyqr.minify</p>
+<p>说明: Minify for VS Code.</p>
+<p>Minify with command, and (optionally) re-minify on save.</p>
+<p>版本: 0.4.3</p>
+<p>发布者: HookyQR</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a href="https://marketplace.visualstudio.com/items?itemName=HookyQR.minify"
+    >https://marketplace.visualstudio.com/items?itemName=HookyQR.minify</a>
+</p>
+<p>名称: npm</p>
+<p>id: fknop.vscode-npm</p>
+<p>说明: npm commands for VSCode</p>
+<p>版本: 3.3.0</p>
+<p>发布者: Florian Knop</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=fknop.vscode-npm"
+    >https://marketplace.visualstudio.com/items?itemName=fknop.vscode-npm</a>
+</p>
+<p>名称: npm</p>
+<p>id: eg2.vscode-npm-script</p>
+<p>说明: npm support for VS Code</p>
+<p>版本: 0.3.7</p>
+<p>发布者: egamma</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script"
+    >https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script</a
+    >
+</p>
+<p>名称: NPM-Scripts</p>
+<p>id: trabpukcip.vscode-npm-scripts</p>
+<p>说明: View and run NPM scripts in the sidebar.</p>
+<p>版本: 0.2.1</p>
+<p>发布者: traBpUkciP</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=traBpUkciP.vscode-npm-scripts"
+    >https://marketplace.visualstudio.com/items?itemName=traBpUkciP.vscode-npm-scripts</a
+    >
+</p>
+<p>名称: PowerShell</p>
+<p>id: ms-vscode.powershell</p>
+<p>说明: Develop PowerShell scripts in Visual Studio Code!</p>
+<p>版本: 2019.5.0</p>
+<p>发布者: Microsoft</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell"
+    >https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell</a
+    >
+</p>
+<p>名称: Prettier - Code formatter</p>
+<p>id: esbenp.prettier-vscode</p>
+<p>说明: VS Code plugin for prettier/prettier</p>
+<p>版本: 1.9.0</p>
+<p>发布者: Esben Petersen</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"
+    >https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode</a
+    >
+</p>
+<p>名称: Sass</p>
+<p>id: robinbentley.sass-indented</p>
+<p>说明: Indented Sass syntax highlighting, autocomplete &amp; snippets</p>
+<p>版本: 1.5.1</p>
+<p>发布者: Robin Bentley</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=robinbentley.sass-indented"
+    >https://marketplace.visualstudio.com/items?itemName=robinbentley.sass-indented</a
+    >
+</p>
+<p>名称: Vetur</p>
+<p>id: octref.vetur</p>
+<p>说明: Vue tooling for VS Code</p>
+<p>版本: 0.21.0</p>
+<p>发布者: Pine Wu</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a href="https://marketplace.visualstudio.com/items?itemName=octref.vetur"
+    >https://marketplace.visualstudio.com/items?itemName=octref.vetur</a>
+</p>
+<p>名称: vscode-icons</p>
+<p>id: vscode-icons-team.vscode-icons</p>
+<p>说明: Icons for Visual Studio Code</p>
+<p>版本: 8.8.0</p>
+<p>发布者: VSCode Icons Team</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons"
+    >https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons</a
+    >
+</p>
+<p>名称: vue</p>
+<p>id: jcbuisson.vue</p>
+<p>说明: Syntax Highlight for Vue.js</p>
+<p>版本: 0.1.5</p>
+<p>发布者: jcbuisson</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a href="https://marketplace.visualstudio.com/items?itemName=jcbuisson.vue"
+    >https://marketplace.visualstudio.com/items?itemName=jcbuisson.vue</a>
+</p>
+<p>名称: Vue 2 Snippets</p>
+<p>id: hollowtree.vue-snippets</p>
+<p>说明: A Vue.js 2 Extension</p>
+<p>版本: 0.1.11</p>
+<p>发布者: hollowtree</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets"
+    >https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets</a
+    >
+</p>
+<p>名称: Vue Inline Template</p>
+<p>id: faisalhakim47.vue-inline-template</p>
+<p>
+    说明: Syntax highlighting for vue inline template inside of JavaScript and
+    TypeScript tagged template strings
+</p>
+<p>版本: 1.0.1</p>
+<p>发布者: Faisal Hakim</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=faisalhakim47.vue-inline-template"
+    >https://marketplace.visualstudio.com/items?itemName=faisalhakim47.vue-inline-template</a
+    >
+</p>
+<p>名称: Vue VSCode Snippets</p>
+<p>id: sdras.vue-vscode-snippets</p>
+<p>说明: Snippets that will supercharge your Vue workflow</p>
+<p>版本: 1.7.1</p>
+<p>发布者: sarah.drasner</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets"
+    >https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets</a
+    >
+</p>
+<p>名称: vue-format</p>
+<p>id: febean.vue-format</p>
+<p>说明: A beautify extension for .vue file</p>
+<p>版本: 0.1.6</p>
+<p>发布者: fe_bean</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=febean.vue-format"
+    >https://marketplace.visualstudio.com/items?itemName=febean.vue-format</a>
+</p>
+<p>名称: XML Format</p>
+<p>id: mikeburgh.xml-format</p>
+<p>说明: Format XML documents</p>
+<p>版本: 1.0.2</p>
+<p>发布者: Mike Burgh</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=mikeburgh.xml-format"
+    >https://marketplace.visualstudio.com/items?itemName=mikeburgh.xml-format</a
+    >
+</p>
+<p>名称: XML Formatter</p>
+<p>id: fabianlauer.vs-code-xml-format</p>
+<p>说明: A simple XML formatter for VS Code.</p>
+<p>版本: 0.1.5</p>
+<p>发布者: Fabian Lauer</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=fabianlauer.vs-code-xml-format"
+    >https://marketplace.visualstudio.com/items?itemName=fabianlauer.vs-code-xml-format</a
+    >
+</p>
+<p>名称: XML Tools</p>
+<p>id: dotjoshjohnson.xml</p>
+<p>说明: XML Formatting, XQuery, and XPath Tools for Visual Studio Code</p>
+<p>版本: 2.5.0</p>
+<p>发布者: Josh Johnson</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml"
+    >https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml</a>
+</p>
+<p>名称: yarn</p>
+<p>id: gamunu.vscode-yarn</p>
+<p>说明: yarn commands for VSCode</p>
+<p>版本: 1.6.0</p>
+<p>发布者: Gamunu Balagalla</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=gamunu.vscode-yarn"
+    >https://marketplace.visualstudio.com/items?itemName=gamunu.vscode-yarn</a>
+</p>
+<p>名称: yarn Script Runner</p>
+<p>id: carlosjs23.vscode-yarn-script</p>
+<p>说明: Run yarn scripts from the Command Palette</p>
+<p>版本: 0.0.1</p>
+<p>发布者: carlosjs23</p>
+<p>VS Marketplace 链接:</p>
+<p>
+    <a
+        href="https://marketplace.visualstudio.com/items?itemName=carlosjs23.vscode-yarn-script"
+    >https://marketplace.visualstudio.com/items?itemName=carlosjs23.vscode-yarn-script</a
+    >
+</p>

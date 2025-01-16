@@ -201,3 +201,9 @@ yarn start
 
 yarn build
 ```
+
+## 生成静态文件
+
+```
+npm run build && npm run edge && deno run -A ./ssg/ssg.ts
+```

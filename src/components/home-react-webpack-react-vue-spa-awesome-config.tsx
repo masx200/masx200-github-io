@@ -6,7 +6,7 @@ import markdwonurls from "../utils/markdownurls";
 //@ts-ignore
 import Markdownreact from "./markdown-react/index";
 
-("use strict");
+"use strict";
 
 const markurl = markdwonurls["webpack-react-vue-spa-awesome-config"];
 const name = "webpack-react-vue-spa-awesome-config";

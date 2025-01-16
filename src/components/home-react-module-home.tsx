@@ -5,7 +5,7 @@ import Markdownreact from "./markdown-react/index";
 
 const name = "masx200-github-io";
 const markurl = markdwonurls["masx200-github-io"];
-("use strict");
+"use strict";
 
 export default memo(function home() {
     useEffect(() => {

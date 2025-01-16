@@ -6,14 +6,14 @@ import { usereactive } from "../components/markdown-react/usereactive";
 export function userss(src: string): {
     data:
         | {
-              readonly title: string;
-              readonly content: readonly {
-                  readonly link: string;
-                  readonly title: string;
-                  readonly description: string;
-              }[];
-              readonly description: string;
-          }
+            readonly title: string;
+            readonly content: readonly {
+                readonly link: string;
+                readonly title: string;
+                readonly description: string;
+            }[];
+            readonly description: string;
+        }
         | undefined;
     error: any;
 } {
@@ -46,4 +46,4 @@ function getrssresult(src: string): () => {
     };
 }
 
-("use strict");
+"use strict";

@@ -169,7 +169,7 @@
     border-radius: 2px;
 }
 
-.AvatarStack-body .avatar:nth-child(n + 4) {
+.AvatarStack-body .avatar:nth-child(n+4) {
     display: none;
     opacity: 0;
 }
@@ -178,7 +178,7 @@
     margin-right: 3px;
 }
 
-.AvatarStack-body:hover .avatar:nth-child(n + 4) {
+.AvatarStack-body:hover .avatar:nth-child(n+4) {
     display: flex;
     opacity: 1;
 }
@@ -348,7 +348,12 @@
     border-radius: 3px;
     color: rgba(27, 31, 35, 0.6);
     display: inline-block;
-    font: 12px SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font:
+        12px SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     padding: 2px 6px;
 }
@@ -470,8 +475,16 @@ a.branch-name {
 }
 
 .markdown-body {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
-        sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        Segoe UI,
+        Helvetica,
+        Arial,
+        sans-serif,
+        Apple Color Emoji,
+        Segoe UI Emoji,
+        Segoe UI Symbol;
     font-size: 16px;
     line-height: 1.5;
     word-wrap: break-word;
@@ -2063,7 +2076,12 @@ a.branch-name {
     border-radius: 3px;
     color: #274466;
     display: inline-block;
-    font: 0.75em/2 SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font:
+        0.75em/2 SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     padding: 0 5px;
     position: relative;
@@ -2466,7 +2484,12 @@ a.commit-ref:hover {
 
 .commit .sha,
 .commit .sha-block {
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font-family:
+        SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     font-size: 12px;
 }
@@ -2490,7 +2513,12 @@ a.commit-ref:hover {
 
 .commit-desc pre {
     color: #444d56;
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font-family:
+        SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     font-size: 11px;
     line-height: 1.45;
@@ -2549,7 +2577,12 @@ a.commit-ref:hover {
 .commit-tease-sha {
     color: #444d56;
     display: inline-block;
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font-family:
+        SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     font-size: 90%;
 }
@@ -3507,7 +3540,12 @@ details-menu {
     -webkit-user-select: none;
     color: rgba(27, 31, 35, 0.3);
     cursor: pointer;
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font-family:
+        SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     font-size: 12px;
     line-height: 20px;
@@ -3547,7 +3585,12 @@ details-menu {
 
 .blob-code-inner {
     color: #24292e;
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font-family:
+        SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     font-size: 12px;
     overflow: visible;
@@ -4537,7 +4580,8 @@ button.discussion-sidebar-toggle {
 }
 
 .timeline-comment.will-transition-once .timeline-comment-header {
-    transition: background-color 0.65s ease,
+    transition:
+        background-color 0.65s ease,
         border-bottom-color 0.65s ease-in-out;
 }
 
@@ -5786,7 +5830,12 @@ kbd {
     box-shadow: inset 0 -1px 0 #c6cbd1;
     color: #444d56;
     display: inline-block;
-    font: 11px SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font:
+        11px SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     line-height: 10px;
     padding: 3px 5px;
@@ -8223,8 +8272,11 @@ body {
     display: inline-flex;
     font-size: 14px;
     position: relative;
-    transition: border-color 0.15s ease 0s, transform 0.15s ease 0s,
-        box-shadow 0.15s ease 0s, color 0.15s ease 0s;
+    transition:
+        border-color 0.15s ease 0s,
+        transform 0.15s ease 0s,
+        box-shadow 0.15s ease 0s,
+        color 0.15s ease 0s;
     width: 30.8%;
 }
 
@@ -8557,7 +8609,11 @@ body {
     animation-name: pull-string;
     background: #fff;
     border-radius: 4px;
-    box-shadow: 0 4px 0 #fff, 0 8px 0 #fff, 0 12px 0 #fff, 0 16px 0 #fff,
+    box-shadow:
+        0 4px 0 #fff,
+        0 8px 0 #fff,
+        0 12px 0 #fff,
+        0 16px 0 #fff,
         0 20px 0 #fff;
     content: "";
     display: block;
@@ -11130,7 +11186,12 @@ circle.focus {
     border-radius: 3px;
     color: #24292e;
     cursor: pointer;
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font-family:
+        SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     font-size: 12px;
     font-style: normal;
@@ -12347,7 +12408,12 @@ dl.form.developer-select-account {
 }
 
 .file-info {
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font-family:
+        SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     font-size: 12px;
     line-height: 32px;
@@ -13274,7 +13340,12 @@ dl.form.developer-select-account {
     border-radius: 3px;
     color: rgba(0, 0, 0, 0.5);
     display: inline-block;
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font-family:
+        SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     font-size: 12px;
     padding: 2px 6px;
@@ -13331,7 +13402,12 @@ dl.form.developer-select-account {
     border-radius: 3px;
     color: #fff;
     display: inline-block;
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font-family:
+        SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     font-size: 10px;
     line-height: 1.1;
@@ -15453,7 +15529,9 @@ body.page-responsive .flash-full .container {
     overflow: hidden;
     padding: 0;
     text-align: center;
-    transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out,
+    transition:
+        opacity 0.4s ease-in-out,
+        max-height 0.4s ease-in-out,
         padding 0.4s ease-in-out;
 }
 
@@ -16663,7 +16741,12 @@ body.page-responsive .flash-full .container {
 
 .export-phrase pre {
     border-left: 1px solid #eee;
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font-family:
+        SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     padding-left: 10px;
     white-space: pre-wrap;
@@ -20237,7 +20320,8 @@ body.page-responsive .flash-full .container {
 .repo-file-upload-slate .file-graph,
 .repo-file-upload-slate .file-zip {
     opacity: 0;
-    transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.12s,
+    transition:
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.12s,
         transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.12s;
 }
 
@@ -20252,7 +20336,8 @@ body.page-responsive .flash-full .container {
 .repo-file-upload-slate .file-acrobat,
 .repo-file-upload-slate .file-generic {
     opacity: 0;
-    transition: opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.12s,
+    transition:
+        opacity 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.12s,
         transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.12s;
 }
 
@@ -21293,7 +21378,12 @@ dl.new-email-form {
 
 .oauth-app-info-container dl.keys dd {
     color: #333;
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font-family:
+        SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
 }
 
@@ -21755,7 +21845,12 @@ table.security-history-detail td {
 }
 
 .two-factor-recovery-codes {
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier,
+    font-family:
+        SFMono-Regular,
+        Consolas,
+        Liberation Mono,
+        Menlo,
+        Courier,
         monospace;
     font-size: 21px;
     margin: 30px 0;
@@ -23110,7 +23205,8 @@ dl.form-group > dd textarea.compact {
 }
 
 .intro-shelf {
-    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 60%, #fff),
+    background-image:
+        linear-gradient(180deg, hsla(0, 0%, 100%, 0) 60%, #fff),
         linear-gradient(70deg, #dbedff 32%, #ebfff0);
     border-bottom: #fff;
     color: rgba(27, 31, 35, 0.85);

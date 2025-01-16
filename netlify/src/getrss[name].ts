@@ -20,7 +20,7 @@ const app = handler(
             await next();
         } catch (error) {
             // console.log(error);
-            return new Response(error?.message, { status: 500 });
+            return new Response(String(error), { status: 500 });
         }
     },
     etag_builder,
@@ -30,7 +30,7 @@ const app = handler(
     async (ctx, next) => {
         const { request } = ctx;
         const url = new URL(request.url);
-        const name = url.pathname.split("/").at(-1) || "";
+        const name = decodeURIComponent(url.pathname.split("/").at(-1) || "");
 
         if (!Object.keys(rssfeedxml).includes(name)) {
             return next();
@@ -38,9 +38,9 @@ const app = handler(
         const src = Reflect.get(rssfeedxml, name);
         ctx.response.headers.set(
             "cache-control",
-            " s-maxage=7200,max-age=7200, public"
+            " s-maxage=7200,max-age=7200, public",
         );
         ctx.response.body = await getrss(src);
         return;
-    }
+    },
 );

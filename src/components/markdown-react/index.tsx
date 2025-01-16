@@ -68,17 +68,21 @@ function markdown({ src, name }: { src: string; name: string }) {
                                     __html: markdown内容,
                                 }}
                             />
-                            {loading ? (
-                                //@ts-ignore
-                                <Fallback />
-                            ) : null}
+                            {loading
+                                ? (
+                                    //@ts-ignore
+                                    <Fallback />
+                                )
+                                : null}
 
-                            {加载失败 ? (
-                                <div>
-                                    <h1>Error!</h1>
-                                    <h2>{String(error)}</h2>
-                                </div>
-                            ) : null}
+                            {加载失败
+                                ? (
+                                    <div>
+                                        <h1>Error!</h1>
+                                        <h2>{String(error)}</h2>
+                                    </div>
+                                )
+                                : null}
                         </div>
                     </article>
                 </div>

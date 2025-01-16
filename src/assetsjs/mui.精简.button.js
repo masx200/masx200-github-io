@@ -119,10 +119,9 @@ function slct(selector) {
                     //     element[ResetHTML]
                     //   );
                     if (!element[loadingState]) {
-                        element[ResetHTML] =
-                            element.tagName === "INPUT"
-                                ? element.value
-                                : element.innerHTML;
+                        element[ResetHTML] = element.tagName === "INPUT"
+                            ? element.value
+                            : element.innerHTML;
                         element[loadingState] = "reset";
                     }
                     //debugger;
@@ -157,13 +156,11 @@ function slct(selector) {
                         if (element.tagName !== "INPUT") {
                             html = "<span>" + options.loadingText + "</span>";
                             if (options.loadingIconPosition === "right") {
-                                html +=
-                                    '&nbsp;<span class="' +
+                                html += '&nbsp;<span class="' +
                                     options.loadingIcon +
                                     '"></span>';
                             } else {
-                                html =
-                                    '<span class="' +
+                                html = '<span class="' +
                                     options.loadingIcon +
                                     '"></span>&nbsp;' +
                                     html;
@@ -185,7 +182,7 @@ function slct(selector) {
                         var loadingText = e.getAttribute("data-loading-text");
                         var loadingIcon = e.getAttribute("data-loading-icon");
                         var loadingIconPosition = e.getAttribute(
-                            "data-loading-icon-position"
+                            "data-loading-icon-position",
                         );
 
                         setstate(state, e, {

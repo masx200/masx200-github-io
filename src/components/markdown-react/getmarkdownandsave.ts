@@ -10,11 +10,11 @@ export function getmarkdownandsave(name: string) {
         },
         (error) => {
             return markdownstore.error.set(name, error);
-        }
+        },
     );
 }
 const getapimarkdown = cachepromise(async function getapimarkdown(
-    name: string
+    name: string,
 ) {
-    return fetchsource(markdownapi + name);
+    return fetchsource(markdownapi + name + ".html");
 });

@@ -32,16 +32,20 @@ export const Rssviewer = memo(function Rssviewer({
     const 加载失败 = !!error;
     return (
         <>
-            {showloading ? (
-                //@ts-ignore
-                <Loading></Loading>
-            ) : null}
-            {加载失败 ? (
-                <div>
-                    <h1>Error!</h1>
-                    <h2>{String(error)}</h2>
-                </div>
-            ) : null}
+            {showloading
+                ? (
+                    //@ts-ignore
+                    <Loading></Loading>
+                )
+                : null}
+            {加载失败
+                ? (
+                    <div>
+                        <h1>Error!</h1>
+                        <h2>{String(error)}</h2>
+                    </div>
+                )
+                : null}
             {loaded && (
                 <header
                     className="App-header"
@@ -61,49 +65,47 @@ export const Rssviewer = memo(function Rssviewer({
                         <ul className="mui-table-view">
                             {rssstate
                                 ? rssstate.map((e, index) => (
-                                      <li
-                                          className="mui-table-view-cell mui-media"
-                                          key={index}
-                                          /* style="width: 100%;" */
-                                          /* 每个项目占一行,防止一行多个项目 */
-                                          style={{ width: " 100%" }}
-                                      >
-                                          <div className="mui-media-body">
-                                              <a
-                                                  href={e.link}
-                                                  target="_blank"
-                                                  rel="noopener noreferrer"
-                                              >
-                                                  <b>{e.title}</b>
-                                              </a>
-                                              <a
-                                                  href={e.link}
-                                                  target="_blank"
-                                                  rel="noopener noreferrer"
-                                              >
-                                                  <p className="mui-ellipsis">
-                                                      {e.link}
-                                                  </p>
-                                              </a>
+                                    <li
+                                        className="mui-table-view-cell mui-media"
+                                        key={index}
+                                        /* style="width: 100%;" */
+                                        /* 每个项目占一行,防止一行多个项目 */
+                                        style={{ width: " 100%" }}
+                                    >
+                                        <div className="mui-media-body">
+                                            <a
+                                                href={e.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                <b>{e.title}</b>
+                                            </a>
+                                            <a
+                                                href={e.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                <p className="mui-ellipsis">
+                                                    {e.link}
+                                                </p>
+                                            </a>
 
-                                              <details>
-                                                  <summary>详情</summary>
-                                                  <p
-                                                      className="mui-ellipsis"
-                                                      style={{
-                                                          whiteSpace: "normal",
-                                                          wordBreak:
-                                                              "break-all",
-                                                          wordWrap:
-                                                              "break-word",
-                                                      }}
-                                                  >
-                                                      {e.description}
-                                                  </p>
-                                              </details>
-                                          </div>
-                                      </li>
-                                  ))
+                                            <details>
+                                                <summary>详情</summary>
+                                                <p
+                                                    className="mui-ellipsis"
+                                                    style={{
+                                                        whiteSpace: "normal",
+                                                        wordBreak: "break-all",
+                                                        wordWrap: "break-word",
+                                                    }}
+                                                >
+                                                    {e.description}
+                                                </p>
+                                            </details>
+                                        </div>
+                                    </li>
+                                ))
                                 : null}
                         </ul>
                     </div>

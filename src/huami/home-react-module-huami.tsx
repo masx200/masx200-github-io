@@ -17,7 +17,7 @@ export default memo(function huami() {
     const handlechange = useCallback(
         function handlechang1e(
             inputtext1: string | number,
-            inputtext2: string | number
+            inputtext2: string | number,
         ) {
             // inputtext1, inputtext2
             //   console.log(this);
@@ -37,7 +37,7 @@ export default memo(function huami() {
             //   })();
             //
         },
-        [inputtext1, inputtext2]
+        [inputtext1, inputtext2],
     );
 
     const functioncopy = useCallback(
@@ -62,7 +62,7 @@ export default memo(function huami() {
                     });
             }
         },
-        [inputtext3]
+        [inputtext3],
     );
     // [inputtext3]
     useEffect(() => {
@@ -76,7 +76,7 @@ export default memo(function huami() {
         (e: React.ChangeEvent<HTMLInputElement>): void => {
             onchangeinputtext1(e);
         },
-        []
+        [],
     );
     const onchange2 = useCallback((e: { target: { value: string } }) => {
         onchangeinputtext2(e);

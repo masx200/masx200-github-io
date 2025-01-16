@@ -6,7 +6,7 @@ import { usereactive } from "./usereactive";
 
 export function usemarkdown(src: string) {
     const { data, error } = readonly(
-        usereactive(getmarkdownresult(src), [src])
+        usereactive(getmarkdownresult(src), [src]),
     );
     if (!data && !error) {
         getmarkdownandsave(src);
@@ -15,7 +15,7 @@ export function usemarkdown(src: string) {
     return { data, error };
 }
 function getmarkdownresult(
-    src: string
+    src: string,
 ): () => { data: string | undefined; error: any } {
     return () => {
         const data = markdownstore.data.get(src);
