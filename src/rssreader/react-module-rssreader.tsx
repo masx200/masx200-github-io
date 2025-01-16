@@ -4,6 +4,7 @@ import React, { useEffect, useMemo } from "react";
 import Link from "../scripts/CustomLink";
 import rssfeedxml from "./rssfeedxml";
 import { Rssviewer } from "./Rssviewer";
+import { getStylePropValue } from "src/scripts/getStylePropValue";
 
 //@ts-ignore
 /* eslint-disable react/prop-types */
@@ -52,15 +53,19 @@ function getrssmain() {
             <p>使用fast-xml-parser把xml转换成json</p>
             <nav
                 className="navbar navbar-expand-sm bg-light navbar-light "
-                style={{
-                    display: "flex",
-                    //@ts-ignore
-                    "flex-direction": "column",
-                    "flex-wrap": "nowrap",
-                    "align-content": "center",
-                    "justify-content": "center",
-                    "align-items": "center",
-                }}
+                style={getStylePropValue(
+                    Object.entries({
+                        display: "flex",
+                        //@ts-ignore
+                        "flex-direction": "column",
+                        "flex-wrap": "nowrap",
+                        "align-content": "center",
+                        "justify-content": "center",
+                        "align-items": "center",
+                    })
+                        .map(([key, value]) => [key, value].join(":"))
+                        .join(";")
+                )}
             >
                 <details open>
                     <summary>订阅源列表</summary>
