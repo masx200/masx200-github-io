@@ -42,7 +42,7 @@ window.addEventListener(
             });
         });
     },
-    { once: true }
+    { once: true },
 );
 
 // @ts-ignore
@@ -58,7 +58,7 @@ rootele &&
         React.createElement(
             Suspense,
             { fallback: <Loading></Loading> },
-            createElement(Homeelement)
+            createElement(Homeelement),
         ),
-        container
+        container,
     );

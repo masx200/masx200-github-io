@@ -20,7 +20,7 @@ function getrssmain() {
                         "align-items": "center",
                     })
                         .map(([key, value]) => [key, value].join(":"))
-                        .join(";")
+                        .join(";"),
                 )}
             >
                 <details open>

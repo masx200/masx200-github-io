@@ -1,4 +1,4 @@
-import "./scripts/index.tsx"
+import "./scripts/index.tsx";
 // import "./index.css";
 // console.log("hello world");
 /*import "../registerserviceworker.js";

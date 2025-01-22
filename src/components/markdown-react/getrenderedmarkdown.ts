@@ -29,7 +29,7 @@ marked.use(
                 ? hljs.highlight(code, { language: lang }).value
                 : hljs.highlightAuto(code).value;
         },
-    })
+    }),
 );
 const options = {
     // prefix: "my-prefix-",

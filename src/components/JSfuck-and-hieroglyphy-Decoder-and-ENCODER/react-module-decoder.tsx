@@ -22,7 +22,7 @@ function guid() {
             var r = (Math.random() * 16) | 0,
                 v = c == "x" ? r : (r & 0x3) | 0x8;
             return v.toString(16);
-        }
+        },
     );
 }
 var outputdivid = "clip" + guid();
@@ -45,13 +45,13 @@ export default memo(function Decoder() {
         (e: { target: { value: React.SetStateAction<string> } }) => {
             setinputcode(e.target.value);
         },
-        [inputcode]
+        [inputcode],
     );
     const outputonchange = useCallback(
         (e: { target: { value: React.SetStateAction<string> } }) => {
             setoutputcode(e.target.value);
         },
-        [outputcode]
+        [outputcode],
     );
 
     //   var inputtext = useRef();
@@ -62,7 +62,7 @@ export default memo(function Decoder() {
             document.title = "JSfuck Decoder and hieroglyphy decoder";
             // decoderrender();
         },
-        []
+        [],
     );
     // useEffect(() => {
     //     console.log(inputcode);
@@ -110,7 +110,7 @@ export default memo(function Decoder() {
             <button
                 onClick={decodehandler}
                 style={getStylePropValue(
-                    "font-size: 1.5em; padding: 0.5rem 1rem"
+                    "font-size: 1.5em; padding: 0.5rem 1rem",
                 )}
                 type="button"
                 id="decode"
@@ -133,7 +133,7 @@ export default memo(function Decoder() {
 
             <button
                 style={getStylePropValue(
-                    "font-size: 1.5em; padding: 0.5rem 1rem"
+                    "font-size: 1.5em; padding: 0.5rem 1rem",
                 )}
                 className="btn btn-outline-primary btn-lg"
                 id="run"
@@ -146,7 +146,7 @@ export default memo(function Decoder() {
 
             <button
                 style={getStylePropValue(
-                    "font-size: 1.5em; padding: 0.5rem 1rem"
+                    "font-size: 1.5em; padding: 0.5rem 1rem",
                 )}
                 className="btn btn-outline-success btn-lg"
                 data-clipboard-target={"#" + "clip" + outputdivid}

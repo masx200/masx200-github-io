@@ -13,7 +13,7 @@ import { RSSDATA } from "./RSSDATA.ts";
 // console.log(hljs)
 const parser = new XMLParser();
 export const getrss = cachepromise(async function (
-    src: string
+    src: string,
 ): Promise<Readonly<RSSDATA>> {
     const text = await fetchtext(src);
     const xmlstring = text;
@@ -56,7 +56,7 @@ export const getrss = cachepromise(async function (
             des = htmltotext(des);
 
             return { link, title, description: des, pubDate: e.pubDate };
-        }
+        },
     );
     const content = myrsscontent;
     return {
