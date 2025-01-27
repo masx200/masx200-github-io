@@ -12,5 +12,6 @@ export default {
     coderjia: "https://www.coderjia.cn/rss.xml",
     appscross: "https://appscross.com/rss",
     vumstar: "https://masx200.github.io/nextjs-masx200-home/rss/vumstar.rss",
-陶辉:"https://weibrss.oneoo.info/rss/2009781822"
+    陶辉: "https://weibrss.oneoo.info/rss/2009781822",
+    "52nlp": "https://www.52nlp.cn/feed",
 };
