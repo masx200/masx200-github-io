@@ -1,0 +1,418 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+<channel>
+<title>Sukka's Blog</title>
+<link>https://blog.skk.moe/</link>
+<description>Sukka's Blog 苏卡卡的有底洞（博客） —— Sukka(@SukkaW) 随便写东西的地方；技术向，以 Web 相关、前端开发和 Android 相关内容为主</description>
+<lastBuildDate>Mon, 02 Dec 2024 06:31:18 GMT</lastBuildDate>
+<docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+<generator>Hexo.js + Next.js</generator>
+<language>zh-CN</language>
+<image>
+<title>Sukka's Blog</title>
+<url>https://cdn.skk.moe/avatar/sketch-round/512x512.png</url>
+<link>https://blog.skk.moe/</link>
+</image>
+<copyright>Copyright © 2018 - 2024 Sukka's Blog All Rights Reserved</copyright>
+<item>
+<title>
+<![CDATA[ 工欲善其事，必先利其器 —— 我的家庭网络组网方案 ]]>
+</title>
+<link>https://blog.skk.moe/post/home-network-setup/</link>
+<guid>https://blog.skk.moe/post/home-network-setup/</guid>
+<pubDate>Sun, 03 Nov 2024 06:17:00 GMT</pubDate>
+<description>
+<![CDATA[ 好久没写网络相关的科普文了，这次借着搬家的机会，我重新设计了一下的网络架构、给自己的公寓组网，写一篇上万字的组网碎碎念记录一下。 ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>好久没写网络相关的科普文了，这次借着搬家的机会，我重新设计了一下的网络架构、给自己的公寓组网，写一篇上万字的组网碎碎念记录一下。</p><img src="https://img10.360buyimg.com/ddimg/jfs/t20251208/182262/40/49785/401132/6726733fF09583a40/72b7a281d7f5f5d6.jpg" /><br/><p>请前往 <a href="https://blog.skk.moe/post/home-network-setup/">https://blog.skk.moe/post/home-network-setup/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>笔记本</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t20251208/182262/40/49785/401132/6726733fF09583a40/72b7a281d7f5f5d6.jpg" length="0" type="image/jpg"/>
+</item>
+<item>
+<title>
+<![CDATA[ 2024 年，如何不使用 create-react-app 从头为 React 项目配置 webpack ]]>
+</title>
+<link>https://blog.skk.moe/post/webpack-react-without-create-react-app/</link>
+<guid>https://blog.skk.moe/post/webpack-react-without-create-react-app/</guid>
+<pubDate>Thu, 19 Sep 2024 09:32:00 GMT</pubDate>
+<description>
+<![CDATA[ 对于全新的 React 项目来说，一开始就使用 Next.js、Remix、Shopify Hydrogen、Gatsby 等 React 元框架（Meta Framework）是最正确的选择，这些元框架替你解决了路由、数据加载、服务端渲染（SSR）、全静态页面导出（SSG）、边缘计算、打包器和编译器配置。然而，如果你需要迁移现有的、纯客户端渲染（Client-side Rendering）的项目到 React、或者从其他打包器（如 Vite 或 Parcel）迁移走时，即使在 2024 年，webpack 仍然不失为一种选择。 ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>对于全新的 React 项目来说，一开始就使用 <a href="https://nextjs.org/">Next.js</a>、<a href="https://remix.run/">Remix</a>、<a href="https://hydrogen.shopify.dev/">Shopify Hydrogen</a>、<a href="https://www.gatsbyjs.com/">Gatsby</a> 等 React 元框架（Meta Framework）是最正确的选择，这些元框架替你解决了路由、数据加载、服务端渲染（SSR）、全静态页面导出（SSG）、边缘计算、打包器和编译器配置。然而，如果你需要迁移现有的、纯客户端渲染（Client-side Rendering）的项目到 React、或者从其他打包器（如 Vite 或 Parcel）迁移走时，即使在 2024 年，webpack 仍然不失为一种选择。</p><img src="https://img10.360buyimg.com/ddimgp/jfs/t20251029/157885/37/48255/25069/66f28deeF925b71a4/35e6dc46f248c99e.png.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/webpack-react-without-create-react-app/">https://blog.skk.moe/post/webpack-react-without-create-react-app/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimgp/jfs/t20251029/157885/37/48255/25069/66f28deeF925b71a4/35e6dc46f248c99e.png.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ 我有特别的 Surge 配置和使用技巧 ]]>
+</title>
+<link>https://blog.skk.moe/post/i-have-my-unique-surge-setup/</link>
+<guid>https://blog.skk.moe/post/i-have-my-unique-surge-setup/</guid>
+<pubDate>Wed, 17 Apr 2024 13:32:00 GMT</pubDate>
+<description>
+<![CDATA[ 我使用 Surge Mac 作为网络核心有一段时间了。虽然 Surge 官方提供了一份「中国区用户推荐最小配置」，但是为了发挥 Surge 全部潜力的话、彻底值回 Surge 的售价、实现我的复杂需求，我添加了许多自定义的配置。 ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>我使用 Surge Mac 作为网络核心有一段时间了。虽然 Surge 官方提供了一份「<a href="https://community.nssurge.com/d/1214/16">中国区用户推荐最小配置</a>」，但是为了发挥 Surge 全部潜力的话、彻底值回 Surge 的售价、实现我的复杂需求，我添加了许多自定义的配置。</p><img src="https://img10.360buyimg.com/ddimgp/jfs/t20250522/227655/16/16237/19877/661fa6c6F00cec293/3900550e923e1dcb.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/i-have-my-unique-surge-setup/">https://blog.skk.moe/post/i-have-my-unique-surge-setup/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>分享境</category>
+<enclosure url="https://img10.360buyimg.com/ddimgp/jfs/t20250522/227655/16/16237/19877/661fa6c6F00cec293/3900550e923e1dcb.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ 在 JavaScript 中实现和使用 Context ]]>
+</title>
+<link>https://blog.skk.moe/post/context-in-javascript/</link>
+<guid>https://blog.skk.moe/post/context-in-javascript/</guid>
+<pubDate>Sun, 11 Feb 2024 06:17:00 GMT</pubDate>
+<description>
+<![CDATA[ 使用过 React 构建应用的开发者对 React Context 一定不会陌生。在 React 的世界中，相比于把 prop 不断透传给下一层子组件（prop-drilling），React Context 可以更优雅地自上而下将数据从父组件传递到深层级的子组件、并确保数据在不同子组件之间保持一致。不过，Context 绝不是仅属于 React，在 JavaScript 中 Context 一样可以大展拳脚。 ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>使用过 React 构建应用的开发者对 React Context 一定不会陌生。在 React 的世界中，相比于把 prop 不断透传给下一层子组件（prop-drilling），React Context 可以更优雅地自上而下将数据从父组件传递到深层级的子组件、并确保数据在不同子组件之间保持一致。不过，Context 绝不是仅属于 React，在 JavaScript 中 Context 一样可以大展拳脚。</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/224284/31/10654/50610/65c7af9fF2755d18e/4dbf3e7afca8873f.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/context-in-javascript/">https://blog.skk.moe/post/context-in-javascript/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/224284/31/10654/50610/65c7af9fF2755d18e/4dbf3e7afca8873f.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ 2023：浏览器从 A 到 Z ]]>
+</title>
+<link>https://blog.skk.moe/post/2023-browser-from-a-to-z/</link>
+<guid>https://blog.skk.moe/post/2023-browser-from-a-to-z/</guid>
+<pubDate>Thu, 04 Jan 2024 09:56:00 GMT</pubDate>
+<description>
+<![CDATA[ 将 A-Z 逐一输入到 Google Chrome 的地址栏里，Google Chrome 都会自动补全出哪些域名呢（诶？） ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>将 A-Z 逐一输入到 Google Chrome 的地址栏里，Google Chrome 都会自动补全出哪些域名呢（诶？）</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/93070/2/44905/54287/65af57f3Fec7e18d4/df87cdb2e48a545b.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/2023-browser-from-a-to-z/">https://blog.skk.moe/post/2023-browser-from-a-to-z/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>自言语</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/93070/2/44905/54287/65af57f3Fec7e18d4/df87cdb2e48a545b.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ React Server Component 初体验与实践 —— 将博客迁移到 Next.js App Router ]]>
+</title>
+<link>https://blog.skk.moe/post/refactor-my-blog-using-nextjs-app-router/</link>
+<guid>https://blog.skk.moe/post/refactor-my-blog-using-nextjs-app-router/</guid>
+<pubDate>Sun, 25 Jun 2023 03:59:00 GMT</pubDate>
+<description>
+<![CDATA[ 去年的这个时候，我把博客从 Hexo 迁移到 Next.js。现在，随着 Next.js 13 App Router 已经稳定，我又把博客从 Next.js Pages Directory 迁移到了 Next.js 13 的 App Router 和 React Server Component。 ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>去年的这个时候，<a href="/post/use-nextjs-and-hexo-to-rebuild-my-blog/">我把博客从 Hexo 迁移到 Next.js</a>。现在，随着 <a href="https://nextjs.org/blog/next-13-4">Next.js 13 App Router 已经稳定</a>，我又把博客从 Next.js Pages Directory 迁移到了 Next.js 13 的 App Router 和 React Server Component。</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/222347/37/31419/9384/6497c6e5F61e6a8fc/336eb59cb983fafb.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/refactor-my-blog-using-nextjs-app-router/">https://blog.skk.moe/post/refactor-my-blog-using-nextjs-app-router/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>笔记本</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/222347/37/31419/9384/6497c6e5F61e6a8fc/336eb59cb983fafb.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ Meta Keywords：是什么、为什么不 ]]>
+</title>
+<link>https://blog.skk.moe/post/say-no-to-meta-keywords/</link>
+<guid>https://blog.skk.moe/post/say-no-to-meta-keywords/</guid>
+<pubDate>Sun, 15 Jan 2023 12:47:00 GMT</pubDate>
+<description>
+<![CDATA[ 形如 <meta keywords="sukka, skk.moe"> 的 Meta Keywords 是 Meta 标签的一种，仅存在于 HTML 代码中、不会在浏览器中展示。过去，Meta Keywords 标签被用于告诉搜索引擎爬虫关于网页的信息。但是，现在搜索引擎还尊重 Meta Keywords 么？Meta Keywords 是否仍然是 SEO 的最佳实践？ ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>形如 <code>&lt;meta keywords=&quot;sukka, skk.moe&quot;&gt;</code> 的 Meta Keywords 是 Meta 标签的一种，仅存在于 HTML 代码中、不会在浏览器中展示。过去，Meta Keywords 标签被用于告诉搜索引擎爬虫关于网页的信息。但是，现在搜索引擎还尊重 Meta Keywords 么？Meta Keywords 是否仍然是 SEO 的最佳实践？</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/206133/15/29952/14316/63c3f4c9F348e255c/41cd99246b2b32f8.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/say-no-to-meta-keywords/">https://blog.skk.moe/post/say-no-to-meta-keywords/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>笔记本</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/206133/15/29952/14316/63c3f4c9F348e255c/41cd99246b2b32f8.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ 2022：浏览器从 A 到 Z ]]>
+</title>
+<link>https://blog.skk.moe/post/2022-browser-from-a-to-z/</link>
+<guid>https://blog.skk.moe/post/2022-browser-from-a-to-z/</guid>
+<pubDate>Thu, 12 Jan 2023 09:56:00 GMT</pubDate>
+<description>
+<![CDATA[ 将 A-Z 逐一输入到 Google Chrome 的地址栏里，Google Chrome 都会自动补全出哪些域名呢？ ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>将 A-Z 逐一输入到 Google Chrome 的地址栏里，Google Chrome 都会自动补全出哪些域名呢？</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/192427/31/30756/24965/63bfdc62Fc08329f1/29b23b69b5df0ec9.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/2022-browser-from-a-to-z/">https://blog.skk.moe/post/2022-browser-from-a-to-z/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>自言语</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/192427/31/30756/24965/63bfdc62Fc08329f1/29b23b69b5df0ec9.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ React 为什么重新渲染 ]]>
+</title>
+<link>https://blog.skk.moe/post/react-re-renders-101/</link>
+<guid>https://blog.skk.moe/post/react-re-renders-101/</guid>
+<pubDate>Tue, 06 Sep 2022 08:29:00 GMT</pubDate>
+<description>
+<![CDATA[ 更新（重新渲染）是 React 的重要特性 —— 当用户与应用交互的时候，React 需要重新渲染、更新 UI，以响应用户的输入。但是，React 为什么会重新渲染呢？如果不知道 React 为什么会重新渲染，我们如何才能避免额外的重新渲染呢？ ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>更新（重新渲染）是 React 的重要特性 —— 当用户与应用交互的时候，React 需要重新渲染、更新 UI，以响应用户的输入。但是，React 为什么会重新渲染呢？如果不知道 React 为什么会重新渲染，我们如何才能避免额外的重新渲染呢？</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/186432/20/28325/37613/631725bbEf2ff226e/66b99021df66578b.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/react-re-renders-101/">https://blog.skk.moe/post/react-re-renders-101/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/186432/20/28325/37613/631725bbEf2ff226e/66b99021df66578b.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ 为什么你不应该在 React 中直接使用 useEffect 从 API 获取数据 ]]>
+</title>
+<link>https://blog.skk.moe/post/why-you-should-not-fetch-data-directly-in-use-effect/</link>
+<guid>https://blog.skk.moe/post/why-you-should-not-fetch-data-directly-in-use-effect/</guid>
+<pubDate>Fri, 19 Aug 2022 08:53:00 GMT</pubDate>
+<description>
+<![CDATA[ React 是一个由 Facebook 开源的、可以在任意平台上构建 UI 的 JavaScript 库。在 React 中，一个常见的 Pattern 是使用 useEffect 搭配 useState 发送请求、将状态从 API（React 外部）同步到 React 内部、用于渲染 UI，这篇文章恰恰在向你介绍为什么你不应该直接这么做。 ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>React 是一个由 Facebook 开源的、可以在任意平台上构建 UI 的 JavaScript 库。在 React 中，一个常见的 Pattern 是使用 <code>useEffect</code> 搭配 <code>useState</code> 发送请求、将状态从 API（React 外部）同步到 React 内部、用于渲染 UI，这篇文章恰恰在向你介绍为什么你不应该直接这么做。</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/180676/37/27394/27265/62ff57f2E600b3725/cff75c5fca39bbcc.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/why-you-should-not-fetch-data-directly-in-use-effect/">https://blog.skk.moe/post/why-you-should-not-fetch-data-directly-in-use-effect/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/180676/37/27394/27265/62ff57f2E600b3725/cff75c5fca39bbcc.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ 我有特别的 DNS 配置和使用技巧 ]]>
+</title>
+<link>https://blog.skk.moe/post/i-have-my-unique-dns-setup/</link>
+<guid>https://blog.skk.moe/post/i-have-my-unique-dns-setup/</guid>
+<pubDate>Thu, 28 Jul 2022 15:31:00 GMT</pubDate>
+<description>
+<![CDATA[ 众所周知，DNS 的作用与电话簿类似，将人类可读的域名映射到机器可读 IP 地址、使人更方便地访问互联网。DNS 是非常重要的互联网基础设施，对于改善上网冲浪的体验中的重要程度不容小觑。 ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>众所周知，DNS 的作用与电话簿类似，将人类可读的域名映射到机器可读 IP 地址、使人更方便地访问互联网。DNS 是非常重要的互联网基础设施，对于改善上网冲浪的体验中的重要程度不容小觑。</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/96381/31/31172/23930/62e2ab5bE554d388b/37027f4a03351b9e.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/i-have-my-unique-dns-setup/">https://blog.skk.moe/post/i-have-my-unique-dns-setup/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>分享境</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/96381/31/31172/23930/62e2ab5bE554d388b/37027f4a03351b9e.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ 优化博客的累计布局偏移（CLS）问题 ]]>
+</title>
+<link>https://blog.skk.moe/post/fix-blog-cls/</link>
+<guid>https://blog.skk.moe/post/fix-blog-cls/</guid>
+<pubDate>Tue, 07 Jun 2022 17:24:00 GMT</pubDate>
+<description>
+<![CDATA[ 距离上一篇文章发布已有四个月了，是时候写几篇文章给博客除草了。上一次我介绍了我如何迁移、重构了我的博客的架构，这次我想来谈谈我在重构中优化和打磨访客体验时解决的一个问题。我的博客优化之旅 图片 lazyload ... ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>距离上一篇文章发布已有四个月了，是时候写几篇文章给博客除草了。上一次我介绍了我如何迁移、重构了我的博客的架构，这次我想来谈谈我在重构中优化和打磨访客体验时解决的一个问题。我的博客优化之旅 图片 lazyload 的学问和在 Hexo 上的最佳实践 我的博客有多快？ 天下武功，唯快不破 —— 我是这样优化博客的 ...</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/206311/26/14625/38940/629f7f81Eb11312de/b1e67f07b1cc9bc7.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/fix-blog-cls/">https://blog.skk.moe/post/fix-blog-cls/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/206311/26/14625/38940/629f7f81Eb11312de/b1e67f07b1cc9bc7.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ 使用 Next.js + Hexo 重构我的博客 ]]>
+</title>
+<link>https://blog.skk.moe/post/use-nextjs-and-hexo-to-rebuild-my-blog/</link>
+<guid>https://blog.skk.moe/post/use-nextjs-and-hexo-to-rebuild-my-blog/</guid>
+<pubDate>Thu, 17 Mar 2022 16:24:00 GMT</pubDate>
+<description>
+<![CDATA[ 在咕咕了一整年、只发布了三篇文章（其中两篇还是译文）之后，我决定还是稍微花一点时间好好折腾一下自己的博客，以 React 作为抓手，通过 Next.js 和 Hexo 深度共建，对标 Gatsby，打通静态 HTML 与用户交互之间的垂直领域屏障，实现多维矩阵闭环，为个人博客赋能（咳咳咳），然后水出 2022 年第一篇文章（逃） ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>在咕咕了一整年、只发布了三篇文章（其中两篇还是译文）之后，我决定还是稍微花一点时间好好折腾一下自己的博客，以 React 作为抓手，通过 Next.js 和 Hexo 深度共建，对标 Gatsby，打通静态 HTML 与用户交互之间的垂直领域屏障，实现多维矩阵闭环，为个人博客赋能（咳咳咳），然后水出 2022 年第一篇文章（逃）技术选型：Gatsby vs Next.js我使用 Hexo 驱动博客已经三年之久了，之前写过一个 开源的 Hexo 主题，后来还成为了 Hexo 的 Core Team Member、为 Hexo 贡献了不少代码。Hexo 是一个诞生于 2012......</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/218492/18/14257/25439/6227858fE1517791d/63119f6e39dc9389.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/use-nextjs-and-hexo-to-rebuild-my-blog/">https://blog.skk.moe/post/use-nextjs-and-hexo-to-rebuild-my-blog/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/218492/18/14257/25439/6227858fE1517791d/63119f6e39dc9389.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ [译] 不，Web3 不是去中心化 ]]>
+</title>
+<link>https://blog.skk.moe/post/web3-is-not-decentralization/</link>
+<guid>https://blog.skk.moe/post/web3-is-not-decentralization/</guid>
+<pubDate>Tue, 14 Dec 2021 14:01:00 GMT</pubDate>
+<description>
+<![CDATA[ 加密货币社区对元宇宙和 Web3 的狂热仍在继续，大量投资人和开发者前仆后继加入其中。但是，Web3 真的能实现支持者们的种种愿景吗？亦或是另一个镜中月、水中花？也许让历史照进现实，能给我们答案。 ]]>
+</description>
+<content:encoded>
+<![CDATA[ 加密货币社区对元宇宙和 Web3 的狂热仍在继续，大量投资人和开发者前仆后继加入其中。但是，Web3 真的能实现支持者们的种种愿景吗？亦或是另一个镜中月、水中花？也许让历史照进现实，能给我们答案。<img src="https://img10.360buyimg.com/ddimg/jfs/t1/123139/11/24965/54827/62215eedE5e3da14a/80c24408e97057dd.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/web3-is-not-decentralization/">https://blog.skk.moe/post/web3-is-not-decentralization/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>自言语</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/123139/11/24965/54827/62215eedE5e3da14a/80c24408e97057dd.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ [译] 捍卫自由的互联网，对 Web3 说不 ]]>
+</title>
+<link>https://blog.skk.moe/post/keep-web-free-say-no-to-web3/</link>
+<guid>https://blog.skk.moe/post/keep-web-free-say-no-to-web3/</guid>
+<pubDate>Sun, 12 Dec 2021 13:40:00 GMT</pubDate>
+<description>
+<![CDATA[ 作为一个充满泡沫和噱头的新概念，Web3 和元宇宙在区块链的社区中掀起了一波浪潮。鼓吹者坚信 Web3 就是互联网的未来、不惜砸下大把的金钱和精力、希望能在未来中捞一杯羹；而大部分人保持观望的态度。是时候来一点 Web3 的反对意见了。 ]]>
+</description>
+<content:encoded>
+<![CDATA[ 作为一个充满泡沫和噱头的新概念，Web3 和元宇宙在区块链的社区中掀起了一波浪潮。鼓吹者坚信 Web3 就是互联网的未来、不惜砸下大把的金钱和精力、希望能在未来中捞一杯羹；而大部分人保持观望的态度。是时候来一点 Web3 的反对意见了。<img src="https://img10.360buyimg.com/ddimg/jfs/t1/87908/13/23797/13415/622032afE3a2f9e9f/95c01e98cd4a707a.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/keep-web-free-say-no-to-web3/">https://blog.skk.moe/post/keep-web-free-say-no-to-web3/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>自言语</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/87908/13/23797/13415/622032afE3a2f9e9f/95c01e98cd4a707a.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ 2021 年 JavaScript Promise 性能对比 ]]>
+</title>
+<link>https://blog.skk.moe/post/promise-performance-benchmark/</link>
+<guid>https://blog.skk.moe/post/promise-performance-benchmark/</guid>
+<pubDate>Tue, 07 Dec 2021 08:19:00 GMT</pubDate>
+<description>
+<![CDATA[ 我们正生活在一个「Any application that can be written in JavaScript, will eventually be written in JavaScript」的时代。作为一门兼具动态性和简单性的语言，JavaScript 已经占领了客户端、服务端，甚至在机器学习中也占据一席之地；不可避免的，异步执行也逐渐成为这门语言不可缺少的一部分。... ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>我们正生活在一个「Any application that can be written in JavaScript, will eventually be written in JavaScript」的时代。作为一门兼具动态性和简单性的语言，JavaScript 已经占领了客户端、服务端，甚至在机器学习中也占据一席之地；不可避免的，异步执行也逐渐成为这门语言不可缺少的一部分。TL; DR Bluebird 依然是速度最快、内存占用最少的 Promise 实现 Runtime 的 async &#x2F; await 实现越来越快、顺序执行的性能已经超过 Native Promise，占用的内存也更少 对于平行并发执行的 Promise，Bluebird 的性能依然一骑绝尘。......</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/157404/28/28495/143414/622032b2Ef7b495fd/6a9bd02e79392c9d.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/promise-performance-benchmark/">https://blog.skk.moe/post/promise-performance-benchmark/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/157404/28/28495/143414/622032b2Ef7b495fd/6a9bd02e79392c9d.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ [译] HentaiVerse 建议和指导 ]]>
+</title>
+<link>https://blog.skk.moe/post/hentaiverse-advice/</link>
+<guid>https://blog.skk.moe/post/hentaiverse-advice/</guid>
+<pubDate>Thu, 24 Dec 2020 22:31:00 GMT</pubDate>
+<description>
+<![CDATA[ 著名的同人本资源集散地 E-hentai 有一个完全没有人在意的角落 ——「HentaiVerse」，一个纯文字网页 RPG 游戏。虽然这个游戏应该不会有太多新玩家了，不过还是翻译一篇给新玩家的指导文吧。 ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>著名的同人本资源集散地 E-hentai 有一个完全没有人在意的角落 ——「HentaiVerse」，一个纯文字网页 RPG 游戏。虽然这个游戏应该不会有太多新玩家了，不过还是翻译一篇给新玩家的指导文吧。</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/209138/1/18651/50218/622032acEf83a8d68/fc6db86aebb679ff.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/hentaiverse-advice/">https://blog.skk.moe/post/hentaiverse-advice/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>笔记本</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/209138/1/18651/50218/622032acEf83a8d68/fc6db86aebb679ff.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ ZSH 自动读取 macOS 系统代理配置并设置环境变量 ]]>
+</title>
+<link>https://blog.skk.moe/post/macos-auto-read-proxy-settings-zsh/</link>
+<guid>https://blog.skk.moe/post/macos-auto-read-proxy-settings-zsh/</guid>
+<pubDate>Mon, 07 Dec 2020 02:47:00 GMT</pubDate>
+<description>
+<![CDATA[ 和其它 Linux 的 DE 一样，macOS 也支持在「系统偏好设置」中设置 HTTP 代理、HTTPS 代理，但是 macOS 并不会在终端（Terminal、iTerm）的 shell 中自动生效系统代理配置。为了方便日常使用，我决定好好研究一下 macOS 的系统代理。macOS 系统代... ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>和其它 Linux 的 DE 一样，macOS 也支持在「系统偏好设置」中设置 HTTP 代理、HTTPS 代理，但是 macOS 并不会在终端（Terminal、iTerm）的 shell 中自动生效系统代理配置。为了方便日常使用，我决定好好研究一下 macOS 的系统代理。macOS 系统代理的行为和 Linux 和 Windows 只有一种系统代理配置不同，macOS 为每一种网络设备（Wi-Fi、Ethernet、Bluetooth PAN 等）维护了独立的网络配置，包括代理配置在内。因此当切换网络设备时，macOS 会使用不同的代理配置；如果同时连接了多个网络设备，则操作系统会优先采用在「系统偏好设置」网络「Service Order」靠上的设备的代理配置：...</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/207910/19/18573/59096/622032b0E05c1d4be/5d89d557f7889730.jpg" /><br/><p>请前往 <a href="https://blog.skk.moe/post/macos-auto-read-proxy-settings-zsh/">https://blog.skk.moe/post/macos-auto-read-proxy-settings-zsh/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/207910/19/18573/59096/622032b0E05c1d4be/5d89d557f7889730.jpg" length="0" type="image/jpg"/>
+</item>
+<item>
+<title>
+<![CDATA[ 谈谈 Apple M1 芯片、ARM、ARM Mac 和黑苹果的未来 ]]>
+</title>
+<link>https://blog.skk.moe/post/talk-about-arm-m1-mac/</link>
+<guid>https://blog.skk.moe/post/talk-about-arm-m1-mac/</guid>
+<pubDate>Wed, 11 Nov 2020 16:13:00 GMT</pubDate>
+<description>
+<![CDATA[ 2020 年 11 月 11 日，苹果在本年度最后一次 Apple Events 上发布了全新的 ARM 芯片 M1、以及三款搭载了 M1 的 Mac：MacBook Air、MacBook Pro 13‘ 和 Mac Mini。在 WWDC 2020 库克宣布 Apple Silicon 后，这次 Apple Events 再一次掀起了热潮，不少 KOL 都把 M1 奉若神明，不少人... ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>2020 年 11 月 11 日，苹果在本年度最后一次 Apple Events 上发布了全新的 ARM 芯片 M1、以及三款搭载了 M1 的 Mac：MacBook Air、MacBook Pro 13‘ 和 Mac Mini。在 WWDC 2020 库克宣布 Apple Silicon 后，这次 Apple Events 再一次掀起了热潮，不少 KOL 都把 M1 奉若神明，不少人也不以为然。本文通过 8 个问题来简单聊聊 M1 和 ARM Mac。M1 芯片的性能如何？本文写就时，搭载 M1 的 Mac 尚未开始发货，我们能看到的只有 GeekBench 上流出的跑分。所以，让我们先从跑分开始看起？...</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/138186/40/23101/50775/622032b3Efa9053d7/df3a819d044a9455.jpg" /><br/><p>请前往 <a href="https://blog.skk.moe/post/talk-about-arm-m1-mac/">https://blog.skk.moe/post/talk-about-arm-m1-mac/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>自言语</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/138186/40/23101/50775/622032b3Efa9053d7/df3a819d044a9455.jpg" length="0" type="image/jpg"/>
+</item>
+<item>
+<title>
+<![CDATA[ USTC Hackergame 2020（中科大信安赛）write up ]]>
+</title>
+<link>https://blog.skk.moe/post/hackergame-2020-write-up/</link>
+<guid>https://blog.skk.moe/post/hackergame-2020-write-up/</guid>
+<pubDate>Fri, 06 Nov 2020 22:00:00 GMT</pubDate>
+<description>
+<![CDATA[ 作为一只 CS 零基础、信安零基础、CTF 零基础的菜狐狐，苏卡卡今年又来参加 USTC Hackergame 啦！由于一边做题一边总结思路（指写 Write Up），所以苏卡卡应该是第一个发布非官方的 USTC Hackergame 2020 Write Up 的吧（嘿嘿）。 题图来自 USTC Hackergame 2019「Happy LUG」 ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>作为一只 CS 零基础、信安零基础、CTF 零基础的菜狐狐，苏卡卡今年又来参加 USTC Hackergame 啦！由于一边做题一边总结思路（指写 Write Up），所以苏卡卡应该是第一个发布非官方的 USTC Hackergame 2020 Write Up 的吧（嘿嘿）。</p><blockquote> <p>题图来自 USTC Hackergame 2019「Happy LUG」</p></blockquote><img src="https://img10.360buyimg.com/ddimg/jfs/t1/90743/25/22680/55545/622032abE6ef31d51/cfc4cb389c994c17.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/hackergame-2020-write-up/">https://blog.skk.moe/post/hackergame-2020-write-up/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/90743/25/22680/55545/622032abE6ef31d51/cfc4cb389c994c17.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ Bilibili 2020「1024 程序员节」CTF Write Up ]]>
+</title>
+<link>https://blog.skk.moe/post/2020-bilibili-1024-ctf-write-up/</link>
+<guid>https://blog.skk.moe/post/2020-bilibili-1024-ctf-write-up/</guid>
+<pubDate>Sun, 25 Oct 2020 09:44:00 GMT</pubDate>
+<description>
+<![CDATA[ 周六不放假休息，还在这加班搞 CTF？ 10 月 24 日不睡觉、凌晨两点钟我还在水群，结果在 USTC@LUG 的群里看见有人在打 Bilibili 的 CTF。我刚刚好一年（指 370 天）没有打过 CTF 了（上一次打正式的 CTF 还是去年参加的 USTC Hackergame 2019），所以想着来玩玩。虽然 CTF 结束之前不应该分享和公开 Write Up 和题解，不过 Bilibili 这 CTF 既然这么离谱，那我也没必要按照常理出牌。 ]]>
+</description>
+<content:encoded>
+<![CDATA[ <blockquote> <p>周六不放假休息，还在这加班搞 CTF？</p></blockquote> <p>10 月 24 日不睡觉、凌晨两点钟我还在水群，结果在 USTC@LUG 的群里看见有人在打 Bilibili 的 CTF。我刚刚好一年（指 370 天）没有打过 CTF 了（上一次打正式的 CTF 还是去年参加的 <a href="/post/hackergame-2019-write-up/">USTC Hackergame 2019</a>），所以想着来玩玩。虽然 CTF 结束之前不应该分享和公开 Write Up 和题解，不过 Bilibili 这 CTF 既然这么离谱，那我也没必要按照常理出牌。</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/86535/11/24318/75037/622032a8E4f94d4ae/89703ccc122cf4e0.jpg" /><br/><p>请前往 <a href="https://blog.skk.moe/post/2020-bilibili-1024-ctf-write-up/">https://blog.skk.moe/post/2020-bilibili-1024-ctf-write-up/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/86535/11/24318/75037/622032a8E4f94d4ae/89703ccc122cf4e0.jpg" length="0" type="image/jpg"/>
+</item>
+<item>
+<title>
+<![CDATA[ 从 Google Analytics 的统计代码说起 —— 谈谈 script 标签的 async 和 defer 属性 ]]>
+</title>
+<link>https://blog.skk.moe/post/script-async-defer/</link>
+<guid>https://blog.skk.moe/post/script-async-defer/</guid>
+<pubDate>Tue, 13 Oct 2020 09:25:00 GMT</pubDate>
+<description>
+<![CDATA[ 之前我在「天下武功，唯快不破 —— 我是这样优化博客的」一文中提到「对于大部分浏览器来说，确保 JS 异步加载和执行的做法其实是在操作 DOM 动态插入 <script async>」，但是并没有给出详细原因。这一次我以 Google Analytics 的统... ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>之前我在「天下武功，唯快不破 —— 我是这样优化博客的」一文中提到「对于大部分浏览器来说，确保 JS 异步加载和执行的做法其实是在操作 DOM 动态插入 &lt;script async&gt;」，但是并没有给出详细原因。这一次我以 Google Analytics 的统计代码为引子，详细讲讲 &lt;script&gt; 的 async 和 defer 属性、以及它们背后的故事。拆开 Google Analytic 的统计代码现在 Google 推出了 Goo......</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/80291/2/16552/19311/622032b3Eb300c2aa/66748fc8124a01c5.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/script-async-defer/">https://blog.skk.moe/post/script-async-defer/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/80291/2/16552/19311/622032b3Eb300c2aa/66748fc8124a01c5.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ 再快一点，再快一点 —— 优化博客白屏时间的实践 ]]>
+</title>
+<link>https://blog.skk.moe/post/improve-fcp-for-my-blog/</link>
+<guid>https://blog.skk.moe/post/improve-fcp-for-my-blog/</guid>
+<pubDate>Sat, 03 Oct 2020 08:40:00 GMT</pubDate>
+<description>
+<![CDATA[ 两个多月以前，我写了一篇文章 介绍我是如何优化我的博客的，但是我对于博客的白屏时间仍然不满意。过去一个月我在博客上进行了一系列优化实践，终于成功将博客的白屏时间减少了将近 50%，这篇文章就来记录优化的过程和方案。 ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>两个多月以前，我写了一篇文章 介绍我是如何优化我的博客的，但是我对于博客的白屏时间仍然不满意。过去一个月我在博客上进行了一系列优化实践，终于成功将博客的白屏时间减少了将近 50%，这篇文章就来记录优化的过程和方案。确定和分析白屏时间First Paint 和 First Contentful Paint 是衡量白屏时间的重要指标。Google Chrome 团队提供了专门的库 web-vitals 用于在浏览器中衡量这些指标。直接在本地开发环境中引入该库：...</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/84919/3/23076/58443/622032aeEd00a9785/3b2dd1fa94299bc5.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/improve-fcp-for-my-blog/">https://blog.skk.moe/post/improve-fcp-for-my-blog/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/84919/3/23076/58443/622032aeEd00a9785/3b2dd1fa94299bc5.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ 黑苹果的历史 ]]>
+</title>
+<link>https://blog.skk.moe/post/history-osx86/</link>
+<guid>https://blog.skk.moe/post/history-osx86/</guid>
+<pubDate>Wed, 02 Sep 2020 21:45:00 GMT</pubDate>
+<description>
+<![CDATA[ 如果按照「黑苹果」的定义 —— 在一台没有苹果 Logo 的电脑上运行苹果公司开发的操作系统，那么全世界第一台「黑苹果」应该诞生于 24 年前；如果谈现代的黑苹果，那么一定不能无视苹果迈向 Intel 和 x86 的道路... ]]>
+</description>
+<content:encoded>
+<![CDATA[ 如果按照「黑苹果」的定义 —— 在一台没有苹果 Logo 的电脑上运行苹果公司开发的操作系统，那么全世界第一台「黑苹果」应该诞生于 24 年前；如果谈现代的黑苹果，那么一定不能无视苹果迈向 Intel 和 x86 的道路...<img src="https://img10.360buyimg.com/ddimg/jfs/t1/174692/12/27629/10275/622032b1Ecfbf7f0c/6fd41b48a53c5017.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/history-osx86/">https://blog.skk.moe/post/history-osx86/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>黑苹果</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/174692/12/27629/10275/622032b1Ecfbf7f0c/6fd41b48a53c5017.png" length="0" type="image/png"/>
+</item>
+<item>
+<title>
+<![CDATA[ 我就感觉到快 —— zsh 和 oh my zsh 冷启动速度优化 ]]>
+</title>
+<link>https://blog.skk.moe/post/make-oh-my-zsh-fly/</link>
+<guid>https://blog.skk.moe/post/make-oh-my-zsh-fly/</guid>
+<pubDate>Mon, 10 Aug 2020 03:59:00 GMT</pubDate>
+<description>
+<![CDATA[ 不论是在 WSL、Linux 还是 macOS 上，强大的 zsh 一直是我的不二法宝，而 oh my zsh 自然成了最趁手的瑞士军刀，我自己还编写了数个 oh my zsh 插件和主题。直到有一天我突然发现：见鬼，为什么开个 iTerm2 的 Tab 要等上好几秒钟？ ]]>
+</description>
+<content:encoded>
+<![CDATA[ <p>不论是在 WSL、Linux 还是 macOS 上，强大的 zsh 一直是我的不二法宝，而 oh my zsh 自然成了最趁手的瑞士军刀，我自己还编写了数个 oh my zsh 插件和主题。直到有一天我突然发现：见鬼，为什么开个 iTerm2 的 Tab 要等上好几秒钟？</p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/117960/20/21513/26792/622032b1E3138c2cc/4429b1f568c1ff13.png" /><br/><p>请前往 <a href="https://blog.skk.moe/post/make-oh-my-zsh-fly/">https://blog.skk.moe/post/make-oh-my-zsh-fly/</a> 阅读全文</p> ]]>
+</content:encoded>
+<category>技术向</category>
+<enclosure url="https://img10.360buyimg.com/ddimg/jfs/t1/117960/20/21513/26792/622032b1E3138c2cc/4429b1f568c1ff13.png" length="0" type="image/png"/>
+</item>
+</channel>
+<script charset="utf-8" src="https://images.uc.cn/s/uae/g/6h/papilio/alivcextractengine/pro/4.88.88-rc23/extract.js" name="extractor"/>
+</rss>
