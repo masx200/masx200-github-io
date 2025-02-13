@@ -16,5 +16,5 @@ export default {
     "52nlp": "https://www.52nlp.cn/feed",
     sukka: "https://masx200.github.io/masx200-github-io/rss/sukka/rss.xml",
     运维世界: "https://www.ywsj365.com/rss.xml",
-星尘幻梦:"https://re.xcdream.com/feed"
+星尘幻梦:"https://masx200.github.io/masx200-github-io/rss/星尘幻梦/feed.xml"
 };
