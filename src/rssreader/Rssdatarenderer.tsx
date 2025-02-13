@@ -46,6 +46,7 @@ export function Rssdatarenderer({
                         <b>{rssstatetitle}</b>
                     </a>
                 </h3>
+<p>{link}</p>
                 <p>{rssstatedescription}</p>
                 <p>构建时间:{data?.lastBuildDate}</p>
                 <ul className="mui-table-view">
