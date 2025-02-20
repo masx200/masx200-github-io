@@ -11,9 +11,13 @@ export default {
     酷安网: "https://weibrss.oneoo.info/rss/1746523974",
     coderjia: "https://www.coderjia.cn/rss.xml",
     appscross: "https://appscross.com/rss",
-    vumstar: "https://masx200.github.io/nextjs-masx200-home/rss/vumstar.rss",
+    vumstar:
+        "https://masx200.github.io/nextjs-masx200-home/rss/vumstar/vumstar.rss",
     陶辉: "https://weibrss.oneoo.info/rss/2009781822",
     "52nlp": "https://www.52nlp.cn/feed",
     sukka: "https://masx200.github.io/masx200-github-io/rss/sukka/rss.xml",
     运维世界: "https://www.ywsj365.com/rss.xml",
+    云匿博客: "https://www.yunieebk.com/rss.xml",
+    星尘幻梦:
+        "https://masx200.github.io/masx200-github-io/rss/星尘幻梦/feed.xml",
 };
