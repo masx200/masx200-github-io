@@ -35,7 +35,7 @@ if (import.meta.main) {
             const text = await ((await res.ok)
                 ? res.text()
                 : Promise.reject(
-                      "fetch failed\n" + req.url + "\n" + res.status,
+                      "fetch failed\n" + req.url + "\n" + res.status+"\n"+await res.text(),
                   ));
 
             const file = import.meta.resolve(
