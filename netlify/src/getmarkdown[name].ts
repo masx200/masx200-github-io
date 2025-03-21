@@ -21,10 +21,16 @@ const app = handler(
         const { request } = ctx;
         const url = new URL(request.url);
         const name = url.pathname.split("/").at(-1) || "";
-        if (!Object.keys(markdownurls).includes(name)) {
+
+        const parsedname = processhtmlSuffix(name, () => next());
+
+        if (typeof parsedname !== "string") {
+            return parsedname;
+        }
+        if (!Object.keys(markdownurls).includes(parsedname)) {
             return next();
         }
-        const src = Reflect.get(markdownurls, name);
+        const src = Reflect.get(markdownurls, parsedname);
         ctx.response.headers.set(
             "cache-control",
             " s-maxage=86400,max-age=86400, public",
@@ -34,3 +40,13 @@ const app = handler(
         return;
     },
 );
+function processhtmlSuffix<T>(str: string, fallbackFn: () => T): string | T {
+    // 使用正则表达式检查是否以.html结尾 [[4]]
+    if (/\.html$/.test(str)) {
+        // 使用replace方法去除末尾的.html [[10]]
+        return str.replace(/\.html$/, "");
+    } else {
+        // 执行备用函数 [[7]]
+        return fallbackFn();
+    }
+}
