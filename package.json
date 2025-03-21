@@ -173,7 +173,7 @@
         "@types/babel__core": "7.20.1",
         "esbuild": "0.18.3",
         "rollup": "3.25.1",
-        "rsuite": "5.76.3",
+        "rsuite": "5.78.1",
         "vue": "3.3.4",
         "vue-loader": "17.2.2"
     },
