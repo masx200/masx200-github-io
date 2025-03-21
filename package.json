@@ -171,7 +171,7 @@
         "@rollup/plugin-alias": "5.0.0",
         "@rollup/plugin-babel": "6.0.3",
         "@types/babel__core": "7.20.1",
-        "esbuild": "0.18.3",
+        "esbuild": "0.25.1",
         "rollup": "3.25.1",
         "rsuite": "5.78.1",
         "vue": "3.3.4",
