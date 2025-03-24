@@ -164,7 +164,7 @@
         "@babel/core": "7.22.5",
         "@babel/plugin-proposal-private-property-in-object": "7.21.11",
         "@babel/plugin-syntax-typescript": "7.22.5",
-        "@babel/preset-typescript": "7.22.5",
+        "@babel/preset-typescript": "7.27.0",
         "@masx200/pi-calculation-multithreading": "1.0.3",
         "@masx200/rollup-plugin-http-resolve": "5.0.2",
         "@preact/preset-vite": "2.5.0",
