@@ -17,7 +17,7 @@ export default {
     陶辉: "https://weibrss.oneoo.info/rss/2009781822",
     "52nlp": "https://www.52nlp.cn/feed",
     sukka: "https://masx200.github.io/masx200-github-io/rss/sukka/rss.xml",
-    运维世界: "https://www.ywsj365.com/rss.xml",
+    运维世界: "https://www.ywsj.cf/rss.xml",
     云匿博客: "https://www.yunieebk.com/rss.xml",
    
     星尘幻梦:
