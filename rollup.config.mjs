@@ -1,14 +1,13 @@
 import commonjs from "@rollup/plugin-commonjs";
 
+import { fileCache, httpResolve } from "@masx200/rollup-plugin-http-resolve";
 import alias from "@rollup/plugin-alias";
-import { defineConfig } from "rollup";
-import esbuild from "rollup-plugin-esbuild";
-import { fileCache } from "@masx200/rollup-plugin-http-resolve";
-import fs from "fs";
 import { getBabelOutputPlugin } from "@rollup/plugin-babel";
-import { httpResolve } from "@masx200/rollup-plugin-http-resolve";
 import json from "@rollup/plugin-json";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
+import fs from "fs";
+import { defineConfig } from "rollup";
+import esbuild from "rollup-plugin-esbuild";
 const plugins = [
     commonjs(),
     json(),
@@ -41,18 +40,18 @@ const plugins = [
 ];
 export default defineConfig([
     {
-        input: "./netlify/src/getmarkdown[name].ts",
+        input: "./build/src/getmarkdown[name].ts",
         output: {
-            file: "./netlify/edge-functions/getmarkdown[name].js",
+            file: "./build/edge-functions/getmarkdown[name].js",
             format: "esm",
             sourcemap: true,
         },
         plugins,
     },
     {
-        input: "./netlify/src/getrss[name].ts",
+        input: "./build/src/getrss[name].ts",
         output: {
-            file: "./netlify/edge-functions/getrss[name].js",
+            file: "./build/edge-functions/getrss[name].js",
             format: "esm",
             sourcemap: true,
         },

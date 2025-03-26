@@ -1,5 +1,5 @@
 export default {
-    最后三人: "https://bk.197501.xyz/rss.xml",
+    最后三人: "https://masx200.github.io/masx200-github-io/rss/最后三人/feed.xml",
     tmtpost: "https://www.tmtpost.com/feed/",
     iplaysoft: "https://www.iplaysoft.com/feed/",
     landiannews: "https://www.landiannews.com/feed/",

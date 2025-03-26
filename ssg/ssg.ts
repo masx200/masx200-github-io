@@ -1,7 +1,7 @@
-import getmarkdown from "../netlify/edge-functions/getmarkdown[name].js";
 import { fromFileUrl } from "https://deno.land/std@0.208.0/path/mod.ts";
 import { dirname } from "https://deno.land/std@0.224.0/path/mod.ts";
-import getrss from "../netlify/edge-functions/getrss[name].js";
+import getmarkdown from "../build/edge-functions/getmarkdown[name].js";
+import getrss from "../build/edge-functions/getrss[name].js";
 import rssfeedxml from "../src/rssreader/rssfeedxml.ts";
 import markdownurls from "../src/utils/markdownurls.ts";
 if (import.meta.main) {
@@ -44,12 +44,12 @@ if (import.meta.main) {
             const text = await ((await response.ok)
                 ? response.text()
                 : Promise.reject(
-                    "fetch failed\n" +
-                    req.url +
-                    "\nstatus:" +
-                    response.status +
-                    "\ntext:" +
-                    (await response.text()),
+                      "fetch failed\n" +
+                          req.url +
+                          "\nstatus:" +
+                          response.status +
+                          "\ntext:" +
+                          (await response.text()),
                   ));
 
             const file = import.meta.resolve(

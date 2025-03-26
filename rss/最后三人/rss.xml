@@ -1,0 +1,199 @@
+<?xml
+version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+    <channel>
+        <title>最后三人博客</title>
+        <link>https://bk.197501.xyz</link>
+        <atom:link href="https://bk.197501.xyz/rss.xml" rel="self" type="application/rss+xml"/>
+        <description>最后三人博客</description>
+        <generator>Halo v2.20.18</generator>
+        <language>zh-cn</language>
+        <image>
+            <url>https://bk.197501.xyz/upload/Logo.png</url>
+            <title>最后三人博客</title>
+            <link>https://bk.197501.xyz</link>
+        </image>
+        <lastBuildDate>Wed, 26 Mar 2025 16:28:43 GMT</lastBuildDate>
+        <item>
+            <title><![CDATA[飞牛Nas部署 metatube 小姐姐刮削服务器]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-metatube-xiao-jie-jie-gua-xue-fu-wu-qi</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20metatube%20%E5%B0%8F%E5%A7%90%E5%A7%90%E5%88%AE%E5%89%8A%E6%9C%8D%E5%8A%A1%E5%99%A8&amp;url=/archives/fei-niu-nasbu-shu-metatube-xiao-jie-jie-gua-xue-fu-wu-qi" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 metatube 小姐姐刮削服务器 一、前言 1.1、介绍 通过metatube-server后端从相应数据来源爬取数据并保存在数据库中。安装好的 MetaTube 插件通过扫描到的本地文件名，向metatube-server请求查询，并下载相应的元数据与图片。]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-metatube-xiao-jie-jie-gua-xue-fu-wu-qi</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Wed, 26 Mar 2025 10:20:09 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 mediago B站视频下载器]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-mediago-bzhan-shi-pin-xia-zai-qi</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20mediago%20B%E7%AB%99%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%99%A8&amp;url=/archives/fei-niu-nasbu-shu-mediago-bzhan-shi-pin-xia-zai-qi" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 mediago B站视频下载器 一、前言 1.1、介绍 mediago 项目支持 m3u8 视频在线提取工具 流媒体下载 m3u8 下载。 ✅ 无需抓包： 使用软件自带浏览器可以轻松嗅探网页中的视频资源，通过嗅探到的资源列表选择自己想要下载的资源，简单快速。 📱 移动播放： 可以轻]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-mediago-bzhan-shi-pin-xia-zai-qi</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Wed, 26 Mar 2025 09:25:04 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 lyricapi 音流刮削API]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-lyricapi-yin-liu-gua-xue-api</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20lyricapi%20%E9%9F%B3%E6%B5%81%E5%88%AE%E5%89%8AAPI&amp;url=/archives/fei-niu-nasbu-shu-lyricapi-yin-liu-gua-xue-api" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 lyricapi 音流刮削API 一、前言 1.1、介绍 音乐服务接入API 二、部署工作 2.1、Compose 商店部]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-lyricapi-yin-liu-gua-xue-api</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Wed, 26 Mar 2025 09:18:16 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 iptv-api IPTV接口]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-iptv-api-iptvjie-kou</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20iptv-api%20IPTV%E6%8E%A5%E5%8F%A3&amp;url=/archives/fei-niu-nasbu-shu-iptv-api-iptvjie-kou" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 iptv-api IPTV接口 一、前言 1.1、介绍 一个可高度自定义的 IPTV 接口更新项目，自定义频道菜单，自动获取直播源，测速验效后生成可用的结果，可实现秒播级体验 二、部署工作]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-iptv-api-iptvjie-kou</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Tue, 25 Mar 2025 12:32:17 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 myip IP 工具箱]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-myip-ip-gong-ju-xiang</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20myip%20IP%20%E5%B7%A5%E5%85%B7%E7%AE%B1&amp;url=/archives/fei-niu-nasbu-shu-myip-ip-gong-ju-xiang" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 myip IP 工具箱 一、前言 1.1、介绍 二、部署工作]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-myip-ip-gong-ju-xiang</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Tue, 25 Mar 2025 09:14:48 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 icloudpd 苹果云图片下载器]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-icloudpd-ping-guo-yun-tu-pian-xia-zai-qi</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20icloudpd%20%E8%8B%B9%E6%9E%9C%E4%BA%91%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD%E5%99%A8&amp;url=/archives/fei-niu-nasbu-shu-icloudpd-ping-guo-yun-tu-pian-xia-zai-qi" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 icloudpd 苹果云图片下载器 一、前言 1.1、介绍 一款支持 icloud 中存储照片，转存到 Nas 的下载器 二、部署工作]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-icloudpd-ping-guo-yun-tu-pian-xia-zai-qi</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Mon, 24 Mar 2025 10:54:16 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 homebox 家庭资产管理面板]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-homebox-jia-ting-zi-chan-guan-li-mian-ban</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20homebox%20%E5%AE%B6%E5%BA%AD%E8%B5%84%E4%BA%A7%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF&amp;url=/archives/fei-niu-nasbu-shu-homebox-jia-ting-zi-chan-guan-li-mian-ban" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 homebox 家庭资产管理面板 一、前言 1.1、介绍 Homebox 是一款专门为了家庭用户搭建的库存与物资管理系统。 专注于简单性和易用性，是满足您家庭库存、组织和管理需求的完美解决方案 二、部署工作]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-homebox-jia-ting-zi-chan-guan-li-mian-ban</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Mon, 24 Mar 2025 10:50:08 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 firefox 火狐浏览器]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-firefox-huo-hu-liu-lan-qi</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20firefox%20%E7%81%AB%E7%8B%90%E6%B5%8F%E8%A7%88%E5%99%A8&amp;url=/archives/fei-niu-nasbu-shu-firefox-huo-hu-liu-lan-qi" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 firefox 火狐浏览器 一、前言 1.1、介绍 选择会保护重要数据的浏览器，没有晦涩难懂的隐私保护政策，更不向第三方预留后门，纯粹是一款闪电般快、不会出卖您的浏览器 二、部署工作]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-firefox-huo-hu-liu-lan-qi</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Mon, 24 Mar 2025 08:34:05 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 ezbookkeeping 记账工具]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-ezbookkeeping-ji-zhang-gong-ju</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20ezbookkeeping%20%E8%AE%B0%E8%B4%A6%E5%B7%A5%E5%85%B7&amp;url=/archives/fei-niu-nasbu-shu-ezbookkeeping-ji-zhang-gong-ju" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 ezbookkeeping 记账工具 一、前言 1.1、介绍 ezBookkeeping 是一个自托管 (self-hosted) 的轻量个人账本应用。它可以部署在几乎所有平台上，包括 x86、x64 以及 ARM 架构的 Windows、macOS 和 Linux。您甚至可以将它部]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-ezbookkeeping-ji-zhang-gong-ju</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Mon, 24 Mar 2025 07:50:37 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 emby 媒体服务器]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-emby-mei-ti-fu-wu-qi</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20emby%20%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8&amp;url=/archives/fei-niu-nasbu-shu-emby-mei-ti-fu-wu-qi" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 emby 媒体服务器 一、前言 1.1、介绍 在任何设备上存储您的个人媒体，将您的所有家庭视频、音乐和照片集中到一个地方从未如此简单。您的个人 Emby Server 会自动即时转换和流式传输您的媒体，以便在任何设备上播放 二、部署工作]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-emby-mei-ti-fu-wu-qi</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Mon, 24 Mar 2025 06:58:21 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 babybuddy 育儿管理面板]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-babybuddy-yu-er-guan-li-mian-ban</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20babybuddy%20%E8%82%B2%E5%84%BF%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF&amp;url=/archives/fei-niu-nasbu-shu-babybuddy-yu-er-guan-li-mian-ban" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 babybuddy 育儿管理面板 一、前言 1.1、介绍 婴儿的伙伴！帮助护理人员跟踪睡眠、喂养、换尿布、 俯卧时间等来了解和预测宝宝的需求，而无需（同样多） 猜测工作。 二、部署工作]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-babybuddy-yu-er-guan-li-mian-ban</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Mon, 24 Mar 2025 05:48:20 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 cloudsaver 网盘转存资源神器]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-cloudsaver-wang-pan-zhuan-cun-zi-yuan-shen-qi</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20cloudsaver%20%E7%BD%91%E7%9B%98%E8%BD%AC%E5%AD%98%E8%B5%84%E6%BA%90%E7%A5%9E%E5%99%A8&amp;url=/archives/fei-niu-nasbu-shu-cloudsaver-wang-pan-zhuan-cun-zi-yuan-shen-qi" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 cloudsaver 网盘转存资源神器 一、前言 1.1、介绍 一个基于 Vue 3 + Express 的网盘资源搜索与转存工具，支持响应式布局，移动端与PC完美适配，可通过 Docker 一键部署 二、部署]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-cloudsaver-wang-pan-zhuan-cun-zi-yuan-shen-qi</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Fri, 21 Mar 2025 14:54:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 clouddriver2 网盘挂载工具]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-clouddriver2-wang-pan-gua-zai-gong-ju</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20clouddriver2%20%E7%BD%91%E7%9B%98%E6%8C%82%E8%BD%BD%E5%B7%A5%E5%85%B7&amp;url=/archives/fei-niu-nasbu-shu-clouddriver2-wang-pan-gua-zai-gong-ju" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 clouddrive2 网盘挂载工具 一、前言 1.1、介绍 clouddrive2 是一个强大的多云盘管理工具，可以将多个云盘挂载到本地，使其像本地文件一样操作 二、部署工作]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-clouddriver2-wang-pan-gua-zai-gong-ju</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Fri, 21 Mar 2025 14:06:54 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 chinesesubfinder 中文字幕下载器]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-chinesesubfinder-zhong-wen-zi-mu-xia-zai-qi</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20chinesesubfinder%20%E4%B8%AD%E6%96%87%E5%AD%97%E5%B9%95%E4%B8%8B%E8%BD%BD%E5%99%A8&amp;url=/archives/fei-niu-nasbu-shu-chinesesubfinder-zhong-wen-zi-mu-xia-zai-qi" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 chinesesubfinder 中文字幕下载器 一、前言 1.1、介绍 chinesesubfinder 初衷仅仅是想自动化搞定限定条件下中文字幕，在第三方的网站或者接口的下载。 二、部署工作]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-chinesesubfinder-zhong-wen-zi-mu-xia-zai-qi</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Thu, 20 Mar 2025 09:42:46 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 cashbook 记账工具]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-cashbook-ji-zhang-gong-ju</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20cashbook%20%E8%AE%B0%E8%B4%A6%E5%B7%A5%E5%85%B7&amp;url=/archives/fei-niu-nasbu-shu-cashbook-ji-zhang-gong-ju" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 cashbook 记账工具 一、前言 1.1、介绍 Cashbook记账本 在数据记录上追求简单、易用、自主可控 在统计分析上力求清晰、美观、简洁有效 二、部署工作]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-cashbook-ji-zhang-gong-ju</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Wed, 19 Mar 2025 10:54:43 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 newsnow 新闻热点看板]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-newsnow-xin-wen-re-dian-kan-ban</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20newsnow%20%E6%96%B0%E9%97%BB%E7%83%AD%E7%82%B9%E7%9C%8B%E6%9D%BF&amp;url=/archives/fei-niu-nasbu-shu-newsnow-xin-wen-re-dian-kan-ban" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 newsnow 新闻热点看板 一、前言 1.1、介绍 实时热门新闻阅读工具 二、部署工作 2.]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-newsnow-xin-wen-re-dian-kan-ban</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Tue, 18 Mar 2025 09:42:03 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 npc 实现内网穿透]]></title>
+            <link>https://bk.197501.xyz/archives/wei-ming-ming-wen-zhang-a8483d98-29b500fd</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%20npc%20%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F&amp;url=/archives/wei-ming-ming-wen-zhang-a8483d98-29b500fd" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 npc 实现内网穿透 一、前言 1.1、介绍 npc 客户端由 nps 服务端通过传输实现内网穿透，可以实现隧道，域名等诸多穿透功能 二、购买 2.1、购]]></description>
+            <guid isPermaLink="false">/archives/wei-ming-ming-wen-zhang-a8483d98-29b500fd</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Tue, 18 Mar 2025 09:42:03 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署 1panel 服务器管理面板]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-1panel-fu-wu-qi-guan-li-mian-ban</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%201panel%20%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF&amp;url=/archives/fei-niu-nasbu-shu-1panel-fu-wu-qi-guan-li-mian-ban" width="1" height="1" alt="" style="opacity:0;">飞牛Nas部署 1panel 服务器管理面板 一、前言 1.1、介绍 1Panel 是一个现代化、开源的 Linux 服务器运维管理面板。 二、部署工作]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-1panel-fu-wu-qi-guan-li-mian-ban</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Tue, 18 Mar 2025 09:42:03 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[三人行脚本常见问题]]></title>
+            <link>https://bk.197501.xyz/archives/san-ren-xing-jiao-ben-chang-jian-wen-ti</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E4%B8%89%E4%BA%BA%E8%A1%8C%E8%84%9A%E6%9C%AC%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98&amp;url=/archives/san-ren-xing-jiao-ben-chang-jian-wen-ti" width="1" height="1" alt="" style="opacity:0;">三人行脚本常见问题 一、服务包拉取问题 1、目录 cd /vol1/1000/ cd 后面需要有空格，才能跳转到指定目录下 2、拉取命令 wget https://ghproxy.cc/]]></description>
+            <guid isPermaLink="false">/archives/san-ren-xing-jiao-ben-chang-jian-wen-ti</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <category>飞牛Nas</category>
+            <pubDate>Mon, 17 Mar 2025 18:09:04 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[飞牛Nas部署使用三人行 Compose_Shop 安装Docker]]></title>
+            <link>https://bk.197501.xyz/archives/fei-niu-nasbu-shu-shi-yong-san-ren-xing-compose_shop-an-zhuang-docker</link>
+            <description><![CDATA[<img src="https://bk.197501.xyz/plugins/feed/assets/telemetry.gif?title=%E9%A3%9E%E7%89%9BNas%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8%E4%B8%89%E4%BA%BA%E8%A1%8C%20Compose_Shop%20%E5%AE%89%E8%A3%85Docker&amp;url=/archives/fei-niu-nasbu-shu-shi-yong-san-ren-xing-compose_shop-an-zhuang-docker" width="1" height="1" alt="" style="opacity:0;">Compose 商店（Compose_Shop） 一、项目简介 Compose 商店致力于为您提供便捷高效的 Docker 容器配置解决方案。通过我们精心整理的 Docker Compose 配置文件，您可以轻松摆脱繁琐的可视化配置流程，直接使用.yml 文件对 Docker 容器进行精准配置。商店]]></description>
+            <guid isPermaLink="false">/archives/fei-niu-nasbu-shu-shi-yong-san-ren-xing-compose_shop-an-zhuang-docker</guid>
+            <dc:creator>三人行 — James Gosling</dc:creator>
+            <enclosure url="https://bk.197501.xyz/apis/api.storage.halo.run/v1alpha1/thumbnails/-/via-uri?uri=%2Fupload%2Fcs.jpg&amp;size=m" type="image/jpeg" length="103479"/>
+            <category>飞牛Nas</category>
+            <pubDate>Fri, 14 Mar 2025 07:08:27 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
