@@ -1,5 +1,5 @@
 export default {
-    最后三人: "https://masx200.github.io/masx200-github-io/rss/最后三人/feed.xml",
+    最后三人: "https://masx200.github.io/masx200-github-io/rss/最后三人/rss.xml",
     tmtpost: "https://www.tmtpost.com/feed/",
     iplaysoft: "https://www.iplaysoft.com/feed/",
     landiannews: "https://www.landiannews.com/feed/",
@@ -21,5 +21,5 @@ export default {
     云匿博客: "https://www.yunieebk.com/rss.xml",
    
     星尘幻梦:
-        "https://masx200.github.io/masx200-github-io/rss/星尘幻梦/feed.xml",
+        "https://masx200.github.io/masx200-github-io/rss/星尘幻梦/rss.xml",
 };
