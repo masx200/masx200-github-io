@@ -52,7 +52,7 @@
         "@masx200/event-emitter-target": "2.0.5",
         "@masx200/jsfuck-and-hieroglyphy-decoder-and-encoder": "2.0.9",
         "@masx200/rollup-plugin-http-resolve": "5.0.2",
-        "@masx200/search-hash-params-router": "3.0.2",
+        "@masx200/search-hash-params-router": "3.0.3",
         "@masx200/webpack-react-vue-spa-awesome-config": "5.1.0",
         "@preact/signals": "1.1.3",
         "@rollup/plugin-babel": "6.0.2",
